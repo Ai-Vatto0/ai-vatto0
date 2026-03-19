@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="AI-VATT0 KI.">
+<meta name="theme-color" content="#0a0000">
+<title>AI-VATT0 KI.</title>
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='38' fill='%230d0000'/%3E%3Crect x='5' y='5' width='170' height='170' rx='34' fill='none' stroke='%23c9a84c' stroke-width='3'/%3E%3Ctext x='90' y='60' text-anchor='middle' font-family='Georgia' font-size='19' font-weight='900' fill='%23c9a84c'%3EAI-VATT0%3C/text%3E%3Ctext x='90' y='98' text-anchor='middle' font-family='Georgia' font-size='32' fill='%238b0000'%3E%E2%96%B6%3C/text%3E%3Ctext x='90' y='128' text-anchor='middle' font-family='Georgia' font-size='15' fill='%23c9a84c'%3EKI.%3C/text%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Cinzel+Decorative:wght@700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bl:#8b0000;--blb:#cc0000;--bld:#3d0000;--bk:#0a0000;--go:#c9a84c;--gob:#f0d060;--god:#7a6020;--gos:#ffe080;--tx:#e8d5b0;--tx2:#9a7a50;--tx3:#5a4030;}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+html,body{height:100%;background:var(--bk);color:var(--tx);font-family:'Crimson Text',Georgia,serif;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse at 15% 0%,rgba(139,0,0,.28) 0%,transparent 45%),radial-gradient(ellipse at 85% 100%,rgba(139,0,0,.18) 0%,transparent 45%);pointer-events:none;z-index:0;}
+
+/* HEADER */
+.hdr{position:relative;z-index:2;text-align:center;padding:calc(env(safe-area-inset-top,20px)+12px) 16px 0;background:linear-gradient(180deg,rgba(61,0,0,.7) 0%,transparent 100%);border-bottom:1px solid rgba(201,168,76,.2);}
+.hdr::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--god),var(--gos),var(--go),var(--god),transparent);}
+.logo{font-family:'Cinzel Decorative',serif;font-size:clamp(26px,6.5vw,40px);font-weight:900;letter-spacing:.06em;background:linear-gradient(135deg,var(--god),var(--go),var(--gos),var(--go),var(--god));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;background-size:200%;filter:drop-shadow(0 0 14px rgba(201,168,76,.45));animation:shim 4s ease infinite;}
+@keyframes shim{0%,100%{background-position:0%}50%{background-position:100%}}
+.logo-ki{font-family:'Cinzel Decorative',serif;font-size:clamp(13px,3vw,18px);font-weight:700;color:var(--blb);letter-spacing:.35em;margin-left:4px;}
+.logo-sub{font-family:'Cinzel',serif;font-size:10px;letter-spacing:.3em;color:var(--tx3);padding:3px 0 0;}
+.hdiv{display:flex;align-items:center;gap:8px;margin:8px 0 0;padding:0 20px;}
+.hdiv::before,.hdiv::after{content:'';flex:1;height:1px;}
+.hdiv::before{background:linear-gradient(90deg,transparent,var(--god));}
+.hdiv::after{background:linear-gradient(90deg,var(--god),transparent);}
+.hdiv span{color:var(--go);font-size:11px;}
+
+/* NAV */
+.nav{display:flex;border-top:1px solid rgba(201,168,76,.1);}
+.nb{flex:1;padding:11px 3px;background:none;border:none;cursor:pointer;font-family:'Cinzel',serif;font-size:10px;font-weight:600;letter-spacing:.06em;color:var(--tx3);transition:all .2s;position:relative;-webkit-appearance:none;}
+.nb.on{color:var(--go);}
+.nb.on::after{content:'';position:absolute;bottom:0;left:20%;right:20%;height:2px;background:linear-gradient(90deg,transparent,var(--go),transparent);}
+.nb-c{position:absolute;top:5px;right:calc(50% - 18px);background:var(--bl);color:#fff;font-size:9px;padding:1px 5px;border-radius:10px;font-family:'Courier New',monospace;}
+
+/* LAYOUT */
+.page{position:relative;z-index:1;max-width:500px;margin:0 auto;padding:0 0 90px;}
+.tc{display:none;}.tc.on{display:block;}
+
+/* CARD */
+.card{margin:12px 12px 0;background:rgba(11,0,0,.9);border:1px solid rgba(201,168,76,.14);border-radius:13px;overflow:visible;position:relative;}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.35),transparent);border-radius:13px 13px 0 0;}
+.ct{font-family:'Cinzel',serif;font-size:10px;font-weight:600;letter-spacing:.18em;color:var(--go);padding:11px 13px 0;}
+.cb{padding:9px 13px 13px;}
+
+/* FORM ELEMENTS */
+input,textarea,select{width:100%;padding:10px 12px;background:rgba(0,0,0,.65);border:1px solid rgba(201,168,76,.18);border-radius:8px;color:var(--tx);font-family:'Crimson Text',Georgia,serif;font-size:14px;outline:none;transition:border-color .2s;-webkit-appearance:none;appearance:none;}
+input:focus,textarea:focus,select:focus{border-color:rgba(201,168,76,.5);}
+input::placeholder,textarea::placeholder{color:var(--tx3);}
+select option{background:#180000;}
+textarea{resize:vertical;min-height:80px;line-height:1.5;}
+.lbl{display:block;font-family:'Cinzel',serif;font-size:10px;letter-spacing:.12em;color:var(--tx2);margin-bottom:4px;margin-top:10px;}
+.lbl:first-child{margin-top:0;}
+.row{display:flex;gap:8px;}.row>*{flex:1;}
+
+/* IMAGE UPLOAD ZONE */
+.upz{border:2px dashed rgba(201,168,76,.2);border-radius:10px;padding:14px;text-align:center;cursor:pointer;transition:all .2s;position:relative;overflow:hidden;min-height:70px;display:flex;align-items:center;justify-content:center;}
+.upz:hover{border-color:rgba(201,168,76,.5);background:rgba(201,168,76,.04);}
+.upz input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%;}
+.upz img{width:100%;max-height:150px;border-radius:7px;object-fit:cover;display:block;}
+.upz-inner{display:flex;flex-direction:column;align-items:center;gap:4px;}
+.upz-icon{font-size:22px;}
+.upz-text{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.1em;color:var(--tx3);}
+.upz-name{font-size:11px;color:var(--tx2);margin-top:2px;}
+.upz-clear{position:absolute;top:5px;right:5px;background:rgba(139,0,0,.8);border:none;border-radius:50%;width:20px;height:20px;color:#fff;font-size:11px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2;}
+.img-grid{display:grid;gap:8px;margin-top:6px;}
+.img-grid.g1{grid-template-columns:1fr;}
+.img-grid.g2{grid-template-columns:1fr 1fr;}
+
+/* MODEL SELECT */
+.mgrid{display:grid;gap:6px;margin-top:6px;}
+.mgrid.c2{grid-template-columns:1fr 1fr;}
+.mgrid.c3{grid-template-columns:1fr 1fr 1fr;}
+.mc{padding:9px 5px 8px;border:1px solid rgba(201,168,76,.13);border-radius:9px;text-align:center;cursor:pointer;transition:all .2s;background:rgba(0,0,0,.45);}
+.mc.on{border-color:var(--go);background:rgba(201,168,76,.1);}
+.mc .mi{font-size:17px;margin-bottom:2px;}
+.mc .mn{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.04em;color:var(--tx3);line-height:1.3;}
+.mc .ms{font-size:9px;color:rgba(155,120,60,.55);margin-top:1px;}
+.mc.on .mn{color:var(--go);}
+.mc.on .ms{color:var(--god);}
+.mc-sect{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.15em;color:var(--tx3);margin:10px 0 4px;padding-bottom:3px;border-bottom:1px solid rgba(201,168,76,.1);}
+
+/* STORYBOARD SHOTS */
+.shot-wrap{margin-top:8px;}
+.shot{background:rgba(0,0,0,.45);border:1px solid rgba(201,168,76,.12);border-radius:9px;padding:10px;margin-bottom:8px;position:relative;}
+.shot-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+.shot-num{font-family:'Cinzel',serif;font-size:10px;color:var(--god);letter-spacing:.1em;}
+.shot-del{background:none;border:none;color:rgba(201,168,76,.25);font-size:16px;cursor:pointer;padding:0 3px;}
+.shot-del:hover{color:var(--blb);}
+
+/* BUTTONS */
+.btn{padding:12px 14px;border:none;border-radius:8px;cursor:pointer;font-family:'Cinzel',serif;font-weight:600;font-size:12px;letter-spacing:.1em;transition:all .2s;-webkit-appearance:none;display:block;width:100%;text-align:center;}
+.btn-go{background:linear-gradient(135deg,var(--god),var(--go),var(--gob));color:#0a0000;}
+.btn-bl{background:linear-gradient(135deg,var(--bld),var(--bl),var(--blb));color:var(--go);border:1px solid rgba(201,168,76,.18);}
+.btn-gh{background:rgba(255,255,255,.04);border:1px solid rgba(201,168,76,.13);color:var(--tx3);font-family:'Cinzel',serif;font-size:11px;}
+.btn-sm{padding:8px 10px;font-size:10px;width:auto;display:inline-block;}
+.btn:active{transform:scale(.97);}
+.btn:disabled{opacity:.45;cursor:not-allowed;transform:none;}
+.bi{padding:10px 12px;background:rgba(0,0,0,.5);border:1px solid rgba(201,168,76,.18);border-radius:8px;color:var(--tx3);cursor:pointer;font-size:13px;-webkit-appearance:none;width:auto;}
+
+/* ALERTS */
+.al{padding:11px 13px;border-radius:8px;font-size:13px;line-height:1.5;margin-top:10px;}
+.al-e{background:rgba(139,0,0,.2);border:1px solid rgba(204,0,0,.3);color:#ff9999;}
+.al-ok{background:rgba(34,139,34,.15);border:1px solid rgba(34,139,34,.3);color:#90ee90;}
+.al-i{background:rgba(201,168,76,.07);border:1px solid rgba(201,168,76,.2);color:var(--go);}
+
+/* RUNNING JOB */
+.jcard{margin:12px 12px 0;background:rgba(12,0,0,.8);border:1px solid rgba(139,0,0,.4);border-radius:13px;padding:16px;text-align:center;animation:ci .4s ease;}
+.jsp{width:36px;height:36px;border:3px solid rgba(201,168,76,.1);border-top-color:var(--go);border-radius:50%;margin:0 auto 10px;animation:spin 1s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes ci{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+
+/* MEDIA CARD */
+.mcard{margin:12px 12px 0;background:rgba(7,0,0,.93);border:1px solid rgba(201,168,76,.16);border-radius:13px;overflow:hidden;position:relative;animation:ci .4s ease;}
+.mhead{display:flex;align-items:center;justify-content:space-between;padding:9px 13px;border-bottom:1px solid rgba(201,168,76,.07);}
+.mbadge{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.07em;padding:2px 7px;border-radius:4px;display:inline-block;margin-bottom:3px;}
+.b-s2{background:rgba(0,80,200,.2);border:1px solid rgba(0,130,255,.25);color:#60aaff;}
+.b-veo{background:rgba(0,140,60,.2);border:1px solid rgba(0,200,80,.25);color:#60dd88;}
+.b-kl{background:rgba(120,0,0,.3);border:1px solid rgba(201,168,76,.25);color:var(--go);}
+.b-fl{background:rgba(80,40,120,.2);border:1px solid rgba(150,80,220,.25);color:#c090ff;}
+.b-nb{background:rgba(0,80,60,.2);border:1px solid rgba(0,180,120,.25);color:#60ddaa;}
+.b-sd{background:rgba(60,20,80,.2);border:1px solid rgba(180,80,220,.25);color:#e090ff;}
+.cdown{display:inline-flex;align-items:center;gap:4px;font-family:'Courier New',monospace;font-size:10px;font-weight:700;padding:3px 8px;border-radius:4px;}
+.ct-ok{color:var(--go);background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.22);}
+.ct-ug{color:#ff5555;background:rgba(255,85,85,.1);border:1px solid rgba(255,85,85,.28);animation:pulse 1s ease infinite;}
+.ct-ex{color:#444;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.55}}
+.brem{background:none;border:none;color:rgba(201,168,76,.18);font-size:20px;cursor:pointer;padding:4px 5px;line-height:1;}
+.brem:hover{color:var(--blb);}
+.mvid{background:#000;}.mvid video{width:100%;display:block;max-height:270px;object-fit:contain;}
+.mimg img{width:100%;display:block;max-height:300px;object-fit:contain;}
+.mprompt{padding:7px 13px;font-style:italic;font-size:13px;color:rgba(155,120,60,.4);border-bottom:1px solid rgba(201,168,76,.05);}
+.mact{padding:11px 13px;display:flex;flex-direction:column;gap:7px;}
+.bdl{position:relative;overflow:hidden;font-size:13px;letter-spacing:.1em;padding:13px;}
+.bdl::after{content:'';position:absolute;top:0;left:-100%;width:55%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent);animation:sw 2.5s ease infinite;}
+@keyframes sw{0%,100%{left:-55%}50%{left:110%}}
+.bdl.saved{background:linear-gradient(135deg,#1a4a1a,#228b22,#32cd32)!important;color:#fff!important;}
+.bdl.saved::after{display:none!important;}
+
+/* SETUP */
+.krow{display:flex;gap:7px;align-items:stretch;}.krow input{flex:1;}
+.kst{font-family:'Cinzel',serif;font-size:10px;letter-spacing:.05em;padding:5px 0;}
+.ibanner{margin:12px 12px 0;background:linear-gradient(135deg,rgba(61,0,0,.8),rgba(12,0,0,.95));border:1px solid rgba(201,168,76,.22);border-radius:13px;padding:14px;}
+.ibanner h3{font-family:'Cinzel',serif;font-size:11px;letter-spacing:.12em;color:var(--go);margin-bottom:10px;}
+.istep{display:flex;align-items:flex-start;gap:10px;margin-bottom:8px;font-size:13px;color:var(--tx3);line-height:1.4;}
+.istep span{font-family:'Cinzel',serif;font-size:10px;color:var(--go);background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.2);padding:2px 8px;border-radius:4px;white-space:nowrap;flex-shrink:0;}
+
+/* EMPTY */
+.empty{text-align:center;padding:50px 20px;color:rgba(155,120,60,.18);}
+.empty-i{font-size:44px;margin-bottom:12px;}
+.empty-t{font-family:'Cinzel',serif;font-size:11px;letter-spacing:.15em;}
+.empty-s{font-size:13px;font-style:italic;margin-top:6px;opacity:.7;}
+.mt6{margin-top:6px;}.mt8{margin-top:8px;}.mt10{margin-top:10px;}.mt12{margin-top:12px;}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div><span class="logo">AI-VATT0</span><span class="logo-ki">KI.</span></div>
+  <div class="logo-sub">VIDEO & IMAGE STUDIO</div>
+  <div class="hdiv"><span>✦</span></div>
+  <nav class="nav">
+    <button class="nb on" onclick="gTab('video')" id="nb-video">🎬 VIDEO</button>
+    <button class="nb" onclick="gTab('image')" id="nb-image">🖼 BILD</button>
+    <button class="nb" onclick="gTab('lib')" id="nb-lib">📁 MEDIATHEK<span class="nb-c" id="lib-c" style="display:none">0</span></button>
+    <button class="nb" onclick="gTab('setup')" id="nb-setup">⚙️ SETUP</button>
+  </nav>
+</div>
+
+<div class="page">
+
+<!-- ══════════════════════════ VIDEO ══════════════════════════ -->
+<div class="tc on" id="tc-video">
+
+<!-- MODELL -->
+<div class="card">
+  <div class="ct">① KI-MODELL WÄHLEN</div>
+  <div class="cb">
+    <div class="mc-sect">🌊 SORA 2 — OPENAI</div>
+    <div class="mgrid c2">
+      <div class="mc on" id="mc-s2std" onclick="smod('s2std')"><div class="mi">⚡</div><div class="mn">SORA 2 STANDARD</div><div class="ms">10s · 15s · 720p</div></div>
+      <div class="mc" id="mc-s2pro" onclick="smod('s2pro')"><div class="mi">💎</div><div class="mn">SORA 2 PRO</div><div class="ms">10s–25s · 720p/1080p</div></div>
+    </div>
+    <div class="mgrid c2 mt6">
+      <div class="mc" id="mc-s2sb" onclick="smod('s2sb')"><div class="mi">🎞</div><div class="mn">SORA 2 STORYBOARD</div><div class="ms">Multi-Shot · bis 15s</div></div>
+      <div class="mc" id="mc-s2sbp" onclick="smod('s2sbp')"><div class="mi">🏆</div><div class="mn">SORA 2 PRO SB</div><div class="ms">Multi-Shot · bis 25s</div></div>
+    </div>
+    <div class="mc-sect">🎯 VEO 3.1 — GOOGLE DEEPMIND</div>
+    <div class="mgrid c2">
+      <div class="mc" id="mc-veof" onclick="smod('veof')"><div class="mi">🚀</div><div class="mn">VEO 3.1 FAST</div><div class="ms">8s · 1080p · günstiger</div></div>
+      <div class="mc" id="mc-veoq" onclick="smod('veoq')"><div class="mi">✨</div><div class="mn">VEO 3.1 QUALITY</div><div class="ms">8s · 1080p · 4K optional</div></div>
+    </div>
+    <div class="mc-sect">⚔️ KLING 3.0 — KUAISHOU</div>
+    <div class="mgrid c2">
+      <div class="mc" id="mc-kls" onclick="smod('kls')"><div class="mi">🗡</div><div class="mn">KLING 3.0 STD</div><div class="ms">3–15s · 720p</div></div>
+      <div class="mc" id="mc-klp" onclick="smod('klp')"><div class="mi">👑</div><div class="mn">KLING 3.0 PRO</div><div class="ms">3–15s · 1080p · Sound</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- DYNAMISCHE EINSTELLUNGEN -->
+<div class="card" id="vset-card">
+  <div class="ct" id="vset-title">② EINSTELLUNGEN</div>
+  <div class="cb" id="vset-body"></div>
+</div>
+
+<!-- PROMPT -->
+<div class="card">
+  <div class="ct" id="vprompt-label">③ PROMPT</div>
+  <div class="cb">
+    <textarea id="vprompt" rows="4" placeholder="Beschreibe die Bewegung im Video… z.B.: &#10;'Cinematic wide shot, person walks slowly through foggy forest, golden hour light, shallow depth of field, smooth camera pan from left to right'&#10;&#10;Je detaillierter, desto besser das Ergebnis!"></textarea>
+  </div>
+</div>
+
+<div style="margin:12px 12px 0;">
+  <button class="btn btn-bl" id="vgenbtn" onclick="genVid()">✦ VIDEO GENERIEREN ✦</button>
+</div>
+<div id="valert"></div>
+<div id="vjobs"></div>
+</div>
+
+<!-- ══════════════════════════ BILD ══════════════════════════ -->
+<div class="tc" id="tc-image">
+
+<div class="card">
+  <div class="ct">① MODELL WÄHLEN</div>
+  <div class="cb">
+    <div class="mc-sect">🍌 GOOGLE — NANO BANANA</div>
+    <div class="mgrid c2">
+      <div class="mc on" id="mc-nbpro" onclick="imod('nbpro')"><div class="mi">🍌</div><div class="mn">NANO BANANA PRO</div><div class="ms">Text→Bild · Bild→Bild</div></div>
+      <div class="mc" id="mc-nb2" onclick="imod('nb2')"><div class="mi">🍌</div><div class="mn">NANO BANANA 2</div><div class="ms">Text→Bild</div></div>
+    </div>
+    <div class="mc-sect">⚡ FLUX-2 — BLACK FOREST LABS</div>
+    <div class="mgrid c3">
+      <div class="mc" id="mc-f2pro" onclick="imod('f2pro')"><div class="mi">🔥</div><div class="mn">FLUX-2 PRO</div><div class="ms">Text→Bild</div></div>
+      <div class="mc" id="mc-f2lite" onclick="imod('f2lite')"><div class="mi">💡</div><div class="mn">FLUX-2 LITE</div><div class="ms">Text→Bild</div></div>
+      <div class="mc" id="mc-f2i2i" onclick="imod('f2i2i')"><div class="mi">🔄</div><div class="mn">FLUX-2 PRO I2I</div><div class="ms">Bild→Bild</div></div>
+    </div>
+    <div class="mc-sect">🌸 SEEDREAM 5.0 LITE</div>
+    <div class="mgrid c2">
+      <div class="mc" id="mc-sd5" onclick="imod('sd5')"><div class="mi">🌸</div><div class="mn">SEEDREAM 5 LITE</div><div class="ms">Text→Bild</div></div>
+      <div class="mc" id="mc-sd5i" onclick="imod('sd5i')"><div class="mi">🌺</div><div class="mn">SEEDREAM 5 LITE I2I</div><div class="ms">Bild→Bild</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- IMAGE MODEL SETTINGS -->
+<div class="card">
+  <div class="ct">② REFERENZBILD & FORMAT</div>
+  <div class="cb">
+    <!-- Referenzbild (nur für I2I Modelle) -->
+    <div id="iref-wrap">
+      <div class="lbl" style="margin-top:0;">REFERENZBILD <span id="iref-hint" style="color:var(--tx3);font-family:'Courier New',monospace;font-size:10px;">(optional bei Nano Banana Pro)</span></div>
+      <div class="upz" id="upz-i">
+        <input type="file" id="fi-i" accept="image/*" onchange="selI(event,'i')">
+        <div class="upz-inner" id="ph-i"><div class="upz-icon">🖼</div><div class="upz-text">BILD TIPPEN ZUM HOCHLADEN</div></div>
+        <img id="th-i" style="display:none;width:100%;max-height:130px;border-radius:7px;object-fit:cover;">
+        <button class="upz-clear" id="clr-i" style="display:none" onclick="clrImg('i',event)">×</button>
+      </div>
+    </div>
+    <div class="row mt10">
+      <div>
+        <label class="lbl" style="margin-top:0;">FORMAT</label>
+        <select id="i-rat">
+          <option value="1:1">Quadrat 1:1</option>
+          <option value="16:9">Landscape 16:9</option>
+          <option value="9:16">Portrait 9:16</option>
+          <option value="4:3">Standard 4:3</option>
+          <option value="3:4">Portrait 3:4</option>
+          <option value="2:3">Portrait 2:3</option>
+          <option value="3:2">Landscape 3:2</option>
+        </select>
+      </div>
+      <div>
+        <label class="lbl" style="margin-top:0;">AUFLÖSUNG</label>
+        <select id="i-res">
+          <option value="1K">1K (Standard ~1024px)</option>
+          <option value="2K">2K (~2048px)</option>
+          <option value="4K">4K (~4096px, langsam)</option>
+        </select>
+      </div>
+      <div>
+        <label class="lbl" style="margin-top:0;">DATEIFORMAT</label>
+        <select id="i-fmt">
+          <option value="png">PNG</option>
+          <option value="jpg">JPG</option>
+          <option value="webp">WebP</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="ct">③ PROMPT</div>
+  <div class="cb">
+    <textarea id="iprompt" rows="4" placeholder="Beschreibe das Bild detailliert… z.B.:&#10;'Cinematic portrait of a woman, golden hour lighting, film grain, ultra detailed, 8K quality, photorealistic'&#10;&#10;Tipp: Englische Prompts liefern oft bessere Ergebnisse!"></textarea>
+  </div>
+</div>
+
+<div style="margin:12px 12px 0;">
+  <button class="btn btn-go" id="igenbtn" onclick="genImg()">✦ BILD GENERIEREN ✦</button>
+</div>
+<div id="ialert"></div>
+<div id="ijobs"></div>
+</div>
+
+<!-- ══════════════════════════ MEDIATHEK ══════════════════════════ -->
+<div class="tc" id="tc-lib">
+  <div class="card" id="lib-tip" style="display:none;">
+    <div class="cb" style="font-size:12px;color:var(--tx3);line-height:1.7;">
+      📱 <strong style="color:var(--tx2)">iPhone speichern:</strong><br>
+      🎬 Video: <strong style="color:var(--tx)">lang halten → „Video sichern"</strong><br>
+      🖼 Bild: <strong style="color:var(--tx)">lang halten → „Bild sichern"</strong>
+    </div>
+  </div>
+  <div id="lib-content"></div>
+  <div class="empty" id="lib-empty">
+    <div class="empty-i">🎬</div>
+    <div class="empty-t">NOCH KEINE MEDIEN</div>
+    <div class="empty-s">Generiere ein Video oder Bild</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ SETUP ══════════════════════════ -->
+<div class="tc" id="tc-setup">
+  <div class="card">
+    <div class="ct">🔑 KIE.AI API KEY</div>
+    <div class="cb">
+      <div class="krow">
+        <input type="password" id="key-in" placeholder="Bearer Token von kie.ai/api-key">
+        <button class="bi" onclick="tkv()">👁</button>
+        <button class="btn btn-go btn-sm" onclick="saveKey()">SAVE</button>
+      </div>
+      <div class="kst" id="kst"></div>
+      <div class="al al-i mt6" style="font-size:12px;">
+        🔒 Key dauerhaft gespeichert. Holen unter <strong>kie.ai/api-key</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="ibanner">
+    <h3>📲 APP AUF IPHONE DESKTOP SPEICHERN</h3>
+    <div class="istep"><span>1</span>Seite in <strong>Safari</strong> öffnen</div>
+    <div class="istep"><span>2</span>Unten <strong>Teilen-Symbol □↑</strong> tippen</div>
+    <div class="istep"><span>3</span><strong>„Zum Home-Bildschirm"</strong> tippen</div>
+    <div class="istep"><span>4</span>Name lassen → <strong>„Hinzufügen"</strong></div>
+    <div class="istep"><span>✓</span><strong style="color:var(--go)">AI-VATT0 KI. ist auf dem Desktop!</strong></div>
+  </div>
+
+  <div class="card mt12">
+    <div class="ct">📋 MODELL DETAILS</div>
+    <div class="cb" style="font-size:12px;line-height:2;color:var(--tx3);">
+      <strong style="color:var(--go)">🌊 Sora 2 Standard</strong> · 1 Startbild · 10s / 15s · 720p · Formate: Landscape, Portrait, Square<br>
+      <strong style="color:var(--go)">🌊 Sora 2 Pro</strong> · 1 Startbild · 10s / 15s / 20s / 25s · 720p oder 1080p<br>
+      <strong style="color:var(--go)">🌊 Sora 2 Storyboard</strong> · 1 Startbild + je Shot Referenzbild · bis 15s total<br>
+      <strong style="color:var(--go)">🌊 Sora 2 Pro Storyboard</strong> · 1 Startbild + je Shot Referenzbild · bis 25s total<br>
+      <strong style="color:var(--go)">🎯 Veo 3.1 Fast/Quality</strong> · 1–2 Bilder (Start + Ende) · 8s · 16:9 oder 9:16<br>
+      <strong style="color:var(--go)">⚔️ Kling 3.0 Std/Pro</strong> · 1–2 Bilder (Start + Ende) · 3/5/10/15s · Sound · 16:9/9:16/1:1<br>
+      <strong style="color:var(--go)">🍌 Nano Banana Pro</strong> · 0–mehrere Referenzbilder · 1K/2K/4K<br>
+      <strong style="color:var(--go)">⚡ Flux-2 Pro/Lite</strong> · kein Eingabebild · 1K/2K<br>
+      <strong style="color:var(--go)">⚡ Flux-2 Pro I2I</strong> · 1 Eingabebild · Bild→Bild<br>
+      <strong style="color:var(--go)">🌸 Seedream 5.0 Lite</strong> · Text→Bild oder Bild→Bild<br><br>
+      <span style="color:rgba(155,120,60,.5);font-size:11px;">⚠️ Videos: 14 Tage · Bilder: 3 Tage · danach automatisch gelöscht!</span>
+    </div>
+  </div>
+
+  <div style="margin:12px 12px 0;">
+    <button class="btn btn-gh" onclick="if(confirm('Alle Medien löschen?'))clrLib()">🗑 MEDIATHEK LEEREN</button>
+  </div>
+  <div style="height:10px;"></div>
+</div>
+
+</div><!-- /page -->
+
+<script>
+// ══ STATE ══
+let KEY=localStorage.getItem('av_key')||'';
+let MEDIA=JSON.parse(localStorage.getItem('av_media')||'[]');
+let JOBS=JSON.parse(localStorage.getItem('av_jobs')||'[]');
+let curVmod='s2std';
+let curImod='nbpro';
+// image state per slot
+const imgs={};
+
+// ══ INIT ══
+document.addEventListener('DOMContentLoaded',()=>{
+  if(KEY){document.getElementById('key-in').value=KEY;updKst();}
+  renderLib();
+  JOBS.forEach(j=>{renderJob(j);pollJob(j);});
+  renderVset();
+});
+
+// ══ TABS ══
+function gTab(n){
+  document.querySelectorAll('.tc').forEach(t=>t.classList.remove('on'));
+  document.querySelectorAll('.nb').forEach(b=>b.classList.remove('on'));
+  document.getElementById('tc-'+n).classList.add('on');
+  document.getElementById('nb-'+n).classList.add('on');
+}
+
+// ══ IMAGE UPLOAD ══
+function selI(e,slot){
+  const f=e.target.files[0];if(!f)return;
+  if(f.size>10*1024*1024){alert('Max 10 MB!');return;}
+  const r=new FileReader();
+  r.onload=ev=>{
+    imgs[slot]={b64:ev.target.result,name:f.name};
+    const th=document.getElementById('th-'+slot);
+    const ph=document.getElementById('ph-'+slot);
+    const cl=document.getElementById('clr-'+slot);
+    if(th){th.src=ev.target.result;th.style.display='block';}
+    if(ph) ph.style.display='none';
+    if(cl) cl.style.display='flex';
+  };
+  r.readAsDataURL(f);
+}
+
+function clrImg(slot,e){
+  e.stopPropagation();
+  delete imgs[slot];
+  const th=document.getElementById('th-'+slot);
+  const ph=document.getElementById('ph-'+slot);
+  const cl=document.getElementById('clr-'+slot);
+  const fi=document.getElementById('fi-'+slot);
+  if(th){th.style.display='none';th.src='';}
+  if(ph) ph.style.display='flex';
+  if(cl) cl.style.display='none';
+  if(fi) fi.value='';
+}
+
+// ══ VIDEO MODEL SELECT ══
+function smod(id){
+  curVmod=id;
+  document.querySelectorAll('[id^="mc-s2"],[id^="mc-veo"],[id^="mc-kl"]').forEach(e=>e.classList.remove('on'));
+  document.getElementById('mc-'+id).classList.add('on');
+  renderVset();
+}
+
+// ══ VIDEO SETTINGS ══
+function renderVset(){
+  const t=document.getElementById('vset-title');
+  const b=document.getElementById('vset-body');
+  const pl=document.getElementById('vprompt-label');
+  let html='';
+
+  // Clear dynamic img slots
+  ['v0','v1','vs0','vs1','vs2','vs3','vs4'].forEach(s=>delete imgs[s]);
+
+  if(curVmod==='s2std'){
+    t.textContent='② SORA 2 STANDARD — EINSTELLUNGEN';
+    pl.textContent='③ PROMPT';
+    html=`
+      <div class="lbl" style="margin-top:0;">STARTBILD (1 Bild · wird erster Frame)</div>
+      <div class="upz" id="upz-v0"><input type="file" id="fi-v0" accept="image/*" onchange="selI(event,'v0')">
+      <div class="upz-inner" id="ph-v0"><div class="upz-icon">📷</div><div class="upz-text">STARTBILD HOCHLADEN</div></div>
+      <img id="th-v0" style="display:none;width:100%;max-height:130px;border-radius:7px;object-fit:cover;">
+      <button class="upz-clear" id="clr-v0" style="display:none" onclick="clrImg('v0',event)">×</button></div>
+      <div class="row mt10">
+        <div><label class="lbl" style="margin-top:0;">FORMAT</label>
+        <select id="v-rat"><option value="landscape">Landscape 16:9</option><option value="portrait">Portrait 9:16</option><option value="square">Quadrat 1:1</option></select></div>
+        <div><label class="lbl" style="margin-top:0;">DAUER</label>
+        <select id="v-dur"><option value="10">10 Sekunden</option><option value="15">15 Sekunden</option></select></div>
+      </div>
+      <div class="al al-i mt8" style="font-size:11px;">📐 Auflösung: 720p · Kein Wasserzeichen</div>`;
+  }
+  else if(curVmod==='s2pro'){
+    t.textContent='② SORA 2 PRO — EINSTELLUNGEN';
+    pl.textContent='③ PROMPT';
+    html=`
+      <div class="lbl" style="margin-top:0;">STARTBILD (1 Bild · wird erster Frame)</div>
+      <div class="upz" id="upz-v0"><input type="file" id="fi-v0" accept="image/*" onchange="selI(event,'v0')">
+      <div class="upz-inner" id="ph-v0"><div class="upz-icon">📷</div><div class="upz-text">STARTBILD HOCHLADEN</div></div>
+      <img id="th-v0" style="display:none;width:100%;max-height:130px;border-radius:7px;object-fit:cover;">
+      <button class="upz-clear" id="clr-v0" style="display:none" onclick="clrImg('v0',event)">×</button></div>
+      <div class="row mt10">
+        <div><label class="lbl" style="margin-top:0;">FORMAT</label>
+        <select id="v-rat"><option value="landscape">Landscape 16:9</option><option value="portrait">Portrait 9:16</option><option value="square">Quadrat 1:1</option></select></div>
+        <div><label class="lbl" style="margin-top:0;">DAUER</label>
+        <select id="v-dur"><option value="10">10 Sekunden</option><option value="15">15 Sekunden</option><option value="20">20 Sekunden</option><option value="25">25 Sekunden</option></select></div>
+      </div>
+      <div><label class="lbl">AUFLÖSUNG / QUALITÄT</label>
+      <select id="v-size"><option value="standard">720p Standard</option><option value="high">1080p HD (höhere Kosten)</option></select></div>`;
+  }
+  else if(curVmod==='s2sb'||curVmod==='s2sbp'){
+    const isPro=curVmod==='s2sbp';
+    t.textContent=isPro?'② SORA 2 PRO STORYBOARD — SHOTS':'② SORA 2 STORYBOARD — SHOTS';
+    pl.textContent='③ HAUPT-PROMPT (Optional, wird durch Shot-Beschreibungen ersetzt)';
+    html=`
+      <div class="lbl" style="margin-top:0;">STARTBILD (für das gesamte Video)</div>
+      <div class="upz" id="upz-v0"><input type="file" id="fi-v0" accept="image/*" onchange="selI(event,'v0')">
+      <div class="upz-inner" id="ph-v0"><div class="upz-icon">📷</div><div class="upz-text">STARTBILD HOCHLADEN</div></div>
+      <img id="th-v0" style="display:none;width:100%;max-height:110px;border-radius:7px;object-fit:cover;">
+      <button class="upz-clear" id="clr-v0" style="display:none" onclick="clrImg('v0',event)">×</button></div>
+      <div><label class="lbl">FORMAT</label>
+      <select id="v-rat"><option value="landscape">Landscape 16:9</option><option value="portrait">Portrait 9:16</option><option value="square">Quadrat 1:1</option></select></div>
+      <div class="al al-i mt8" style="font-size:11px;">⏱ ${isPro?'Bis 25s total · Jeder Shot kann ein eigenes Referenzbild haben':'Bis 15s total · Jeder Shot kann ein eigenes Referenzbild haben'}</div>
+      <div class="shot-wrap" id="shots"></div>
+      <button class="btn btn-gh mt8" onclick="addShot()" style="font-size:11px;">+ SHOT HINZUFÜGEN</button>`;
+    setTimeout(()=>{addShot();addShot();},50);
+  }
+  else if(curVmod==='veof'||curVmod==='veoq'){
+    const isQ=curVmod==='veoq';
+    t.textContent=isQ?'② VEO 3.1 QUALITY — EINSTELLUNGEN':'② VEO 3.1 FAST — EINSTELLUNGEN';
+    pl.textContent='③ PROMPT';
+    html=`
+      <div class="lbl" style="margin-top:0;">BILDER (1–2 Bilder · Startframe + optionaler Endframe)</div>
+      <div class="img-grid g2">
+        <div>
+          <div style="font-family:'Cinzel',serif;font-size:9px;color:var(--tx3);margin-bottom:4px;letter-spacing:.08em;">STARTBILD *</div>
+          <div class="upz" id="upz-v0" style="min-height:80px;"><input type="file" id="fi-v0" accept="image/*" onchange="selI(event,'v0')">
+          <div class="upz-inner" id="ph-v0"><div class="upz-icon" style="font-size:18px;">📷</div><div class="upz-text" style="font-size:9px;">PFLICHT</div></div>
+          <img id="th-v0" style="display:none;width:100%;max-height:100px;border-radius:7px;object-fit:cover;">
+          <button class="upz-clear" id="clr-v0" style="display:none" onclick="clrImg('v0',event)">×</button></div>
+        </div>
+        <div>
+          <div style="font-family:'Cinzel',serif;font-size:9px;color:var(--tx3);margin-bottom:4px;letter-spacing:.08em;">ENDBILD (optional)</div>
+          <div class="upz" id="upz-v1" style="min-height:80px;"><input type="file" id="fi-v1" accept="image/*" onchange="selI(event,'v1')">
+          <div class="upz-inner" id="ph-v1"><div class="upz-icon" style="font-size:18px;">🖼</div><div class="upz-text" style="font-size:9px;">OPTIONAL</div></div>
+          <img id="th-v1" style="display:none;width:100%;max-height:100px;border-radius:7px;object-fit:cover;">
+          <button class="upz-clear" id="clr-v1" style="display:none" onclick="clrImg('v1',event)">×</button></div>
+        </div>
+      </div>
+      <div><label class="lbl">FORMAT</label>
+      <select id="v-rat"><option value="16:9">16:9 Landscape</option><option value="9:16">9:16 Portrait</option></select></div>
+      <div class="al al-i mt8" style="font-size:11px;">⏱ Dauer: 8 Sekunden · 📐 ${isQ?'Quality: höchste Qualität, 4K optional':'Fast: schneller & günstiger · 1080p'}</div>`;
+  }
+  else if(curVmod==='kls'||curVmod==='klp'){
+    const isPro=curVmod==='klp';
+    t.textContent=isPro?'② KLING 3.0 PRO — EINSTELLUNGEN':'② KLING 3.0 STANDARD — EINSTELLUNGEN';
+    pl.textContent='③ PROMPT';
+    html=`
+      <div class="lbl" style="margin-top:0;">BILDER (1–2 Bilder · Startframe + optionaler Endframe)</div>
+      <div class="img-grid g2">
+        <div>
+          <div style="font-family:'Cinzel',serif;font-size:9px;color:var(--tx3);margin-bottom:4px;letter-spacing:.08em;">STARTBILD *</div>
+          <div class="upz" id="upz-v0" style="min-height:80px;"><input type="file" id="fi-v0" accept="image/*" onchange="selI(event,'v0')">
+          <div class="upz-inner" id="ph-v0"><div class="upz-icon" style="font-size:18px;">📷</div><div class="upz-text" style="font-size:9px;">PFLICHT</div></div>
+          <img id="th-v0" style="display:none;width:100%;max-height:100px;border-radius:7px;object-fit:cover;">
+          <button class="upz-clear" id="clr-v0" style="display:none" onclick="clrImg('v0',event)">×</button></div>
+        </div>
+        <div>
+          <div style="font-family:'Cinzel',serif;font-size:9px;color:var(--tx3);margin-bottom:4px;letter-spacing:.08em;">ENDBILD (optional)</div>
+          <div class="upz" id="upz-v1" style="min-height:80px;"><input type="file" id="fi-v1" accept="image/*" onchange="selI(event,'v1')">
+          <div class="upz-inner" id="ph-v1"><div class="upz-icon" style="font-size:18px;">🖼</div><div class="upz-text" style="font-size:9px;">OPTIONAL</div></div>
+          <img id="th-v1" style="display:none;width:100%;max-height:100px;border-radius:7px;object-fit:cover;">
+          <button class="upz-clear" id="clr-v1" style="display:none" onclick="clrImg('v1',event)">×</button></div>
+        </div>
+      </div>
+      <div class="row mt10">
+        <div><label class="lbl" style="margin-top:0;">FORMAT</label>
+        <select id="v-rat"><option value="16:9">16:9 Landscape</option><option value="9:16">9:16 Portrait</option><option value="1:1">1:1 Quadrat</option></select></div>
+        <div><label class="lbl" style="margin-top:0;">DAUER</label>
+        <select id="v-dur"><option value="5">5 Sekunden</option><option value="10">10 Sekunden</option><option value="15">15 Sekunden</option><option value="3">3 Sekunden</option></select></div>
+      </div>
+      <div class="row mt8">
+        <div><label class="lbl" style="margin-top:0;">SOUND</label>
+        <select id="v-sound"><option value="true">Mit Sound ✓</option><option value="false">Kein Sound</option></select></div>
+        <div><label class="lbl" style="margin-top:0;">AUFLÖSUNG</label>
+        <select id="v-mode"><option value="${isPro?'pro':'std'}">${isPro?'1080p Pro HD':'720p Standard'}</option>${isPro?'<option value="std">720p Standard</option>':'<option value="pro">1080p Pro HD</option>'}</select></div>
+      </div>`;
+  }
+  b.innerHTML=html;
+}
+
+// ══ STORYBOARD SHOTS ══
+let shotIdx=0;
+function addShot(){
+  shotIdx++;
+  const si=shotIdx;
+  const wrap=document.getElementById('shots');
+  if(!wrap) return;
+  const div=document.createElement('div');
+  div.className='shot'; div.id='shot-'+si;
+  div.innerHTML=`
+    <div class="shot-hdr">
+      <div class="shot-num">⬛ SHOT ${si}</div>
+      <button class="shot-del" onclick="document.getElementById('shot-${si}').remove()">✕ entfernen</button>
+    </div>
+    <div class="lbl" style="margin-top:0;">SZENE BESCHREIBUNG *</div>
+    <textarea id="sc-${si}" style="min-height:60px;" placeholder="Beschreibe diese Szene genau…"></textarea>
+    <div class="row mt8">
+      <div><label class="lbl" style="margin-top:0;">DAUER</label>
+      <select id="sd-${si}"><option value="5">5 Sek.</option><option value="7.5">7.5 Sek.</option><option value="10">10 Sek.</option><option value="3">3 Sek.</option><option value="12">12 Sek.</option></select></div>
+    </div>
+    <div class="lbl">REFERENZBILD FÜR DIESEN SHOT (optional)</div>
+    <div class="upz" id="upz-vs${si}" style="min-height:55px;">
+      <input type="file" id="fi-vs${si}" accept="image/*" onchange="selI(event,'vs${si}')">
+      <div class="upz-inner" id="ph-vs${si}"><div class="upz-icon" style="font-size:16px;">🖼</div><div class="upz-text" style="font-size:9px;">SHOT-REFERENZ OPTIONAL</div></div>
+      <img id="th-vs${si}" style="display:none;width:100%;max-height:80px;border-radius:6px;object-fit:cover;">
+      <button class="upz-clear" id="clr-vs${si}" style="display:none" onclick="clrImg('vs${si}',event)">×</button>
+    </div>`;
+  wrap.appendChild(div);
+}
+
+// ══ IMAGE MODEL SELECT ══
+function imod(id){
+  curImod=id;
+  document.querySelectorAll('[id^="mc-nb"],[id^="mc-f2"],[id^="mc-sd"]').forEach(e=>e.classList.remove('on'));
+  document.getElementById('mc-'+id).classList.add('on');
+  const hint=document.getElementById('iref-hint');
+  if(hint){
+    const txt={nbpro:'(optional bei Nano Banana Pro)',nb2:'(nicht benötigt für Text→Bild)',f2pro:'(nicht benötigt)',f2lite:'(nicht benötigt)',f2i2i:'(PFLICHT für Bild→Bild)',sd5:'(nicht benötigt)',sd5i:'(PFLICHT für Bild→Bild)'};
+    hint.textContent=txt[id]||'';
+  }
+}
+
+// ══ UPLOAD ══
+async function upload(b64){
+  const r=await fetch('https://kieai.redpandaai.co/api/file-base64-upload',{
+    method:'POST',headers:{'Authorization':'Bearer '+KEY,'Content-Type':'application/json'},
+    body:JSON.stringify({base64Data:b64,uploadPath:'images/aivatt0'})
+  });
+  const d=await r.json();
+  if(!d.success&&d.code!==200) throw new Error(d.msg||'Upload fehlgeschlagen');
+  return d.data.downloadUrl||d.data.fileUrl;
+}
+
+async function postTask(body){
+  const r=await fetch('https://api.kie.ai/api/v1/jobs/createTask',{
+    method:'POST',headers:{'Authorization':'Bearer '+KEY,'Content-Type':'application/json'},
+    body:JSON.stringify(body)
+  });
+  const d=await r.json();
+  if(d.code!==200) throw new Error(d.msg||'API Fehler '+d.code);
+  return d.data.taskId;
+}
+
+// ══ GENERATE VIDEO ══
+async function genVid(){
+  if(!KEY){alert('API Key unter ⚙️ Setup eintragen!');return;}
+  const btn=document.getElementById('vgenbtn');
+  btn.disabled=true;btn.textContent='⏳ Bitte warten…';
+  clrAl('valert');
+  try{
+    const prompt=document.getElementById('vprompt').value.trim()||'Cinematic smooth motion';
+    let taskId,modelLabel,apiType='market';
+
+    if(curVmod==='s2std'){
+      if(!imgs.v0) throw new Error('Startbild hochladen!');
+      setAl('valert','📤 Bild hochladen…','i');
+      const url0=await upload(imgs.v0.b64);
+      const rat=gv('v-rat','landscape'), dur=gv('v-dur','10');
+      taskId=await postTask({model:'sora-2-image-to-video',input:{prompt,image_urls:[url0],aspect_ratio:rat,n_frames:dur,remove_watermark:true}});
+      modelLabel='🌊 Sora2 Std';
+    }
+    else if(curVmod==='s2pro'){
+      if(!imgs.v0) throw new Error('Startbild hochladen!');
+      setAl('valert','📤 Bild hochladen…','i');
+      const url0=await upload(imgs.v0.b64);
+      const rat=gv('v-rat','landscape'), dur=gv('v-dur','10'), size=gv('v-size','standard');
+      taskId=await postTask({model:'sora-2-pro-image-to-video',input:{prompt,image_urls:[url0],aspect_ratio:rat,n_frames:dur,size,remove_watermark:true}});
+      modelLabel='🌊 Sora2 Pro';
+    }
+    else if(curVmod==='s2sb'||curVmod==='s2sbp'){
+      const rat=gv('v-rat','landscape');
+      const shots=[];
+      setAl('valert','📤 Bilder hochladen…','i');
+      let imgUrls=[];
+      if(imgs.v0) imgUrls=[await upload(imgs.v0.b64)];
+      let si=1;
+      while(document.getElementById('shot-'+si)){
+        const sc=document.getElementById('sc-'+si)?.value||'Cinematic scene';
+        const sd=parseFloat(document.getElementById('sd-'+si)?.value||'5');
+        shots.push({Scene:sc,duration:sd});
+        si++;
+      }
+      if(shots.length===0) shots.push({Scene:prompt,duration:5});
+      taskId=await postTask({model:'sora-2-pro-storyboard',input:{n_frames:'15',image_urls:imgUrls,aspect_ratio:rat,shots}});
+      modelLabel=curVmod==='s2sbp'?'🌊 Sora2 Pro SB':'🌊 Sora2 SB';
+    }
+    else if(curVmod==='veof'||curVmod==='veoq'){
+      if(!imgs.v0) throw new Error('Startbild hochladen!');
+      setAl('valert','📤 Bilder hochladen…','i');
+      const urls=[await upload(imgs.v0.b64)];
+      if(imgs.v1) urls.push(await upload(imgs.v1.b64));
+      const rat=gv('v-rat','16:9');
+      const model=curVmod==='veoq'?'veo3_quality':'veo3_fast';
+      apiType='veo';
+      const genType=urls.length===2?'FIRST_AND_LAST_FRAMES_2_VIDEO':'TEXT_2_VIDEO';
+      const r=await fetch('https://api.kie.ai/api/v1/veo/generate',{
+        method:'POST',headers:{'Authorization':'Bearer '+KEY,'Content-Type':'application/json'},
+        body:JSON.stringify({prompt,imageUrls:urls,model,aspect_ratio:rat,generationType:genType,enableTranslation:true})
+      });
+      const d=await r.json();
+      if(d.code!==200) throw new Error(d.msg||'Fehler');
+      taskId=d.data.taskId;
+      modelLabel=curVmod==='veoq'?'🎯 Veo3.1 Q':'🎯 Veo3.1 Fast';
+    }
+    else if(curVmod==='kls'||curVmod==='klp'){
+      if(!imgs.v0) throw new Error('Startbild hochladen!');
+      setAl('valert','📤 Bilder hochladen…','i');
+      const urls=[await upload(imgs.v0.b64)];
+      if(imgs.v1) urls.push(await upload(imgs.v1.b64));
+      const rat=gv('v-rat','16:9'), dur=gv('v-dur','5'), sound=gv('v-sound','true')==='true', mode=gv('v-mode','std');
+      taskId=await postTask({model:'kling-3.0/video',input:{prompt,image_urls:urls,mode,duration:dur,aspect_ratio:rat,sound,multi_shots:false}});
+      modelLabel=curVmod==='klp'?'⚔️ Kling3 Pro':'⚔️ Kling3 Std';
+    }
+
+    setAl('valert','🚀 Läuft! Wechsle zur Mediathek um das Ergebnis zu sehen.','ok');
+    const job={taskId,model:modelLabel,apiType,prompt,createdAt:new Date().toISOString(),mediaType:'video'};
+    JOBS.push(job);saveJobs();
+    renderJob(job);pollJob(job);
+    document.getElementById('vprompt').value='';
+    setTimeout(()=>clrAl('valert'),4000);
+  }catch(e){
+    setAl('valert',e.message?.includes('fetch')||e.message?.includes('Failed')?'🌐 Netzwerkfehler — API Key und Verbindung prüfen!':'❌ '+e.message,'e');
+  }
+  btn.disabled=false;btn.textContent='✦ VIDEO GENERIEREN ✦';
+}
+
+// ══ GENERATE IMAGE ══
+async function genImg(){
+  if(!KEY){alert('API Key unter ⚙️ Setup eintragen!');return;}
+  const prompt=document.getElementById('iprompt').value.trim();
+  if(!prompt){setAl('ialert','⚠️ Prompt eingeben!','e');return;}
+  const btn=document.getElementById('igenbtn');
+  btn.disabled=true;btn.textContent='⏳ Bitte warten…';
+  clrAl('ialert');
+  try{
+    const rat=gv('i-rat','1:1'), res=gv('i-res','1K'), fmt=gv('i-fmt','png');
+    let refUrl=null;
+    if(imgs.i){setAl('ialert','📤 Referenzbild hochladen…','i');refUrl=await upload(imgs.i.b64);}
+    setAl('ialert','🎨 Bild wird generiert…','i');
+    let body, label;
+    if(curImod==='nbpro'){
+      body={model:'nano-banana-pro',input:{prompt,image_input:refUrl?[refUrl]:[],aspect_ratio:rat,resolution:res,output_format:fmt}};label='🍌 NanoBanana Pro';
+    } else if(curImod==='nb2'){
+      body={model:'nano-banana-2',input:{prompt,aspect_ratio:rat,resolution:res,output_format:fmt}};label='🍌 NanoBanana 2';
+    } else if(curImod==='f2pro'){
+      body={model:'flux-2/pro-text-to-image',input:{prompt,aspect_ratio:rat,resolution:res}};label='⚡ Flux-2 Pro';
+    } else if(curImod==='f2lite'){
+      body={model:'flux-2/flex-text-to-image',input:{prompt,aspect_ratio:rat}};label='⚡ Flux-2 Lite';
+    } else if(curImod==='f2i2i'){
+      if(!refUrl) throw new Error('Referenzbild für Flux-2 I2I ist PFLICHT!');
+      body={model:'flux-2/pro-image-to-image',input:{prompt,image_url:refUrl,aspect_ratio:rat,resolution:res}};label='⚡ Flux-2 I2I';
+    } else if(curImod==='sd5'){
+      body={model:'seedream-5-lite',input:{prompt,aspect_ratio:rat,resolution:res}};label='🌸 Seedream5 Lite';
+    } else if(curImod==='sd5i'){
+      if(!refUrl) throw new Error('Referenzbild für Seedream I2I ist PFLICHT!');
+      body={model:'seedream-5-lite-image-to-image',input:{prompt,image_url:refUrl,aspect_ratio:rat}};label='🌸 Seedream5 I2I';
+    }
+    const taskId=await postTask(body);
+    const job={taskId,model:label,apiType:'market',prompt,createdAt:new Date().toISOString(),mediaType:'image'};
+    JOBS.push(job);saveJobs();
+    renderJob(job);pollJob(job);
+    clrAl('ialert');
+    document.getElementById('iprompt').value='';
+    gTab('lib');
+  }catch(e){
+    setAl('ialert',e.message?.includes('fetch')?'🌐 Netzwerkfehler!':'❌ '+e.message,'e');
+  }
+  btn.disabled=false;btn.textContent='✦ BILD GENERIEREN ✦';
+}
+
+// ══ POLL ══
+function pollJob(j){
+  let att=0;
+  const run=async()=>{
+    if(att++>150){rmJob(j.taskId);return;}
+    try{
+      let d;
+      if(j.apiType==='veo'){const r=await fetch(`https://api.kie.ai/api/v1/veo/record-info?taskId=${j.taskId}`,{headers:{'Authorization':'Bearer '+KEY}});d=(await r.json()).data;}
+      else{const r=await fetch(`https://api.kie.ai/api/v1/jobs/recordInfo?taskId=${j.taskId}`,{headers:{'Authorization':'Bearer '+KEY}});d=(await r.json()).data;}
+      const st=d?.state||d?.status||'';
+      if(st==='success'||st==='completed'){
+        let url='';
+        try{if(j.apiType==='veo') url=d.videoUrl||d.video_url||'';
+        else{const rj=JSON.parse(d.resultJson||'{}');url=rj.resultUrls?.[0]||rj.video_url||rj.videoUrl||rj.imageUrl||rj.image_url||'';}}catch{}
+        if(url){addMedia({url,taskId:j.taskId,model:j.model,prompt:j.prompt,createdAt:j.createdAt,mediaType:j.mediaType});rmJob(j.taskId);}
+        else setTimeout(run,5000);
+      } else if(st==='fail'||st==='failed'){rmJob(j.taskId);setAl(j.mediaType==='video'?'valert':'ialert','❌ Fehlgeschlagen: '+(d.failMsg||'Unbekannt'),'e');}
+      else setTimeout(run,5000);
+    }catch{setTimeout(run,8000);}
+  };
+  setTimeout(run,6000);
+}
+
+function renderJob(j){
+  const cid=j.mediaType==='video'?'vjobs':'ijobs';
+  const c=document.getElementById(cid);
+  if(!c||document.getElementById('job-'+j.taskId)) return;
+  const d=document.createElement('div');
+  d.className='jcard';d.id='job-'+j.taskId;
+  d.innerHTML=`<div class="jsp"></div><div style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:.1em;color:var(--go);margin-bottom:4px;">${j.model}</div><div style="font-size:12px;color:var(--tx3);">Generierung läuft… ⏳</div><div style="font-size:10px;color:var(--tx3);margin-top:4px;font-family:'Courier New',monospace;opacity:.5;">${(j.taskId||'').slice(0,30)}…</div>`;
+  c.prepend(d);
+}
+
+function rmJob(tid){
+  JOBS=JOBS.filter(j=>j.taskId!==tid);saveJobs();
+  const e=document.getElementById('job-'+tid);if(e)e.remove();
+}
+
+// ══ LIBRARY ══
+function addMedia(v){MEDIA.unshift({...v,id:Date.now()+Math.random()});localStorage.setItem('av_media',JSON.stringify(MEDIA));renderLib();}
+function removeMedia(id){MEDIA=MEDIA.filter(m=>m.id!==id);localStorage.setItem('av_media',JSON.stringify(MEDIA));renderLib();}
+function clrLib(){MEDIA=[];localStorage.setItem('av_media',JSON.stringify(MEDIA));renderLib();}
+
+function renderLib(){
+  const c=document.getElementById('lib-content');
+  const empty=document.getElementById('lib-empty');
+  const tip=document.getElementById('lib-tip');
+  const cnt=document.getElementById('lib-c');
+  c.innerHTML='';
+  if(MEDIA.length===0){empty.style.display='block';tip.style.display='none';cnt.style.display='none';return;}
+  empty.style.display='none';tip.style.display='block';cnt.style.display='inline';cnt.textContent=MEDIA.length;
+  MEDIA.forEach(m=>{
+    const el=document.createElement('div');
+    el.className='mcard';el.id='m-'+m.id;
+    const isVid=m.mediaType==='video';
+    const bc=m.model?.includes('Sora')?'b-s2':m.model?.includes('Veo')?'b-veo':m.model?.includes('Kling')?'b-kl':m.model?.includes('Flux')?'b-fl':m.model?.includes('Nano')?'b-nb':'b-sd';
+    el.innerHTML=`
+      <div class="mhead">
+        <div><span class="mbadge ${bc}">${m.model||'MEDIA'}</span><br><span class="cdown" id="cd-${m.id}"></span></div>
+        <button class="brem" onclick="removeMedia(${m.id})">×</button>
+      </div>
+      ${isVid?`<div class="mvid"><video src="${m.url}" controls playsinline preload="metadata"></video></div>`:`<div class="mimg"><img src="${m.url}" loading="lazy"></div>`}
+      ${m.prompt?`<div class="mprompt">„${m.prompt.slice(0,80)}${m.prompt.length>80?'…':''}"</div>`:''}
+      <div class="mact">
+        <button class="btn btn-bl bdl" id="dlb-${m.id}" onclick="dlM('${m.url}','${m.taskId||m.id}','${m.id}','${m.mediaType||'video'}')">⬇ ${isVid?'VIDEO':'BILD'} HERUNTERLADEN</button>
+        <a href="${m.url}" target="_blank" class="btn btn-gh">🔗 In neuem Tab öffnen</a>
+      </div>`;
+    c.appendChild(el);
+    startCd(m.id,m.createdAt,isVid?14:3);
+  });
+}
+
+function startCd(id,ca,days){
+  const upd=()=>{
+    const el=document.getElementById('cd-'+id);if(!el)return;
+    const exp=new Date(ca).getTime()+days*86400000;
+    const diff=exp-Date.now();
+    if(diff<=0){el.className='cdown ct-ex';el.textContent='💀 ABGELAUFEN';return;}
+    const d=Math.floor(diff/86400000),h=Math.floor((diff%86400000)/3600000),m=Math.floor((diff%3600000)/60000);
+    el.className='cdown '+(d<2?'ct-ug':'ct-ok');
+    el.textContent=(d<2?'🔴 ':'⏱ ')+(d>0?`${d}T ${h}h ${m}m`:`${h}h ${m}m`);
+  };
+  upd();setInterval(upd,30000);
+}
+
+async function dlM(url,tid,id,type){
+  const btn=document.getElementById('dlb-'+id);
+  if(!btn)return;
+  btn.disabled=true;btn.textContent='⏳ Lade herunter…';
+  try{
+    const r=await fetch(url);const blob=await r.blob();
+    const a=document.createElement('a');a.href=URL.createObjectURL(blob);
+    a.download=`AI-VATT0_${tid}.${type==='image'?'png':'mp4'}`;
+    a.click();URL.revokeObjectURL(a.href);
+    btn.classList.add('saved');btn.textContent='✓ GESPEICHERT!';
+    setTimeout(()=>{btn.classList.remove('saved');btn.textContent=`⬇ ${type==='image'?'BILD':'VIDEO'} HERUNTERLADEN`;btn.disabled=false;},3000);
+  }catch{
+    btn.disabled=false;btn.textContent=`⬇ ${type==='image'?'BILD':'VIDEO'} HERUNTERLADEN`;
+    alert(type==='image'?'💡 iPhone: Bild LANG HALTEN → „Bild sichern" → Fotos!':'💡 iPhone: Video LANG HALTEN → „Video sichern" → Fotos!');
+  }
+}
+
+// ══ SETUP ══
+function tkv(){const i=document.getElementById('key-in');i.type=i.type==='password'?'text':'password';}
+function saveKey(){KEY=document.getElementById('key-in').value.trim();localStorage.setItem('av_key',KEY);updKst();}
+function updKst(){const e=document.getElementById('kst');if(e)e.innerHTML=KEY?'<span style="color:var(--go)">✓ API Key gespeichert</span>':'<span style="color:#ff9999">✗ Kein Key</span>';}
+
+// ══ HELPERS ══
+function gv(id,def){return document.getElementById(id)?.value||def;}
+function setAl(id,msg,t){const e=document.getElementById(id);if(e)e.innerHTML=`<div class="al al-${t==='e'?'e':t==='ok'?'ok':'i'}">${msg}</div>`;}
+function clrAl(id){const e=document.getElementById(id);if(e)e.innerHTML='';}
+function saveJobs(){localStorage.setItem('av_jobs',JSON.stringify(JOBS));}
+</script>
+</body>
+</html>
