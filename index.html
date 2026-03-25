@@ -2,898 +2,980 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>AI-VATT0 KI.</title>
-<meta name="theme-color" content="#ede4d0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="AI-VATT0">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="AI-Vatto0">
+<meta name="theme-color" content="#00a550">
+<title>AI-Vatto0 Studio v3</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Nunito:wght@400;600;700&family=Rajdhani:wght@400;600&family=Rock+Salt&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <style>
-:root{
-  --ink:#08081a;
-  --bg:#ede4d0;--bg2:#e4dacA;--paper:#faf4e4;
-  --pink:#ff0099;--cyan:#00ccff;--green:#00ff88;
-  --yellow:#ffcc00;--orange:#ff3355;--purple:#cc00ff;
-  --line:rgba(8,8,26,.22);--line2:rgba(8,8,26,.42);
-  --card:rgba(255,251,232,.95);
-  --fh:'Orbitron',sans-serif;--fb:'Rajdhani',sans-serif;--fm:'Share Tech Mono',monospace;
+:root {
+  --jm-green:#00a550; --jm-gold:#fcd116; --jm-red:#ce1126; --jm-black:#0a0d0a;
+  --bg:#0d1a0e; --bg2:#122015; --card:#1a2e1c; --card2:#1f3522;
+  --border:#2a4a2e; --primary:#00a550; --primary2:#00d468;
+  --gold:#fcd116; --gold2:#ffdf3a; --red:#ce1126; --cyan:#00e5c8;
+  --text:#e8f5ea; --text-muted:#7aab80;
+  --shadow:rgba(0,165,80,0.25); --glow:rgba(252,209,22,0.3);
 }
-*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-body{font-family:var(--fb);font-weight:700;background:var(--bg);color:var(--ink);min-height:100vh;overflow-x:hidden}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;
+  background-image:radial-gradient(ellipse at 20% 20%,rgba(0,165,80,.08) 0%,transparent 60%),radial-gradient(ellipse at 80% 80%,rgba(252,209,22,.06) 0%,transparent 60%)}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:rgba(0,0,0,.1)}::-webkit-scrollbar-thumb{background:var(--primary);border-radius:3px;transition:background .2s}
 
-/* BLUEPRINT BG — kräftig */
-body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
-  background-image:
-    linear-gradient(rgba(0,204,255,.22) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(0,204,255,.22) 1px,transparent 1px),
-    linear-gradient(rgba(255,0,153,.09) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,0,153,.09) 1px,transparent 1px);
-  background-size:32px 32px,32px 32px,160px 160px,160px 160px}
+header{background:linear-gradient(135deg,var(--bg2) 0%,#0a1a0c 100%);border-bottom:2px solid var(--primary);
+  padding:12px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;
+  box-shadow:0 4px 24px var(--shadow);transition:all .3s ease}
+.header-left{display:flex;align-items:center;gap:10px}
+.logo-text{font-family:'Orbitron',monospace;font-weight:900;font-size:clamp(14px,4vw,20px);
+  background:linear-gradient(135deg,var(--jm-green),var(--jm-gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  animation:glitch 5s infinite;letter-spacing:1px}
+@keyframes glitch{0%,90%,100%{transform:none;filter:none}92%{transform:translateX(-2px);filter:drop-shadow(2px 0 var(--jm-gold))}94%{transform:translateX(2px);filter:drop-shadow(-2px 0 var(--jm-green))}96%{transform:none}}
+.coin-display{display:flex;align-items:center;gap:6px;background:rgba(252,209,22,.1);border:1px solid rgba(252,209,22,.3);
+  border-radius:20px;padding:6px 14px;font-family:'Rajdhani',sans-serif;font-weight:600;color:var(--jm-gold);font-size:14px;cursor:pointer}
+.coin-display:hover{background:rgba(252,209,22,.15)}
 
-/* GLITCH LINES — kräftiger */
-.gl{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden}
-.gl span{position:absolute;left:0;right:0;height:3px;opacity:0}
-.gl span:nth-child(1){top:11%;background:var(--cyan);animation:gh 7s infinite 0s}
-.gl span:nth-child(2){top:24%;background:var(--pink);animation:gh 9s infinite 1.2s}
-.gl span:nth-child(3){top:37%;background:var(--green);animation:gh 6s infinite 2.4s}
-.gl span:nth-child(4){top:52%;background:var(--yellow);animation:gh 11s infinite .6s}
-.gl span:nth-child(5){top:66%;background:var(--orange);animation:gh 8s infinite 3s}
-.gl span:nth-child(6){top:79%;background:var(--purple);animation:gh 10s infinite 1.8s}
-.gl span:nth-child(7){top:89%;background:var(--cyan);animation:gh 7s infinite 4.2s}
-@keyframes gh{0%,88%,100%{opacity:0;transform:translateX(-100%)}91%{opacity:.55;transform:translateX(0)}94%{opacity:.18;transform:translateX(0)}97%{opacity:0;transform:translateX(0)}}
+.tab-bar{display:flex;gap:4px;padding:12px 16px 0;background:rgba(0,0,0,.2);overflow-x:auto;scrollbar-width:none;border-bottom:2px solid var(--border);transition:all .3s ease}
+.tab-bar::-webkit-scrollbar{display:none}
+.tab-btn{display:flex;flex-direction:column;align-items:center;gap:3px;padding:8px 16px 12px;border:none;background:transparent;
+  color:var(--text-muted);font-family:'Rajdhani',sans-serif;font-weight:600;font-size:11px;letter-spacing:.5px;text-transform:uppercase;
+  cursor:pointer;white-space:nowrap;border-radius:8px 8px 0 0;transition:all .2s;position:relative;min-width:56px}
+.tab-btn .tab-icon{font-size:20px}
+.tab-btn:hover{color:var(--text);background:rgba(255,255,255,.08)}
+.tab-btn.active{color:var(--gold);background:rgba(255,255,255,.12)}
+.tab-btn.active::after{content:'';position:absolute;bottom:0;left:10%;width:80%;height:3px;
+  background:linear-gradient(90deg,var(--primary),var(--gold));border-radius:3px 3px 0 0}
 
-/* BP CIRCLES */
-.bpc{position:fixed;border-radius:50%;border:1.5px solid rgba(8,8,26,.14);z-index:0;pointer-events:none}
-.bpc::after{content:'';position:absolute;inset:14px;border-radius:50%;border:1px solid rgba(8,8,26,.08)}
-.c1{width:220px;height:220px;top:-70px;left:-90px}
-.c2{width:150px;height:150px;bottom:14%;right:-45px;border-color:rgba(0,204,255,.25)}
-.c3{width:90px;height:90px;top:42%;left:12px;border-color:rgba(255,0,153,.2)}
+main{max-width:960px;margin:0 auto;padding:20px 16px 120px;position:relative;z-index:1}
+.tab-panel{display:none;animation:fadeIn .2s ease;position:relative}
+.tab-panel.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 
-/* ══════════════════════════════
-   PIN SCREEN
-══════════════════════════════ */
-#pin-screen{
-  position:fixed;inset:0;z-index:999;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  background:var(--bg);
-  padding:30px 20px;
-}
-.pin-logo{
-  font-family:var(--fh);font-weight:900;font-size:26px;letter-spacing:4px;
-  color:var(--ink);margin-bottom:4px;text-align:center;
-}
-.pin-logo .lc{color:var(--cyan)}.pin-logo .lp{color:var(--pink)}
-.pin-sub{font-family:var(--fm);font-size:9px;letter-spacing:4px;color:var(--cyan);opacity:.8;margin-bottom:36px;text-align:center}
-.pin-title{font-family:var(--fm);font-size:11px;letter-spacing:3px;color:rgba(8,8,26,.5);margin-bottom:16px;text-align:center}
-/* PIN dots */
-.pin-dots{display:flex;gap:14px;margin-bottom:28px;justify-content:center}
-.pd{width:18px;height:18px;border-radius:50%;border:2px solid var(--line2);background:transparent;transition:all .15s}
-.pd.filled{background:var(--cyan);border-color:var(--cyan);box-shadow:0 0 8px rgba(0,204,255,.6)}
-.pd.err{background:var(--pink);border-color:var(--pink);box-shadow:0 0 8px rgba(255,0,153,.6)}
-/* PIN numpad */
-.pin-pad{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;width:240px;margin-bottom:16px}
-.pkey{
-  padding:16px 0;border-radius:6px;border:2px solid var(--line2);
-  background:var(--card);cursor:pointer;
-  font-family:var(--fh);font-size:18px;font-weight:700;color:var(--ink);
-  text-align:center;transition:all .1s;
-  box-shadow:3px 3px 0 rgba(8,8,26,.1);
-}
-.pkey:active{transform:scale(.93);background:rgba(0,204,255,.1);border-color:var(--cyan)}
-.pkey.del{font-size:16px;color:var(--orange)}
-.pkey.empty{background:transparent;border-color:transparent;box-shadow:none;pointer-events:none}
-.pin-hint{font-family:var(--fm);font-size:9px;color:rgba(8,8,26,.35);text-align:center;letter-spacing:1px}
-.pin-err{font-family:var(--fm);font-size:10px;color:var(--pink);text-align:center;margin-top:10px;min-height:16px;letter-spacing:1px}
-/* pin screen blueprint bg */
-#pin-screen::before{content:'';position:absolute;inset:0;z-index:-1;
-  background-image:linear-gradient(rgba(0,204,255,.18) 1px,transparent 1px),linear-gradient(90deg,rgba(0,204,255,.18) 1px,transparent 1px);
-  background-size:32px 32px}
+.card{background:var(--card);border-radius:16px;border:1px solid var(--border);padding:20px;margin-bottom:16px;
+  box-shadow:0 4px 24px rgba(0,0,0,.3);transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,165,80,.15)}
+.card-title{font-family:'Orbitron',monospace;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  color:var(--jm-green);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.card-title::before{content:'';width:4px;height:16px;background:linear-gradient(180deg,var(--jm-green),var(--jm-gold));border-radius:2px;display:inline-block}
 
-/* ══════════════════════════════
-   MAIN APP
-══════════════════════════════ */
-.app{position:relative;z-index:2;max-width:480px;margin:0 auto;padding-bottom:110px;display:none}
+.jamaica-stripe{height:4px;background:linear-gradient(90deg,var(--primary) 33%,var(--gold) 33%,var(--gold) 66%,#ff3333 66%);border-radius:2px;margin-bottom:20px}
 
-/* HEADER */
-.hdr{padding:13px 16px 10px;border-bottom:2px solid var(--line2);background:rgba(237,228,208,.94);backdrop-filter:blur(8px);position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between}
-.logo{font-family:var(--fh);font-weight:900;font-size:19px;letter-spacing:3px;color:var(--ink);position:relative;display:inline-block}
-.logo .lc{color:var(--cyan)}.logo .lp{color:var(--pink)}
-.logo::before,.logo::after{content:attr(data-text);position:absolute;left:0;top:0;font-family:var(--fh);font-weight:900;font-size:19px;letter-spacing:3px;opacity:0}
-.logo::before{color:var(--pink);animation:lg 6s infinite 3s}
-.logo::after{color:var(--cyan);transform:translate(2px);animation:lg 6s infinite 3.08s}
-@keyframes lg{0%,93%,100%{opacity:0}95%{opacity:.7;clip-path:inset(20% 0 50% 0)}97%{opacity:0}}
-.logo-sub{font-family:var(--fm);font-size:8px;letter-spacing:4px;color:var(--cyan);font-weight:bold;margin-top:1px}
-.coinbadge{display:flex;align-items:center;gap:5px;background:var(--paper);border:2px solid var(--yellow);border-radius:18px;padding:5px 11px;cursor:pointer;box-shadow:3px 3px 0 rgba(255,204,0,.3)}
-.coinbadge:active{transform:scale(.96)}
-.coinnum{font-family:var(--fh);font-size:13px;font-weight:900;color:#9a6e00}
+.btn-primary{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:16px 24px;
+  background:linear-gradient(135deg,var(--jm-green),#007a3d);border:none;border-radius:12px;color:white;
+  font-family:'Orbitron',monospace;font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:1px;
+  cursor:pointer;transition:all .2s;box-shadow:0 4px 16px rgba(0,165,80,.3)}
+.btn-primary:hover{box-shadow:0 0 24px rgba(0,165,80,.6);transform:translateY(-1px)}
+.btn-primary:active{transform:scale(.97)}
+.btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none;box-shadow:none}
+.btn-secondary{display:flex;align-items:center;justify-content:center;gap:6px;padding:10px 16px;
+  background:transparent;border:2px solid var(--jm-green);border-radius:10px;color:var(--jm-green);
+  font-family:'Rajdhani',sans-serif;font-weight:600;font-size:13px;cursor:pointer;transition:all .2s}
+.btn-secondary:hover{background:rgba(0,165,80,.1)}
+.btn-gold{display:flex;align-items:center;justify-content:center;gap:6px;padding:10px 16px;
+  background:linear-gradient(135deg,var(--jm-gold),#e6be00);border:none;border-radius:10px;color:#1a0d00;
+  font-family:'Rajdhani',sans-serif;font-weight:700;font-size:13px;cursor:pointer;transition:all .2s;white-space:nowrap}
+.btn-gold:hover{box-shadow:0 0 16px rgba(252,209,22,.5)}
+.btn-red{display:flex;align-items:center;justify-content:center;gap:6px;padding:8px 12px;
+  background:rgba(206,17,38,.15);border:1px solid rgba(206,17,38,.4);border-radius:8px;color:#ff4d6a;
+  font-family:'Rajdhani',sans-serif;font-weight:600;font-size:12px;cursor:pointer;transition:all .2s}
+.btn-red:hover{background:rgba(206,17,38,.25)}
 
-/* TOP TABS */
-.ttabs{display:flex;overflow-x:auto;scrollbar-width:none;border-bottom:2px solid var(--line2);background:rgba(237,228,208,.9);backdrop-filter:blur(6px);position:sticky;top:56px;z-index:99}
-.ttabs::-webkit-scrollbar{display:none}
-.tt{flex:none;padding:9px 13px;font-family:var(--fm);font-size:10px;letter-spacing:1px;font-weight:bold;color:rgba(8,8,26,.48);cursor:pointer;border:none;background:transparent;border-bottom:3px solid transparent;margin-bottom:-2px;white-space:nowrap;transition:all .15s;text-transform:uppercase}
-.tt:hover{color:var(--ink)}
-.tt.active{color:var(--ink);border-bottom-color:var(--pink);text-shadow:0 0 8px rgba(255,0,153,.4)}
+.input-group{margin-bottom:14px}
+label{display:block;font-family:'Rajdhani',sans-serif;font-size:11px;font-weight:600;letter-spacing:1px;
+  text-transform:uppercase;color:var(--text-muted);margin-bottom:6px}
+input[type="text"],input[type="url"],input[type="password"],input[type="number"],textarea,select{
+  width:100%;background:rgba(0,0,0,.3);border:2px solid var(--border);border-radius:10px;
+  padding:10px 14px;font-family:'Nunito',sans-serif;font-size:14px;color:var(--text);outline:none;
+  transition:border-color .2s,box-shadow .2s;appearance:none}
+input:focus,textarea:focus,select:focus{border-color:var(--jm-green);box-shadow:0 0 0 3px rgba(0,165,80,.15)}
+select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath fill='%2300a550' d='M4 6l4 4 4-4'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 12px center;padding-right:36px;cursor:pointer}
+textarea{resize:vertical;min-height:80px}
+input[type="range"]{padding:0;background:none;border:none;accent-color:var(--jm-green)}
 
-/* PANELS */
-.panel{display:none;padding:13px 15px}
-.panel.active{display:block}
+.coin-preview{background:linear-gradient(135deg,rgba(252,209,22,.08),rgba(0,165,80,.08));
+  border:1px solid rgba(252,209,22,.25);border-radius:12px;padding:12px 16px;margin:12px 0;
+  display:flex;align-items:center;justify-content:space-between}
+.coin-preview-amount{font-family:'Orbitron',monospace;font-weight:700;font-size:18px;color:var(--jm-gold)}
+.coin-preview-label{font-size:11px;color:var(--text-muted);margin-top:2px}
+.coin-note{font-size:10px;color:var(--text-muted);margin-top:8px}
 
-/* SECTION HEADER */
-.sh{font-family:var(--fm);font-size:10px;letter-spacing:3px;color:var(--cyan);font-weight:bold;display:flex;align-items:center;gap:8px;margin:14px 0 9px;text-transform:uppercase;text-shadow:0 0 8px rgba(0,204,255,.4)}
-.sh:first-child{margin-top:2px}
-.sh::before{content:'';display:block;width:18px;height:2px;background:var(--cyan);box-shadow:0 0 6px rgba(0,204,255,.6)}
+.status-box{border-radius:12px;padding:14px 16px;margin-top:12px;display:none;align-items:center;gap:12px;font-size:14px}
+.status-box.show{display:flex}
+.status-loading{background:rgba(0,165,80,.1);border:1px solid rgba(0,165,80,.3);color:var(--jm-green)}
+.status-ok{background:rgba(0,212,104,.1);border:1px solid rgba(0,212,104,.3);color:#00d468}
+.status-error{background:rgba(206,17,38,.1);border:1px solid rgba(206,17,38,.3);color:#ff4d6a;flex-direction:column;align-items:flex-start}
+.status-error code{font-size:11px;background:rgba(0,0,0,.4);border-radius:6px;padding:8px;width:100%;word-break:break-all;color:#ff8fa0;margin-top:6px;font-family:monospace}
+.spinner{width:20px;height:20px;border:2px solid rgba(0,165,80,.2);border-top-color:var(--jm-green);border-radius:50%;animation:spin .8s linear infinite;flex-shrink:0}
+@keyframes spin{to{transform:rotate(360deg)}}
 
-/* MODEL TABS */
-.mtabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
-.mt{padding:5px 12px;border-radius:3px;font-family:var(--fm);font-size:10px;letter-spacing:1px;font-weight:bold;cursor:pointer;border:2px solid var(--line2);color:rgba(8,8,26,.55);background:var(--paper);transition:all .12s;white-space:nowrap}
-.mt:hover{color:var(--ink);border-color:var(--ink)}
-.mt.sel{color:var(--ink);border-color:var(--pink);background:rgba(255,0,153,.09);text-shadow:0 0 6px rgba(255,0,153,.3)}
+.video-result{margin-top:16px;border-radius:12px;overflow:hidden;background:#000;border:1px solid var(--border);display:none}
+.video-result video{width:100%;max-height:400px;display:block}
+.video-actions{display:flex;gap:8px;padding:10px;background:var(--card2)}
 
-/* CARDS */
-.card{background:var(--card);border:2px solid var(--line);border-radius:6px;padding:12px;margin-bottom:10px;box-shadow:4px 4px 0 rgba(8,8,26,.08);position:relative;overflow:hidden}
-.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--cyan),var(--pink),var(--green));opacity:.7}
+.scene-item{background:var(--card2);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:10px;position:relative}
+.scene-item .scene-num{font-family:'Orbitron',monospace;font-size:10px;color:var(--jm-gold);margin-bottom:8px}
+.scene-remove{position:absolute;top:10px;right:10px;background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:16px;padding:2px 6px}
+.scene-remove:hover{color:var(--jm-red)}
 
-/* CHIPS */
-.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:5px}
-.chip{padding:5px 11px;border-radius:3px;font-family:var(--fm);font-size:10px;letter-spacing:1px;font-weight:bold;cursor:pointer;border:1.5px solid var(--line2);color:rgba(8,8,26,.55);background:transparent;transition:all .1s}
-.chip:hover{border-color:var(--ink);color:var(--ink)}
-.chip.sel{border-color:var(--cyan);color:var(--cyan);background:rgba(0,204,255,.1);text-shadow:0 0 6px rgba(0,204,255,.4)}
-.slabel{font-family:var(--fb);font-size:12px;font-weight:700;color:rgba(8,8,26,.55);letter-spacing:1.5px;text-transform:uppercase;display:block;margin-bottom:4px}
-.srow{margin-bottom:10px}
+.toggle-wrap{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
+.toggle-label{font-size:14px;color:var(--text)}
+.toggle{position:relative;width:48px;height:26px;background:var(--border);border-radius:13px;cursor:pointer;transition:background .2s;flex-shrink:0}
+.toggle.on{background:var(--jm-green)}
+.toggle::after{content:'';position:absolute;width:20px;height:20px;background:white;border-radius:50%;top:3px;left:3px;transition:transform .2s;box-shadow:0 2px 4px rgba(0,0,0,.3)}
+.toggle.on::after{transform:translateX(22px)}
 
-/* PROMPT */
-.pw{background:var(--paper);border:2px solid var(--line2);border-radius:6px;overflow:hidden;margin-bottom:12px}
-.pw textarea{width:100%;background:transparent;border:none;outline:none;color:var(--ink);font-family:var(--fb);font-size:15px;font-weight:700;padding:12px;resize:none;min-height:88px}
-.pw textarea::placeholder{color:rgba(8,8,26,.3);font-weight:600}
-.pf{display:flex;align-items:center;justify-content:space-between;padding:6px 11px;border-top:1.5px solid var(--line);font-family:var(--fm);font-size:10px;font-weight:bold;color:rgba(8,8,26,.4)}
-.pc{background:transparent;border:none;cursor:pointer;font-size:14px;opacity:.5;transition:opacity .15s}
-.pc:hover{opacity:1}
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:500;display:none;align-items:center;justify-content:center;padding:20px}
+.modal-overlay.show{display:flex}
+.modal{background:var(--card);border-radius:16px;border:1px solid var(--border);width:100%;max-width:600px;max-height:80vh;display:flex;flex-direction:column;overflow:hidden}
+.modal-header{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.modal-title{font-family:'Orbitron',monospace;font-size:13px;color:var(--jm-green)}
+.modal-close{background:none;border:none;color:var(--text-muted);font-size:20px;cursor:pointer}
+.modal-body{padding:16px;overflow-y:auto;flex:1}
+.modal-item{display:flex;align-items:center;gap:12px;padding:12px;border:1px solid var(--border);border-radius:10px;margin-bottom:8px;cursor:pointer;transition:all .2s}
+.modal-item:hover{background:rgba(0,165,80,.1);border-color:var(--jm-green)}
+.modal-item-info{flex:1;min-width:0}
+.modal-item-model{font-family:'Rajdhani',sans-serif;font-size:12px;color:var(--jm-gold)}
+.modal-item-prompt{font-size:12px;color:var(--text-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.modal-item-id{font-size:11px;font-family:monospace;color:var(--jm-green)}
 
-/* UPLOAD */
-.uzone{border:2px dashed rgba(0,204,255,.5);border-radius:6px;padding:14px;text-align:center;cursor:pointer;background:rgba(0,204,255,.04);transition:all .12s;margin-bottom:9px;position:relative}
-.uzone:hover{border-color:var(--cyan);background:rgba(0,204,255,.09)}
-.uzone input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
-.ui{font-size:22px;margin-bottom:5px;opacity:.55}
-.ul{font-family:var(--fm);font-size:10px;font-weight:bold;color:rgba(8,8,26,.45);letter-spacing:2px}
-.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:7px}
-.th{aspect-ratio:1;border-radius:4px;overflow:hidden;border:2px solid var(--line);position:relative}
-.th img{width:100%;height:100%;object-fit:cover}
-.th .rm{position:absolute;top:2px;right:2px;width:18px;height:18px;background:var(--pink);border:none;border-radius:50%;cursor:pointer;color:#fff;font-size:11px;line-height:18px;text-align:center;font-weight:bold}
+.key-row{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.key-row input{flex:1}
+.status-dot{width:10px;height:10px;border-radius:50%;background:var(--border);flex-shrink:0;transition:background .3s,box-shadow .3s}
+.status-dot.green{background:var(--jm-green);box-shadow:0 0 8px var(--jm-green)}
+.status-dot.red{background:var(--jm-red);box-shadow:0 0 8px var(--jm-red)}
 
-/* COST BAR */
-.cb{background:rgba(255,204,0,.12);border:2px solid rgba(255,204,0,.55);border-radius:6px;padding:10px 13px;margin-bottom:12px;display:flex;align-items:center;justify-content:space-between;box-shadow:3px 3px 0 rgba(255,204,0,.18)}
-.cb-l{font-family:var(--fm);font-size:10px;font-weight:bold;color:rgba(8,8,26,.5)}
-.cb-m{font-family:var(--fm);font-size:9px;color:rgba(8,8,26,.38);margin-top:2px}
-.cb-v{font-family:var(--fh);font-size:16px;font-weight:900;color:#9a6e00}
+.section-header{font-family:'Orbitron',monospace;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  color:var(--jm-gold);margin:24px 0 12px;display:flex;align-items:center;gap:10px}
+.section-header::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(252,209,22,.3),transparent)}
 
-/* GEN BUTTON */
-.gbtn{width:100%;padding:14px;border-radius:6px;font-family:var(--fh);font-size:12px;font-weight:900;letter-spacing:3px;text-transform:uppercase;cursor:pointer;border:2.5px solid;position:relative;overflow:hidden;transition:all .12s;margin-bottom:4px}
-.gbtn::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent);transform:translateX(-100%);transition:transform .4s}
-.gbtn:hover::after{transform:translateX(100%)}
-.gbtn:active{transform:scale(.97)}
-.bc{background:rgba(0,204,255,.12);border-color:var(--cyan);color:var(--cyan);box-shadow:4px 4px 0 rgba(0,204,255,.22);text-shadow:0 0 10px rgba(0,204,255,.6)}
-.bp{background:rgba(255,0,153,.09);border-color:var(--pink);color:var(--pink);box-shadow:4px 4px 0 rgba(255,0,153,.18);text-shadow:0 0 10px rgba(255,0,153,.5)}
-.bg{background:rgba(0,255,136,.08);border-color:var(--green);color:#00bb66;box-shadow:4px 4px 0 rgba(0,255,136,.15)}
-.by{background:rgba(255,204,0,.12);border-color:var(--yellow);color:#9a6e00;box-shadow:4px 4px 0 rgba(255,204,0,.22)}
+.accordion{margin-bottom:8px}
+.accordion-header{width:100%;background:var(--card2);border:1px solid var(--border);border-radius:10px;padding:14px 16px;
+  display:flex;align-items:center;justify-content:space-between;cursor:pointer;color:var(--text);
+  font-family:'Nunito',sans-serif;font-size:14px;font-weight:600;text-align:left;transition:background .2s}
+.accordion-header:hover{background:rgba(0,165,80,.1)}
+.accordion-arrow{transition:transform .2s;color:var(--jm-green);font-size:12px}
+.accordion-header.open .accordion-arrow{transform:rotate(180deg)}
+.accordion-body{background:rgba(0,0,0,.2);border:1px solid var(--border);border-top:none;border-radius:0 0 10px 10px;padding:14px 16px;font-size:13px;line-height:1.6;color:var(--text-muted);display:none}
+.accordion-body.open{display:block}
 
-/* GEN STATUS */
-.gst{display:none;align-items:center;gap:8px;background:rgba(0,204,255,.07);border:2px solid rgba(0,204,255,.35);border-radius:5px;padding:8px 12px;margin-bottom:10px;font-family:var(--fm);font-size:10px;font-weight:bold;color:var(--cyan)}
-.gst.show{display:flex}
-.dp{display:flex;gap:4px}
-.dp span{width:6px;height:6px;background:var(--cyan);border-radius:50%;animation:dpa 1.2s ease-in-out infinite;box-shadow:0 0 6px rgba(0,204,255,.6)}
-.dp span:nth-child(2){animation-delay:.2s}.dp span:nth-child(3){animation-delay:.4s}
-@keyframes dpa{0%,80%,100%{transform:scale(.6);opacity:.4}40%{transform:scale(1);opacity:1}}
+.media-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.media-item{background:var(--card2);border-radius:12px;border:1px solid var(--border);overflow:hidden;transition:transform .2s}
+.media-item:hover{transform:scale(1.03)}
+.media-thumb{aspect-ratio:16/9;background:linear-gradient(135deg,var(--bg2),var(--card));display:flex;align-items:center;justify-content:center;font-size:28px;cursor:pointer;position:relative;overflow:hidden}
+.media-thumb video{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.media-info{padding:8px}
+.media-model{font-size:10px;color:var(--jm-gold);font-family:'Rajdhani',sans-serif;letter-spacing:.5px}
+.media-date{font-size:10px;color:var(--text-muted);margin-top:2px}
+.media-taskid{font-size:9px;font-family:monospace;color:var(--jm-green);margin-top:2px;cursor:pointer;word-break:break-all}
+.media-actions{display:flex;gap:4px;padding:0 8px 8px}
 
-/* RESULTS */
-.rgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:11px}
-.ri{border-radius:6px;overflow:hidden;border:2px solid var(--line);background:var(--paper);box-shadow:3px 3px 0 rgba(8,8,26,.07)}
-.ri video,.ri img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
-.ri-img img{aspect-ratio:1}
-.rp{aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;font-size:28px;background:repeating-linear-gradient(45deg,rgba(0,204,255,.03),rgba(0,204,255,.03) 2px,transparent 2px,transparent 8px)}
-.rm2{padding:8px 10px}
-.rn{font-family:var(--fm);font-size:10px;font-weight:bold;color:rgba(8,8,26,.5);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.rt{font-family:var(--fm);font-size:9px;color:rgba(8,8,26,.32);margin-top:2px}
-.ra{display:flex;gap:5px;padding:6px 8px;border-top:1.5px solid var(--line)}
-.rab{flex:1;padding:4px;border:1.5px solid var(--line);border-radius:3px;background:transparent;cursor:pointer;font-family:var(--fm);font-size:9px;font-weight:bold;color:rgba(8,8,26,.48);transition:all .1s}
-.rab:hover{border-color:var(--cyan);color:var(--cyan)}
-.ne{grid-column:1/-1;text-align:center;padding:38px 20px;font-family:var(--fm);font-size:11px;font-weight:bold;color:rgba(8,8,26,.3)}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:600px){.grid-2{grid-template-columns:1fr}}
 
-/* LIPSYNC */
-.lsgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
-.lsz{border:2px dashed rgba(255,0,153,.4);border-radius:6px;padding:14px;text-align:center;cursor:pointer;background:rgba(255,0,153,.03);position:relative;transition:all .12s}
-.lsz:hover{border-color:var(--pink);background:rgba(255,0,153,.07)}
-.lsz input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
-.lsi{font-size:20px;margin-bottom:5px}
-.lsl{font-family:var(--fm);font-size:9px;font-weight:bold;letter-spacing:1px;color:rgba(8,8,26,.42)}
-.lsf{font-family:var(--fm);font-size:9px;color:var(--pink);margin-top:5px;word-break:break-all;font-weight:bold}
+.coming-soon{text-align:center;padding:60px 20px;color:var(--text-muted)}
+.coming-soon .big-icon{font-size:64px;margin-bottom:16px}
+.coming-soon h3{font-family:'Orbitron',monospace;font-size:16px;color:var(--jm-green);margin-bottom:8px}
 
-/* CHAT */
-.chatbox{background:var(--paper);border:2px solid var(--line2);border-radius:6px;padding:12px;min-height:200px;max-height:320px;overflow-y:auto;margin-bottom:10px;display:flex;flex-direction:column;gap:10px}
-.msg{max-width:82%;padding:8px 12px;border-radius:5px;font-family:var(--fb);font-size:14px;font-weight:700;line-height:1.5}
-.mu{background:rgba(0,204,255,.12);border:1.5px solid rgba(0,204,255,.35);align-self:flex-end;color:var(--ink)}
-.mai{background:var(--card);border:1.5px solid var(--line);align-self:flex-start;color:var(--ink)}
-.mf{font-family:var(--fm);font-size:9px;font-weight:bold;color:var(--cyan);margin-bottom:3px}
-.cirow{display:flex;gap:8px}
-.ci{flex:1;background:var(--paper);border:2px solid var(--line2);border-radius:5px;padding:10px 12px;color:var(--ink);font-family:var(--fb);font-size:14px;font-weight:700;outline:none;transition:border-color .12s}
-.ci:focus{border-color:var(--cyan)}
-.cs{background:rgba(0,204,255,.12);border:2px solid var(--cyan);border-radius:5px;padding:10px 14px;cursor:pointer;font-family:var(--fh);font-size:10px;font-weight:900;color:var(--cyan);letter-spacing:1px;white-space:nowrap}
-.cs:hover{background:rgba(0,204,255,.2)}
+#warrior-wrap{position:fixed;bottom:20px;right:20px;z-index:999;cursor:pointer;width:80px;height:100px;user-select:none}
+#warrior-wrap:hover{transform:scale(1.1)}
+#warrior-wrap:active{transform:scale(.95)}
+.warrior-img{width:80px;height:100px;object-fit:cover;object-position:top center;border-radius:12px;
+  filter:drop-shadow(0 0 10px rgba(252,209,22,0.5));transition:opacity .3s;display:block}
+#warrior-loading-img{filter:drop-shadow(0 0 14px rgba(252,209,22,0.8)) drop-shadow(0 0 6px rgba(0,229,200,0.4))}
+#warrior-wrap::before{content:'';position:absolute;bottom:-10px;left:50%;transform:translateX(-50%);width:60px;height:20px;
+  background:radial-gradient(ellipse,rgba(252,209,22,.4),transparent);border-radius:50%;animation:aura-pulse 2s ease-in-out infinite}
+@keyframes aura-pulse{0%,100%{opacity:.5;transform:translateX(-50%) scale(1)}50%{opacity:1;transform:translateX(-50%) scale(1.3)}}
+.warrior-tooltip{position:absolute;bottom:110%;right:0;background:var(--card);border:1px solid var(--jm-green);border-radius:10px;
+  padding:6px 10px;font-size:11px;white-space:nowrap;color:var(--text);opacity:0;pointer-events:none;transition:opacity .2s}
+#warrior-wrap:hover .warrior-tooltip{opacity:1}
 
-/* SETUP */
-.sc{background:var(--card);border:2px solid var(--line);border-radius:6px;padding:14px;margin-bottom:14px;box-shadow:4px 4px 0 rgba(8,8,26,.07)}
-.sct{font-family:var(--fh);font-size:11px;font-weight:900;letter-spacing:2px;color:var(--cyan);margin-bottom:11px;text-shadow:0 0 8px rgba(0,204,255,.3)}
-.ai-row{position:relative}
-.ai{width:100%;background:var(--paper);border:2px solid var(--line2);border-radius:5px;padding:10px 78px 10px 12px;color:var(--ink);font-family:var(--fm);font-size:11px;font-weight:bold;outline:none;transition:border-color .12s}
-.ai:focus{border-color:var(--cyan)}
-.aibtns{position:absolute;right:5px;top:50%;transform:translateY(-50%);display:flex;gap:3px}
-.aib{background:transparent;border:none;cursor:pointer;font-family:var(--fm);font-size:9px;font-weight:bold;padding:3px 5px;color:rgba(8,8,26,.48);transition:color .12s}
-.aib:hover,.aib.sv{color:var(--cyan)}
-.aib.sv{border:1.5px solid var(--cyan);border-radius:3px}
-.asts{font-family:var(--fm);font-size:10px;font-weight:bold;margin-top:6px}
-.ok{color:var(--green)}.er{color:var(--orange)}
-.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:8px}
-.pr{display:flex;justify-content:space-between;padding:5px 8px;border:1.5px solid var(--line);border-radius:3px;background:var(--paper)}
-.pn{font-family:var(--fm);font-size:9px;font-weight:bold;color:rgba(8,8,26,.48)}
-.pc2{font-family:var(--fm);font-size:9px;font-weight:bold;color:#9a6e00}
-.soon{display:inline-flex;align-items:center;background:rgba(204,0,255,.08);border:1.5px solid var(--purple);border-radius:2px;padding:1px 6px;font-family:var(--fm);font-size:8px;font-weight:bold;color:var(--purple);margin-left:5px}
+.ref-fields{display:flex;flex-direction:column;gap:8px}
+.ref-field{display:flex;align-items:center;gap:8px}
+.ref-field input{flex:1}
+.ref-badge{font-size:10px;color:var(--jm-gold);font-family:'Rajdhani',sans-serif;white-space:nowrap}
 
-/* PIN SETUP im Settings */
-.pin-change-wrap{background:var(--card);border:2px solid var(--line);border-radius:6px;padding:14px;margin-bottom:14px;box-shadow:4px 4px 0 rgba(8,8,26,.07)}
-.pin-inp{width:100%;background:var(--paper);border:2px solid var(--line2);border-radius:5px;padding:10px 12px;color:var(--ink);font-family:var(--fm);font-size:14px;font-weight:bold;outline:none;letter-spacing:4px;text-align:center}
-.pin-inp:focus{border-color:var(--pink)}
+.img-input-row{display:flex;gap:8px;align-items:center}
+.img-input-row input{flex:1}
+.btn-upload{background:rgba(252,209,22,.12);border:1px solid rgba(252,209,22,.3);border-radius:8px;
+  padding:9px 12px;cursor:pointer;font-size:16px;transition:all .2s;flex-shrink:0;color:white}
+.btn-upload:hover{background:rgba(252,209,22,.25);border-color:rgba(252,209,22,.6)}
+.btn-upload:disabled{opacity:.5;cursor:not-allowed}
 
-/* TOAST */
-.toast{position:fixed;bottom:96px;left:50%;transform:translateX(-50%) translateY(8px);background:var(--paper);border:2.5px solid var(--ink);border-radius:5px;padding:9px 16px;font-family:var(--fm);font-size:11px;font-weight:bold;color:var(--ink);z-index:998;opacity:0;transition:all .22s;pointer-events:none;white-space:nowrap;box-shadow:4px 4px 0 rgba(8,8,26,.14)}
-.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+#lock-screen{position:fixed;inset:0;background:#000;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:0;gap:0;overflow-y:auto}
+#lock-screen::before{content:'';position:fixed;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.4) 0%,rgba(0,0,0,.8) 100%);z-index:-1}
+.lock-image-top{width:100%;max-height:35vh;object-fit:cover;display:block}
+.lock-logo{font-family:'Rock Salt',cursive;font-weight:900;font-size:clamp(28px,8vw,48px);color:#ff3333;text-align:center;letter-spacing:3px;text-shadow:3px 3px 0 #000, -1px -1px 0 #ffff00, 1px 1px 0 #00ffff;margin:20px 30px 0;text-transform:uppercase;font-style:italic}
+.lock-box{width:100%;max-width:100%;display:flex;flex-direction:column;gap:12px;align-items:center;padding:20px 30px;flex:1;justify-content:center}
+.lock-image-bottom{width:100%;max-height:40vh;object-fit:cover;display:block;margin-top:20px}
+.lock-hint{text-align:center;color:rgba(255,255,255,.7);font-size:13px;line-height:1.5;margin-top:20px}
+.lock-error{color:#ff4d6a;text-align:center;font-size:13px;display:none;animation:fadeIn .2s ease;margin-top:8px}
+.lock-days{font-size:11px;color:rgba(255,255,255,.5);text-align:center;margin-top:4px}
 
-/* BOTTOM NAV */
-.bnav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;background:rgba(237,228,208,.97);border-top:2.5px solid var(--line2);backdrop-filter:blur(12px);display:flex;z-index:200}
-.bn{flex:1;display:flex;flex-direction:column;align-items:center;padding:9px 0;cursor:pointer;border:none;background:transparent;color:rgba(8,8,26,.38);transition:color .12s}
-.bni{font-size:18px;margin-bottom:2px}
-.bnl{font-family:var(--fm);font-size:8px;font-weight:bold;letter-spacing:1px}
-.bn.active{color:var(--pink)}
-.bn.active .bni{filter:drop-shadow(0 0 5px rgba(255,0,153,.7))}
+.no-key-banner{background:rgba(255,165,0,.12);border:1px solid rgba(255,165,0,.35);border-radius:12px;padding:12px 16px;margin-bottom:16px;display:flex;align-items:center;gap:10px;font-size:13px;color:var(--gold)}
+.no-key-banner button{background:rgba(255,165,0,.2);border:1px solid rgba(255,165,0,.5);border-radius:8px;padding:5px 12px;color:var(--gold);font-family:'Rajdhani',sans-serif;font-weight:700;font-size:12px;cursor:pointer;white-space:nowrap;transition:background .2s}
+.no-key-banner button:hover{background:rgba(255,165,0,.35)}
 
-.hdiv{height:2px;background:linear-gradient(90deg,transparent,var(--line2),transparent);margin:12px 0}
-.note{font-family:var(--fm);font-size:9px;font-weight:bold;color:rgba(8,8,26,.35);text-align:center;padding:5px 0;letter-spacing:1px}
-.ctag{display:inline-flex;align-items:center;gap:4px;background:rgba(255,204,0,.14);border:1.5px solid var(--yellow);border-radius:3px;padding:2px 8px;font-family:var(--fm);font-size:9px;font-weight:bold;color:#9a6e00}
+.btn-eye{background:transparent;border:1px solid var(--border);border-radius:8px;padding:9px 10px;cursor:pointer;font-size:14px;transition:border-color .2s;flex-shrink:0}
+.btn-eye:hover{border-color:var(--jm-gold)}
 
-@supports(padding-bottom:env(safe-area-inset-bottom)){
-  .bnav{padding-bottom:env(safe-area-inset-bottom)}
-  .app{padding-bottom:calc(110px + env(safe-area-inset-bottom))}
-}
-::-webkit-scrollbar{width:3px;height:3px}
-::-webkit-scrollbar-track{background:transparent}
-::-webkit-scrollbar-thumb{background:rgba(8,8,26,.2);border-radius:2px}
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.93);z-index:600;display:none;align-items:center;justify-content:center;padding:20px;flex-direction:column;gap:12px}
+.lightbox.show{display:flex}
+.lightbox img{max-width:100%;max-height:82vh;border-radius:8px;object-fit:contain;box-shadow:0 0 60px rgba(0,165,80,.2)}
+.lightbox-close{position:absolute;top:16px;right:20px;background:none;border:none;color:white;font-size:28px;cursor:pointer;padding:4px 10px;opacity:.7;transition:opacity .2s}
+.lightbox-close:hover{opacity:1}
+.lightbox-actions{display:flex;gap:10px}
+
+#tab-video{--primary:#00e5ff;--bg:#0a1520;--card:rgba(13,26,42,.75);--card2:rgba(13,26,42,.88);--border:#00b8d4;--text:#e0f7ff;--text-muted:#00bcd4;background-image:url('https://i.pinimg.com/1200x/44/2e/92/442e92e429ae0105d4ba8611c19a6271.jpg');background-size:cover;background-position:center;background-attachment:fixed}
+#tab-video::before{content:'';position:fixed;inset:0;background:radial-gradient(circle at 50% 50%,rgba(10,21,32,.15) 0%,rgba(10,21,32,.5) 100%);pointer-events:none;z-index:0}
+#tab-bild{--primary:#ff1493;--bg:#1a0a1a;--card:rgba(26,10,26,.75);--card2:rgba(26,10,26,.88);--border:#ff1493;--text:#ffe0ff;--text-muted:#ff69b4;background-image:url('https://i.pinimg.com/736x/44/5c/25/445c25d3c096e3ab79eb3fd3e71c51ab.jpg');background-size:cover;background-position:center;background-attachment:fixed}
+#tab-bild::before{content:'';position:fixed;inset:0;background:radial-gradient(circle at 50% 50%,rgba(26,10,26,.15) 0%,rgba(26,10,26,.55) 100%);pointer-events:none;z-index:0}
+#tab-voice{--primary:#ffb84d;--bg:#1a1a0a;--card:rgba(26,26,10,.75);--card2:rgba(26,26,10,.88);--border:#ffb84d;--text:#ffffd4;--text-muted:#ffc266;background-image:url('https://i.pinimg.com/736x/b4/50/8b/b4508b7d784693268560c351d4ea304b.jpg');background-size:cover;background-position:center;background-attachment:fixed}
+#tab-voice::before{content:'';position:fixed;inset:0;background:radial-gradient(circle at 50% 50%,rgba(26,26,10,.15) 0%,rgba(26,26,10,.55) 100%);pointer-events:none;z-index:0}
+#tab-prompt{--primary:#6366f1;--bg:#0a0a1a;--card:rgba(10,10,26,.75);--card2:rgba(10,10,26,.88);--border:#6366f1;--text:#e0e7ff;--text-muted:#06b6d4;background-image:url('https://i.pinimg.com/736x/6c/3d/8e/6c3d8e95609b1aa923528d50f89b3475.jpg');background-size:cover;background-position:center;background-attachment:fixed}
+#tab-prompt::before{content:'';position:fixed;inset:0;background:radial-gradient(circle at 50% 50%,rgba(10,10,26,.15) 0%,rgba(10,10,26,.55) 100%);pointer-events:none;z-index:0}
+#tab-media{--primary:#00e5ff;--bg:#0a1520;--card:rgba(13,26,42,.75);--card2:rgba(13,26,42,.88);--border:#00b8d4;--text:#e0f7ff;--text-muted:#00bcd4;background-image:url('https://i.pinimg.com/736x/8a/c6/ec/8ac6ec6bc838722c687b34a925ff20fe.jpg');background-size:cover;background-position:center;background-attachment:fixed}
+#tab-media::before{content:'';position:fixed;inset:0;background:radial-gradient(circle at 50% 50%,rgba(10,21,32,.15) 0%,rgba(10,21,32,.5) 100%);pointer-events:none;z-index:0}
+#tab-settings{--primary:#8b5cf6;--gold:#ec4899;--card:rgba(26,10,26,.75);--card2:rgba(26,10,26,.88);--border:#8b5cf6;--text:#ead5ff;--text-muted:#e879f9;background:linear-gradient(135deg,rgba(26,10,26,.85) 0%,rgba(26,10,21,.85) 100%)}
+
+.image-result{margin-top:16px;border-radius:12px;overflow:hidden;background:#0a0f0a;border:1px solid var(--border);display:none}
+.image-result img{width:100%;max-height:520px;object-fit:contain;display:block;cursor:zoom-in}
+.image-actions{display:flex;gap:8px;padding:10px;background:var(--card2)}
+
+.range-wrap{display:flex;align-items:center;gap:10px}
+.range-wrap input[type="range"]{flex:1;height:6px;border-radius:3px}
+
+.audio-result{margin-top:16px;background:var(--card2);border-radius:12px;padding:14px;border:1px solid var(--border);display:none}
+audio{width:100%;border-radius:8px;outline:none;accent-color:var(--jm-green)}
+
+.style-chip{display:inline-block;padding:5px 12px;border-radius:20px;border:1px solid var(--border);background:var(--card2);color:var(--text-muted);font-size:12px;cursor:pointer;transition:all .2s;font-family:'Rajdhani',sans-serif;font-weight:600;user-select:none}
+.style-chip.active{background:rgba(252,209,22,.15);border-color:var(--jm-gold);color:var(--jm-gold)}
+.style-chip:hover{border-color:var(--jm-green);color:var(--text)}
+
+.prompt-result-box{background:rgba(0,0,0,.3);border:1px solid var(--border);border-radius:10px;padding:14px;font-size:13px;line-height:1.7;color:var(--text);white-space:pre-wrap;word-break:break-word;min-height:80px}
+
+.media-filter{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+.filter-btn{padding:7px 16px;border-radius:20px;border:1px solid var(--border);background:transparent;color:var(--text-muted);font-family:'Rajdhani',sans-serif;font-weight:600;font-size:12px;cursor:pointer;transition:all .2s}
+.filter-btn.active{background:rgba(0,165,80,.15);border-color:var(--jm-green);color:var(--jm-green)}
+.filter-btn:hover{border-color:var(--text-muted);color:var(--text)}
+
+.qr-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:10000;align-items:center;justify-content:center;flex-direction:column;gap:20px;padding:20px}
+.qr-modal.show{display:flex}
 </style>
 </head>
 <body>
 
-<!-- BLUEPRINT DEKO -->
-<div class="gl"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
-<div class="bpc c1"></div><div class="bpc c2"></div><div class="bpc c3"></div>
-
-<!-- ═══════════════════════════════
-     PIN SCREEN
-═══════════════════════════════ -->
-<div id="pin-screen">
-  <div class="pin-logo">AI-<span class="lc">VATT0</span> <span class="lp">KI.</span></div>
-  <div class="pin-sub">▸ KIE.AI MASTER STUDIO</div>
-  <div class="pin-title">PIN EINGEBEN</div>
-  <div class="pin-dots" id="pin-dots">
-    <div class="pd" id="pd0"></div>
-    <div class="pd" id="pd1"></div>
-    <div class="pd" id="pd2"></div>
-    <div class="pd" id="pd3"></div>
-  </div>
-  <div class="pin-pad">
-    <div class="pkey" onclick="pinKey('1')">1</div>
-    <div class="pkey" onclick="pinKey('2')">2</div>
-    <div class="pkey" onclick="pinKey('3')">3</div>
-    <div class="pkey" onclick="pinKey('4')">4</div>
-    <div class="pkey" onclick="pinKey('5')">5</div>
-    <div class="pkey" onclick="pinKey('6')">6</div>
-    <div class="pkey" onclick="pinKey('7')">7</div>
-    <div class="pkey" onclick="pinKey('8')">8</div>
-    <div class="pkey" onclick="pinKey('9')">9</div>
-    <div class="pkey empty"></div>
-    <div class="pkey" onclick="pinKey('0')">0</div>
-    <div class="pkey del" onclick="pinDel()">⌫</div>
-  </div>
-  <div class="pin-err" id="pin-err"></div>
-  <div class="pin-hint">Standard-PIN: <b>1234</b> — änderbar in Setup</div>
-</div>
-
-<!-- ═══════════════════════════════
-     MAIN APP
-═══════════════════════════════ -->
-<div class="app" id="main-app">
-
-<!-- HEADER -->
-<div class="hdr">
-  <div>
-    <div class="logo" data-text="AI-VATT0 KI.">AI-<span class="lc">VATT0</span> <span class="lp">KI.</span></div>
-    <div class="logo-sub">▸ KIE.AI MASTER STUDIO</div>
-  </div>
-  <div class="coinbadge" onclick="toast('🪙 '+coins+' Coins verfügbar')">
-    <span>🪙</span><span class="coinnum" id="cn">250</span>
+<div id="lock-screen" style="display:flex">
+  <img src="https://i.pinimg.com/736x/a9/9d/f5/a99df5ec19a903b75f188565c70a8bff.jpg" alt="" class="lock-image-top">
+  <div class="lock-logo">Vatos Locos Puto</div>
+  <img src="https://i.pinimg.com/736x/6c/3d/8e/6c3d8e95609b1aa923528d50f89b3475.jpg" alt="" class="lock-image-bottom">
+  <div class="lock-box">
+    <div class="lock-hint">Zugangscode eingeben</div>
+    <input type="password" id="lock-input" placeholder="Code..." autocomplete="off"
+      style="text-align:center;font-size:16px;letter-spacing:2px;background:rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.3);color:white;padding:12px 20px;border-radius:8px;width:100%;max-width:280px"
+      onkeydown="if(event.key==='Enter')submitUnlockCode()"/>
+    <button onclick="submitUnlockCode()" style="width:100%;max-width:280px;padding:14px;background:linear-gradient(135deg,#00a550,#007a3d);border:none;border-radius:12px;color:white;font-family:'Orbitron',monospace;font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:1px;cursor:pointer">🔓 ENTSPERREN</button>
+    <button onclick="showQRCode()" style="width:100%;max-width:280px;padding:10px;background:transparent;border:2px solid #00a550;border-radius:12px;color:#00a550;font-family:'Rajdhani',sans-serif;font-weight:600;font-size:13px;cursor:pointer;margin-top:4px">📱 QR-CODE</button>
+    <div class="lock-error" id="lock-error">Falscher Code</div>
+    <div class="lock-days" id="lock-days"></div>
   </div>
 </div>
 
-<!-- TOP TABS -->
-<div class="ttabs">
-  <button class="tt active" data-p="sora" onclick="sw(this)">🌊 SORA</button>
-  <button class="tt" data-p="veo" onclick="sw(this)">🎯 VEO</button>
-  <button class="tt" data-p="kling" onclick="sw(this)">⚔️ KLING</button>
-  <button class="tt" data-p="wan" onclick="sw(this)">🌀 WAN</button>
-  <button class="tt" data-p="hailuo" onclick="sw(this)">🌸 HAILUO</button>
-  <button class="tt" data-p="seedance" onclick="sw(this)">💃 SEEDANCE</button>
-  <button class="tt" data-p="image" onclick="sw(this)">🖼 IMAGE</button>
-  <button class="tt" data-p="audio" onclick="sw(this)">🎵 AUDIO</button>
-  <button class="tt" data-p="chat" onclick="sw(this)">💬 CHAT</button>
-  <button class="tt" data-p="media" onclick="sw(this)">📁 MEDIEN</button>
-  <button class="tt" data-p="setup" onclick="sw(this)">⚙️ SETUP</button>
+<div id="qr-modal" class="qr-modal">
+  <div id="qr-code-container" style="background:white;padding:20px;border-radius:16px"></div>
+  <div style="color:white;text-align:center;font-size:14px">Mit Handy scannen</div>
+  <button onclick="document.getElementById('qr-modal').classList.remove('show')" style="background:#00a550;border:none;color:white;padding:10px 30px;border-radius:8px;cursor:pointer;font-weight:bold">Schließen</button>
 </div>
 
-<!-- ═══ SORA 2 ═══ -->
-<div class="panel active" id="p-sora">
-  <div class="sh">SORA 2 — OPENAI</div>
-  <div class="mtabs" id="mt-sora">
-    <div class="mt sel" data-m="sora2_standard" data-c="8" onclick="selmt(this,'mt-sora','sora','Sora 2 Standard — T/I→V · 10s · 720p')">Standard</div>
-    <div class="mt" data-m="sora2_pro" data-c="18" onclick="selmt(this,'mt-sora','sora','Sora 2 Pro — T/I→V · 10–15s · 1080p')">Pro</div>
-    <div class="mt" data-m="sora2_pro_storyboard" data-c="24" onclick="selmt(this,'mt-sora','sora','Sora 2 Pro Storyboard — Multi-Shot · bis 25s')">Pro Storyboard</div>
-    <div class="mt" data-m="sora2_characters" data-c="20" onclick="selmt(this,'mt-sora','sora','Sora 2 Characters — Kons. Charaktere · 720p')">Characters</div>
-    <div class="mt" data-m="sora2_characters_pro" data-c="30" onclick="selmt(this,'mt-sora','sora','Sora 2 Characters Pro — Kons. Charaktere · 1080p')">Characters Pro</div>
-    <div class="mt" data-m="sora2_watermark" data-c="5" onclick="selmt(this,'mt-sora','sora','Sora 2 Watermark Remover')">Watermark Remove</div>
+<header style="display:none" id="main-header">
+  <div class="header-left">
+    <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="14" r="11" fill="#1a0d00" stroke="#fcd116" stroke-width="1.5"/><path d="M7 14 Q6 7 12 6 Q18 2 24 6 Q30 7 29 14" fill="#fcd116" opacity="0.9"/><circle cx="18" cy="15" r="8" fill="#f4c8a0"/><circle cx="14.5" cy="14" r="2.5" fill="white"/><circle cx="21.5" cy="14" r="2.5" fill="white"/><circle cx="15" cy="14" r="1.2" fill="#1a0a00"/><circle cx="22" cy="14" r="1.2" fill="#1a0a00"/><path d="M15 19 Q18 21 21 19" stroke="#c87040" stroke-width="1" fill="none" stroke-linecap="round"/></svg>
+    <div class="logo-text">AI-VATTO0</div>
   </div>
-  <div class="card"><div id="d-sora" style="font-family:var(--fm);font-size:10px;font-weight:bold;color:rgba(8,8,26,.5);line-height:1.9">Sora 2 Standard — T/I→V · 10s · 720p</div></div>
-  <div class="sh">EINSTELLUNGEN</div>
-  <div class="srow"><span class="slabel">DAUER</span><div class="chips" id="c-sora-d"><div class="chip sel" onclick="sc(this,'c-sora-d')">10s</div><div class="chip" onclick="sc(this,'c-sora-d')">15s</div><div class="chip" onclick="sc(this,'c-sora-d')">20s</div><div class="chip" onclick="sc(this,'c-sora-d')">25s</div></div></div>
-  <div class="srow"><span class="slabel">FORMAT</span><div class="chips" id="c-sora-f"><div class="chip sel" onclick="sc(this,'c-sora-f')">16:9</div><div class="chip" onclick="sc(this,'c-sora-f')">9:16</div><div class="chip" onclick="sc(this,'c-sora-f')">1:1</div></div></div>
-  <div class="srow"><span class="slabel">QUALITÄT</span><div class="chips" id="c-sora-q"><div class="chip sel" onclick="sc(this,'c-sora-q')">720p</div><div class="chip" onclick="sc(this,'c-sora-q')">1080p</div></div></div>
-  <div class="sh">REFERENZBILD</div>
-  <div class="uzone"><input type="file" id="f-sora" accept="image/*" multiple onchange="upl(this,'g-sora')"><div class="ui">🖼</div><div class="ul">START / END BILD</div></div>
-  <div class="tgrid" id="g-sora"></div>
-  <div class="sh">PROMPT</div>
-  <div class="pw"><textarea id="t-sora" placeholder="Szene, Bewegung, Stil, Licht..."></textarea><div class="pf"><span id="tc-sora">0</span>/2000<button class="pc" onclick="cp('t-sora','tc-sora')">🗑</button></div></div>
-  <div class="cb"><div><div class="cb-l">KOSTEN-VORSCHAU</div><div class="cb-m" id="cm-sora">Sora 2 Standard · 10s · 720p</div></div><div class="cb-v"><span id="cv-sora">8</span> 🪙</div></div>
-  <div class="gst" id="gs-sora"><div class="dp"><span></span><span></span><span></span></div><span>Generiere Video...</span></div>
-  <button class="gbtn bc" onclick="gen('sora')">✦ SORA VIDEO GENERIEREN ✦</button>
-  <div class="rgrid" id="r-sora"></div>
+  <div class="coin-display" onclick="refreshCoins()">
+    <span>🪙</span><span id="coin-amount">—</span><span style="font-size:10px;opacity:.6;letter-spacing:.5px">COINS</span>
+  </div>
+</header>
+
+<div class="tab-bar" style="display:none" id="main-tabbar">
+  <button class="tab-btn active" onclick="switchTab('video',this)"><span class="tab-icon">🎬</span>VIDEO</button>
+  <button class="tab-btn" onclick="switchTab('bild',this)"><span class="tab-icon">🖼️</span>BILD</button>
+  <button class="tab-btn" onclick="switchTab('voice',this)"><span class="tab-icon">🎤</span>VOICE</button>
+  <button class="tab-btn" onclick="switchTab('prompt',this)"><span class="tab-icon">⚡</span>PROMPT</button>
+  <button class="tab-btn" onclick="switchTab('media',this)"><span class="tab-icon">📚</span>MEDIATHEK</button>
+  <button class="tab-btn" onclick="switchTab('settings',this)"><span class="tab-icon">⚙️</span>SETTINGS</button>
 </div>
 
-<!-- ═══ VEO 3.1 ═══ -->
-<div class="panel" id="p-veo">
-  <div class="sh">VEO 3.1 — GOOGLE DEEPMIND</div>
-  <div class="mtabs" id="mt-veo">
-    <div class="mt sel" data-m="veo3_fast" data-c="6" onclick="selmt(this,'mt-veo','veo','Veo 3.1 Fast — T/I→V · 8s · 1080p · Audio')">Veo 3.1 Fast</div>
-    <div class="mt" data-m="veo3_quality" data-c="14" onclick="selmt(this,'mt-veo','veo','Veo 3.1 Quality — T/I→V · 8s · 4K · Premium')">Veo 3.1 Quality</div>
-  </div>
-  <div class="card"><div id="d-veo" style="font-family:var(--fm);font-size:10px;font-weight:bold;color:rgba(8,8,26,.5);line-height:1.9">Veo 3.1 Fast — T/I→V · 8s · 1080p · Audio-Sync · 25% des Google-Preises</div></div>
-  <div class="srow"><span class="slabel">FORMAT</span><div class="chips" id="c-veo-f"><div class="chip sel" onclick="sc(this,'c-veo-f')">16:9</div><div class="chip" onclick="sc(this,'c-veo-f')">9:16</div></div></div>
-  <div class="srow"><span class="slabel">QUALITÄT</span><div class="chips" id="c-veo-q"><div class="chip sel" onclick="sc(this,'c-veo-q')">1080p</div><div class="chip" onclick="sc(this,'c-veo-q')">4K</div></div></div>
-  <div class="sh">REFERENZBILDER (max. 2)</div>
-  <div class="uzone"><input type="file" id="f-veo" accept="image/*" multiple onchange="upl(this,'g-veo')"><div class="ui">🖼</div><div class="ul">START + END BILD</div></div>
-  <div class="tgrid" id="g-veo"></div>
-  <div class="sh">PROMPT</div>
-  <div class="pw"><textarea id="t-veo" placeholder="Veo 3.1 unterstützt Audio — beschreibe auch Sound..."></textarea><div class="pf"><span id="tc-veo">0</span>/2000<button class="pc" onclick="cp('t-veo','tc-veo')">🗑</button></div></div>
-  <div class="cb"><div><div class="cb-l">KOSTEN-VORSCHAU</div><div class="cb-m" id="cm-veo">Veo 3.1 Fast · 8s · 1080p</div></div><div class="cb-v"><span id="cv-veo">6</span> 🪙</div></div>
-  <div class="gst" id="gs-veo"><div class="dp"><span></span><span></span><span></span></div><span>Generiere Veo Video...</span></div>
-  <button class="gbtn bp" onclick="gen('veo')">✦ VEO VIDEO GENERIEREN ✦</button>
-  <div class="rgrid" id="r-veo"></div>
-</div>
+<main style="display:none" id="main-content">
 
-<!-- ═══ KLING ═══ -->
-<div class="panel" id="p-kling">
-  <div class="sh">KLING — KUAISHOU</div>
-  <div class="mtabs" id="mt-kling">
-    <div class="mt sel" data-m="kling-3.0-pro" data-c="10" onclick="selmt(this,'mt-kling','kling','Kling 3.0 Pro — I/T→V · 3–15s · 1080p · Sound')">3.0 Pro</div>
-    <div class="mt" data-m="kling-3.0-standard" data-c="5" onclick="selmt(this,'mt-kling','kling','Kling 3.0 Standard — I/T→V · 3–15s · 720p')">3.0 Standard</div>
-    <div class="mt" data-m="kling-2.6" data-c="7" onclick="selmt(this,'mt-kling','kling','Kling 2.6 — I/T→V · 3–10s · 720p')">2.6</div>
-    <div class="mt" data-m="kling-2.6-motion" data-c="9" onclick="selmt(this,'mt-kling','kling','Kling 2.6 Motion Control — V→V')">2.6 Motion</div>
-    <div class="mt" data-m="kling-3.0-motion" data-c="12" onclick="selmt(this,'mt-kling','kling','Kling 3.0 Motion Control — V→V · Präzise')">3.0 Motion</div>
-    <div class="mt" data-m="kling-avatar-pro" data-c="15" onclick="selmt(this,'mt-kling','kling','Kling AI Avatar Pro — Lipsync · 1080p');toggleAudioRow(true)">Avatar Pro</div>
-    <div class="mt" data-m="kling-avatar-std" data-c="8" onclick="selmt(this,'mt-kling','kling','Kling AI Avatar Std — Lipsync · 720p');toggleAudioRow(true)">Avatar Std</div>
-  </div>
-  <div class="card"><div id="d-kling" style="font-family:var(--fm);font-size:10px;font-weight:bold;color:rgba(8,8,26,.5);line-height:1.9">Kling 3.0 Pro — Image/Text to Video · 3–15s · 1080p · Sound</div></div>
-  <div class="srow"><span class="slabel">DAUER</span><div class="chips" id="c-kling-d"><div class="chip sel" onclick="sc(this,'c-kling-d')">5s</div><div class="chip" onclick="sc(this,'c-kling-d')">10s</div><div class="chip" onclick="sc(this,'c-kling-d')">15s</div></div></div>
-  <div class="srow"><span class="slabel">FORMAT</span><div class="chips" id="c-kling-f"><div class="chip sel" onclick="sc(this,'c-kling-f')">16:9</div><div class="chip" onclick="sc(this,'c-kling-f')">9:16</div><div class="chip" onclick="sc(this,'c-kling-f')">1:1</div></div></div>
-  <div class="uzone"><input type="file" id="f-kling" accept="image/*,video/*" multiple onchange="upl(this,'g-kling')"><div class="ui">🎬</div><div class="ul">BILD ODER VIDEO</div></div>
-  <div class="tgrid" id="g-kling"></div>
-  <div id="kling-audio-row" style="display:none">
-    <div class="sh">AUDIO (NUR FÜR AVATAR)</div>
-    <div class="lsgrid"><div class="lsz"><input type="file" id="ka" accept="audio/*" onchange="lsp(this,'ka-p')"><div class="lsi">🎤</div><div class="lsl">AUDIO / SPRACHE</div><div class="lsf" id="ka-p"></div></div></div>
-  </div>
-  <div class="sh">PROMPT</div>
-  <div class="pw"><textarea id="t-kling" placeholder="Bewegung, Charakter, Stil..."></textarea><div class="pf"><span id="tc-kling">0</span>/1000<button class="pc" onclick="cp('t-kling','tc-kling')">🗑</button></div></div>
-  <div class="cb"><div><div class="cb-l">KOSTEN-VORSCHAU</div><div class="cb-m" id="cm-kling">Kling 3.0 Pro · 5s</div></div><div class="cb-v"><span id="cv-kling">10</span> 🪙</div></div>
-  <div class="gst" id="gs-kling"><div class="dp"><span></span><span></span><span></span></div><span>Generiere Kling Video...</span></div>
-  <button class="gbtn by" onclick="gen('kling')">✦ KLING VIDEO GENERIEREN ✦</button>
-  <div class="rgrid" id="r-kling"></div>
-</div>
-
-<!-- ═══ WAN ═══ -->
-<div class="panel" id="p-wan">
-  <div class="sh">WAN 2.6 — VIDEO GENERATION</div>
-  <div class="mtabs" id="mt-wan">
-    <div class="mt sel" data-m="wan2.6-t2v" data-c="6" onclick="selmt(this,'mt-wan','wan','Wan 2.6 Text→Video · 1080p')">2.6 Text→V</div>
-    <div class="mt" data-m="wan2.6-i2v" data-c="7" onclick="selmt(this,'mt-wan','wan','Wan 2.6 Image→Video · 1080p')">2.6 Image→V</div>
-    <div class="mt" data-m="wan2.6-v2v" data-c="9" onclick="selmt(this,'mt-wan','wan','Wan 2.6 Video→Video')">2.6 Video→V</div>
-    <div class="mt" data-m="wan-speech2video" data-c="11" onclick="selmt(this,'mt-wan','wan','Wan Speech→Video · Audio-gesteuert')">Speech→V</div>
-    <div class="mt" data-m="wan-animate" data-c="8" onclick="selmt(this,'mt-wan','wan','Wan Animate Move')">Animate Move</div>
-  </div>
-  <div class="srow"><span class="slabel">FORMAT</span><div class="chips" id="c-wan-f"><div class="chip sel" onclick="sc(this,'c-wan-f')">16:9</div><div class="chip" onclick="sc(this,'c-wan-f')">9:16</div><div class="chip" onclick="sc(this,'c-wan-f')">1:1</div></div></div>
-  <div class="uzone"><input type="file" id="f-wan" accept="image/*,video/*" onchange="upl(this,'g-wan')"><div class="ui">🌀</div><div class="ul">BILD ODER VIDEO</div></div>
-  <div class="tgrid" id="g-wan"></div>
-  <div class="sh">PROMPT</div>
-  <div class="pw"><textarea id="t-wan" placeholder="Beschreibe dein Video..."></textarea><div class="pf"><span id="tc-wan">0</span>/1000<button class="pc" onclick="cp('t-wan','tc-wan')">🗑</button></div></div>
-  <div class="cb"><div><div class="cb-l">KOSTEN-VORSCHAU</div><div class="cb-m" id="cm-wan">Wan 2.6 Text→Video</div></div><div class="cb-v"><span id="cv-wan">6</span> 🪙</div></div>
-  <div class="gst" id="gs-wan"><div class="dp"><span></span><span></span><span></span></div><span>Generiere Wan Video...</span></div>
-  <button class="gbtn bg" onclick="gen('wan')">✦ WAN VIDEO GENERIEREN ✦</button>
-  <div class="rgrid" id="r-wan"></div>
-</div>
-
-<!-- ═══ HAILUO ═══ -->
-<div class="panel" id="p-hailuo">
-  <div class="sh">HAILUO — VIDEO GENERATION</div>
-  <div class="mtabs" id="mt-hailuo">
-    <div class="mt sel" data-m="hailuo-02-pro-t2v" data-c="9" onclick="selmt(this,'mt-hailuo','hailuo','Hailuo 02 Pro Text→Video · 1080p')">02 Pro T→V</div>
-    <div class="mt" data-m="hailuo-02-pro-i2v" data-c="11" onclick="selmt(this,'mt-hailuo','hailuo','Hailuo 02 Pro Image→Video · 1080p')">02 Pro I→V</div>
-    <div class="mt" data-m="hailuo-02-std-t2v" data-c="5" onclick="selmt(this,'mt-hailuo','hailuo','Hailuo 02 Standard Text→Video')">02 Std T→V</div>
-    <div class="mt" data-m="hailuo-02-std-i2v" data-c="7" onclick="selmt(this,'mt-hailuo','hailuo','Hailuo 02 Standard Image→Video')">02 Std I→V</div>
-    <div class="mt" data-m="hailuo-2.3-pro" data-c="13" onclick="selmt(this,'mt-hailuo','hailuo','Hailuo 2.3 Pro')">2.3 Pro</div>
-    <div class="mt" data-m="hailuo-2.3-std" data-c="8" onclick="selmt(this,'mt-hailuo','hailuo','Hailuo 2.3 Standard')">2.3 Standard</div>
-  </div>
-  <div class="uzone"><input type="file" id="f-hailuo" accept="image/*" onchange="upl(this,'g-hailuo')"><div class="ui">🌸</div><div class="ul">STARTBILD</div></div>
-  <div class="tgrid" id="g-hailuo"></div>
-  <div class="sh">PROMPT</div>
-  <div class="pw"><textarea id="t-hailuo" placeholder="Beschreibe dein Video..."></textarea><div class="pf"><span id="tc-hailuo">0</span>/1000<button class="pc" onclick="cp('t-hailuo','tc-hailuo')">🗑</button></div></div>
-  <div class="cb"><div><div class="cb-l">KOSTEN-VORSCHAU</div><div class="cb-m" id="cm-hailuo">Hailuo 02 Pro Text→Video</div></div><div class="cb-v"><span id="cv-hailuo">9</span> 🪙</div></div>
-  <div class="gst" id="gs-hailuo"><div class="dp"><span></span><span></span><span></span></div><span>Generiere Hailuo...</span></div>
-  <button class="gbtn bc" onclick="gen('hailuo')">✦ HAILUO VIDEO GENERIEREN ✦</button>
-  <div class="rgrid" id="r-hailuo"></div>
-</div>
-
-<!-- ═══ SEEDANCE ═══ -->
-<div class="panel" id="p-seedance">
-  <div class="sh">SEEDANCE — BYTEDANCE</div>
-  <div class="mtabs" id="mt-seedance">
-    <div class="mt sel" data-m="seedance-1.5-pro" data-c="8" onclick="selmt(this,'mt-seedance','seedance','Seedance 1.5 Pro')">1.5 Pro</div>
-    <div class="mt" data-m="seedance-2.0" data-c="15" onclick="selmt(this,'mt-seedance','seedance','Seedance 2.0 — Coming Soon')">2.0 <span class="soon">SOON</span></div>
-    <div class="mt" data-m="bytedance-v1-pro-t2v" data-c="6" onclick="selmt(this,'mt-seedance','seedance','Bytedance V1 Pro Text→Video')">V1 Pro T→V</div>
-    <div class="mt" data-m="bytedance-v1-pro-i2v" data-c="7" onclick="selmt(this,'mt-seedance','seedance','Bytedance V1 Pro Image→Video')">V1 Pro I→V</div>
-    <div class="mt" data-m="bytedance-v1-pro-fast" data-c="5" onclick="selmt(this,'mt-seedance','seedance','Bytedance V1 Pro Fast')">V1 Pro Fast</div>
-  </div>
-  <div class="uzone"><input type="file" id="f-seedance" accept="image/*" onchange="upl(this,'g-seedance')"><div class="ui">💃</div><div class="ul">STARTBILD</div></div>
-  <div class="tgrid" id="g-seedance"></div>
-  <div class="sh">PROMPT</div>
-  <div class="pw"><textarea id="t-seedance" placeholder="Beschreibe dein Video..."></textarea><div class="pf"><span id="tc-seedance">0</span>/1000<button class="pc" onclick="cp('t-seedance','tc-seedance')">🗑</button></div></div>
-  <div class="cb"><div><div class="cb-l">KOSTEN-VORSCHAU</div><div class="cb-m" id="cm-seedance">Seedance 1.5 Pro</div></div><div class="cb-v"><span id="cv-seedance">8</span> 🪙</div></div>
-  <div class="gst" id="gs-seedance"><div class="dp"><span></span><span></span><span></span></div><span>Generiere Video...</span></div>
-  <button class="gbtn bp" onclick="gen('seedance')">✦ SEEDANCE VIDEO GENERIEREN ✦</button>
-  <div class="rgrid" id="r-seedance"></div>
-</div>
-
-<!-- ═══ IMAGE ═══ -->
-<div class="panel" id="p-image">
-  <div class="sh">IMAGE GENERATION</div>
-  <div class="mtabs" id="mt-image">
-    <div class="mt sel" data-m="nano-banana-pro" data-c="4" onclick="selmt(this,'mt-image','image','Nano Banana Pro — T/I2I · 1K–4K')">Nano Banana Pro</div>
-    <div class="mt" data-m="nano-banana-2" data-c="3" onclick="selmt(this,'mt-image','image','Nano Banana 2 — Text→Bild')">Nano Banana 2</div>
-    <div class="mt" data-m="seedream5-lite" data-c="3" onclick="selmt(this,'mt-image','image','Seedream 5.0 Lite')">Seedream 5 Lite</div>
-    <div class="mt" data-m="seedream4.5" data-c="3" onclick="selmt(this,'mt-image','image','Seedream 4.5')">Seedream 4.5</div>
-    <div class="mt" data-m="seedream4.0" data-c="2" onclick="selmt(this,'mt-image','image','Seedream 4.0 · Budget')">Seedream 4.0</div>
-    <div class="mt" data-m="z-image" data-c="3" onclick="selmt(this,'mt-image','image','Z-Image')">Z-Image</div>
-    <div class="mt" data-m="flux2-pro" data-c="5" onclick="selmt(this,'mt-image','image','FLUX.2 Pro — Photorealistisch')">FLUX.2 Pro</div>
-    <div class="mt" data-m="flux2-pro-i2i" data-c="5" onclick="selmt(this,'mt-image','image','FLUX.2 Pro I2I')">FLUX.2 I2I</div>
-    <div class="mt" data-m="4o-image" data-c="6" onclick="selmt(this,'mt-image','image','4o Image — GPT-4o')">4o Image</div>
-    <div class="mt" data-m="topaz-upscale" data-c="4" onclick="selmt(this,'mt-image','image','Topaz Upscaler')">Topaz Upscale</div>
-    <div class="mt" data-m="recraft-bg" data-c="2" onclick="selmt(this,'mt-image','image','Recraft BG Remove')">BG Remove</div>
-  </div>
-  <div class="srow"><span class="slabel">FORMAT</span><div class="chips" id="c-img-f"><div class="chip sel" onclick="sc(this,'c-img-f')">1:1</div><div class="chip" onclick="sc(this,'c-img-f')">16:9</div><div class="chip" onclick="sc(this,'c-img-f')">9:16</div><div class="chip" onclick="sc(this,'c-img-f')">4:3</div><div class="chip" onclick="sc(this,'c-img-f')">3:4</div></div></div>
-  <div class="srow"><span class="slabel">AUFLÖSUNG</span><div class="chips" id="c-img-r"><div class="chip sel" onclick="sc(this,'c-img-r')">1K</div><div class="chip" onclick="sc(this,'c-img-r')">2K</div><div class="chip" onclick="sc(this,'c-img-r')">4K</div></div></div>
-  <div class="srow"><span class="slabel">DATEIFORMAT</span><div class="chips" id="c-img-e"><div class="chip sel" onclick="sc(this,'c-img-e')">PNG</div><div class="chip" onclick="sc(this,'c-img-e')">JPG</div><div class="chip" onclick="sc(this,'c-img-e')">WebP</div></div></div>
-  <div class="uzone"><input type="file" id="f-image" accept="image/*" onchange="upl(this,'g-image')"><div class="ui">🖼</div><div class="ul">REFERENZBILD (OPTIONAL)</div></div>
-  <div class="tgrid" id="g-image"></div>
-  <div class="sh">PROMPT</div>
-  <div class="pw"><textarea id="t-image" placeholder="Stil, Charakter, Farben, Komposition..."></textarea><div class="pf"><span id="tc-image">0</span>/1000<button class="pc" onclick="cp('t-image','tc-image')">🗑</button></div></div>
-  <div class="cb"><div><div class="cb-l">KOSTEN-VORSCHAU</div><div class="cb-m" id="cm-image">Nano Banana Pro · 1K · PNG</div></div><div class="cb-v"><span id="cv-image">4</span> 🪙</div></div>
-  <div class="gst" id="gs-image"><div class="dp"><span></span><span></span><span></span></div><span>Generiere Bild...</span></div>
-  <button class="gbtn bp" onclick="gen('image')">✦ BILD GENERIEREN ✦</button>
-  <div class="rgrid" id="r-image"></div>
-</div>
-
-<!-- ═══ AUDIO ═══ -->
-<div class="panel" id="p-audio">
-  <div class="sh">AUDIO / SPEECH / MUSIC</div>
-  <div class="mtabs" id="mt-audio">
-    <div class="mt sel" data-m="elevenlabs-v3" data-c="5" onclick="selmt(this,'mt-audio','audio','ElevenLabs V3 TTS');showAUI('tts')">ElevenLabs V3</div>
-    <div class="mt" data-m="suno-v4.5" data-c="8" onclick="selmt(this,'mt-audio','audio','Suno V4.5 Music');showAUI('music')">Suno V4.5</div>
-    <div class="mt" data-m="suno-v4.5plus" data-c="10" onclick="selmt(this,'mt-audio','audio','Suno V4.5 Plus');showAUI('music')">Suno V4.5+</div>
-    <div class="mt" data-m="infinitalk" data-c="12" onclick="selmt(this,'mt-audio','audio','Infinitalk Lipsync');showAUI('ls')">Infinitalk Lipsync</div>
-  </div>
-  <div id="aui-tts">
-    <div class="srow"><span class="slabel">STIMME</span><div class="chips" id="c-el-v"><div class="chip sel" onclick="sc(this,'c-el-v')">Rachel</div><div class="chip" onclick="sc(this,'c-el-v')">Adam</div><div class="chip" onclick="sc(this,'c-el-v')">Sarah</div><div class="chip" onclick="sc(this,'c-el-v')">Custom</div></div></div>
-    <div class="pw"><textarea id="t-tts" placeholder="Text für Sprachausgabe..."></textarea><div class="pf"><span id="tc-tts">0</span>/5000<button class="pc" onclick="cp('t-tts','tc-tts')">🗑</button></div></div>
-  </div>
-  <div id="aui-music" style="display:none">
-    <div class="srow"><span class="slabel">GENRE</span><div class="chips" id="c-suno-g"><div class="chip sel" onclick="sc(this,'c-suno-g')">Pop</div><div class="chip" onclick="sc(this,'c-suno-g')">Hip-Hop</div><div class="chip" onclick="sc(this,'c-suno-g')">Electronic</div><div class="chip" onclick="sc(this,'c-suno-g')">Cinematic</div></div></div>
-    <div class="pw"><textarea id="t-music" placeholder="Song beschreiben oder Lyrics eingeben..."></textarea><div class="pf"><span id="tc-music">0</span>/3000<button class="pc" onclick="cp('t-music','tc-music')">🗑</button></div></div>
-  </div>
-  <div id="aui-ls" style="display:none">
-    <div class="card" style="border-color:rgba(255,0,153,.3)"><div style="font-family:var(--fm);font-size:10px;font-weight:bold;color:rgba(8,8,26,.5);line-height:1.9">Infinitalk — Charakter-Video/-Bild + Audio → synced Video</div></div>
-    <div class="lsgrid">
-      <div class="lsz"><input type="file" id="ls-vid" accept="video/*,image/*" onchange="lsp(this,'ls-vp')"><div class="lsi">🎬</div><div class="lsl">CHARAKTER VIDEO/BILD</div><div class="lsf" id="ls-vp"></div></div>
-      <div class="lsz"><input type="file" id="ls-aud" accept="audio/*" onchange="lsp(this,'ls-ap')"><div class="lsi">🎵</div><div class="lsl">AUDIO / SPRACHE</div><div class="lsf" id="ls-ap"></div></div>
+<!-- VIDEO TAB -->
+<div id="tab-video" class="tab-panel active">
+  <div class="jamaica-stripe"></div>
+  <div class="no-key-banner" id="no-key-banner-video" style="display:none">⚠️ Kein kie.ai Key gesetzt <button onclick="switchToSettings()">→ Settings</button></div>
+  <div class="card">
+    <div class="card-title">Modell auswählen</div>
+    <div class="grid-2">
+      <div class="input-group" style="margin-bottom:0"><label>Modell-Gruppe</label><select id="video-group" onchange="onGroupChange()"><option value="kling">⚡ KLING</option><option value="grok">🤖 GROK</option><option value="sora">🌀 SORA</option><option value="veo">🔥 VEO</option><option value="seedance">🌱 SEEDANCE</option></select></div>
+      <div class="input-group" style="margin-bottom:0"><label>Untergruppe</label><select id="video-sub" onchange="onSubChange()"></select></div>
     </div>
   </div>
-  <div class="cb"><div><div class="cb-l">KOSTEN-VORSCHAU</div><div class="cb-m" id="cm-audio">ElevenLabs V3</div></div><div class="cb-v"><span id="cv-audio">5</span> 🪙</div></div>
-  <div class="gst" id="gs-audio"><div class="dp"><span></span><span></span><span></span></div><span>Generiere Audio...</span></div>
-  <button class="gbtn bg" onclick="gen('audio')">✦ AUDIO GENERIEREN ✦</button>
-  <div class="rgrid" id="r-audio"></div>
-</div>
-
-<!-- ═══ CHAT ═══ -->
-<div class="panel" id="p-chat">
-  <div class="sh">AI CHAT</div>
-  <div class="mtabs" id="mt-chat">
-    <div class="mt sel" data-m="gemini-2.5-pro" data-c="2" onclick="selmt(this,'mt-chat','chat','Gemini 2.5 Pro');updChatCost(2)">Gemini 2.5 Pro</div>
-    <div class="mt" data-m="gemini-2.5-flash" data-c="1" onclick="selmt(this,'mt-chat','chat','Gemini 2.5 Flash');updChatCost(1)">Gemini 2.5 Flash</div>
-    <div class="mt" data-m="gpt-4.1" data-c="3" onclick="selmt(this,'mt-chat','chat','GPT-4.1');updChatCost(3)">GPT-4.1</div>
-    <div class="mt" data-m="gpt-4.5" data-c="4" onclick="selmt(this,'mt-chat','chat','GPT-4.5');updChatCost(4)">GPT-4.5 <span class="soon">SOON</span></div>
-  </div>
-  <div class="chatbox" id="chatbox">
-    <div class="msg mai"><div class="mf">GEMINI 2.5 PRO</div>Hallo VATT0! Bereit. Was brauchst du?</div>
-  </div>
-  <div class="cirow">
-    <input class="ci" id="ci" type="text" placeholder="Nachricht..." onkeydown="if(event.key==='Enter')sendChat()">
-    <button class="cs" onclick="sendChat()">SEND ↗</button>
-  </div>
-  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px">
-    <div class="ctag" id="chat-ctag">2 🪙 / Nachricht</div>
-    <button onclick="document.getElementById('chatbox').innerHTML='<div class=\'msg mai\'><div class=\'mf\'>SYSTEM</div>Chat geleert.</div>'" style="background:transparent;border:2px solid var(--line2);border-radius:3px;padding:3px 9px;cursor:pointer;font-family:var(--fm);font-size:9px;font-weight:bold;color:rgba(8,8,26,.48)">LEEREN</button>
-  </div>
-</div>
-
-<!-- ═══ MEDIATHEK ═══ -->
-<div class="panel" id="p-media">
-  <div class="sh">GESPEICHERTE MEDIEN</div>
-  <div class="rgrid" id="r-media"><div class="ne"><div style="font-size:32px;margin-bottom:10px;opacity:.3">📁</div><div>NOCH KEINE MEDIEN</div></div></div>
-  <div class="hdiv"></div>
-  <button onclick="clearMedia()" style="width:100%;background:rgba(255,51,85,.06);border:2px solid rgba(255,51,85,.35);border-radius:5px;padding:10px;font-family:var(--fm);font-size:10px;font-weight:bold;color:rgba(255,51,85,.7);cursor:pointer;letter-spacing:2px">🗑 MEDIATHEK LEEREN</button>
-  <div class="note" style="margin-top:8px">⚠ Videos: 14 Tage · Bilder: 3 Tage · danach auf kie.ai gelöscht</div>
-</div>
-
-<!-- ═══ SETUP ═══ -->
-<div class="panel" id="p-setup">
-  <div class="sh">KIE.AI API KEY</div>
-  <div class="sc">
-    <div class="sct">🔑 API KEY</div>
-    <div class="ai-row">
-      <input class="ai" id="aki" type="password" placeholder="kie.ai API Key eingeben...">
-      <div class="aibtns">
-        <button class="aib" onclick="document.getElementById('aki').type=document.getElementById('aki').type==='password'?'text':'password'">👁</button>
-        <button class="aib sv" onclick="saveKey()">SAVE</button>
+  <div class="card">
+    <div class="card-title" id="fields-title">Parameter</div>
+    <div id="dynamic-fields"></div>
+    <div class="coin-preview">
+      <div><div class="coin-preview-label">Geschätzte Kosten</div><div class="coin-preview-amount" id="coin-est">— 🪙</div></div>
+      <div style="text-align:right;font-size:11px;color:var(--text-muted)"><div id="coin-model-label">—</div></div>
+    </div>
+    <div class="coin-note">* Schätzwerte. Aktuelle Preise: kie.ai/pricing</div>
+    <div style="margin-top:16px"><button class="btn-primary" id="gen-btn" onclick="generateVideo()">⚡ GENERIEREN</button></div>
+    <div class="status-box" id="status-box"></div>
+    <div class="video-result" id="video-result">
+      <video id="result-video" controls playsinline></video>
+      <div class="video-actions">
+        <button class="btn-secondary" onclick="downloadResult()">⬇️ Download</button>
+        <button class="btn-secondary" onclick="copyTaskId()">📋 Task-ID</button>
       </div>
     </div>
-    <div class="asts" id="ast"></div>
-    <div class="note" style="text-align:left;margin-top:7px">Key holen: <b style="color:var(--cyan)">kie.ai/api-key</b> — wird nur lokal gespeichert</div>
   </div>
+</div>
 
-  <div class="sh">PIN ÄNDERN</div>
-  <div class="pin-change-wrap">
-    <div class="sct">🔒 APP-PIN</div>
-    <div style="display:flex;gap:8px;align-items:center">
-      <input class="pin-inp" id="new-pin" type="password" maxlength="4" placeholder="Neuer PIN (4 Ziffern)" inputmode="numeric">
-      <button onclick="savePin()" style="background:rgba(255,0,153,.09);border:2px solid var(--pink);border-radius:5px;padding:10px 14px;font-family:var(--fh);font-size:10px;font-weight:900;color:var(--pink);cursor:pointer;white-space:nowrap;letter-spacing:1px">SPEICHERN</button>
-    </div>
-    <div class="note" style="text-align:left;margin-top:7px">Standard: <b>1234</b> · Gib deinen gewünschten 4-stelligen PIN ein</div>
-    <div style="font-family:var(--fm);font-size:10px;font-weight:bold;margin-top:8px;color:rgba(8,8,26,.5)">
-      Aktueller PIN: <span id="current-pin-display" style="color:var(--pink)">••••</span>
-      <button onclick="togglePinShow()" style="background:transparent;border:none;cursor:pointer;font-size:12px;margin-left:6px;opacity:.6">👁</button>
-    </div>
-    <div class="hdiv"></div>
-    <button onclick="lockApp()" style="width:100%;background:rgba(255,51,85,.06);border:2px solid rgba(255,51,85,.4);border-radius:5px;padding:10px;font-family:var(--fh);font-size:11px;font-weight:900;color:var(--orange);cursor:pointer;letter-spacing:2px">🔒 APP JETZT SPERREN</button>
-  </div>
-
-  <div class="sh">COIN GUTHABEN</div>
-  <div class="sc" style="border-color:rgba(255,204,0,.5)">
-    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
-      <div><div style="font-family:var(--fh);font-size:30px;font-weight:900;color:#9a6e00" id="cbig">250</div><div class="note" style="text-align:left">VERFÜGBARE COINS</div></div>
-      <button onclick="toast('💳 Coin-Kauf: Kommt bald!')" style="background:rgba(255,204,0,.15);border:2px solid var(--yellow);border-radius:5px;padding:9px 15px;font-family:var(--fh);font-size:11px;font-weight:900;color:#9a6e00;cursor:pointer;letter-spacing:1px">+ COINS</button>
-    </div>
-    <div class="sh" style="margin-top:0">PREISTABELLE</div>
-    <div class="pgrid">
-      <div class="pr"><span class="pn">Sora 2 Standard</span><span class="pc2">8 🪙</span></div>
-      <div class="pr"><span class="pn">Sora 2 Pro</span><span class="pc2">18 🪙</span></div>
-      <div class="pr"><span class="pn">Sora 2 Pro SB</span><span class="pc2">24 🪙</span></div>
-      <div class="pr"><span class="pn">Veo 3.1 Fast</span><span class="pc2">6 🪙</span></div>
-      <div class="pr"><span class="pn">Veo 3.1 Quality</span><span class="pc2">14 🪙</span></div>
-      <div class="pr"><span class="pn">Kling 3.0 Pro</span><span class="pc2">10 🪙</span></div>
-      <div class="pr"><span class="pn">Kling Avatar Pro</span><span class="pc2">15 🪙</span></div>
-      <div class="pr"><span class="pn">Wan 2.6</span><span class="pc2">6–9 🪙</span></div>
-      <div class="pr"><span class="pn">Hailuo 02 Pro</span><span class="pc2">9 🪙</span></div>
-      <div class="pr"><span class="pn">Seedance 1.5 Pro</span><span class="pc2">8 🪙</span></div>
-      <div class="pr"><span class="pn">Nano Banana Pro</span><span class="pc2">4 🪙</span></div>
-      <div class="pr"><span class="pn">FLUX.2 Pro</span><span class="pc2">5 🪙</span></div>
-      <div class="pr"><span class="pn">4o Image</span><span class="pc2">6 🪙</span></div>
-      <div class="pr"><span class="pn">ElevenLabs V3</span><span class="pc2">5 🪙</span></div>
-      <div class="pr"><span class="pn">Suno V4.5</span><span class="pc2">8 🪙</span></div>
-      <div class="pr"><span class="pn">Infinitalk</span><span class="pc2">12 🪙</span></div>
-      <div class="pr"><span class="pn">Chat / Msg</span><span class="pc2">1–4 🪙</span></div>
+<!-- BILD TAB -->
+<div id="tab-bild" class="tab-panel">
+  <div class="jamaica-stripe"></div>
+  <div class="no-key-banner" id="no-key-banner-bild" style="display:none">⚠️ Kein kie.ai Key gesetzt <button onclick="switchToSettings()">→ Settings</button></div>
+  <div class="card">
+    <div class="card-title">Bild-Modell</div>
+    <div class="grid-2">
+      <div class="input-group" style="margin-bottom:0"><label>Gruppe</label><select id="img-group" onchange="onImgGroupChange()"><option value="flux">⚡ FLUX KONTEXT</option><option value="seedream">🌸 SEEDREAM</option><option value="imagen">🖼️ IMAGEN</option><option value="recraft">🎨 RECRAFT</option><option value="ideogram">💡 IDEOGRAM</option></select></div>
+      <div class="input-group" style="margin-bottom:0"><label>Modell</label><select id="img-sub" onchange="onImgSubChange()"></select></div>
     </div>
   </div>
-
-  <div class="sh">IPHONE SPEICHERN</div>
-  <div class="sc">
-    <div style="font-family:var(--fm);font-size:10px;font-weight:bold;color:rgba(8,8,26,.52);line-height:2.3">
-      <div>① Seite in <b style="color:var(--cyan)">Safari</b> öffnen</div>
-      <div>② Unten <b style="color:var(--cyan)">Teilen □↑</b> antippen</div>
-      <div>③ <b style="color:var(--cyan)">„Zum Home-Bildschirm"</b> wählen</div>
-      <div>④ <b style="color:var(--green)">„Hinzufügen"</b> bestätigen ✓</div>
+  <div class="card">
+    <div class="card-title" id="img-fields-title">Bild Parameter</div>
+    <div id="img-dynamic-fields"></div>
+    <div class="coin-preview">
+      <div><div class="coin-preview-label">Kosten</div><div class="coin-preview-amount" id="img-coin-est">— 🪙</div></div>
+      <div style="text-align:right;font-size:11px;color:var(--text-muted)"><div id="img-coin-model">—</div></div>
     </div>
-  </div>
-
-  <div class="sh">API DOKUMENTATION</div>
-  <div class="sc">
-    <div style="font-family:var(--fm);font-size:10px;font-weight:bold;color:rgba(8,8,26,.5);line-height:2.3">
-      <div>📖 <a href="https://docs.kie.ai" target="_blank" style="color:var(--cyan)">docs.kie.ai</a> — Alle API Endpoints</div>
-      <div>🔑 <a href="https://kie.ai/api-key" target="_blank" style="color:var(--cyan)">kie.ai/api-key</a> — API Key holen</div>
-      <div>💰 <a href="https://kie.ai/pricing" target="_blank" style="color:var(--cyan)">kie.ai/pricing</a> — Aktuelle Preise</div>
+    <div style="margin-top:16px"><button class="btn-primary" id="img-gen-btn" onclick="generateImage()">🎨 BILD GENERIEREN</button></div>
+    <div class="status-box" id="img-status-box"></div>
+    <div class="image-result" id="image-result">
+      <img id="result-image" src="" alt="Generiertes Bild" onclick="if(_lastImgUrl)openLightbox(_lastImgUrl)"/>
+      <div class="image-actions">
+        <button class="btn-secondary" onclick="downloadImage()">⬇️ Download</button>
+        <button class="btn-secondary" onclick="copyImgTaskId()">📋 Task-ID</button>
+      </div>
     </div>
   </div>
 </div>
 
-</div><!-- /app -->
+<!-- VOICE TAB -->
+<div id="tab-voice" class="tab-panel">
+  <div class="jamaica-stripe"></div>
+  <div class="no-key-banner" id="no-key-banner-voice" style="display:none">⚠️ Kein ElevenLabs Key gesetzt <button onclick="switchToSettings()">→ Settings</button></div>
+  <div class="card">
+    <div class="card-title">ElevenLabs TTS</div>
+    <div class="input-group">
+      <label>Text <span id="voice-counter" style="font-weight:400;color:var(--jm-green)">0/10000</span></label>
+      <textarea id="v-text" rows="5" maxlength="10000" placeholder="Text eingeben..." oninput="document.getElementById('voice-counter').textContent=this.value.length+'/10000'"></textarea>
+    </div>
+    <div class="grid-2">
+      <div class="input-group"><label>Stimme</label><select id="v-voice"><option value="21m00Tcm4TlvDq8ikWAM">Rachel — weiblich</option><option value="EXAVITQu4vr4xnSDxMaL">Bella — sanft</option><option value="ErXwobaYiN019PkySvjV">Antoni — männlich</option><option value="VR6AewLTigWG4xSOukaG">Arnold — klar</option><option value="pNInz6obpgDQGcFmaJgB">Adam — tief</option><option value="TxGEqnHWrfWFTfGW9XjX">Josh — tief</option></select></div>
+      <div class="input-group"><label>Modell</label><select id="v-model"><option value="eleven_multilingual_v2">Multilingual v2</option><option value="eleven_turbo_v2_5">Turbo v2.5</option></select></div>
+    </div>
+    <div class="input-group">
+      <label>Stabilität — <span id="v-stab-val" style="color:var(--jm-gold)">50</span>%</label>
+      <input type="range" id="v-stability" min="0" max="100" value="50" oninput="document.getElementById('v-stab-val').textContent=this.value">
+    </div>
+    <div style="margin-top:16px"><button class="btn-primary" id="voice-btn" onclick="generateVoice()">🎤 STIMME GENERIEREN</button></div>
+    <div class="status-box" id="voice-status-box"></div>
+    <div class="audio-result" id="audio-result">
+      <audio id="v-player" controls style="width:100%;margin-bottom:10px"></audio>
+      <button class="btn-secondary" style="width:100%" onclick="downloadAudio()">⬇️ Audio herunterladen</button>
+    </div>
+  </div>
+</div>
 
-<!-- BOTTOM NAV -->
-<nav class="bnav">
-  <button class="bn active" onclick="bn(this,'sora')"><span class="bni">🌊</span><span class="bnl">SORA</span></button>
-  <button class="bn" onclick="bn(this,'veo')"><span class="bni">🎯</span><span class="bnl">VEO</span></button>
-  <button class="bn" onclick="bn(this,'kling')"><span class="bni">⚔️</span><span class="bnl">KLING</span></button>
-  <button class="bn" onclick="bn(this,'image')"><span class="bni">🖼</span><span class="bnl">IMAGE</span></button>
-  <button class="bn" onclick="bn(this,'audio')"><span class="bni">🎵</span><span class="bnl">AUDIO</span></button>
-  <button class="bn" onclick="bn(this,'media')"><span class="bni">📁</span><span class="bnl">MEDIEN</span></button>
-  <button class="bn" onclick="bn(this,'setup')"><span class="bni">⚙️</span><span class="bnl">SETUP</span></button>
-</nav>
+<!-- PROMPT TAB -->
+<div id="tab-prompt" class="tab-panel">
+  <div class="jamaica-stripe"></div>
+  <div class="card">
+    <div class="card-title">⚡ KI Prompt-Generator</div>
+    <div class="grid-2">
+      <div class="input-group" style="margin-bottom:0"><label>KI Modell</label><select id="pg-ai-model"><option value="grok">🤖 Grok 3 (xAI)</option><option value="gpt4o">🧠 GPT-4o (OpenAI)</option></select></div>
+      <div class="input-group" style="margin-bottom:0"><label>Sprache</label><select id="pg-lang"><option value="en">🇬🇧 Englisch</option><option value="de">🇩🇪 Deutsch</option></select></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">Ziel</div>
+    <div class="grid-2">
+      <div class="input-group"><label>Ziel-Tab</label><select id="pg-target-type" onchange="updatePgModels()"><option value="video">🎬 Video</option><option value="bild">🖼️ Bild</option></select></div>
+      <div class="input-group"><label>Modell</label><select id="pg-target-model"></select></div>
+    </div>
+    <div class="input-group" style="margin-bottom:0">
+      <label>Stil-Tags</label>
+      <div id="pg-style-chips" style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px"></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">Deine Idee</div>
+    <div class="input-group">
+      <label>Beschreibe kurz was du erstellen willst</label>
+      <textarea id="pg-input" rows="4" maxlength="10000" placeholder="z.B. Eine Frau tanzt im Regen, neon-beleuchtete Straße in Tokio..."></textarea>
+    </div>
+    <button class="btn-primary" id="pg-btn" onclick="generatePrompt()">⚡ PROMPT GENERIEREN</button>
+    <div class="status-box" id="pg-status-box"></div>
+  </div>
+  <div class="card" id="pg-result-card" style="display:none">
+    <div class="card-title">Generierter Prompt</div>
+    <div class="prompt-result-box" id="pg-result-text"></div>
+    <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap">
+      <button class="btn-gold" onclick="copyGeneratedPrompt()">📋 Kopieren</button>
+      <button class="btn-secondary" onclick="sendPromptTo('video')">→ Video</button>
+      <button class="btn-secondary" onclick="sendPromptTo('bild')">→ Bild</button>
+    </div>
+  </div>
+</div>
 
-<div class="toast" id="toastEl"></div>
+<!-- MEDIATHEK TAB -->
+<div id="tab-media" class="tab-panel">
+  <div class="jamaica-stripe"></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+    <div class="section-header" style="margin:0">Medien (<span id="media-count">0</span>)</div>
+    <button class="btn-red" onclick="clearAllMedia()">🗑️ Alle</button>
+  </div>
+  <div class="media-filter">
+    <button class="filter-btn active" onclick="setMediaFilter('all',this)">Alle</button>
+    <button class="filter-btn" onclick="setMediaFilter('video',this)">🎬 Videos</button>
+    <button class="filter-btn" onclick="setMediaFilter('image',this)">🖼️ Bilder</button>
+  </div>
+  <div id="media-grid" class="media-grid"></div>
+  <div id="media-empty" class="card" style="display:none">
+    <div class="coming-soon"><div class="big-icon">📭</div><h3>NOCH KEINE MEDIEN</h3><p>Generiere dein erstes Video oder Bild</p></div>
+  </div>
+</div>
+
+<!-- SETTINGS TAB -->
+<div id="tab-settings" class="tab-panel">
+  <div class="jamaica-stripe"></div>
+  <div class="card">
+    <div class="card-title">API Keys</div>
+    <div class="input-group"><label>KIE.AI API KEY</label><div class="key-row"><input type="password" id="key-kie" placeholder="kie-..."/><button class="btn-eye" onclick="toggleKeyVis('key-kie',this)">👁️</button><div class="status-dot" id="dot-kie"></div><button class="btn-gold" onclick="saveKey('kie')">SAVE</button><button class="btn-secondary" onclick="testKieKey()">TEST</button></div></div>
+    <div class="input-group"><label>GROK / XAI API KEY</label><div class="key-row"><input type="password" id="key-grok" placeholder="xai-..."/><button class="btn-eye" onclick="toggleKeyVis('key-grok',this)">👁️</button><div class="status-dot" id="dot-grok"></div><button class="btn-gold" onclick="saveKey('grok')">SAVE</button></div></div>
+    <div class="input-group"><label>ELEVENLABS API KEY</label><div class="key-row"><input type="password" id="key-el" placeholder="el-..."/><button class="btn-eye" onclick="toggleKeyVis('key-el',this)">👁️</button><div class="status-dot" id="dot-el"></div><button class="btn-gold" onclick="saveKey('el')">SAVE</button></div></div>
+    <div class="input-group"><label>OPENAI API KEY</label><div class="key-row"><input type="password" id="key-oai" placeholder="sk-..."/><button class="btn-eye" onclick="toggleKeyVis('key-oai',this)">👁️</button><div class="status-dot" id="dot-oai"></div><button class="btn-gold" onclick="saveKey('oai')">SAVE</button></div></div>
+  </div>
+  <div class="card">
+    <div class="card-title">CORS-Proxy</div>
+    <div class="toggle-wrap"><span class="toggle-label">CORS-Proxy aktivieren</span><div class="toggle" id="proxy-toggle" onclick="toggleProxy()"></div></div>
+  </div>
+  <div class="card">
+    <div class="card-title">🔒 Zugangscode</div>
+    <div class="input-group">
+      <label>Code testen → SHA-256 Hash</label>
+      <div style="display:flex;gap:8px"><input type="text" id="lock-gen-input" placeholder="Code eingeben..." style="flex:1"/><button class="btn-gold" onclick="generateHash()">HASH</button></div>
+      <div id="lock-gen-result" style="margin-top:8px;font-family:monospace;font-size:11px;color:var(--jm-green);word-break:break-all;background:rgba(0,0,0,.3);border-radius:8px;padding:8px;display:none"></div>
+    </div>
+    <button class="btn-red" onclick="resetLockToken()">🗑️ Token zurücksetzen</button>
+  </div>
+</div>
+
+</main>
+
+<div class="modal-overlay" id="task-modal">
+  <div class="modal">
+    <div class="modal-header"><div class="modal-title" id="modal-title">Aus Mediathek wählen</div><button class="modal-close" onclick="closeModal()">✕</button></div>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+</div>
+
+<div class="lightbox" id="lightbox" onclick="if(event.target===this)closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightbox-img" src="" alt=""/>
+  <div class="lightbox-actions"><button class="btn-secondary" onclick="window.open(document.getElementById('lightbox-img').src,'_blank')">⬇️ Öffnen</button></div>
+</div>
+
+<div id="warrior-wrap" style="display:none" onclick="cycleWarrior()">
+  <div class="warrior-tooltip" id="warrior-tooltip">🐉 Shenron</div>
+  <img id="warrior-normal-img" class="warrior-img" src="https://i.pinimg.com/736x/8a/c6/ec/8ac6ec6bc838722c687b34a925ff20fe.jpg" alt=""/>
+  <img id="warrior-loading-img" class="warrior-img" style="display:none" src="https://i.pinimg.com/736x/44/5c/25/445c25d3c096e3ab79eb3fd3e71c51ab.jpg" alt=""/>
+  <img id="warrior-error-img" class="warrior-img" style="display:none" src="https://i.pinimg.com/736x/b4/50/8b/b4508b7d784693268560c351d4ea304b.jpg" alt=""/>
+</div>
 
 <script>
-'use strict';
-const B='https://api.kie.ai/api/v1';
-let coins=parseInt(localStorage.getItem('v0_c')||'250');
-let media=JSON.parse(localStorage.getItem('v0_m')||'[]');
-const AM={
-  sora:{m:'sora2_standard',c:8},veo:{m:'veo3_fast',c:6},
-  kling:{m:'kling-3.0-pro',c:10},wan:{m:'wan2.6-t2v',c:6},
-  hailuo:{m:'hailuo-02-pro-t2v',c:9},seedance:{m:'seedance-1.5-pro',c:8},
-  image:{m:'nano-banana-pro',c:4},audio:{m:'elevenlabs-v3',c:5},chat:{m:'gemini-2.5-pro',c:2}
+const MODEL_CONFIG={
+  kling:[
+    {label:'2.6 Text→Video',model:'kling-2.6/text-to-video',fields:['prompt','aspect_ratio','duration_kling26','sound'],coins:{'5':60,'10':120},coinKey:'duration'},
+    {label:'2.6 Bild→Video',model:'kling-2.6/image-to-video',fields:['prompt','kling_itv_refs','duration_kling26','sound'],coins:{'5':80,'10':160},coinKey:'duration'},
+    {label:'3.0 Text→Video',model:'kling-3.0/text-to-video',fields:['prompt','aspect_ratio','duration_kling30'],coins:{'5':100,'10':200,'15':300},coinKey:'duration'},
+    {label:'3.0 Bild→Video',model:'kling-3.0/image-to-video',fields:['prompt','kling30_itv','duration_kling30'],coins:{'5':120,'10':240},coinKey:'duration'},
+    {label:'AI Influencer',model:'kling/ai-influencer',fields:['prompt','image_url_3ref','duration_kling26'],coins:{'5':120,'10':240},coinKey:'duration'}
+  ],
+  grok:[
+    {label:'Text→Video',model:'grok-imagine/text-to-video',fields:['prompt','aspect_ratio','grok_mode'],coins:{normal:60,pro:120},coinKey:'grok_mode'},
+    {label:'Bild→Video',model:'grok-imagine/image-to-video',fields:['prompt','grok_itv_refs','grok_mode'],coins:{fixed:90},coinKey:'fixed'},
+    {label:'Extend',model:'grok-imagine/extend',fields:['grok_task_id','prompt'],coins:{fixed:50},coinKey:'fixed'}
+  ],
+  sora:[
+    {label:'Standard',model:'sora-2/text-to-video',fields:['prompt','sora_duration','aspect_ratio'],coins:{'5':200,'10':400,'15':600,'25':1000},coinKey:'duration'},
+    {label:'Pro Storyboard',model:'sora-2-pro-storyboard',fields:['sora_storyboard','sora_duration'],coins:{perScene:150},coinKey:'scenes'},
+    {label:'Characters Pro',model:'sora-2-characters-pro',fields:['sora_task_id','sora_timestamps','sora_char_prompt','sora_char_name'],coins:{fixed:100},coinKey:'fixed'}
+  ],
+  veo:[
+    {label:'3.1 Fast',model:'veo-3.1/fast',fields:['prompt','aspect_ratio','veo_duration','veo_fast_frames'],coins:{'4':60,'6':90,'8':120},coinKey:'duration'},
+    {label:'3.1 Standard',model:'veo-3.1/standard',fields:['prompt','aspect_ratio','veo_duration','veo_frame_refs'],coins:{'4':80,'6':120,'8':160},coinKey:'duration'}
+  ],
+  seedance:[
+    {label:'1.5 Pro',model:'seedance-1.5-pro',fields:['prompt','seedance15_frames','aspect_ratio','duration_basic'],coins:{'5':80,'10':160},coinKey:'duration'},
+    {label:'2.0',model:'seedance-2.0',fields:['prompt','seedance20_refs','aspect_ratio','duration_basic'],coins:{'5':150,'10':300},coinKey:'duration'}
+  ]
 };
-function sv(){localStorage.setItem('v0_c',coins);localStorage.setItem('v0_m',JSON.stringify(media))}
-function uc(){document.getElementById('cn').textContent=coins;const b=document.getElementById('cbig');if(b)b.textContent=coins}
 
-/* ══ PIN LOGIC ══ */
-let pinInput='';
-const DEFAULT_PIN='1234';
-function getPin(){return localStorage.getItem('v0_pin')||DEFAULT_PIN}
+const IMAGE_CONFIG={
+  flux:[
+    {label:'Flux Kontext Pro',model:'flux-kontext-pro',endpoint:'flux',fields:['img_prompt','img_refs_5_flux','img_aspect'],coins:{fixed:20},coinKey:'fixed'},
+    {label:'Flux Kontext Max',model:'flux-kontext-max',endpoint:'flux',fields:['img_prompt','img_refs_5_flux','img_aspect'],coins:{fixed:40},coinKey:'fixed'}
+  ],
+  seedream:[{label:'Seedream 4.5',model:'seedream-4.5',fields:['img_prompt','img_neg_prompt','img_refs_5','img_aspect'],coins:{fixed:10},coinKey:'fixed'}],
+  imagen:[{label:'Imagen 3',model:'imagen-3',fields:['img_prompt','img_refs_5','img_aspect'],coins:{fixed:20},coinKey:'fixed'}],
+  recraft:[{label:'Recraft v3',model:'recraft-v3',fields:['img_prompt','img_style','img_refs_5','img_aspect'],coins:{fixed:15},coinKey:'fixed'}],
+  ideogram:[
+    {label:'Ideogram v3',model:'ideogram-v3',fields:['img_prompt','img_refs_5','img_aspect'],coins:{fixed:15},coinKey:'fixed'},
+    {label:'Ideogram v2 Turbo',model:'ideogram-v2-turbo',fields:['img_prompt','img_refs_5','img_aspect'],coins:{fixed:8},coinKey:'fixed'}
+  ]
+};
 
-function pinKey(k){
-  if(pinInput.length>=4)return;
-  pinInput+=k;
-  updPinDots();
-  if(pinInput.length===4)setTimeout(checkPin,120);
-}
-function pinDel(){
-  pinInput=pinInput.slice(0,-1);
-  updPinDots();
-  document.getElementById('pin-err').textContent='';
-}
-function updPinDots(){
-  for(let i=0;i<4;i++){
-    const d=document.getElementById('pd'+i);
-    d.classList.remove('filled','err');
-    if(i<pinInput.length)d.classList.add('filled');
-  }
-}
-function checkPin(){
-  if(pinInput===getPin()){
-    // Richtig — App entsperren
-    document.getElementById('pin-screen').style.display='none';
-    document.getElementById('main-app').style.display='block';
-    document.querySelector('.bnav').style.display='flex';
-  } else {
-    // Falsch — Dots rot + shake
-    for(let i=0;i<4;i++)document.getElementById('pd'+i).classList.add('err');
-    document.getElementById('pin-err').textContent='FALSCHER PIN — BITTE WIEDERHOLEN';
-    setTimeout(()=>{
-      pinInput='';
-      updPinDots();
-      document.getElementById('pin-err').textContent='';
-    },800);
-  }
-}
-function lockApp(){
-  pinInput='';
-  updPinDots();
-  document.getElementById('pin-err').textContent='';
-  document.getElementById('main-app').style.display='none';
-  document.querySelector('.bnav').style.display='none';
-  document.getElementById('pin-screen').style.display='flex';
-  toast('🔒 App gesperrt');
-}
-function savePin(){
-  const v=document.getElementById('new-pin').value.trim();
-  if(!/^\d{4}$/.test(v)){toast('⚠ Bitte genau 4 Ziffern eingeben');return}
-  localStorage.setItem('v0_pin',v);
-  document.getElementById('new-pin').value='';
-  toast('✓ PIN gespeichert: '+v);
-}
-let pinVisible=false;
-function togglePinShow(){
-  pinVisible=!pinVisible;
-  document.getElementById('current-pin-display').textContent=pinVisible?getPin():'••••';
-}
+function _imgField(id,label){return`<div class="input-group"><label>${label}</label><div class="img-input-row"><input type="url" id="${id}" placeholder="https://..."/><button class="btn-upload" onclick="pickImage('${id}')" type="button">📷</button></div></div>`}
+function _refBlock(ids,labels){return`<div class="input-group"><label>Referenzen</label><div class="ref-fields">${ids.map((id,i)=>`<div class="ref-field"><span class="ref-badge">${labels[i]}</span><input type="url" id="${id}" placeholder="https://..."/><button class="btn-upload" onclick="pickImage('${id}')" type="button">📷</button></div>`).join('')}</div></div>`}
 
-/* ══ INIT ══ */
-window.addEventListener('DOMContentLoaded',()=>{
-  uc();renderMedia();
-  // bottom nav init ausblenden bis PIN ok
-  document.querySelector('.bnav').style.display='none';
-  const k=localStorage.getItem('v0_k');
-  if(k){document.getElementById('aki').value=k;setASt(true)}
-  const pairs=[['t-sora','tc-sora'],['t-veo','tc-veo'],['t-kling','tc-kling'],
-    ['t-wan','tc-wan'],['t-hailuo','tc-hailuo'],['t-seedance','tc-seedance'],
-    ['t-image','tc-image'],['t-tts','tc-tts'],['t-music','tc-music']];
-  pairs.forEach(([t,c])=>{const el=document.getElementById(t);if(el)el.addEventListener('input',()=>{const ce=document.getElementById(c);if(ce)ce.textContent=el.value.length})});
-});
+const FIELD_RENDERERS={
+  prompt:()=>`<div class="input-group"><label>Prompt</label><textarea id="f-prompt" placeholder="Beschreibe dein Video..." rows="4" maxlength="10000"></textarea></div>`,
+  aspect_ratio:()=>`<div class="input-group"><label>Aspect Ratio</label><select id="f-aspect" onchange="updateCoinEst()"><option value="16:9">16:9</option><option value="9:16">9:16</option><option value="1:1">1:1</option></select></div>`,
+  duration_kling26:()=>`<div class="input-group"><label>Dauer</label><select id="f-duration" onchange="updateCoinEst()"><option value="5">5s</option><option value="10">10s</option></select></div>`,
+  duration_kling30:()=>`<div class="input-group"><label>Dauer</label><select id="f-duration" onchange="updateCoinEst()"><option value="5">5s</option><option value="10">10s</option><option value="15">15s</option></select></div>`,
+  duration_basic:()=>`<div class="input-group"><label>Dauer</label><select id="f-duration" onchange="updateCoinEst()"><option value="5">5s</option><option value="10">10s</option></select></div>`,
+  sound:()=>`<div class="toggle-wrap"><span class="toggle-label">Sound generieren</span><div class="toggle" id="f-sound" onclick="this.classList.toggle('on')"></div></div>`,
+  image_url_char:()=>_imgField('f-img-char','Charakter Bild'),
+  ref_video_url:()=>`<div class="input-group"><label>Referenz Video URL</label><input type="url" id="f-ref-video" placeholder="https://..."/></div>`,
+  kling_itv_refs:()=>_refBlock(['f-frame','f-last-frame','f-ref1','f-ref2','f-ref3'],['Start Frame','End Frame','REF 1','REF 2','REF 3']),
+  kling30_itv:()=>_refBlock(['f-frame','f-last-frame','f-char1','f-char2','f-char3'],['Start Frame','End Frame','Char 1','Char 2','Char 3']),
+  image_url_3ref:()=>_refBlock(['f-ref1','f-ref2','f-ref3'],['REF 1','REF 2','REF 3']),
+  grok_itv_refs:()=>_refBlock(['f-frame','f-last-frame','f-ref1','f-ref2','f-ref3'],['Start Frame','End Frame','REF 1','REF 2','REF 3']),
+  veo_frame_refs:()=>_refBlock(['f-frame','f-ref1','f-ref2','f-ref3'],['Start Frame','REF 1','REF 2','REF 3']),
+  seedance15_frames:()=>_refBlock(['f-frame','f-last-frame'],['Start Frame','End Frame']),
+  seedance20_refs:()=>_refBlock(['f-frame','f-last-frame','f-ref1','f-ref2','f-ref3'],['Start Frame','End Frame','REF 1','REF 2','REF 3']),
+  grok_mode:()=>`<div class="input-group"><label>Mode</label><select id="f-grok-mode" onchange="updateCoinEst()"><option value="normal">Normal</option><option value="pro">Pro</option></select></div>`,
+  grok_task_id:()=>`<div class="input-group"><label>Grok Task-ID</label><div style="display:flex;gap:8px"><input type="text" id="f-task-id" placeholder="Task-ID..."/><button class="btn-secondary" style="white-space:nowrap" onclick="openTaskModal('grok')">📚</button></div></div>`,
+  sora_duration:()=>`<div class="input-group"><label>Dauer</label><select id="f-duration" onchange="updateCoinEst()"><option value="5">5s</option><option value="10">10s</option><option value="15">15s</option><option value="25">25s</option></select></div>`,
+  sora_storyboard:()=>`<div id="sora-storyboard-wrap"><div class="input-group" style="margin-bottom:12px"><label>Modus</label><select id="sora-mode" onchange="toggleSoraMode(this.value)"><option value="single">Einzel-Prompt</option><option value="scenes">Szenen-Modus</option></select></div><div id="sora-single-mode"><div class="input-group"><label>Story Prompt</label><textarea id="sora-single-prompt" rows="4" maxlength="10000" placeholder="Erzähle deine Geschichte..."></textarea></div></div><div id="sora-scenes-mode" style="display:none"><div id="scenes-list"><div class="scene-item"><div class="scene-num">SZENE 1</div><div class="input-group"><label>Prompt</label><textarea class="scene-prompt" rows="2" placeholder="Shot 1..."></textarea></div><div class="input-group"><label>Bild URL (optional)</label><input type="url" class="scene-img" placeholder="https://..."/></div></div></div><button class="btn-secondary" style="width:100%;margin-top:8px" onclick="addScene()">+ Shot hinzufügen</button></div></div>`,
+  sora_timestamps:()=>`<div class="input-group"><label>Timestamps (z.B. "2.0,5.0")</label><input type="text" id="f-timestamps" placeholder="2.0,5.0"/></div>`,
+  sora_char_prompt:()=>`<div class="input-group"><label>Charakter Prompt</label><textarea id="f-char-prompt" rows="2" placeholder="Beschreibe den Charakter..."></textarea></div>`,
+  sora_char_name:()=>`<div class="input-group"><label>Charakter Name</label><input type="text" id="f-char-name" placeholder="mein_charakter"/></div>`,
+  sora_task_id:()=>`<div class="input-group"><label>Origin Sora Task-ID</label><div style="display:flex;gap:8px"><input type="text" id="f-task-id" placeholder="Task-ID..."/><button class="btn-secondary" style="white-space:nowrap" onclick="openTaskModal('sora')">📚</button></div></div>`,
+  veo_duration:()=>`<div class="input-group"><label>Dauer</label><select id="f-duration" onchange="updateCoinEst()"><option value="4">4s</option><option value="6">6s</option><option value="8">8s</option></select></div>`,
+  veo_fast_frames:()=>_refBlock(['f-frame','f-last-frame'],['Start Frame','End Frame'])
+};
 
-/* ══ NAVIGATION ══ */
-function sw(btn){
-  document.querySelectorAll('.tt').forEach(t=>t.classList.remove('active'));
-  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+const IMG_FIELD_RENDERERS={
+  img_prompt:()=>`<div class="input-group"><label>Prompt</label><textarea id="if-prompt" rows="3" maxlength="10000" placeholder="Beschreibe dein Bild..."></textarea></div>`,
+  img_neg_prompt:()=>`<div class="input-group"><label>Negativer Prompt (optional)</label><input type="text" id="if-neg" placeholder="Was soll NICHT erscheinen..."/></div>`,
+  img_refs_5_flux:()=>_refBlock(['if-ref1','if-ref2','if-ref3','if-ref4','if-ref5'],['Quellbild','Style REF 2','Style REF 3','Style REF 4','Style REF 5']),
+  img_refs_5:()=>_refBlock(['if-ref1','if-ref2','if-ref3','if-ref4','if-ref5'],['Vorlage 1','Vorlage 2','Vorlage 3','Vorlage 4','Vorlage 5']),
+  img_aspect:()=>`<div class="input-group"><label>Aspect Ratio</label><select id="if-aspect"><option value="1:1">1:1</option><option value="16:9">16:9</option><option value="9:16">9:16</option><option value="4:3">4:3</option><option value="3:4">3:4</option></select></div>`,
+  img_style:()=>`<div class="input-group"><label>Stil</label><select id="if-style"><option value="realistic_image">Realistisch</option><option value="digital_illustration/anime">Anime</option><option value="vector_illustration">Vektor</option></select></div>`
+};
+
+function switchTab(name,btn){
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
   btn.classList.add('active');
-  document.getElementById('p-'+btn.dataset.p).classList.add('active');
-}
-function bn(btn,tab){
-  document.querySelectorAll('.bn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  const tt=document.querySelector(`.tt[data-p="${tab}"]`);
-  if(tt)sw(tt);
+  if(name==='media')renderMediathek();
 }
 
-/* ══ MODEL TABS ══ */
-function selmt(el,gid,tab,desc){
-  document.querySelectorAll('#'+gid+' .mt').forEach(m=>m.classList.remove('sel'));
-  el.classList.add('sel');
-  AM[tab].m=el.dataset.m;AM[tab].c=parseInt(el.dataset.c);
-  const d=document.getElementById('d-'+tab);if(d)d.textContent=desc;
-  const cv=document.getElementById('cv-'+tab);if(cv)cv.textContent=el.dataset.c;
-  const cm=document.getElementById('cm-'+tab);if(cm)cm.textContent=desc;
-  if(gid==='mt-kling'){const ar=document.getElementById('kling-audio-row');if(ar)ar.style.display=el.dataset.m.includes('avatar')?'block':'none'}
-}
-function updChatCost(c){const ct=document.getElementById('chat-ctag');if(ct)ct.textContent=c+' 🪙 / Nachricht'}
-function sc(el,gid){document.querySelectorAll('#'+gid+' .chip').forEach(c=>c.classList.remove('sel'));el.classList.add('sel')}
-function gc(gid){const e=document.querySelector('#'+gid+' .chip.sel');return e?e.textContent.trim():null}
-function upl(inp,gid){const g=document.getElementById(gid);Array.from(inp.files).slice(0,4).forEach(f=>{const r=new FileReader();r.onload=e=>{const d=document.createElement('div');d.className='th';d.innerHTML=`<img src="${e.target.result}"><button class="rm" onclick="this.parentNode.remove()">×</button>`;g.appendChild(d)};r.readAsDataURL(f)})}
-function lsp(inp,pid){const e=document.getElementById(pid);if(e&&inp.files[0])e.textContent='✓ '+inp.files[0].name.slice(0,22)}
-function cp(tid,cid){const t=document.getElementById(tid);if(t)t.value='';const c=document.getElementById(cid);if(c)c.textContent='0'}
-function showAUI(mode){['tts','music','ls'].forEach(m=>{const e=document.getElementById('aui-'+m);if(e)e.style.display=m===mode?'block':'none'})}
-function toggleAudioRow(show){const e=document.getElementById('kling-audio-row');if(e)e.style.display=show?'block':'none'}
-function toast(msg){const e=document.getElementById('toastEl');e.textContent=msg;e.classList.add('show');setTimeout(()=>e.classList.remove('show'),2800)}
-function sleep(ms){return new Promise(r=>setTimeout(r,ms))}
-function setASt(ok){const e=document.getElementById('ast');if(e){e.className='asts '+(ok?'ok':'er');e.textContent=ok?'✓ API Key aktiv':'✗ Kein Key'}}
-function saveKey(){const v=document.getElementById('aki').value.trim();if(!v){toast('⚠ Key eingeben');return}localStorage.setItem('v0_k',v);setASt(true);toast('✓ API Key gespeichert')}
+const warriorStates=['normal','loading','error'];
+let warriorIdx=0;
+const warriorNames=['🐉 Shenron','💚 Cell','👑 Frieza'];
+function cycleWarrior(){warriorIdx=(warriorIdx+1)%3;showWarrior(warriorStates[warriorIdx]);const t=document.getElementById('warrior-tooltip');if(t)t.textContent=warriorNames[warriorIdx]}
+function showWarrior(s){['normal','loading','error'].forEach(state=>{const img=document.getElementById('warrior-'+state+'-img');if(img)img.style.display=state===s?'block':'none'})}
 
-/* ══ API ══ */
-async function apiFetch(url,method,headers,body){
-  const r=await fetch(url,{method,headers,body:body?JSON.stringify(body):undefined});
-  if(!r.ok){const err=await r.json().catch(()=>({message:r.statusText}));throw new Error(err.message||'HTTP '+r.status)}
-  return r.json()
+function onGroupChange(){
+  const group=document.getElementById('video-group').value;
+  const subs=MODEL_CONFIG[group];
+  document.getElementById('video-sub').innerHTML=subs.map((s,i)=>`<option value="${i}">${s.label}</option>`).join('');
+  onSubChange();
 }
-const EPMAP={sora:'sora',veo:'veo',kling:'kling',wan:'wan',hailuo:'hailuo',seedance:'seedance',image:'image'};
+function onSubChange(){
+  const group=document.getElementById('video-group').value;
+  const subIdx=parseInt(document.getElementById('video-sub').value)||0;
+  const cfg=MODEL_CONFIG[group][subIdx];
+  document.getElementById('fields-title').textContent=cfg.label;
+  document.getElementById('dynamic-fields').innerHTML=cfg.fields.map(f=>FIELD_RENDERERS[f]?FIELD_RENDERERS[f]():'').join('');
+  if(cfg.fields.includes('sora_storyboard'))window._sceneCount=1;
+  updateCoinEst();
+  document.getElementById('video-result').style.display='none';
+  document.getElementById('status-box').className='status-box';
+}
+function updateCoinEst(){
+  const group=document.getElementById('video-group').value;
+  const subIdx=parseInt(document.getElementById('video-sub').value)||0;
+  const cfg=MODEL_CONFIG[group][subIdx];
+  let coins='—';
+  if(cfg.coinKey==='fixed')coins=cfg.coins.fixed;
+  else if(cfg.coinKey==='duration'){const dur=document.getElementById('f-duration')?.value||'5';coins=cfg.coins[dur]||cfg.coins[Object.keys(cfg.coins)[0]]}
+  else if(cfg.coinKey==='grok_mode'){const mode=document.getElementById('f-grok-mode')?.value||'normal';coins=cfg.coins[mode]}
+  else if(cfg.coinKey==='scenes'){coins=(window._sceneCount||1)*cfg.coins.perScene}
+  document.getElementById('coin-est').textContent=`~${coins} 🪙`;
+  document.getElementById('coin-model-label').textContent=cfg.model;
+}
+function addScene(){
+  window._sceneCount=(window._sceneCount||1)+1;
+  if(window._sceneCount>5){alert('Maximal 5 Szenen');return}
+  const list=document.getElementById('scenes-list');
+  const n=window._sceneCount;
+  const div=document.createElement('div');div.className='scene-item';div.dataset.scene=n;
+  div.innerHTML=`<div class="scene-num">SZENE ${n}</div><button class="scene-remove" onclick="this.closest('.scene-item').remove();window._sceneCount=Math.max(1,(window._sceneCount||1)-1);updateCoinEst()">✕</button><div class="input-group"><label>Prompt</label><textarea class="scene-prompt" rows="2" placeholder="Shot ${n}..."></textarea></div><div class="input-group"><label>Bild URL (optional)</label><input type="url" class="scene-img" placeholder="https://..."/></div>`;
+  list.appendChild(div);updateCoinEst();
+}
+function toggleSoraMode(val){document.getElementById('sora-single-mode').style.display=val==='single'?'block':'none';document.getElementById('sora-scenes-mode').style.display=val==='scenes'?'block':'none'}
 
-async function gen(tab){
-  const key=localStorage.getItem('v0_k');
-  if(!key){toast('⚠ API Key im Setup eingeben');return}
-  const am=AM[tab];
-  if(coins<am.c){toast('❌ Nicht genug Coins ('+am.c+' benötigt)');return}
-  const promptEl=document.getElementById('t-'+tab)||document.getElementById('t-tts');
-  const prompt=promptEl?promptEl.value.trim():'';
-  if(!prompt&&tab!=='audio'){toast('⚠ Prompt eingeben');return}
-  const stel=document.getElementById('gs-'+tab);if(stel)stel.classList.add('show');
-  const h={'Content-Type':'application/json','Authorization':'Bearer '+key};
-  try{
-    let body={prompt,model:am.m};
-    if(tab==='sora'){body.duration=parseInt(gc('c-sora-d')||'10');body.aspect_ratio=gc('c-sora-f')||'16:9'}
-    if(tab==='veo'){body.aspect_ratio=gc('c-veo-f')||'16:9';body.enableTranslation=true}
-    if(tab==='kling'){body.duration=parseInt(gc('c-kling-d')||'5');body.aspect_ratio=gc('c-kling-f')||'16:9'}
-    if(tab==='wan'){body.aspect_ratio=gc('c-wan-f')||'16:9'}
-    if(tab==='image'){body.aspect_ratio=gc('c-img-f')||'1:1';body.resolution=gc('c-img-r')||'1K'}
-    if(tab==='audio'){
-      if(am.m.includes('suno')){body.prompt=(document.getElementById('t-music')||{}).value?.trim()||'';body.style=gc('c-suno-g')||'Pop'}
-      else{body.text=prompt;body.voice=gc('c-el-v')||'Rachel'}
+function onImgGroupChange(){
+  const group=document.getElementById('img-group').value;
+  document.getElementById('img-sub').innerHTML=IMAGE_CONFIG[group].map((s,i)=>`<option value="${i}">${s.label}</option>`).join('');
+  onImgSubChange();
+}
+function onImgSubChange(){
+  const group=document.getElementById('img-group').value;
+  const subIdx=parseInt(document.getElementById('img-sub').value)||0;
+  const cfg=IMAGE_CONFIG[group][subIdx];
+  document.getElementById('img-fields-title').textContent=cfg.label;
+  document.getElementById('img-dynamic-fields').innerHTML=cfg.fields.map(f=>IMG_FIELD_RENDERERS[f]?IMG_FIELD_RENDERERS[f]():'').join('');
+  document.getElementById('img-coin-est').textContent=`~${cfg.coins.fixed} 🪙`;
+  document.getElementById('img-coin-model').textContent=cfg.model;
+  document.getElementById('image-result').style.display='none';
+}
+
+function useProxy(){return localStorage.getItem('vatto0_proxy')==='1'}
+async function kiePost(path,body,apiKey){
+  const url='https://api.kie.ai'+path;
+  const opts={method:'POST',headers:{'Authorization':'Bearer '+apiKey,'Content-Type':'application/json'},body:JSON.stringify(body)};
+  try{const r=await fetch(url,opts);return await r.json()}
+  catch(e){const r2=await fetch('https://corsproxy.io/?'+encodeURIComponent(url),opts);return await r2.json()}
+}
+async function kieGet(path,apiKey){
+  const url='https://api.kie.ai'+path;
+  const opts={headers:{'Authorization':'Bearer '+apiKey}};
+  try{const r=await fetch(url,opts);return await r.json()}
+  catch(e){const r2=await fetch('https://corsproxy.io/?'+encodeURIComponent(url),opts);return await r2.json()}
+}
+async function pollTask(taskId,apiKey,onProgress){
+  const delays=[5000,5000,8000,8000,10000,10000,12000,15000];
+  for(let attempt=0;attempt<80;attempt++){
+    await new Promise(r=>setTimeout(r,delays[Math.min(attempt,delays.length-1)]));
+    const res=await kieGet('/api/v1/jobs/getTaskDetail?taskId='+encodeURIComponent(taskId),apiKey);
+    const state=(res.data?.state??res.data?.status??'').toLowerCase();
+    if(onProgress)onProgress(state,attempt+1);
+    if(['success','completed','finished'].includes(state)){
+      const result=typeof res.data?.resultJson==='string'?JSON.parse(res.data.resultJson):(res.data?.resultJson??{});
+      return{result,taskId};
     }
-    if(tab==='chat'){
-      const r=await apiFetch(`${B}/chat/completions`,'POST',h,{model:am.m,messages:[{role:'user',content:prompt}]});
-      addMsg(r?.choices?.[0]?.message?.content||'(Keine Antwort)','ai',am.m);
-      if(stel)stel.classList.remove('show');coins-=am.c;uc();sv();return;
-    }
-    const res=await apiFetch(`${B}/${EPMAP[tab]||tab}/generate`,'POST',h,body);
-    const taskId=res?.data?.taskId||res?.data?.task_id;
-    if(!taskId)throw new Error('Kein Task zurückgegeben — API Key oder Modell prüfen');
-    await poll(`${B}/${EPMAP[tab]||tab}/task`,taskId,h,tab,am);
-  }catch(e){if(stel)stel.classList.remove('show');toast('❌ '+(e.message||'API Fehler'))}
-}
-
-async function poll(baseUrl,taskId,h,tab,am){
-  const stel=document.getElementById('gs-'+tab);
-  for(let i=0;i<120;i++){
-    await sleep(5000);
-    try{
-      const data=await apiFetch(`${baseUrl}?taskId=${taskId}`,'GET',h,null);
-      const s=(data?.data?.status||data?.data?.taskStatus||'').toLowerCase();
-      if(s==='success'||s==='completed'){
-        const url=data?.data?.videoUrl||data?.data?.imageUrl||data?.data?.audioUrl||data?.data?.url;
-        if(url){
-          coins-=am.c;uc();sv();
-          const mt=tab==='image'?'image':tab==='audio'?'audio':'video';
-          media.unshift({id:Date.now(),type:mt,url,model:am.m,tab,date:new Date().toLocaleDateString('de'),cost:am.c});
-          if(media.length>100)media.pop();sv();
-          showResult(tab,mt,url,am.m);renderMedia();
-          toast('✓ Fertig! '+am.c+'🪙 abgezogen');
-        }
-        if(stel)stel.classList.remove('show');return;
-      }else if(s==='failed'||s==='error'){throw new Error('Generierung fehlgeschlagen')}
-    }catch(e){if(stel)stel.classList.remove('show');toast('❌ '+e.message);return}
+    if(['failed','error'].includes(state))throw new Error(res.data?.failReason??res.data?.message??JSON.stringify(res));
   }
-  if(stel)stel.classList.remove('show');toast('⏱ Timeout')
+  throw new Error('Timeout nach 80 Versuchen');
+}
+function extractVideoUrl(r){return r.videoUrl??r.video_url??r.url??r.works?.[0]?.video?.resource??r.works?.[0]?.videoUrl??r.output??null}
+function extractImageUrl(r){return r.imageUrl??r.image_url??r.url??r.output??r.works?.[0]?.image?.resource??r.works?.[0]?.imageUrl??r.images?.[0]?.url??null}
+
+function buildRequestBody(group,cfg){
+  const g=v=>document.getElementById(v)?.value?.trim()||'';
+  const tog=v=>document.getElementById(v)?.classList.contains('on')||false;
+  const refs=ids=>ids.map(id=>g(id)).filter(Boolean);
+  const key=group+'/'+cfg.model;
+  if(key==='kling/kling-2.6/text-to-video'||key==='kling/kling-3.0/text-to-video')return{model:cfg.model,input:{prompt:g('f-prompt'),aspect_ratio:g('f-aspect')||'16:9',duration:g('f-duration'),sound:tog('f-sound')}};
+  if(key==='kling/kling-2.6/image-to-video'){const b={model:cfg.model,input:{prompt:g('f-prompt'),image_urls:refs(['f-frame','f-ref1','f-ref2','f-ref3']),duration:g('f-duration'),sound:tog('f-sound')}};if(g('f-last-frame'))b.input.tail_image_url=g('f-last-frame');return b}
+  if(key==='kling/kling-3.0/image-to-video'){const b={model:cfg.model,input:{prompt:g('f-prompt'),image_urls:refs(['f-frame']),character_image_urls:refs(['f-char1','f-char2','f-char3']),duration:g('f-duration')}};if(g('f-last-frame'))b.input.tail_image_url=g('f-last-frame');return b}
+  if(key==='kling/kling/ai-influencer')return{model:cfg.model,input:{prompt:g('f-prompt'),image_urls:refs(['f-ref1','f-ref2','f-ref3']),duration:g('f-duration')}};
+  if(key==='grok/grok-imagine/text-to-video')return{model:cfg.model,input:{prompt:g('f-prompt'),aspect_ratio:g('f-aspect')||'16:9',mode:g('f-grok-mode')||'normal'}};
+  if(key==='grok/grok-imagine/image-to-video'){const b={model:cfg.model,input:{prompt:g('f-prompt'),image_urls:refs(['f-frame','f-ref1','f-ref2','f-ref3']),mode:g('f-grok-mode')||'normal'}};if(g('f-last-frame'))b.input.tail_image_url=g('f-last-frame');return b}
+  if(key==='grok/grok-imagine/extend')return{model:cfg.model,input:{task_id:g('f-task-id'),prompt:g('f-prompt')}};
+  if(key==='sora/sora-2/text-to-video')return{model:cfg.model,input:{prompt:g('f-prompt'),duration:parseInt(g('f-duration')||'10'),aspect_ratio:g('f-aspect')||'16:9'}};
+  if(key==='sora/sora-2-pro-storyboard'){const mode=document.getElementById('sora-mode')?.value||'single';const dur=parseInt(g('f-duration')||'25');if(mode==='single')return{model:cfg.model,input:{scenes:[{prompt:document.getElementById('sora-single-prompt')?.value?.trim()||''}],duration:dur}};const scenes=[...document.querySelectorAll('.scene-item')].map(el=>({prompt:el.querySelector('.scene-prompt').value.trim(),...(el.querySelector('.scene-img')?.value?.trim()?{image_url:el.querySelector('.scene-img').value.trim()}:{})})).filter(s=>s.prompt);return{model:cfg.model,input:{scenes,duration:dur}}}
+  if(key==='sora/sora-2-characters-pro')return{model:cfg.model,input:{origin_task_id:g('f-task-id'),timestamps:g('f-timestamps'),character_prompt:g('f-char-prompt'),character_user_name:g('f-char-name')}};
+  if(key==='veo/veo-3.1/fast'){const b={model:cfg.model,input:{prompt:g('f-prompt'),aspect_ratio:g('f-aspect')||'16:9',duration:parseInt(g('f-duration')||'8')}};if(g('f-frame'))b.input.image_urls=[g('f-frame')];if(g('f-last-frame'))b.input.tail_image_url=g('f-last-frame');return b}
+  if(key==='veo/veo-3.1/standard'){const b={model:cfg.model,input:{prompt:g('f-prompt'),aspect_ratio:g('f-aspect')||'16:9',duration:parseInt(g('f-duration')||'8')}};const ir=refs(['f-frame','f-ref1','f-ref2','f-ref3']);if(ir.length)b.input.image_urls=ir;return b}
+  if(key==='seedance/seedance-1.5-pro'){const b={model:cfg.model,input:{prompt:g('f-prompt'),aspect_ratio:g('f-aspect')||'16:9',duration:parseInt(g('f-duration')||'5')}};const fr=refs(['f-frame','f-last-frame']);if(fr.length)b.input.input_urls=fr;return b}
+  if(key==='seedance/seedance-2.0'){const b={model:cfg.model,input:{prompt:g('f-prompt'),aspect_ratio:g('f-aspect')||'16:9',duration:parseInt(g('f-duration')||'5'),sound:tog('f-sound')}};const fr=refs(['f-frame','f-last-frame','f-ref1','f-ref2','f-ref3']);if(fr.length)b.input.input_urls=fr;return b}
+  return{model:cfg.model,input:{prompt:g('f-prompt'),aspect_ratio:g('f-aspect')||'16:9',duration:parseInt(g('f-duration')||'5')}};
 }
 
-function showResult(tab,type,url,model){
-  const g=document.getElementById('r-'+tab);if(!g)return;
-  const ne=g.querySelector('.ne');if(ne)ne.remove();
-  const d=document.createElement('div');
-  d.className='ri'+(type==='image'?' ri-img':'');
-  if(type==='video')d.innerHTML=`<video src="${url}" controls playsinline loop style="width:100%;aspect-ratio:16/9;display:block"></video><div class="rm2"><div class="rn">${model}</div><div class="rt">VIDEO</div></div><div class="ra"><button class="rab" onclick="window.open('${url}','_blank')">ÖFFNEN</button><button class="rab" onclick="dlM('${url}','video.mp4')">⬇ DL</button></div>`;
-  else if(type==='image')d.innerHTML=`<img src="${url}" style="width:100%;aspect-ratio:1;object-fit:cover;display:block"><div class="rm2"><div class="rn">${model}</div><div class="rt">BILD</div></div><div class="ra"><button class="rab" onclick="window.open('${url}','_blank')">ÖFFNEN</button><button class="rab" onclick="dlM('${url}','image.png')">⬇ DL</button></div>`;
-  else d.innerHTML=`<div class="rp">🎵</div><div class="rm2"><div class="rn">${model}</div><div class="rt">AUDIO</div></div><div class="ra"><button class="rab" onclick="window.open('${url}','_blank')">▶ PLAY</button><button class="rab" onclick="dlM('${url}','audio.mp3')">⬇ DL</button></div>`;
-  g.prepend(d);
-}
+let _lastTaskId=null,_lastVideoUrl=null,_isGenerating=false,_cachedBalance=null;
 
-function renderMedia(){
-  const g=document.getElementById('r-media');
-  if(!media.length){g.innerHTML='<div class="ne"><div style="font-size:32px;margin-bottom:10px;opacity:.3">📁</div><div>NOCH KEINE MEDIEN</div></div>';return}
-  g.innerHTML=media.map(i=>`<div class="ri${i.type==='image'?' ri-img':''}">
-    ${i.type==='video'?`<video src="${i.url}" controls playsinline style="width:100%;aspect-ratio:16/9;display:block"></video>`:i.type==='image'?`<img src="${i.url}" style="width:100%;aspect-ratio:1;object-fit:cover;display:block">`:`<div class="rp">🎵</div>`}
-    <div class="rm2"><div class="rn">${i.model}</div><div class="rt">${i.type.toUpperCase()} · ${i.date} · ${i.cost}🪙</div></div>
-    <div class="ra"><button class="rab" onclick="window.open('${i.url}','_blank')">ÖFFNEN</button><button class="rab" onclick="dlM('${i.url}','${i.type}')">⬇</button><button class="rab" onclick="delM(${i.id})">🗑</button></div>
-  </div>`).join('')
-}
-function delM(id){media=media.filter(m=>m.id!==id);sv();renderMedia()}
-function clearMedia(){if(confirm('Alle Medien löschen?')){media=[];sv();renderMedia();toast('🗑 Geleert')}}
-function dlM(url,fn){const a=document.createElement('a');a.href=url;a.download=fn;a.target='_blank';a.click();toast('⬇ Download gestartet')}
-
-async function sendChat(){
-  const inp=document.getElementById('ci');const msg=inp.value.trim();if(!msg)return;
-  const key=localStorage.getItem('v0_k');if(!key){toast('⚠ API Key eingeben');return}
-  const am=AM.chat;if(coins<am.c){toast('❌ Nicht genug Coins');return}
-  addMsg(msg,'user');inp.value='';
+async function generateVideo(){
+  if(_isGenerating)return;
+  const prompt=document.getElementById('f-prompt')?.value?.trim()||'';
+  if(!prompt){showStatus('error','Prompt ist leer');return}
+  const apiKey=getKey('kie');
+  if(!apiKey){showStatus('error','Kein kie.ai API Key gesetzt');return}
+  const group=document.getElementById('video-group').value;
+  const subIdx=parseInt(document.getElementById('video-sub').value)||0;
+  const cfg=MODEL_CONFIG[group][subIdx];
+  const body=buildRequestBody(group,cfg);
+  _isGenerating=true;
+  document.getElementById('gen-btn').disabled=true;
+  document.getElementById('video-result').style.display='none';
+  showWarrior('loading');warriorIdx=1;
+  showStatus('loading','Verbinde mit kie.ai...');
   try{
-    const h={'Content-Type':'application/json','Authorization':'Bearer '+key};
-    const r=await apiFetch(`${B}/chat/completions`,'POST',h,{model:am.m,messages:[{role:'user',content:msg}]});
-    addMsg(r?.choices?.[0]?.message?.content||'(Keine Antwort)','ai',am.m);
-    coins-=am.c;uc();sv();
-  }catch(e){addMsg('❌ '+e.message,'ai','ERROR')}
+    const res=await kiePost('/api/v1/jobs/createTask',body,apiKey);
+    if(res.code!==200||!res.data?.taskId)throw new Error('HTTP '+(res.code||'?')+': '+JSON.stringify(res));
+    const taskId=res.data.taskId;_lastTaskId=taskId;
+    showStatus('loading',`Task (${taskId.slice(0,12)}...) — generiere...`);
+    const{result}=await pollTask(taskId,apiKey,(state,attempt)=>{showStatus('loading',`Generiere... (${attempt}/80) — ${state}`)});
+    const videoUrl=extractVideoUrl(result);
+    if(!videoUrl)throw new Error('Keine Video-URL. Raw: '+JSON.stringify(result));
+    _lastVideoUrl=videoUrl;
+    showStatus('ok','✅ Fertig! Task-ID: '+taskId);
+    showWarrior('normal');warriorIdx=0;
+    document.getElementById('result-video').src=videoUrl;
+    document.getElementById('video-result').style.display='block';
+    addToMedia({id:taskId,type:'video',url:videoUrl,taskId,model:cfg.model,prompt,date:new Date().toISOString(),name:cfg.label});
+    refreshCoins();
+  }catch(e){showStatus('error','❌ '+e.message,e.message);showWarrior('error');warriorIdx=2}
+  finally{_isGenerating=false;document.getElementById('gen-btn').disabled=false}
 }
-function addMsg(text,role,model=''){
-  const c=document.getElementById('chatbox');
-  const d=document.createElement('div');d.className='msg m'+(role==='user'?'u':'ai');
-  if(role==='ai')d.innerHTML=`<div class="mf">${model.toUpperCase()}</div>${text}`;
-  else d.textContent=text;
-  c.appendChild(d);c.scrollTop=c.scrollHeight;
+
+function showStatus(type,text,raw){
+  const box=document.getElementById('status-box');
+  if(type==='loading'){box.className='status-box status-loading show';box.innerHTML=`<div class="spinner"></div><span>${text}</span>`}
+  else if(type==='ok'){box.className='status-box status-ok show';box.innerHTML=`<span>${text}</span>`;setTimeout(()=>{if(box.classList.contains('status-ok'))box.className='status-box'},5000)}
+  else{box.className='status-box status-error show';box.innerHTML=`<div><strong>Fehler</strong></div><code>${String(raw||text).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}</code>`}
 }
+function downloadResult(){if(!_lastVideoUrl)return;const a=document.createElement('a');a.href=_lastVideoUrl;a.download='vatto0-'+Date.now()+'.mp4';a.click()}
+function copyTaskId(){if(!_lastTaskId)return;navigator.clipboard.writeText(_lastTaskId).then(()=>alert('Task-ID kopiert: '+_lastTaskId))}
+
+function openTaskModal(type){
+  const media=getMedia();
+  const items=type==='grok'?media.filter(m=>m.model&&m.model.includes('grok')):media.filter(m=>m.model&&m.model.includes('sora'));
+  document.getElementById('modal-title').textContent=type==='grok'?'Grok Video wählen':'Sora Video wählen';
+  const body=document.getElementById('modal-body');
+  body.innerHTML=!items.length?'<p style="color:var(--text-muted);text-align:center;padding:20px">Keine passenden Videos</p>':items.map(m=>`<div class="modal-item" onclick="selectTaskId('${m.taskId}')"><span style="font-size:24px">🎬</span><div class="modal-item-info"><div class="modal-item-model">${m.model}</div><div class="modal-item-prompt">${m.prompt||'—'}</div><div class="modal-item-id">${m.taskId}</div></div></div>`).join('');
+  document.getElementById('task-modal').classList.add('show');
+}
+function selectTaskId(id){const input=document.getElementById('f-task-id');if(input)input.value=id;closeModal()}
+function closeModal(){document.getElementById('task-modal').classList.remove('show')}
+document.getElementById('task-modal').addEventListener('click',e=>{if(e.target===document.getElementById('task-modal'))closeModal()});
+
+function getMedia(){try{return JSON.parse(localStorage.getItem('vatto0_media_v3')||'[]')}catch{return[]}}
+function addToMedia(item){let m=getMedia();m=m.filter(x=>x.id!==item.id);m.unshift(item);if(m.length>50)m=m.slice(0,50);localStorage.setItem('vatto0_media_v3',JSON.stringify(m))}
+
+let _mediaFilter='all';
+function setMediaFilter(filter,btn){_mediaFilter=filter;document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');renderMediathek()}
+
+function renderMediathek(){
+  const allMedia=getMedia();
+  const media=_mediaFilter==='all'?allMedia:allMedia.filter(m=>m.type===_mediaFilter);
+  const grid=document.getElementById('media-grid');
+  const empty=document.getElementById('media-empty');
+  document.getElementById('media-count').textContent=allMedia.length;
+  if(!media.length){grid.innerHTML='';empty.style.display='block';return}
+  empty.style.display='none';
+  grid.innerHTML=media.map(m=>{
+    const isVideo=m.type==='video';const isImg=m.type==='image';
+    const thumb=isVideo?`<video src="${m.url}" muted></video>`:isImg?`<img src="${m.url}" style="width:100%;height:100%;object-fit:cover" onerror="this.parentNode.innerHTML='🖼️'">`:`<div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:36px">🎵</div>`;
+    const click=isImg?`openLightbox('${m.url}')`:`window.open('${m.url}','_blank')`;
+    return`<div class="media-item"><div class="media-thumb" onclick="${click}">${thumb}</div><div class="media-info"><div class="media-model">${m.name||m.model}</div><div class="media-date">${new Date(m.date).toLocaleDateString('de-DE')}</div><div class="media-taskid" onclick="navigator.clipboard.writeText('${m.taskId}')" title="Kopieren">📋 ${(m.taskId||'').slice(0,16)}...</div></div><div class="media-actions"><button class="btn-secondary" style="padding:6px 8px;font-size:11px;flex:1" onclick="downloadMediaItem('${m.url}','${m.type}',this)">⬇️</button><button class="btn-red" style="padding:6px 8px;font-size:11px" onclick="deleteMedia('${m.id}')">🗑️</button></div></div>`;
+  }).join('');
+  grid.querySelectorAll('.media-thumb video').forEach(v=>{v.parentNode.addEventListener('mouseenter',()=>v.play().catch(()=>{}));v.parentNode.addEventListener('mouseleave',()=>{v.pause();v.currentTime=0})});
+}
+function deleteMedia(id){let m=getMedia().filter(x=>x.id!==id);localStorage.setItem('vatto0_media_v3',JSON.stringify(m));renderMediathek()}
+function clearAllMedia(){if(!confirm('Alle Medien löschen?'))return;localStorage.removeItem('vatto0_media_v3');renderMediathek()}
+async function downloadMediaItem(url,type,btn){const orig=btn?.textContent||'⬇️';if(btn){btn.textContent='⏳';btn.disabled=true}try{const r=await fetch(url);const blob=await r.blob();const blobUrl=URL.createObjectURL(blob);const a=document.createElement('a');a.href=blobUrl;a.download='vatto0-'+Date.now()+(type==='video'?'.mp4':type==='audio'?'.mp3':'.jpg');a.click();setTimeout(()=>URL.revokeObjectURL(blobUrl),8000);if(btn){btn.textContent='✅';setTimeout(()=>{btn.textContent=orig;btn.disabled=false},2000)}}catch{window.open(url,'_blank');if(btn){btn.textContent=orig;btn.disabled=false}}}
+
+const KEY_MAP={kie:'vatto0_kieai',grok:'vatto0_grok',el:'vatto0_elevenlabs',oai:'vatto0_openai'};
+const DOT_MAP={kie:'dot-kie',grok:'dot-grok',el:'dot-el',oai:'dot-oai'};
+const INPUT_MAP={kie:'key-kie',grok:'key-grok',el:'key-el',oai:'key-oai'};
+function getKey(name){return localStorage.getItem(KEY_MAP[name])||''}
+function saveKey(name){const inp=document.getElementById(INPUT_MAP[name]);const val=inp?.value?.trim();if(!val)return;localStorage.setItem(KEY_MAP[name],val);setDot(name,'green');if(inp){inp.value='';inp.placeholder=val.slice(0,6)+'••••••••'+val.slice(-3);inp.type='password'}checkKeyBanners();if(name==='kie')refreshCoins();alert('✅ Key gespeichert!')}
+function setDot(name,color){const dot=document.getElementById(DOT_MAP[name]);if(dot)dot.className='status-dot '+color}
+function toggleKeyVis(inputId,btn){const inp=document.getElementById(inputId);if(!inp)return;const isHidden=inp.type==='password';inp.type=isHidden?'text':'password';btn.textContent=isHidden?'🙈':'👁️'}
+function switchToSettings(){const btn=[...document.querySelectorAll('.tab-btn')].find(b=>b.getAttribute('onclick')?.includes("'settings'"));if(btn)switchTab('settings',btn)}
+function checkKeyBanners(){const hasKie=!!getKey('kie');const hasEl=!!getKey('el');const hasPrompt=!!(getKey('grok')||getKey('oai'));['video','bild'].forEach(tab=>{const b=document.getElementById('no-key-banner-'+tab);if(b)b.style.display=hasKie?'none':'flex'});const bv=document.getElementById('no-key-banner-voice');if(bv)bv.style.display=hasEl?'none':'flex';const bp=document.getElementById('no-key-banner-prompt');if(bp)bp.style.display=hasPrompt?'none':'flex'}
+async function testKieKey(){const key=getKey('kie');if(!key){alert('Kein Key gesetzt.');return}try{const res=await kieGet('/api/v1/account/balance',key);if(res.code===200){const bal=res.data?.balance??res.data?.coins??'?';document.getElementById('coin-amount').textContent=bal;setDot('kie','green');alert('✅ Key gültig! Guthaben: '+bal+' Coins')}else{setDot('kie','red');alert('❌ Fehler: '+JSON.stringify(res))}}catch(e){setDot('kie','red');alert('❌ Verbindungsfehler: '+e.message)}}
+async function refreshCoins(){const key=getKey('kie');if(!key){document.getElementById('coin-amount').textContent='—';return}document.getElementById('coin-amount').textContent='…';try{const res=await kieGet('/api/v1/account/balance',key);if(res.code===200)document.getElementById('coin-amount').textContent=(res.data?.balance??res.data?.coins??'?').toLocaleString();else document.getElementById('coin-amount').textContent='?'}catch{document.getElementById('coin-amount').textContent='?'}}
+
+let _lastImgTaskId=null,_lastImgUrl=null,_isGenImage=false;
+function showImgStatus(type,text,raw){const box=document.getElementById('img-status-box');if(type==='loading'){box.className='status-box status-loading show';box.innerHTML=`<div class="spinner"></div><span>${text}</span>`}else if(type==='ok'){box.className='status-box status-ok show';box.innerHTML=`<span>${text}</span>`;setTimeout(()=>{if(box.classList.contains('status-ok'))box.className='status-box'},5000)}else{box.className='status-box status-error show';box.innerHTML=`<div><strong>Fehler</strong></div><code>${String(raw||text).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}</code>`}}
+function buildImageRequestBody(group,cfg){
+  const g=id=>document.getElementById(id)?.value?.trim()||'';
+  const imgRefs=()=>['if-ref1','if-ref2','if-ref3','if-ref4','if-ref5'].map(g).filter(Boolean);
+  if(cfg.endpoint==='flux'){const refs=imgRefs();const b={model:cfg.model,input:{prompt:g('if-prompt'),aspect_ratio:g('if-aspect')||'1:1'}};if(refs[0])b.input.image_url=refs[0];if(refs.length>1)b.input.image_urls=refs;return b}
+  const refs=imgRefs();
+  switch(cfg.model){
+    case'seedream-4.5':{const b={model:cfg.model,input:{prompt:g('if-prompt'),aspect_ratio:g('if-aspect')||'1:1'}};if(g('if-neg'))b.input.negative_prompt=g('if-neg');if(refs.length)b.input.image_urls=refs;return b}
+    case'recraft-v3':{const b={model:cfg.model,input:{prompt:g('if-prompt'),style:g('if-style')||'realistic_image',aspect_ratio:g('if-aspect')||'1:1'}};if(refs.length)b.input.image_urls=refs;return b}
+    default:{const b={model:cfg.model,input:{prompt:g('if-prompt'),aspect_ratio:g('if-aspect')||'1:1'}};if(refs.length)b.input.image_urls=refs;return b}
+  }
+}
+async function generateImage(){
+  if(_isGenImage)return;
+  const prompt=document.getElementById('if-prompt')?.value?.trim()||'';
+  if(!prompt){showImgStatus('error','Prompt ist leer');return}
+  const apiKey=getKey('kie');if(!apiKey){showImgStatus('error','Kein kie.ai API Key');return}
+  const group=document.getElementById('img-group').value;
+  const subIdx=parseInt(document.getElementById('img-sub').value)||0;
+  const cfg=IMAGE_CONFIG[group][subIdx];
+  const body=buildImageRequestBody(group,cfg);
+  _isGenImage=true;document.getElementById('img-gen-btn').disabled=true;
+  document.getElementById('image-result').style.display='none';
+  showWarrior('loading');warriorIdx=1;showImgStatus('loading','Verbinde mit kie.ai...');
+  try{
+    const endpoint=cfg.endpoint==='flux'?'/api/v1/flux/kontext/generate':'/api/v1/jobs/createTask';
+    const res=await kiePost(endpoint,body,apiKey);
+    if(res.code!==200)throw new Error('HTTP '+(res.code||'?')+': '+JSON.stringify(res));
+    const maybeImmediate=res.data?.resultJson?(typeof res.data.resultJson==='string'?JSON.parse(res.data.resultJson):res.data.resultJson):(res.data||{});
+    const immediateUrl=extractImageUrl(maybeImmediate);
+    if(immediateUrl){_lastImgUrl=immediateUrl;_lastImgTaskId=res.data?.taskId||('img_'+Date.now());_showImgResult(immediateUrl,_lastImgTaskId,cfg);return}
+    if(!res.data?.taskId)throw new Error('Keine Task-ID: '+JSON.stringify(res));
+    const taskId=res.data.taskId;_lastImgTaskId=taskId;
+    showImgStatus('loading',`Task (${taskId.slice(0,12)}...) — warte...`);
+    const{result}=await pollTask(taskId,apiKey,(state,attempt)=>showImgStatus('loading',`Generiere... (${attempt}/80) — ${state}`));
+    const imgUrl=extractImageUrl(result);
+    if(!imgUrl)throw new Error('Keine Bild-URL. Raw: '+JSON.stringify(result));
+    _lastImgUrl=imgUrl;_showImgResult(imgUrl,taskId,cfg);
+  }catch(e){showImgStatus('error','❌ '+e.message,e.message);showWarrior('error');warriorIdx=2}
+  finally{_isGenImage=false;document.getElementById('img-gen-btn').disabled=false}
+}
+function _showImgResult(url,taskId,cfg){showImgStatus('ok','✅ Fertig!');showWarrior('normal');warriorIdx=0;document.getElementById('result-image').src=url;document.getElementById('image-result').style.display='block';addToMedia({id:taskId,type:'image',url,taskId,model:cfg.model,prompt:document.getElementById('if-prompt')?.value||'',date:new Date().toISOString(),name:cfg.label});refreshCoins()}
+function downloadImage(){if(!_lastImgUrl)return;const a=document.createElement('a');a.href=_lastImgUrl;a.download='vatto0-img-'+Date.now()+'.png';a.target='_blank';a.click()}
+function copyImgTaskId(){if(!_lastImgTaskId)return;navigator.clipboard.writeText(_lastImgTaskId).then(()=>alert('Task-ID kopiert: '+_lastImgTaskId))}
+
+let _lastAudioBlob=null;
+function showVoiceStatus(type,text,raw){const box=document.getElementById('voice-status-box');if(type==='loading'){box.className='status-box status-loading show';box.innerHTML=`<div class="spinner"></div><span>${text}</span>`}else if(type==='ok'){box.className='status-box status-ok show';box.innerHTML=`<span>${text}</span>`;setTimeout(()=>{if(box.classList.contains('status-ok'))box.className='status-box'},5000)}else{box.className='status-box status-error show';box.innerHTML=`<div><strong>Fehler</strong></div><code>${String(raw||text).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}</code>`}}
+async function generateVoice(){
+  const key=getKey('el');if(!key){showVoiceStatus('error','Kein ElevenLabs Key');return}
+  const text=document.getElementById('v-text').value.trim();if(!text){showVoiceStatus('error','Bitte Text eingeben');return}
+  const voiceId=document.getElementById('v-voice').value;
+  const modelId=document.getElementById('v-model').value;
+  const stability=parseInt(document.getElementById('v-stability').value)/100;
+  const url=`https://api.elevenlabs.io/v1/text-to-speech/${voiceId}`;
+  const reqBody={text,model_id:modelId,voice_settings:{stability,similarity_boost:.75}};
+  const headers={'xi-api-key':key,'Content-Type':'application/json'};
+  document.getElementById('voice-btn').disabled=true;showVoiceStatus('loading','Generiere Stimme...');
+  try{
+    let response;
+    try{response=await fetch(url,{method:'POST',headers,body:JSON.stringify(reqBody)})}
+    catch(e){response=await fetch('https://corsproxy.io/?'+encodeURIComponent(url),{method:'POST',headers,body:JSON.stringify(reqBody)})}
+    if(!response.ok){const errText=await response.text();throw new Error(`HTTP ${response.status}: ${errText.slice(0,300)}`)}
+    _lastAudioBlob=await response.blob();
+    const audioUrl=URL.createObjectURL(_lastAudioBlob);
+    const player=document.getElementById('v-player');player.src=audioUrl;
+    document.getElementById('audio-result').style.display='block';player.play().catch(()=>{});
+    showVoiceStatus('ok','✅ Audio bereit! Jetzt herunterladen.');
+  }catch(e){showVoiceStatus('error','❌ '+e.message,e.message)}
+  finally{document.getElementById('voice-btn').disabled=false}
+}
+function downloadAudio(){if(!_lastAudioBlob)return;const a=document.createElement('a');a.href=URL.createObjectURL(_lastAudioBlob);a.download='vatto0-voice-'+Date.now()+'.mp3';a.click()}
+
+const PG_MODELS={video:['Kling 3.0','Kling 2.6','Grok Video','Sora 2','Veo 3.1 Fast','Seedance 2.0'],bild:['Flux Kontext Pro','Flux Kontext Max','Seedream 4.5','Imagen 3','Recraft v3','Ideogram v3']};
+const PG_STYLES=['Cinematic','Anime','Realistic','Dark & Moody','Vibrant','Sci-Fi','Fantasy','Vintage','Neon','Slow motion'];
+function updatePgModels(){const type=document.getElementById('pg-target-type').value;document.getElementById('pg-target-model').innerHTML=PG_MODELS[type].map(m=>`<option>${m}</option>`).join('')}
+function initPgChips(){document.getElementById('pg-style-chips').innerHTML=PG_STYLES.map(s=>`<span class="style-chip" onclick="this.classList.toggle('active')">${s}</span>`).join('')}
+function showPgStatus(type,text,raw){const box=document.getElementById('pg-status-box');if(type==='loading'){box.className='status-box status-loading show';box.innerHTML=`<div class="spinner"></div><span>${text}</span>`}else if(type==='ok'){box.className='status-box status-ok show';box.innerHTML=`<span>${text}</span>`;setTimeout(()=>{if(box.classList.contains('status-ok'))box.className='status-box'},5000)}else{box.className='status-box status-error show';box.innerHTML=`<div><strong>Fehler</strong></div><code>${String(raw||text).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}</code>`}}
+async function generatePrompt(){
+  const aiModel=document.getElementById('pg-ai-model').value;
+  const key=aiModel==='grok'?getKey('grok'):getKey('oai');
+  if(!key){showPgStatus('error',`Kein ${aiModel==='grok'?'xAI/Grok':'OpenAI'} Key in Settings`);return}
+  const input=document.getElementById('pg-input').value.trim();
+  if(!input){showPgStatus('error','Bitte eine Beschreibung eingeben');return}
+  const targetType=document.getElementById('pg-target-type').value;
+  const targetModel=document.getElementById('pg-target-model').value;
+  const lang=document.getElementById('pg-lang').value;
+  const styles=[...document.querySelectorAll('.style-chip.active')].map(c=>c.textContent);
+  const langInstr=lang==='en'?'Write the prompt in English.':'Schreibe den Prompt auf Deutsch.';
+  const styleInstr=styles.length?`Incorporate these style elements: ${styles.join(', ')}.`:'';
+  const systemPrompt=targetType==='video'?`You are an expert AI video generation prompt engineer specializing in ${targetModel}. Create a detailed, cinematic prompt. Include: subject/action, visual style, camera movement, lighting, atmosphere, mood. ${styleInstr} ${langInstr} Return ONLY the final prompt, no labels, no explanations.`:`You are an expert AI image generation prompt engineer specializing in ${targetModel}. Create a highly detailed image prompt. Include: main subject, artistic style, lighting, composition, color palette, mood. ${styleInstr} ${langInstr} Return ONLY the final prompt, no labels, no explanations.`;
+  const body={model:aiModel==='grok'?'grok-3':'gpt-4o',messages:[{role:'system',content:systemPrompt},{role:'user',content:input}],max_tokens:1200,temperature:0.85};
+  const apiUrl=aiModel==='grok'?'https://api.x.ai/v1/chat/completions':'https://api.openai.com/v1/chat/completions';
+  const headers={'Authorization':'Bearer '+key,'Content-Type':'application/json'};
+  document.getElementById('pg-btn').disabled=true;document.getElementById('pg-result-card').style.display='none';
+  showPgStatus('loading',`Generiere mit ${aiModel==='grok'?'Grok 3':'GPT-4o'}...`);
+  try{
+    let res;
+    try{const r=await fetch(apiUrl,{method:'POST',headers,body:JSON.stringify(body)});res=await r.json()}
+    catch(e){const r=await fetch('https://corsproxy.io/?'+encodeURIComponent(apiUrl),{method:'POST',headers,body:JSON.stringify(body)});res=await r.json()}
+    const text=res.choices?.[0]?.message?.content?.trim();
+    if(!text)throw new Error('Keine Antwort: '+JSON.stringify(res).slice(0,300));
+    document.getElementById('pg-result-text').textContent=text;
+    document.getElementById('pg-result-card').style.display='block';
+    showPgStatus('ok','✅ Prompt bereit!');
+  }catch(e){showPgStatus('error','❌ '+e.message,e.message)}
+  finally{document.getElementById('pg-btn').disabled=false}
+}
+function copyGeneratedPrompt(){const text=document.getElementById('pg-result-text').textContent;navigator.clipboard.writeText(text).then(()=>{const btn=event.target;const orig=btn.textContent;btn.textContent='✅ Kopiert!';setTimeout(()=>btn.textContent=orig,2000)})}
+function sendPromptTo(tab){
+  const text=document.getElementById('pg-result-text').textContent;if(!text)return;
+  const targetId=tab==='video'?'f-prompt':'if-prompt';
+  const tabBtns=document.querySelectorAll('.tab-btn');
+  const targetBtn=[...tabBtns].find(b=>b.getAttribute('onclick')?.includes(`'${tab}'`));
+  if(targetBtn)switchTab(tab,targetBtn);
+  setTimeout(()=>{const el=document.getElementById(targetId);if(el){el.value=text;el.focus();el.scrollIntoView({behavior:'smooth',block:'center'})}},150);
+}
+
+function openLightbox(url){document.getElementById('lightbox-img').src=url;document.getElementById('lightbox').classList.add('show')}
+function closeLightbox(){document.getElementById('lightbox').classList.remove('show');document.getElementById('lightbox-img').src=''}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox()});
+
+async function uploadToHost(file){
+  try{const fd=new FormData();fd.append('file',file,file.name);const r=await fetch('https://telegra.ph/upload',{method:'POST',body:fd});const json=await r.json();if(json[0]?.src)return'https://telegra.ph'+json[0].src}catch(e){}
+  try{const fd=new FormData();fd.append('reqtype','fileupload');fd.append('fileToUpload',file);const r=await fetch('https://corsproxy.io/?'+encodeURIComponent('https://catbox.moe/user/api.php'),{method:'POST',body:fd});const txt=await r.text();if(txt.startsWith('http'))return txt.trim()}catch(e){}
+  return null;
+}
+function pickImage(targetId){_doPickMedia(targetId,'image/*')}
+function _doPickMedia(targetId,accept){
+  const inp=document.createElement('input');inp.type='file';inp.accept=accept;
+  inp.onchange=async e=>{
+    const file=e.target.files[0];if(!file)return;
+    const btn=document.querySelector(`[onclick*="pickImage('${targetId}')"]`);
+    const origTxt=btn?.textContent||'📷';if(btn){btn.textContent='⏳';btn.disabled=true}
+    const url=await uploadToHost(file);
+    if(url){const el=document.getElementById(targetId);if(el)el.value=url;if(btn)btn.textContent='✅';setTimeout(()=>{if(btn){btn.textContent=origTxt;btn.disabled=false}},2000)}
+    else{alert('Upload fehlgeschlagen. URL manuell einfügen.');if(btn){btn.textContent=origTxt;btn.disabled=false}}
+  };inp.click();
+}
+
+function toggleProxy(){const t=document.getElementById('proxy-toggle');t.classList.toggle('on');localStorage.setItem('vatto0_proxy',t.classList.contains('on')?'1':'0')}
+
+const ACCESS_CODE='vatto0studio';
+const LOCK_KEY='vatto0_lock_v1';
+async function sha256(str){const buf=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(str));return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('')}
+async function checkLock(){
+  const expected=await sha256(ACCESS_CODE);
+  const stored=JSON.parse(localStorage.getItem(LOCK_KEY)||'null');
+  if(stored&&stored.hash===expected&&stored.expires>Date.now())hideLock();
+}
+async function submitUnlockCode(){
+  const input=document.getElementById('lock-input').value.trim();if(!input)return;
+  const inputHash=await sha256(input);const expectedHash=await sha256(ACCESS_CODE);
+  if(inputHash===expectedHash){const expires=Date.now()+30*24*60*60*1000;localStorage.setItem(LOCK_KEY,JSON.stringify({hash:expectedHash,expires}));hideLock();document.getElementById('lock-input').value=''}
+  else{const errEl=document.getElementById('lock-error');errEl.style.display='block';document.getElementById('lock-input').value='';document.getElementById('lock-input').focus();setTimeout(()=>errEl.style.display='none',3000)}
+}
+function hideLock(){document.getElementById('lock-screen').style.display='none';document.getElementById('main-header').style.display='';document.getElementById('main-tabbar').style.display='';document.getElementById('main-content').style.display='';document.getElementById('warrior-wrap').style.display=''}
+async function generateHash(){const val=document.getElementById('lock-gen-input').value.trim();if(!val)return;const hash=await sha256(val);const r=document.getElementById('lock-gen-result');r.style.display='block';r.textContent=hash}
+function resetLockToken(){if(!confirm('Token löschen?'))return;localStorage.removeItem(LOCK_KEY);alert('Token gelöscht.')}
+function showQRCode(){const url='https://ai-vatto0.github.io/ai-vatto0/';const container=document.getElementById('qr-code-container');container.innerHTML='';new QRCode(container,{text:url,width:280,height:280,colorDark:'#000',colorLight:'#fff',correctLevel:QRCode.CorrectLevel.H});document.getElementById('qr-modal').classList.add('show')}
+
+(async function init(){
+  await checkLock();
+  if(localStorage.getItem('vatto0_proxy')==='1')document.getElementById('proxy-toggle').classList.add('on');
+  Object.keys(KEY_MAP).forEach(name=>{if(getKey(name))setDot(name,'green')});
+  document.getElementById('video-group').value='kling';onGroupChange();
+  document.getElementById('img-group').value='flux';onImgGroupChange();
+  updatePgModels();initPgChips();checkKeyBanners();
+  Object.keys(KEY_MAP).forEach(name=>{const val=getKey(name);const inp=document.getElementById(INPUT_MAP[name]);if(val&&inp)inp.placeholder=val.slice(0,6)+'••••••••'+val.slice(-3)});
+  refreshCoins();
+})();
 </script>
 </body>
 </html>
