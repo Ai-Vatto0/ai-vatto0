@@ -1,0 +1,41 @@
+export const Colors = {
+  background: '#0D0D1A',
+  surface: '#16162A',
+  card: '#1E1E35',
+  cardHover: '#252540',
+  primary: '#7C3AED',
+  primaryLight: '#9D5FF0',
+  accent: '#06B6D4',
+  accentPink: '#EC4899',
+  accentGold: '#F59E0B',
+  success: '#10B981',
+  warning: '#F59E0B',
+  error: '#EF4444',
+  textPrimary: '#F0F0FF',
+  textSecondary: '#9090B0',
+  textMuted: '#5A5A7A',
+  border: '#2A2A45',
+  borderLight: '#3A3A55',
+  white: '#FFFFFF',
+  black: '#000000',
+  gradientPurple: ['#7C3AED', '#5B21B6'],
+  gradientCyan: ['#06B6D4', '#0891B2'],
+  gradientPink: ['#EC4899', '#BE185D'],
+  gradientGold: ['#F59E0B', '#D97706'],
+  coinGold: '#F59E0B',
+};
+
+export const Fonts = {
+  regular: 'System',
+  medium: 'System',
+  bold: 'System',
+  sizes: {
+    xs: 11,
+    sm: 13,
+    md: 15,
+    lg: 17,
+    xl: 20,
+    xxl: 24,
+    xxxl: 30,
+  }
+};

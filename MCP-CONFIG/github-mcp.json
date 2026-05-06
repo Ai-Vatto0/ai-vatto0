@@ -1,0 +1,34 @@
+{
+  "mcpServer": {
+    "name": "GitHub MCP – Unified Repo Hub",
+    "purpose": "Cross-project Git operations, issue tracking, PR workflow",
+    "credentials": {
+      "GITHUB_TOKEN": "ghp_xxxx (read from ENV)",
+      "GITHUB_ORG": "ai-vatto0"
+    },
+    "endpoints": [
+      {
+        "repo": "ai-vatto0/ai-vatto0",
+        "desc": "Snova Studio Main (Mobile + Backend)",
+        "branches": ["main", "develop", "staging"],
+        "automations": ["auto-push-stable", "pr-on-release"]
+      },
+      {
+        "repo": "ai-vatto0/menu-wall-app",
+        "desc": "Menu Wall iOS App",
+        "branches": ["main", "feature/*"]
+      },
+      {
+        "repo": "ai-vatto0/prompt-master",
+        "desc": "LLM Prompt Engineering Hub",
+        "branches": ["main", "research"]
+      }
+    ],
+    "features": {
+      "auto_pr": true,
+      "auto_push": true,
+      "issue_sync": true,
+      "branch_protection": true
+    }
+  }
+}

@@ -1,0 +1,130 @@
+import React, { useEffect, useState } from 'react';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, RefreshControl, Alert } from 'react-native';
+import { router } from 'expo-router';
+import { Ionicons } from '@expo/vector-icons';
+import { LinearGradient } from 'expo-linear-gradient';
+import { Colors } from '../../constants/Colors';
+import { getVideos, getVideoStatus, deleteVideo } from '../../services/api';
+import { MODEL_LABELS, MODEL_COLORS } from '../../constants/Config';
+import Toast from 'react-native-toast-message';
+
+export default function VideosScreen() {
+  const [videos, setVideos] = useState<any[]>([]);
+  const [refreshing, setRefreshing] = useState(false);
+
+  const load = async () => { try { setVideos(await getVideos()); } catch {} };
+  useEffect(() => { load(); }, []);
+  const onRefresh = async () => { setRefreshing(true); await load(); setRefreshing(false); };
+
+  const checkStatus = async (jobId: string) => {
+    try {
+      const updated = await getVideoStatus(jobId);
+      setVideos(prev => prev.map(v => v.id === jobId ? updated : v));
+      Toast.show({ type: 'info', text1: `Status: ${updated.status}` });
+    } catch (e: any) { Toast.show({ type: 'error', text1: e.message }); }
+  };
+
+  const handleDelete = (id: string) => {
+    Alert.alert('Löschen', 'Job wirklich löschen?', [
+      { text: 'Abbrechen', style: 'cancel' },
+      { text: 'Löschen', style: 'destructive', onPress: async () => {
+        try { await deleteVideo(id); load(); } catch (e: any) { Toast.show({ type: 'error', text1: e.message }); }
+      }},
+    ]);
+  };
+
+  return (
+    <View style={styles.container}>
+      <View style={styles.header}>
+        <Text style={styles.title}>Videos</Text>
+        <TouchableOpacity onPress={() => router.push('/video/generate')} style={styles.addBtn}>
+          <LinearGradient colors={['#EC4899', '#BE185D']} style={styles.addBtnInner}>
+            <Ionicons name="add" size={22} color="#fff" />
+          </LinearGradient>
+        </TouchableOpacity>
+      </View>
+
+      <ScrollView contentContainerStyle={styles.list} refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} tintColor={Colors.accentPink} />}>
+        {videos.length === 0 && (
+          <View style={styles.empty}>
+            <Ionicons name="film-outline" size={48} color={Colors.textMuted} />
+            <Text style={styles.emptyText}>Noch keine Videos</Text>
+            <TouchableOpacity onPress={() => router.push('/video/generate')}>
+              <Text style={[styles.emptyAction, { color: Colors.accentPink }]}>Erstes Video generieren →</Text>
+            </TouchableOpacity>
+          </View>
+        )}
+        {videos.map((v) => {
+          const modelColor = MODEL_COLORS[v.model] || Colors.accent;
+          return (
+            <View key={v.id} style={styles.card}>
+              <View style={styles.cardHeader}>
+                <View style={[styles.modelBadge, { backgroundColor: modelColor + '20' }]}>
+                  <Text style={[styles.modelText, { color: modelColor }]}>{MODEL_LABELS[v.model] || v.model}</Text>
+                </View>
+                <View style={[styles.statusBadge, { backgroundColor: getStatusColor(v.status) + '20' }]}>
+                  <View style={[styles.statusDot, { backgroundColor: getStatusColor(v.status) }]} />
+                  <Text style={[styles.statusText, { color: getStatusColor(v.status) }]}>{v.status}</Text>
+                </View>
+              </View>
+              <Text style={styles.prompt} numberOfLines={2}>{v.prompt}</Text>
+              <View style={styles.cardMeta}>
+                <Text style={styles.metaText}>{v.duration}s • {v.resolution}</Text>
+                <Text style={styles.coinText}>-{v.coins_used} Coins</Text>
+              </View>
+              <View style={styles.cardActions}>
+                {(v.status === 'processing' || v.status === 'pending') && (
+                  <TouchableOpacity onPress={() => checkStatus(v.id)} style={styles.actionBtn}>
+                    <Ionicons name="refresh" size={14} color={Colors.accent} />
+                    <Text style={[styles.actionText, { color: Colors.accent }]}>Status</Text>
+                  </TouchableOpacity>
+                )}
+                {v.result_url && (
+                  <TouchableOpacity style={styles.actionBtn}>
+                    <Ionicons name="download" size={14} color={Colors.success} />
+                    <Text style={[styles.actionText, { color: Colors.success }]}>Download</Text>
+                  </TouchableOpacity>
+                )}
+                <TouchableOpacity onPress={() => handleDelete(v.id)} style={styles.actionBtn}>
+                  <Ionicons name="trash-outline" size={14} color={Colors.error} />
+                </TouchableOpacity>
+              </View>
+            </View>
+          );
+        })}
+      </ScrollView>
+    </View>
+  );
+}
+
+function getStatusColor(status: string) {
+  if (status === 'completed') return Colors.success;
+  if (status === 'failed') return Colors.error;
+  return Colors.accent;
+}
+
+const styles = StyleSheet.create({
+  container: { flex: 1, backgroundColor: Colors.background },
+  header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', padding: 20, paddingTop: 56 },
+  title: { fontSize: 24, fontWeight: '800', color: Colors.textPrimary },
+  addBtn: { borderRadius: 14 },
+  addBtnInner: { padding: 10, borderRadius: 14 },
+  list: { padding: 16, gap: 12 },
+  empty: { alignItems: 'center', gap: 12, paddingTop: 80 },
+  emptyText: { fontSize: 16, color: Colors.textSecondary },
+  emptyAction: { fontSize: 14, fontWeight: '600' },
+  card: { backgroundColor: Colors.card, borderRadius: 14, padding: 14, borderWidth: 1, borderColor: Colors.border, gap: 10 },
+  cardHeader: { flexDirection: 'row', gap: 8 },
+  modelBadge: { paddingHorizontal: 10, paddingVertical: 4, borderRadius: 8 },
+  modelText: { fontSize: 12, fontWeight: '700' },
+  statusBadge: { flexDirection: 'row', alignItems: 'center', gap: 5, paddingHorizontal: 10, paddingVertical: 4, borderRadius: 8 },
+  statusDot: { width: 6, height: 6, borderRadius: 3 },
+  statusText: { fontSize: 11, fontWeight: '600' },
+  prompt: { fontSize: 13, color: Colors.textSecondary },
+  cardMeta: { flexDirection: 'row', justifyContent: 'space-between' },
+  metaText: { fontSize: 12, color: Colors.textMuted },
+  coinText: { fontSize: 12, color: Colors.coinGold },
+  cardActions: { flexDirection: 'row', gap: 12, borderTopWidth: 1, borderTopColor: Colors.border, paddingTop: 10 },
+  actionBtn: { flexDirection: 'row', alignItems: 'center', gap: 5 },
+  actionText: { fontSize: 12, fontWeight: '600' },
+});

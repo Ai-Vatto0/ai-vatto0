@@ -1,0 +1,40 @@
+{
+  "mcpHub": {
+    "name": "Vatto0 Global MCP Hub",
+    "version": "1.0",
+    "owner": "vatto0202@googlemail.com",
+    "projects": [
+      {
+        "id": "snova-studio",
+        "name": "Snova Studio",
+        "path": "C:\\Users\\rober\\ki-app\\",
+        "type": "mobile-app",
+        "stack": "React Native + Node.js + Supabase + Kie.ai",
+        "status": "active"
+      },
+      {
+        "id": "menu-wall-app",
+        "name": "Menu Wall",
+        "path": "C:\\Users\\rober\\ki-app\\menu-wall-app\\",
+        "type": "ios-app",
+        "status": "active"
+      },
+      {
+        "id": "prompt-master",
+        "name": "Prompt Master",
+        "path": "C:\\Users\\rober\\ki-app\\prompt-master\\",
+        "type": "research",
+        "status": "active"
+      }
+    ],
+    "core_mcps": {
+      "github": "C:\\Users\\rober\\ki-app\\MCP-CONFIG\\github-mcp.json",
+      "supabase": "C:\\Users\\rober\\ki-app\\MCP-CONFIG\\supabase-mcp.json",
+      "memory": "C:\\Users\\rober\\ki-app\\MCP-CONFIG\\memory-mcp.json",
+      "context7": "C:\\Users\\rober\\ki-app\\MCP-CONFIG\\context7-mcp.json"
+    },
+    "memory_backend": "hybrid",
+    "auto_sync": true,
+    "sync_interval_minutes": 30
+  }
+}

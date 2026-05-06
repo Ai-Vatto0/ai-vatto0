@@ -1,0 +1,38 @@
+{
+  "expo": {
+    "name": "Snova Studio",
+    "slug": "snova-studio",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0D0D1A"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.snovastudio.app"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0D0D1A"
+      },
+      "package": "com.snovastudio.app"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-image-picker",
+      [
+        "expo-video",
+        { "supportsBackgroundPlayback": false }
+      ]
+    ],
+    "scheme": "snovastudio",
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}

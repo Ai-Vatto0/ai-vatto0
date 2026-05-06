@@ -1,0 +1,42 @@
+{
+  "mcpServer": {
+    "name": "Memory MCP – Cross-Project Context Preservation",
+    "purpose": "Persistent memory across sessions, project shortcuts, credential mapping",
+    "storage": {
+      "working_memory": "C:\\Users\\rober\\ki-app\\.claude\\CLAUDE.md",
+      "knowledge_base": "C:\\Users\\rober\\ki-app\\memory\\",
+      "session_logs": "C:\\Users\\rober\\ki-app\\memory\\sessions\\",
+      "master_index": "C:\\Users\\rober\\ki-app\\MASTER-MEMORY.md"
+    },
+    "projects_mapping": {
+      "snova_studio": {
+        "local_memory": "C:\\Users\\rober\\ki-app\\MEMORY.md",
+        "root": "C:\\Users\\rober\\ki-app\\",
+        "backend": "C:\\Users\\rober\\ki-app\\backend\\",
+        "mobile": "C:\\Users\\rober\\ki-app\\mobile\\",
+        "stack_key": "react-native-node-supabase"
+      },
+      "menu_wall": {
+        "local_memory": "C:\\Users\\rober\\ki-app\\menu-wall-app\\MEMORY.md",
+        "root": "C:\\Users\\rober\\ki-app\\menu-wall-app\\",
+        "stack_key": "ios-swift"
+      },
+      "prompt_master": {
+        "local_memory": "C:\\Users\\rober\\ki-app\\prompt-master\\MEMORY.md",
+        "root": "C:\\Users\\rober\\ki-app\\prompt-master\\",
+        "stack_key": "llm-research"
+      }
+    },
+    "shortcuts": {
+      "snova_start_backend": "cd C:\\Users\\rober\\ki-app\\backend && npx kill-port 3000 && node --experimental-sqlite server.js",
+      "snova_start_mobile": "cd C:\\Users\\rober\\ki-app\\mobile && npx expo start",
+      "git_push_stable": "git add . && git commit -m 'Stable checkpoint' && git push"
+    },
+    "token_efficiency": {
+      "context_limit_words": 80,
+      "audit_limit_words": 30,
+      "no_duplicate_reads": true,
+      "task_focused": true
+    }
+  }
+}

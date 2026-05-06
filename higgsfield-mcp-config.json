@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "higgsfield": {
+      "command": "npx",
+      "args": ["@higgsfield/mcp"],
+      "env": {
+        "HIGGSFIELD_API_KEY": "hf_CAwZWKK-_-c8K8urhUAhD6mYgiA_TGITF1pGB7VcotRkN6jiyZE6eTujzAbCGhAV"
+      },
+      "disabled": false
+    }
+  }
+}

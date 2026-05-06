@@ -1,0 +1,49 @@
+{
+  "project": "Wuppertal_Menuwand",
+  "created": "2026-04-27",
+  "description": "3-Teil Menü-Wall für Restaurant Wuppertal",
+
+  "sticks": {
+    "WUP-TV-1": {
+      "position": "left",
+      "title": "Baguettes / Tacos",
+      "hdmiInput": 3,
+      "description": "Linker Bildschirm - Hauptprodukte"
+    },
+    "WUP-TV-2": {
+      "position": "center",
+      "title": "Bowls / Menüs",
+      "hdmiInput": 3,
+      "description": "Mittlerer Bildschirm - Zusätze"
+    },
+    "WUP-TV-3": {
+      "position": "right",
+      "title": "Angebote / Getränke",
+      "hdmiInput": 3,
+      "description": "Rechter Bildschirm - Aktionen"
+    }
+  },
+
+  "hardware": {
+    "tvs": "3x Hisense 43A6N LED TV",
+    "sticks": "3x Xiaomi TV Stick 4K (2. Generation)",
+    "resolution": "3840x2160 (4K) oder 1920x1080 (FullHD)",
+    "arrangement": "Nebeneinander an der Decke"
+  },
+
+  "app": {
+    "type": "Web-App (HTML5 + localStorage)",
+    "autostart": true,
+    "kiosisMode": true,
+    "persistence": "localStorage (lokal auf jedem Stick)",
+    "remoteControl": true
+  },
+
+  "setup": {
+    "step1": "Sticks anschließen + WLAN verbinden",
+    "step2": "HTTP-Server starten: npx http-server -p 8000",
+    "step3": "Pro Stick: index.html laden → Admin → Bild hochladen",
+    "step4": "Autostart testen: TV aus/an",
+    "documentation": "Siehe SETUP-ANLEITUNG.md"
+  }
+}

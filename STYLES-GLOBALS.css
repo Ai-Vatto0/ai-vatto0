@@ -1,0 +1,290 @@
+/* src/styles/globals.css – DESIGN SYSTEM & GLOBAL STYLES */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── CSS Variables ────────────────────────────────────────── */
+:root {
+  --color-bg-primary:    #0a0612;
+  --color-bg-secondary:  #110d1f;
+  --color-bg-tertiary:   #1a1330;
+  --color-accent-purple: #7c3aed;
+  --color-accent-blue:   #2563eb;
+  --color-accent-pink:   #ec4899;
+  --color-accent-glow:   #a78bfa;
+  --color-text-primary:  #f1f0f5;
+  --color-text-secondary:#9ca3af;
+  --color-text-muted:    #6b7280;
+  --color-border:        #2d1f4a;
+  --color-border-glow:   rgba(124, 58, 237, 0.25);
+
+  --pink:   #FF2D78;
+  --cyan:   #00F5FF;
+  --green:  #39FF14;
+  --purple: #7B4FFF;
+}
+
+/* ─── Base Reset ────────────────────────────────────────────── */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Scrollbar ─────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: var(--color-bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--color-accent-purple); border-radius: 2px; }
+
+/* ─── Selection ─────────────────────────────────────────────── */
+::selection {
+  background: rgba(124, 58, 237, 0.3);
+  color: #f1f0f5;
+}
+
+/* ─── Components ────────────────────────────────────────────── */
+@layer components {
+
+  /* Glassmorphism Panel */
+  .glass-panel {
+    @apply backdrop-blur-md border;
+    background: rgba(17, 13, 31, 0.7);
+    border-color: var(--color-border);
+  }
+
+  .glass-panel-light {
+    @apply backdrop-blur-sm border;
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  /* Glow Border */
+  .glow-border {
+    border: 1px solid var(--color-border-glow);
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.15), inset 0 0 20px rgba(124, 58, 237, 0.05);
+  }
+
+  /* Primary Button */
+  .btn-primary {
+    @apply font-semibold rounded-xl px-6 py-3 transition-all duration-200;
+    background: linear-gradient(135deg, #7c3aed, #2563eb);
+    color: white;
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.4);
+  }
+  .btn-primary:hover {
+    box-shadow: 0 0 30px rgba(124, 58, 237, 0.6);
+    transform: translateY(-1px);
+  }
+  .btn-primary:active {
+    transform: translateY(0px);
+  }
+
+  /* Secondary Button */
+  .btn-secondary {
+    @apply font-medium rounded-xl px-6 py-3 transition-all duration-200 border;
+    background: rgba(124, 58, 237, 0.1);
+    border-color: var(--color-border-glow);
+    color: var(--color-accent-glow);
+  }
+  .btn-secondary:hover {
+    background: rgba(124, 58, 237, 0.2);
+  }
+
+  /* Ghost Button */
+  .btn-ghost {
+    @apply font-medium rounded-lg px-4 py-2 transition-all duration-200;
+    color: var(--color-text-secondary);
+  }
+  .btn-ghost:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--color-text-primary);
+  }
+
+  /* Input */
+  .input-snova {
+    @apply w-full rounded-xl px-4 py-3 text-sm outline-none transition-all duration-200;
+    background: var(--color-bg-tertiary);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-primary);
+  }
+  .input-snova:focus {
+    border-color: var(--color-accent-purple);
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
+  }
+  .input-snova::placeholder {
+    color: var(--color-text-muted);
+  }
+
+  /* Card */
+  .card-snova {
+    @apply rounded-2xl p-5;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+  }
+
+  /* Funken Badge */
+  .funken-badge {
+    @apply inline-flex items-center gap-1 rounded-full px-3 py-1 text-sm font-semibold;
+    background: rgba(167, 139, 250, 0.15);
+    color: var(--color-accent-glow);
+    border: 1px solid rgba(167, 139, 250, 0.3);
+  }
+
+  /* Anime Tag */
+  .tag-snova {
+    @apply inline-flex items-center rounded-lg px-2.5 py-1 text-xs font-medium;
+    background: rgba(124, 58, 237, 0.15);
+    color: var(--color-accent-glow);
+    border: 1px solid rgba(124, 58, 237, 0.3);
+  }
+
+  /* Nova Glassmorphism Card */
+  .nova-card {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(123, 79, 255, 0.25);
+    border-radius: 1rem;
+    padding: 1.25rem;
+  }
+
+  /* Nova Primary Button */
+  .btn-nova-primary {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.875rem 1.5rem;
+    border-radius: 0.875rem;
+    border: none;
+    background: linear-gradient(135deg, #FF2D78, #7B4FFF);
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 0 20px rgba(255, 45, 120, 0.4);
+    width: 100%;
+  }
+  .btn-nova-primary:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(255, 45, 120, 0.6);
+  }
+  .btn-nova-primary:active:not(:disabled) {
+    transform: scale(0.97);
+  }
+  .btn-nova-primary:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+  }
+
+  /* Nova Secondary Button */
+  .btn-nova-secondary {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.875rem;
+    background: rgba(123, 79, 255, 0.15);
+    border: 1px solid rgba(123, 79, 255, 0.4);
+    color: #a78bfa;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .btn-nova-secondary:hover:not(:disabled) {
+    background: rgba(123, 79, 255, 0.25);
+    transform: translateY(-1px);
+  }
+
+  /* Input Nova */
+  .input-nova {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    background: #16132E;
+    border: 1px solid rgba(123, 79, 255, 0.3);
+    color: #f1f0f5;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9375rem;
+    outline: none;
+    transition: all 0.2s ease;
+  }
+  .input-nova:focus {
+    border-color: var(--cyan);
+    box-shadow: 0 0 0 3px rgba(0, 245, 255, 0.1);
+  }
+
+  /* Label Nova */
+  .label-nova {
+    display: block;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* ─── Utilities ─────────────────────────────────────────────── */
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #a78bfa, #60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-pink {
+    background: linear-gradient(135deg, #ec4899, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-glow-purple {
+    background: radial-gradient(ellipse at center, rgba(124, 58, 237, 0.2) 0%, transparent 70%);
+  }
+
+  .border-glow {
+    border-color: var(--color-border-glow);
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-in;
+  }
+}
+
+/* ─── Animations ────────────────────────────────────────────── */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes sakura-drift {
+  0%   { transform: translateY(-20px) rotate(0deg);   opacity: 0; }
+  10%  { opacity: 0.8; }
+  90%  { opacity: 0.6; }
+  100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+}

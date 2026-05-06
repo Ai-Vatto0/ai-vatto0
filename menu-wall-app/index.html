@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🍔 Menü-Wall Wuppertal</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      font-family: 'Arial', sans-serif;
+      overflow: hidden;
+    }
+
+    #root {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Display Mode */
+    .menu-wall-display {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+    }
+
+    .screen-segment {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #1a1a1a;
+      border-right: 3px solid #333;
+      overflow: hidden;
+    }
+
+    .screen-segment.right {
+      border-right: 0;
+    }
+
+    .screen-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .screen-placeholder {
+      text-align: center;
+      color: #666;
+    }
+
+    .screen-placeholder h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #999;
+    }
+
+    .screen-placeholder p {
+      font-size: 2rem;
+      color: #555;
+    }
+
+    /* Admin Mode */
+    .admin-panel {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      color: #fff;
+      padding: 40px;
+      overflow-y: auto;
+    }
+
+    .admin-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 3px solid #ff006e;
+      padding-bottom: 20px;
+      margin-bottom: 30px;
+    }
+
+    .admin-header h1 {
+      font-size: 2.5rem;
+      color: #00f5ff;
+    }
+
+    .btn-close {
+      background: #ff006e;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .btn-close:hover {
+      background: #ff0055;
+    }
+
+    .admin-controls {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .screen-selector {
+      background: rgba(0, 245, 255, 0.1);
+      padding: 25px;
+      border-radius: 12px;
+      border-left: 5px solid #00f5ff;
+    }
+
+    .screen-selector h3 {
+      font-size: 1.3rem;
+      color: #00f5ff;
+      margin-bottom: 15px;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 15px;
+    }
+
+    .btn-screen {
+      flex: 1;
+      padding: 15px 20px;
+      font-size: 1.1rem;
+      border: 2px solid #444;
+      background: #2a2a3e;
+      color: #fff;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .btn-screen.active {
+      background: #00f5ff;
+      color: #1a1a2e;
+      border-color: #00f5ff;
+    }
+
+    .control-group {
+      background: rgba(255, 0, 110, 0.1);
+      padding: 20px;
+      border-radius: 12px;
+      border-left: 5px solid #ff006e;
+    }
+
+    .control-group label {
+      display: block;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #ff006e;
+      margin-bottom: 10px;
+    }
+
+    .input-title,
+    .input-file {
+      width: 100%;
+      padding: 12px;
+      font-size: 1rem;
+      border: 2px solid #444;
+      border-radius: 8px;
+      background: #2a2a3e;
+      color: #fff;
+    }
+
+    .input-title:focus,
+    .input-file:focus {
+      outline: none;
+      border-color: #ff006e;
+    }
+
+    .btn-danger {
+      padding: 10px 20px;
+      font-size: 1rem;
+      background: #d41159;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .preview-group {
+      background: rgba(0, 100, 200, 0.1);
+      padding: 20px;
+      border-radius: 12px;
+      border-left: 5px solid #0064ff;
+    }
+
+    .preview-group h3 {
+      font-size: 1.1rem;
+      color: #0064ff;
+      margin-bottom: 10px;
+    }
+
+    .preview-box {
+      width: 100%;
+      height: 250px;
+      background: #1a1a2e;
+      border: 2px solid #0064ff;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .preview-box img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .preview-placeholder {
+      color: #666;
+    }
+
+    .btn-admin-toggle {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      padding: 18px 30px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      background: linear-gradient(135deg, #ff006e 0%, #ff6b9d 100%);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      z-index: 1000;
+      box-shadow: 0 8px 25px rgba(255, 0, 110, 0.4);
+    }
+
+    .btn-admin-toggle:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script>
+    // Simple Menu Wall App - No Framework Needed
+    class MenuWallApp {
+      constructor() {
+        this.screens = {
+          left: { position: 'left', title: 'Baguettes / Tacos', imageBase64: null },
+          center: { position: 'center', title: 'Bowls / Menüs', imageBase64: null },
+          right: { position: 'right', title: 'Angebote / Getränke', imageBase64: null },
+        };
+        this.adminMode = false;
+        this.selectedScreen = 'left';
+        this.init();
+      }
+
+      init() {
+        this.loadFromStorage();
+        this.render();
+        this.setupEventListeners();
+      }
+
+      loadFromStorage() {
+        const stored = localStorage.getItem('menuWallData');
+        if (stored) {
+          try {
+            this.screens = JSON.parse(stored);
+          } catch (e) {
+            console.error('Failed to load:', e);
+          }
+        }
+      }
+
+      saveToStorage() {
+        localStorage.setItem('menuWallData', JSON.stringify(this.screens));
+      }
+
+      render() {
+        const root = document.getElementById('root');
+        if (!root) return;
+
+        if (!this.adminMode) {
+          root.innerHTML = `
+            <div class="menu-wall-display">
+              ${['left', 'center', 'right'].map(pos => `
+                <div class="screen-segment ${pos}">
+                  ${this.screens[pos].imageBase64
+                    ? `<img src="${this.screens[pos].imageBase64}" class="screen-image" alt="${this.screens[pos].title}" />`
+                    : `<div class="screen-placeholder">
+                        <h2>${this.screens[pos].title}</h2>
+                        <p>Kein Bild vorhanden</p>
+                      </div>`
+                  }
+                </div>
+              `).join('')}
+            </div>
+            <button class="btn-admin-toggle">⚙️ Admin</button>
+          `;
+        } else {
+          root.innerHTML = `
+            <div class="admin-panel">
+              <div class="admin-header">
+                <h1>📺 Menü-Wall Admin Panel</h1>
+                <button class="btn-close">✕ Schließen</button>
+              </div>
+
+              <div class="admin-controls">
+                <div class="screen-selector">
+                  <h3>Bildschirm wählen:</h3>
+                  <div class="btn-group">
+                    <button class="btn-screen ${this.selectedScreen === 'left' ? 'active' : ''}" data-screen="left">◀ Links</button>
+                    <button class="btn-screen ${this.selectedScreen === 'center' ? 'active' : ''}" data-screen="center">● Mitte</button>
+                    <button class="btn-screen ${this.selectedScreen === 'right' ? 'active' : ''}" data-screen="right">▶ Rechts</button>
+                  </div>
+                </div>
+
+                <div class="control-group">
+                  <label>Titel:</label>
+                  <input type="text" class="input-title" value="${this.screens[this.selectedScreen].title}" placeholder="Z.B. Baguettes / Tacos" />
+                </div>
+
+                <div class="control-group">
+                  <label>Menü-Bild hochladen:</label>
+                  <input type="file" class="input-file" accept="image/*" />
+                  ${this.screens[this.selectedScreen].imageBase64
+                    ? `<button class="btn-danger">🗑️ Bild löschen</button>`
+                    : ''}
+                </div>
+
+                <div class="preview-group">
+                  <h3>Vorschau:</h3>
+                  <div class="preview-box">
+                    ${this.screens[this.selectedScreen].imageBase64
+                      ? `<img src="${this.screens[this.selectedScreen].imageBase64}" />`
+                      : '<div class="preview-placeholder">Kein Bild</div>'}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="btn-admin-toggle">👁️ Anzeigen</button>
+          `;
+        }
+
+        this.attachEventListeners();
+      }
+
+      setupEventListeners() {
+        // This will be called after render
+      }
+
+      attachEventListeners() {
+        document.querySelector('.btn-admin-toggle')?.addEventListener('click', () => {
+          this.adminMode = !this.adminMode;
+          this.render();
+        });
+
+        if (this.adminMode) {
+          document.querySelector('.btn-close')?.addEventListener('click', () => {
+            this.adminMode = false;
+            this.render();
+          });
+
+          document.querySelectorAll('.btn-screen').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+              this.selectedScreen = e.target.dataset.screen;
+              this.render();
+            });
+          });
+
+          document.querySelector('.input-title')?.addEventListener('change', (e) => {
+            this.screens[this.selectedScreen].title = e.target.value;
+            this.saveToStorage();
+          });
+
+          document.querySelector('.input-file')?.addEventListener('change', (e) => {
+            const file = e.target.files?.[0];
+            if (file) {
+              const reader = new FileReader();
+              reader.onload = (event) => {
+                this.screens[this.selectedScreen].imageBase64 = event.target.result;
+                this.saveToStorage();
+                this.render();
+              };
+              reader.readAsDataURL(file);
+            }
+          });
+
+          document.querySelector('.btn-danger')?.addEventListener('click', () => {
+            this.screens[this.selectedScreen].imageBase64 = null;
+            this.saveToStorage();
+            this.render();
+          });
+        }
+      }
+    }
+
+    // Start the app
+    new MenuWallApp();
+  </script>
+</body>
+</html>

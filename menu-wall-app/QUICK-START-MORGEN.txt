@@ -1,0 +1,70 @@
+🍔 MENÜ-WALL WUPPERTAL - QUICK START FÜR MORGEN
+================================================
+
+⏰ ZEITPLAN (Max. 60 Min für alle 3 Sticks):
+- 10 Min: Hardware anschließen + WLAN
+- 30 Min: Pro Stick App laden + Bild hochladen
+- 15 Min: Autostart-Test
+- 5 Min: Finale Checks
+
+📂 DATEIEN (alle ready):
+C:\Users\rober\ki-app\menu-wall-app\
+├── index.html          ← DIE APP (im Chrome öffnen)
+├── SETUP-ANLEITUNG.md  ← Vollständige Anleitung
+├── QUICK-START-MORGEN.txt ← Diese Datei
+└── (Deine Menü-Bilder in 3 Teilen)
+
+🚀 SOFORT-PLAN:
+
+1. HTTP-SERVER STARTEN (Windows-Computer):
+   cd C:\Users\rober\ki-app\menu-wall-app
+
+   → Variante A (Node.js):
+   npx http-server -p 8000
+
+   → Variante B (Python):
+   python -m http.server 8000
+
+   → Server läuft unter:
+   http://192.168.178.109:8000/index.html
+   (IP ggf. anpassen: ipconfig checken)
+
+2. IM LADEN - PRO TV (nacheinander):
+   ✓ Stick per HDMI anschließen
+   ✓ USB-Strom verbinden
+   ✓ WLAN verbinden (Settings → Network → WiFi)
+   ✓ Chrome öffnen → App laden:
+     http://192.168.178.109:8000/index.html
+   ✓ Admin-Button (⚙️) → Bildschirm wählen
+   ✓ Menü-Bild hochladen
+   ✓ "Anzeigen" → Bild auf TV sichtbar ✓
+
+3. AUTOSTART TESTEN:
+   ✓ TV ausschalten
+   ✓ 5 Sekunden warten
+   ✓ TV anschalten → App sollte automatisch laden
+
+4. FERTIG:
+   ✓ Kunde kann morgen TV anschalten
+   ✓ Menü-Wand erscheint automatisch
+   ✓ Du kannst remote Bilder ändern
+
+⚠️ WICHTIG:
+- Alle 3 Menü-Bilder in **EINER** Auflösung (z.B. 1920x1080 jedes Segment)
+- Jeder Stick muss **einzeln** konfiguriert werden
+- WLAN muss stabil sein (test mit mehreren Geräten)
+- Admin-Panel (⚙️) = nur für Setup, dann ausschalten
+
+📞 FALLS PROBLEME:
+- Keine HDMI: TV-Input checken, Kabel probieren
+- Keine WLAN: SSID/Passwort doppelt checken
+- App lädt nicht: Server läuft? Firewall?
+- Siehe: SETUP-ANLEITUNG.md → Troubleshooting
+
+✅ ERGEBNIS:
+- 3 TVs nebeneinander mit je eigenem Menü-Segment
+- Automatischer Start morgens
+- Remote änderbar von Zuhause
+- Kunde glücklich → Du bekommst Geld + Taco-Dinner 🌮
+
+GOOD LUCK! 🍔

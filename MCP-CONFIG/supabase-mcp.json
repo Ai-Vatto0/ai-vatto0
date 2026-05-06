@@ -1,0 +1,32 @@
+{
+  "mcpServer": {
+    "name": "Supabase MCP – Auth + Database Unified",
+    "purpose": "DB schema sync, Auth management, Real-time subscription monitoring",
+    "credentials": {
+      "SUPABASE_URL": "https://xxxxx.supabase.co (read from ENV)",
+      "SUPABASE_KEY": "eyJ... (read from ENV – ANON KEY)",
+      "SUPABASE_SERVICE_KEY": "eyJ... (read from ENV – SERVICE KEY)"
+    },
+    "projects": [
+      {
+        "name": "snova-studio",
+        "id": "xxxx",
+        "tables": [
+          "users (auth)",
+          "characters (storage: reference images)",
+          "stories (project management)",
+          "videos (job tracking + output)",
+          "coins (ledger + transactions)"
+        ],
+        "auth_providers": ["email", "oauth (future)"]
+      }
+    ],
+    "features": {
+      "auto_schema_validation": true,
+      "real_time_monitoring": true,
+      "backup_sync": true,
+      "migration_tracking": true
+    },
+    "migrations_path": "backend/migrations/"
+  }
+}
