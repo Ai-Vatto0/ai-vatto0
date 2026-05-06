@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Snova Studio - Erstelle deine eigenen Anime-Charaktere mit KI. Bilder, Videos und Stories in einer App.">
+    <meta name="theme-color" content="#050a0e">
+    <title>Snova Studio - KI Anime Character Creator</title>
+    
+    <!-- Google Fonts: Orbitron für Headlines, Rajdhani für Body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ============================================
+           NOVA CYBERPUNK DESIGN SYSTEM
+           Dark theme with Cyan, Pink/Magenta, and Amber accents
+           Glassmorphism, Neon Glow, Smooth Animations
+           ============================================ */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --bg-dark: #050a0e;
+            --bg-darker: #020507;
+            --bg-card: #0f1419;
+            --primary-cyan: #00f5ff;
+            --primary-cyan-dark: #00c9cc;
+            --accent-pink: #ff006e;
+            --accent-pink-light: #ff1493;
+            --accent-amber: #ffb700;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b8c1;
+            --text-tertiary: #7a8290;
+            --border-color: rgba(0, 245, 255, 0.1);
+            --glow-cyan: 0 0 20px rgba(0, 245, 255, 0.3);
+            --glow-pink: 0 0 20px rgba(255, 0, 110, 0.3);
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-dark) 100%);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* ============================================
+           TYPOGRAPHY
+           ============================================ */
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            line-height: 1.2;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary-cyan), var(--accent-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(0, 245, 255, 0.2);
+        }
+        
+        h2 {
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            margin-bottom: 1.5rem;
+            color: var(--primary-cyan);
+            text-shadow: var(--glow-cyan);
+        }
+        
+        h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        p {
+            color: var(--text-secondary);
+            font-weight: 300;
+            line-height: 1.8;
+        }
+        
+        /* ============================================
+           CONTAINER & LAYOUT
+           ============================================ */
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+        }
+        
+        /* ============================================
+           NAVIGATION & HEADER
+           ============================================ */
+        
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(5, 10, 14, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 900;
+            letter-spacing: 0.1em;
+            background: linear-gradient(135deg, var(--primary-cyan), var(--accent-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+        
+        .logo:hover {
+            text-shadow: var(--glow-cyan);
+        }
+        
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-weight: 500;
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-cyan), var(--accent-pink));
+            transition: width 0.3s ease;
+        }
+        
+        nav a:hover {
+            color: var(--primary-cyan);
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+            
+            .header-content {
+                padding: 0 1rem;
+            }
+        }
+        
+        /* ============================================
+           HERO SECTION
+           ============================================ */
+        
+        .hero {
+            margin-top: 80px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 3rem 0;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 245, 255, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 20s ease-in-out infinite;
+            z-index: 0;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 0, 110, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 25s ease-in-out infinite reverse;
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 800px;
+        }
+        
+        .hero h1 {
+            margin-bottom: 1.5rem;
+            animation: slideInDown 0.8s ease-out;
+        }
+        
+        .hero-tagline {
+            font-size: clamp(1.1rem, 3vw, 1.5rem);
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+            animation: slideInUp 0.8s ease-out 0.2s both;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, var(--primary-cyan), var(--accent-pink));
+            color: var(--bg-dark);
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 0.05em;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            box-shadow: 0 0 30px rgba(0, 245, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+            animation: slideInUp 0.8s ease-out 0.4s both;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .cta-button:hover {
+            box-shadow: 0 0 50px rgba(0, 245, 255, 0.6), 0 0 30px rgba(255, 0, 110, 0.3);
+            transform: translateY(-3px);
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                margin-top: 60px;
+                min-height: auto;
+                padding: 4rem 0;
+            }
+            
+            .hero::before,
+            .hero::after {
+                display: none;
+            }
+        }
+        
+        /* ============================================
+           FEATURES SECTION
+           ============================================ */
+        
+        .features {
+            padding: 6rem 0;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .features h2 {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .feature-card {
+            background: rgba(15, 20, 25, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 2rem;
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-cyan), var(--accent-pink), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            border-color: var(--primary-cyan);
+            box-shadow: 0 0 30px rgba(0, 245, 255, 0.2), inset 0 0 30px rgba(0, 245, 255, 0.05);
+            transform: translateY(-5px);
+        }
+        
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-cyan);
+        }
+        
+        .feature-card p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        
+        @media (max-width: 768px) {
+            .features {
+                padding: 4rem 0;
+            }
+            
+            .features-grid {
+                gap: 1.5rem;
+            }
+        }
+        
+        /* ============================================
+           HOW IT WORKS SECTION
+           ============================================ */
+        
+        .how-it-works {
+            padding: 6rem 0;
+            background: rgba(0, 245, 255, 0.02);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+        }
+        
+        .how-it-works h2 {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            align-items: stretch;
+        }
+        
+        .step {
+            background: rgba(15, 20, 25, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            position: relative;
+            transition: var(--transition-smooth);
+        }
+        
+        .step:hover {
+            border-color: var(--accent-pink);
+            box-shadow: 0 0 30px rgba(255, 0, 110, 0.2);
+            transform: translateY(-5px);
+        }
+        
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-cyan), var(--accent-pink));
+            border-radius: 50%;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--bg-dark);
+            margin: 0 auto 1.5rem;
+            box-shadow: var(--glow-cyan);
+        }
+        
+        .step h3 {
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .step p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+        
+        .step-arrow {
+            display: none;
+        }
+        
+        @media (min-width: 769px) {
+            .steps-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .step-arrow {
+                display: block;
+                position: absolute;
+                right: -2rem;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 2rem;
+                color: var(--primary-cyan);
+            }
+            
+            .step:last-child .step-arrow {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .how-it-works {
+                padding: 4rem 0;
+            }
+            
+            .steps-container {
+                gap: 1.5rem;
+            }
+        }
+        
+        /* ============================================
+           BETA INFO SECTION
+           ============================================ */
+        
+        .beta-info {
+            padding: 6rem 0;
+            position: relative;
+        }
+        
+        .beta-card {
+            background: linear-gradient(135deg, rgba(0, 245, 255, 0.05) 0%, rgba(255, 0, 110, 0.05) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 3rem;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+            box-shadow: 0 0 40px rgba(0, 245, 255, 0.1);
+        }
+        
+        .beta-card h2 {
+            margin-bottom: 1.5rem;
+            color: var(--primary-cyan);
+        }
+        
+        .beta-card p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+        }
+        
+        .beta-highlight {
+            background: linear-gradient(135deg, rgba(255, 183, 0, 0.1) 0%, rgba(255, 0, 110, 0.1) 100%);
+            border: 1px solid rgba(255, 183, 0, 0.3);
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            color: var(--accent-amber);
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+        
+        .beta-card .cta-button {
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .beta-info {
+                padding: 4rem 0;
+            }
+            
+            .beta-card {
+                padding: 2rem;
+            }
+        }
+        
+        /* ============================================
+           FOOTER
+           ============================================ */
+        
+        footer {
+            background: rgba(2, 5, 7, 0.8);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 0;
+            text-align: center;
+            color: var(--text-tertiary);
+            font-size: 0.9rem;
+        }
+        
+        footer a {
+            color: var(--primary-cyan);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+        
+        footer a:hover {
+            color: var(--accent-pink);
+            text-shadow: var(--glow-cyan);
+        }
+        
+        /* ============================================
+           ANIMATIONS
+           ============================================ */
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(30px);
+            }
+        }
+        
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes glow-pulse {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(0, 245, 255, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 40px rgba(0, 245, 255, 0.6);
+            }
+        }
+        
+        /* ============================================
+           SMOOTH SCROLL & RESPONSIVE
+           ============================================ */
+        
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ============================================
+         HEADER & NAVIGATION
+         ============================================ -->
+    <header>
+        <div class="header-content">
+            <a href="#" class="logo">SNOVA</a>
+            <nav>
+                <a href="#features">Features</a>
+                <a href="#how-it-works">Wie es funktioniert</a>
+                <a href="#beta">Beta</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ============================================
+         HERO SECTION
+         ============================================ -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>SNOVA STUDIO</h1>
+            <p class="hero-tagline">
+                Erstelle deine eigenen Anime-Charaktere mit KI – Bilder, Videos & Stories
+            </p>
+            <a href="https://snova-studio.vercel.app" class="cta-button" target="_blank" rel="noopener noreferrer">
+                Beta testen
+            </a>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FEATURES SECTION
+         ============================================ -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2>Leistungsmerkmale</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Anime Character Creator</h3>
+                    <p>Erstelle einzigartige Anime-Charaktere mit KI-Bildgenerierung. Vollständige Kontrolle über Stil, Aussehen und Persönlichkeit.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎬</div>
+                    <h3>Video Studio</h3>
+                    <p>Erwecke deine Charaktere zum Leben mit KI-Videos. Generiere Animationen und Bewegungssequenzen in Sekunden.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📖</div>
+                    <h3>Story Generator</h3>
+                    <p>Generiere Szenen und Geschichten für deine Charaktere. Erstelle komplette Narrative mit KI-Unterstützung.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✨</div>
+                    <h3>Prompt Studio</h3>
+                    <p>KI-gestützter Prompt-Assistent für perfekte Ergebnisse. Optimiere deine Anfragen für beste Qualität.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         HOW IT WORKS SECTION
+         ============================================ -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <h2>Wie es funktioniert</h2>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Charakter erstellen</h3>
+                    <p>Nutze den KI-Charakter-Creator, um deine einzigartigen Anime-Charaktere zu designen und zu personalisieren.</p>
+                    <span class="step-arrow">→</span>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Szenen generieren</h3>
+                    <p>Erstelle Szenen und Geschichten für deine Charaktere mit dem intelligenten Story-Generator.</p>
+                    <span class="step-arrow">→</span>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Videos produzieren</h3>
+                    <p>Verwandle deine Charaktere und Szenen in beeindruckende KI-Videos und Animationen.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         BETA INFO SECTION
+         ============================================ -->
+    <section class="beta-info" id="beta">
+        <div class="container">
+            <div class="beta-card">
+                <h2>Geschlossene Beta</h2>
+                <p>Snova Studio ist aktuell in der geschlossenen Beta und wird ständig weiterentwickelt.</p>
+                <div class="beta-highlight">
+                    🔥 Jeder Beta-Tester erhält 400 Funken (Credits) zum Starten!
+                </div>
+                <p>Sei einer der ersten, die die Zukunft der KI-gestützten Anime-Erstellung erleben.</p>
+                <a href="https://snova-studio.vercel.app" class="cta-button" target="_blank" rel="noopener noreferrer">
+                    Jetzt Beta testen
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Snova Studio. Alle Rechte vorbehalten.</p>
+            <p style="margin-top: 1rem;">
+                <a href="https://snova-studio.vercel.app" target="_blank" rel="noopener noreferrer">Zur App</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll für interne Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
