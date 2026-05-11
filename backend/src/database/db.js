@@ -136,7 +136,6 @@ function initDatabase() {
     `).run(adminId, 'Admin', process.env.ADMIN_EMAIL || 'admin@ki-app.com', passwordHash, 999999, 1);
 
     console.log(`👤 Admin-User erstellt: ${process.env.ADMIN_EMAIL || 'admin@ki-app.com'}`);
-    console.log(`🔑 Passwort: ${process.env.ADMIN_PASSWORD || 'Admin123!'}`);
   }
 
   console.log('📦 Datenbank-Schema initialisiert');
