@@ -1,4 +1,5 @@
 node_modules/
+_archive/
 .tmp.driveupload/
 *.node
 .env
