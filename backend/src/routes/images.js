@@ -29,8 +29,10 @@ router.post('/generate', authMiddleware, async (req, res) => {
   const hasKieCredits = await checkKieCredits(30);
   if (!hasKieCredits) return res.status(503).json({ error: 'Service vorübergehend nicht verfügbar. Bitte später erneut versuchen.' });
 
-  db.prepare('UPDATE users SET coins = coins - ? WHERE id = ?').run(coinCost, req.user.id);
-  db.prepare('INSERT INTO coin_transactions (id, user_id, amount, type, description) VALUES (?, ?, ?, ?, ?)').run(uuidv4(), req.user.id, -coinCost, 'debit', `Bild: ${useModel} x${useCount}`);
+  db.transaction(() => {
+    db.prepare('UPDATE users SET coins = coins - ? WHERE id = ?').run(coinCost, req.user.id);
+    db.prepare('INSERT INTO coin_transactions (id, user_id, amount, type, description) VALUES (?, ?, ?, ?, ?)').run(uuidv4(), req.user.id, -coinCost, 'debit', `Bild: ${useModel} x${useCount}`);
+  })();
 
   try {
     const result = await imageQueue.add(async () => {
@@ -49,8 +51,10 @@ router.post('/generate', authMiddleware, async (req, res) => {
 
     res.json({ ...result, coins_used: coinCost, model: useModel });
   } catch (err) {
-    db.prepare('UPDATE users SET coins = coins + ? WHERE id = ?').run(coinCost, req.user.id);
-    db.prepare('INSERT INTO coin_transactions (id, user_id, amount, type, description) VALUES (?, ?, ?, ?, ?)').run(uuidv4(), req.user.id, coinCost, 'credit', 'Rückerstattung: Bild fehlgeschlagen');
+    db.transaction(() => {
+      db.prepare('UPDATE users SET coins = coins + ? WHERE id = ?').run(coinCost, req.user.id);
+      db.prepare('INSERT INTO coin_transactions (id, user_id, amount, type, description) VALUES (?, ?, ?, ?, ?)').run(uuidv4(), req.user.id, coinCost, 'credit', 'Rückerstattung: Bild fehlgeschlagen');
+    })();
     res.status(500).json({ error: 'Fehler: ' + err.message });
   }
 });

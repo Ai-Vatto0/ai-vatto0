@@ -58,9 +58,10 @@ router.post('/:id/generate-scenes', authMiddleware, async (req, res) => {
   if (user.coins < totalCost) return res.status(402).json({ error: `Nicht genug Coins. Benötigt: ${totalCost}` });
 
   const character = characterId ? db.prepare('SELECT * FROM characters WHERE id = ? AND user_id = ?').get(characterId, req.user.id) : null;
-  db.prepare('UPDATE users SET coins = coins - ? WHERE id = ?').run(totalCost, req.user.id);
-  db.prepare('INSERT INTO coin_transactions (id, user_id, amount, type, description) VALUES (?, ?, ?, ?, ?)')
-    .run(uuidv4(), req.user.id, -totalCost, 'debit', `Szenen generiert für: ${project.name}`);
+  db.transaction(() => {
+    db.prepare('UPDATE users SET coins = coins - ? WHERE id = ?').run(totalCost, req.user.id);
+    db.prepare('INSERT INTO coin_transactions (id, user_id, amount, type, description) VALUES (?, ?, ?, ?, ?)').run(uuidv4(), req.user.id, -totalCost, 'debit', `Szenen generiert für: ${project.name}`);
+  })();
 
   try {
     const scenes = await generateScenesWithLLM({ idea, sceneCount: count, genre: project.genre, mood: project.mood, targetPlatform: project.target_platform, language: project.language, characterDescription: character ? `${character.name}: ${character.description}` : '' });
@@ -69,8 +70,10 @@ router.post('/:id/generate-scenes', authMiddleware, async (req, res) => {
     for (const s of scenes) ins.run(uuidv4(), req.params.id, s.scene_number, s.title || '', s.content || '', s.camera_notes || '', s.audio_notes || '', s.prompt || '', s.model_recommendation || 'grok', s.estimated_coins || 20);
     res.json({ scenes: db.prepare('SELECT * FROM scenes WHERE project_id = ? ORDER BY scene_number').all(req.params.id), coins_used: totalCost });
   } catch (err) {
-    db.prepare('UPDATE users SET coins = coins + ? WHERE id = ?').run(totalCost, req.user.id);
-    db.prepare('INSERT INTO coin_transactions (id, user_id, amount, type, description) VALUES (?, ?, ?, ?, ?)').run(uuidv4(), req.user.id, totalCost, 'credit', 'Rückerstattung: Szenen fehlgeschlagen');
+    db.transaction(() => {
+      db.prepare('UPDATE users SET coins = coins + ? WHERE id = ?').run(totalCost, req.user.id);
+      db.prepare('INSERT INTO coin_transactions (id, user_id, amount, type, description) VALUES (?, ?, ?, ?, ?)').run(uuidv4(), req.user.id, totalCost, 'credit', 'Rückerstattung: Szenen fehlgeschlagen');
+    })();
     res.status(500).json({ error: 'Fehler: ' + err.message });
   }
 });

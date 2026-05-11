@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity, RefreshControl, Alert } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, RefreshControl, Alert, Linking } from 'react-native';
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -80,7 +80,7 @@ export default function VideosScreen() {
                   </TouchableOpacity>
                 )}
                 {v.result_url && (
-                  <TouchableOpacity style={styles.actionBtn}>
+                  <TouchableOpacity style={styles.actionBtn} onPress={() => Linking.openURL(v.result_url)}>
                     <Ionicons name="download" size={14} color={Colors.success} />
                     <Text style={[styles.actionText, { color: Colors.success }]}>Download</Text>
                   </TouchableOpacity>

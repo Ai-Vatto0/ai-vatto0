@@ -29,8 +29,10 @@ router.get('/:jobId/status', authMiddleware, async (req, res) => {
         db.prepare('UPDATE video_jobs SET status=?,result_url=?,completed_at=? WHERE id=?')
           .run(status, resultUrl || job.result_url, (status === 'completed' || status === 'failed') ? new Date().toISOString() : null, job.id);
         if (status === 'failed') {
-          db.prepare('UPDATE users SET coins = coins + ? WHERE id = ?').run(job.coins_used, job.user_id);
-          db.prepare('INSERT INTO coin_transactions (id, user_id, amount, type, description) VALUES (?, ?, ?, ?, ?)').run(uuidv4(), job.user_id, job.coins_used, 'credit', 'Rückerstattung: Video fehlgeschlagen');
+          db.transaction(() => {
+            db.prepare('UPDATE users SET coins = coins + ? WHERE id = ?').run(job.coins_used, job.user_id);
+            db.prepare('INSERT INTO coin_transactions (id, user_id, amount, type, description) VALUES (?, ?, ?, ?, ?)').run(uuidv4(), job.user_id, job.coins_used, 'credit', 'Rückerstattung: Video fehlgeschlagen');
+          })();
         }
       }
       const updated = db.prepare('SELECT * FROM video_jobs WHERE id = ?').get(job.id);
@@ -64,8 +66,10 @@ router.post('/generate', authMiddleware, async (req, res) => {
   const hasKieCredits = await checkKieCredits(50);
   if (!hasKieCredits) return res.status(503).json({ error: 'Service vorübergehend nicht verfügbar. Bitte später erneut versuchen.' });
 
-  db.prepare('UPDATE users SET coins = coins - ? WHERE id = ?').run(coinCost, req.user.id);
-  db.prepare('INSERT INTO coin_transactions (id, user_id, amount, type, description) VALUES (?, ?, ?, ?, ?)').run(uuidv4(), req.user.id, -coinCost, 'debit', `Video: ${model} ${dur}s ${res_}`);
+  db.transaction(() => {
+    db.prepare('UPDATE users SET coins = coins - ? WHERE id = ?').run(coinCost, req.user.id);
+    db.prepare('INSERT INTO coin_transactions (id, user_id, amount, type, description) VALUES (?, ?, ?, ?, ?)').run(uuidv4(), req.user.id, -coinCost, 'debit', `Video: ${model} ${dur}s ${res_}`);
+  })();
 
   const jobId = uuidv4();
   db.prepare('INSERT INTO video_jobs (id, user_id, project_id, scene_id, model, resolution, duration, prompt, reference_images, status, coins_used) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)')
@@ -82,8 +86,10 @@ router.post('/generate', authMiddleware, async (req, res) => {
     res.status(201).json({ jobId, status: 'processing', coins_used: coinCost, message: 'Gestartet' });
   } catch (err) {
     db.prepare('UPDATE video_jobs SET status=?,error_message=? WHERE id=?').run('failed', err.message, jobId);
-    db.prepare('UPDATE users SET coins = coins + ? WHERE id = ?').run(coinCost, req.user.id);
-    db.prepare('INSERT INTO coin_transactions (id, user_id, amount, type, description) VALUES (?, ?, ?, ?, ?)').run(uuidv4(), req.user.id, coinCost, 'credit', 'Rückerstattung: Video-Start fehlgeschlagen');
+    db.transaction(() => {
+      db.prepare('UPDATE users SET coins = coins + ? WHERE id = ?').run(coinCost, req.user.id);
+      db.prepare('INSERT INTO coin_transactions (id, user_id, amount, type, description) VALUES (?, ?, ?, ?, ?)').run(uuidv4(), req.user.id, coinCost, 'credit', 'Rückerstattung: Video-Start fehlgeschlagen');
+    })();
     res.status(500).json({ error: 'Fehler: ' + err.message });
   }
 });
