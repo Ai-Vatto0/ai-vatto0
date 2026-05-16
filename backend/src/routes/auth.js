@@ -5,10 +5,13 @@ const { v4: uuidv4 } = require('uuid');
 const { getDb } = require('../database/db');
 const authMiddleware = require('../middleware/auth');
 const { sendMagicLink, verifyMagicLink } = require('../services/emailService');
+const validate = require('../middleware/validate');
+const { loginSchema } = require('../validation/schemas');
+const { authLoginLimiter } = require('../middleware/rateLimit');
 
 const router = express.Router();
 
-router.post('/login', (req, res) => {
+router.post('/login', authLoginLimiter, validate(loginSchema), (req, res) => {
   const { email, password } = req.body;
   if (!email || !password) return res.status(400).json({ error: 'E-Mail und Passwort erforderlich' });
 

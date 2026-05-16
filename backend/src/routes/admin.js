@@ -4,16 +4,19 @@ const { v4: uuidv4 } = require('uuid');
 const { getDb } = require('../database/db');
 const authMiddleware = require('../middleware/auth');
 const adminOnly = require('../middleware/adminOnly');
+const validate = require('../middleware/validate');
+const { adminCoinAddSchema, adminCoinRemoveSchema, adminUserCreateSchema } = require('../validation/schemas');
+const { adminLimiter } = require('../middleware/rateLimit');
 
 const router = express.Router();
-router.use(authMiddleware, adminOnly);
+router.use(authMiddleware, adminOnly, adminLimiter);
 
 router.get('/users', (req, res) => {
   const users = getDb().prepare('SELECT id, username, email, coins, is_admin, created_at FROM users ORDER BY created_at DESC').all();
   res.json(users.map(u => ({ ...u, is_admin: u.is_admin === 1 })));
 });
 
-router.post('/users', (req, res) => {
+router.post('/users', validate(adminUserCreateSchema), (req, res) => {
   const { username, email, password, coins, is_admin } = req.body;
   if (!username || !email || !password) return res.status(400).json({ error: 'Alle Felder erforderlich' });
   if (password.length < 6) return res.status(400).json({ error: 'Passwort min. 6 Zeichen' });
@@ -24,7 +27,7 @@ router.post('/users', (req, res) => {
   res.status(201).json({ id, username, email: email.toLowerCase(), coins: parseInt(coins) || 0, is_admin: !!is_admin });
 });
 
-router.post('/coins/add', (req, res) => {
+router.post('/coins/add', validate(adminCoinAddSchema), (req, res) => {
   const { userId, amount, description } = req.body;
   if (!userId || !amount || parseInt(amount) <= 0) return res.status(400).json({ error: 'userId und positive Menge erforderlich' });
   const db = getDb();
@@ -35,7 +38,7 @@ router.post('/coins/add', (req, res) => {
   res.json({ message: `${coins} Coins hinzugefügt`, new_balance: db.prepare('SELECT coins FROM users WHERE id = ?').get(userId).coins });
 });
 
-router.post('/coins/remove', (req, res) => {
+router.post('/coins/remove', validate(adminCoinRemoveSchema), (req, res) => {
   const { userId, amount, description } = req.body;
   if (!userId || !amount) return res.status(400).json({ error: 'userId und amount erforderlich' });
   const db = getDb();

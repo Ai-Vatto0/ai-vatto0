@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+const { requestLogger, errorLogger } = require('./utils/logger');
 
 const authRoutes = require('./routes/auth');
 const characterRoutes = require('./routes/characters');
@@ -22,6 +23,9 @@ app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
 
+// Structured request logging
+app.use(requestLogger);
+
 app.get('/health', (req, res) => {
   res.json({ status: 'ok', message: 'KI-App Backend läuft' });
 });
@@ -33,6 +37,9 @@ app.use('/api/videos', videoRoutes);
 app.use('/api/images', imageRoutes);
 app.use('/api/coins', coinRoutes);
 app.use('/api/admin', adminRoutes);
+
+// Error logging (captures stack traces for request logger)
+app.use(errorLogger);
 
 app.use((err, req, res, next) => {
   console.error('Server-Fehler:', err);

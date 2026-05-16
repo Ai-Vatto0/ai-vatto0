@@ -114,7 +114,18 @@ function initDatabase() {
       expires_at INTEGER NOT NULL,
       created_at TEXT DEFAULT (datetime('now'))
     );
+
+    -- Performance indexes
+    CREATE INDEX IF NOT EXISTS idx_video_jobs_user_status ON video_jobs(user_id, status);
+    CREATE INDEX IF NOT EXISTS idx_coin_transactions_user ON coin_transactions(user_id, created_at);
   `);
+
+  // Migration: add is_banned column if it doesn't exist
+  try {
+    db.exec(`ALTER TABLE users ADD COLUMN is_banned INTEGER DEFAULT 0`);
+  } catch {
+    // Column already exists — safe to ignore
+  }
 
   // Admin-User erstellen falls keine User existieren
   const row = db.prepare('SELECT COUNT(*) as count FROM users').get();
