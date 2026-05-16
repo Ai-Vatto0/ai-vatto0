@@ -50,7 +50,7 @@ async function checkKieCredits(minRequired = 50) {
     return true;
   } catch (err) {
     console.error('Credit-Check fehlgeschlagen:', err.message);
-    return true; // Im Zweifel nicht blockieren
+    return false; // Bei Fehler blockieren — Sicherheit vor Verfügbarkeit
   }
 }
 
@@ -179,11 +179,46 @@ Antworte mit JSON-Array:
   );
 
   const content = response.data.choices?.[0]?.message?.content;
+  if (!content) throw new Error('LLM hat keine Antwort zurückgegeben');
+
+  // Markdown-Code-Blöcke entfernen (```json ... ```)
+  const cleaned = content.replace(/```json\s*/i, '').replace(/```\s*$/i, '').trim();
+
   try {
-    return JSON.parse(content);
+    return JSON.parse(cleaned);
   } catch {
     throw new Error('LLM hat kein valides JSON zurückgegeben');
   }
+}
+
+async function withRetry(fn, { maxRetries = 3, baseDelayMs = 1000, maxDelayMs = 15000 } = {}) {
+  let lastError;
+  for (let attempt = 0; attempt <= maxRetries; attempt++) {
+    try {
+      return await fn();
+    } catch (err) {
+      lastError = err;
+      const isRetryable =
+        !err.response ||
+        err.code === 'ECONNABORTED' ||
+        err.code === 'ETIMEDOUT' ||
+        err.code === 'ECONNRESET' ||
+        (err.response?.status >= 500 && err.response?.status < 600) ||
+        err.response?.status === 429;
+
+      if (!isRetryable || attempt === maxRetries) {
+        throw err;
+      }
+
+      const delay = Math.min(baseDelayMs * Math.pow(2, attempt) + Math.random() * 500, maxDelayMs);
+      await sleep(delay);
+    }
+  }
+  throw lastError;
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 module.exports = {
@@ -197,4 +232,6 @@ module.exports = {
   generateImageNanaBanana,
   checkImageStatus,
   generateScenesWithLLM,
+  withRetry,
+  sleep,
 };

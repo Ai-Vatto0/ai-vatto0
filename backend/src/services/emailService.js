@@ -2,7 +2,13 @@ const { Resend } = require('resend');
 const { v4: uuidv4 } = require('uuid');
 const { getDb } = require('../database/db');
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+let resendInstance;
+function getResend() {
+  if (!resendInstance) {
+    resendInstance = new Resend(process.env.RESEND_API_KEY);
+  }
+  return resendInstance;
+}
 
 // Magic Link Token speichern (gültig für 15 Minuten)
 function generateMagicLink(email) {
@@ -36,12 +42,15 @@ function verifyMagicLink(email, token) {
 
 // Email versenden
 async function sendMagicLink(email) {
+  if (!process.env.RESEND_API_KEY) {
+    throw new Error('RESEND_API_KEY nicht konfiguriert');
+  }
   const { token } = generateMagicLink(email);
 
   const magicLink = `${process.env.FRONTEND_URL || 'https://snova-studio.vercel.app'}/auth/magic?email=${encodeURIComponent(email)}&token=${token}`;
 
   try {
-    const response = await resend.emails.send({
+    const response = await getResend().emails.send({
       from: 'Snova Studio <onboarding@resend.dev>',
       to: email,
       subject: '🎨 Dein Snova Studio Magic Link',

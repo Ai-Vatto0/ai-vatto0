@@ -10,6 +10,28 @@ const { videoGenerateLimiter } = require('../middleware/rateLimit');
 
 const router = express.Router();
 
+function refundCoins(db, userId, amount, description) {
+  db.prepare('UPDATE users SET coins = coins + ? WHERE id = ?').run(amount, userId);
+  db.prepare('INSERT INTO coin_transactions (id, user_id, amount, type, description) VALUES (?, ?, ?, ?, ?)')
+    .run(uuidv4(), userId, amount, 'credit', description);
+}
+
+function extractProgress(kieStatus) {
+  if (!kieStatus || typeof kieStatus !== 'object') return 0;
+  const raw = kieStatus.progress ?? kieStatus.percent ?? kieStatus.completion ?? kieStatus.percentage;
+  if (typeof raw === 'number') return Math.max(0, Math.min(100, Math.round(raw)));
+  if (typeof raw === 'string') {
+    const parsed = parseInt(raw.replace('%', '').trim(), 10);
+    if (!isNaN(parsed)) return Math.max(0, Math.min(100, parsed));
+  }
+  const state = (kieStatus.status || kieStatus.state || '').toLowerCase();
+  if (state === 'pending') return 0;
+  if (state === 'processing' || state === 'running') return 50;
+  if (['completed', 'success', 'done', 'finished'].includes(state)) return 100;
+  if (['failed', 'error'].includes(state)) return 0;
+  return 0;
+}
+
 router.get('/', authMiddleware, (req, res) => {
   const jobs = getDb().prepare('SELECT * FROM video_jobs WHERE user_id = ? ORDER BY created_at DESC LIMIT 50').all(req.user.id);
   res.json(jobs.map(j => ({ ...j, reference_images: JSON.parse(j.reference_images || '[]') })));
@@ -28,19 +50,31 @@ router.get('/:jobId/status', authMiddleware, async (req, res) => {
       const kieStatus = await checkVideoStatus(job.kie_task_id);
       const status = mapKieStatus(kieStatus.status || kieStatus.state);
       const resultUrl = kieStatus.video_url || kieStatus.result_url || kieStatus.output_url;
-      if (status !== job.status) {
-        db.prepare('UPDATE video_jobs SET status=?,result_url=?,completed_at=? WHERE id=?')
-          .run(status, resultUrl || job.result_url, (status === 'completed' || status === 'failed') ? new Date().toISOString() : null, job.id);
-        if (status === 'failed') {
-          db.transaction(() => {
-            db.prepare('UPDATE users SET coins = coins + ? WHERE id = ?').run(job.coins_used, job.user_id);
-            db.prepare('INSERT INTO coin_transactions (id, user_id, amount, type, description) VALUES (?, ?, ?, ?, ?)').run(uuidv4(), job.user_id, job.coins_used, 'credit', 'Rückerstattung: Video fehlgeschlagen');
-          })();
+      const progress = extractProgress(kieStatus);
+      const now = new Date().toISOString();
+
+      const needsUpdate = status !== job.status || (resultUrl && resultUrl !== job.result_url) || progress !== (job.progress || 0);
+      if (needsUpdate) {
+        db.prepare('UPDATE video_jobs SET status=?, result_url=?, progress=?, last_polled_at=?, completed_at=? WHERE id=?')
+          .run(
+            status,
+            resultUrl || job.result_url || null,
+            progress,
+            now,
+            ((status === 'completed' || status === 'failed') && !job.completed_at) ? now : job.completed_at || null,
+            job.id
+          );
+        if (status === 'failed' && job.status !== 'failed') {
+          refundCoins(db, job.user_id, job.coins_used, 'Rückerstattung: Video fehlgeschlagen');
         }
+      } else {
+        db.prepare('UPDATE video_jobs SET last_polled_at = ? WHERE id = ?')
+          .run(now, job.id);
       }
       const updated = db.prepare('SELECT * FROM video_jobs WHERE id = ?').get(job.id);
       return res.json({ ...updated, reference_images: JSON.parse(updated.reference_images || '[]') });
-    } catch {
+    } catch (err) {
+      console.error('Video-Status-Check fehlgeschlagen:', err.message);
       return res.json({ ...job, reference_images: JSON.parse(job.reference_images || '[]') });
     }
   }
@@ -71,16 +105,16 @@ router.post('/generate', authMiddleware, videoGenerateLimiter, validate(videoGen
 
   const jobId = uuidv4();
 
-  // Deduct coins AND create job in a SINGLE transaction — prevents coin loss on crash
+  // Deduct coins AND create job atomisch — prevents coin loss on crash
   try {
-    db.transaction(() => {
-      db.prepare('UPDATE users SET coins = coins - ? WHERE id = ?').run(coinCost, req.user.id);
-      db.prepare('INSERT INTO coin_transactions (id, user_id, amount, type, description) VALUES (?, ?, ?, ?, ?)').run(uuidv4(), req.user.id, -coinCost, 'debit', `Video: ${model} ${dur}s ${res_}`);
-      db.prepare('INSERT INTO video_jobs (id, user_id, project_id, scene_id, model, resolution, duration, prompt, reference_images, status, coins_used) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)')
-        .run(jobId, req.user.id, projectId || null, sceneId || null, model, res_, dur, prompt, JSON.stringify(refs), 'pending', coinCost);
-    })();
+    db.exec('BEGIN');
+    db.prepare('UPDATE users SET coins = coins - ? WHERE id = ?').run(coinCost, req.user.id);
+    db.prepare('INSERT INTO coin_transactions (id, user_id, amount, type, description) VALUES (?, ?, ?, ?, ?)').run(uuidv4(), req.user.id, -coinCost, 'debit', `Video: ${model} ${dur}s ${res_}`);
+    db.prepare('INSERT INTO video_jobs (id, user_id, project_id, scene_id, model, resolution, duration, prompt, reference_images, status, coins_used) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)')
+      .run(jobId, req.user.id, projectId || null, sceneId || null, model, res_, dur, prompt, JSON.stringify(refs), 'pending', coinCost);
+    db.exec('COMMIT');
   } catch (txErr) {
-    // Transaction failed atomically — no coins were deducted, no job was created
+    try { db.exec('ROLLBACK'); } catch { /* ignore rollback errors */ }
     return res.status(500).json({ error: 'Transaktion fehlgeschlagen: ' + txErr.message });
   }
 
@@ -94,11 +128,8 @@ router.post('/generate', authMiddleware, videoGenerateLimiter, validate(videoGen
     db.prepare('UPDATE video_jobs SET kie_task_id=?,status=? WHERE id=?').run(taskId || null, 'processing', jobId);
     res.status(201).json({ jobId, status: 'processing', coins_used: coinCost, message: 'Gestartet' });
   } catch (err) {
-    db.prepare('UPDATE video_jobs SET status=?,error_message=? WHERE id=?').run('failed', err.message, jobId);
-    db.transaction(() => {
-      db.prepare('UPDATE users SET coins = coins + ? WHERE id = ?').run(coinCost, req.user.id);
-      db.prepare('INSERT INTO coin_transactions (id, user_id, amount, type, description) VALUES (?, ?, ?, ?, ?)').run(uuidv4(), req.user.id, coinCost, 'credit', 'Rückerstattung: Video-Start fehlgeschlagen');
-    })();
+    db.prepare('UPDATE video_jobs SET status=?, error_message=? WHERE id=?').run('failed', err.message, jobId);
+    refundCoins(db, req.user.id, coinCost, 'Rückerstattung: Video-Start fehlgeschlagen');
     res.status(500).json({ error: 'Fehler: ' + err.message });
   }
 });
@@ -120,6 +151,42 @@ router.post('/estimate', authMiddleware, (req, res) => {
   const cost = getCoinCost(model || 'grok', parseInt(duration) || 6, resolution || '720p');
   const user = getDb().prepare('SELECT coins FROM users WHERE id = ?').get(req.user.id);
   res.json({ coins_required: cost, coins_available: user.coins, can_generate: user.coins >= cost });
+});
+
+// Webhook für Kie.ai Status-Updates — durch WEBHOOK_SECRET geschützt
+router.post('/webhook', async (req, res) => {
+  const secret = req.headers['x-webhook-secret'];
+  if (!process.env.WEBHOOK_SECRET || secret !== process.env.WEBHOOK_SECRET) {
+    return res.status(401).json({ error: 'Unauthorized' });
+  }
+
+  const { task_id, status, result_url, error_message, progress } = req.body;
+  if (!task_id) return res.status(400).json({ error: 'task_id erforderlich' });
+
+  const db = getDb();
+  const job = db.prepare('SELECT * FROM video_jobs WHERE kie_task_id = ?').get(task_id);
+  if (!job) return res.status(404).json({ error: 'Job nicht gefunden' });
+
+  const mappedStatus = mapKieStatus(status);
+  const progressValue = progress !== undefined ? Math.max(0, Math.min(100, Math.round(progress))) : extractProgress(req.body);
+  const now = new Date().toISOString();
+
+  db.prepare('UPDATE video_jobs SET status=?, result_url=?, progress=?, error_message=?, webhook_received_at=?, completed_at=? WHERE id=?')
+    .run(
+      mappedStatus,
+      result_url || job.result_url || null,
+      progressValue,
+      error_message || job.error_message || null,
+      now,
+      ((mappedStatus === 'completed' || mappedStatus === 'failed') && !job.completed_at) ? now : job.completed_at || null,
+      job.id
+    );
+
+  if (mappedStatus === 'failed' && job.status !== 'failed') {
+    refundCoins(db, job.user_id, job.coins_used, 'Rückerstattung: Video fehlgeschlagen (Webhook)');
+  }
+
+  res.json({ received: true });
 });
 
 function mapKieStatus(status) {
