@@ -9,8 +9,9 @@ function authMiddleware(req, res, next) {
   const token = authHeader.split(' ')[1];
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    const user = getDb().prepare('SELECT id, username, email, coins, is_admin FROM users WHERE id = ?').get(decoded.userId);
+    const user = getDb().prepare('SELECT id, username, email, coins, is_admin, is_banned FROM users WHERE id = ?').get(decoded.userId);
     if (!user) return res.status(401).json({ error: 'Benutzer nicht gefunden' });
+    if (user.is_banned) return res.status(403).json({ error: 'Zugang gesperrt — Account ist gebannt' });
     req.user = user;
     next();
   } catch {

@@ -4,6 +4,9 @@ const { getDb } = require('../database/db');
 const authMiddleware = require('../middleware/auth');
 const { getCoinCost, checkKieCredits, generateVideoGrok, generateVideoVeo31Fast, checkVideoStatus } = require('../services/kieai');
 const { videoQueue } = require('../services/generationQueue');
+const validate = require('../middleware/validate');
+const { videoGenerateSchema } = require('../validation/schemas');
+const { videoGenerateLimiter } = require('../middleware/rateLimit');
 
 const router = express.Router();
 
@@ -44,7 +47,7 @@ router.get('/:jobId/status', authMiddleware, async (req, res) => {
   res.json({ ...job, reference_images: JSON.parse(job.reference_images || '[]') });
 });
 
-router.post('/generate', authMiddleware, async (req, res) => {
+router.post('/generate', authMiddleware, videoGenerateLimiter, validate(videoGenerateSchema), async (req, res) => {
   const { model, prompt, duration, resolution, referenceImages, projectId, sceneId } = req.body;
   if (!model || !prompt) return res.status(400).json({ error: 'Modell und Prompt erforderlich' });
   if (!['grok', 'veo31'].includes(model)) return res.status(400).json({ error: 'Ungültiges Modell. Erlaubt: grok, veo31' });
@@ -66,14 +69,20 @@ router.post('/generate', authMiddleware, async (req, res) => {
   const hasKieCredits = await checkKieCredits(50);
   if (!hasKieCredits) return res.status(503).json({ error: 'Service vorübergehend nicht verfügbar. Bitte später erneut versuchen.' });
 
-  db.transaction(() => {
-    db.prepare('UPDATE users SET coins = coins - ? WHERE id = ?').run(coinCost, req.user.id);
-    db.prepare('INSERT INTO coin_transactions (id, user_id, amount, type, description) VALUES (?, ?, ?, ?, ?)').run(uuidv4(), req.user.id, -coinCost, 'debit', `Video: ${model} ${dur}s ${res_}`);
-  })();
-
   const jobId = uuidv4();
-  db.prepare('INSERT INTO video_jobs (id, user_id, project_id, scene_id, model, resolution, duration, prompt, reference_images, status, coins_used) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)')
-    .run(jobId, req.user.id, projectId || null, sceneId || null, model, res_, dur, prompt, JSON.stringify(refs), 'pending', coinCost);
+
+  // Deduct coins AND create job in a SINGLE transaction — prevents coin loss on crash
+  try {
+    db.transaction(() => {
+      db.prepare('UPDATE users SET coins = coins - ? WHERE id = ?').run(coinCost, req.user.id);
+      db.prepare('INSERT INTO coin_transactions (id, user_id, amount, type, description) VALUES (?, ?, ?, ?, ?)').run(uuidv4(), req.user.id, -coinCost, 'debit', `Video: ${model} ${dur}s ${res_}`);
+      db.prepare('INSERT INTO video_jobs (id, user_id, project_id, scene_id, model, resolution, duration, prompt, reference_images, status, coins_used) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)')
+        .run(jobId, req.user.id, projectId || null, sceneId || null, model, res_, dur, prompt, JSON.stringify(refs), 'pending', coinCost);
+    })();
+  } catch (txErr) {
+    // Transaction failed atomically — no coins were deducted, no job was created
+    return res.status(500).json({ error: 'Transaktion fehlgeschlagen: ' + txErr.message });
+  }
 
   try {
     const kieResponse = await videoQueue.add(async () => {
