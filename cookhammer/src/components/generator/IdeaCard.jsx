@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { COST_VIDEO } from '../../store/AppStore'
 
 const PROMPT_MAX = 2500   // Grok-Maximum
@@ -8,6 +8,8 @@ export function IdeaCard({ idea, index, onCreateVideo, onCopy, busy, affordable 
   const hashtags = Array.isArray(idea.hashtags) ? idea.hashtags : []
   const [prompt, setPrompt] = useState(idea.prompt || '')
   const [editing, setEditing] = useState(false)
+  // Bei „Neu generieren" (key=index, neue idea-Props) den lokalen Prompt-State zurücksetzen.
+  useEffect(() => { setPrompt(idea.prompt || ''); setEditing(false) }, [idea.prompt])
   const copy = (text) => { navigator.clipboard?.writeText(text).then(() => onCopy?.()) }
 
   const start = () => onCreateVideo?.({ ...idea, prompt: (prompt.trim() || idea.prompt) })

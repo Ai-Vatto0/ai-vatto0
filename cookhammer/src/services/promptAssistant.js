@@ -25,7 +25,8 @@ export async function analyzeAndBuildPrompts({ imageUrl, imageUrls, brief, aspec
   const res = await fetch(fnUrl(fnAnalyze), {
     method: 'POST',
     headers: supaHeaders({ 'Content-Type': 'application/json' }),
-    body: JSON.stringify({ image_urls: urls, image_url: urls[0], brief, aspect_ratio: aspectRatio, duration, mode }),
+    // Nur image_urls senden — image_url würde das Hauptbild doppeln (Edge concatet beide Felder).
+    body: JSON.stringify({ image_urls: urls, brief, aspect_ratio: aspectRatio, duration, mode }),
   })
 
   const data = await res.json().catch(() => ({}))

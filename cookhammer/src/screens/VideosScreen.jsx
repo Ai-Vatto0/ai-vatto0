@@ -42,7 +42,12 @@ function VideoCard({ p, onRemove, showToast }) {
     setSaving(true)
     try {
       const how = await saveVideo(p.videoUrl, p.title || p.prompt || 'toktok-video')
-      showToast?.(how === 'shared' ? 'Zum Sichern in der Galerie öffnen ✅' : 'Video heruntergeladen ⬇', 'success')
+      showToast?.(
+        how === 'shared' ? 'Zum Sichern in der Galerie öffnen ✅'
+          : how === 'opened' ? 'Video geöffnet — lange drücken & „Sichern"'
+          : 'Video heruntergeladen ⬇',
+        'success',
+      )
     } catch (e) {
       showToast?.(e.message || 'Download fehlgeschlagen', 'error')
     } finally {

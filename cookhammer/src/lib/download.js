@@ -17,35 +17,51 @@ function safeName(name) {
  * @param {string} [title]    - Dateiname/Teilen-Titel
  * @returns {Promise<'shared'|'downloaded'>}
  */
-export async function saveVideo(url, title) {
-  const filename = safeName(title)
-
-  // 1) Blob holen (gleiche Datei für Share UND Download)
-  const res = await fetch(url, { mode: 'cors' })
-  if (!res.ok) throw new Error(`Video konnte nicht geladen werden (${res.status})`)
-  const blob = await res.blob()
-  const file = new File([blob], filename, { type: blob.type || 'video/mp4' })
-
-  // 2) iOS / mobile: Web-Share-API → „In Fotos sichern"
-  if (typeof navigator !== 'undefined' && navigator.canShare?.({ files: [file] })) {
-    try {
-      await navigator.share({ files: [file], title: title || 'TokTok Shop Video' })
-      return 'shared'
-    } catch (err) {
-      // Nutzer hat abgebrochen → nicht als Fehler werten
-      if (err?.name === 'AbortError') return 'shared'
-      // sonst auf Download zurückfallen
-    }
-  }
-
-  // 3) Fallback: klassischer Download (Desktop/Android)
-  const objectUrl = URL.createObjectURL(blob)
+function clickLink(href, { download, blank } = {}) {
   const a = document.createElement('a')
-  a.href = objectUrl
-  a.download = filename
+  a.href = href
+  if (download) a.download = download
+  if (blank) { a.target = '_blank'; a.rel = 'noreferrer' }
   document.body.appendChild(a)
   a.click()
   a.remove()
-  setTimeout(() => URL.revokeObjectURL(objectUrl), 4000)
-  return 'downloaded'
+}
+
+/**
+ * @returns {Promise<'shared'|'downloaded'|'opened'>}
+ *  shared    = iOS Share-Sheet („Video sichern")
+ *  downloaded= klassischer Blob-Download
+ *  opened    = CORS/Netz-Fehler → Video nur geöffnet (Nutzer sichert manuell)
+ */
+export async function saveVideo(url, title) {
+  const filename = safeName(title)
+
+  // 1) Blob versuchen (nötig für Share UND sauberen Download). Bei CORS/Netz-Fehler null.
+  let blob = null
+  try {
+    const res = await fetch(url, { mode: 'cors' })
+    if (res.ok) blob = await res.blob()
+  } catch { /* CORS/Netz → Fallback unten */ }
+
+  if (blob) {
+    const file = new File([blob], filename, { type: blob.type || 'video/mp4' })
+    // iOS / mobile: Web-Share-API → „In Fotos sichern"
+    if (typeof navigator !== 'undefined' && navigator.canShare?.({ files: [file] })) {
+      try {
+        await navigator.share({ files: [file], title: title || 'TokTok Shop Video' })
+        return 'shared'
+      } catch (err) {
+        if (err?.name === 'AbortError') return 'shared'   // Nutzer-Abbruch, kein Fehler
+        // sonst auf Download zurückfallen
+      }
+    }
+    const objectUrl = URL.createObjectURL(blob)
+    clickLink(objectUrl, { download: filename })
+    setTimeout(() => URL.revokeObjectURL(objectUrl), 4000)
+    return 'downloaded'
+  }
+
+  // 2) Ohne Blob (CDN ohne CORS): Video direkt öffnen/laden — Nutzer sichert manuell.
+  clickLink(url, { download: filename, blank: true })
+  return 'opened'
 }
