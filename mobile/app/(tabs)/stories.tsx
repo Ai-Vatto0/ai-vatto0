@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity, RefreshControl, Alert } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, RefreshControl, Alert, ActivityIndicator } from 'react-native';
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -10,8 +10,16 @@ import Toast from 'react-native-toast-message';
 export default function StoriesScreen() {
   const [stories, setStories] = useState<any[]>([]);
   const [refreshing, setRefreshing] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
 
-  const load = async () => { try { setStories(await getStories()); } catch {} };
+  const load = async () => {
+    setError('');
+    try { setStories(await getStories()); } catch (e: any) {
+      setError(e.message || 'Storys konnten nicht geladen werden');
+      Toast.show({ type: 'error', text1: 'Fehler', text2: e.message });
+    } finally { setLoading(false); }
+  };
   useEffect(() => { load(); }, []);
   const onRefresh = async () => { setRefreshing(true); await load(); setRefreshing(false); };
 
@@ -37,8 +45,23 @@ export default function StoriesScreen() {
         </TouchableOpacity>
       </View>
 
+      {loading && stories.length === 0 && (
+        <View style={styles.centered}>
+          <ActivityIndicator color={Colors.accent} size="large" />
+          <Text style={styles.loadingText}>Storys werden geladen...</Text>
+        </View>
+      )}
+      {error && stories.length === 0 && !loading && (
+        <View style={styles.centered}>
+          <Ionicons name="alert-circle" size={48} color={Colors.error} />
+          <Text style={styles.errorText}>{error}</Text>
+          <TouchableOpacity onPress={load} style={styles.retryBtn}>
+            <Text style={styles.retryBtnText}>Erneut versuchen</Text>
+          </TouchableOpacity>
+        </View>
+      )}
       <ScrollView contentContainerStyle={styles.list} refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} tintColor={Colors.accent} />}>
-        {stories.length === 0 && (
+        {stories.length === 0 && !loading && !error && (
           <View style={styles.empty}>
             <Ionicons name="document-text-outline" size={48} color={Colors.textMuted} />
             <Text style={styles.emptyText}>Noch keine Storys</Text>
@@ -80,6 +103,11 @@ const styles = StyleSheet.create({
   title: { fontSize: 24, fontWeight: '800', color: Colors.textPrimary },
   addBtn: { borderRadius: 14 },
   addBtnInner: { padding: 10, borderRadius: 14 },
+  centered: { flex: 1, alignItems: 'center', justifyContent: 'center', gap: 12 },
+  loadingText: { fontSize: 14, color: Colors.textSecondary, marginTop: 8 },
+  errorText: { fontSize: 14, color: Colors.error, textAlign: 'center', paddingHorizontal: 20 },
+  retryBtn: { marginTop: 12, backgroundColor: Colors.accent + '33', paddingHorizontal: 20, paddingVertical: 12, borderRadius: 12, borderWidth: 1, borderColor: Colors.accent },
+  retryBtnText: { color: Colors.accent, fontWeight: '700', fontSize: 15 },
   list: { padding: 16, gap: 10 },
   empty: { alignItems: 'center', gap: 12, paddingTop: 80 },
   emptyText: { fontSize: 16, color: Colors.textSecondary },

@@ -1,5 +1,12 @@
 # Snova Studio – CLAUDE.md
 
+## ⚠️ AKTIVER FOKUS
+**NUR Snova App** — kein anderes Projekt bis auf Weiteres (egal ob Claude App, Browser, PowerShell oder VSCode).
+Vor jeder Session: **MEMORY.md lesen** → `C:/Users/rober/ki-app/MEMORY.md`
+Nach jeder Session: **MEMORY.md aktualisieren** mit Datum, Änderungen, nächstem Schritt.
+
+---
+
 ## Projektübersicht
 KI-basierte Mobile App für konsistente Charakter-Erstellung und Story-Video-Generierung.
 Plattform: React Native (Expo) + Node.js Backend + Kie.ai API

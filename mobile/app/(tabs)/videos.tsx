@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity, RefreshControl, Alert, Linking } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, RefreshControl, Alert, Linking, ActivityIndicator } from 'react-native';
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -11,16 +11,40 @@ import Toast from 'react-native-toast-message';
 export default function VideosScreen() {
   const [videos, setVideos] = useState<any[]>([]);
   const [refreshing, setRefreshing] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
 
-  const load = async () => { try { setVideos(await getVideos()); } catch {} };
+  const load = async () => {
+    setError('');
+    try { setVideos(await getVideos()); } catch (e: any) {
+      setError(e.message || 'Videos konnten nicht geladen werden');
+      Toast.show({ type: 'error', text1: 'Fehler', text2: e.message });
+    } finally { setLoading(false); }
+  };
   useEffect(() => { load(); }, []);
+
+  useEffect(() => {
+    let mounted = true;
+    const interval = setInterval(() => {
+      videos.forEach(v => {
+        if (v.status === 'processing' || v.status === 'pending') {
+          getVideoStatus(v.id)
+            .then(updated => {
+              if (mounted) setVideos(prev => prev.map(x => x.id === v.id ? updated : x));
+            })
+            .catch(() => {});
+        }
+      });
+    }, 10000);
+    return () => { mounted = false; clearInterval(interval); };
+  }, [videos]);
+
   const onRefresh = async () => { setRefreshing(true); await load(); setRefreshing(false); };
 
   const checkStatus = async (jobId: string) => {
     try {
       const updated = await getVideoStatus(jobId);
       setVideos(prev => prev.map(v => v.id === jobId ? updated : v));
-      Toast.show({ type: 'info', text1: `Status: ${updated.status}` });
     } catch (e: any) { Toast.show({ type: 'error', text1: e.message }); }
   };
 
@@ -44,8 +68,23 @@ export default function VideosScreen() {
         </TouchableOpacity>
       </View>
 
+      {loading && videos.length === 0 && (
+        <View style={styles.centered}>
+          <ActivityIndicator color={Colors.accentPink} size="large" />
+          <Text style={styles.loadingText}>Videos werden geladen...</Text>
+        </View>
+      )}
+      {error && videos.length === 0 && !loading && (
+        <View style={styles.centered}>
+          <Ionicons name="alert-circle" size={48} color={Colors.error} />
+          <Text style={styles.errorText}>{error}</Text>
+          <TouchableOpacity onPress={load} style={styles.retryBtn}>
+            <Text style={styles.retryBtnText}>Erneut versuchen</Text>
+          </TouchableOpacity>
+        </View>
+      )}
       <ScrollView contentContainerStyle={styles.list} refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} tintColor={Colors.accentPink} />}>
-        {videos.length === 0 && (
+        {videos.length === 0 && !loading && !error && (
           <View style={styles.empty}>
             <Ionicons name="film-outline" size={48} color={Colors.textMuted} />
             <Text style={styles.emptyText}>Noch keine Videos</Text>
@@ -109,6 +148,11 @@ const styles = StyleSheet.create({
   title: { fontSize: 24, fontWeight: '800', color: Colors.textPrimary },
   addBtn: { borderRadius: 14 },
   addBtnInner: { padding: 10, borderRadius: 14 },
+  centered: { flex: 1, alignItems: 'center', justifyContent: 'center', gap: 12 },
+  loadingText: { fontSize: 14, color: Colors.textSecondary, marginTop: 8 },
+  errorText: { fontSize: 14, color: Colors.error, textAlign: 'center', paddingHorizontal: 20 },
+  retryBtn: { marginTop: 12, backgroundColor: Colors.primary + '33', paddingHorizontal: 20, paddingVertical: 12, borderRadius: 12, borderWidth: 1, borderColor: Colors.primary },
+  retryBtnText: { color: Colors.primary, fontWeight: '700', fontSize: 15 },
   list: { padding: 16, gap: 12 },
   empty: { alignItems: 'center', gap: 12, paddingTop: 80 },
   emptyText: { fontSize: 16, color: Colors.textSecondary },

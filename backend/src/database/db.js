@@ -127,26 +127,35 @@ function initDatabase() {
     // Column already exists — safe to ignore
   }
 
+  // Migration: video_jobs progress tracking
+  const videoJobMigrations = [
+    `ALTER TABLE video_jobs ADD COLUMN progress INTEGER DEFAULT 0`,
+    `ALTER TABLE video_jobs ADD COLUMN retry_count INTEGER DEFAULT 0`,
+    `ALTER TABLE video_jobs ADD COLUMN last_polled_at TEXT`,
+    `ALTER TABLE video_jobs ADD COLUMN webhook_received_at TEXT`,
+  ];
+  videoJobMigrations.forEach(sql => {
+    try { db.exec(sql); } catch { /* Column already exists */ }
+  });
+
   // Admin-User erstellen falls keine User existieren
   const row = db.prepare('SELECT COUNT(*) as count FROM users').get();
   if (row.count === 0) {
     const { v4: uuidv4 } = require('uuid');
     const adminId = uuidv4();
-    const passwordHash = bcrypt.hashSync(process.env.ADMIN_PASSWORD || 'Admin123!', 10);
+    if (!process.env.ADMIN_PASSWORD) {
+      console.warn('⚠️ ADMIN_PASSWORD nicht gesetzt — Admin-User wird nicht erstellt');
+      return;
+    }
+    const passwordHash = bcrypt.hashSync(process.env.ADMIN_PASSWORD, 10);
+    const adminEmail = process.env.ADMIN_EMAIL || 'admin@ki-app.com';
 
     db.prepare(`
       INSERT INTO users (id, username, email, password_hash, coins, is_admin)
       VALUES (?, ?, ?, ?, ?, ?)
-    `).run(adminId, process.env.ADMIN_EMAIL || 'admin@ki-app.com', process.env.ADMIN_EMAIL || 'admin@ki-app.com', passwordHash, 999999, 1);
+    `).run(adminId, 'Admin', adminEmail, passwordHash, 999999, 1);
 
-    // Admin-User korrekt: username und email getrennt
-    db.prepare('DELETE FROM users WHERE id = ?').run(adminId);
-    db.prepare(`
-      INSERT INTO users (id, username, email, password_hash, coins, is_admin)
-      VALUES (?, ?, ?, ?, ?, ?)
-    `).run(adminId, 'Admin', process.env.ADMIN_EMAIL || 'admin@ki-app.com', passwordHash, 999999, 1);
-
-    console.log(`👤 Admin-User erstellt: ${process.env.ADMIN_EMAIL || 'admin@ki-app.com'}`);
+    console.log(`👤 Admin-User erstellt: ${adminEmail}`);
   }
 
   console.log('📦 Datenbank-Schema initialisiert');

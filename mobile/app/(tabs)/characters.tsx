@@ -1,18 +1,36 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity, RefreshControl, Image, Alert } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, RefreshControl, Image, Alert, ActivityIndicator } from 'react-native';
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Colors } from '../../constants/Colors';
+import { API_BASE_URL } from '../../constants/Config';
 import { getCharacters, deleteCharacter } from '../../services/api';
 import Toast from 'react-native-toast-message';
+
+const BASE = API_BASE_URL.replace(/\/api$/, '');
+function resolveImageUrl(url: string): string {
+  if (!url) return '';
+  if (url.startsWith('http')) return url;
+  return `${BASE}${url}`;
+}
 
 export default function CharactersScreen() {
   const [characters, setCharacters] = useState<any[]>([]);
   const [refreshing, setRefreshing] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
 
   const load = async () => {
-    try { setCharacters(await getCharacters()); } catch {}
+    setError('');
+    try {
+      setCharacters(await getCharacters());
+    } catch (e: any) {
+      setError(e.message || 'Charaktere konnten nicht geladen werden');
+      Toast.show({ type: 'error', text1: 'Fehler', text2: e.message });
+    } finally {
+      setLoading(false);
+    }
   };
   useEffect(() => { load(); }, []);
   const onRefresh = async () => { setRefreshing(true); await load(); setRefreshing(false); };
@@ -38,8 +56,23 @@ export default function CharactersScreen() {
         </TouchableOpacity>
       </View>
 
+      {loading && characters.length === 0 && (
+        <View style={styles.centered}>
+          <ActivityIndicator color={Colors.primary} size="large" />
+          <Text style={styles.loadingText}>Charaktere werden geladen...</Text>
+        </View>
+      )}
+      {error && characters.length === 0 && !loading && (
+        <View style={styles.centered}>
+          <Ionicons name="alert-circle" size={48} color={Colors.error} />
+          <Text style={styles.errorText}>{error}</Text>
+          <TouchableOpacity onPress={load} style={styles.retryBtn}>
+            <Text style={styles.retryBtnText}>Erneut versuchen</Text>
+          </TouchableOpacity>
+        </View>
+      )}
       <ScrollView contentContainerStyle={styles.list} refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} tintColor={Colors.primary} />}>
-        {characters.length === 0 && (
+        {characters.length === 0 && !loading && !error && (
           <View style={styles.empty}>
             <Ionicons name="person-add-outline" size={48} color={Colors.textMuted} />
             <Text style={styles.emptyText}>Noch keine Charaktere</Text>
@@ -52,7 +85,7 @@ export default function CharactersScreen() {
           <TouchableOpacity key={c.id} onPress={() => router.push(`/character/${c.id}`)} activeOpacity={0.85} style={styles.card}>
             <View style={styles.cardImageArea}>
               {c.images?.find((i: any) => i.view_type === 'front')?.image_url
-                ? <Image source={{ uri: `http://192.168.1.100:3000${c.images.find((i: any) => i.view_type === 'front').image_url}` }} style={styles.cardImage} />
+                ? <Image source={{ uri: resolveImageUrl(c.images.find((i: any) => i.view_type === 'front').image_url) }} style={styles.cardImage} />
                 : <View style={styles.cardImagePlaceholder}><Ionicons name="person" size={28} color={Colors.primary} /></View>
               }
             </View>
@@ -88,6 +121,10 @@ const styles = StyleSheet.create({
   card: { flexDirection: 'row', backgroundColor: Colors.card, borderRadius: 16, overflow: 'hidden', borderWidth: 1, borderColor: Colors.border },
   cardImageArea: { width: 80 },
   cardImage: { width: 80, height: 100, resizeMode: 'cover' },
+  centered: { flex: 1, alignItems: 'center', justifyContent: 'center', gap: 12 },
+  loadingText: { fontSize: 14, color: Colors.textSecondary, marginTop: 8 },
+  retryBtn: { marginTop: 12, backgroundColor: Colors.primary + '33', paddingHorizontal: 20, paddingVertical: 12, borderRadius: 12, borderWidth: 1, borderColor: Colors.primary },
+  retryBtnText: { color: Colors.primary, fontWeight: '700', fontSize: 15 },
   cardImagePlaceholder: { width: 80, height: 100, backgroundColor: Colors.primary + '20', justifyContent: 'center', alignItems: 'center' },
   cardInfo: { flex: 1, padding: 12 },
   cardName: { fontSize: 16, fontWeight: '700', color: Colors.textPrimary },
