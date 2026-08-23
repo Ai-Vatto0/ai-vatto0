@@ -10,6 +10,7 @@ const videoRoutes = require('./routes/videos');
 const imageRoutes = require('./routes/images');
 const coinRoutes = require('./routes/coins');
 const adminRoutes = require('./routes/admin');
+const productElementRoutes = require('./routes/productElements');
 
 const app = express();
 
@@ -35,6 +36,7 @@ app.use('/api/characters', characterRoutes);
 app.use('/api/stories', storyRoutes);
 app.use('/api/videos', videoRoutes);
 app.use('/api/images', imageRoutes);
+app.use('/api/product-elements', productElementRoutes);
 app.use('/api/coins', coinRoutes);
 app.use('/api/admin', adminRoutes);
 

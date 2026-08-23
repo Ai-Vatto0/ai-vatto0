@@ -78,6 +78,22 @@ function initDatabase() {
       created_at TEXT DEFAULT (datetime('now'))
     );
 
+    CREATE TABLE IF NOT EXISTS product_elements (
+      id TEXT PRIMARY KEY,
+      user_id TEXT NOT NULL,
+      slug TEXT NOT NULL,
+      name TEXT NOT NULL,
+      element_name TEXT NOT NULL,
+      description TEXT DEFAULT '',
+      reference_images TEXT NOT NULL DEFAULT '[]',
+      product_lock TEXT NOT NULL DEFAULT '{}',
+      source_notes TEXT DEFAULT '',
+      is_active INTEGER DEFAULT 1,
+      created_at TEXT DEFAULT (datetime('now')),
+      updated_at TEXT DEFAULT (datetime('now')),
+      UNIQUE(user_id, slug)
+    );
+
     CREATE TABLE IF NOT EXISTS video_jobs (
       id TEXT PRIMARY KEY,
       user_id TEXT NOT NULL,
@@ -118,6 +134,7 @@ function initDatabase() {
     -- Performance indexes
     CREATE INDEX IF NOT EXISTS idx_video_jobs_user_status ON video_jobs(user_id, status);
     CREATE INDEX IF NOT EXISTS idx_coin_transactions_user ON coin_transactions(user_id, created_at);
+    CREATE INDEX IF NOT EXISTS idx_product_elements_user_active ON product_elements(user_id, is_active);
   `);
 
   // Migration: add is_banned column if it doesn't exist
