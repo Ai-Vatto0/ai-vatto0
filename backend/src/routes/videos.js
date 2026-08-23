@@ -41,6 +41,15 @@ function loadProductElement(db, userId, productElementId) {
   }
 }
 
+function bindKlingElementsToPrompt(prompt, elements) {
+  let boundPrompt = String(prompt || '').trim();
+  for (const element of elements || []) {
+    const token = `@${element.name}`;
+    if (!boundPrompt.includes(token)) boundPrompt += ` ${token}`;
+  }
+  return boundPrompt.trim();
+}
+
 router.get('/', authMiddleware, (req, res) => {
   const jobs = getDb().prepare('SELECT * FROM video_jobs WHERE user_id = ? ORDER BY created_at DESC LIMIT 50').all(req.user.id);
   res.json(jobs.map(j => ({ ...j, reference_images: JSON.parse(j.reference_images || '[]') })));
@@ -151,6 +160,12 @@ router.post('/generate', authMiddleware, videoGenerateLimiter, validate(videoGen
     return res.status(400).json({ error: 'Kling-Elementreferenzen benoetigen einen Startframe' });
   }
 
+  // KIE verwendet ein Element nur dann sicher, wenn @element_name im Prompt vorkommt.
+  // Bei gespeicherten Produkt-Elementen binden wir die Tokens automatisch ein.
+  const effectivePrompt = model === 'kling3'
+    ? bindKlingElementsToPrompt(prompt, finalKlingElements)
+    : prompt;
+
   const klingMode = mode || 'pro';
   const coinCost = getCoinCost(model, dur, res_, klingMode);
   const user = db.prepare('SELECT coins FROM users WHERE id = ?').get(req.user.id);
@@ -172,7 +187,7 @@ router.post('/generate', authMiddleware, videoGenerateLimiter, validate(videoGen
       db.prepare('INSERT INTO coin_transactions (id, user_id, amount, type, description) VALUES (?, ?, ?, ?, ?)')
         .run(uuidv4(), req.user.id, -coinCost, 'debit', `Video: ${model} ${dur}s ${res_}`);
       db.prepare('INSERT INTO video_jobs (id, user_id, project_id, scene_id, model, resolution, duration, prompt, reference_images, status, coins_used) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)')
-        .run(jobId, req.user.id, projectId || null, sceneId || null, model, res_, dur, prompt, JSON.stringify(storedRefs), 'pending', coinCost);
+        .run(jobId, req.user.id, projectId || null, sceneId || null, model, res_, dur, effectivePrompt, JSON.stringify(storedRefs), 'pending', coinCost);
     })();
   } catch (txErr) {
     // Transaction failed atomically — no coins were deducted, no job was created
@@ -181,10 +196,10 @@ router.post('/generate', authMiddleware, videoGenerateLimiter, validate(videoGen
 
   try {
     const kieResponse = await videoQueue.add(async () => {
-      if (model === 'grok') return generateVideoGrok(prompt, refs, dur, res_);
-      if (model === 'veo31') return generateVideoVeo31Fast(prompt, refs, dur);
+      if (model === 'grok') return generateVideoGrok(effectivePrompt, refs, dur, res_);
+      if (model === 'veo31') return generateVideoVeo31Fast(effectivePrompt, refs, dur);
       return generateVideoKling3({
-        prompt,
+        prompt: effectivePrompt,
         startFrame,
         lastFrame,
         duration: dur,
