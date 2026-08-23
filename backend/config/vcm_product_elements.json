@@ -1,0 +1,60 @@
+{
+  "version": "1.0",
+  "library": "VCM_PRODUCT_ELEMENT_LIBRARY",
+  "products": [
+    {
+      "id": "HITWAY_H9_PRO_20_8",
+      "brand": "HITWAY",
+      "model": "H9 PRO",
+      "variant_label": "ABE 20.8Ah",
+      "display_name": "HITWAY H9 PRO ABE 20.8Ah",
+      "kling_element_name": "hitway_h9",
+      "kling_description": "HITWAY H9 PRO electric scooter, German ABE variant, selected 20.8Ah listing variant",
+      "reference_images_local": [
+        "refs/hitway_h9_front34.png",
+        "refs/hitway_h9_rear34.png",
+        "refs/hitway_h9_cockpit.png",
+        "refs/hitway_h9_geometry.png"
+      ],
+      "kling_element_urls": [],
+      "product_lock": {
+        "must_preserve": [
+          "frame and deck geometry",
+          "stem proportions and HITWAY branding",
+          "front dual spring suspension appearance",
+          "rear suspension and rear fender/footrest shape",
+          "10-inch tire proportions",
+          "headlight placement",
+          "cockpit/display geometry",
+          "cable routing as visible in references",
+          "black/orange/red product color accents"
+        ],
+        "must_not_invent": [
+          "extra wheels",
+          "extra brake levers",
+          "extra suspension units",
+          "additional headlights or LED strips",
+          "different deck shape",
+          "different stem or handlebar design",
+          "different logo or model name"
+        ]
+      },
+      "verified_listing_facts_for_copy": {
+        "motor_w": 500,
+        "speed_kmh": 20,
+        "range_wording_de": "mit bis zu 90 km angegeben",
+        "abe_listing": true,
+        "tire_inch": 10,
+        "suspension": "vorne und hinten"
+      },
+      "creative_defaults": {
+        "target_tone": "junge Erwachsene, direkte E-Scooter/TikTok-Sprache",
+        "rider": "young adult, black full-face helmet, dark visor",
+        "action_duration_seconds": 4,
+        "aspect_ratio": "9:16",
+        "mode": "pro",
+        "sound_profile_id": "escooter_action_clean"
+      }
+    }
+  ]
+}
