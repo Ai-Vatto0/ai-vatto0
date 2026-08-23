@@ -1,0 +1,27 @@
+{
+  "model": "kling-3.0/video",
+  "input": {
+    "prompt": "Use @hitway_h9 as the exact product identity. Keep the scooter identical to the element references in frame geometry, deck, stem, cockpit, display, lights, suspension, tires, proportions, branding and color accents. A young adult rider wears a black full-face helmet with dark visor, gloves, baggy streetwear and sneakers. The rider is already standing naturally on the scooter and rides dynamically on a closed private asphalt test road. Camera: very low front three-quarter tracking shot, strong parallax and a close side pass. Fast visual energy from camera motion, not impossible speed or physics. Realistic wheel rotation, tire contact, rider weight shift and suspension response. No morphing, no duplicated wheels, no extra components, no new LEDs, no logo mutation, no geometry drift. Natural location sound only: quiet electric scooter motor whirr, tire rolling sound, realistic wind, suspension movement, and surface-specific sounds such as light gravel impacts or subtle braking squeak when physically appropriate. No music. No speech. No voiceover. No narration. No combustion-engine or motorcycle sound. No cinematic trailer bass.",
+    "image_urls": [
+      "__KIE_START_FRAME_URL__"
+    ],
+    "sound": true,
+    "duration": "4",
+    "aspect_ratio": "9:16",
+    "mode": "pro",
+    "multi_shots": false,
+    "multi_prompt": [],
+    "kling_elements": [
+      {
+        "name": "hitway_h9",
+        "description": "HITWAY H9 PRO electric scooter, German ABE variant, selected 20.8Ah listing variant",
+        "element_input_urls": [
+          "__KIE_HITWAY_FRONT34_URL__",
+          "__KIE_HITWAY_REAR34_URL__",
+          "__KIE_HITWAY_COCKPIT_URL__",
+          "__KIE_HITWAY_GEOMETRY_URL__"
+        ]
+      }
+    ]
+  }
+}
