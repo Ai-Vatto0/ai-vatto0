@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "profiles": {
+    "escooter_action_clean": {
+      "sound": true,
+      "prompt_en": "Natural location sound only: quiet electric scooter motor whirr, tire rolling sound, realistic wind, suspension movement, and surface-specific sounds such as light gravel impacts or subtle braking squeak when physically appropriate. No music. No speech. No voiceover. No narration. No combustion-engine or motorcycle sound. No cinematic trailer bass."
+    },
+    "escooter_asphalt_clean": {
+      "sound": true,
+      "prompt_en": "Natural asphalt riding sound only: subtle electric motor whirr, rubber tire roll, wind and light suspension movement. No music, no speech, no narration, no motorcycle or combustion-engine sound."
+    },
+    "escooter_gravel_clean": {
+      "sound": true,
+      "prompt_en": "Natural gravel riding sound only: quiet electric motor whirr, tire crunch on gravel, small stones scattering, wind and suspension movement. No music, no speech, no narration, no motorcycle or combustion-engine sound."
+    }
+  }
+}
