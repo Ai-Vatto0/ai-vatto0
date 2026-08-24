@@ -21,3 +21,6 @@ Every paid render requires `confirm_render=true`. `createTask` is never retried 
 
 ## Database
 If `DATABASE_URL` is configured, product cheats and job history are persisted in Neon Postgres. Without it, Lyra falls back to volatile memory so rendering is never blocked; the system check clearly reports `persistent:false`.
+
+## Secure KIE key setup
+`/setup?token=...` provides a protected one-time setup page. The KIE API key is encrypted with AES-256-GCM before it is stored in Neon. Only ciphertext, IV and authentication tag are stored in the database. `LYRA_MASTER_KEY` remains a server-side secret and the KIE key is never returned by the setup API or health endpoint.

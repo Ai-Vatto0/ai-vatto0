@@ -1,7 +1,11 @@
-function apiKey() {
-  const value = process.env.KIE_API_KEY?.trim();
-  if (!value) throw new Error("KIE_API_KEY fehlt auf dem Server. Kein Render wurde gestartet.");
-  return value;
+import { loadKieApiKey } from "./secrets.js";
+
+async function apiKey() {
+  const envValue = process.env.KIE_API_KEY?.trim();
+  if (envValue) return envValue;
+  const stored = await loadKieApiKey();
+  if (!stored) throw new Error("KIE API Key ist noch nicht eingerichtet. Kein Render wurde gestartet.");
+  return stored;
 }
 function baseUrl() { return (process.env.KIE_API_BASE_URL ?? "https://api.kie.ai").replace(/\/$/, ""); }
 async function request(path, init = {}) {
@@ -10,7 +14,7 @@ async function request(path, init = {}) {
   try {
     const response = await fetch(`${baseUrl()}${path}`, {
       ...init,
-      headers: { Authorization: `Bearer ${apiKey()}`, "Content-Type": "application/json", ...(init.headers ?? {}) },
+      headers: { Authorization: `Bearer ${await apiKey()}`, "Content-Type": "application/json", ...(init.headers ?? {}) },
       signal: controller.signal
     });
     const text = await response.text();
@@ -87,7 +91,7 @@ export async function uploadRemoteFile(fileUrl, { uploadPath = "lyra/kling", fil
     const response = await fetch(`${uploadBaseUrl()}/api/file-url-upload`, {
       method: "POST",
       headers: {
-        Authorization: `Bearer ${apiKey()}`,
+        Authorization: `Bearer ${await apiKey()}`,
         "Content-Type": "application/json"
       },
       body: JSON.stringify({ fileUrl, uploadPath, ...(fileName ? { fileName } : {}) }),
