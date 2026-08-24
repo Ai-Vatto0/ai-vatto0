@@ -1,0 +1,17 @@
+{
+  "name": "lyra-kie-v2-root",
+  "version": "2.1.1",
+  "private": true,
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "check": "node --check src/index.js && node --check LYRA-KIE-V2/api/mcp.js && node --check LYRA-KIE-V2/api/health.js && node --check LYRA-KIE-V2/api/setup.js && node --check LYRA-KIE-V2/src/native-mcp.js && node --check LYRA-KIE-V2/src/kie-client.js && node --check LYRA-KIE-V2/src/payloads.js && node --check LYRA-KIE-V2/src/database.js && node --check LYRA-KIE-V2/src/secrets.js"
+  },
+  "engines": {
+    "node": "22.x"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "1.0.1"
+  }
+}
