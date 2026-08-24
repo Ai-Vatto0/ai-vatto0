@@ -22,20 +22,20 @@ function encryptedDatabaseUrl() {
     return null;
   }
 }
-function databaseUrl() {
+export function databaseConnectionUrl() {
   if (resolvedDatabaseUrl !== undefined) return resolvedDatabaseUrl;
   resolvedDatabaseUrl = process.env.DATABASE_URL?.trim() || encryptedDatabaseUrl() || null;
   return resolvedDatabaseUrl;
 }
 function databaseSource() {
   if (process.env.DATABASE_URL?.trim()) return 'environment';
-  return databaseUrl() ? 'encrypted-config' : 'none';
+  return databaseConnectionUrl() ? 'encrypted-config' : 'none';
 }
-function configured() { return Boolean(databaseUrl()); }
+function configured() { return Boolean(databaseConnectionUrl()); }
 
 let driverPromise;
 async function sql() {
-  const url = databaseUrl();
+  const url = databaseConnectionUrl();
   if (!url) return null;
   if (!driverPromise) {
     driverPromise = import('@neondatabase/serverless')
