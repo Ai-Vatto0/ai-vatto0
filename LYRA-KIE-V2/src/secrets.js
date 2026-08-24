@@ -1,9 +1,10 @@
+import { databaseConnectionUrl } from './database.js';
 import { createCipheriv, createDecipheriv, randomBytes } from 'node:crypto';
 
 let driverPromise;
 async function db() {
-  const url = process.env.DATABASE_URL?.trim();
-  if (!url) throw new Error('DATABASE_URL fehlt; sichere KIE-Key-Speicherung ist nicht verfügbar.');
+  const url = databaseConnectionUrl();
+  if (!url) throw new Error('Datenbankverbindung ist nicht verfügbar; sichere KIE-Key-Speicherung ist nicht verfügbar.');
   if (!driverPromise) driverPromise = import('@neondatabase/serverless').then(({ neon }) => neon(url));
   return await driverPromise;
 }
