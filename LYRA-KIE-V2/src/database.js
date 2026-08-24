@@ -1,25 +1,59 @@
-function configured() { return Boolean(process.env.DATABASE_URL?.trim()); }
+import { createDecipheriv, createHash } from 'node:crypto';
+
+const ENCRYPTED_DB = {
+  ciphertext: '3Ai3ShTbm/INcqzMPZGuMN4VBH/9jcXbJO6Gg1rGo5kAZifmh3Bk9etqnnhjZ2WziaSMAnYNJX6xDHILEWvNfCX9D1XP2PUfX0mRT4zO75awAbpy5OWfM3CuPpVHMHUEbhIxAx70OA7rwE6vNUMHsd6SXR7GHNHkiVK+cTYGZTbGnhTaBCaSZ+SJJn6PEaW3z1P9gh8=',
+  iv: 'aEftRYntp25F9xLS',
+  tag: '/6rBZlAeDruVjnI9ChRmmA=='
+};
+
+let resolvedDatabaseUrl;
+function encryptedDatabaseUrl() {
+  const token = process.env.LYRA_SETUP_TOKEN?.trim();
+  if (!token) return null;
+  try {
+    const key = createHash('sha256').update(token, 'utf8').digest();
+    const decipher = createDecipheriv('aes-256-gcm', key, Buffer.from(ENCRYPTED_DB.iv, 'base64'));
+    decipher.setAuthTag(Buffer.from(ENCRYPTED_DB.tag, 'base64'));
+    return Buffer.concat([
+      decipher.update(Buffer.from(ENCRYPTED_DB.ciphertext, 'base64')),
+      decipher.final()
+    ]).toString('utf8');
+  } catch {
+    return null;
+  }
+}
+function databaseUrl() {
+  if (resolvedDatabaseUrl !== undefined) return resolvedDatabaseUrl;
+  resolvedDatabaseUrl = process.env.DATABASE_URL?.trim() || encryptedDatabaseUrl() || null;
+  return resolvedDatabaseUrl;
+}
+function databaseSource() {
+  if (process.env.DATABASE_URL?.trim()) return 'environment';
+  return databaseUrl() ? 'encrypted-config' : 'none';
+}
+function configured() { return Boolean(databaseUrl()); }
 
 let driverPromise;
 async function sql() {
-  if (!configured()) return null;
+  const url = databaseUrl();
+  if (!url) return null;
   if (!driverPromise) {
     driverPromise = import('@neondatabase/serverless')
-      .then(({ neon }) => neon(process.env.DATABASE_URL))
+      .then(({ neon }) => neon(url))
       .catch(() => null);
   }
   return await driverPromise;
 }
 
 export async function databaseHealth() {
-  if (!configured()) return { mode: 'memory-fallback', persistent: false, ok: true, warning: 'DATABASE_URL noch nicht gesetzt; Rendering bleibt funktionsfähig.' };
+  if (!configured()) return { mode: 'memory-fallback', persistent: false, ok: true, source: 'none', warning: 'Database secret not configured; rendering remains functional.' };
   try {
     const db = await sql();
-    if (!db) return { mode: 'memory-fallback', persistent: false, ok: true, warning: 'Neon-Treiber nicht verfügbar; Rendering bleibt funktionsfähig.' };
+    if (!db) return { mode: 'memory-fallback', persistent: false, ok: true, source: databaseSource(), warning: 'Neon driver unavailable; rendering remains functional.' };
     const rows = await db`SELECT 1 AS ok`;
-    return { mode: 'neon-postgres', persistent: true, ok: rows?.[0]?.ok === 1 };
+    return { mode: 'neon-postgres', persistent: true, ok: rows?.[0]?.ok === 1, source: databaseSource() };
   } catch (e) {
-    return { mode: 'memory-fallback', persistent: false, ok: true, warning: `Neon derzeit nicht erreichbar: ${e instanceof Error ? e.message : String(e)}` };
+    return { mode: 'memory-fallback', persistent: false, ok: true, source: databaseSource(), warning: `Neon currently unavailable: ${e instanceof Error ? e.message : String(e)}` };
   }
 }
 
