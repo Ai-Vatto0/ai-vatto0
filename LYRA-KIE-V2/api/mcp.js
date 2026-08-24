@@ -15,16 +15,13 @@ export default async function handler(req, res) {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Expose-Headers", "Mcp-Session-Id");
   const server = createKieServer();
-  const transport = new StreamableHTTPServerTransport({
-    sessionIdGenerator: undefined,
-    enableJsonResponse: true,
-  });
+  const transport = new StreamableHTTPServerTransport({ sessionIdGenerator: undefined, enableJsonResponse: true });
   res.on("close", () => { void transport.close(); void server.close(); });
   try {
     await server.connect(transport);
     await transport.handleRequest(req, res);
   } catch (error) {
-    console.error("MCP request failed", error);
+    console.error("MCP request failed", error instanceof Error ? error.message : error);
     if (!res.headersSent) res.status(500).json({ error: "Internal server error" });
   }
 }

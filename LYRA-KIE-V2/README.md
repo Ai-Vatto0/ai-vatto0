@@ -1,23 +1,23 @@
-# Lyra KIE V2
+# Lyra KIE V2 Full — 2.1.0
 
-Private MCP bridge for KIE.ai with a diagnostic-first Kling 3.0 workflow.
+Compatibility-first replacement for the original Lyra KIE Render bridge.
 
-## Safety workflow
-1. `check_kie_credits` — read-only, no generation.
-2. `check_kling3_available` — checks KIE auth + public Kling marketplace page, no generation.
-3. `prepare_kling3_video` — dry-run; validates exact payload, no upload, no generation.
-4. `render_kling3_video` — requires `confirm_render: true`; uploads references to KIE temporary storage first, then creates exactly one task.
-5. `check_kie_render` — polls the task status.
+## Preserved tools/models
+- `render_gpt_image_2` — GPT Image 2
+- `render_flux2_pro_image` — Flux 2 Pro
+- `render_seedream5_lite_image` — Seedream 5 Lite
+- `render_kie_video` — Grok Imagine Video 1.5 (default), Seedance 2 Fast, Seedance 2 Mini, **Kling 3.0**
+- `check_kie_render`
+- `check_kie_credits`
 
-## KIE endpoints
-- Credits: `GET https://api.kie.ai/api/v1/chat/credit`
-- Create task: `POST https://api.kie.ai/api/v1/jobs/createTask`
-- Task status: `GET https://api.kie.ai/api/v1/jobs/recordInfo`
-- Free URL file upload: `POST https://kieai.redpandaai.co/api/file-url-upload`
-- Kling model: `kling-3.0/video`
+## New safety/tools
+- `prepare_kie_render` — exact payload dry-run, no generation
+- `check_kling3_available`
+- `check_lyra_v2`
+- `save_product_cheat`, `get_product_cheat`, `list_product_cheats`
+- `list_kie_jobs`
 
-## Deploy on Vercel
-Create a Vercel project whose root directory is this folder, then set `KIE_API_KEY` as a Vercel environment variable. Do not commit the key.
+Every paid render requires `confirm_render=true`. `createTask` is never retried automatically.
 
-MCP URL after deployment: `https://<project>.vercel.app/mcp`
-Health URL: `https://<project>.vercel.app/health`
+## Database
+If `DATABASE_URL` is configured, product cheats and job history are persisted in Neon Postgres. Without it, Lyra falls back to volatile memory so rendering is never blocked; the system check clearly reports `persistent:false`.
