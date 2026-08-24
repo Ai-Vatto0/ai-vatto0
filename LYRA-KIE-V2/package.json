@@ -1,9 +1,18 @@
 {
-  "name":"lyra-kie-v2-full",
-  "version":"2.1.1",
-  "private":true,
-  "type":"module",
-  "scripts":{"check":"node --check api/mcp.js && node --check api/health.js && node --check api/setup.js && node --check src/native-mcp.js && node --check src/kie-client.js && node --check src/payloads.js && node --check src/database.js && node --check src/secrets.js","test":"node --test test/*.test.js"},
-  "engines":{"node":">=20.10"},
-  "dependencies":{"@neondatabase/serverless":"1.0.1"}
+  "name": "lyra-kie-v2-full",
+  "version": "2.1.1",
+  "private": true,
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "check": "node --check src/index.js && node --check api/mcp.js && node --check api/health.js && node --check api/setup.js && node --check src/native-mcp.js && node --check src/kie-client.js && node --check src/payloads.js && node --check src/database.js && node --check src/secrets.js",
+    "test": "node --test test/*.test.js"
+  },
+  "engines": {
+    "node": "22.x"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "1.0.1"
+  }
 }
