@@ -24,6 +24,18 @@ erster echter Schnitt mit Vattos Material, danach KI-Anbieter anbinden.
 
 ## SESSION-LOG
 
+### 2026-09-27 – Faruks Weg = Standard, Cloud-Einrichtung korrigiert
+
+- **Entscheidung Vatto:** Faruks Video-Maschine ist Standard für jedes TikTok-Shop-Video.
+  Lyra nur noch für klassische KI-Produkt-Renders auf Wunsch; Compliance: strengere Regel.
+- Vatto hatte die Domains ins Feld **Umgebungsvariablen** eingetragen → Parse-Fehler.
+  Richtig: Netzwerkzugriff „Benutzerdefiniert" (eine Domain pro Zeile), Keys als
+  **API-Anmeldedaten** (Proxy hängt sie an, Session sieht sie nie). Umgebungsvariablen
+  sind für alle sichtbar → keine Keys dort.
+- Firecrawl (offizieller Konnektor) und Rube → claude.ai-Konnektoren statt `.mcp.json`.
+- Perplexity-Starter startet in der Cloud mit Platzhalter, weil der Proxy den Key anhängt.
+- Claude kann Umgebung und Konnektoren **nicht** selbst ändern – nur Vatto.
+
 ### 2026-09-27 – Faruks Video-Maschine, Konnektoren, prompts.chat
 
 **Integriert:**

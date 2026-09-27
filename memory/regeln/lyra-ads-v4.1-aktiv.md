@@ -2,7 +2,9 @@
 
 **CORE-ID:** `LYRA-ADS-V4.0-PROFIT-INTEGRITY-KIE-NOCARDS`
 **Revision:** Project Patch 4.1 / 10.08.2026
-**Status:** AKTIV – höchstrangige Regelquelle nach der aktuellen Chat-Anweisung
+**Status:** NICHT MEHR STANDARD (seit 27.09.2026). Faruks Video-Maschine ist Standard.
+Gilt nur noch für klassische KI-Produkt-Renders auf ausdrücklichen Wunsch und als
+Ergänzung bei Evidenz, QA und Gates. Bei Compliance gewinnt die strengere Regel.
 **Quelle:** `01_PROJEKTANWEISUNGEN_LYRA_ADS_V4.1_COPY.txt`
 
 ---

@@ -10,6 +10,8 @@ description: |
 
 # TikTok-Shop-Video-Maschine
 
+**Standard für jedes TikTok-Shop-Video** (Entscheidung Vatto, 27.09.2026).
+
 ## Vor jedem Auftrag lesen
 
 1. `memory/regeln/tiktok-video-maschine.md` – Faruks System, inkl. Zuständigkeit gegenüber Lyra
@@ -57,9 +59,13 @@ Vor dem ersten Schnitt einer Session prüfen: `command -v ffmpeg` – fehlt es, 
 
 ## API-Keys
 
-**Nie in Dateien, Commits, Logs oder Chat-Ausgaben schreiben.** fal.ai-Key nur aus der
-Umgebungsvariable `FAL_KEY` lesen. Fehlt sie: Vatto bitten, sie in den
-Environment-Einstellungen zu setzen – nicht in den Chat zu kopieren.
+**Nie in Dateien, Commits, Logs oder Chat-Ausgaben schreiben.**
+
+- **Cloud:** fal.ai-Aufrufe an `queue.fal.run` **ohne** Authorization-Header senden –
+  der Agent-Proxy hängt den Key als API-Anmeldedatum an. Die Session sieht ihn nie.
+- **Lokal:** Key aus der Umgebungsvariable `FAL_KEY` lesen, Header `Authorization: Key $FAL_KEY`.
+- Fehlt der Zugang: auf `memory/projekte/werkzeuge-und-konnektoren.md` verweisen.
+  **Nie** darum bitten, einen Key in den Chat zu kopieren.
 
 ## QA vor Übergabe (5.12)
 

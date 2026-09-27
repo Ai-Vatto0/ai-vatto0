@@ -1,7 +1,7 @@
 # TIKTOK-SHOP-VIDEO-MASCHINE (Faruk)
 
 **Quelle:** Faruk (@terrortalesstudio), Projektwissen Stand 27.09.2026, von Vatto übergeben
-**Status:** AKTIV – Produktionssystem für Formate, Schnitt, Voiceover, Captions, Sound
+**Status:** **STANDARD** für alle TikTok-Shop-Videos (Entscheidung Vatto, 27.09.2026)
 **Werkzeuge im Repo:** `tools/video-maschine/` · Schrift: `assets/fonts/Poppins-Bold.ttf`
 **Skill:** `.claude/skills/tiktok-video-maschine/`
 
@@ -9,22 +9,22 @@
 
 ## ZUSAMMENSPIEL MIT LYRA ADS V4.1
 
-Faruks Maschine und Lyra überschneiden sich. Ohne klare Zuständigkeit würden sie
-gemittelt – genau das verbietet Lyra. Deshalb diese Aufteilung:
+**Faruks Weg ist Standard.** Lyra wird nicht gemittelt, sondern nur noch gezielt genutzt:
 
 | Bereich | Zuständig |
 |---|---|
-| Formate A–E, Schnitt, VO, Captions, Sound, Export, UGC-Overlay | **Faruk** |
-| klassischer KI-Produkt-Render mit Startframe (Grok, Produkt in der Szene) | **Lyra** |
-| Evidenz, Product Match, Claims, Compliance, Gates | **beide – die strengere Regel gewinnt** |
+| **jedes TikTok-Shop-Video**: Format, Länge, Modell, VO, Schnitt, Captions, Sound, Export, Posting | **Faruk** |
+| klassischer KI-Produkt-Render mit Startframe (Grok, Produkt in der Szene) – **nur auf ausdrücklichen Wunsch** | Lyra |
+| Evidenz, Product Match, Claims, Compliance | **beide – die strengere Regel gewinnt** |
+| Details, die Faruk nicht regelt (Clip-QA-Checkliste, Auswertung/Diagnose, CHATRESET) | Lyra als Ergänzung |
 
 ### Widersprüche und Standard
 
-| Punkt | Lyra V4.1 | Faruk | Standard, bis Vatto anders entscheidet |
+| Punkt | Lyra V4.1 | Faruk | Gilt (entschieden 27.09.2026) |
 |---|---|---|---|
-| Länge | 13 s | 8–11 s (TikTok One oft ≥ 15 s) | nach Format: Faruk-Formate → Faruk |
-| Wörter | max. 26 für 13 s | 25–32 für 10 s | nach Format |
-| Video-Modell | Grok Imagine 1.5 (KIE) | MiniMax H3 (fal.ai / Yapper) | nach Format |
+| Länge | 13 s | 8–11 s (TikTok One oft ≥ 15 s) | **Faruk** |
+| Wörter | max. 26 für 13 s | 25–32 für 10 s | **Faruk** |
+| Video-Modell | Grok Imagine 1.5 (KIE) | MiniMax H3 (fal.ai / Yapper) | **Faruk** |
 | **Produkt in der KI-Szene** | ja, Person hält es | **nie** | **Faruk** – siehe Begründung unten |
 | Caption | kein Werbe-Hinweis vorgeschrieben | „Werbung ·" vorne | **Faruk** (strenger) |
 | Business-Gate | qualitativ | Provision < 3 € + Übersee = klein testen, > 8 € = GO | Faruks Schwellen **ergänzen** Lyra |

@@ -31,17 +31,6 @@
         "${CLAUDE_PROJECT_DIR:-.}/.claude/helpers/mcp-launch.cjs",
         "perplexity"
       ]
-    },
-    "firecrawl": {
-      "command": "node",
-      "args": [
-        "${CLAUDE_PROJECT_DIR:-.}/.claude/helpers/mcp-launch.cjs",
-        "firecrawl"
-      ]
-    },
-    "rube": {
-      "type": "http",
-      "url": "https://rube.app/mcp"
     }
   }
 }

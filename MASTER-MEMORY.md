@@ -37,18 +37,18 @@ die Repo-Doku, nicht das Gedächtnis.
 
 ## 3. AKTIVE REGELWERKE (Hierarchie)
 
-Bei Werbeaufträgen gilt in dieser Reihenfolge:
+**Entscheidung Vatto, 27.09.2026: Faruks Werbe-Weg ist der Standard.**
 
 1. **Aktuelle Anweisung im Chat**
-2. `memory/regeln/lyra-ads-v4.1-aktiv.md` – Projektanweisung Lyra Ads V4.1 (Patch 10.08.2026)
-3. `memory/regeln/lyra-ads-master-v4.0.md` – Master System V4.0 ⚠️ *V4.1 fehlt noch, siehe Lücken*
-4. `memory/regeln/tiktok-compliance.md` – TikTok-Richtlinien ⚠️ *noch nicht gefüllt*
-5. `memory/regeln/tiktok-video-maschine.md` – Faruks Produktionssystem (Formate, Schnitt, VO)
-   → regelt selbst, wo es Lyra ergänzt und wo es Vorrang hat
-6. `memory/regeln/video-schnitt-workflow.md` – Schnitt mit Remotion (Faruks Ablauf)
-7. `memory/archiv/` – historisch, **nie** mit aktiven Regeln mischen oder reaktivieren
-
-**CORE-ID:** `LYRA-ADS-V4.0-PROFIT-INTEGRITY-KIE-NOCARDS` (Revision Patch 4.1)
+2. `memory/regeln/tiktok-video-maschine.md` – **Faruks Video-Maschine = Standard** für
+   jedes TikTok-Shop-Video (Formate, Länge, Modell, VO, Schnitt, Captions, Posting)
+3. `memory/regeln/tiktok-compliance.md` – Compliance. **Hier gewinnt immer die
+   strengere Regel**, egal aus welchem System
+4. `memory/regeln/video-schnitt-workflow.md` – Remotion-Ablauf (Schnittplan → Freigabe → Vorschau → Frame-QA)
+5. `memory/regeln/lyra-ads-v4.1-aktiv.md` + `lyra-ads-master-v4.0.md` – **nur noch** für
+   klassische KI-Produkt-Renders mit Startframe, wenn Vatto das ausdrücklich will,
+   und als Quelle für Evidenz-, QA- und Gate-Details, die Faruk nicht regelt
+6. `memory/archiv/` – historisch, **nie** mit aktiven Regeln mischen oder reaktivieren
 
 ---
 
@@ -76,8 +76,8 @@ sondern das begrenzende Nadelöhr. Vor jedem Render ist die Frage nicht
 | `03_COMPLIANCE_LYRA_ADS_V4.0.txt` | Compliance-Detailregeln fehlen | Vatto lädt Zusammenfassung nach |
 | `04_LEARNING_LYRA_ADS_V4.0.txt` | Belegte Winner/Fehler aus der Vergangenheit fehlen | Datei nachladen |
 | Gedächtnis vom alten PC | Alles vor 27.09.2026 ist verloren | `MEMORY.md`, `MASTER-MEMORY.md`, `memory\` von `C:\Users\rober\ki-app\` holen |
-| API-Keys Perplexity, Firecrawl, fal.ai | Konnektoren/Clips ohne Funktion | als Umgebungsvariablen setzen |
-| Cloud-Netzwerk sperrt 6 Hosts | Recherche, Rube, fal.ai, Transkription | siehe `werkzeuge-und-konnektoren.md` |
+| Cloud-Umgebung nicht eingerichtet (Netzwerk, API-Anmeldedaten, Setup-Skript) | Perplexity, fal.ai-Clips, Transkription blockiert | Vatto: Anleitung in `werkzeuge-und-konnektoren.md` → EINRICHTUNG |
+| Firecrawl + Rube als claude.ai-Konnektor | Webseiten lesen, App-Aktionen | Vatto verbindet in claude.ai |
 | `Lyra_Ads_Creative_Engine_V1.0_skill.pdf` | nicht auslesbar (kein extrahierbarer Text) | als `.md`/`.txt` nachladen, falls aktiv gebraucht |
 
 ---

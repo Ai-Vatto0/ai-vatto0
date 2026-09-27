@@ -8,40 +8,35 @@ Produktwerbung für Shop-Artikel und verdient über Provision.
 
 ## AKTIVE REGELN
 
-→ `memory/regeln/lyra-ads-v4.1-aktiv.md` (Stufe 2, verbindlich)
-→ `memory/regeln/lyra-ads-master-v4.0.md` (Stufe 3, Arbeitsdetails)
-→ `memory/regeln/tiktok-compliance.md` (⚠️ noch zu füllen)
+→ `memory/regeln/tiktok-video-maschine.md` – **Faruks Weg = Standard**
+→ `memory/regeln/tiktok-compliance.md` – strengere Regel gewinnt
+→ `memory/regeln/lyra-ads-v4.1-aktiv.md` – nur für klassische KI-Produkt-Renders auf Wunsch
 
-## STANDARDS AUF EINEN BLICK
+## STANDARDS AUF EINEN BLICK (Faruk)
 
 | Parameter | Wert |
 |---|---|
-| Format | 9:16 vertikal |
-| Länge | 13 s Standard (bis 15 s nur Outro/CTA) |
-| Inhalt | 1 Produkt, 1 Use Case, 1 Haupt-Proof |
-| Schnitt | max. 3 Shots / 2 Schnitte |
-| Dialog | Deutsch, ca. max. 26 Wörter inkl. CTA |
-| Prompt | Englisch, max. 2.300 Zeichen (Grok) |
-| Standard-CTA | „Jetzt im TikTok Shop." |
-| Hashtags | genau 5 |
+| Bestes Format | **A) UGC-Overlay**: KI-Creator unten, echtes Shop-Bild oben |
+| Immer bevorzugen | **D) Echtes Video**, wenn Material da ist |
+| Format | 9:16, Export 1080×1920 |
+| Länge | 8–11 s (TikTok-One-Aufgaben oft ≥ 15 s) |
+| VO | 25–32 Wörter für 10 s, Gefühl statt Datenblatt |
+| Produkt in KI-Szene | **nie** |
+| CTA | „Jetzt im TikTok Shop." gelb, groß, allein am Ende |
+| Caption | „Werbung · [Hook] [Emoji]" + 1 Zeile Nutzen + genau 5 Hashtags |
+| Safe Zone | oben 150, rechts 140, unten 400 px |
+| Frequenz | 2–3 Videos/Tag, nie zwei zum selben Produkt hintereinander |
 
 ## MODELL-SETUP
 
-**Render-Plattform:** Kie.ai
+| Zweck | Weg | Kosten |
+|---|---|---|
+| KI-Creator-Clip | MiniMax H3 Max Turbo über fal.ai, 10 s, 768P, 9:16 | ≈ 0,20 $ / Clip (Faruk) |
+| alternativ | MiniMax H3 über Yapper | ≈ 35 Credits / 10 s |
+| Voiceover | Yapper eleven_v3 | kostenlos (Faruk) |
+| klassischer Produkt-Render (nur auf Wunsch) | Grok Imagine 1.5 / GPT Image 2 über Kie.ai | vor Render nennen |
 
-| Zweck | Modell |
-|---|---|
-| Bild (Startframe) | GPT Image 2 via KIE |
-| Bild-Alternative | Flux 2 Pro / Seedream 5 Lite – nur Test oder klarer Vorteil |
-| **Video-Standard** | **Grok Imagine Video 1.5** – 13 s, 9:16, 720p |
-| Video-Alternative | Seedance 2 Fast/Mini – nur bei Multireferenz, Insert, Grok-Problem |
-| Auf Wunsch | Kling, Veo 3.1 – mit eigenem Profil, Syntax nie blind kopieren |
-
-**GPT Image 1.5 ist nie ein Ersatz für GPT Image 2.**
-
-**Renderkosten sind hier absichtlich nicht fixiert** – Preise ändern sich. Vor jedem
-Bezahlrender aktuelle Kosten nennen oder ehrlich sagen, dass sie nicht sicher
-verfügbar sind.
+Kosten vor jedem bezahlten Render **aktuell** nennen – Faruks Werte sind Stand 27.09.2026.
 
 ---
 
