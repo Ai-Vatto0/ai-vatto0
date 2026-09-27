@@ -20,9 +20,9 @@ Lyra- und Maschinen-Regeln gehen jedem Community-Prompt vor.
 
 | Dienst | Zweck | Anbindung | Key | Status |
 |---|---|---|---|---|
-| **KIE.ai** | Bild-/Videorender (Grok, GPT Image 2 …) | REST-API `api.kie.ai` | API-Anmeldedatum, `Authorization: Bearer` | ⚠️ eingetragen, Test 27.09. → 401 |
+| **KIE.ai** | Bild-/Videorender | REST-API `api.kie.ai` | API-Anmeldedatum, `Authorization: Bearer` | ⚠️ Test 27.09. (2×, auch neue Session) → 401 |
 | ~~fal.ai~~ | – | nicht angebunden | – | Vatto hat keinen fal-Key. MiniMax-H3-Clips laufen über **Yapper**. |
-| **Yapper** | Voiceover, MiniMax-H3-Creator-Clips | **claude.ai-Konnektor** `https://yapper.so/mcp/connector` (Login) | API-Key als Anmeldedatum eingetragen, Host `yapper.so` aber noch gesperrt | ⏳ Konnektor verbinden |
+| **Yapper** | Voiceover, MiniMax-H3-Clips, Bild, fast alle Videomodelle | **claude.ai-Konnektor** `https://yapper.so/mcp/connector` (OAuth) | keiner | ✅ Test 27.09.: verbunden, Team „Robert Martin's Workspace“ |
 | **Playwright** | echter Browser | `.mcp.json` | keiner | ✅ getestet |
 | **prompts.chat** | Prompt-Bibliothek | Plugin | keiner | ✅ verbunden |
 | Firecrawl | Webseiten lesen | claude.ai-Konnektor (optional) | Login | optional |
@@ -42,6 +42,24 @@ Cloud ffmpeg + Python-Pakete im Hintergrund. Kein Setup-Skript in der Umgebung n
 sondern ein Installations-Assistent (Code geprüft).
 
 ---
+
+## YAPPER – WICHTIGE MODELLE (Preise Stand 27.09.2026, vor Render per dryRun prüfen)
+
+| Zweck | Modell-ID | Preis |
+|---|---|---|
+| **KI-Creator-Clip (Faruk Format A)** | `minimax-h3-max-turbo` | 10 s = 71 Credits (Launch-Rabatt bis ca. 30.09.2026, danach laut Yapper ×2) |
+| KI-Creator, Community-Tuning | `minimax-h3-singularity` | 10 s = 70 Credits |
+| **Voiceover** | `eleven_v3` | 0 Credits (Faruks Stimmen Jan/Markus/Helena) |
+| Grok-Video (Lyra, nur auf Wunsch) | `grok-imagine-v1.5` | 13 s = 230 Credits (480p) |
+| Startframe/Bild | `gpt-image-2` | 10 Credits |
+| Produktbild freistellen | `bria-image-background-remover` | derzeit nicht startbar |
+| Video hochskalieren | `flux-video-upscale-precise` | per dryRun |
+
+**Regeln aus dem Yapper-Server:** vor jedem echten Lauf `dryRun: true` → Kosten nennen →
+Vattos Freigabe → Lauf mit festem `idempotencyKey` (keine Doppelabbuchung).
+Bei `insufficient_credits` nicht wiederholen, Kauf-Link nennen.
+
+**Folge:** Yapper deckt praktisch alles ab, was KIE kann. KIE ist damit **optional**.
 
 ## WAS VATTO NOCH TUN MUSS (einmalig)
 

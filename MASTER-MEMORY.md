@@ -77,7 +77,7 @@ sondern das begrenzende Nadelöhr. Vor jedem Render ist die Frage nicht
 | `04_LEARNING_LYRA_ADS_V4.0.txt` | Belegte Winner/Fehler aus der Vergangenheit fehlen | Datei nachladen |
 | Gedächtnis vom alten PC | Alles vor 27.09.2026 ist verloren | `MEMORY.md`, `MASTER-MEMORY.md`, `memory\` von `C:\Users\rober\ki-app\` holen |
 | KIE-Key kommt nicht an (401) | Render über KIE blockiert | Vatto prüft Eintrag, siehe `werkzeuge-und-konnektoren.md` |
-| Yapper-Konnektor | Voiceover/MiniMax-Clips über Yapper | claude.ai-Konnektor `https://yapper.so/mcp/connector` |
+| ~~Yapper-Konnektor~~ | ✅ verbunden 27.09.2026 | – |
 | `Lyra_Ads_Creative_Engine_V1.0_skill.pdf` | nicht auslesbar (kein extrahierbarer Text) | als `.md`/`.txt` nachladen, falls aktiv gebraucht |
 
 ---
