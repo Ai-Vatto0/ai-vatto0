@@ -20,7 +20,7 @@ Lyra- und Maschinen-Regeln gehen jedem Community-Prompt vor.
 
 | Dienst | Zweck | Anbindung | Key | Status |
 |---|---|---|---|---|
-| **KIE.ai** | Bild-/Videorender | REST-API `api.kie.ai` | API-Anmeldedatum, `Authorization: Bearer` | ⚠️ Test 27.09. (2×, auch neue Session) → 401 |
+| **KIE.ai** | Bild-/Videorender | REST-API `api.kie.ai` | API-Anmeldedatum, `Authorization: Bearer` | ✅ Test 27.09.: Guthaben-Abfrage erfolgreich (nach Neuanlage des Eintrags) |
 | ~~fal.ai~~ | – | nicht angebunden | – | Vatto hat keinen fal-Key. MiniMax-H3-Clips laufen über **Yapper**. |
 | **Yapper** | Voiceover, MiniMax-H3-Clips, Bild, fast alle Videomodelle | **claude.ai-Konnektor** `https://yapper.so/mcp/connector` (OAuth) | keiner | ✅ Test 27.09.: verbunden, Team „Robert Martin's Workspace“ |
 | **Playwright** | echter Browser | `.mcp.json` | keiner | ✅ getestet |
@@ -59,7 +59,7 @@ sondern ein Installations-Assistent (Code geprüft).
 Vattos Freigabe → Lauf mit festem `idempotencyKey` (keine Doppelabbuchung).
 Bei `insufficient_credits` nicht wiederholen, Kauf-Link nennen.
 
-**Folge:** Yapper deckt praktisch alles ab, was KIE kann. KIE ist damit **optional**.
+**Folge:** Yapper und KIE decken beide die wichtigen Modelle ab. Pro Auftrag den günstigeren Weg wählen (Preise vorher prüfen).
 
 ## KIE.AI – FAKTEN AUS DER OFFIZIELLEN ANLEITUNG (von Vatto, 27.09.2026)
 
