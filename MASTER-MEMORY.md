@@ -10,7 +10,7 @@
 
 - **Person:** Vatto (Robert), vatto0202@googlemail.com
 - **Hauptaktivität:** TikTok-Shop **Creator** – KI-generierte Produktwerbung (Affiliate/Provision)
-- **Partner:** Farouk – arbeitet viel mit Claude; seine Arbeitsweisen gelten als Vorgabe
+- **Partner:** Faruk (@terrortalesstudio) – arbeitet viel mit Claude; seine Arbeitsweisen gelten als Vorgabe
 - **Arbeitssprache:** Deutsch. Prompts/Code dürfen Englisch sein.
 - **Grundhaltung (von ihm gesetzt):** Wahrheit vor Zustimmung. Wirkung vor Dekoration.
   Einfachheit vor unnötiger Technik. Klare Empfehlung statt Optionsliste. Tokens sparen.
@@ -24,6 +24,8 @@
 | **TikTok Shop / Lyra Ads** | `TIKTOK-SHOP/`, `memory/regeln/` | KI-Werbevideos für TikTok Shop – **Kerngeschäft** | `memory/projekte/tiktok-shop.md` |
 | **Prompt-Master** | `prompt-master/SKILL.md` | Claude-Skill: Copy-ready Prompts für 15+ AI-Tools | `memory/projekte/prompt-master.md` |
 | **Higgsfield** | `HIGGSFIELD_SETUP.md` | MCP-Pipeline für App-Promo-Videos (getrennt von Kie.ai) | `memory/projekte/higgsfield.md` |
+| **Video-Maschine (Faruk)** | `tools/video-maschine/`, Skill `tiktok-video-maschine` | Formate, ffmpeg-Schnitt, VO, Captions, Posting | `memory/regeln/tiktok-video-maschine.md` |
+| **Werkzeuge & Konnektoren** | `.mcp.json`, `.claude/settings.json` | Plugins, MCP-Server, Keys, gesperrte Hosts | `memory/projekte/werkzeuge-und-konnektoren.md` |
 | **Video-Schnitt (Remotion)** | `video-edit/` | KI-Clips zu fertigem TikTok montieren, Hook-/CTA-Overlays | `memory/regeln/video-schnitt-workflow.md` |
 
 **Bewusst NICHT im Gedächtnis** (auf Wunsch von Vatto, 27.09.2026):
@@ -41,8 +43,10 @@ Bei Werbeaufträgen gilt in dieser Reihenfolge:
 2. `memory/regeln/lyra-ads-v4.1-aktiv.md` – Projektanweisung Lyra Ads V4.1 (Patch 10.08.2026)
 3. `memory/regeln/lyra-ads-master-v4.0.md` – Master System V4.0 ⚠️ *V4.1 fehlt noch, siehe Lücken*
 4. `memory/regeln/tiktok-compliance.md` – TikTok-Richtlinien ⚠️ *noch nicht gefüllt*
-5. `memory/regeln/video-schnitt-workflow.md` – Schnitt mit Remotion (Farouks Ablauf)
-6. `memory/archiv/` – historisch, **nie** mit aktiven Regeln mischen oder reaktivieren
+5. `memory/regeln/tiktok-video-maschine.md` – Faruks Produktionssystem (Formate, Schnitt, VO)
+   → regelt selbst, wo es Lyra ergänzt und wo es Vorrang hat
+6. `memory/regeln/video-schnitt-workflow.md` – Schnitt mit Remotion (Faruks Ablauf)
+7. `memory/archiv/` – historisch, **nie** mit aktiven Regeln mischen oder reaktivieren
 
 **CORE-ID:** `LYRA-ADS-V4.0-PROFIT-INTEGRITY-KIE-NOCARDS` (Revision Patch 4.1)
 
@@ -72,6 +76,8 @@ sondern das begrenzende Nadelöhr. Vor jedem Render ist die Frage nicht
 | `03_COMPLIANCE_LYRA_ADS_V4.0.txt` | Compliance-Detailregeln fehlen | Vatto lädt Zusammenfassung nach |
 | `04_LEARNING_LYRA_ADS_V4.0.txt` | Belegte Winner/Fehler aus der Vergangenheit fehlen | Datei nachladen |
 | Gedächtnis vom alten PC | Alles vor 27.09.2026 ist verloren | `MEMORY.md`, `MASTER-MEMORY.md`, `memory\` von `C:\Users\rober\ki-app\` holen |
+| API-Keys Perplexity, Firecrawl, fal.ai | Konnektoren/Clips ohne Funktion | als Umgebungsvariablen setzen |
+| Cloud-Netzwerk sperrt 6 Hosts | Recherche, Rube, fal.ai, Transkription | siehe `werkzeuge-und-konnektoren.md` |
 | `Lyra_Ads_Creative_Engine_V1.0_skill.pdf` | nicht auslesbar (kein extrahierbarer Text) | als `.md`/`.txt` nachladen, falls aktiv gebraucht |
 
 ---

@@ -14,3 +14,10 @@ dist/
 build/
 .next/
 out/
+
+# Playwright-MCP Snapshots und Logs
+.playwright-mcp/
+
+# Arbeitsdateien der Video-Maschine
+produktion/**/work/
+produktion/**/out/

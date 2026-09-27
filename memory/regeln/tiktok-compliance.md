@@ -34,6 +34,23 @@ Diese stehen fest aus Lyra Ads V4.1 und gelten unabhängig von der Nachlieferung
 - Produkt im Video = exakt die verlinkte Variante, sonst **NICHT POSTEN**
 - keine fremden Clips mit Minimalbearbeitung, keine identischen Massenvarianten
 
+## PRAXISREGELN AUS FARUKS MASCHINE
+
+Von Faruk im Alltag erprobt – **keine offizielle TikTok-Richtlinie**, aber strenger
+als Lyra und deshalb übernommen:
+
+- **AIGC an** bei KI-Mensch, **„KI-Stimme"** bei KI-Voiceover
+- **„Werbung"** vorne in der Caption
+- **Lizenz-Check:** „Offizieller Shop", „offiziell lizenziert", ©️ auf dem Bild,
+  seriöser Seller → Markenname erlaubt. Keine Lizenz, „Großhandel/Dropshipping",
+  widersprüchliche Lieferzeit → HOLD oder ohne Markennamen.
+  **Provisionsberechtigt ≠ geprüft.**
+- Filmähnliche Produkte generisch benennen, keine selbst generierten Marken-Figuren
+- Produkt nie in der KI-Szene – das echte Shop-Bild zeigt das Produkt
+- KI-Creator äußert nur Meinung, nie „hab ich gekauft/getestet"
+- Boxen oder Kalender nie „öffnen", wenn der Inhalt nicht belegt ist
+- kein „viral", kein „Platz 3"
+
 ## BESONDERS PRÜFEN
 
 Health Claims · Finance Claims · absolute Versprechen · „garantiert" · „100 %" ·

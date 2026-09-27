@@ -7,8 +7,9 @@ import {
 } from "remotion";
 
 // Funktionstest: 9:16-Ausgabe mit animiertem Hook innerhalb der TikTok-Safe-Zone.
-// TikTok-UI verdeckt ungefähr oben 150 px, rechts 140 px, unten 420 px (bei 1080×1920).
-const SAFE = { top: 150, right: 140, bottom: 420, left: 60 };
+// TikTok-UI verdeckt ungefähr oben 150 px, rechts 140 px, unten 400 px (bei 1080×1920),
+// Werte aus Faruks Video-Maschine.
+const SAFE = { top: 150, right: 140, bottom: 400, left: 60 };
 
 export const MyComposition = () => {
   return (

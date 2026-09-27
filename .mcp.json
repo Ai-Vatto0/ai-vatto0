@@ -17,6 +17,31 @@
         "CLAUDE_FLOW_MEMORY_BACKEND": "hybrid"
       },
       "autoStart": false
+    },
+    "playwright": {
+      "command": "node",
+      "args": [
+        "${CLAUDE_PROJECT_DIR:-.}/.claude/helpers/mcp-launch.cjs",
+        "playwright"
+      ]
+    },
+    "perplexity": {
+      "command": "node",
+      "args": [
+        "${CLAUDE_PROJECT_DIR:-.}/.claude/helpers/mcp-launch.cjs",
+        "perplexity"
+      ]
+    },
+    "firecrawl": {
+      "command": "node",
+      "args": [
+        "${CLAUDE_PROJECT_DIR:-.}/.claude/helpers/mcp-launch.cjs",
+        "firecrawl"
+      ]
+    },
+    "rube": {
+      "type": "http",
+      "url": "https://rube.app/mcp"
     }
   }
 }

@@ -14,17 +14,42 @@ erster echter Schnitt mit Vattos Material, danach KI-Anbieter anbinden.
 ### Offene Punkte
 - [ ] TikTok-Compliance-Zusammenfassung von Vatto einlesen → `memory/regeln/tiktok-compliance.md`
 - [ ] `02_LYRA_ADS_MASTER_V4.1.txt`, `03_COMPLIANCE_V4.0`, `04_LEARNING_V4.0` nachladen
-- [ ] Erster Remotion-Schnitt mit echtem Clip (Farouks Ablauf: Schnittplan → Freigabe → Vorschau → Frame-QA)
-- [ ] KI-Anbieter für Bild- und Videogenerierung anbinden
+- [ ] Erster Remotion-Schnitt mit echtem Clip (Faruks Ablauf: Schnittplan → Freigabe → Vorschau → Frame-QA)
+- [ ] KI-Anbieter für Bild- und Videogenerierung anbinden (fal.ai-Weg aus Faruks Maschine steht)
+- [ ] Hosts in der Cloud freischalten, Keys als Umgebungsvariablen setzen
+- [ ] Erstes Produkt nach Faruks Format A (UGC-Overlay) bauen
 - [ ] Optional: Gedächtnis vom alten PC übernehmen (`C:\Users\rober\ki-app\`)
 
 ---
 
 ## SESSION-LOG
 
-### 2026-09-27 – Remotion installiert (Farouks Vorgabe)
+### 2026-09-27 – Faruks Video-Maschine, Konnektoren, prompts.chat
 
-**Vorgabe von Farouk:** Remotion für Motion Design, claude-shorts für das Zerlegen
+**Integriert:**
+- Faruks „TikTok-Shop-Video-Maschine" wortgetreu als Regelwerk + eigener Skill
+  `tiktok-video-maschine` + Werkzeuge (`zp.sh` getestet, `setup.sh`)
+- ffmpeg 6.1, Pillow, numpy, faster-whisper installiert; Poppins Bold ins Repo
+- MCP: Playwright (voll getestet), Perplexity, Firecrawl (starten, brauchen Key), Rube
+- Plugin prompts.chat projektweit installiert
+
+**Entscheidungen:**
+- Zuständigkeit Faruk vs. Lyra festgelegt statt mitteln: Formate/Schnitt → Faruk,
+  KI-Produkt-Render → Lyra, Compliance → strengere Regel
+- **Produkt nie in der KI-Szene** als Standard (Faruk) – Hypothese: senkt
+  Product-Match-Verstöße. Noch unbelegt, Verstoß-Log klärt es.
+- Safe Zone unten 420 → 400 px (Faruks Praxiswert)
+- Perplexity/Firecrawl starten nur mit Key (Kontext sparen)
+
+**Korrigiert:** `@composio/rube-mcp` aus der Anleitung ist kein MCP-Server,
+sondern ein Installer → HTTP-Konnektor `https://rube.app/mcp` eingetragen.
+
+**Blockiert:** Cloud-Netzwerk sperrt prompts.chat, rube.app, Perplexity, Firecrawl,
+fal.ai, huggingface.co. Keys fehlen.
+
+### 2026-09-27 – Remotion installiert (Faruks Vorgabe)
+
+**Vorgabe von Faruk:** Remotion für Motion Design, claude-shorts für das Zerlegen
 langer Videos. Start mit dem offiziellen Remotion-Plugin.
 
 **Gemacht:**
@@ -36,7 +61,7 @@ langer Videos. Start mit dem offiziellen Remotion-Plugin.
   `width/height: 100%` → Safe-Zone-Rahmen saß falsch. Merken für alle Overlays.
 - Cloud-Blocker gelöst: `remotion.media` gesperrt → `remotion.config.ts` nutzt
   automatisch den vorinstallierten Chromium
-- Farouks Ablauf als verbindliche Regel: `memory/regeln/video-schnitt-workflow.md`
+- Faruks Ablauf als verbindliche Regel: `memory/regeln/video-schnitt-workflow.md`
 
 **Bewusst nicht gemacht:** claude-shorts – installiert PyTorch (GB-schwer), landet
 außerhalb des Repos, und ist für langes Material gedacht, nicht für 13-s-Clips.

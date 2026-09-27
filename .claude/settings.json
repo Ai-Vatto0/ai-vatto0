@@ -182,11 +182,21 @@
     "type": "command",
     "command": "sh -c 'exec node \"${CLAUDE_PROJECT_DIR:-.}/.claude/helpers/statusline.cjs\"'"
   },
+  "enabledPlugins": {
+    "remotion@remotion": true,
+    "prompts.chat@prompts.chat": true
+  },
   "extraKnownMarketplaces": {
     "remotion": {
       "source": {
         "source": "github",
         "repo": "remotion-dev/claude-code-plugin"
+      }
+    },
+    "prompts.chat": {
+      "source": {
+        "source": "github",
+        "repo": "f/prompts.chat"
       }
     }
   },
@@ -292,8 +302,5 @@
       "cveCheck": true,
       "threatModel": true
     }
-  },
-  "enabledPlugins": {
-    "remotion@remotion": true
   }
 }

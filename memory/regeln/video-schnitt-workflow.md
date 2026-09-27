@@ -1,6 +1,6 @@
 # VIDEO-SCHNITT-WORKFLOW (Remotion)
 
-**Quelle:** Anleitung von Farouk (Vattos Partner, arbeitet viel mit Claude), übernommen am 27.09.2026
+**Quelle:** Anleitung von Faruk (Vattos Partner, arbeitet viel mit Claude), übernommen am 27.09.2026
 **Status:** AKTIV – verbindlicher Ablauf für jeden Schnitt
 **Werkzeug:** Offizielles Remotion-Plugin für Claude Code + Projekt `video-edit/`
 
@@ -69,12 +69,12 @@ Im Schnitt gilt trotzdem:
 |---|---|---|
 | oben | 150 px | Status- und Suchleiste |
 | rechts | 140 px | Like-, Kommentar-, Teilen-Buttons |
-| unten | 420 px | Caption, Nutzername, Sound, Shop-Link |
+| unten | 400 px | Caption, Nutzername, Sound, Shop-Link |
 | links | 60 px | Randabstand |
 
-⚠️ **Arbeitswerte, keine offiziellen TikTok-Zahlen.** TikTok veröffentlicht keine
-exakten Pixelmaße. Bei Shop-Videos mit Produktanker unten eher großzügiger planen.
-Anpassen, sobald echte Screenshots aus Vattos Uploads vorliegen.
+⚠️ **Keine offiziellen TikTok-Zahlen** – TikTok veröffentlicht keine exakten Pixelmaße.
+Werte übernommen aus Faruks Video-Maschine (praxiserprobt, Kapitel 5.9).
+Bei Shop-Videos mit Produktanker unten eher großzügiger planen.
 
 ---
 
@@ -106,7 +106,7 @@ Anpassen, sobald echte Screenshots aus Vattos Uploads vorliegen.
 
 Remotion ist **kostenlos für Einzelpersonen und Teams bis 3 Personen**. Firmen mit
 mehr Personen brauchen eine Company License (remotion.pro/license).
-Vatto + Farouk = 2 → aktuell im kostenlosen Rahmen. Bei Wachstum neu prüfen.
+Vatto + Faruk = 2 → aktuell im kostenlosen Rahmen. Bei Wachstum neu prüfen.
 
 ---
 
