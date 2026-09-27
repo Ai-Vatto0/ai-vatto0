@@ -1,40 +1,70 @@
 {
+  "_hinweis": "Reine Uebersichts-/Doku-Datei, kein startbarer MCP-Server. Alle Pfade sind relativ zum Repository-Root, damit die Datei auf jedem Rechner und in Cloud-Sessions gilt.",
   "mcpHub": {
     "name": "Vatto0 Global MCP Hub",
-    "version": "1.0",
+    "version": "1.1",
     "owner": "vatto0202@googlemail.com",
+    "gedaechtnis_einstieg": "MASTER-MEMORY.md",
     "projects": [
       {
-        "id": "snova-studio",
-        "name": "Snova Studio",
-        "path": "C:\\Users\\rober\\ki-app\\",
-        "type": "mobile-app",
-        "stack": "React Native + Node.js + Supabase + Kie.ai",
-        "status": "active"
-      },
-      {
-        "id": "menu-wall-app",
-        "name": "Menu Wall",
-        "path": "C:\\Users\\rober\\ki-app\\menu-wall-app\\",
-        "type": "ios-app",
-        "status": "active"
+        "id": "tiktok-shop",
+        "name": "TikTok Shop / Lyra Ads",
+        "path": "TIKTOK-SHOP/",
+        "type": "ad-production",
+        "stack": "Kie.ai (Grok Imagine Video 1.5, GPT Image 2, Seedance 2)",
+        "status": "active",
+        "gedaechtnis": true,
+        "notiz": "memory/projekte/tiktok-shop.md"
       },
       {
         "id": "prompt-master",
         "name": "Prompt Master",
-        "path": "C:\\Users\\rober\\ki-app\\prompt-master\\",
-        "type": "research",
-        "status": "active"
+        "path": "prompt-master/",
+        "type": "claude-skill",
+        "status": "active",
+        "gedaechtnis": true,
+        "notiz": "memory/projekte/prompt-master.md"
+      },
+      {
+        "id": "higgsfield",
+        "name": "Higgsfield Promo-Pipeline",
+        "path": "HIGGSFIELD_SETUP.md",
+        "type": "promo-video",
+        "status": "active-secondary",
+        "gedaechtnis": true,
+        "notiz": "memory/projekte/higgsfield.md"
+      },
+      {
+        "id": "snova-studio",
+        "name": "Snova Studio",
+        "path": "snova-studio/",
+        "type": "mobile-app",
+        "stack": "React Native + Node.js + Supabase + Kie.ai",
+        "status": "im-repo-vorhanden",
+        "gedaechtnis": false
+      },
+      {
+        "id": "menu-wall-app",
+        "name": "Menu Wall",
+        "path": "menu-wall-app/",
+        "type": "ios-app",
+        "status": "im-repo-vorhanden",
+        "gedaechtnis": false
+      },
+      {
+        "id": "sora-warrior",
+        "name": "Sora Warrior",
+        "path": "sora-warrior/",
+        "type": "unbekannt",
+        "status": "im-repo-vorhanden",
+        "gedaechtnis": false
       }
     ],
     "core_mcps": {
-      "github": "C:\\Users\\rober\\ki-app\\MCP-CONFIG\\github-mcp.json",
-      "supabase": "C:\\Users\\rober\\ki-app\\MCP-CONFIG\\supabase-mcp.json",
-      "memory": "C:\\Users\\rober\\ki-app\\MCP-CONFIG\\memory-mcp.json",
-      "context7": "C:\\Users\\rober\\ki-app\\MCP-CONFIG\\context7-mcp.json"
+      "github": "MCP-CONFIG/github-mcp.json",
+      "supabase": "MCP-CONFIG/supabase-mcp.json",
+      "memory": "MCP-CONFIG/memory-mcp.json"
     },
-    "memory_backend": "hybrid",
-    "auto_sync": true,
-    "sync_interval_minutes": 30
+    "memory_backend": "dateibasiert (memory/ im Repository)"
   }
 }

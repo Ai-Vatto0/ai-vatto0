@@ -1,42 +1,49 @@
 {
-  "mcpServer": {
-    "name": "Memory MCP – Cross-Project Context Preservation",
-    "purpose": "Persistent memory across sessions, project shortcuts, credential mapping",
-    "storage": {
-      "working_memory": "C:\\Users\\rober\\ki-app\\.claude\\CLAUDE.md",
-      "knowledge_base": "C:\\Users\\rober\\ki-app\\memory\\",
-      "session_logs": "C:\\Users\\rober\\ki-app\\memory\\sessions\\",
-      "master_index": "C:\\Users\\rober\\ki-app\\MASTER-MEMORY.md"
-    },
-    "projects_mapping": {
-      "snova_studio": {
-        "local_memory": "C:\\Users\\rober\\ki-app\\MEMORY.md",
-        "root": "C:\\Users\\rober\\ki-app\\",
-        "backend": "C:\\Users\\rober\\ki-app\\backend\\",
-        "mobile": "C:\\Users\\rober\\ki-app\\mobile\\",
-        "stack_key": "react-native-node-supabase"
-      },
-      "menu_wall": {
-        "local_memory": "C:\\Users\\rober\\ki-app\\menu-wall-app\\MEMORY.md",
-        "root": "C:\\Users\\rober\\ki-app\\menu-wall-app\\",
-        "stack_key": "ios-swift"
-      },
-      "prompt_master": {
-        "local_memory": "C:\\Users\\rober\\ki-app\\prompt-master\\MEMORY.md",
-        "root": "C:\\Users\\rober\\ki-app\\prompt-master\\",
-        "stack_key": "llm-research"
-      }
-    },
-    "shortcuts": {
-      "snova_start_backend": "cd C:\\Users\\rober\\ki-app\\backend && npx kill-port 3000 && node --experimental-sqlite server.js",
-      "snova_start_mobile": "cd C:\\Users\\rober\\ki-app\\mobile && npx expo start",
-      "git_push_stable": "git add . && git commit -m 'Stable checkpoint' && git push"
-    },
-    "token_efficiency": {
-      "context_limit_words": 80,
-      "audit_limit_words": 30,
-      "no_duplicate_reads": true,
-      "task_focused": true
+  "_hinweis": "KEIN startbarer MCP-Server. Dies ist eine reine Konfigurations-/Doku-Datei: sie hat kein 'command', Claude Code kann sie nicht starten. Der frueher in .mcp.json eingetragene Eintrag 'memory-mcp' wurde deshalb entfernt. Das Gedaechtnis liegt jetzt als normale Markdown-Dateien im Repo und funktioniert ohne Server auf jedem Rechner.",
+  "gedaechtnis": {
+    "name": "Datei-Gedaechtnis – Cross-Session Context Preservation",
+    "zweck": "Persistenter Kontext ueber Sessions hinweg, Projekt-Shortcuts, Regelwerke",
+    "einstieg": "MASTER-MEMORY.md",
+    "speicherorte": {
+      "index": "MASTER-MEMORY.md",
+      "arbeitsprotokoll": "MEMORY.md",
+      "regelwerke": "memory/regeln/",
+      "projekte": "memory/projekte/",
+      "originalquellen": "memory/quellen/",
+      "archiv": "memory/archiv/",
+      "chatuebergaben": "memory/sessions/"
     }
+  },
+  "projekte": {
+    "tiktok_shop": {
+      "status": "aktiv – Kerngeschaeft",
+      "notiz": "memory/projekte/tiktok-shop.md",
+      "regeln": "memory/regeln/lyra-ads-v4.1-aktiv.md",
+      "material": "TIKTOK-SHOP/",
+      "stack_key": "kie-ai-grok-seedance"
+    },
+    "prompt_master": {
+      "status": "aktiv",
+      "notiz": "memory/projekte/prompt-master.md",
+      "root": "prompt-master/",
+      "stack_key": "claude-skill"
+    },
+    "higgsfield": {
+      "status": "aktiv – sekundaer",
+      "notiz": "memory/projekte/higgsfield.md",
+      "setup": "HIGGSFIELD_SETUP.md",
+      "stack_key": "mcp-promo-video"
+    }
+  },
+  "_nicht_im_gedaechtnis": {
+    "hinweis": "Auf Wunsch von Vatto (27.09.2026) bewusst ausgeschlossen. Ordner bleiben im Repo, werden aber nicht als Kontext geladen.",
+    "projekte": ["snova-studio", "menu-wall-app", "sora-warrior"]
+  },
+  "token_effizienz": {
+    "context_limit_words": 80,
+    "audit_limit_words": 30,
+    "no_duplicate_reads": true,
+    "task_focused": true,
+    "regel": "Nicht alles auf Vorrat laden. Nur die fuer die Aufgabe relevante Datei aus memory/ oeffnen."
   }
 }

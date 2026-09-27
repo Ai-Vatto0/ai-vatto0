@@ -1,5 +1,19 @@
 # Snova Studio – CLAUDE.md
 
+## ⚠️ ZUERST LESEN: GEDÄCHTNIS
+
+| Datei | Inhalt |
+|---|---|
+| `MASTER-MEMORY.md` | Index: wer, welche Projekte, welche Regeln gelten |
+| `MEMORY.md` | aktueller Arbeitsstand und Session-Log |
+| `memory/` | Regelwerke, Projektnotizen, Quellen, Archiv |
+
+**Hauptgeschäft ist TikTok-Shop-Werbung** (`memory/regeln/lyra-ads-v4.1-aktiv.md`).
+Die Snova-Studio-Dokumentation unten ist Repo-Doku für den Code, nicht der
+Arbeitsschwerpunkt.
+
+---
+
 ## Projektübersicht
 KI-basierte Mobile App für konsistente Charakter-Erstellung und Story-Video-Generierung.
 Plattform: React Native (Expo) + Node.js Backend + Kie.ai API
