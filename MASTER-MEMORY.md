@@ -10,6 +10,7 @@
 
 - **Person:** Vatto (Robert), vatto0202@googlemail.com
 - **Hauptaktivität:** TikTok-Shop **Creator** – KI-generierte Produktwerbung (Affiliate/Provision)
+- **Partner:** Farouk – arbeitet viel mit Claude; seine Arbeitsweisen gelten als Vorgabe
 - **Arbeitssprache:** Deutsch. Prompts/Code dürfen Englisch sein.
 - **Grundhaltung (von ihm gesetzt):** Wahrheit vor Zustimmung. Wirkung vor Dekoration.
   Einfachheit vor unnötiger Technik. Klare Empfehlung statt Optionsliste. Tokens sparen.
@@ -23,6 +24,7 @@
 | **TikTok Shop / Lyra Ads** | `TIKTOK-SHOP/`, `memory/regeln/` | KI-Werbevideos für TikTok Shop – **Kerngeschäft** | `memory/projekte/tiktok-shop.md` |
 | **Prompt-Master** | `prompt-master/SKILL.md` | Claude-Skill: Copy-ready Prompts für 15+ AI-Tools | `memory/projekte/prompt-master.md` |
 | **Higgsfield** | `HIGGSFIELD_SETUP.md` | MCP-Pipeline für App-Promo-Videos (getrennt von Kie.ai) | `memory/projekte/higgsfield.md` |
+| **Video-Schnitt (Remotion)** | `video-edit/` | KI-Clips zu fertigem TikTok montieren, Hook-/CTA-Overlays | `memory/regeln/video-schnitt-workflow.md` |
 
 **Bewusst NICHT im Gedächtnis** (auf Wunsch von Vatto, 27.09.2026):
 Snova Studio, menu-wall-app, sora-warrior. Die Ordner bleiben im Repo, werden aber
@@ -39,7 +41,8 @@ Bei Werbeaufträgen gilt in dieser Reihenfolge:
 2. `memory/regeln/lyra-ads-v4.1-aktiv.md` – Projektanweisung Lyra Ads V4.1 (Patch 10.08.2026)
 3. `memory/regeln/lyra-ads-master-v4.0.md` – Master System V4.0 ⚠️ *V4.1 fehlt noch, siehe Lücken*
 4. `memory/regeln/tiktok-compliance.md` – TikTok-Richtlinien ⚠️ *noch nicht gefüllt*
-5. `memory/archiv/` – historisch, **nie** mit aktiven Regeln mischen oder reaktivieren
+5. `memory/regeln/video-schnitt-workflow.md` – Schnitt mit Remotion (Farouks Ablauf)
+6. `memory/archiv/` – historisch, **nie** mit aktiven Regeln mischen oder reaktivieren
 
 **CORE-ID:** `LYRA-ADS-V4.0-PROFIT-INTEGRITY-KIE-NOCARDS` (Revision Patch 4.1)
 
@@ -56,7 +59,8 @@ es gibt Verstöße bereits bei minimalster Abweichung. Das ist derzeit das
 sondern das begrenzende Nadelöhr. Vor jedem Render ist die Frage nicht
 „verkauft das?", sondern **„übersteht das die Prüfung?"**.
 
-**Nächster geplanter Schritt:** Videoschneiden (kommt separat).
+**Videoschnitt:** Remotion installiert und verifiziert (27.09.2026).
+**Danach geplant:** Anbindung an KI-Anbieter für Bild- und Videogenerierung.
 
 ---
 

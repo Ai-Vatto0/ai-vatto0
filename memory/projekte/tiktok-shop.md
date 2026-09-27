@@ -70,6 +70,8 @@ ausdrücklich etwas anderes. Silent, ASMR, Packshot oder Musik-only nie automati
 
 - [ ] Compliance-Zusammenfassung einarbeiten
 - [ ] Verstoß-Log aufbauen – die real kassierten Verstöße sind die wertvollsten Daten
-- [ ] Videoschnitt-Workflow definieren (nächster Schritt laut Vatto)
+- [x] Videoschnitt-Workflow definieren → `memory/regeln/video-schnitt-workflow.md`
+- [ ] Safe-Zone-Werte an echten Screenshots aus Vattos Uploads prüfen
+- [ ] KI-Anbieter für Bild/Video anbinden (nach Abschluss Setup)
 - [ ] Character-DNA: echte Referenzbild-URLs eintragen
 - [ ] Learning V4.0 nachladen → belegte Winner/Fehler sind derzeit unbekannt

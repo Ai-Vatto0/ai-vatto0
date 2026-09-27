@@ -8,17 +8,38 @@
 ## AKTUELLER ARBEITSSTAND
 
 **Datum:** 2026-09-27
-**Aktiver Fokus:** Gedächtnis aufgebaut. Als Nächstes: **Videoschneiden**.
+**Aktiver Fokus:** Setup abgeschlossen (Gedächtnis + Remotion). Als Nächstes:
+erster echter Schnitt mit Vattos Material, danach KI-Anbieter anbinden.
 
 ### Offene Punkte
 - [ ] TikTok-Compliance-Zusammenfassung von Vatto einlesen → `memory/regeln/tiktok-compliance.md`
 - [ ] `02_LYRA_ADS_MASTER_V4.1.txt`, `03_COMPLIANCE_V4.0`, `04_LEARNING_V4.0` nachladen
-- [ ] Videoschnitt-Workflow klären: welches Tool, welches Ausgangsmaterial, welches Ziel
+- [ ] Erster Remotion-Schnitt mit echtem Clip (Farouks Ablauf: Schnittplan → Freigabe → Vorschau → Frame-QA)
+- [ ] KI-Anbieter für Bild- und Videogenerierung anbinden
 - [ ] Optional: Gedächtnis vom alten PC übernehmen (`C:\Users\rober\ki-app\`)
 
 ---
 
 ## SESSION-LOG
+
+### 2026-09-27 – Remotion installiert (Farouks Vorgabe)
+
+**Vorgabe von Farouk:** Remotion für Motion Design, claude-shorts für das Zerlegen
+langer Videos. Start mit dem offiziellen Remotion-Plugin.
+
+**Gemacht:**
+- Offizielles Plugin `remotion@remotion` (v4.0.529, MIT) **projektweit** installiert –
+  steht in `.claude/settings.json`, reist also mit dem Repo
+- Remotion-Projekt `video-edit/` angelegt, 9:16-Testvideo gerendert und per
+  Standbild geprüft (1080×1920, 30 fps)
+- Fehler im eigenen Test gefunden und behoben: `AbsoluteFill` überschreibt Ränder mit
+  `width/height: 100%` → Safe-Zone-Rahmen saß falsch. Merken für alle Overlays.
+- Cloud-Blocker gelöst: `remotion.media` gesperrt → `remotion.config.ts` nutzt
+  automatisch den vorinstallierten Chromium
+- Farouks Ablauf als verbindliche Regel: `memory/regeln/video-schnitt-workflow.md`
+
+**Bewusst nicht gemacht:** claude-shorts – installiert PyTorch (GB-schwer), landet
+außerhalb des Repos, und ist für langes Material gedacht, nicht für 13-s-Clips.
 
 ### 2026-09-27 – Gedächtnis von Null aufgebaut
 
