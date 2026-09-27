@@ -16,79 +16,52 @@ Skills **erst lesen, dann nutzen**. Der mitgelieferte Skill `skill-lookup` kann 
 direkt in `.claude/skills/` installieren – nur nach Durchsicht und Vattos Okay.
 Lyra- und Maschinen-Regeln gehen jedem Community-Prompt vor.
 
-## MCP-SERVER UND KONNEKTOREN
+## DIENSTE UND WIE SIE ANGEBUNDEN SIND
 
-| Was | Wo eingerichtet | Key | Status |
-|---|---|---|---|
-| `playwright` – echter Browser | `.mcp.json` | keiner | ✅ getestet |
-| `perplexity` – Recherche mit Quellen | `.mcp.json` | API-Anmeldedatum (Cloud) / `PERPLEXITY_API_KEY` (lokal) | ✅ Server startet · wartet auf Key |
-| **Firecrawl** – Webseiten lesen | **claude.ai-Konnektor** (offiziell, Login) | keiner, Login | ⏳ von Vatto zu verbinden |
-| **Rube / Composio** – 500+ Apps | **claude.ai-Konnektor** (eigene URL) | Login | ⏳ von Vatto zu verbinden |
-| `claude-flow` – Agenten-Framework (alt) | `.mcp.json` | – | ⚠️ Timeout, ungenutzt |
+| Dienst | Zweck | Anbindung | Key | Status |
+|---|---|---|---|---|
+| **KIE.ai** | Bild-/Videorender (Grok, GPT Image 2 …) | REST-API `api.kie.ai` | API-Anmeldedatum, `Authorization: Bearer` | ⏳ Vatto trägt Key ein |
+| **fal.ai** | MiniMax-H3-Creator-Clips | REST-API `queue.fal.run` | API-Anmeldedatum, `Authorization: Key` | ⏳ Vatto trägt Key ein |
+| **Yapper** | Voiceover, Videos | **claude.ai-Konnektor** (MCP, Login statt Key) | keiner | ⏳ URL aus Vattos MCP-Datei |
+| **Playwright** | echter Browser | `.mcp.json` | keiner | ✅ getestet |
+| **prompts.chat** | Prompt-Bibliothek | Plugin | keiner | ✅ verbunden |
+| Firecrawl | Webseiten lesen | claude.ai-Konnektor (optional) | Login | optional |
+| Rube/Composio | 500+ Apps | claude.ai-Konnektor (optional) | Login | optional |
+| ~~Perplexity~~ | – | entfernt | – | Vatto hat nur Pro, keine API. Websuche ist eingebaut. |
 
-**Warum Firecrawl und Rube als claude.ai-Konnektor statt lokal:** Konnektoren laufen
-über Anthropics Server → funktionieren in Desktop-App, Handy, Cloud und Claude Code,
-brauchen **keine** Netzwerkfreigabe und **keinen** Key in einer Datei. Rube braucht
-außerdem einen Browser-Login, der in einer Cloud-Session lokal nicht klappt.
+**Keys nie in den Chat, nie in Dateien, nie ins Repo.** Grund: Der Chat wird
+gespeichert, das Repo liegt auf GitHub – wer den Key hat, rendert auf Vattos Kosten.
+Der einzig richtige Ort ist **API-Anmeldedaten** der Umgebung: Der Proxy hängt den
+Key an, Claude sieht ihn nie.
 
-**Starter `.claude/helpers/mcp-launch.cjs`:** Playwright nutzt in der Cloud den
-vorinstallierten Chromium. Perplexity startet lokal nur mit Key; in der Cloud mit
-Platzhalter, weil dort der Agent-Proxy den echten Key anhängt (Session sieht ihn nie).
-⚠️ Noch nicht mit echtem Key geprüft, ob der Proxy den Platzhalter-Header ersetzt.
+**Starter `.claude/helpers/mcp-launch.cjs`:** nur noch Playwright (Cloud: vorinstallierter Chromium).
+**Auto-Setup `.claude/helpers/cloud-setup.cjs`:** SessionStart-Hook, installiert in der
+Cloud ffmpeg + Python-Pakete im Hintergrund. Kein Setup-Skript in der Umgebung nötig.
 
-**Fehler in der Original-Anleitung:** `npx -y @composio/rube-mcp` ist **kein**
-MCP-Server, sondern ein interaktiver Installations-Assistent (Code geprüft).
-
-**Kontext-Warnung:** Jeder aktive Server kostet Arbeitsgedächtnis. Firecrawl hat
-29 Werkzeuge. Nicht Gebrauchtes deaktivieren statt löschen.
+**Fehler in der Original-Anleitung:** `npx -y @composio/rube-mcp` ist kein MCP-Server,
+sondern ein Installations-Assistent (Code geprüft).
 
 ---
 
-## EINRICHTUNG DER CLOUD-UMGEBUNG „Vatto0-Matrix"
+## WAS VATTO NOCH TUN MUSS (einmalig)
 
-Titelleiste → Cloud-Symbol → Umgebung bearbeiten. **Das kann nur Vatto, Claude hat
-darauf keinen Zugriff.**
+**Erledigt am 27.09.2026:** Netzwerkzugriff „Benutzerdefiniert" mit den Domains.
 
-### 1. Netzwerkzugriff → **Benutzerdefiniert**
-Häkchen bei „Standardliste gängiger Paketmanager einschließen" setzen.
-Erlaubte Domains, **eine pro Zeile**:
-```
-prompts.chat
-huggingface.co
-*.huggingface.co
-*.hf.co
-*.fal.media
-```
-(Perplexity und fal.ai-API brauchen hier keinen Eintrag – ihre Hosts werden über
-die API-Anmeldedaten automatisch erreichbar.)
-
-### 2. Umgebungsvariablen → **leer lassen**
-Dieses Feld ist für alle sichtbar, die die Umgebung nutzen → **keine Keys**.
-
-### 3. API-Anmeldedaten → „Zugangsdaten hinzufügen", Typ **Bearer**
+**1. Zwei Keys eintragen** – Umgebung „Vatto0-Matrix" bearbeiten → API-Anmeldedaten →
+„Zugangsdaten hinzufügen", Typ Bearer, zweimal:
 
 | Name | Erlaubte Websites | Header-Name | Präfix | Wert |
 |---|---|---|---|---|
-| Perplexity | `api.perplexity.ai` | `Authorization` | `Bearer` | Perplexity-Key |
-| fal.ai | `fal.run` und `*.fal.run` | `Authorization` | `Key` | fal-Key |
+| KIE | `api.kie.ai` | `Authorization` | `Bearer` | KIE-Key |
+| fal | `*.fal.run` | `Authorization` | `Key` | fal-Key |
 
-Der Key erreicht nie die Session, nie Claude, nie eine Datei.
+**2. Yapper** – claude.ai → Einstellungen → Konnektoren → „Benutzerdefinierten
+Konnektor hinzufügen" → Name `Yapper`, URL aus der MCP-Datei → Verbinden → einloggen.
 
-### 4. Setup-Skript
-```bash
-#!/bin/bash
-apt-get update -qq && apt-get install -y -qq ffmpeg || true
-pip install --quiet Pillow numpy faster-whisper || true
-exit 0
-```
-Läuft einmal, danach wird der Stand zwischengespeichert (ca. 7 Tage).
+**3. Neue Session starten.**
 
-### 5. claude.ai → Anpassen → Konnektoren
-- **Firecrawl**: im Verzeichnis suchen → Verbinden
-- **Rube**: „Benutzerdefinierten Konnektor hinzufügen" → URL `https://rube.app/mcp` → Apps freigeben
-
-### 6. Neue Session starten
-Laufende Sessions lesen geänderte Einstellungen nicht neu ein.
+**Falls später nötig:** Liegen KIE-Ergebnisse auf einer anderen Domain als
+`api.kie.ai`, beim ersten Render diese Domain zur Netzwerkliste hinzufügen.
 
 ---
 
@@ -100,11 +73,11 @@ Laufende Sessions lesen geänderte Einstellungen nicht neu ein.
 | Pillow, numpy, faster-whisper | Python | ✅ |
 | Poppins Bold | `assets/fonts/` (OFL-Lizenz) | ✅ |
 | Kamerafahrt | `tools/video-maschine/zp.sh` | ✅ getestet |
-| Einrichtung neue Session | `tools/video-maschine/setup.sh` | ✅ |
+| Einrichtung neue Session | automatisch per `cloud-setup.cjs` → `setup.sh` | ✅ |
 | faster-whisper-Modelle | laden von huggingface.co | ⛔ in Cloud gesperrt |
 
 ## LOKAL (Windows)
 
 Netzwerksperre und API-Anmeldedaten gibt es nur in der Cloud. Lokal:
-`PERPLEXITY_API_KEY` und `FAL_KEY` als Windows-Systemvariablen setzen, ffmpeg
+`KIE_API_KEY` und `FAL_KEY` als Windows-Systemvariablen setzen, ffmpeg
 installieren, Video-Maschine am besten in WSL 2 (`bash tools/video-maschine/setup.sh`).

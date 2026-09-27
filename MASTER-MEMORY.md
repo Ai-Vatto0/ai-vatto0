@@ -76,8 +76,8 @@ sondern das begrenzende Nadelöhr. Vor jedem Render ist die Frage nicht
 | `03_COMPLIANCE_LYRA_ADS_V4.0.txt` | Compliance-Detailregeln fehlen | Vatto lädt Zusammenfassung nach |
 | `04_LEARNING_LYRA_ADS_V4.0.txt` | Belegte Winner/Fehler aus der Vergangenheit fehlen | Datei nachladen |
 | Gedächtnis vom alten PC | Alles vor 27.09.2026 ist verloren | `MEMORY.md`, `MASTER-MEMORY.md`, `memory\` von `C:\Users\rober\ki-app\` holen |
-| Cloud-Umgebung nicht eingerichtet (Netzwerk, API-Anmeldedaten, Setup-Skript) | Perplexity, fal.ai-Clips, Transkription blockiert | Vatto: Anleitung in `werkzeuge-und-konnektoren.md` → EINRICHTUNG |
-| Firecrawl + Rube als claude.ai-Konnektor | Webseiten lesen, App-Aktionen | Vatto verbindet in claude.ai |
+| KIE- und fal-Key als API-Anmeldedaten | Render über KIE und fal.ai blockiert | Vatto: 2 Einträge, siehe `werkzeuge-und-konnektoren.md` → WAS VATTO NOCH TUN MUSS |
+| Yapper-Konnektor | Voiceover/Video über Yapper | URL aus Vattos MCP-Datei, dann claude.ai-Konnektor |
 | `Lyra_Ads_Creative_Engine_V1.0_skill.pdf` | nicht auslesbar (kein extrahierbarer Text) | als `.md`/`.txt` nachladen, falls aktiv gebraucht |
 
 ---

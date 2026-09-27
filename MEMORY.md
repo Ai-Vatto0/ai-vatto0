@@ -24,6 +24,18 @@ erster echter Schnitt mit Vattos Material, danach KI-Anbieter anbinden.
 
 ## SESSION-LOG
 
+### 2026-09-27 – Einrichtung vereinfacht
+
+- Vatto ist Einsteiger und will nur reinkopieren → alles Automatisierbare automatisiert.
+- **Perplexity entfernt:** nur Pro-Abo, keine API. Websuche ist eingebaut.
+- **Setup-Skript überflüssig:** SessionStart-Hook `cloud-setup.cjs` installiert in der
+  Cloud selbst ffmpeg und Python-Pakete.
+- Netzwerk hat Vatto bereits auf „Benutzerdefiniert" umgestellt (geprüft: prompts.chat,
+  fal.media, huggingface erreichbar).
+- **Yapper-MCP braucht keinen Key**, nur Login → claude.ai-Konnektor.
+- Offen, und nur von Vatto machbar: 2 API-Anmeldedaten (KIE, fal) + Yapper-Konnektor.
+- Keys ausdrücklich **nicht** im Chat angenommen (Chat gespeichert, Repo auf GitHub).
+
 ### 2026-09-27 – Faruks Weg = Standard, Cloud-Einrichtung korrigiert
 
 - **Entscheidung Vatto:** Faruks Video-Maschine ist Standard für jedes TikTok-Shop-Video.
