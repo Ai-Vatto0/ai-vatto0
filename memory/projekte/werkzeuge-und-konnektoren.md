@@ -20,9 +20,9 @@ Lyra- und Maschinen-Regeln gehen jedem Community-Prompt vor.
 
 | Dienst | Zweck | Anbindung | Key | Status |
 |---|---|---|---|---|
-| **KIE.ai** | Bild-/Videorender (Grok, GPT Image 2 …) | REST-API `api.kie.ai` | API-Anmeldedatum, `Authorization: Bearer` | ⏳ Vatto trägt Key ein |
-| **fal.ai** | MiniMax-H3-Creator-Clips | REST-API `queue.fal.run` | API-Anmeldedatum, `Authorization: Key` | ⏳ Vatto trägt Key ein |
-| **Yapper** | Voiceover, Videos | **claude.ai-Konnektor** (MCP, Login statt Key) | keiner | ⏳ URL aus Vattos MCP-Datei |
+| **KIE.ai** | Bild-/Videorender (Grok, GPT Image 2 …) | REST-API `api.kie.ai` | API-Anmeldedatum, `Authorization: Bearer` | ⚠️ eingetragen, Test 27.09. → 401 |
+| ~~fal.ai~~ | – | nicht angebunden | – | Vatto hat keinen fal-Key. MiniMax-H3-Clips laufen über **Yapper**. |
+| **Yapper** | Voiceover, MiniMax-H3-Creator-Clips | **claude.ai-Konnektor** `https://yapper.so/mcp/connector` (Login) | API-Key als Anmeldedatum eingetragen, Host `yapper.so` aber noch gesperrt | ⏳ Konnektor verbinden |
 | **Playwright** | echter Browser | `.mcp.json` | keiner | ✅ getestet |
 | **prompts.chat** | Prompt-Bibliothek | Plugin | keiner | ✅ verbunden |
 | Firecrawl | Webseiten lesen | claude.ai-Konnektor (optional) | Login | optional |
@@ -45,13 +45,24 @@ sondern ein Installations-Assistent (Code geprüft).
 
 ## WAS VATTO NOCH TUN MUSS (einmalig)
 
-**Erledigt am 27.09.2026:** Netzwerkzugriff „Benutzerdefiniert" mit den Domains.
+**Erledigt 27.09.2026:** Netzwerk „Benutzerdefiniert" · KIE-Key und Yapper-Key als API-Anmeldedaten.
 
-**1. Zwei Keys eintragen** – Umgebung „Vatto0-Matrix" bearbeiten → API-Anmeldedaten →
-„Zugangsdaten hinzufügen", Typ Bearer, zweimal:
+**1. KIE-Eintrag prüfen** (Test 27.09. ergab 401 „Authentication failed"):
+- In der Liste unter API-Anmeldedaten: Steht bei KIE **„Not sent"**? Dann sagt der Hinweis darunter, warum.
+- Häufigster Fehler: Im Feld **Wert** steht `Bearer …` → dann kommt `Bearer Bearer …` an.
+  Wert = **nur der Key**. Präfix-Feld = `Bearer`. Header-Name = `Authorization`. Website = `api.kie.ai`.
+- Einträge lassen sich nicht bearbeiten → löschen und neu anlegen.
 
-| Name | Erlaubte Websites | Header-Name | Präfix | Wert |
-|---|---|---|---|---|
+**2. Yapper-Konnektor:** claude.ai → Einstellungen → Konnektoren → „Benutzerdefinierten
+Konnektor hinzufügen" → Name `Yapper`, URL `https://yapper.so/mcp/connector` → Verbinden → einloggen.
+
+**3. Neue Session starten.**
+
+**Test für die nächste Session (kostenlos, kein Render):**
+`curl -sS https://api.kie.ai/api/v1/chat/credit -H 'Content-Type: application/json'`
+→ Erfolg = Guthaben-Antwort statt 401.
+
+---|---|---|---|---|
 | KIE | `api.kie.ai` | `Authorization` | `Bearer` | KIE-Key |
 | fal | `*.fal.run` | `Authorization` | `Key` | fal-Key |
 
