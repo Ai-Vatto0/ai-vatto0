@@ -61,6 +61,20 @@ Bei `insufficient_credits` nicht wiederholen, Kauf-Link nennen.
 
 **Folge:** Yapper deckt praktisch alles ab, was KIE kann. KIE ist damit **optional**.
 
+## KIE.AI – FAKTEN AUS DER OFFIZIELLEN ANLEITUNG (von Vatto, 27.09.2026)
+
+- Basis: `https://api.kie.ai`, Header `Authorization: Bearer <KEY>`
+- Guthaben (kostenlos): `GET /api/v1/chat/credit` → `{"code":200,"data":<Credits>}`
+- Alle Generierungen **asynchron**: HTTP 200 + `task_id` heißt nur „angelegt", nicht fertig.
+  Status abfragen oder Webhook.
+- Ergebnis-Download: `POST /api/v1/common/download-url` mit `{"url": "<kie-Datei-URL>"}` →
+  Link gilt **nur 20 Minuten** → sofort herunterladen.
+- Ergebnisdateien liegen auf `tempfile.…`-Domains → beim ersten echten Render prüfen,
+  ob diese Domain in die Netzwerkliste muss.
+- Aufbewahrung: Medien **14 Tage**, Logs 2 Monate. Protokoll: kie.ai/logs
+- Limit: 20 neue Aufträge pro 10 s. Fehler: 401 Key, 402 kein Guthaben, 422 falsche URL, 429 Limit.
+- Preise: kie.ai/pricing (ändern sich) · Modelle: kie.ai/market
+
 ## WAS VATTO NOCH TUN MUSS (einmalig)
 
 **Erledigt 27.09.2026:** Netzwerk „Benutzerdefiniert" · KIE-Key und Yapper-Key als API-Anmeldedaten.
