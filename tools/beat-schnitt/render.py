@@ -24,7 +24,14 @@ SOURCES = {
     "s4": dict(f="seg4.MP4"), "s5": dict(f="seg5.MP4"), "s6": dict(f="seg6.MP4"),
     "s7": dict(f="seg7.MP4"), "s8": dict(f="seg8.MP4"),
     "p12": dict(f="IMG_0212.jpg", img=True),
+    "p11": dict(f="IMG_0211.jpg", img=True),
+    "p13": dict(f="IMG_0213.jpg", img=True),
+    "i08": dict(f="IMG_0208.MOV", hdr=True, pre=0.75),
+    "n12": dict(f="IMG_9412.MOV", hdr=True, pre=0.75),
+    "f27": dict(f="F27.mov", sharp=True),
+    "n17": dict(f="N1790.mov"),
 }
+HDR = "zscale=t=linear:npl=203,format=gbrpf32le,zscale=p=bt709,tonemap=hable:desat=0,zscale=t=bt709:m=bt709:r=tv,format=yuv420p"
 
 
 def ease(t):  # smoothstep
@@ -52,7 +59,7 @@ def read_frames(key, ss, n, speed):
         f = 2160 / w
         im = cv2.resize(im, (int(w * f), int(h * f)), interpolation=cv2.INTER_AREA)
         return [im] * n
-    vf = []
+    vf = [HDR] if s.get("hdr") else []
     if s.get("band"):
         x, y, w, h = s["band"]
         vf.append(f"crop={w}:{h}:{x}:{y}")
@@ -61,6 +68,8 @@ def read_frames(key, ss, n, speed):
     pre = s.get("pre", 1.0)
     if pre != 1.0:
         vf.append(f"scale=trunc(iw*{pre}/2)*2:-2:flags=lanczos")
+    if s.get("sharp"):
+        vf.append("unsharp=5:5:0.6")
     vf.append("eq=contrast=1.04:saturation=1.05")
     cmd = ["ffmpeg", "-v", "error", "-ss", str(ss), "-i", path, "-t", str(n / FPS * speed + 0.2),
            "-vf", ",".join(vf), "-f", "rawvideo", "-pix_fmt", "bgr24", "-"]
@@ -82,7 +91,40 @@ def read_frames(key, ss, n, speed):
     return frames
 
 
+_bg = {}
+
+
+def fit_frame(img, cx, cy, z):
+    """z<1: ganzes Bild sichtbar, Rand mit weichgezeichnetem Hintergrund aus demselben Bild."""
+    h, w = img.shape[:2]
+    key = id(img)
+    if key not in _bg:
+        f = max(W / w, H / h)
+        cov = cv2.resize(img, (int(w * f) + 1, int(h * f) + 1), interpolation=cv2.INTER_AREA)
+        y0, x0 = (cov.shape[0] - H) // 2, (cov.shape[1] - W) // 2
+        cov = cov[y0:y0 + H, x0:x0 + W]
+        small = cv2.resize(cov, (W // 8, H // 8), interpolation=cv2.INTER_AREA)
+        small = cv2.GaussianBlur(small, (0, 0), 6)
+        bg = cv2.resize(small, (W, H), interpolation=cv2.INTER_LINEAR)
+        _bg.clear(); _bg[key] = (bg * 0.55).astype(np.uint8)
+    bg = _bg[key].copy()
+    if w / h > W / H:
+        rw = h * W / H
+    else:
+        rw = w
+    s = W / (rw / z)
+    nw, nh = int(w * s), int(h * s)
+    fg = cv2.resize(img, (nw, nh), interpolation=cv2.INTER_AREA)
+    x0 = int(W / 2 - cx * nw) if nw > W else (W - nw) // 2
+    y0 = int(H / 2 - cy * nh) if nh > H else (H - nh) // 2
+    xa, ya, xb, yb = max(x0, 0), max(y0, 0), min(x0 + nw, W), min(y0 + nh, H)
+    bg[ya:yb, xa:xb] = fg[ya - y0:yb - y0, xa - x0:xb - x0]
+    return bg
+
+
 def crop_frame(img, cx, cy, z):
+    if z < 1:
+        return fit_frame(img, cx, cy, z)
     h, w = img.shape[:2]
     # groesstes 9:16-Rechteck im Bild
     if w / h > W / H:
