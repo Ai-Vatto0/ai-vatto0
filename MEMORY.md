@@ -24,6 +24,18 @@ erster echter Schnitt mit Vattos Material, danach KI-Anbieter anbinden.
 
 ## SESSION-LOG
 
+### 2026-09-28 – Scooter FUE V10: 3 Echt-Videos geschnitten
+
+- Material über Google-Drive-Freigabe geladen (Netzwerkliste: `drive.google.com`,
+  `drive.usercontent.google.com`). Drive-Connector nur zum Auflisten, Download per curl.
+- **Product Match:** DJI_0024 zeigt einen anderen Roller → aussortiert. DJI_0029 laut Vatto korrekt.
+- Fertiges Video AVLX0403: Unboxing + KI-Clips mit TikTok-Logo raus, nur echte Fahrten/Details.
+- „Luftreifen" (Video) vs. „Vollgummireifen" (Shop) widersprüchlich → Reifenart weglassen.
+- Ergebnis: V1 Brücke 15 s, V2 Drohne 30 s, V3 Details 15 s, Schnitt auf 144 BPM (Beat aus
+  Vattos Video gemessen), Schrift Permanent Marker bunt, ohne Musik (macht Vatto selbst).
+- Werkzeug: `tools/beat-schnitt/` (render.py = Engine, videos.py = Schnittlisten).
+- Chat-Upload max. 30 MB → Upload-Fassungen per 2-Pass (15 s: 12 Mbit/s, 30 s: 6,8 Mbit/s).
+
 ### 2026-09-27 – Einrichtung vereinfacht
 
 - Vatto ist Einsteiger und will nur reinkopieren → alles Automatisierbare automatisiert.
