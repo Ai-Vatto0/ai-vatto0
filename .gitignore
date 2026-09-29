@@ -39,3 +39,7 @@ videos/_media_neo2/
 export/neo2/**/*.mp4
 export/neo2/work-*/
 __pycache__/
+
+# Prüf-Standbilder zeigen Gesichter – Repo ist öffentlich, nie committen
+export/**/qa/
+export/qa/
