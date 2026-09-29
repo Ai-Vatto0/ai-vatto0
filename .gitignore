@@ -21,3 +21,16 @@ out/
 # Arbeitsdateien der Video-Maschine
 produktion/**/work/
 produktion/**/out/
+
+# Lokale Sicherungen (Videos groß)
+backup_*/
+export/*.mp4
+
+# HyperFrames: große Medien lokal, nicht im Repo
+videos/_media/
+videos/*/assets/*.mp4
+videos/*/assets/*.jpg
+videos/*/snapshots/
+videos/*/renders/
+export/raw/
+videos/*/.hyperframes/

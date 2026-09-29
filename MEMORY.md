@@ -15,7 +15,6 @@
 - [ ] Neo 2: Rohmaterial-Ordner von Vatto bekommen (Rohdateien nie löschen/überschreiben)
 - [ ] Neo 2: Link/Screenshot des verlinkten Shop-Artikels (Variante → Product Match)
 - [ ] Neo 2: erste 3 Videos – Schnittplan → Freigabe → Vorschau → Frame-QA
-- [ ] HyperFrames: im Repo nicht gefunden – klären, wo es installiert wurde
 - [ ] TikTok-Compliance-Zusammenfassung von Vatto einlesen → `memory/regeln/tiktok-compliance.md`
 - [ ] `02_LYRA_ADS_MASTER_V4.1.txt`, `03_COMPLIANCE_V4.0`, `04_LEARNING_V4.0` nachladen
 - [ ] Erster Remotion-Schnitt mit echtem Clip (Faruks Ablauf: Schnittplan → Freigabe → Vorschau → Frame-QA)
@@ -38,6 +37,40 @@
 - dji.com und Wikipedia sind aus der Cloud gesperrt → nur Websuche möglich.
 - Wichtigste Fallen: 2000 m = Starthöhe ü. NN, nicht Flughöhe; 10 km nur mit
   Transceiver + RC; Registrierung/Versicherung trotz C0 Pflicht; Product Match je Variante.
+
+### 2026-09-29 – HyperFrames installiert, 3 Scooter-Videos gerendert
+
+- **HyperFrames** (heygen-com/hyperframes, CLI 0.8.86) per `npx skills add` projektweit installiert
+  (`.agents/skills/`, Symlinks in `.claude/skills/`). Skripte geprüft: nur ffmpeg/Aufräumen, kein Nachladen.
+  Telemetrie **abgeschaltet** (`npx hyperframes telemetry disable`). Render-Chrome per `browser ensure`.
+- Cloud-Stolpersteine: jsdelivr gesperrt → GSAP lokal (`assets/vendor/gsap.min.js`); Asset-Pfade in
+  Unter-Kompositionen **root-relativ** (`assets/…`, nicht `../assets/`), sonst Lint-Fehler.
+- Aufteilung: `tools/hyperframes-scooter/mezzanine.py` (HDR→SDR, 9:16-Ausschnitt, dem Fahrer folgend) →
+  `build.py` erzeugt pro Video `index.html` + `compositions/picture.html` + `captions.html` →
+  HyperFrames check (alle grün) → render (beginframe, ~2 min/Video) → stille AAC-Spur → `export/`.
+- Ergebnis: `export/video1_ueberarbeitet.mp4` (20,9 s), `video2_gefuehl.mp4` (19,2 s), `video3_proof.mp4` (20,5 s).
+  Eine Akzentfarbe #FFD400, Permanent Marker, Text-Pop 0,25 s, keine Dauerbewegung, Schnitt 144 BPM.
+- Waldfahrt von hinten existiert echt (DJI_0029) → kein KI-Ersatz nötig.
+- Speicher-Falle: ganze Einstellungen als Rohframes puffern → „No space left" → Export jetzt Bild für Bild.
+- Sicherung vor dem Umbau: `backup_2026-09-29/` (gitignored, nur lokal in der Session).
+
+### 2026-09-28 – Scooter FUE V10: 3 Echt-Videos geschnitten
+
+- Material über Google-Drive-Freigabe geladen (Netzwerkliste: `drive.google.com`,
+  `drive.usercontent.google.com`). Drive-Connector nur zum Auflisten, Download per curl.
+- **Product Match:** DJI_0024 zeigt einen anderen Roller → aussortiert. DJI_0029 laut Vatto korrekt.
+- Fertiges Video AVLX0403: Unboxing + KI-Clips mit TikTok-Logo raus, nur echte Fahrten/Details.
+- „Luftreifen" (Video) vs. „Vollgummireifen" (Shop) widersprüchlich → Reifenart weglassen.
+- Ergebnis: V1 Brücke 15 s, V2 Drohne 30 s, V3 Details 15 s, Schnitt auf 144 BPM (Beat aus
+  Vattos Video gemessen), Schrift Permanent Marker bunt, ohne Musik (macht Vatto selbst).
+- Werkzeug: `tools/beat-schnitt/` (render.py = Engine, videos.py = Schnittlisten).
+- **Feedback Vatto (Runde 2):** zu hektisch/wackelig, Roller nie ganz zu sehen, Details zu kurz.
+  → Lernpunkte: Echt-Videos **ruhig** schneiden (Einstellungen 2–3,3 s = 6–8 Beats, keine
+  Zoom-Stöße/Wackeln/Blitze, nur stabile Drohnen-Passagen), **ganzer Roller am Anfang und
+  Ende** (Foto im Vollbild-Modus mit weichgezeichnetem Rand), Details mind. 2 s.
+- KI-Renderbilder aus dem alten Video (Logo verfälscht „FUIIIS", „Luftreifen", TikTok-Logo)
+  nicht verwendet – Product-Match-Risiko. Upload über „+" beschneidet Videos → immer Drive.
+- Chat-Upload max. 30 MB → Upload-Fassungen per 2-Pass (15 s: 12 Mbit/s, 30 s: 6,8 Mbit/s).
 
 ### 2026-09-27 – Einrichtung vereinfacht
 

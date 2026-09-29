@@ -1,0 +1,47 @@
+{
+ "fps": 30,
+ "total": 627,
+ "beat": 12.539184952978056,
+ "shots": [
+  {
+   "file": "clips/01_hook_bruecke.mp4",
+   "from_": 0,
+   "dur": 75
+  },
+  {
+   "file": "clips/02_ganz_front.mp4",
+   "from_": 75,
+   "dur": 75
+  },
+  {
+   "file": "clips/03_bremse.mp4",
+   "from_": 150,
+   "dur": 76
+  },
+  {
+   "file": "clips/04_federung.mp4",
+   "from_": 226,
+   "dur": 75
+  },
+  {
+   "file": "clips/05_display.mp4",
+   "from_": 301,
+   "dur": 75
+  },
+  {
+   "file": "clips/06_fahrt_drohne.mp4",
+   "from_": 376,
+   "dur": 75
+  },
+  {
+   "file": "clips/07_ganz_kurve.mp4",
+   "from_": 451,
+   "dur": 76
+  },
+  {
+   "file": "clips/08_ganz_seite.mp4",
+   "from_": 527,
+   "dur": 100
+  }
+ ]
+}
