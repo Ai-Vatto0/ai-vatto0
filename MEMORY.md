@@ -35,6 +35,7 @@
   Modi · Hochformat · Gesten · Von oben · Joysticks · Ich gegen die Drohne · Auspacken und losfliegen.
 - Neu im Generator: Breitbild-Layout `w_*` (4:3 mittig, unscharfer Rand) für 720p-/Weitwinkel-Clips,
   `batch.sh` (Render → Final → Chat → Roh löschen), `pair_qa.py`. Ca. 3 min pro Video.
+- Alle 20 final geprüft und als Chat-Fassung (~26 MB, ~14 Mbit/s, reicht für TikTok) geliefert.
 - QA-Funde und Fixes: Hook über Plakat-Schrift (v06), zu lange Zeilen (v09, v11, v16), Passanten/Kind im
   Hintergrund (v10, v19), DJI-Tutorial mit fremder Person in App-Aufnahme (v14), Standbild 1,7 s (v18).
 - Posting-Paket: `export/neo2/POSTING.md` (Captions, Reihenfolge, Regeln). Ein Foto = DJI-Plakat

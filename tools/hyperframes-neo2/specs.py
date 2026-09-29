@@ -333,7 +333,7 @@ VIDEOS.update({
         texts=[(0, 7, [L("MANUELL FLIEGEN"), A("MIT DEM HANDY.")], 230, 120, "cap"),
                (7, 11, [L("VIRTUELLE"), A("JOYSTICKS.")], 190, 130, "cap"),
                (11, 18, [L("SIE"), A("KOMMT ZU DIR.")], 230, 130, "cap"),
-               (18, 26, [L("EXPORT"), A("IN 4K.")], 190, 140, "cap"),
+               (18, 25, [L("EXPORT"), A("IN 4K.")], 190, 140, "cap"),
                CTA(26.2, 34)],
     ),
     "neo2-v19-rennen": dict(
