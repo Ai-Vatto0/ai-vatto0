@@ -13,7 +13,7 @@
 
 ### Offene Punkte
 - [ ] Neo 2: Link/Screenshot des verlinkten Shop-Artikels (Variante → Product Match)
-- [ ] Neo 2: Feedback zu den 5 Videos, danach weitere Serie
+- [ ] Neo 2: 20 Videos posten (Plan in export/neo2/POSTING.md), nach 3 Tagen Sekunde-6-Werte auswerten
 - [ ] TikTok-Compliance-Zusammenfassung von Vatto einlesen → `memory/regeln/tiktok-compliance.md`
 - [ ] `02_LYRA_ADS_MASTER_V4.1.txt`, `03_COMPLIANCE_V4.0`, `04_LEARNING_V4.0` nachladen
 - [ ] Erster Remotion-Schnitt mit echtem Clip (Faruks Ablauf: Schnittplan → Freigabe → Vorschau → Frame-QA)
@@ -25,6 +25,20 @@
 ---
 
 ## SESSION-LOG
+
+### 2026-09-29 – DJI Neo 2: Runde 2 – 15 weitere Videos (insgesamt 20)
+
+- Vatto: „gute Arbeit“, will so viele Videos wie möglich (~20), mehr Skript, Fotos mit Zoom,
+  **Gesicht zeigen ist ok**, **Drohne-trifft-Drohne-Clips (app_*) ausdrücklich freigegeben**, mehr Hügel.
+- 15 neue Skripte (v06–v20), jedes eigener Hook/Einstieg/Ablauf gegen Massenvarianten-Drosselung:
+  3 Gründe · Drohnen-Date · Speed-Unboxing · Ein Knopf (Dronie) · Hausberg · Wald · Feierabend · Akku leer ·
+  Modi · Hochformat · Gesten · Von oben · Joysticks · Ich gegen die Drohne · Auspacken und losfliegen.
+- Neu im Generator: Breitbild-Layout `w_*` (4:3 mittig, unscharfer Rand) für 720p-/Weitwinkel-Clips,
+  `batch.sh` (Render → Final → Chat → Roh löschen), `pair_qa.py`. Ca. 3 min pro Video.
+- QA-Funde und Fixes: Hook über Plakat-Schrift (v06), zu lange Zeilen (v09, v11, v16), Passanten/Kind im
+  Hintergrund (v10, v19), DJI-Tutorial mit fremder Person in App-Aufnahme (v14), Standbild 1,7 s (v18).
+- Posting-Paket: `export/neo2/POSTING.md` (Captions, Reihenfolge, Regeln). Ein Foto = DJI-Plakat
+  (file_png) – als Shop-/Herstellerbild wie bei Faruk genutzt, Hinweis an Vatto.
 
 ### 2026-09-29 – DJI Neo 2: 5 Werbevideos aus Eigenmaterial (HyperFrames)
 

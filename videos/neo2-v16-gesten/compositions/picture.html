@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template id="picture">
+      <style>
+#pic { position: absolute; inset: 0; overflow: hidden; background: #000; }
+.shot { position: absolute; inset: 0; overflow: hidden; }
+.inner { position: absolute; inset: 0; transform-origin: 50% 50%; will-change: transform; }
+.shot video { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; }
+.photo .bg { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; }
+.photo .fg { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: contain; }
+.photo.fill .fg { object-fit: cover; }
+.flash { position: absolute; inset: 0; background: #fff; opacity: 0; }
+</style>
+      <div id="pic" data-composition-id="picture" data-start="0" data-duration="15.0333" data-width="1080" data-height="1920">
+        <div class="shot" id="pic-s1"><div class="inner" id="pic-s1-in" data-layout-allow-overflow><video id="pic-s1-v" class="clip" src="assets/n_palm.mp4" data-start="0.0" data-duration="1.2667" data-media-start="0.2" data-track-index="0" muted playsinline></video></div></div>
+        <div class="shot" id="pic-s2"><div class="inner" id="pic-s2-in" data-layout-allow-overflow><video id="pic-s2-v" class="clip" src="assets/n_gesture5.mp4" data-start="1.2667" data-duration="2.0666" data-media-start="6.0" data-track-index="0" muted playsinline></video></div></div>
+        <div class="shot" id="pic-s3"><div class="inner" id="pic-s3-in" data-layout-allow-overflow><video id="pic-s3-v" class="clip" src="assets/n_gesture5.mp4" data-start="3.3333" data-duration="1.6667" data-media-start="12.0" data-track-index="0" muted playsinline></video></div></div>
+        <div class="shot" id="pic-s4"><div class="inner" id="pic-s4-in" data-layout-allow-overflow><video id="pic-s4-v" class="clip" src="assets/n_gesture.mp4" data-start="5.0" data-duration="2.1" data-media-start="3.0" data-track-index="0" muted playsinline></video></div></div>
+        <div class="shot" id="pic-s5"><div class="inner" id="pic-s5-in" data-layout-allow-overflow><video id="pic-s5-v" class="clip" src="assets/n_gesture.mp4" data-start="7.1" data-duration="1.6667" data-media-start="7.5" data-track-index="0" muted playsinline></video></div></div>
+        <div class="shot" id="pic-s6"><div class="inner" id="pic-s6-in" data-layout-allow-overflow><video id="pic-s6-v" class="clip" src="assets/n_wave.mp4" data-start="8.7667" data-duration="1.6666" data-media-start="0.3" data-track-index="0" muted playsinline></video></div></div>
+        <div class="shot" id="pic-s7"><div class="inner" id="pic-s7-in" data-layout-allow-overflow><video id="pic-s7-v" class="clip" src="assets/n_launch_sky.mp4" data-start="10.4333" data-duration="1.2667" data-media-start="0.3" data-track-index="0" muted playsinline></video></div></div>
+        <div class="shot photo fill clip" id="pic-s8" data-start="11.7" data-duration="3.3333" data-track-index="0"><div class="inner" id="pic-s8-in" data-layout-allow-overflow><img class="fg" src="assets/p_dji_poster.jpg" alt="DJI Neo 2" /></div></div>
+        <div class="flash clip" id="pic-f1" data-start="10.4333" data-duration="0.2" data-track-index="1"></div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#pic-s1-in", { scale: 1.0, x: 0, y: 0 }, { scale: 1.05, x: 0, y: 0, duration: 1.2667, ease: "none" }, 0.0);
+        tl.fromTo("#pic-s2-in", { scale: 1.0, x: 0, y: 0 }, { scale: 1.05, x: 0, y: 0, duration: 2.0666, ease: "none" }, 1.2667);
+        tl.fromTo("#pic-s3-in", { scale: 1.0, x: 0, y: 0 }, { scale: 1.05, x: 0, y: 0, duration: 1.6667, ease: "none" }, 3.3333);
+        tl.fromTo("#pic-s4-in", { scale: 1.0, x: 0, y: 0 }, { scale: 1.05, x: 0, y: 0, duration: 2.1, ease: "none" }, 5.0);
+        tl.fromTo("#pic-s5-in", { scale: 1.0, x: 0, y: 0 }, { scale: 1.05, x: 0, y: 0, duration: 1.6667, ease: "none" }, 7.1);
+        tl.fromTo("#pic-s6-in", { scale: 1.0, x: 0, y: 0 }, { scale: 1.05, x: 0, y: 0, duration: 1.6666, ease: "none" }, 8.7667);
+        tl.fromTo("#pic-s7-in", { scale: 1.0, x: 0, y: 0 }, { scale: 1.05, x: 0, y: 0, duration: 1.2667, ease: "none" }, 10.4333);
+        tl.fromTo("#pic-s8-in", { scale: 1.12, x: 0, y: 0 }, { scale: 1.0, x: 0, y: 0, duration: 3.3333, ease: "none" }, 11.7);
+        tl.fromTo("#pic-f1", { opacity: 0.75 }, { opacity: 0, duration: 0.12, ease: "power2.out" }, 10.4333);
+        window.__timelines["picture"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

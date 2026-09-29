@@ -34,6 +34,29 @@ CLIPS = [
     ("n_phone_cam", "LHAJ4878_seg2.MP4", 0, 12.7, "scr", 200),
     ("n_app_manual", "LHAJ4878_seg3.MP4", 2, 11.4, "scr", 229),
     ("n_akku", "LHAJ4878_seg4.MP4", 0, 31.7, "scr", 229),
+    # Runde 2 (Vatto 29.09.: mehr Videos, Gesicht ok, Drohne-trifft-Drohne ok)
+    ("w_bridge", "DJI_0011.MP4", 0, 16.5, "w", .5),
+    ("w_dd1", "app_full.mp4", 10.5, 15, "w", .5),
+    ("w_dd2", "app_full.mp4", 25, 20, "w", .5),
+    ("w_dd_pilots", "app_full.mp4", 50.5, 14.9, "w", .5),
+    ("w_reveal42", "DJI_0042.MP4", 0, 13.8, "w", .5),
+    ("w_reveal41", "DJI_0041.MP4", 0, 11.5, "w", .5),
+    ("w_hill_s1", "DJI_0021_seg1.MP4", 0, 9.2, "w", .5),
+    ("w_hill_s2", "DJI_0021_seg2.MP4", 0, 11.5, "w", .5),
+    ("n_hill_s1", "DJI_0021_seg1.MP4", 0, 9.2, "h", .5),
+    ("n_hill_s4", "DJI_0021_seg4.MP4", 0, 11.3, "h", .5),
+    ("n_forest_s3", "DJI_0012_seg3.MP4", 1.8, 8, "h", .5),
+    ("n_forest_s4", "DJI_0012_seg4.MP4", 0, 5.3, "h", .5),
+    ("n_forest_s6", "DJI_0012_seg6.MP4", 0, 6.9, "h", .5),
+    ("n_forest_s7", "DJI_0012_seg7.MP4", 0, 14, "h", .5),
+    ("n_side1", "DJI_0001_seg1.MP4", 2.0, 3.1, "h", .5),
+    ("n_side3", "DJI_0001_seg3.MP4", 0, 6.5, "h", .5),
+    ("n_gesture5", "DJI_0006_seg5.MP4", 0, 15.7, "h", .55),
+    ("n_top_descend", "DJI_0009.MP4", 0, 10.8, "h", .5),
+    ("n_vert_bridge", "DJI_0032_seg4.MP4", 0, 19.9, "p", 0),
+    ("n_vert_bridge2", "DJI_0032_seg5.MP4", 0, 12.5, "p", 0),
+    ("n_vert_grass", "DJI_0036_seg2.MP4", 0, 12.2, "p", 0),
+    ("n_export", "DMLP7517_cut.MP4", 0, 17, "scr", 229),
 ]
 
 def run(c):
@@ -44,10 +67,16 @@ def run(c):
         vf = "scale=1080:1920:flags=lanczos"
     elif art == "hlg":
         vf = HDR + ",scale=1080:1920:flags=lanczos"
+    elif art == "w":
+        # Breitbild-Layout: 4:3-Ausschnitt mittig, oben/unten unscharfe Kopie
+        vf = None
+        fc = (f"[0:v]split[a][b];[a]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,"
+              f"gblur=sigma=40,eq=brightness=-0.15[bg];[b]crop='ih*4/3':ih:'min(max(iw*{p}-ih*2/3,0),iw-ih*4/3)':0,"
+              f"scale=1080:810:flags=lanczos[fg];[bg][fg]overlay=0:(H-h)/2-60,fps=30,format=yuv420p")
     else:
         vf = f"crop=1180:2098:0:{p},scale=1080:1920:flags=lanczos"
-    vf += ",fps=30,format=yuv420p"
-    cmd = ["ffmpeg", "-v", "error", "-y", "-ss", str(ss), "-i", SRC + f, "-t", str(dur), "-vf", vf, "-an",
+    filt = ["-filter_complex", fc] if vf is None else ["-vf", vf + ",fps=30,format=yuv420p"]
+    cmd = ["ffmpeg", "-v", "error", "-y", "-ss", str(ss), "-i", SRC + f, "-t", str(dur), *filt, "-an",
            "-c:v", "libx264", "-crf", "16", "-preset", "fast", "-g", "15", OUT + name + ".mp4"]
     r = subprocess.run(cmd, capture_output=True, text=True)
     return name, r.returncode, r.stderr[-300:]

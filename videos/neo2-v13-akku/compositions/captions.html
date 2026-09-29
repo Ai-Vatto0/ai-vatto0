@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template id="captions">
+      <style>
+@font-face { font-family: "Poppins"; src: url("assets/fonts/Poppins-Bold.ttf") format("truetype"); font-weight: 700; font-style: normal; }
+#cap { position: absolute; inset: 0; overflow: hidden; }
+.cap { position: absolute; left: 60px; width: 880px; display: flex; justify-content: center; }
+.cap-in { display: flex; flex-direction: column; align-items: center; gap: 0px; will-change: transform, opacity; }
+.line { display: block; font-family: "Poppins"; font-weight: 700; line-height: 1.08; color: #FFFFFF; text-align: center;
+  white-space: nowrap; letter-spacing: -0.01em; -webkit-text-stroke: var(--sw) #000000; paint-order: stroke fill;
+  text-shadow: 0 6px 18px rgba(0, 0, 0, 0.45); }
+.line .a { color: #FFD400; }
+.line .n { display: inline-block; min-width: 1.05em; margin-right: 0.28em; padding: 0 0.16em; border-radius: 0.18em;
+  background: #FFD400; color: #000000; -webkit-text-stroke: 0; text-shadow: none; text-align: center; }
+.bubble { position: absolute; }
+.bubble-in { position: relative; background: #fff; color: #111; font-family: "Poppins"; font-weight: 700;
+  border-radius: 34px; padding: 18px 30px 20px; line-height: 1.12; text-align: left; white-space: nowrap;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35); will-change: transform, opacity; transform-origin: var(--ox) 100%; }
+.bubble-in .a { color: #D9A900; }
+.bubble-in::after { content: ""; position: absolute; bottom: -26px; left: var(--tail); width: 0; height: 0;
+  border-left: 18px solid transparent; border-right: 18px solid transparent; border-top: 30px solid #fff; }
+.bubble-in.up::after { bottom: auto; top: -26px; border-top: 0; border-bottom: 30px solid #fff; }
+.arrow { position: absolute; left: 80px; width: 150px; height: 150px; }
+.arrow-in { width: 150px; height: 150px; }
+</style>
+      <div id="cap" data-composition-id="captions" data-start="0" data-duration="15.8667" data-width="1080" data-height="1920">
+        <div class="cap clip" id="cap-t1" data-start="0.0" data-duration="1.2667" data-track-index="1" style="top:230px"><div class="cap-in" id="cap-t1-in"><div class="line" style="font-size:100px;--sw:9px">AKKU LEER</div><div class="line" style="font-size:100px;--sw:9px"><span class="a">MITTEN</span> <span class="a">IM</span> <span class="a">FLUG?</span></div></div></div>
+        <div class="cap clip" id="cap-t2" data-start="1.2667" data-duration="1.6666" data-track-index="1" style="top:190px"><div class="cap-in" id="cap-t2-in"><div class="line" style="font-size:116px;--sw:10px">ICH HAB&#x27;S</div><div class="line" style="font-size:116px;--sw:10px"><span class="a">AUSPROBIERT.</span></div></div></div>
+        <div class="cap clip" id="cap-t3" data-start="2.9333" data-duration="1.6667" data-track-index="1" style="top:190px"><div class="cap-in" id="cap-t3-in"><div class="line" style="font-size:112px;--sw:10px">ERST</div><div class="line" style="font-size:112px;--sw:10px"><span class="a">DIE</span> <span class="a">WARNUNG.</span></div></div></div>
+        <div class="cap clip" id="cap-t4" data-start="4.6" data-duration="2.1" data-track-index="1" style="top:190px"><div class="cap-in" id="cap-t4-in"><div class="line" style="font-size:130px;--sw:12px">DANN</div><div class="line" style="font-size:130px;--sw:12px"><span class="a">DIE</span> <span class="a">FRAGE.</span></div></div></div>
+        <div class="cap clip" id="cap-t5" data-start="6.7" data-duration="2.0667" data-track-index="1" style="top:190px"><div class="cap-in" id="cap-t5-in"><div class="line" style="font-size:106px;--sw:10px">SIE</div><div class="line" style="font-size:106px;--sw:10px"><span class="a">FLIEGT</span> <span class="a">ZURÜCK.</span></div></div></div>
+        <div class="cap clip" id="cap-t6" data-start="8.7667" data-duration="2.1" data-track-index="1" style="top:190px"><div class="cap-in" id="cap-t6-in"><div class="line" style="font-size:140px;--sw:13px">UND</div><div class="line" style="font-size:140px;--sw:13px"><span class="a">LANDET.</span></div></div></div>
+        <div class="cap clip" id="cap-t7" data-start="10.8667" data-duration="1.6666" data-track-index="1" style="top:230px"><div class="cap-in" id="cap-t7-in"><div class="line" style="font-size:102px;--sw:9px">BIS ZU</div><div class="line" style="font-size:102px;--sw:9px"><span class="a">19</span> <span class="a">MIN</span> <span class="a">FLUGZEIT.</span></div></div></div>
+        <div class="cap clip" id="cap-t8" data-start="12.6333" data-duration="3.2334" data-track-index="1" style="top:1000px"><div class="cap-in" id="cap-t8-in"><div class="line" style="font-size:120px;--sw:11px"><span class="a">JETZT</span> <span class="a">IM</span></div><div class="line" style="font-size:120px;--sw:11px"><span class="a">TIKTOK</span> <span class="a">SHOP.</span></div></div></div>
+        <div class="arrow clip" id="cap-t8-arrow" data-start="12.8333" data-duration="3.0334" style="top:1300px" data-track-index="3"><div class="arrow-in" id="cap-t8-arrow-in"><svg viewBox="0 0 100 100" width="150" height="150" aria-hidden="true"><path d="M78 14 L28 70 M22 36 L24 76 L62 80" fill="none" stroke="#000000" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/><path d="M78 14 L28 70 M22 36 L24 76 L62 80" fill="none" stroke="#FFD400" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#cap-t1-in", { scale: 1.12 }, { scale: 1, duration: 0.2, ease: "power3.out" }, 0);
+        tl.to("#cap-t1-in", { opacity: 0, duration: 0.12, ease: "power1.in" }, 1.1467);
+        tl.fromTo("#cap-t2-in", { opacity: 0, scale: 0.8, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.2, ease: "power3.out" }, 1.2667);
+        tl.to("#cap-t2-in", { opacity: 0, duration: 0.12, ease: "power1.in" }, 2.8133);
+        tl.fromTo("#cap-t3-in", { opacity: 0, scale: 0.8, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.2, ease: "power3.out" }, 2.9333);
+        tl.to("#cap-t3-in", { opacity: 0, duration: 0.12, ease: "power1.in" }, 4.48);
+        tl.fromTo("#cap-t4-in", { opacity: 0, scale: 0.8, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.2, ease: "power3.out" }, 4.6);
+        tl.to("#cap-t4-in", { opacity: 0, duration: 0.12, ease: "power1.in" }, 6.58);
+        tl.fromTo("#cap-t5-in", { opacity: 0, scale: 0.8, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.2, ease: "power3.out" }, 6.7);
+        tl.to("#cap-t5-in", { opacity: 0, duration: 0.12, ease: "power1.in" }, 8.6467);
+        tl.fromTo("#cap-t6-in", { opacity: 0, scale: 0.8, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.2, ease: "power3.out" }, 8.7667);
+        tl.to("#cap-t6-in", { opacity: 0, duration: 0.12, ease: "power1.in" }, 10.7467);
+        tl.fromTo("#cap-t7-in", { opacity: 0, scale: 0.8, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.2, ease: "power3.out" }, 10.8667);
+        tl.to("#cap-t7-in", { opacity: 0, duration: 0.12, ease: "power1.in" }, 12.4133);
+        tl.fromTo("#cap-t8-in", { opacity: 0, scale: 0.8, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.2, ease: "power3.out" }, 12.6333);
+        tl.fromTo("#cap-t8-arrow-in", { opacity: 0, x: 40, y: -40 }, { opacity: 1, x: 0, y: 0, duration: 0.3, ease: "power3.out" }, 12.8333);
+        window.__timelines["captions"] = tl;
+      </script>
+    </template>
+  </body>
+</html>
