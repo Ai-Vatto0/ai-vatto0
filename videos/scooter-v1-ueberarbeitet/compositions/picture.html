@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <template id="picture">
+      <style>
+#pic { position: absolute; inset: 0; overflow: hidden; background: #0d0b07; }
+.shot { position: absolute; inset: 0; overflow: hidden; }
+.inner { position: absolute; inset: 0; transform-origin: 50% 50%; will-change: transform; }
+.shot video { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; }
+.photo .bg { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; }
+.photo .fg { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: contain; }
+</style>
+      <div data-hf-id="hf-t7co" id="pic" data-composition-id="picture" data-start="0" data-duration="20.9" data-width="1080" data-height="1920">
+        <div data-hf-id="hf-s0kj" class="shot" id="pic-s1"><div data-hf-id="hf-my4q" class="inner" id="pic-s1-in" data-layout-allow-overflow=""><video data-hf-id="hf-p7he" id="pic-s1-v" class="clip" src="assets/m01_bruecke_fahrt.mp4" data-start="0.0" data-duration="2.5" data-media-start="0.5" data-track-index="0" muted playsinline></video></div></div>
+        <div data-hf-id="hf-o0ao" class="shot photo clip" id="pic-s2" data-start="2.5" data-duration="2.5" data-track-index="0"><img data-hf-id="hf-hne4" class="bg" src="assets/p11_ganz_front_bg.jpg" alt=""><div data-hf-id="hf-s8m3" class="inner" id="pic-s2-in" data-layout-allow-overflow=""><img data-hf-id="hf-5l4d" class="fg" src="assets/p11_ganz_front.jpg" alt="Scooter"></div></div>
+        <div data-hf-id="hf-hwqp" class="shot" id="pic-s3"><div data-hf-id="hf-jf34" class="inner" id="pic-s3-in" data-layout-allow-overflow=""><video data-hf-id="hf-mxhs" id="pic-s3-v" class="clip" src="assets/m07_details_0208.mp4" data-start="5.0" data-duration="2.5333" data-media-start="7.2" data-track-index="0" muted playsinline></video></div></div>
+        <div data-hf-id="hf-98uu" class="shot" id="pic-s4"><div data-hf-id="hf-kkvl" class="inner" id="pic-s4-in" data-layout-allow-overflow=""><video data-hf-id="hf-vbx4" id="pic-s4-v" class="clip" src="assets/m07_details_0208.mp4" data-start="7.5333" data-duration="2.5" data-media-start="12.6" data-track-index="0" muted playsinline></video></div></div>
+        <div data-hf-id="hf-d6yv" class="shot" id="pic-s5"><div data-hf-id="hf-o59q" class="inner" id="pic-s5-in" data-layout-allow-overflow=""><video data-hf-id="hf-8acb" id="pic-s5-v" class="clip" src="assets/m08_display_9412.mp4" data-start="10.0333" data-duration="2.5" data-media-start="3.4" data-track-index="0" muted playsinline></video></div></div>
+        <div data-hf-id="hf-4j30" class="shot" id="pic-s6"><div data-hf-id="hf-ief3" class="inner" id="pic-s6-in" data-layout-allow-overflow=""><video data-hf-id="hf-7uwu" id="pic-s6-v" class="clip" src="assets/m03_strasse_drohne.mp4" data-start="12.5333" data-duration="2.5" data-media-start="4.0" data-track-index="0" muted playsinline></video></div></div>
+        <div data-hf-id="hf-5aqt" class="shot" id="pic-s7"><div data-hf-id="hf-z1pw" class="inner" id="pic-s7-in" data-layout-allow-overflow=""><video data-hf-id="hf-u8h6" id="pic-s7-v" class="clip" src="assets/m09_kurve_ganz.mp4" data-start="15.0333" data-duration="2.5334" data-media-start="0.5" data-track-index="0" muted playsinline></video></div></div>
+        <div data-hf-id="hf-y78p" class="shot photo clip" id="pic-s8" data-start="17.5667" data-duration="3.3333" data-track-index="0"><img data-hf-id="hf-egjc" class="bg" src="assets/p12_ganz_seite_bg.jpg" alt=""><div data-hf-id="hf-aw6t" class="inner" id="pic-s8-in" data-layout-allow-overflow=""><img data-hf-id="hf-wg9h" class="fg" src="assets/p12_ganz_seite.jpg" alt="Scooter"></div></div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#pic-s1-in", { scale: 1.22 }, { scale: 1.0, duration: 0.45, ease: "power3.out" }, 0.0);
+        tl.fromTo("#pic-s1-in", { scale: 1.0 }, { scale: 1.05, duration: 2.05, ease: "none", immediateRender: false }, 0.45);
+        tl.fromTo("#pic-s2-in", { scale: 1.0, y: 0 }, { scale: 1.04, y: 0, duration: 2.5, ease: "none" }, 2.5);
+        tl.fromTo("#pic-s3-in", { scale: 1.04, y: 0 }, { scale: 1.1, y: 0, duration: 2.5333, ease: "none" }, 5.0);
+        tl.fromTo("#pic-s4-in", { scale: 1.0, y: 0 }, { scale: 1.06, y: 0, duration: 2.5, ease: "none" }, 7.5333);
+        tl.fromTo("#pic-s5-in", { scale: 1.0, y: 0 }, { scale: 1.07, y: 0, duration: 2.5, ease: "none" }, 10.0333);
+        tl.fromTo("#pic-s6-in", { scale: 1.0, y: 0 }, { scale: 1.04, y: 0, duration: 2.5, ease: "none" }, 12.5333);
+        tl.fromTo("#pic-s7-in", { scale: 1.0, y: 0 }, { scale: 1.05, y: 0, duration: 2.5334, ease: "none" }, 15.0333);
+        tl.fromTo("#pic-s8-in", { scale: 0.76, y: 190 }, { scale: 0.8, y: 190, duration: 3.3333, ease: "none" }, 17.5667);
+        window.__timelines["picture"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

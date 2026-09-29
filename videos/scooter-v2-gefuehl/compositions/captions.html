@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template id="captions">
+      <style>
+@font-face { font-family: "Permanent Marker"; src: url("assets/fonts/PermanentMarker.ttf") format("truetype"); font-weight: 400; font-style: normal; }
+#cap { position: absolute; inset: 0; overflow: hidden; }
+.cap { position: absolute; left: 60px; width: 880px; display: flex; justify-content: center; transform: rotate(-2deg); }
+.cap-in { display: flex; flex-direction: column; align-items: center; gap: 4px; will-change: transform, opacity; }
+.line { display: block; font-family: "Permanent Marker"; line-height: 1.04; color: #FFF7E8; text-align: center;
+  white-space: nowrap; letter-spacing: 0.01em; -webkit-text-stroke: var(--sw) #140F05; paint-order: stroke fill;
+  text-shadow: 0 10px 0 rgba(12, 9, 3, 0.55); }
+.line .a { color: #FFD400; }
+.line .n { display: inline-block; min-width: 1.05em; margin-right: 0.28em; padding: 0 0.16em; border-radius: 0.18em;
+  background: #FFD400; color: #140F05; -webkit-text-stroke: 0; text-shadow: none; text-align: center; }
+.arrow { position: absolute; left: 80px; width: 150px; height: 150px; }
+.arrow-in { width: 150px; height: 150px; }
+</style>
+      <div id="cap" data-composition-id="captions" data-start="0" data-duration="19.2333" data-width="1080" data-height="1920">
+        <div class="cap clip" id="cap-t1" data-start="0.0" data-duration="3.3333" data-track-index="1" style="top:250px"><div class="cap-in" id="cap-t1-in"><div class="line" style="font-size:94px;--sw:10px">FEIERABEND.</div><div class="line" style="font-size:94px;--sw:10px"><span class="a">AB</span> <span class="a">IN</span> <span class="a">DEN</span> <span class="a">WALD.</span></div></div></div>
+        <div class="cap clip" id="cap-t2" data-start="6.7667" data-duration="2.4333" data-track-index="1" style="top:250px"><div class="cap-in" id="cap-t2-in"><div class="line" style="font-size:132px;--sw:15px">EINFACH</div><div class="line" style="font-size:132px;--sw:15px"><span class="a">LOSFAHREN.</span></div></div></div>
+        <div class="cap clip" id="cap-t3" data-start="12.2" data-duration="2.4333" data-track-index="1" style="top:250px"><div class="cap-in" id="cap-t3-in"><div class="line" style="font-size:170px;--sw:19px">DEIN</div><div class="line" style="font-size:170px;--sw:19px"><span class="a">WEG.</span></div></div></div>
+        <div class="cap clip" id="cap-t4" data-start="16.8" data-duration="2.4333" data-track-index="1" style="top:175px"><div class="cap-in" id="cap-t4-in"><div class="line" style="font-size:112px;--sw:12px"><span class="a">JETZT</span> <span class="a">IM</span></div><div class="line" style="font-size:112px;--sw:12px"><span class="a">TIKTOK</span> <span class="a">SHOP.</span></div></div></div>
+        <div class="arrow clip" id="cap-t4-arrow" data-start="17.0" data-duration="2.2333" style="top:475px" data-track-index="2"><div class="arrow-in" id="cap-t4-arrow-in"><svg viewBox="0 0 100 100" width="150" height="150" aria-hidden="true"><path d="M78 14 L28 70 M22 36 L24 76 L62 80" fill="none" stroke="#140F05" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/><path d="M78 14 L28 70 M22 36 L24 76 L62 80" fill="none" stroke="#FFD400" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#cap-t1-in", { opacity: 0, scale: 0.86, y: 24 }, { opacity: 1, scale: 1, y: 0, duration: 0.25, ease: "power3.out" }, 0.0);
+        tl.to("#cap-t1-in", { opacity: 0, duration: 0.15, ease: "power1.in" }, 3.1833);
+        tl.fromTo("#cap-t2-in", { opacity: 0, scale: 0.86, y: 24 }, { opacity: 1, scale: 1, y: 0, duration: 0.25, ease: "power3.out" }, 6.7667);
+        tl.to("#cap-t2-in", { opacity: 0, duration: 0.15, ease: "power1.in" }, 9.05);
+        tl.fromTo("#cap-t3-in", { opacity: 0, scale: 0.86, y: 24 }, { opacity: 1, scale: 1, y: 0, duration: 0.25, ease: "power3.out" }, 12.2);
+        tl.to("#cap-t3-in", { opacity: 0, duration: 0.15, ease: "power1.in" }, 14.4833);
+        tl.fromTo("#cap-t4-in", { opacity: 0, scale: 0.86, y: 24 }, { opacity: 1, scale: 1, y: 0, duration: 0.25, ease: "power3.out" }, 16.8);
+        tl.fromTo("#cap-t4-arrow-in", { opacity: 0, x: 40, y: -40 }, { opacity: 1, x: 0, y: 0, duration: 0.3, ease: "power3.out" }, 17.0);
+        window.__timelines["captions"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

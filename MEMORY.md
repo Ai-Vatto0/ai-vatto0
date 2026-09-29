@@ -24,6 +24,22 @@ erster echter Schnitt mit Vattos Material, danach KI-Anbieter anbinden.
 
 ## SESSION-LOG
 
+### 2026-09-29 – HyperFrames installiert, 3 Scooter-Videos gerendert
+
+- **HyperFrames** (heygen-com/hyperframes, CLI 0.8.86) per `npx skills add` projektweit installiert
+  (`.agents/skills/`, Symlinks in `.claude/skills/`). Skripte geprüft: nur ffmpeg/Aufräumen, kein Nachladen.
+  Telemetrie **abgeschaltet** (`npx hyperframes telemetry disable`). Render-Chrome per `browser ensure`.
+- Cloud-Stolpersteine: jsdelivr gesperrt → GSAP lokal (`assets/vendor/gsap.min.js`); Asset-Pfade in
+  Unter-Kompositionen **root-relativ** (`assets/…`, nicht `../assets/`), sonst Lint-Fehler.
+- Aufteilung: `tools/hyperframes-scooter/mezzanine.py` (HDR→SDR, 9:16-Ausschnitt, dem Fahrer folgend) →
+  `build.py` erzeugt pro Video `index.html` + `compositions/picture.html` + `captions.html` →
+  HyperFrames check (alle grün) → render (beginframe, ~2 min/Video) → stille AAC-Spur → `export/`.
+- Ergebnis: `export/video1_ueberarbeitet.mp4` (20,9 s), `video2_gefuehl.mp4` (19,2 s), `video3_proof.mp4` (20,5 s).
+  Eine Akzentfarbe #FFD400, Permanent Marker, Text-Pop 0,25 s, keine Dauerbewegung, Schnitt 144 BPM.
+- Waldfahrt von hinten existiert echt (DJI_0029) → kein KI-Ersatz nötig.
+- Speicher-Falle: ganze Einstellungen als Rohframes puffern → „No space left" → Export jetzt Bild für Bild.
+- Sicherung vor dem Umbau: `backup_2026-09-29/` (gitignored, nur lokal in der Session).
+
 ### 2026-09-28 – Scooter FUE V10: 3 Echt-Videos geschnitten
 
 - Material über Google-Drive-Freigabe geladen (Netzwerkliste: `drive.google.com`,
