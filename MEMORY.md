@@ -12,6 +12,7 @@
 (HyperFrames). 5 Videos gebaut, Generator `tools/hyperframes-neo2/`, Faktenblatt `memory/projekte/dji-neo-2.md`.
 
 ### Offene Punkte
+- [ ] **Repo `Ai-Vatto0/ai-vatto0` ist öffentlich** → Vatto stellt es auf privat (Gesichter in Historie, E-Mail in Gedächtnis)
 - [ ] Neo 2: Link/Screenshot des verlinkten Shop-Artikels (Variante → Product Match)
 - [ ] Neo 2: 20 Videos posten (Plan in export/neo2/POSTING.md), nach 3 Tagen Sekunde-6-Werte auswerten
 - [ ] TikTok-Compliance-Zusammenfassung von Vatto einlesen → `memory/regeln/tiktok-compliance.md`
@@ -25,6 +26,16 @@
 ---
 
 ## SESSION-LOG
+
+### 2026-09-29 – Neo 2: Lieferung in hoher Qualität
+
+- Chat-Upload-Grenze 30 MB → `tools/hyperframes-neo2/hq.sh`: Original, wenn < 29 MB, sonst H.265 2-Pass ~28,5 MB
+  (hvc1, iPhone/TikTok-tauglich). Alle 20 geprüft (Dauer gleich, SSIM 0,990–0,997 in Handygröße) und geliefert.
+- Drive-Upload über Connector geht nicht (base64 durch den Chat), GitHub scheidet aus: **Repo ist öffentlich.**
+- Prüf-Standbilder mit Gesichtern aus dem Repo genommen und ignoriert; in der Historie noch vorhanden →
+  Empfehlung an Vatto: Repo auf privat stellen.
+- Stolpersteine: x265-2-Pass braucht eigene `stats=`-Datei je Lauf (sonst zerschießen sich parallele Läufe);
+  Chat-Upload und GitHub hatten zeitweise Serverfehler (500/503) – nach Wartezeit ging beides.
 
 ### 2026-09-29 – DJI Neo 2: Runde 2 – 15 weitere Videos (insgesamt 20)
 
