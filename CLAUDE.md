@@ -14,6 +14,44 @@ Arbeitsschwerpunkt.
 
 ---
 
+## 🧭 MODELL-ROUTING (Anweisung Vatto, 29.09.2026)
+
+**Hauptagent = Opus 5.5.** Er plant, entscheidet, prüft und liefert ab.
+Einfache Arbeit geht an günstigere Helfer – das ist Vattos ausdrücklicher Wunsch,
+aber nur, wenn es wirklich Tokens spart.
+
+### Opus-Pflicht – macht der Hauptagent selbst, nie Haiku/Sonnet
+- Videoschnitt, Rendern, Frame-/Video-QA, Sichtprüfung von Bildern, Screenshots, Clips
+- Alles aus Skill `tiktok-video-maschine` und `memory/regeln/video-schnitt-workflow.md`
+- Bild-, Video-, Audio-Prompts, Hooks, Werbetexte, Voiceover-Skripte
+- TikTok-Compliance-Prüfung und jede Freigabe vor Render oder Posting
+- Kostenpflichtige Generierungen (KIE, fal, Yapper, Higgsfield)
+- Architektur, schwieriges Debugging, Endabnahme aller Helfer-Ergebnisse
+
+Muss hier ausnahmsweise ein Subagent ran: explizit `model: "opus"`.
+
+### Günstige Helfer (`.claude/agents/custom/`)
+| Helfer | Modell | Wofür |
+|---|---|---|
+| `schnell-helfer` | Haiku | Dateien finden, suchen, zusammenfassen, formatieren, Wiederhol-Edits nach klarem Muster, einfache Checks |
+| `standard-coder` | Sonnet | normales Coden, Bugfix, Refactoring, Repo-Analyse, Tests |
+
+### Regeln
+1. **Kleinkram direkt machen** (bekannte Datei lesen, eine Zeile ändern): ein Helfer
+   startet ohne Kontext und liest alles neu – das kostet oft mehr, als er spart.
+   Delegieren lohnt sich bei breiter Suche (viele Dateien), großem Output oder
+   abgegrenzter Coding-Arbeit.
+2. Jeder `Agent`-Aufruf bekommt ein explizites Modell. Ohne Angabe gilt Sonnet
+   (`CLAUDE_CODE_SUBAGENT_MODEL` in `.claude/settings.json`) – nie still Opus.
+3. Unabhängige Helfer parallel starten.
+4. Eskalation: Helfer unsicher, Ergebnis lückenhaft oder zweimal gescheitert →
+   eine Stufe höher (Haiku → Sonnet → Hauptagent).
+5. Hauptagent prüft jedes Helfer-Ergebnis vor Übernahme (Diff lesen, Test, Stichprobe).
+6. Der claude-flow-Hinweis „Agent: coder" beim Prompt ist nur ein Vorschlag –
+   das Modell wählt der Hauptagent nach dieser Tabelle.
+
+---
+
 ## Projektübersicht
 KI-basierte Mobile App für konsistente Charakter-Erstellung und Story-Video-Generierung.
 Plattform: React Native (Expo) + Node.js Backend + Kie.ai API

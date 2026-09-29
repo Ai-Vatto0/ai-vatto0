@@ -24,6 +24,16 @@ erster echter Schnitt mit Vattos Material, danach KI-Anbieter anbinden.
 
 ## SESSION-LOG
 
+### 2026-09-29 – Modell-Routing eingerichtet
+
+- Vatto will mit Opus 5.5 arbeiten, einfache Aufgaben aber an günstigere Modelle abgeben.
+  Video (Schnitt, QA, Prüfung), Prompts, Creative, Compliance bleiben bei Opus.
+- Regeln in `CLAUDE.md` → Abschnitt „MODELL-ROUTING".
+- Helfer angelegt: `.claude/agents/custom/schnell-helfer.md` (Haiku),
+  `standard-coder.md` (Sonnet). Aktiv ab der nächsten Session.
+- `.claude/settings.json`: `model: claude-opus-5-5`, `CLAUDE_CODE_SUBAGENT_MODEL=sonnet`
+  (Subagenten ohne Modellangabe laufen damit nie still auf Opus). Windows-Vorlage angepasst.
+
 ### 2026-09-27 – Einrichtung vereinfacht
 
 - Vatto ist Einsteiger und will nur reinkopieren → alles Automatisierbare automatisiert.
