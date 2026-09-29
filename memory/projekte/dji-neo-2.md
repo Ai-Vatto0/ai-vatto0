@@ -97,3 +97,26 @@ Clip raus oder NICHT POSTEN. → Vatto liefert Link/Screenshot des Shop-Artikels
 - hiredronepilot.uk (Akku-RTH-Logik, Flughöhe)
 - drohnen.de, drohnen-versicherung.info (C0, LBA, Versicherung)
 - heise/geizhals Preisvergleich, PC Games Hardware (Preise)
+
+## 8. MATERIAL (Drive-Ordner „Drohne“, gesichtet 29.09.2026)
+
+Download nur als Kopie nach `/home/user/drohne/src` (Link-Freigabe durch Vatto nötig, danach wieder
+„Eingeschränkt“). Werkzeug: `tools/hyperframes-neo2/` (mezzanine.py → specs.py → build.py → render → finish.sh).
+
+| Inhalt | Dateien | Hinweis |
+|---|---|---|
+| Unboxing (nur Hände) | IMG_0200 (104 s, SDR) + Foto IMG_0201 | Box zeigt Einzel-Drohne → Product Match je Shop-Variante prüfen |
+| Start aus der Hand | IMG_0203 (iPhone HDR) | stärkstes Produktbild |
+| Drohne steigt in den Himmel | IMG_0205_seg1 | Rocket von unten |
+| Drohne fliegt tief am Auto/Roller | IMG_0204 | gut für CTA |
+| Handy filmt Drohne (Anflug) | LHAJ4878_seg2 | Kamera-UI sichtbar |
+| App: Modus-Menü, START | LHAJ4878_seg1 | Modi-Liste inkl. „Skifahren folgen“, „Radfahren folgen“, Rocket, Dronie |
+| App: Akku niedrig → Rückkehr → Landung | LHAJ4878_seg4 | Beleg für Faktenblatt Abschnitt 2 |
+| Folgen von hinten | DJI_0001_seg4, DJI_0004, DJI_0006_seg1, DJI_0026 | ohne Gesicht – bevorzugt |
+| Seitlich | DJI_0001_seg1–3 | Gesicht klein |
+| Von vorne | DJI_0012 (Wald), DJI_0021 (Hügel = „Zuckerbuckel“) | Gesicht mittel, Sonnenbrille |
+| Rocket von oben | CIWL3941, DFWV4297, DJI_0003, DJI_0009 | |
+| Winken / Gestensteuerung | DJI_0006_seg4 / seg5–6 | |
+| **Nicht verwenden** | app_* (fremde dunkle Drohne, 2 Piloten, 720p), DJI_0017/18 (Balkon, Kinder), DJI_0011 Brücke (Gesicht groß), file_png (DJI-Werbeplakat, Urheberrecht) | |
+
+Vertikale Neo-2-Clips (DJI_0032/0036) haben 1512×2688 @ 50 fps → bestätigt Hochkant-Modus.

@@ -34,3 +34,8 @@ videos/*/snapshots/
 videos/*/renders/
 export/raw/
 videos/*/.hyperframes/
+# DJI Neo 2 (Rohmaterial-Kopien und Renders nur in der Session, Originale in Vattos Drive)
+videos/_media_neo2/
+export/neo2/**/*.mp4
+export/neo2/work-*/
+__pycache__/

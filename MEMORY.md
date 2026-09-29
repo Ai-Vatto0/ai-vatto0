@@ -9,12 +9,11 @@
 
 **Datum:** 2026-09-29
 **Aktiver Fokus:** DJI Neo 2 – Serie echter Werbevideos aus Vattos Eigenmaterial
-(Remotion). Faktenblatt steht: `memory/projekte/dji-neo-2.md`.
+(HyperFrames). 5 Videos gebaut, Generator `tools/hyperframes-neo2/`, Faktenblatt `memory/projekte/dji-neo-2.md`.
 
 ### Offene Punkte
-- [ ] Neo 2: Rohmaterial-Ordner von Vatto bekommen (Rohdateien nie löschen/überschreiben)
 - [ ] Neo 2: Link/Screenshot des verlinkten Shop-Artikels (Variante → Product Match)
-- [ ] Neo 2: erste 3 Videos – Schnittplan → Freigabe → Vorschau → Frame-QA
+- [ ] Neo 2: Feedback zu den 5 Videos, danach weitere Serie
 - [ ] TikTok-Compliance-Zusammenfassung von Vatto einlesen → `memory/regeln/tiktok-compliance.md`
 - [ ] `02_LYRA_ADS_MASTER_V4.1.txt`, `03_COMPLIANCE_V4.0`, `04_LEARNING_V4.0` nachladen
 - [ ] Erster Remotion-Schnitt mit echtem Clip (Faruks Ablauf: Schnittplan → Freigabe → Vorschau → Frame-QA)
@@ -26,6 +25,18 @@
 ---
 
 ## SESSION-LOG
+
+### 2026-09-29 – DJI Neo 2: 5 Werbevideos aus Eigenmaterial (HyperFrames)
+
+- Vatto: 5 Videos, max. 20 s, Hook in Sekunde 1, wenig Gesicht (von hinten/seitlich), knallige Texte,
+  lustige Sprüche. Rohmaterial aus Drive-Ordner „Drohne“ (64 Dateien, 3,1 GB, nur Kopien geladen).
+- Desktop-Pfade (`file://SKYNET2000/...`) sind aus der Cloud **nicht** erreichbar → immer Drive + Link-Freigabe.
+- Generator `tools/hyperframes-neo2/`: Poppins Bold (Faruk), Akzent #FFD400, keine Doppelpunkte,
+  Sprechblasen, Weißblitz auf Schnitten, 144-BPM-Raster, stille AAC-Spur. Render ~2 min/Video.
+- Videos: v1 Unboxing mit Action · v2 Kameramann (hinten/vorne/seitlich) · v3 Zuckerbuckel ·
+  v4 Nur dein Handy + Akku leer · v5 Wenn deine Drohne reden könnte.
+- Aussortiert: fremde Drohne in App-Clips, Kinder auf Balkon, Brücke (Gesicht), DJI-Werbeplakat.
+- Offen: Shop-Variante (Product Match), Helm fehlt in Fahrszenen.
 
 ### 2026-09-29 – DJI Neo 2 recherchiert
 
