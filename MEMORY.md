@@ -33,6 +33,7 @@ erster echter Schnitt mit Vattos Material, danach KI-Anbieter anbinden.
 - Spezialisten `.claude/agents/video-schnitt/`: schnittplaner, broll-gestalter, qualitaetspruefer (neue Sitzung nötig).
 - Getestet nur mit **synthetischem** Clip (`jobs/test/`). Befunde: whisper dehnt Wortzeiten über Pausen;
   HyperFrames-Audiomix −2 dB (ausgeglichen, QA misst nach).
+- Qualitätsprüfer-Agent fand in 3 Runden echte Fehler (Untertitel „Kennt“, CTA außerhalb Safe Zone, Wort-Anker-Bug) → behoben, QA-Werkzeug erweitert; Testvorschau v006.
 - **Offen:** erster Schnitt mit Vattos echter Aufnahme (30–90 s) + Sichtung durch Vatto.
 
 ### 2026-09-27 – Einrichtung vereinfacht

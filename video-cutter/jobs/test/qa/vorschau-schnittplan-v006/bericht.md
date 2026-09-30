@@ -1,6 +1,6 @@
-# QA-Bericht vorschau-schnittplan-v005
+# QA-Bericht vorschau-schnittplan-v006
 
-**Gesamt: FEHLER** · Plan `schnittplan` · 30.9.2026, 17:24:56
+**Gesamt: WARNUNG** · Plan `schnittplan` · 30.9.2026, 17:26:43
 
 | Bereich | Prüfung | Status | Messwert |
 |---|---|---|---|
@@ -15,13 +15,13 @@
 | b1 | Bild-Versatz | OK | 0 Frames (Unterschied 4.55/4.63/4.39/4.36/4.57/4.20/4.39/4.49/4.93/4.95/4.91) |
 | b2 | Ton-Versatz | OK | 0 ms, Korrelation 1.00 |
 | b2 | Ton einfach (nicht doppelt) | OK | Pegel Export−Quelle -0.0 dB (doppelte Spur ≈ +6 dB) |
-| b2 | Bild-Versatz | OK | 0 Frames (Unterschied 8.06/7.67/7.74/8.34/8.00/6.61/7.93/7.51/7.43/8.06/7.91) |
+| b2 | Bild-Versatz | OK | 0 Frames (Unterschied 7.70/7.32/7.39/7.99/7.65/6.26/7.58/7.16/7.08/7.71/7.56) |
 | b3 | Ton-Versatz | OK | 0 ms, Korrelation 1.00 |
 | b3 | Ton einfach (nicht doppelt) | OK | Pegel Export−Quelle -0.0 dB (doppelte Spur ≈ +6 dB) |
-| b3 | Bild-Versatz | OK | 0 Frames (Unterschied 7.94/7.82/6.81/7.89/8.04/6.40/8.00/7.85/7.24/7.94/7.91) |
+| b3 | Bild-Versatz | OK | 0 Frames (Unterschied 7.59/7.46/6.45/7.53/7.68/6.05/7.65/7.49/6.89/7.59/7.55) |
 | b4 | Ton-Versatz | OK | 0 ms, Korrelation 1.00 |
 | b4 | Ton einfach (nicht doppelt) | OK | Pegel Export−Quelle -0.0 dB (doppelte Spur ≈ +6 dB) |
-| b4 | Bild-Versatz | OK | 0 Frames (Unterschied 9.73/9.54/8.86/9.70/9.84/8.17/9.84/9.56/9.17/10.00/9.98) |
+| b4 | Bild-Versatz | OK | 0 Frames (Unterschied 9.38/9.19/8.51/9.35/9.49/7.82/9.50/9.22/8.82/9.65/9.63) |
 | b5 | Ton-Versatz | OK | 0 ms, Korrelation 1.00 |
 | b5 | Ton einfach (nicht doppelt) | OK | Pegel Export−Quelle -0.1 dB (doppelte Spur ≈ +6 dB) |
 | b5 | Bild-Versatz | OK | 0 Frames (Unterschied 1.95/1.89/2.19/2.36/2.63/1.55/2.43/2.53/2.01/2.52/2.47) |
@@ -29,12 +29,22 @@
 | schnitt 2 (b2→b3) | Stille am Schnitt | OK | max -120.0 dB bei 7.007 s (Sprachschwelle -39.331 dB) |
 | schnitt 3 (b3→b4) | Stille am Schnitt | OK | max -120.0 dB bei 9.376 s (Sprachschwelle -39.331 dB) |
 | schnitt 4 (b4→b5) | Stille am Schnitt | OK | max -120.0 dB bei 12.379 s (Sprachschwelle -39.331 dB) |
-| grafik | Safe Zone (oben 150, rechts 140, unten 400, links 60) | FEHLER | br3 @12.723s: 12 px² außerhalb, Bereich x 942–942, y 1178–1240 |
+| grafik | Safe Zone (oben 150, rechts 140, unten 400, links 60) | OK | 124 Zeitpunkte geprüft |
+| untertitel | Untertitel = Gehörtes (exakt) | WARNUNG | ut10 @10.896s „Getränkehalter“ ≠ gehört „meinen Getränkealter im Auto.“ → Sichtung: Hörfehler von whisper oder falscher Untertitel? |
+| transkript | Wortfolge Export = Plan | OK | 95 % übereinstimmend; fehlend 0 (davon am Schnitt 0), zusätzlich 1, abweichend 1 |
+
+## Wortvergleich (Neu-Transkription des Exports)
+
+Fehlend: –
+
+Zusätzlich gehört: „TikTok“ @13.04s
+
+Abweichend (oft nur Hörfehler von whisper): „Ticktockshop.“→„Shop!“
 
 ## Kontaktbögen
 
-- Schnitte (je Schnitt: letztes Bild davor | erstes danach): qa/vorschau-schnittplan-v005/kontakt-schnitte.jpg
-- Untertitel: qa/vorschau-schnittplan-v005/kontakt-untertitel.jpg
+- Schnitte (je Schnitt: letztes Bild davor | erstes danach): qa/vorschau-schnittplan-v006/kontakt-schnitte.jpg
+- Untertitel: qa/vorschau-schnittplan-v006/kontakt-untertitel.jpg
 
 ## Offen – braucht menschliche Sichtung
 

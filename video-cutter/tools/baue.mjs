@@ -119,7 +119,7 @@ const CSS = `
         .tx { position: relative; -webkit-text-stroke: 14px #000; paint-order: stroke fill; }
         .em .tx { -webkit-text-stroke: 0; }
         .mark { position: absolute; left: 0; right: 0; top: 10%; bottom: 4%; background: #FFD400; border-radius: 14px; transform-origin: left center; }
-        .karte { background: rgba(14,14,18,.86); border-radius: 36px; padding: 34px 44px; box-shadow: 0 20px 60px rgba(0,0,0,.45); max-width: 860px; }
+        .karte { background: rgba(14,14,18,.86); border-radius: 36px; padding: 34px 44px; box-shadow: 0 10px 28px rgba(0,0,0,.35); max-width: 860px; }
         .k-titel { color: #FFD400; font-size: 40px; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 14px; }
         .punkt { display: flex; align-items: center; gap: 22px; color: #fff; font-size: 56px; line-height: 1.15; margin: 10px 0; }
         .chk { width: 64px; height: 64px; flex: none; }
@@ -215,7 +215,7 @@ eins.forEach((e, k) => {
     js += `\n        tl.fromTo(".balken", { scaleY: 0 }, { scaleY: 1, duration: 0.25, ease: "power2.out" }, 0.15);`;
   } else if (e.typ === "cta") {
     inner = `<div class="cta"><div class="cta-tx">${esc(e.text || "Jetzt im TikTok Shop")}</div><svg class="pfeil" viewBox="0 0 200 200"><path d="M170 20 C 150 90, 110 130, 40 160" fill="none" stroke="#FFD400" stroke-width="14" stroke-linecap="round"/><path d="M40 160 L 70 118 M40 160 L 92 170" fill="none" stroke="#FFD400" stroke-width="14" stroke-linecap="round"/></svg></div>`;
-    js += `\n        tl.fromTo(".cta-tx", { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: "back.out(2.6)" }, 0);`;
+    js += `\n        tl.fromTo(".cta-tx", { scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.2)" }, 0);`;
     js += `\n        tl.fromTo(".pfeil path", { strokeDashoffset: 260 }, { strokeDashoffset: 0, duration: 0.45, ease: "power2.out", stagger: 0.12 }, 0.35);`;
     const pulse = Math.max(0, Math.floor((d - 1.3) / 0.7));
     if (pulse) js += `\n        tl.to(".cta-tx", { scale: 1.04, duration: 0.35, ease: "sine.inOut", yoyo: true, repeat: ${pulse * 2 - 1} }, 0.9);`;

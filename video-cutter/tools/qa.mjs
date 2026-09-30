@@ -125,13 +125,17 @@ const kUT = sheet(utZeiten.slice(0, 16), path.join(qaDir, "kontakt-untertitel.jp
 // ---------- 4b. Safe Zone (Pixelvergleich Export ↔ Quelle an Einblendungs-/Untertitel-Zeitpunkten) ----------
 // Alles, was im Export deutlich anders ist als die Quelle, ist Grafik. Liegt davon etwas außerhalb der Safe Zone → Befund.
 {
-  const SW = 270, SH = 480, F = 1080 / SW; // Messraster 1/4
+  const SW = 540, SH = 960, F = 1080 / SW; // Messraster 1/2 (±2 px)
   const zone = { l: 60 / F, r: (1080 - 140) / F, o: 150 / F, u: (1920 - 400) / F };
   const grab = (file, t) => run("ffmpeg", ["-v", "error", "-ss", String(Math.max(0, t)), "-i", file, "-frames:v", "1", "-vf", `scale=${SW}:${SH},format=gray`, "-f", "rawvideo", "-"], { binary: true }).stdout;
   const metaK = fs.existsSync(path.join(dir, `komposition-${name}`, "meta.json")) ? readJSON(path.join(dir, `komposition-${name}`, "meta.json")) : { einblendungen: [] };
   const punkte = [
     // Einblendungen dicht abtasten (alle 0,25 s), damit Puls-/Bewegungsspitzen nicht durchrutschen.
-    ...metaK.einblendungen.flatMap((e) => Array.from({ length: Math.max(1, Math.floor((e.dauer - 0.3) / 0.25)) }, (_, i) => ({ t: r3(e.start + 0.3 + i * 0.25), was: e.id }))),
+    // Einblendphase (erste 0,8 s) Bild für Bild – dort federn Animationen über; danach alle 0,25 s.
+    ...metaK.einblendungen.flatMap((e) => [
+      ...Array.from({ length: Math.round(Math.min(0.8, e.dauer) * fps) }, (_, i) => ({ t: r3(e.start + (i + 0.5) / fps), was: e.id })),
+      ...Array.from({ length: Math.max(0, Math.floor((e.dauer - 0.8) / 0.25)) }, (_, i) => ({ t: r3(e.start + 0.8 + i * 0.25), was: e.id })),
+    ]),
     ...(ut?.chunks || []).map((c) => ({ t: r3((c.start + c.ende) / 2), was: c.id })),
   ].filter((p) => p.t > 0 && p.t < GESAMT);
   const q2s = (t) => { const z = zk.find((z) => t >= z.schnitt_start && t < z.schnitt_ende); return z ? z.quelle_start + (t - z.schnitt_start) : null; };
@@ -147,7 +151,7 @@ const kUT = sheet(utZeiten.slice(0, 16), path.join(qaDir, "kontakt-untertitel.jp
       if (x >= zone.l && x <= zone.r && y >= zone.o && y <= zone.u) continue;
       n++; box = [Math.min(box[0], x), Math.min(box[1], y), Math.max(box[2], x), Math.max(box[3], y)];
     }
-    if (n > 3) verstoesse.push(`${p.was} @${p.t}s: ${n * 16} px² außerhalb, Bereich x ${Math.round(box[0] * F)}–${Math.round(box[2] * F)}, y ${Math.round(box[1] * F)}–${Math.round(box[3] * F)}`);
+    if (n > 2) verstoesse.push(`${p.was} @${p.t}s: ${n * 4} px² außerhalb, Bereich x ${Math.round(box[0] * F)}–${Math.round(box[2] * F)}, y ${Math.round(box[1] * F)}–${Math.round(box[3] * F)}`);
   }
   add("grafik", "Safe Zone (oben 150, rechts 140, unten 400, links 60)", verstoesse.length ? "FEHLER" : "OK", verstoesse.length ? verstoesse.join("; ") : `${punkte.length} Zeitpunkte geprüft`);
 }

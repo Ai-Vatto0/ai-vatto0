@@ -1,9 +1,9 @@
 {
   "job": "test",
   "plan": "schnittplan",
-  "export": "/home/user/ai-vatto0/video-cutter/jobs/test/exporte/vorschau-schnittplan-v005.mp4",
-  "geprueft": "2026-09-30T17:24:56.749Z",
-  "status": "FEHLER",
+  "export": "/home/user/ai-vatto0/video-cutter/jobs/test/exporte/vorschau-schnittplan-v006.mp4",
+  "geprueft": "2026-09-30T17:26:43.201Z",
+  "status": "WARNUNG",
   "checks": [
     {
       "bereich": "datei",
@@ -75,7 +75,7 @@
       "bereich": "b2",
       "pruefung": "Bild-Versatz",
       "status": "OK",
-      "detail": "0 Frames (Unterschied 8.06/7.67/7.74/8.34/8.00/6.61/7.93/7.51/7.43/8.06/7.91)"
+      "detail": "0 Frames (Unterschied 7.70/7.32/7.39/7.99/7.65/6.26/7.58/7.16/7.08/7.71/7.56)"
     },
     {
       "bereich": "b3",
@@ -93,7 +93,7 @@
       "bereich": "b3",
       "pruefung": "Bild-Versatz",
       "status": "OK",
-      "detail": "0 Frames (Unterschied 7.94/7.82/6.81/7.89/8.04/6.40/8.00/7.85/7.24/7.94/7.91)"
+      "detail": "0 Frames (Unterschied 7.59/7.46/6.45/7.53/7.68/6.05/7.65/7.49/6.89/7.59/7.55)"
     },
     {
       "bereich": "b4",
@@ -111,7 +111,7 @@
       "bereich": "b4",
       "pruefung": "Bild-Versatz",
       "status": "OK",
-      "detail": "0 Frames (Unterschied 9.73/9.54/8.86/9.70/9.84/8.17/9.84/9.56/9.17/10.00/9.98)"
+      "detail": "0 Frames (Unterschied 9.38/9.19/8.51/9.35/9.49/7.82/9.50/9.22/8.82/9.65/9.63)"
     },
     {
       "bereich": "b5",
@@ -158,14 +158,45 @@
     {
       "bereich": "grafik",
       "pruefung": "Safe Zone (oben 150, rechts 140, unten 400, links 60)",
-      "status": "FEHLER",
-      "detail": "br3 @12.723s: 12 px² außerhalb, Bereich x 942–942, y 1178–1240"
+      "status": "OK",
+      "detail": "124 Zeitpunkte geprüft"
+    },
+    {
+      "bereich": "untertitel",
+      "pruefung": "Untertitel = Gehörtes (exakt)",
+      "status": "WARNUNG",
+      "detail": "ut10 @10.896s „Getränkehalter“ ≠ gehört „meinen Getränkealter im Auto.“ → Sichtung: Hörfehler von whisper oder falscher Untertitel?"
+    },
+    {
+      "bereich": "transkript",
+      "pruefung": "Wortfolge Export = Plan",
+      "status": "OK",
+      "detail": "95 % übereinstimmend; fehlend 0 (davon am Schnitt 0), zusätzlich 1, abweichend 1"
     }
   ],
-  "transkript": null,
+  "transkript": {
+    "erwartet": 38,
+    "gehoert": 39,
+    "uebereinstimmung": 0.947,
+    "fehlend": [],
+    "extra": [
+      {
+        "t": "tiktok",
+        "s": 13.04,
+        "text": "TikTok"
+      }
+    ],
+    "anders": [
+      {
+        "erwartet": "Ticktockshop.",
+        "gehoert": "Shop!",
+        "s": 13.202
+      }
+    ]
+  },
   "kontaktboegen": {
-    "schnitte": "/home/user/ai-vatto0/video-cutter/jobs/test/qa/vorschau-schnittplan-v005/kontakt-schnitte.jpg",
-    "untertitel": "/home/user/ai-vatto0/video-cutter/jobs/test/qa/vorschau-schnittplan-v005/kontakt-untertitel.jpg"
+    "schnitte": "/home/user/ai-vatto0/video-cutter/jobs/test/qa/vorschau-schnittplan-v006/kontakt-schnitte.jpg",
+    "untertitel": "/home/user/ai-vatto0/video-cutter/jobs/test/qa/vorschau-schnittplan-v006/kontakt-untertitel.jpg"
   },
   "untertitel": [
     {
