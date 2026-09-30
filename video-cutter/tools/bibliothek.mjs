@@ -46,7 +46,7 @@ if (befehl === "laden") {
     const bild = path.join(kontakt, `${c.id}.jpg`);
     const tm = hdr ? "zscale=t=linear:npl=203,format=gbrpf32le,zscale=p=bt709,tonemap=hable:desat=0,zscale=t=bt709:m=bt709:r=tv,format=yuv420p," : "";
     const breite = m.video.orientierung === "quer" ? 320 : 180;
-    run("ffmpeg", ["-v", "error", "-y", "-i", datei, "-vf", `${tm}fps=1/${schritt.toFixed(3)},scale=${breite}:-2,drawtext=text='%{eif\\:t*${schritt.toFixed(3)}\\:d}s':x=6:y=6:fontsize=20:fontcolor=white:box=1:boxcolor=black@0.6,tile=8x${Math.ceil(n / 8)}:padding=4:color=0x222222`, "-frames:v", "1", bild]);
+    run("ffmpeg", ["-v", "error", "-y", "-i", datei, "-vf", `${tm}fps=1/${schritt.toFixed(3)},scale=${breite}:-2,drawtext=text='%{eif\\:t\\:d}s':x=6:y=6:fontsize=20:fontcolor=white:box=1:boxcolor=black@0.6,tile=8x${Math.ceil(n / 8)}:padding=4:color=0x222222`, "-frames:v", "1", bild]);
     bib.clips[c.id] = {
       ...(bib.clips[c.id] || {}),
       datei: path.relative(dir, datei), drive_id: c.drive_id, sha256: sha256(datei),
