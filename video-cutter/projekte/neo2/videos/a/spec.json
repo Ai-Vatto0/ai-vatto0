@@ -1,0 +1,27 @@
+{
+  "titel": "Du fährst. Sie filmt.",
+  "idee": { "winkel": "pov_erlebnis", "zielgruppe": "E-Scooter-/Radfahrer, die sich selbst filmen wollen", "hook": "Drohne fliegt in Sekunde 0 im Bild – „Du fährst los, und sie fliegt einfach mit.“", "emotion": "Freiheit, Tempo" },
+  "regel_ausnahme": null,
+  "look": "gelb",
+  "textposition": "unten",
+  "stimme": { "anbieter": "yapper", "modell": "eleven_v3", "name": "Markus – Young Natural German", "voice_id": "IeQubAjK1ujbppIdhJw4" },
+  "voiceover": [
+    { "satz": "Du fährst los, und sie fliegt einfach mit.", "belege": ["folgt_automatisch"] },
+    { "satz": "Von vorne, von der Seite, von hinten – sie folgt dir automatisch.", "belege": ["folgt_automatisch"] },
+    { "satz": "Sogar bis zu 43 Kilometer pro Stunde.", "belege": ["folgt_43kmh"], "bedingung_ok": true },
+    { "satz": "Du konzentrierst dich nur aufs Fahren.", "belege": ["meinung"] },
+    { "satz": "Nur 151 Gramm – und am Ende hast du alles in 4K.", "belege": ["gewicht_151g", "4k"] },
+    { "satz": "Jetzt im TikTok Shop.", "belege": [] }
+  ],
+  "szenen": [
+    { "clip": "fly_car", "von": 0.8, "bis": 3.0, "rolle": "hook", "zoom": "punch", "uebergang": "whip", "text": { "inhalt": "DU FÄHRST LOS", "betonung": ["LOS"] } },
+    { "clip": "sunset", "von": 9.0, "bis": 13.0, "rolle": "emotion", "tempo": "ramp", "zoom": "kenburns_in", "uebergang": "flash", "text": { "inhalt": "SIE FLIEGT MIT", "betonung": ["MIT"], "belege": ["folgt_automatisch"] } },
+    { "clip": "forest6", "von": 1.2, "bis": 4.6, "rolle": "beweis", "zoom": "kenburns_in", "uebergang": "whip", "text": { "inhalt": "VON VORNE", "betonung": ["VORNE"] } },
+    { "clip": "side2", "von": 0.0, "bis": 3.5, "rolle": "beweis", "tempo": "ramp", "zoom": "none", "uebergang": "zoom", "text": { "inhalt": "BIS ZU 43 KM/H", "betonung": ["43"], "belege": ["folgt_43kmh"], "bedingung_ok": true } },
+    { "clip": "behind_field", "von": 0.6, "bis": 3.0, "rolle": "beweis", "zoom": "punch", "uebergang": "whip", "text": { "inhalt": "VON HINTEN", "betonung": ["HINTEN"] } },
+    { "clip": "hill2", "von": 8.4, "bis": 11.0, "rolle": "emotion", "zoom": "kenburns_out", "uebergang": "flash", "text": { "inhalt": "NUR 151 GRAMM", "betonung": ["151"], "belege": ["gewicht_151g"] } },
+    { "clip": "reveal41", "von": 7.0, "bis": 10.0, "rolle": "beweis", "zoom": "kenburns_in", "uebergang": "cut", "text": { "inhalt": "ALLES IN 4K", "betonung": ["4K"], "belege": ["4k"] } },
+    { "clip": "hill1", "von": 5.1, "bis": 8.2, "rolle": "cta", "zoom": "kenburns_out" }
+  ],
+  "cta": { "text": "Jetzt im TikTok Shop", "zusatz": "Du fährst. Sie filmt." }
+}
