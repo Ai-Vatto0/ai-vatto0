@@ -78,13 +78,25 @@ eins.sort((a, b) => a.start - b.start).forEach((e, k, arr) => {
   const n = arr[k + 1];
   if (n && e.start + e.dauer > n.start + 0.01) fehler.push(`${e.id} (bis ${r3(e.start + e.dauer)} s) überlappt ${n.id} (ab ${n.start} s) – Einblendungen nacheinander, nie gleichzeitig`);
 });
+{
+  const fk = await import("fontkit");
+  const font = fk.openSync(path.join(ROOT, "..", "assets", "fonts", "Poppins-Bold.ttf"));
+  const breite = (t, px) => (font.layout(t).advanceWidth / font.unitsPerEm) * px;
+  const umbruch = (text, px, max) => { const z = [""]; for (const w of text.split(/\s+/)) { const t = z.at(-1) ? `${z.at(-1)} ${w}` : w; if (breite(t, px) <= max || !z.at(-1)) z[z.length - 1] = t; else z.push(w); } return z; };
+  const PLATZ = 880; // 1080 − 60 links − 140 rechts
+  for (const e of eins) {
+    const zeilen = e.typ === "titel" ? (e.zeilen || [e.text]).map((z) => [z, breite(z, 96) + 20 * z.split(/\s+/).length + 14])
+      : e.typ === "cta" ? umbruch(e.text || "Jetzt im TikTok Shop", 76, 720).map((z) => [z, (breite(z, 76) + 14) * 1.04]) : [];
+    for (const [z, b] of zeilen) if (b > PLATZ) fehler.push(`${e.id}: Zeile „${z}“ ist ${Math.round(b)} px breit (max ${PLATZ}) – kürzer formulieren`);
+  }
+}
 if (eins.length > 3 && !broll.mehr_als_drei_freigegeben) fehler.push(`${eins.length} Einblendungen – Vorgabe: höchstens 3 pro Video, außer freigegeben.`);
 if (fehler.length) fail(`B-Roll ${brollName}: \n  - ${fehler.join("\n  - ")}`);
 
 // ---------- HTML ----------
 // Aufbau nach hyperframes-studio/-core: Hauptdatei enthält nur Video/Audio-Clips und Sub-Kompositions-Hosts;
 // Untertitel = eine Sub-Komposition (eine Spur), jede Einblendung = eigene Sub-Komposition (Zeiten darin lokal).
-const TOP = { oben: 200, mitte: 640, unten: 940 };
+const TOP = { oben: 200, mitte: 640, unten: 940, tief: 1170 };
 const fps = q.arbeitskopie.fps;
 const xPos = plan.format?.bildausschnitt_x_prozent ?? 50;
 fs.rmSync(path.join(out, "compositions"), { recursive: true, force: true });
@@ -116,7 +128,7 @@ const CSS = `
         .balken { width: 16px; background: #FFD400; transform-origin: center bottom; }
         .p-tx { color: #fff; font-size: 54px; padding: 20px 34px; }
         .cta { position: relative; display: flex; flex-direction: column; align-items: center; }
-        .cta-tx { color: #FFD400; font-size: 84px; line-height: 1.05; text-align: center; -webkit-text-stroke: 14px #000; paint-order: stroke fill; max-width: 720px; }
+        .cta-tx { color: #FFD400; font-size: 76px; line-height: 1.05; text-align: center; -webkit-text-stroke: 14px #000; paint-order: stroke fill; max-width: 720px; }
         .pfeil { width: 170px; height: 170px; margin-top: 6px; margin-right: 380px; }
         .pfeil path { stroke-dasharray: 260; }
         .bildkarte { background: #fff; border-radius: 36px; padding: 22px; box-shadow: 0 24px 70px rgba(0,0,0,.5); }
@@ -178,7 +190,7 @@ if (ut) {
 const CHECK = `<svg class="chk" viewBox="0 0 64 64"><circle cx="32" cy="32" r="28" fill="none" stroke="#FFD400" stroke-width="6"/><path d="M19 33 L28 42 L46 23" fill="none" stroke="#FFD400" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
 eins.forEach((e, k) => {
   const id = e.id, d = e.dauer;
-  const top = TOP[e.position || (e.typ === "titel" ? "oben" : "unten")] ?? 940;
+  const top = TOP[e.position || (e.typ === "titel" ? "oben" : e.typ === "cta" ? "tief" : "unten")] ?? 940;
   let inner = "", js = "";
   const T = (x) => r3(x); // lokale Zeit in der Sub-Komposition
   if (e.typ === "titel") {
@@ -191,7 +203,7 @@ eins.forEach((e, k) => {
     inner = `<div class="karte">${e.titel ? `<div class="k-titel">${esc(e.titel)}</div>` : ""}${e.punkte.map((p, i) => `<div class="punkt" id="${id}-p${i}">${CHECK}<span>${esc(p.text)}</span></div>`).join("")}</div>`;
     js += `\n        tl.fromTo(".karte", { y: 40, scale: 0.92, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.35, ease: "back.out(1.8)" }, 0);`;
     e.punkte.forEach((p, i) => {
-      let t = p.quelle_start !== undefined || p.schnitt_start !== undefined ? zeitVon(p) : null;
+      let t = p.wort !== undefined || p.quelle_start !== undefined || p.schnitt_start !== undefined ? zeitVon(p) : null;
       t = t === null || t < e.start ? 0.3 + i * 0.45 : t - e.start;
       t = Math.min(t, d - 0.6);
       js += `\n        tl.fromTo("#${id}-p${i}", { x: -50, opacity: 0 }, { x: 0, opacity: 1, duration: 0.3, ease: "power3.out" }, ${T(t)});`;

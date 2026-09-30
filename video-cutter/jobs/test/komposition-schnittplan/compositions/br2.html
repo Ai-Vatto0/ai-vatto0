@@ -29,7 +29,7 @@
         .balken { width: 16px; background: #FFD400; transform-origin: center bottom; }
         .p-tx { color: #fff; font-size: 54px; padding: 20px 34px; }
         .cta { position: relative; display: flex; flex-direction: column; align-items: center; }
-        .cta-tx { color: #FFD400; font-size: 84px; line-height: 1.05; text-align: center; -webkit-text-stroke: 14px #000; paint-order: stroke fill; max-width: 720px; }
+        .cta-tx { color: #FFD400; font-size: 76px; line-height: 1.05; text-align: center; -webkit-text-stroke: 14px #000; paint-order: stroke fill; max-width: 720px; }
         .pfeil { width: 170px; height: 170px; margin-top: 6px; margin-right: 380px; }
         .pfeil path { stroke-dasharray: 260; }
         .bildkarte { background: #fff; border-radius: 36px; padding: 22px; box-shadow: 0 24px 70px rgba(0,0,0,.5); }
@@ -41,12 +41,12 @@
       <script>
         const tl = gsap.timeline({ paused: true });
         tl.fromTo(".karte", { y: 40, scale: 0.92, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.35, ease: "back.out(1.8)" }, 0);
-        tl.fromTo("#br2-p0", { x: -50, opacity: 0 }, { x: 0, opacity: 1, duration: 0.3, ease: "power3.out" }, 0.3);
-        tl.fromTo("#br2-p0 path", { strokeDashoffset: 48 }, { strokeDashoffset: 0, duration: 0.3, ease: "power2.out" }, 0.42);
-        tl.fromTo("#br2-p1", { x: -50, opacity: 0 }, { x: 0, opacity: 1, duration: 0.3, ease: "power3.out" }, 0.75);
-        tl.fromTo("#br2-p1 path", { strokeDashoffset: 48 }, { strokeDashoffset: 0, duration: 0.3, ease: "power2.out" }, 0.87);
-        tl.fromTo("#br2-p2", { x: -50, opacity: 0 }, { x: 0, opacity: 1, duration: 0.3, ease: "power3.out" }, 1.2);
-        tl.fromTo("#br2-p2 path", { strokeDashoffset: 48 }, { strokeDashoffset: 0, duration: 0.3, ease: "power2.out" }, 1.32);
+        tl.fromTo("#br2-p0", { x: -50, opacity: 0 }, { x: 0, opacity: 1, duration: 0.3, ease: "power3.out" }, 1.238);
+        tl.fromTo("#br2-p0 path", { strokeDashoffset: 48 }, { strokeDashoffset: 0, duration: 0.3, ease: "power2.out" }, 1.358);
+        tl.fromTo("#br2-p1", { x: -50, opacity: 0 }, { x: 0, opacity: 1, duration: 0.3, ease: "power3.out" }, 2.224);
+        tl.fromTo("#br2-p1 path", { strokeDashoffset: 48 }, { strokeDashoffset: 0, duration: 0.3, ease: "power2.out" }, 2.344);
+        tl.fromTo("#br2-p2", { x: -50, opacity: 0 }, { x: 0, opacity: 1, duration: 0.3, ease: "power3.out" }, 4.58);
+        tl.fromTo("#br2-p2 path", { strokeDashoffset: 48 }, { strokeDashoffset: 0, duration: 0.3, ease: "power2.out" }, 4.7);
         tl.to(".broll > *", { opacity: 0, y: -24, duration: 0.2, ease: "power2.in" }, 6.98);
         window.__timelines["br2"] = tl;
       </script>
