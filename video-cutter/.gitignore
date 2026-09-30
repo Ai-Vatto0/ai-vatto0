@@ -9,3 +9,11 @@ jobs/test/komposition-*/assets/
 jobs/test/komposition-*/snapshots/
 jobs/test/qa/*/transkript/
 jobs/*/*.alt-*.json
+
+# Skript-Workflow: Rohmaterial und Zwischenclips bleiben lokal
+projekte/*/roh/
+projekte/*/zwischen/
+projekte/*/proxy/
+projekte/*/videos/*/komposition/assets/
+projekte/*/videos/*/exporte/*.mp4
+projekte/*/videos/*/exporte/*.webm
