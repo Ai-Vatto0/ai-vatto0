@@ -1,0 +1,346 @@
+{
+  "plan": "schnittplan",
+  "einstellungen": {
+    "schrift_px": 68,
+    "max_breite_px": 820,
+    "max_woerter": 5
+  },
+  "chunks": [
+    {
+      "id": "ut1",
+      "text": "Kennt du das wenn",
+      "start": 0.083,
+      "ende": 1.355,
+      "breite_px": 667,
+      "woerter": [
+        {
+          "id": "w0",
+          "text": "Kennt",
+          "s": 0.083,
+          "e": 0.463
+        },
+        {
+          "id": "w1",
+          "text": "du",
+          "s": 0.463,
+          "e": 0.615
+        },
+        {
+          "id": "w2",
+          "text": "das",
+          "s": 0.615,
+          "e": 0.843
+        },
+        {
+          "id": "w3",
+          "text": "wenn",
+          "s": 1.053,
+          "e": 1.355
+        }
+      ]
+    },
+    {
+      "id": "ut2",
+      "text": "dein Kaffee nach 10",
+      "start": 1.355,
+      "ende": 2.561,
+      "breite_px": 672,
+      "woerter": [
+        {
+          "id": "w4",
+          "text": "dein",
+          "s": 1.355,
+          "e": 1.656
+        },
+        {
+          "id": "w5",
+          "text": "Kaffee",
+          "s": 1.656,
+          "e": 2.108
+        },
+        {
+          "id": "w6",
+          "text": "nach",
+          "s": 2.108,
+          "e": 2.41
+        },
+        {
+          "id": "w7",
+          "text": "10",
+          "s": 2.41,
+          "e": 2.561
+        }
+      ]
+    },
+    {
+      "id": "ut3",
+      "text": "Minuten schon kalt ist?",
+      "start": 2.561,
+      "ende": 4.104,
+      "breite_px": 805,
+      "woerter": [
+        {
+          "id": "w8",
+          "text": "Minuten",
+          "s": 2.561,
+          "e": 3.088
+        },
+        {
+          "id": "w9",
+          "text": "schon",
+          "s": 3.088,
+          "e": 3.465
+        },
+        {
+          "id": "w10",
+          "text": "kalt",
+          "s": 3.465,
+          "e": 3.767
+        },
+        {
+          "id": "w11",
+          "text": "ist?",
+          "s": 3.767,
+          "e": 3.993
+        }
+      ]
+    },
+    {
+      "id": "ut4",
+      "text": "Mit diesem Becher",
+      "start": 4.337,
+      "ende": 5.27,
+      "breite_px": 644,
+      "woerter": [
+        {
+          "id": "w20",
+          "text": "Mit",
+          "s": 4.337,
+          "e": 4.524
+        },
+        {
+          "id": "w21",
+          "text": "diesem",
+          "s": 4.524,
+          "e": 4.897
+        },
+        {
+          "id": "w22",
+          "text": "Becher",
+          "s": 4.897,
+          "e": 5.27
+        }
+      ]
+    },
+    {
+      "id": "ut5",
+      "text": "bleibt er deutlich",
+      "start": 5.27,
+      "ende": 6.265,
+      "breite_px": 590,
+      "woerter": [
+        {
+          "id": "w23",
+          "text": "bleibt",
+          "s": 5.27,
+          "e": 5.643
+        },
+        {
+          "id": "w24",
+          "text": "er",
+          "s": 5.643,
+          "e": 5.767
+        },
+        {
+          "id": "w25",
+          "text": "deutlich",
+          "s": 5.767,
+          "e": 6.265
+        }
+      ]
+    },
+    {
+      "id": "ut6",
+      "text": "länger warm",
+      "start": 6.265,
+      "ende": 7.007,
+      "breite_px": 450,
+      "woerter": [
+        {
+          "id": "w26",
+          "text": "länger",
+          "s": 6.265,
+          "e": 6.638
+        },
+        {
+          "id": "w27",
+          "text": "warm",
+          "s": 6.638,
+          "e": 6.887
+        }
+      ]
+    },
+    {
+      "id": "ut7",
+      "text": "Der Deckel geht mit",
+      "start": 7.251,
+      "ende": 8.171,
+      "breite_px": 681,
+      "woerter": [
+        {
+          "id": "w28",
+          "text": "Der",
+          "s": 7.251,
+          "e": 7.397
+        },
+        {
+          "id": "w29",
+          "text": "Deckel",
+          "s": 7.397,
+          "e": 7.69
+        },
+        {
+          "id": "w30",
+          "text": "geht",
+          "s": 7.69,
+          "e": 7.885
+        },
+        {
+          "id": "w31",
+          "text": "mit",
+          "s": 7.885,
+          "e": 8.031
+        }
+      ]
+    },
+    {
+      "id": "ut8",
+      "text": "einer Hand auf",
+      "start": 8.171,
+      "ende": 9.376,
+      "breite_px": 512,
+      "woerter": [
+        {
+          "id": "w32",
+          "text": "einer",
+          "s": 8.171,
+          "e": 8.621
+        },
+        {
+          "id": "w33",
+          "text": "Hand",
+          "s": 8.621,
+          "e": 8.981
+        },
+        {
+          "id": "w34",
+          "text": "auf",
+          "s": 8.981,
+          "e": 9.251
+        }
+      ]
+    },
+    {
+      "id": "ut9",
+      "text": "Und er passt in meinen",
+      "start": 9.607,
+      "ende": 10.896,
+      "breite_px": 798,
+      "woerter": [
+        {
+          "id": "w35",
+          "text": "Und",
+          "s": 9.607,
+          "e": 9.822
+        },
+        {
+          "id": "w36",
+          "text": "er",
+          "s": 9.822,
+          "e": 9.965
+        },
+        {
+          "id": "w37",
+          "text": "passt",
+          "s": 9.965,
+          "e": 10.323
+        },
+        {
+          "id": "w38",
+          "text": "in",
+          "s": 10.323,
+          "e": 10.466
+        },
+        {
+          "id": "w39",
+          "text": "meinen",
+          "s": 10.466,
+          "e": 10.896
+        }
+      ]
+    },
+    {
+      "id": "ut10",
+      "text": "Getränkehalter im",
+      "start": 10.896,
+      "ende": 11.971,
+      "breite_px": 643,
+      "woerter": [
+        {
+          "id": "w40",
+          "text": "Getränkehalter",
+          "s": 10.896,
+          "e": 11.827
+        },
+        {
+          "id": "w41",
+          "text": "im",
+          "s": 11.827,
+          "e": 11.971
+        }
+      ]
+    },
+    {
+      "id": "ut11",
+      "text": "Auto",
+      "start": 11.971,
+      "ende": 12.379,
+      "breite_px": 167,
+      "woerter": [
+        {
+          "id": "w42",
+          "text": "Auto",
+          "s": 11.971,
+          "e": 12.257
+        }
+      ]
+    },
+    {
+      "id": "ut12",
+      "text": "Jetzt im TikTok Shop",
+      "start": 12.613,
+      "ende": 14.513,
+      "breite_px": 710,
+      "woerter": [
+        {
+          "id": "w43",
+          "text": "Jetzt",
+          "s": 12.613,
+          "e": 13.034
+        },
+        {
+          "id": "w44",
+          "text": "im",
+          "s": 13.034,
+          "e": 13.202
+        },
+        {
+          "id": "w45",
+          "text": "TikTok Shop",
+          "s": 13.202,
+          "e": 14.213
+        }
+      ]
+    }
+  ]
+}

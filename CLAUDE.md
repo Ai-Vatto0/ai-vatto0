@@ -9,6 +9,8 @@
 | `memory/` | Regelwerke, Projektnotizen, Quellen, Archiv |
 
 **Hauptgeschäft ist TikTok-Shop-Werbung** (`memory/regeln/lyra-ads-v4.1-aktiv.md`).
+**Eigene Aufnahmen schneiden:** Video-Cutting-Agent in `video-cutter/` → `video-cutter/START-HIER.md`
+(Arbeitsanweisung `video-cutter/CLAUDE.md`, Spezialisten `.claude/agents/video-schnitt/`).
 Die Snova-Studio-Dokumentation unten ist Repo-Doku für den Code, nicht der
 Arbeitsschwerpunkt.
 

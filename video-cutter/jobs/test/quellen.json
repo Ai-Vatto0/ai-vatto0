@@ -1,0 +1,93 @@
+{
+  "erstellt": "2026-09-30T16:54:35.011Z",
+  "regel": "Original wird nie verändert. Alle Zeiten in transcript.json/schnittplan.json beziehen sich auf die ARBEITSKOPIE.",
+  "original": {
+    "pfad": "/home/user/ai-vatto0/video-cutter/material/TEST-synthetisch.mp4",
+    "sha256": "612b45b209ea6a954c228394cd13e8855a504ae119201292daface69395b63b8",
+    "sha256_nach_verarbeitung": "612b45b209ea6a954c228394cd13e8855a504ae119201292daface69395b63b8",
+    "metadaten": {
+      "datei": "/home/user/ai-vatto0/video-cutter/material/TEST-synthetisch.mp4",
+      "dauer_s": 26.181,
+      "bytes": 1838240,
+      "container": "mov,mp4,m4a,3gp,3g2,mj2",
+      "video": {
+        "codec": "h264",
+        "breite_gespeichert": 1920,
+        "hoehe_gespeichert": 1080,
+        "rotation_grad": 270,
+        "breite_angezeigt": 1080,
+        "hoehe_angezeigt": 1920,
+        "orientierung": "hochkant",
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "30000/1001",
+        "fps": 29.97003,
+        "variable_bildrate": false,
+        "pix_fmt": "yuv420p",
+        "frames": 784
+      },
+      "audio": [
+        {
+          "index": 1,
+          "codec": "aac",
+          "kanaele": 2,
+          "samplerate": 48000,
+          "sprache": "und",
+          "dauer_s": 26.181
+        }
+      ]
+    }
+  },
+  "arbeitskopie": {
+    "pfad": "media/arbeitskopie.mp4",
+    "sha256": "c1d7071d80cfefe484e0f324b10369ff500d5ac20d1e9092a0b68509e3955a4d",
+    "offset_zum_original_s": 0,
+    "bereich_im_original_s": [
+      0,
+      26.181
+    ],
+    "umrechnung": "zeit_original = zeit_arbeitskopie + offset_zum_original_s",
+    "bildrate": "30000/1001",
+    "fps": 29.97,
+    "tonspur_aus_original": 0,
+    "lautheit_vorher": {
+      "I": "-25.09",
+      "TP": "-8.13",
+      "LRA": "3.50"
+    },
+    "lautheit_ziel": "-14 LUFS linear",
+    "metadaten": {
+      "datei": "/home/user/ai-vatto0/video-cutter/jobs/test/media/arbeitskopie.mp4",
+      "dauer_s": 26.181,
+      "bytes": 3248690,
+      "container": "mov,mp4,m4a,3gp,3g2,mj2",
+      "video": {
+        "codec": "h264",
+        "breite_gespeichert": 1080,
+        "hoehe_gespeichert": 1920,
+        "rotation_grad": 0,
+        "breite_angezeigt": 1080,
+        "hoehe_angezeigt": 1920,
+        "orientierung": "hochkant",
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "30000/1001",
+        "fps": 29.97003,
+        "variable_bildrate": false,
+        "pix_fmt": "yuv420p",
+        "frames": 784
+      },
+      "audio": [
+        {
+          "index": 1,
+          "codec": "aac",
+          "kanaele": 2,
+          "samplerate": 48000,
+          "sprache": "und",
+          "dauer_s": 26.181
+        }
+      ]
+    }
+  },
+  "hinweise": [
+    "Original ist per Metadaten um 270° gedreht – Arbeitskopie ist aufrecht gespeichert."
+  ]
+}

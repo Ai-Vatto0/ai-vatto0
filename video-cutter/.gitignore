@@ -1,0 +1,11 @@
+node_modules/
+# Eigene Aufnahmen und Jobs bleiben lokal (privat, groß). Nur der Selbsttest-Job wird versioniert.
+material/
+jobs/*
+!jobs/test/
+jobs/test/media/
+jobs/test/exporte/*.mp4
+jobs/test/komposition-*/assets/
+jobs/test/komposition-*/snapshots/
+jobs/test/qa/*/transkript/
+jobs/*/*.alt-*.json

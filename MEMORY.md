@@ -24,6 +24,17 @@ erster echter Schnitt mit Vattos Material, danach KI-Anbieter anbinden.
 
 ## SESSION-LOG
 
+### 2026-09-30 – Video-Cutting-Agent (HyperFrames) gebaut
+
+- Neues Projekt `video-cutter/`: HyperFrames 0.8.77 (gepinnt) + whisper.cpp lokal (Modell small, de).
+- Werkzeuge `tools/*.mjs`: quelle (ffprobe, SHA-256, Offset) → transkript (ok/Plausibilität) → schnittplan
+  (Pausen/Takes aus dem Tonpegel, nicht aus whisper-Zeiten) → pruefe-plan (Zeitkarte, Untertitel auf Schnittzeit)
+  → baue (Komposition, animierte Textgrafiken) → render (check + Vorschau/Final, nie überschreiben) → qa (Messwerte).
+- Spezialisten `.claude/agents/video-schnitt/`: schnittplaner, broll-gestalter, qualitaetspruefer (neue Sitzung nötig).
+- Getestet nur mit **synthetischem** Clip (`jobs/test/`). Befunde: whisper dehnt Wortzeiten über Pausen;
+  HyperFrames-Audiomix −2 dB (ausgeglichen, QA misst nach).
+- **Offen:** erster Schnitt mit Vattos echter Aufnahme (30–90 s) + Sichtung durch Vatto.
+
 ### 2026-09-27 – Einrichtung vereinfacht
 
 - Vatto ist Einsteiger und will nur reinkopieren → alles Automatisierbare automatisiert.
