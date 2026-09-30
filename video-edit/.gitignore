@@ -8,3 +8,4 @@ out
 
 # Vergleichs-Medien (aus video-cutter/tools/remotion-props.mjs)
 public/spec-*/
+.claude-flow/
