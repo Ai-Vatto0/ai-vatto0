@@ -17,15 +17,25 @@ const spec = readJSON(path.join(vdir, "spec.json"));
 const meta = readJSON(path.join(komp, "meta.json"));
 const exp = path.join(vdir, "exporte");
 
-const c = hf(["check"], { cwd: komp, allowFail: true });
-if (c.status !== 0) fail(`check nicht bestanden:\n${(c.stdout + c.stderr).slice(-2500)}`);
-console.log("✓ hyperframes check bestanden");
-const ziel = nextVersion(exp, `${final ? "final" : "vorschau"}-${video}`, "mp4");
-const t0 = Date.now();
-const r = hf(["render", "-o", ziel, "--fps", "30", "-q", final ? "high" : "draft", "--strict", "--quiet"], { cwd: komp, allowFail: true });
-if (r.status !== 0 || !fs.existsSync(ziel)) fail(`Render fehlgeschlagen:\n${(r.stdout + r.stderr).slice(-2500)}`);
-const renderzeit = Math.round((Date.now() - t0) / 1000);
-console.log(`✓ ${path.relative(vdir, ziel)} in ${renderzeit} s`);
+// --qa <export.mp4>: nur die QA für einen vorhandenen Export wiederholen (kein neuer Render)
+let ziel, renderzeit = null;
+if (typeof opt.qa === "string") {
+  ziel = path.resolve(opt.qa);
+  if (!fs.existsSync(ziel)) fail(`Export nicht gefunden: ${ziel}`);
+  const alt = ziel.replace(/\.mp4$/, ".json");
+  if (fs.existsSync(alt)) renderzeit = readJSON(alt).renderzeit_s ?? null;
+} else {
+  const c = hf(["check"], { cwd: komp, allowFail: true });
+  if (c.status !== 0) fail(`check nicht bestanden:\n${(c.stdout + c.stderr).slice(-2500)}`);
+  console.log("✓ hyperframes check bestanden");
+  ziel = nextVersion(exp, `${final ? "final" : "vorschau"}-${video}`, "mp4");
+  const t0 = Date.now();
+  const r = hf(["render", "-o", ziel, "--fps", "30", "-q", final ? "high" : "draft", "--strict", "--quiet"], { cwd: komp, allowFail: true });
+  if (r.status !== 0 || !fs.existsSync(ziel)) fail(`Render fehlgeschlagen:\n${(r.stdout + r.stderr).slice(-2500)}`);
+  renderzeit = Math.round((Date.now() - t0) / 1000);
+  console.log(`✓ ${path.relative(vdir, ziel)} in ${renderzeit} s`);
+  writeJSON(ziel.replace(/\.mp4$/, ".json"), { export: path.basename(ziel), art: final ? "final" : "vorschau", freigabe: final ? opt.freigabe : null, renderzeit_s: renderzeit });
+}
 
 const checks = [];
 const add = (p, st, d) => checks.push({ pruefung: p, status: st, detail: d });
@@ -64,7 +74,7 @@ const ro = hf(["render", "--format", "webm", "-o", ov, "--fps", "30", "-q", "dra
 if (ro.status !== 0 || !fs.existsSync(ov)) add("Safe Zone", "OFFEN", `Grafik-Render fehlgeschlagen: ${(ro.stderr || "").slice(-300)}`);
 else {
   const SW = 540, SH = 960, F = 2;
-  const raw = run("ffmpeg", ["-v", "error", "-c:v", "libvpx-vp9", "-i", ov, "-vf", `fps=10,scale=${SW}:${SH},alphaextract,format=gray`, "-f", "rawvideo", "-"], { binary: true }).stdout;
+  const raw = run("ffmpeg", ["-v", "error", "-c:v", "libvpx-vp9", "-i", ov, "-vf", `fps=10,scale=${SW}:${SH},format=yuva420p,alphaextract,format=gray`, "-f", "rawvideo", "-"], { binary: true }).stdout;
   const fs_ = SW * SH, zone = { l: 60 / F, r: (1080 - 140) / F, o: 150 / F, u: (1920 - 400) / F };
   const verst = [];
   let maxA = 0;
@@ -95,6 +105,6 @@ const md = [`# QA ${path.basename(ziel)}`, "", `**${st}** · Renderzeit ${render
   ...checks.map((x) => `| ${x.pruefung} | ${x.status} | ${x.detail} |`), "", "Kontaktbogen Übergänge: `kontakt-uebergaenge.jpg`", "",
   "## Offen – braucht menschliche Sichtung", "- [ ] Klang: Voiceover natürlich? Sinus-Schnitte zu laut/leise?", "- [ ] Produktfarben nach HDR→SDR (farbcheck-*.jpg in zwischen/)", "- [ ] Wirkung der Zeitlupe / Speed-Ramps", "- [ ] Personen/Kennzeichen im Bild ok?", ""].join("\n");
 fs.writeFileSync(path.join(qa, "bericht.md"), md);
-writeJSON(ziel.replace(/\.mp4$/, ".json"), { export: path.basename(ziel), art: final ? "final" : "vorschau", freigabe: final ? opt.freigabe : null, renderzeit_s: renderzeit, status: st, checks });
+writeJSON(ziel.replace(/\.mp4$/, ".json"), { ...(fs.existsSync(ziel.replace(/\.mp4$/, ".json")) ? readJSON(ziel.replace(/\.mp4$/, ".json")) : {}), export: path.basename(ziel), renderzeit_s: renderzeit, status: st, checks });
 console.log(md);
 if (st === "FEHLER") process.exitCode = 2;
