@@ -1,6 +1,6 @@
 # Spec-Prüfung neo2
 
-**GRÜN** · 30.9.2026, 22:13:42
+**GRÜN** · 30.9.2026, 22:29:36
 
 ## Videos
 - Video a „Du fährst. Sie filmt.“: 19.301 s, 8 Szenen, 46 VO-Wörter (2.49 W/s), Winkel pov_erlebnis, Look gelb, Text unten, Zeitlupe 0

@@ -1,7 +1,7 @@
 {
-  "gebaut": "2026-09-30T21:46:08.991Z",
+  "gebaut": "2026-09-30T22:31:33.975Z",
   "video": "a",
-  "dauer_s": 22.7,
+  "dauer_s": 19.301,
   "fps": 30,
   "vo_start": 0.25,
   "vo_ende": 17.91,
@@ -10,15 +10,15 @@
       "szene": 1,
       "clip": "fly_car",
       "start": 0,
-      "dauer": 2.2,
+      "dauer": 3.567,
       "zoom": "punch",
       "uebergang": "whip"
     },
     {
       "szene": 2,
       "clip": "sunset",
-      "start": 2.2,
-      "dauer": 3.2,
+      "start": 3.567,
+      "dauer": 1.333,
       "zoom": "kenburns_in",
       "tempo": "ramp",
       "uebergang": "flash"
@@ -26,16 +26,16 @@
     {
       "szene": 3,
       "clip": "forest6",
-      "start": 5.4,
-      "dauer": 3.4,
+      "start": 4.9,
+      "dauer": 1.5,
       "zoom": "kenburns_in",
       "uebergang": "whip"
     },
     {
       "szene": 4,
       "clip": "side2",
-      "start": 8.8,
-      "dauer": 2.8,
+      "start": 6.4,
+      "dauer": 3.067,
       "zoom": "none",
       "tempo": "ramp",
       "uebergang": "zoom"
@@ -43,33 +43,33 @@
     {
       "szene": 5,
       "clip": "behind_field",
-      "start": 11.6,
-      "dauer": 2.4,
+      "start": 9.467,
+      "dauer": 2.2,
       "zoom": "punch",
       "uebergang": "whip"
     },
     {
       "szene": 6,
       "clip": "hill2",
-      "start": 14,
-      "dauer": 2.6,
+      "start": 11.667,
+      "dauer": 2.267,
       "zoom": "kenburns_out",
       "uebergang": "flash"
     },
     {
       "szene": 7,
       "clip": "reveal41",
-      "start": 16.6,
-      "dauer": 3,
+      "start": 13.934,
+      "dauer": 2.467,
       "zoom": "kenburns_in",
       "uebergang": "cut"
     },
     {
       "szene": 8,
-      "clip": "hill1",
-      "start": 19.6,
-      "dauer": 3.1,
-      "zoom": "kenburns_out"
+      "clip": "fly_car",
+      "start": 16.401,
+      "dauer": 2.9,
+      "zoom": "kenburns_in"
     }
   ]
 }
