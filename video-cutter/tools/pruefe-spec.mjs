@@ -17,7 +17,12 @@ const altPfad = path.join(dir, "referenz", "alt-specs.json");
 const alt = fs.existsSync(altPfad) ? readJSON(altPfad) : null;
 const clipsById = Object.fromEntries(manifest.clips.map((c) => [c.id, c]));
 const vdir = path.join(dir, "videos");
-const specs = fs.existsSync(vdir) ? fs.readdirSync(vdir).filter((d) => fs.existsSync(path.join(vdir, d, "spec.json"))).map((d) => ({ id: d, ...readJSON(path.join(vdir, d, "spec.json")) })) : [];
+const specs = fs.existsSync(vdir) ? fs.readdirSync(vdir).filter((d) => fs.existsSync(path.join(vdir, d, "spec.json"))).map((d) => {
+  const s = { id: d, ...readJSON(path.join(vdir, d, "spec.json")) };
+  const t = path.join(vdir, d, "timing.json"); // am Voiceover ausgerichtete Quellbereiche
+  if (fs.existsSync(t)) readJSON(t).szenen.forEach((x, i) => { if (s.szenen[i]) { s.szenen[i].von = x.von; s.szenen[i].bis = x.bis; } });
+  return s;
+}) : [];
 if (!specs.length) fail("Keine Specs unter videos/*/spec.json");
 
 // gleiche Sperrliste wie tools/baue.mjs (VERBOTEN) + rote Claims aus dem Faktenblatt

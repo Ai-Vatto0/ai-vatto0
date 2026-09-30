@@ -24,9 +24,10 @@ const SzeneView: React.FC<{ s: Szene; next?: Szene; prev?: Szene }> = ({ s, prev
   if (s.zoom === "punch") { const at = Math.round(s.dauer * 0.35); scale = interpolate(f, [at, at + 4], [1, Math.min(1.2, s.zoomMax + 0.05)], { ...clamp, easing: Easing.out(Easing.poly(4)) }); }
   let tx = 0, trScale = 1, blur = 0;
   const end = s.dauer;
-  if (s.uebergang === "whip") { tx = interpolate(f, [end - 5, end], [0, -38], { ...clamp, easing: Easing.in(Easing.cubic) }); blur = interpolate(f, [end - 5, end], [0, 14], clamp); }
+  // Whip: max. 10 % Versatz bei Skalierung 1,25 → keine schwarzen Ränder (gleiche Lösung wie baue-spec.mjs)
+  if (s.uebergang === "whip") { tx = interpolate(f, [end - 5, end], [0, -10], { ...clamp, easing: Easing.in(Easing.cubic) }); trScale = interpolate(f, [end - 5, end], [1, 1.25], clamp); blur = interpolate(f, [end - 5, end], [0, 16], clamp); }
   if (s.uebergang === "zoom") { trScale = interpolate(f, [end - 4, end], [1, 1.22], clamp); blur = interpolate(f, [end - 4, end], [0, 8], clamp); }
-  if (prev?.uebergang === "whip") { const k = interpolate(f, [0, 6], [38, 0], { ...clamp, easing: Easing.out(Easing.cubic) }); tx += k; blur = Math.max(blur, interpolate(f, [0, 6], [14, 0], clamp)); }
+  if (prev?.uebergang === "whip") { const k = interpolate(f, [0, 6], [10, 0], { ...clamp, easing: Easing.out(Easing.cubic) }); tx += k; trScale *= interpolate(f, [0, 6], [1.25, 1], clamp); blur = Math.max(blur, interpolate(f, [0, 6], [16, 0], clamp)); }
   if (prev?.uebergang === "zoom") { trScale *= interpolate(f, [0, 7], [1.3, 1], { ...clamp, easing: Easing.out(Easing.cubic) }); blur = Math.max(blur, interpolate(f, [0, 7], [10, 0], clamp)); }
   return (
     <AbsoluteFill style={{ overflow: "hidden", transform: `translateX(${tx}%) scale(${trScale})`, filter: blur ? `blur(${blur}px)` : undefined }}>

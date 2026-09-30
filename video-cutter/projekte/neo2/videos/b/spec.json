@@ -55,8 +55,7 @@
   "szenen": [
     {
       "clip": "palm",
-      "von": 1.5,
-      "bis": 4.2,
+      "von": 0.0,
       "rolle": "hook",
       "zoom": "kenburns_in",
       "uebergang": "zoom",
@@ -73,7 +72,6 @@
     {
       "clip": "launch_sky",
       "von": 0.8,
-      "bis": 2.8,
       "rolle": "emotion",
       "tempo": 0.5,
       "zoom": "kenburns_in",
@@ -86,41 +84,33 @@
         "belege": [
           "gewicht_151g"
         ]
-      }
+      },
+      "ab_wort": 7
     },
     {
       "clip": "app_modes",
       "von": 5.0,
-      "bis": 7.5,
       "rolle": "beweis",
       "zoom": "punch",
       "uebergang": "whip",
-      "text": {
-        "inhalt": "ROCKET · DRONIE · HELIX",
-        "betonung": [
-          "ROCKET"
-        ],
-        "belege": [
-          "quickshots"
-        ],
-        "top": 360
-      }
+      "ab_wort": 13,
+      "bis_max": 7.2
     },
     {
       "clip": "rocket_b",
       "von": 0.0,
-      "bis": 2.5,
       "rolle": "beweis",
       "zoom": "kenburns_out",
-      "uebergang": "cut"
+      "uebergang": "cut",
+      "ab_wort": 18
     },
     {
-      "clip": "hill3",
-      "von": 9.5,
-      "bis": 13.5,
-      "rolle": "emotion",
+      "clip": "forest_behind",
+      "von": 4.4,
+      "rolle": "beweis",
       "zoom": "kenburns_in",
       "uebergang": "zoom",
+      "ab_wort": 28,
       "text": {
         "inhalt": "FOLGT DIR AUTOMATISCH",
         "betonung": [
@@ -134,7 +124,6 @@
     {
       "clip": "gesture6",
       "von": 4.3,
-      "bis": 6.4,
       "rolle": "beweis",
       "zoom": "punch",
       "uebergang": "flash",
@@ -146,36 +135,28 @@
         "belege": [
           "gestensteuerung"
         ]
-      }
+      },
+      "ab_wort": 32
     },
     {
       "clip": "akku",
       "von": 11.0,
-      "bis": 14.5,
       "rolle": "beweis",
       "zoom": "punch",
       "uebergang": "cut",
-      "text": {
-        "inhalt": "AKKU KNAPP? SIE FLIEGT ZURÜCK",
-        "betonung": [
-          "ZURÜCK"
-        ],
-        "belege": [
-          "akku_rueckkehr"
-        ],
-        "top": 360
-      }
+      "ab_wort": 39
     },
     {
       "clip": "palm",
-      "von": 3.6,
-      "bis": 6.3,
+      "von": 3.3,
       "rolle": "cta",
-      "zoom": "kenburns_out"
+      "zoom": "kenburns_out",
+      "ab_wort": 51
     }
   ],
   "cta": {
     "text": "Jetzt im TikTok Shop",
-    "zusatz": "Deine Kamera, die mitfliegt."
+    "zusatz": "Deine Kamera, die mitfliegt.",
+    "top": 330
   }
 }

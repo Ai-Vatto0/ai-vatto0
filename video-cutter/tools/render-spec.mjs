@@ -52,6 +52,17 @@ const TP = Number(lr.match(/Peak:\s+(-?[\d.]+) dBFS/g)?.pop()?.match(/-?[\d.]+/)
 add("Lautheit", Math.abs(I + 14) <= 2 ? "OK" : "WARNUNG", `${I} LUFS (Ziel -14 ±2)`);
 add("True Peak", TP <= -1 ? "OK" : "WARNUNG", `${TP} dBTP`);
 
+// Stille: längste Strecke < -50 dB (100-ms-Fenster)
+{
+  const pcm = run("ffmpeg", ["-v", "error", "-i", ziel, "-ac", "1", "-ar", "8000", "-f", "f32le", "-"], { binary: true }).stdout;
+  const x = new Float32Array(pcm.buffer, pcm.byteOffset, Math.floor(pcm.length / 4));
+  let lauf = 0, max = 0, maxEnde = 0;
+  for (let i = 0; i + 800 <= x.length; i += 800) {
+    let e = 0; for (let k = i; k < i + 800; k++) e += x[k] * x[k];
+    if (10 * Math.log10(e / 800 + 1e-12) < -50) { lauf += 0.1; if (lauf > max) { max = lauf; maxEnde = (i + 800) / 8000; } } else lauf = 0;
+  }
+  add("Stille", max > 1.2 ? "WARNUNG" : "OK", max > 1.2 ? `${r3(max)} s Stille bis ${r3(maxEnde)} s` : `längste Stille ${r3(max)} s`);
+}
 // Voiceover = Skript
 const qa = path.join(vdir, "qa", path.basename(ziel, ".mp4"));
 fs.mkdirSync(qa, { recursive: true });
@@ -64,7 +75,7 @@ if (!opt["ohne-transkript"]) {
     const ist = readJSON(path.join(qa, "transcript.json")).map((w) => norm(w.text)).filter(Boolean);
     const setIst = new Set(ist);
     const fehlt = soll.filter((w) => !setIst.has(w) && !/^\d/.test(w));
-    add("Voiceover = Skript", fehlt.length <= 2 ? "OK" : "WARNUNG", fehlt.length ? `nicht wiedergefunden: ${fehlt.join(", ")}` : `${soll.length} Wörter wiedergefunden`);
+    add("Voiceover = Skript", fehlt.length ? "WARNUNG" : "OK", fehlt.length ? `nicht wiedergefunden: ${fehlt.join(", ")} → anhören (Aussprache oder nur Hörfehler von whisper?)` : `${soll.length} Wörter wiedergefunden`);
   }
 }
 

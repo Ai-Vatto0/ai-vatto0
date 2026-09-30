@@ -14,6 +14,10 @@ const dir = path.join(ROOT, "projekte", projekt || "");
 const vdir = path.join(dir, "videos", video || "");
 if (!fs.existsSync(path.join(vdir, "spec.json"))) fail("Aufruf: node tools/zwischenclip.mjs <projekt> <video>");
 const spec = readJSON(path.join(vdir, "spec.json"));
+// Quellbereiche aus timing.json (am Voiceover ausgerichtet) haben Vorrang vor spec.bis
+const timingPfad = path.join(vdir, "timing.json");
+if (fs.existsSync(timingPfad)) readJSON(timingPfad).szenen.forEach((t, i) => { spec.szenen[i].von = t.von; spec.szenen[i].bis = t.bis; });
+else console.log("⚠ ohne timing.json – Szenenlängen nicht am Voiceover ausgerichtet");
 const bib = readJSON(path.join(dir, "bibliothek.json")).clips;
 const out = path.join(dir, "zwischen", video);
 fs.mkdirSync(out, { recursive: true });

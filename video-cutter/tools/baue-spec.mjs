@@ -40,8 +40,9 @@ const TEXT_Y = spec.textposition === "oben" ? { caption: 230, headline: 1150 } :
 
 // ---- Zeitplan der Szenen (Übergänge überlappen nicht – harte Grenzen, Effekt liegt auf den Wrappern) ----
 let t = 0;
+const timing = fs.existsSync(path.join(vdir, "timing.json")) ? readJSON(path.join(vdir, "timing.json")) : null;
 const szenen = spec.szenen.map((z, i) => {
-  const d = zw.szenen[i].dauer_s;
+  const d = timing ? Math.min(timing.szenen[i].dauer, zw.szenen[i].dauer_s) : zw.szenen[i].dauer_s;
   const s = { ...z, i, start: r3(t), dauer: r3(d), datei: zw.szenen[i].datei, produktton: zw.szenen[i].produktton };
   t += d;
   return s;
@@ -86,8 +87,9 @@ szenen.forEach((s) => {
       html += `\n      <div id="flash-${s.i + 1}" class="clip flash" data-start="${r3(cut - 0.08)}" data-duration="0.3" data-track-index="${60 + s.i}"></div>`;
     }
     if (s.uebergang === "whip") {
-      js += `\n      tl.fromTo("#${id} .tr", { xPercent: 0, filter: "blur(0px)" }, { xPercent: -38, filter: "blur(14px)", duration: 0.16, ease: "power3.in" }, ${r3(cut - 0.16)});`;
-      js += `\n      tl.fromTo("#${nid} .tr", { xPercent: 38, filter: "blur(14px)" }, { xPercent: 0, filter: "blur(0px)", duration: 0.2, ease: "power3.out", immediateRender: false }, ${r3(cut)});`;
+      // Whip: Versatz max. 10 % bei Skalierung 1,25 → Bildrand bleibt immer bedeckt (keine schwarzen Streifen)
+      js += `\n      tl.fromTo("#${id} .tr", { xPercent: 0, scale: 1, filter: "blur(0px)" }, { xPercent: -10, scale: 1.25, filter: "blur(16px)", duration: 0.16, ease: "power3.in" }, ${r3(cut - 0.16)});`;
+      js += `\n      tl.fromTo("#${nid} .tr", { xPercent: 10, scale: 1.25, filter: "blur(16px)" }, { xPercent: 0, scale: 1, filter: "blur(0px)", duration: 0.2, ease: "power3.out", immediateRender: false }, ${r3(cut)});`;
     }
     if (s.uebergang === "zoom") {
       js += `\n      tl.fromTo("#${id} .tr", { scale: 1, filter: "blur(0px)" }, { scale: 1.22, filter: "blur(8px)", duration: 0.14, ease: "power2.in" }, ${r3(cut - 0.14)});`;
@@ -141,12 +143,13 @@ szenen.forEach((s) => {
   const betont = new Set((s.text.betonung || []).map((x) => x.toLowerCase()));
   hm += `
         <div id="${id}" class="clip headline" data-start="${a}" data-duration="${r3(e - a)}" data-track-index="1"${s.text.top ? ` style="top:${s.text.top}px"` : ""}><div class="hl-in">${worte.map((w) => `<span class="hw${betont.has(w.toLowerCase()) ? " em" : ""}">${esc(w)}</span>`).join(" ")}</div></div>`;
+  hj += `\n        tl.fromTo("#${id} .hl-in", { opacity: 0 }, { opacity: 1, duration: 0.06 }, ${a});`;
   hj += `\n        tl.fromTo("#${id} .hw", { yPercent: 80, opacity: 0, rotation: -4 }, { yPercent: 0, opacity: 1, rotation: 0, duration: 0.32, ease: "back.out(2.2)", stagger: 0.06 }, ${a});`;
   hj += `\n        tl.to("#${id} .hl-in", { opacity: 0, y: -20, duration: 0.18, ease: "power2.in" }, ${r3(e - 0.18)});`;
 });
 const cta = szenen.at(-1);
 hm += `
-        <div id="cta" class="clip ctabox" data-start="${cta.start}" data-duration="${r3(GESAMT - cta.start)}" data-track-index="2"><div class="cta-tx">${esc(spec.cta.text)}</div>${spec.cta.zusatz ? `<div class="cta-zu">${esc(spec.cta.zusatz)}</div>` : ""}<svg class="pfeil" viewBox="0 0 200 200"><path d="M170 20 C 150 90, 110 130, 40 160" fill="none" stroke="${L.akzent}" stroke-width="14" stroke-linecap="round"/><path d="M40 160 L 70 118 M40 160 L 92 170" fill="none" stroke="${L.akzent}" stroke-width="14" stroke-linecap="round"/></svg></div>`;
+        <div id="cta" class="clip ctabox"${spec.cta.top ? ` style="top:${spec.cta.top}px"` : ""} data-start="${cta.start}" data-duration="${r3(GESAMT - cta.start)}" data-track-index="2"><div class="cta-tx">${esc(spec.cta.text)}</div>${spec.cta.zusatz ? `<div class="cta-zu">${esc(spec.cta.zusatz)}</div>` : ""}<svg class="pfeil" viewBox="0 0 200 200"><path d="M170 20 C 150 90, 110 130, 40 160" fill="none" stroke="${L.akzent}" stroke-width="14" stroke-linecap="round"/><path d="M40 160 L 70 118 M40 160 L 92 170" fill="none" stroke="${L.akzent}" stroke-width="14" stroke-linecap="round"/></svg></div>`;
 hj += `\n        tl.fromTo("#cta .cta-tx", { scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.42, ease: "back.out(1.2)" }, ${r3(cta.start + 0.1)});`;
 if (spec.cta.zusatz) hj += `\n        tl.fromTo("#cta .cta-zu", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "power3.out" }, ${r3(cta.start + 0.4)});`;
 hj += `\n        tl.fromTo("#cta .pfeil path", { strokeDashoffset: 260 }, { strokeDashoffset: 0, duration: 0.45, ease: "power2.out", stagger: 0.12 }, ${r3(cta.start + 0.5)});`;

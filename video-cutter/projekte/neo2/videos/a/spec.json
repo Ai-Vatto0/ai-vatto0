@@ -57,7 +57,6 @@
     {
       "clip": "fly_car",
       "von": 0.8,
-      "bis": 3.0,
       "rolle": "hook",
       "zoom": "punch",
       "uebergang": "whip",
@@ -74,7 +73,6 @@
     {
       "clip": "sunset",
       "von": 9.0,
-      "bis": 13.0,
       "rolle": "emotion",
       "tempo": "ramp",
       "zoom": "kenburns_in",
@@ -84,12 +82,12 @@
         "betonung": [
           "HINTEN"
         ]
-      }
+      },
+      "ab_wort": 8
     },
     {
       "clip": "forest6",
       "von": 1.2,
-      "bis": 4.6,
       "rolle": "beweis",
       "zoom": "kenburns_in",
       "uebergang": "whip",
@@ -98,12 +96,12 @@
         "betonung": [
           "VORNE"
         ]
-      }
+      },
+      "ab_wort": 14
     },
     {
       "clip": "side2",
       "von": 0.0,
-      "bis": 3.5,
       "rolle": "beweis",
       "tempo": "ramp",
       "zoom": "none",
@@ -117,12 +115,12 @@
           "folgt_43kmh"
         ],
         "bedingung_ok": true
-      }
+      },
+      "ab_wort": 17
     },
     {
       "clip": "behind_field",
       "von": 0.6,
-      "bis": 3.0,
       "rolle": "beweis",
       "zoom": "punch",
       "uebergang": "whip",
@@ -134,12 +132,12 @@
         "belege": [
           "meinung"
         ]
-      }
+      },
+      "ab_wort": 24
     },
     {
       "clip": "hill2",
       "von": 8.4,
-      "bis": 11.0,
       "rolle": "emotion",
       "zoom": "kenburns_out",
       "uebergang": "flash",
@@ -151,12 +149,12 @@
         "belege": [
           "gewicht_151g"
         ]
-      }
+      },
+      "ab_wort": 30
     },
     {
       "clip": "reveal41",
       "von": 7.0,
-      "bis": 10.0,
       "rolle": "beweis",
       "zoom": "kenburns_in",
       "uebergang": "cut",
@@ -168,14 +166,15 @@
         "belege": [
           "4k"
         ]
-      }
+      },
+      "ab_wort": 34
     },
     {
-      "clip": "hill1",
-      "von": 5.1,
-      "bis": 8.2,
+      "clip": "fly_car",
+      "von": 7.2,
       "rolle": "cta",
-      "zoom": "kenburns_out"
+      "zoom": "kenburns_in",
+      "ab_wort": 42
     }
   ],
   "cta": {
