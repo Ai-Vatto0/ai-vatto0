@@ -17,3 +17,7 @@ projekte/*/proxy/
 projekte/*/videos/*/komposition/assets/
 projekte/*/videos/*/exporte/*.mp4
 projekte/*/videos/*/exporte/*.webm
+projekte/*/videos/*/komposition-grafik/assets/
+projekte/*/videos/*/komposition/snapshots/
+projekte/*/videos/*/qa/*/grafik.webm
+projekte/*/videos/*/vo/*.wav

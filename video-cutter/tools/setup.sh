@@ -24,11 +24,13 @@ echo "[cutter] Render-Chrome …"
 $HF browser ensure >/dev/null 2>&1 || { echo "[cutter] FEHLER: browser ensure"; FAIL=1; }
 
 WBIN="$HOME/.cache/hyperframes/whisper/whisper.cpp/build/bin/whisper-cli"
+# Auf einem anderen Prozessor gebaute Binärdatei stürzt mit "Illegal instruction" ab → neu bauen
+if [ -x "$WBIN" ] && ! "$WBIN" --help >/dev/null 2>&1; then echo "[cutter] whisper-cli läuft auf diesem Prozessor nicht → Neubau"; rm -rf "$HOME/.cache/hyperframes/whisper/whisper.cpp"; fi
 if ! command -v whisper-cli >/dev/null && [ ! -x "$WBIN" ]; then
   echo "[cutter] whisper.cpp bauen (2–4 Min.) …"
   command -v cmake >/dev/null || { echo "[cutter] FEHLER: cmake + C-Compiler nötig"; FAIL=1; }
   mkdir -p "$HOME/.cache/hyperframes/whisper"
-  ( cd "$HOME/.cache/hyperframes/whisper" && rm -rf whisper.cpp && git clone -q --depth 1 https://github.com/ggml-org/whisper.cpp.git && cd whisper.cpp && cmake -B build >/dev/null && cmake --build build --config Release -j >/dev/null ) || { echo "[cutter] FEHLER: whisper.cpp-Build"; FAIL=1; }
+  ( cd "$HOME/.cache/hyperframes/whisper" && rm -rf whisper.cpp && git clone -q --depth 1 https://github.com/ggml-org/whisper.cpp.git && cd whisper.cpp && cmake -B build -DGGML_NATIVE=OFF >/dev/null && cmake --build build --config Release -j >/dev/null ) || { echo "[cutter] FEHLER: whisper.cpp-Build"; FAIL=1; }
 fi
 M="$HOME/.cache/hyperframes/whisper/models/ggml-small.bin"
 if [ ! -s "$M" ]; then

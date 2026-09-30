@@ -1,0 +1,74 @@
+{
+  "gebaut": "2026-09-30T21:45:09.898Z",
+  "video": "b",
+  "dauer_s": 24,
+  "fps": 30,
+  "vo_start": 0.25,
+  "vo_ende": 19.93,
+  "szenen": [
+    {
+      "szene": 1,
+      "clip": "palm",
+      "start": 0,
+      "dauer": 2.7,
+      "zoom": "kenburns_in",
+      "uebergang": "zoom"
+    },
+    {
+      "szene": 2,
+      "clip": "launch_sky",
+      "start": 2.7,
+      "dauer": 4,
+      "zoom": "kenburns_in",
+      "tempo": 0.5,
+      "uebergang": "flash"
+    },
+    {
+      "szene": 3,
+      "clip": "app_modes",
+      "start": 6.7,
+      "dauer": 2.5,
+      "zoom": "punch",
+      "uebergang": "whip"
+    },
+    {
+      "szene": 4,
+      "clip": "rocket_b",
+      "start": 9.2,
+      "dauer": 2.5,
+      "zoom": "kenburns_out",
+      "uebergang": "cut"
+    },
+    {
+      "szene": 5,
+      "clip": "hill3",
+      "start": 11.7,
+      "dauer": 4,
+      "zoom": "kenburns_in",
+      "uebergang": "zoom"
+    },
+    {
+      "szene": 6,
+      "clip": "gesture6",
+      "start": 15.7,
+      "dauer": 2.1,
+      "zoom": "punch",
+      "uebergang": "flash"
+    },
+    {
+      "szene": 7,
+      "clip": "akku",
+      "start": 17.8,
+      "dauer": 3.5,
+      "zoom": "punch",
+      "uebergang": "cut"
+    },
+    {
+      "szene": 8,
+      "clip": "palm",
+      "start": 21.3,
+      "dauer": 2.7,
+      "zoom": "kenburns_out"
+    }
+  ]
+}

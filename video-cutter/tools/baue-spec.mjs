@@ -35,7 +35,8 @@ const LOOKS = {
   nacht: { akzent: "#4DD8FF", text: "#FFFFFF", kontur: "rgba(0,0,0,0)", pille: "rgba(8,12,22,.78)", headlineGross: 92, captionPx: 62, flash: "#CFF4FF" },
 };
 const L = LOOKS[spec.look] || fail(`Look „${spec.look}“ unbekannt (${Object.keys(LOOKS).join(", ")})`);
-const TEXT_Y = spec.textposition === "oben" ? { caption: 230, headline: 420 } : { caption: 1290, headline: 250 };
+// oben: Untertitel oben, Headlines im unteren Drittel · unten: Headlines oben, Untertitel unten (je Szene überschreibbar: text.top)
+const TEXT_Y = spec.textposition === "oben" ? { caption: 230, headline: 1150 } : { caption: 1290, headline: 250 };
 
 // ---- Zeitplan der Szenen (Übergänge überlappen nicht – harte Grenzen, Effekt liegt auf den Wrappern) ----
 let t = 0;
@@ -58,13 +59,14 @@ sfx("boom.wav", 55, 0.9, 0.6);
 const esc = (x) => String(x).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const MIX = 1.26; // gemessener HyperFrames-0.8.77-Mix-Ausgleich (siehe baue.mjs / QA)
 let html = "", js = "";
+const flashes = [];
 
 // Szenen: Clip-Wrapper (timed) → .inner (Zoom/Whip) → video
 szenen.forEach((s) => {
   const id = `sz${s.i + 1}`;
   html += `
       <div id="${id}" class="szene">
-        <div class="inner"><video id="${id}-v" class="clip" src="assets/${video}-${s.datei}" data-start="${s.start}" data-duration="${s.dauer}" data-media-start="0" data-track-index="0" muted playsinline></video></div>
+        <div class="tr" data-layout-allow-overflow><div class="inner" data-layout-allow-overflow><video id="${id}-v" class="clip" src="assets/${video}-${s.datei}" data-start="${s.start}" data-duration="${s.dauer}" data-media-start="0" data-track-index="0" muted playsinline></video></div></div>
       </div>`;
   const zoomMax = s.zoom_max || 1.12;
   if (s.zoom === "kenburns_in") js += `\n      tl.fromTo("#${id} .inner", { scale: 1.0 }, { scale: ${zoomMax}, duration: ${s.dauer}, ease: "none" }, ${s.start});`;
@@ -77,14 +79,19 @@ szenen.forEach((s) => {
   const next = szenen[s.i + 1];
   if (next && s.uebergang && s.uebergang !== "cut") {
     const cut = next.start, nid = `sz${next.i + 1}`;
-    if (s.uebergang === "flash") js += `\n      tl.fromTo("#flash", { opacity: 0 }, { opacity: 0.85, duration: 0.06, ease: "power2.out" }, ${r3(cut - 0.06)}).to("#flash", { opacity: 0, duration: 0.14, ease: "power2.in" }, ${r3(cut)});`;
+    if (s.uebergang === "flash") {
+      flashes.push(r3(cut));
+      js += `\n      tl.fromTo("#flash-${s.i + 1}", { opacity: 0 }, { opacity: 0.85, duration: 0.06, ease: "power2.out" }, ${r3(cut - 0.06)});`;
+      js += `\n      tl.to("#flash-${s.i + 1}", { opacity: 0, duration: 0.14, ease: "power2.in" }, ${r3(cut)});`;
+      html += `\n      <div id="flash-${s.i + 1}" class="clip flash" data-start="${r3(cut - 0.08)}" data-duration="0.3" data-track-index="${60 + s.i}"></div>`;
+    }
     if (s.uebergang === "whip") {
-      js += `\n      tl.to("#${id} .inner", { xPercent: -38, filter: "blur(14px)", duration: 0.16, ease: "power3.in" }, ${r3(cut - 0.16)});`;
-      js += `\n      tl.fromTo("#${nid} .inner", { xPercent: 38, filter: "blur(14px)" }, { xPercent: 0, filter: "blur(0px)", duration: 0.2, ease: "power3.out" }, ${r3(cut)});`;
+      js += `\n      tl.fromTo("#${id} .tr", { xPercent: 0, filter: "blur(0px)" }, { xPercent: -38, filter: "blur(14px)", duration: 0.16, ease: "power3.in" }, ${r3(cut - 0.16)});`;
+      js += `\n      tl.fromTo("#${nid} .tr", { xPercent: 38, filter: "blur(14px)" }, { xPercent: 0, filter: "blur(0px)", duration: 0.2, ease: "power3.out", immediateRender: false }, ${r3(cut)});`;
     }
     if (s.uebergang === "zoom") {
-      js += `\n      tl.to("#${id} .inner", { scale: "+=0.22", filter: "blur(8px)", duration: 0.14, ease: "power2.in" }, ${r3(cut - 0.14)});`;
-      js += `\n      tl.fromTo("#${nid} .inner", { scale: 1.3, filter: "blur(10px)" }, { scale: 1.0, filter: "blur(0px)", duration: 0.24, ease: "power3.out" }, ${r3(cut)});`;
+      js += `\n      tl.fromTo("#${id} .tr", { scale: 1, filter: "blur(0px)" }, { scale: 1.22, filter: "blur(8px)", duration: 0.14, ease: "power2.in" }, ${r3(cut - 0.14)});`;
+      js += `\n      tl.fromTo("#${nid} .tr", { scale: 1.3, filter: "blur(10px)" }, { scale: 1, filter: "blur(0px)", duration: 0.24, ease: "power3.out", immediateRender: false }, ${r3(cut)});`;
     }
     html += `
       <audio id="wumms-${s.i + 1}" src="assets/wumms.wav" data-start="${r3(cut - 0.02)}" data-duration="0.18" data-track-index="${40 + s.i}" data-volume="1"></audio>`;
@@ -133,7 +140,7 @@ szenen.forEach((s) => {
   const worte = s.text.inhalt.split(/\s+/);
   const betont = new Set((s.text.betonung || []).map((x) => x.toLowerCase()));
   hm += `
-        <div id="${id}" class="clip headline" data-start="${a}" data-duration="${r3(e - a)}" data-track-index="1"><div class="hl-in">${worte.map((w) => `<span class="hw${betont.has(w.toLowerCase()) ? " em" : ""}">${esc(w)}</span>`).join(" ")}</div></div>`;
+        <div id="${id}" class="clip headline" data-start="${a}" data-duration="${r3(e - a)}" data-track-index="1"${s.text.top ? ` style="top:${s.text.top}px"` : ""}><div class="hl-in">${worte.map((w) => `<span class="hw${betont.has(w.toLowerCase()) ? " em" : ""}">${esc(w)}</span>`).join(" ")}</div></div>`;
   hj += `\n        tl.fromTo("#${id} .hw", { yPercent: 80, opacity: 0, rotation: -4 }, { yPercent: 0, opacity: 1, rotation: 0, duration: 0.32, ease: "back.out(2.2)", stagger: 0.06 }, ${a});`;
   hj += `\n        tl.to("#${id} .hl-in", { opacity: 0, y: -20, duration: 0.18, ease: "power2.in" }, ${r3(e - 0.18)});`;
 });
@@ -152,15 +159,15 @@ const CSS = `
         .cap { position: absolute; left: 60px; right: 140px; top: ${TEXT_Y.caption}px; display: flex; justify-content: center; }
         .cap-in { max-width: 860px; text-align: center; font-size: ${L.captionPx}px; line-height: 1.12; color: ${L.text}; ${stroke} background: ${L.pille}; padding: ${spec.look === "nacht" ? "14px 30px" : "0"}; border-radius: 26px; text-shadow: 0 6px 18px rgba(0,0,0,.45); }
         .headline { position: absolute; left: 60px; right: 140px; top: ${TEXT_Y.headline}px; display: flex; justify-content: center; }
-        .hl-in { max-width: 860px; text-align: center; font-size: ${L.headlineGross}px; line-height: 1.04; color: ${L.text}; ${spec.look === "gelb" ? "-webkit-text-stroke: 14px #000; paint-order: stroke fill;" : "text-shadow: 0 0 28px rgba(77,216,255,.55), 0 6px 20px rgba(0,0,0,.6);"} }
+        .hl-in { max-width: 860px; text-align: center; font-size: ${L.headlineGross}px; line-height: 1.04; color: ${L.text}; ${spec.look === "gelb" ? "-webkit-text-stroke: 14px #000; paint-order: stroke fill;" : "background: rgba(8,12,22,.78); padding: 10px 26px 14px; border-radius: 28px; text-shadow: 0 0 22px rgba(77,216,255,.45);"} }
         .hw { display: inline-block; }
         .hw.em { color: ${L.akzent}; }
         .ctabox { position: absolute; left: 60px; right: 140px; top: 1080px; display: flex; flex-direction: column; align-items: center; }
-        .cta-tx { color: ${L.akzent}; font-size: 76px; line-height: 1.05; text-align: center; max-width: 720px; ${spec.look === "gelb" ? "-webkit-text-stroke: 14px #000; paint-order: stroke fill;" : "text-shadow: 0 0 30px rgba(77,216,255,.6), 0 6px 20px rgba(0,0,0,.7);"} }
-        .cta-zu { color: #fff; font-size: 44px; margin-top: 12px; text-align: center; max-width: 720px; text-shadow: 0 4px 14px rgba(0,0,0,.7); }
+        .cta-tx { color: ${L.akzent}; font-size: 76px; line-height: 1.05; text-align: center; max-width: 720px; ${spec.look === "gelb" ? "-webkit-text-stroke: 14px #000; paint-order: stroke fill;" : "background: rgba(8,12,22,.8); padding: 12px 28px 16px; border-radius: 30px; text-shadow: 0 0 22px rgba(77,216,255,.45);"} }
+        .cta-zu { color: #fff; font-size: 44px; margin-top: 12px; text-align: center; max-width: 720px; background: rgba(0,0,0,.55); padding: 6px 18px; border-radius: 16px; }
         .pfeil { width: 150px; height: 150px; margin-top: 4px; margin-right: 400px; }
         .pfeil path { stroke-dasharray: 260; }
-        .ki { position: absolute; left: 70px; top: 160px; font-size: 26px; color: rgba(255,255,255,.8); letter-spacing: .04em; text-shadow: 0 2px 8px rgba(0,0,0,.6); }`;
+        .ki { position: absolute; left: 70px; top: 160px; font-size: 26px; color: #FFFFFF; letter-spacing: .04em; background: rgba(0,0,0,.62); padding: 6px 14px; border-radius: 12px; }`;
 const subcomp = (cid, markup, code) => fs.writeFileSync(path.join(out, "compositions", `${cid}.html`), `<!doctype html>
 <html lang="de">
   <head><meta charset="UTF-8" /><!-- GENERIERT von tools/baue-spec.mjs – nicht von Hand ändern. --></head>
@@ -182,7 +189,7 @@ const subcomp = (cid, markup, code) => fs.writeFileSync(path.join(out, "composit
 subcomp("captions", cm, cj);
 subcomp("grafik", hm + `\n        <div id="ki" class="clip ki" data-start="0" data-duration="${GESAMT}" data-track-index="3">KI-Stimme</div>`, hj);
 const host = (cid, track) => `
-      <div id="${cid}" data-composition-id="${cid}" data-composition-src="compositions/${cid}.html" data-start="0" data-duration="${GESAMT}" data-track-index="${track}" data-width="${W}" data-height="${H}"></div>`;
+      <div id="${cid}"${cid === "captions" ? ' data-track-kind="captions"' : ""} data-composition-id="${cid}" data-composition-src="compositions/${cid}.html" data-start="0" data-duration="${GESAMT}" data-track-index="${track}" data-width="${W}" data-height="${H}"></div>`;
 html += host("captions", 50) + host("grafik", 51);
 
 const index = `<!doctype html>
@@ -200,12 +207,12 @@ const index = `<!doctype html>
       .szene { position: absolute; inset: 0; overflow: hidden; }
       .szene .inner { position: absolute; inset: 0; transform-origin: 50% 45%; }
       .szene video { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; }
-      #flash { position: absolute; inset: 0; background: ${L.flash}; opacity: 0; pointer-events: none; }
+      .szene .tr { position: absolute; inset: 0; transform-origin: 50% 50%; }
+      .flash { position: absolute; inset: 0; background: ${L.flash}; opacity: 0; pointer-events: none; }
     </style>
   </head>
   <body>
     <div id="root" data-composition-id="main" data-start="0" data-duration="${GESAMT}" data-width="${W}" data-height="${H}">${html}
-      <div id="flash" class="clip" data-start="0" data-duration="${GESAMT}" data-track-index="60"></div>
     </div>
     <script>
       const tl = gsap.timeline({ paused: true });${js}
@@ -216,6 +223,39 @@ const index = `<!doctype html>
 </html>
 `;
 fs.writeFileSync(path.join(out, "index.html"), index);
+// Nur-Grafik-Variante (transparent) für die Safe-Zone-Prüfung in render-spec.mjs
+const gout = path.join(vdir, "komposition-grafik");
+fs.rmSync(gout, { recursive: true, force: true });
+fs.mkdirSync(path.join(gout, "assets", "fonts"), { recursive: true });
+fs.mkdirSync(path.join(gout, "compositions"), { recursive: true });
+for (const f of ["gsap.min.js", "fonts/Poppins-Bold.ttf"]) link(path.join(out, "assets", f), path.join(gout, "assets", f));
+for (const f of ["captions.html", "grafik.html"]) fs.copyFileSync(path.join(out, "compositions", f), path.join(gout, "compositions", f));
+writeJSON(path.join(gout, "hyperframes.json"), { paths: { blocks: "compositions", components: "compositions/components", assets: "assets" } });
+fs.writeFileSync(path.join(gout, "index.html"), `<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=${W}, height=${H}" />
+    <!-- GENERIERT: nur Untertitel + Grafik, transparenter Hintergrund (QA Safe Zone) -->
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      ${FONT}
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: ${W}px; height: ${H}px; overflow: hidden; background: transparent; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="${GESAMT}" data-width="${W}" data-height="${H}">${host("captions", 50) + host("grafik", 51)}
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
+`);
 writeJSON(path.join(out, "hyperframes.json"), { $schema: "https://hyperframes.heygen.com/schema/hyperframes.json", registry: "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry", paths: { blocks: "compositions", components: "compositions/components", assets: "assets" }, media: { autoProxy: true } });
 writeJSON(path.join(out, "package.json"), { name: `${projekt}-${video}`, private: true, type: "module", scripts: { dev: `npx --yes hyperframes@${HF_VERSION} preview`, check: `npx --yes hyperframes@${HF_VERSION} check`, render: `npx --yes hyperframes@${HF_VERSION} render` } });
 writeJSON(path.join(out, "meta.json"), { gebaut: new Date().toISOString(), video, dauer_s: GESAMT, fps: FPS, vo_start: VO_START, vo_ende: r3(voEnde), szenen: szenen.map(({ i, clip, start, dauer, zoom, tempo, uebergang }) => ({ szene: i + 1, clip, start, dauer, zoom, tempo, uebergang })) });

@@ -1,27 +1,181 @@
 {
   "titel": "Allein unterwegs – und keiner filmt?",
-  "idee": { "winkel": "problem_loesung", "zielgruppe": "Leute, die allein unterwegs sind und niemanden zum Filmen haben", "hook": "Drohne liegt in Sekunde 0 auf der Hand – „Allein unterwegs, und keiner, der dich filmt?“", "emotion": "Lösung, Sicherheit" },
+  "idee": {
+    "winkel": "problem_loesung",
+    "zielgruppe": "Leute, die allein unterwegs sind und niemanden zum Filmen haben",
+    "hook": "Drohne liegt in Sekunde 0 auf der Hand – „Allein unterwegs, und keiner, der dich filmt?“",
+    "emotion": "Lösung, Sicherheit"
+  },
   "regel_ausnahme": "Eine Zeitlupe (Szene 2, 60-fps-Quelle, 0,5x ohne Interpolation) als A/B-Test gegen Faruks Learning „keine Zeitlupe“ – Video A hat keine.",
   "look": "nacht",
   "textposition": "oben",
-  "stimme": { "anbieter": "yapper", "modell": "eleven_v3", "name": "Helena (Faruk-Liste)", "voice_id": "2etPlvmUpTvN6iCGyIDC" },
+  "stimme": {
+    "anbieter": "yapper",
+    "modell": "eleven_v3",
+    "name": "Helena (Faruk-Liste)",
+    "voice_id": "2etPlvmUpTvN6iCGyIDC"
+  },
   "voiceover": [
-    { "satz": "Allein unterwegs, und keiner, der dich filmt?", "belege": ["meinung"] },
-    { "satz": "Die hier wiegt nur 151 Gramm.", "belege": ["gewicht_151g"] },
-    { "satz": "Im Menü wählst du Rocket, Dronie oder Helix, und sie fliegt die Aufnahme von selbst.", "belege": ["quickshots"] },
-    { "satz": "Sie folgt dir automatisch, und du steuerst sie sogar per Handgeste.", "belege": ["folgt_automatisch", "gestensteuerung"] },
-    { "satz": "Wird der Akku knapp, meldet sie sich und fliegt von selbst zurück.", "belege": ["akku_rueckkehr"] },
-    { "satz": "Jetzt im TikTok Shop.", "belege": [] }
+    {
+      "satz": "Allein unterwegs, und keiner, der dich filmt?",
+      "belege": [
+        "meinung"
+      ]
+    },
+    {
+      "satz": "Die hier wiegt nur 151 Gramm.",
+      "belege": [
+        "gewicht_151g"
+      ]
+    },
+    {
+      "satz": "Im Menü wählst du Rocket, Dronie oder Helix, und sie fliegt die Aufnahme von selbst.",
+      "belege": [
+        "quickshots"
+      ]
+    },
+    {
+      "satz": "Sie folgt dir automatisch, und du steuerst sie sogar per Handgeste.",
+      "belege": [
+        "folgt_automatisch",
+        "gestensteuerung"
+      ]
+    },
+    {
+      "satz": "Wird der Akku knapp, meldet sie sich und fliegt von selbst zurück.",
+      "belege": [
+        "akku_rueckkehr"
+      ]
+    },
+    {
+      "satz": "Jetzt im TikTok Shop.",
+      "belege": []
+    }
   ],
   "szenen": [
-    { "clip": "palm", "von": 1.5, "bis": 4.2, "rolle": "hook", "zoom": "kenburns_in", "uebergang": "zoom", "text": { "inhalt": "KEINER, DER DICH FILMT?", "betonung": ["FILMT?"] } },
-    { "clip": "launch_sky", "von": 0.8, "bis": 2.8, "rolle": "emotion", "tempo": 0.5, "zoom": "kenburns_in", "uebergang": "flash", "text": { "inhalt": "NUR 151 GRAMM", "betonung": ["151"], "belege": ["gewicht_151g"] } },
-    { "clip": "app_modes", "von": 5.0, "bis": 7.5, "rolle": "beweis", "zoom": "punch", "uebergang": "whip", "text": { "inhalt": "ROCKET · DRONIE · HELIX", "betonung": ["ROCKET"], "belege": ["quickshots"] } },
-    { "clip": "rocket_b", "von": 0.0, "bis": 2.5, "rolle": "beweis", "zoom": "kenburns_out", "uebergang": "cut" },
-    { "clip": "hill3", "von": 9.5, "bis": 13.5, "rolle": "emotion", "zoom": "kenburns_in", "uebergang": "zoom", "text": { "inhalt": "FOLGT DIR AUTOMATISCH", "betonung": ["AUTOMATISCH"], "belege": ["folgt_automatisch"] } },
-    { "clip": "gesture6", "von": 4.3, "bis": 6.4, "rolle": "beweis", "zoom": "punch", "uebergang": "flash", "text": { "inhalt": "STEUERUNG PER GESTE", "betonung": ["GESTE"], "belege": ["gestensteuerung"] } },
-    { "clip": "akku", "von": 11.0, "bis": 14.5, "rolle": "beweis", "zoom": "punch", "uebergang": "cut", "text": { "inhalt": "AKKU KNAPP? SIE FLIEGT ZURÜCK", "betonung": ["ZURÜCK"], "belege": ["akku_rueckkehr"] } },
-    { "clip": "akku", "von": 24.5, "bis": 28.5, "rolle": "cta", "zoom": "kenburns_in" }
+    {
+      "clip": "palm",
+      "von": 1.5,
+      "bis": 4.2,
+      "rolle": "hook",
+      "zoom": "kenburns_in",
+      "uebergang": "zoom",
+      "text": {
+        "inhalt": "SIE PASST AUF DEINE HAND",
+        "betonung": [
+          "HAND"
+        ],
+        "belege": [
+          "meinung"
+        ]
+      }
+    },
+    {
+      "clip": "launch_sky",
+      "von": 0.8,
+      "bis": 2.8,
+      "rolle": "emotion",
+      "tempo": 0.5,
+      "zoom": "kenburns_in",
+      "uebergang": "flash",
+      "text": {
+        "inhalt": "NUR 151 GRAMM",
+        "betonung": [
+          "151"
+        ],
+        "belege": [
+          "gewicht_151g"
+        ]
+      }
+    },
+    {
+      "clip": "app_modes",
+      "von": 5.0,
+      "bis": 7.5,
+      "rolle": "beweis",
+      "zoom": "punch",
+      "uebergang": "whip",
+      "text": {
+        "inhalt": "ROCKET · DRONIE · HELIX",
+        "betonung": [
+          "ROCKET"
+        ],
+        "belege": [
+          "quickshots"
+        ],
+        "top": 360
+      }
+    },
+    {
+      "clip": "rocket_b",
+      "von": 0.0,
+      "bis": 2.5,
+      "rolle": "beweis",
+      "zoom": "kenburns_out",
+      "uebergang": "cut"
+    },
+    {
+      "clip": "hill3",
+      "von": 9.5,
+      "bis": 13.5,
+      "rolle": "emotion",
+      "zoom": "kenburns_in",
+      "uebergang": "zoom",
+      "text": {
+        "inhalt": "FOLGT DIR AUTOMATISCH",
+        "betonung": [
+          "AUTOMATISCH"
+        ],
+        "belege": [
+          "folgt_automatisch"
+        ]
+      }
+    },
+    {
+      "clip": "gesture6",
+      "von": 4.3,
+      "bis": 6.4,
+      "rolle": "beweis",
+      "zoom": "punch",
+      "uebergang": "flash",
+      "text": {
+        "inhalt": "STEUERUNG PER GESTE",
+        "betonung": [
+          "GESTE"
+        ],
+        "belege": [
+          "gestensteuerung"
+        ]
+      }
+    },
+    {
+      "clip": "akku",
+      "von": 11.0,
+      "bis": 14.5,
+      "rolle": "beweis",
+      "zoom": "punch",
+      "uebergang": "cut",
+      "text": {
+        "inhalt": "AKKU KNAPP? SIE FLIEGT ZURÜCK",
+        "betonung": [
+          "ZURÜCK"
+        ],
+        "belege": [
+          "akku_rueckkehr"
+        ],
+        "top": 360
+      }
+    },
+    {
+      "clip": "palm",
+      "von": 3.6,
+      "bis": 6.3,
+      "rolle": "cta",
+      "zoom": "kenburns_out"
+    }
   ],
-  "cta": { "text": "Jetzt im TikTok Shop", "zusatz": "Deine Kamera, die mitfliegt." }
+  "cta": {
+    "text": "Jetzt im TikTok Shop",
+    "zusatz": "Deine Kamera, die mitfliegt."
+  }
 }
