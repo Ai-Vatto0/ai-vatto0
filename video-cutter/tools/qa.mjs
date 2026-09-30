@@ -122,6 +122,35 @@ const kSchnitte = sheet(schnittBilder.flat(), path.join(qaDir, "kontakt-schnitte
 const utZeiten = (ut?.chunks || []).map((c) => r3((c.start + c.ende) / 2)).filter((t) => t < GESAMT);
 const kUT = sheet(utZeiten.slice(0, 16), path.join(qaDir, "kontakt-untertitel.jpg"), 4);
 
+// ---------- 4b. Safe Zone (Pixelvergleich Export ↔ Quelle an Einblendungs-/Untertitel-Zeitpunkten) ----------
+// Alles, was im Export deutlich anders ist als die Quelle, ist Grafik. Liegt davon etwas außerhalb der Safe Zone → Befund.
+{
+  const SW = 270, SH = 480, F = 1080 / SW; // Messraster 1/4
+  const zone = { l: 60 / F, r: (1080 - 140) / F, o: 150 / F, u: (1920 - 400) / F };
+  const grab = (file, t) => run("ffmpeg", ["-v", "error", "-ss", String(Math.max(0, t)), "-i", file, "-frames:v", "1", "-vf", `scale=${SW}:${SH},format=gray`, "-f", "rawvideo", "-"], { binary: true }).stdout;
+  const metaK = fs.existsSync(path.join(dir, `komposition-${name}`, "meta.json")) ? readJSON(path.join(dir, `komposition-${name}`, "meta.json")) : { einblendungen: [] };
+  const punkte = [
+    ...metaK.einblendungen.flatMap((e) => [e.start + Math.min(1.0, e.dauer / 2), e.start + e.dauer - 0.35].map((t) => ({ t: r3(t), was: e.id }))),
+    ...(ut?.chunks || []).map((c) => ({ t: r3((c.start + c.ende) / 2), was: c.id })),
+  ].filter((p) => p.t > 0 && p.t < GESAMT);
+  const q2s = (t) => { const z = zk.find((z) => t >= z.schnitt_start && t < z.schnitt_ende); return z ? z.quelle_start + (t - z.schnitt_start) : null; };
+  const verstoesse = [];
+  for (const p of punkte) {
+    const tq = q2s(p.t);
+    if (tq === null) continue;
+    const a = grab(video, p.t), b = grab(quelle, tq);
+    if (a.length < SW * SH || b.length < SW * SH) continue;
+    let n = 0, box = [SW, SH, 0, 0];
+    for (let y = 0; y < SH; y++) for (let x = 0; x < SW; x++) {
+      if (Math.abs(a[y * SW + x] - b[y * SW + x]) < 60) continue;
+      if (x >= zone.l && x <= zone.r && y >= zone.o && y <= zone.u) continue;
+      n++; box = [Math.min(box[0], x), Math.min(box[1], y), Math.max(box[2], x), Math.max(box[3], y)];
+    }
+    if (n > 12) verstoesse.push(`${p.was} @${p.t}s: ${n * 16} px² außerhalb, Bereich x ${Math.round(box[0] * F)}–${Math.round(box[2] * F)}, y ${Math.round(box[1] * F)}–${Math.round(box[3] * F)}`);
+  }
+  add("grafik", "Safe Zone (oben 150, rechts 140, unten 400, links 60)", verstoesse.length ? "FEHLER" : "OK", verstoesse.length ? verstoesse.join("; ") : `${punkte.length} Zeitpunkte geprüft`);
+}
+
 // ---------- 5. Neu-Transkription ----------
 const norm = (s) => s.toLowerCase().replace(/[^\p{L}\p{N}]/gu, "");
 const FUELL = /^(äh+|ähm+|öh+|öhm+|ehm+|hm+|hmm+|äm+|mh+)$/;
@@ -154,6 +183,17 @@ if (!opt["ohne-transkript"]) {
     }
     const nahSchnitt = (s) => zk.slice(0, -1).some((z) => Math.abs(z.schnitt_ende - s) < 0.6);
     const quote = 1 - (fehlend.length + extra.length + anders.length) / Math.max(1, m);
+    // Untertitel (nach Korrekturen) exakt gegen das im Export Gehörte – zeitlich zugeordnet.
+    const utFehler = [];
+    for (const c of ut?.chunks || []) for (const w of c.woerter) {
+      const t = norm(w.text);
+      if (!t) continue;
+      const nah = gehoert.filter((g) => g.s >= w.s - 0.45 && g.s <= w.e + 0.45);
+      const zusammen = nah.map((g) => g.t).join("");
+      if (!nah.some((g) => g.t === t) && !zusammen.includes(t) && !nah.some((g) => t.includes(g.t) && g.t.length >= 4))
+        utFehler.push(`${c.id} @${w.s}s „${w.text}“ ≠ gehört „${nah.map((g) => g.text).join(" ") || "–"}“`);
+    }
+    add("untertitel", "Untertitel = Gehörtes (exakt)", utFehler.length ? "WARNUNG" : "OK", utFehler.length ? utFehler.join("; ") + " → Sichtung: Hörfehler von whisper oder falscher Untertitel?" : `${(ut?.chunks || []).reduce((s, c) => s + c.woerter.length, 0)} Wörter stimmen`);
     transkript = { erwartet: m, gehoert: n, uebereinstimmung: r3(quote), fehlend: fehlend.map((w) => ({ ...w, am_schnitt: nahSchnitt(w.s) })), extra, anders };
     add("transkript", "Wortfolge Export = Plan", quote >= 0.9 && !fehlend.some((w) => nahSchnitt(w.s)) ? "OK" : "WARNUNG", `${Math.round(quote * 100)} % übereinstimmend; fehlend ${fehlend.length} (davon am Schnitt ${fehlend.filter((w) => nahSchnitt(w.s)).length}), zusätzlich ${extra.length}, abweichend ${anders.length}`);
   }

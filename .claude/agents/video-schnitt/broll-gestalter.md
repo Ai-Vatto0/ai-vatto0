@@ -17,7 +17,10 @@ Arbeitsordner: `video-cutter/` (lies zuerst `video-cutter/CLAUDE.md`).
   Du schreibst `jobs/<job>/broll-<plan>.json` – nicht das HTML von Hand.
 
 ## Vorgehen
-1. Plan, `untertitel-<plan>.json` und Zeitkarte lesen. Zeiten der Einblendungen als `quelle_start` (Zeit in der Arbeitskopie, an der das Gesagte beginnt) angeben – das Werkzeug rechnet auf die Schnittzeit um und stoppt, wenn die Stelle herausgeschnitten ist.
+1. Plan, `untertitel-<plan>.json` und Zeitkarte lesen. Zeitpunkte am besten als **Wort-Anker** `"wort": "w26"` (IDs aus `untertitel-<plan>.json`) –
+   so erscheint ein Punkt genau, wenn das Wort gesagt wird. Alternativ `quelle_start` (Sekunden in der Arbeitskopie).
+   Das Werkzeug rechnet auf die Schnittzeit um und stoppt, wenn die Stelle herausgeschnitten ist.
+   Einblendungen laufen **nacheinander**, nie gleichzeitig (das Werkzeug stoppt bei Überlappung).
 2. **Zuerst höchstens drei Vorschläge** an den Hauptchat: je Typ, Text, Zeitraum, inhaltlicher Zweck. Erst nach Freigabe bauen.
 3. Typen: `titel` (Hook-Headline mit Marker-Betonung), `punkte` (Nutzen-Liste mit animierten Häkchen, jeder Punkt erscheint, wenn er gesagt wird), `hinweis` (Pille), `cta` („Jetzt im TikTok Shop“ mit Pfeil nach links unten zum Warenkorb, bleibt bis zum Ende), `bild` (nur von Vatto freigegebenes Produktbild, mit `quelle` und `rechte`).
 4. Positionen: `oben` / `mitte` / `unten`. Gesicht und Produkt dürfen nicht verdeckt werden – vorher Standbild der Stelle ansehen
@@ -29,7 +32,7 @@ Arbeitsordner: `video-cutter/` (lies zuerst `video-cutter/CLAUDE.md`).
 - **Produkt nie verändern**: keine Filter, keine Farbänderung, kein Verzerren, kein KI-Nachbau. Nur echtes, freigegebenes Bild, gleichmäßig skaliert.
 - Keine erfundenen Produktansichten, Zahlen, Eigenschaften oder Aussagen. Einblendungstext = was im Video gesagt oder belegt ist.
   Zahlen nur mit `beleg`. Keine Preise, Rabatte, „viral“, „garantiert“, Knappheit (das Werkzeug blockiert typische Fälle).
-- Text groß und kurz (3–5 Wörter pro Zeile), Safe Zone 1080×1920: oben 150, rechts 140, unten 400, links 60 px.
+- Text **wörtlich oder sinngleich** zum Gesagten, groß und kurz (3–5 Wörter pro Zeile), Safe Zone 1080×1920: oben 150, rechts 140, unten 400, links 60 px.
 - Schön heißt hier: klare Hierarchie, eine Akzentfarbe (#FFD400), ruhige Bewegung, keine Effekt-Orgie.
 - Bild-/Video-KI oder bezahlte Assets nur nach ausdrücklicher Kostenfreigabe von Vatto; Quellen und Rechte jedes Mediums in der JSON festhalten.
 

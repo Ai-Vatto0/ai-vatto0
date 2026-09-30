@@ -29,20 +29,20 @@
         .balken { width: 16px; background: #FFD400; transform-origin: center bottom; }
         .p-tx { color: #fff; font-size: 54px; padding: 20px 34px; }
         .cta { position: relative; display: flex; flex-direction: column; align-items: center; }
-        .cta-tx { color: #FFD400; font-size: 104px; line-height: 1.05; text-align: center; -webkit-text-stroke: 16px #000; paint-order: stroke fill; max-width: 860px; }
-        .pfeil { width: 200px; height: 200px; margin-top: 10px; margin-right: 420px; }
+        .cta-tx { color: #FFD400; font-size: 84px; line-height: 1.05; text-align: center; -webkit-text-stroke: 14px #000; paint-order: stroke fill; max-width: 720px; }
+        .pfeil { width: 170px; height: 170px; margin-top: 6px; margin-right: 380px; }
         .pfeil path { stroke-dasharray: 260; }
         .bildkarte { background: #fff; border-radius: 36px; padding: 22px; box-shadow: 0 24px 70px rgba(0,0,0,.5); }
         .bildkarte img { display: block; max-width: 700px; max-height: 720px; object-fit: contain; border-radius: 22px; }
       </style>
       <div id="root" data-composition-id="br3" data-width="1080" data-height="1920">
-        <div class="broll cta" style="top:640px"><div class="cta"><div class="cta-tx">Jetzt im TikTok Shop</div><svg class="pfeil" viewBox="0 0 200 200"><path d="M170 20 C 150 90, 110 130, 40 160" fill="none" stroke="#FFD400" stroke-width="14" stroke-linecap="round"/><path d="M40 160 L 70 118 M40 160 L 92 170" fill="none" stroke="#FFD400" stroke-width="14" stroke-linecap="round"/></svg></div></div>
+        <div class="broll cta" style="top:940px"><div class="cta"><div class="cta-tx">Jetzt im TikTok Shop</div><svg class="pfeil" viewBox="0 0 200 200"><path d="M170 20 C 150 90, 110 130, 40 160" fill="none" stroke="#FFD400" stroke-width="14" stroke-linecap="round"/><path d="M40 160 L 70 118 M40 160 L 92 170" fill="none" stroke="#FFD400" stroke-width="14" stroke-linecap="round"/></svg></div></div>
       </div>
       <script>
         const tl = gsap.timeline({ paused: true });
         tl.fromTo(".cta-tx", { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: "back.out(2.6)" }, 0);
         tl.fromTo(".pfeil path", { strokeDashoffset: 260 }, { strokeDashoffset: 0, duration: 0.45, ease: "power2.out", stagger: 0.12 }, 0.35);
-        tl.to(".cta-tx", { scale: 1.06, duration: 0.35, ease: "sine.inOut", yoyo: true, repeat: 1 }, 0.9);
+        tl.to(".cta-tx", { scale: 1.04, duration: 0.35, ease: "sine.inOut", yoyo: true, repeat: 1 }, 0.9);
         window.__timelines["br3"] = tl;
       </script>
     </template>

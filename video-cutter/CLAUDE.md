@@ -34,7 +34,8 @@ Unteragenten nicht verfügbar? Dann die Rollen nacheinander im Hauptchat ausfüh
    Grenzen nur in Stille; Wortzeiten sind Schätzungen, der Tonpegel entscheidet.
 5. Stil: keine toten Stellen, aber keine hektischen Schnitte (Stücke ≥ ~1,2 s). Verkaufsstark: Hook → Nutzen → Beweis → CTA.
 6. **Produkt nie verändern** (keine Filter, keine KI-Nachbauten). Keine erfundenen Zahlen, Eigenschaften, Preise, Rabatte, Superlative.
-7. B-Roll: höchstens 3 pro Video, jede mit Zweck und Zeitraum; Safe Zone oben 150 / rechts 140 / unten 400 / links 60 px.
+7. B-Roll: höchstens 3 pro Video, jede mit Zweck und Zeitraum, nacheinander (nie gleichzeitig), zeitlich per Wort-Anker (`"wort": "w26"`);
+   Safe Zone oben 150 / rechts 140 / unten 400 / links 60 px (QA prüft per Pixelvergleich); Gesicht und Produkt frei lassen.
 8. Kostenpflichtige KI (Bild/Video/Stimme) nur nach Kostenfreigabe. Keine Medien an zusätzliche Cloud-Dienste.
 9. Exporte nie überschreiben (Werkzeuge vergeben `vNNN`). Änderungswunsch = neue Version, gemeldeten Fehler danach gezielt nachprüfen.
 10. Nie einen bestandenen Test behaupten, der nicht gelaufen ist. Was nicht messbar ist (Klang, Produktfarbe im Detail) → Vatto sichten lassen.
@@ -42,6 +43,7 @@ Unteragenten nicht verfügbar? Dann die Rollen nacheinander im Hauptchat ausfüh
 ## Technische Notizen (geprüft mit 0.8.77)
 - Schnitt = pro Bereich `<video muted>` + `<audio>` mit identischem `data-start`/`data-duration`/`data-media-start` (Rezept „Hard cut“) → genau eine Tonspur.
 - Der Audio-Mix liegt ohne Ausgleich ~2 dB unter der Quelle → `MIX_KORREKTUR` in `baue.mjs`; QA misst „Pegel Export−Quelle“ bei jedem Export.
+- QA-Wortvergleich allein reicht nicht: `qa.mjs` prüft Untertitel zusätzlich exakt gegen das Gehörte – Warnungen dort sind oft whisper-Hörfehler, trotzdem immer sichten.
 - whisper dehnt Wortzeiten über Pausen → `schnittplan.mjs` ordnet Wörter Sprechinseln aus dem Tonpegel zu.
 - `komposition-*/index.html` und `compositions/*.html` sind generiert – Änderungen immer über Plan/B-Roll-JSON + `baue.mjs`.
 - Eigene Jobs unter `jobs/` und `material/` sind gitignored (privat). Nur `jobs/test/` (synthetischer Testclip) ist versioniert.

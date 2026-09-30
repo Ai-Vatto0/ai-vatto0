@@ -8,14 +8,14 @@
   "chunks": [
     {
       "id": "ut1",
-      "text": "Kennt du das wenn",
+      "text": "Kennst du das wenn",
       "start": 0.083,
       "ende": 1.355,
-      "breite_px": 667,
+      "breite_px": 704,
       "woerter": [
         {
           "id": "w0",
-          "text": "Kennt",
+          "text": "Kennst",
           "s": 0.083,
           "e": 0.463
         },

@@ -41,7 +41,15 @@ const ZAHL = /\d/;
 const fehler = [];
 const alleTexte = (e) => [e.text, e.titel, ...(e.zeilen || []), ...(e.punkte || []).map((p) => p.text)].filter(Boolean).join(" ");
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+const an = readJSON(path.join(dir, "analyse.json"));
 const zeitVon = (e, feld = "") => {
+  if (e.wort) { // Anker auf ein Wort (ID aus analyse.json / untertitel-*.json), genauer als geschätzte Zeiten
+    const w = an.woerter.find((x) => `w${x.i}` === e.wort);
+    if (!w) { fehler.push(`${e.id || e.text}: Wort ${e.wort} unbekannt`); return null; }
+    const t = quelleZuSchnitt(zk, w.s);
+    if (t === null) fehler.push(`${e.id || e.text}: Wort ${e.wort} „${w.text}“ ist herausgeschnitten`);
+    return t;
+  }
   if (e[`schnitt_start${feld}`] !== undefined) return Number(e[`schnitt_start${feld}`]);
   const qs = e[`quelle_start${feld}`];
   if (qs === undefined) return null;
@@ -66,6 +74,10 @@ for (const [k, e] of (broll.einblendungen || []).entries()) {
   if (dauer < 0.8) fehler.push(`${e.id}: zu kurz (${dauer} s) oder liegt am Videoende`);
   eins.push({ ...e, start: r3(start), dauer: r3(dauer) });
 }
+eins.sort((a, b) => a.start - b.start).forEach((e, k, arr) => {
+  const n = arr[k + 1];
+  if (n && e.start + e.dauer > n.start + 0.01) fehler.push(`${e.id} (bis ${r3(e.start + e.dauer)} s) überlappt ${n.id} (ab ${n.start} s) – Einblendungen nacheinander, nie gleichzeitig`);
+});
 if (eins.length > 3 && !broll.mehr_als_drei_freigegeben) fehler.push(`${eins.length} Einblendungen – Vorgabe: höchstens 3 pro Video, außer freigegeben.`);
 if (fehler.length) fail(`B-Roll ${brollName}: \n  - ${fehler.join("\n  - ")}`);
 
@@ -104,8 +116,8 @@ const CSS = `
         .balken { width: 16px; background: #FFD400; transform-origin: center bottom; }
         .p-tx { color: #fff; font-size: 54px; padding: 20px 34px; }
         .cta { position: relative; display: flex; flex-direction: column; align-items: center; }
-        .cta-tx { color: #FFD400; font-size: 104px; line-height: 1.05; text-align: center; -webkit-text-stroke: 16px #000; paint-order: stroke fill; max-width: 860px; }
-        .pfeil { width: 200px; height: 200px; margin-top: 10px; margin-right: 420px; }
+        .cta-tx { color: #FFD400; font-size: 84px; line-height: 1.05; text-align: center; -webkit-text-stroke: 14px #000; paint-order: stroke fill; max-width: 720px; }
+        .pfeil { width: 170px; height: 170px; margin-top: 6px; margin-right: 380px; }
         .pfeil path { stroke-dasharray: 260; }
         .bildkarte { background: #fff; border-radius: 36px; padding: 22px; box-shadow: 0 24px 70px rgba(0,0,0,.5); }
         .bildkarte img { display: block; max-width: 700px; max-height: 720px; object-fit: contain; border-radius: 22px; }`;
@@ -166,7 +178,7 @@ if (ut) {
 const CHECK = `<svg class="chk" viewBox="0 0 64 64"><circle cx="32" cy="32" r="28" fill="none" stroke="#FFD400" stroke-width="6"/><path d="M19 33 L28 42 L46 23" fill="none" stroke="#FFD400" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
 eins.forEach((e, k) => {
   const id = e.id, d = e.dauer;
-  const top = TOP[e.position || (e.typ === "titel" ? "oben" : e.typ === "cta" ? "mitte" : "unten")] ?? 940;
+  const top = TOP[e.position || (e.typ === "titel" ? "oben" : "unten")] ?? 940;
   let inner = "", js = "";
   const T = (x) => r3(x); // lokale Zeit in der Sub-Komposition
   if (e.typ === "titel") {
@@ -194,7 +206,7 @@ eins.forEach((e, k) => {
     js += `\n        tl.fromTo(".cta-tx", { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: "back.out(2.6)" }, 0);`;
     js += `\n        tl.fromTo(".pfeil path", { strokeDashoffset: 260 }, { strokeDashoffset: 0, duration: 0.45, ease: "power2.out", stagger: 0.12 }, 0.35);`;
     const pulse = Math.max(0, Math.floor((d - 1.3) / 0.7));
-    if (pulse) js += `\n        tl.to(".cta-tx", { scale: 1.06, duration: 0.35, ease: "sine.inOut", yoyo: true, repeat: ${pulse * 2 - 1} }, 0.9);`;
+    if (pulse) js += `\n        tl.to(".cta-tx", { scale: 1.04, duration: 0.35, ease: "sine.inOut", yoyo: true, repeat: ${pulse * 2 - 1} }, 0.9);`;
   } else if (e.typ === "bild") {
     // Produktbild unverändert: keine Filter, kein Verzerren, nur gleichmäßige Skalierung/Bewegung.
     const src = `assets/broll-${path.basename(e.datei)}`;

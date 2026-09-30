@@ -29,25 +29,25 @@
         .balken { width: 16px; background: #FFD400; transform-origin: center bottom; }
         .p-tx { color: #fff; font-size: 54px; padding: 20px 34px; }
         .cta { position: relative; display: flex; flex-direction: column; align-items: center; }
-        .cta-tx { color: #FFD400; font-size: 104px; line-height: 1.05; text-align: center; -webkit-text-stroke: 16px #000; paint-order: stroke fill; max-width: 860px; }
-        .pfeil { width: 200px; height: 200px; margin-top: 10px; margin-right: 420px; }
+        .cta-tx { color: #FFD400; font-size: 84px; line-height: 1.05; text-align: center; -webkit-text-stroke: 14px #000; paint-order: stroke fill; max-width: 720px; }
+        .pfeil { width: 170px; height: 170px; margin-top: 6px; margin-right: 380px; }
         .pfeil path { stroke-dasharray: 260; }
         .bildkarte { background: #fff; border-radius: 36px; padding: 22px; box-shadow: 0 24px 70px rgba(0,0,0,.5); }
         .bildkarte img { display: block; max-width: 700px; max-height: 720px; object-fit: contain; border-radius: 22px; }
       </style>
       <div id="root" data-composition-id="br2" data-width="1080" data-height="1920">
-        <div class="broll punkte" style="top:940px"><div class="karte"><div class="k-titel">Im Alltag</div><div class="punkt" id="br2-p0"><svg class="chk" viewBox="0 0 64 64"><circle cx="32" cy="32" r="28" fill="none" stroke="#FFD400" stroke-width="6"/><path d="M19 33 L28 42 L46 23" fill="none" stroke="#FFD400" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Länger warm</span></div><div class="punkt" id="br2-p1"><svg class="chk" viewBox="0 0 64 64"><circle cx="32" cy="32" r="28" fill="none" stroke="#FFD400" stroke-width="6"/><path d="M19 33 L28 42 L46 23" fill="none" stroke="#FFD400" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Mit einer Hand auf</span></div><div class="punkt" id="br2-p2"><svg class="chk" viewBox="0 0 64 64"><circle cx="32" cy="32" r="28" fill="none" stroke="#FFD400" stroke-width="6"/><path d="M19 33 L28 42 L46 23" fill="none" stroke="#FFD400" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Passt in den Halter</span></div></div></div>
+        <div class="broll punkte" style="top:200px"><div class="karte"><div class="k-titel">Im Alltag</div><div class="punkt" id="br2-p0"><svg class="chk" viewBox="0 0 64 64"><circle cx="32" cy="32" r="28" fill="none" stroke="#FFD400" stroke-width="6"/><path d="M19 33 L28 42 L46 23" fill="none" stroke="#FFD400" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Länger warm</span></div><div class="punkt" id="br2-p1"><svg class="chk" viewBox="0 0 64 64"><circle cx="32" cy="32" r="28" fill="none" stroke="#FFD400" stroke-width="6"/><path d="M19 33 L28 42 L46 23" fill="none" stroke="#FFD400" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Mit einer Hand auf</span></div><div class="punkt" id="br2-p2"><svg class="chk" viewBox="0 0 64 64"><circle cx="32" cy="32" r="28" fill="none" stroke="#FFD400" stroke-width="6"/><path d="M19 33 L28 42 L46 23" fill="none" stroke="#FFD400" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Passt in den Halter</span></div></div></div>
       </div>
       <script>
         const tl = gsap.timeline({ paused: true });
         tl.fromTo(".karte", { y: 40, scale: 0.92, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.35, ease: "back.out(1.8)" }, 0);
-        tl.fromTo("#br2-p0", { x: -50, opacity: 0 }, { x: 0, opacity: 1, duration: 0.3, ease: "power3.out" }, 0.7);
-        tl.fromTo("#br2-p0 path", { strokeDashoffset: 48 }, { strokeDashoffset: 0, duration: 0.3, ease: "power2.out" }, 0.82);
-        tl.fromTo("#br2-p1", { x: -50, opacity: 0 }, { x: 0, opacity: 1, duration: 0.3, ease: "power3.out" }, 3.164);
-        tl.fromTo("#br2-p1 path", { strokeDashoffset: 48 }, { strokeDashoffset: 0, duration: 0.3, ease: "power2.out" }, 3.284);
-        tl.fromTo("#br2-p2", { x: -50, opacity: 0 }, { x: 0, opacity: 1, duration: 0.3, ease: "power3.out" }, 5.03);
-        tl.fromTo("#br2-p2 path", { strokeDashoffset: 48 }, { strokeDashoffset: 0, duration: 0.3, ease: "power2.out" }, 5.15);
-        tl.to(".broll > *", { opacity: 0, y: -24, duration: 0.2, ease: "power2.in" }, 7.98);
+        tl.fromTo("#br2-p0", { x: -50, opacity: 0 }, { x: 0, opacity: 1, duration: 0.3, ease: "power3.out" }, 0.3);
+        tl.fromTo("#br2-p0 path", { strokeDashoffset: 48 }, { strokeDashoffset: 0, duration: 0.3, ease: "power2.out" }, 0.42);
+        tl.fromTo("#br2-p1", { x: -50, opacity: 0 }, { x: 0, opacity: 1, duration: 0.3, ease: "power3.out" }, 0.75);
+        tl.fromTo("#br2-p1 path", { strokeDashoffset: 48 }, { strokeDashoffset: 0, duration: 0.3, ease: "power2.out" }, 0.87);
+        tl.fromTo("#br2-p2", { x: -50, opacity: 0 }, { x: 0, opacity: 1, duration: 0.3, ease: "power3.out" }, 1.2);
+        tl.fromTo("#br2-p2 path", { strokeDashoffset: 48 }, { strokeDashoffset: 0, duration: 0.3, ease: "power2.out" }, 1.32);
+        tl.to(".broll > *", { opacity: 0, y: -24, duration: 0.2, ease: "power2.in" }, 6.98);
         window.__timelines["br2"] = tl;
       </script>
     </template>
