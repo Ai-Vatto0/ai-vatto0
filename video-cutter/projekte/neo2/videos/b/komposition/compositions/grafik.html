@@ -21,32 +21,30 @@
         .ki { position: absolute; left: 70px; top: 160px; font-size: 26px; color: #FFFFFF; letter-spacing: .04em; background: rgba(0,0,0,.62); padding: 6px 14px; border-radius: 12px; }
       </style>
       <div id="root" data-composition-id="grafik" data-width="1080" data-height="1920">
-        <div id="h1" class="clip headline" data-start="0.1" data-duration="2.55" data-track-index="1"><div class="hl-in"><span class="hw">SIE</span> <span class="hw">PASST</span> <span class="hw">AUF</span> <span class="hw">DEINE</span> <span class="hw em">HAND</span></div></div>
-        <div id="h2" class="clip headline" data-start="2.8" data-duration="3.85" data-track-index="1"><div class="hl-in"><span class="hw">NUR</span> <span class="hw em">151</span> <span class="hw">GRAMM</span></div></div>
-        <div id="h3" class="clip headline" data-start="6.8" data-duration="2.35" data-track-index="1" style="top:360px"><div class="hl-in"><span class="hw em">ROCKET</span> <span class="hw">·</span> <span class="hw">DRONIE</span> <span class="hw">·</span> <span class="hw">HELIX</span></div></div>
-        <div id="h5" class="clip headline" data-start="11.8" data-duration="3.85" data-track-index="1"><div class="hl-in"><span class="hw">FOLGT</span> <span class="hw">DIR</span> <span class="hw em">AUTOMATISCH</span></div></div>
-        <div id="h6" class="clip headline" data-start="15.8" data-duration="1.95" data-track-index="1"><div class="hl-in"><span class="hw">STEUERUNG</span> <span class="hw">PER</span> <span class="hw em">GESTE</span></div></div>
-        <div id="h7" class="clip headline" data-start="17.9" data-duration="3.35" data-track-index="1" style="top:360px"><div class="hl-in"><span class="hw">AKKU</span> <span class="hw">KNAPP?</span> <span class="hw">SIE</span> <span class="hw">FLIEGT</span> <span class="hw em">ZURÜCK</span></div></div>
-        <div id="cta" class="clip ctabox" data-start="21.3" data-duration="2.7" data-track-index="2"><div class="cta-tx">Jetzt im TikTok Shop</div><div class="cta-zu">Deine Kamera, die mitfliegt.</div><svg class="pfeil" viewBox="0 0 200 200"><path d="M170 20 C 150 90, 110 130, 40 160" fill="none" stroke="#4DD8FF" stroke-width="14" stroke-linecap="round"/><path d="M40 160 L 70 118 M40 160 L 92 170" fill="none" stroke="#4DD8FF" stroke-width="14" stroke-linecap="round"/></svg></div>
-        <div id="ki" class="clip ki" data-start="0" data-duration="24" data-track-index="3">KI-Stimme</div>
+        <div id="h1" class="clip headline" data-start="0.1" data-duration="3.117" data-track-index="1"><div class="hl-in"><span class="hw">SIE</span> <span class="hw">PASST</span> <span class="hw">AUF</span> <span class="hw">DEINE</span> <span class="hw em">HAND</span></div></div>
+        <div id="h2" class="clip headline" data-start="3.367" data-duration="2.517" data-track-index="1"><div class="hl-in"><span class="hw">NUR</span> <span class="hw em">151</span> <span class="hw">GRAMM</span></div></div>
+        <div id="h5" class="clip headline" data-start="11.368" data-duration="1.283" data-track-index="1"><div class="hl-in"><span class="hw">FOLGT</span> <span class="hw">DIR</span> <span class="hw em">AUTOMATISCH</span></div></div>
+        <div id="h6" class="clip headline" data-start="12.801" data-duration="1.983" data-track-index="1"><div class="hl-in"><span class="hw">STEUERUNG</span> <span class="hw">PER</span> <span class="hw em">GESTE</span></div></div>
+        <div id="cta" class="clip ctabox" style="top:330px" data-start="18.467" data-duration="2.867" data-track-index="2"><div class="cta-tx">Jetzt im TikTok Shop</div><div class="cta-zu">Deine Kamera, die mitfliegt.</div><svg class="pfeil" viewBox="0 0 200 200"><path d="M170 20 C 150 90, 110 130, 40 160" fill="none" stroke="#4DD8FF" stroke-width="14" stroke-linecap="round"/><path d="M40 160 L 70 118 M40 160 L 92 170" fill="none" stroke="#4DD8FF" stroke-width="14" stroke-linecap="round"/></svg></div>
+        <div id="ki" class="clip ki" data-start="0" data-duration="21.334" data-track-index="3">KI-Stimme</div>
       </div>
       <script>
         const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#h1 .hl-in", { opacity: 0 }, { opacity: 1, duration: 0.06 }, 0.1);
         tl.fromTo("#h1 .hw", { yPercent: 80, opacity: 0, rotation: -4 }, { yPercent: 0, opacity: 1, rotation: 0, duration: 0.32, ease: "back.out(2.2)", stagger: 0.06 }, 0.1);
-        tl.to("#h1 .hl-in", { opacity: 0, y: -20, duration: 0.18, ease: "power2.in" }, 2.47);
-        tl.fromTo("#h2 .hw", { yPercent: 80, opacity: 0, rotation: -4 }, { yPercent: 0, opacity: 1, rotation: 0, duration: 0.32, ease: "back.out(2.2)", stagger: 0.06 }, 2.8);
-        tl.to("#h2 .hl-in", { opacity: 0, y: -20, duration: 0.18, ease: "power2.in" }, 6.47);
-        tl.fromTo("#h3 .hw", { yPercent: 80, opacity: 0, rotation: -4 }, { yPercent: 0, opacity: 1, rotation: 0, duration: 0.32, ease: "back.out(2.2)", stagger: 0.06 }, 6.8);
-        tl.to("#h3 .hl-in", { opacity: 0, y: -20, duration: 0.18, ease: "power2.in" }, 8.97);
-        tl.fromTo("#h5 .hw", { yPercent: 80, opacity: 0, rotation: -4 }, { yPercent: 0, opacity: 1, rotation: 0, duration: 0.32, ease: "back.out(2.2)", stagger: 0.06 }, 11.8);
-        tl.to("#h5 .hl-in", { opacity: 0, y: -20, duration: 0.18, ease: "power2.in" }, 15.47);
-        tl.fromTo("#h6 .hw", { yPercent: 80, opacity: 0, rotation: -4 }, { yPercent: 0, opacity: 1, rotation: 0, duration: 0.32, ease: "back.out(2.2)", stagger: 0.06 }, 15.8);
-        tl.to("#h6 .hl-in", { opacity: 0, y: -20, duration: 0.18, ease: "power2.in" }, 17.57);
-        tl.fromTo("#h7 .hw", { yPercent: 80, opacity: 0, rotation: -4 }, { yPercent: 0, opacity: 1, rotation: 0, duration: 0.32, ease: "back.out(2.2)", stagger: 0.06 }, 17.9);
-        tl.to("#h7 .hl-in", { opacity: 0, y: -20, duration: 0.18, ease: "power2.in" }, 21.07);
-        tl.fromTo("#cta .cta-tx", { scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.42, ease: "back.out(1.2)" }, 21.4);
-        tl.fromTo("#cta .cta-zu", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "power3.out" }, 21.7);
-        tl.fromTo("#cta .pfeil path", { strokeDashoffset: 260 }, { strokeDashoffset: 0, duration: 0.45, ease: "power2.out", stagger: 0.12 }, 21.8);
+        tl.to("#h1 .hl-in", { opacity: 0, y: -20, duration: 0.18, ease: "power2.in" }, 3.037);
+        tl.fromTo("#h2 .hl-in", { opacity: 0 }, { opacity: 1, duration: 0.06 }, 3.367);
+        tl.fromTo("#h2 .hw", { yPercent: 80, opacity: 0, rotation: -4 }, { yPercent: 0, opacity: 1, rotation: 0, duration: 0.32, ease: "back.out(2.2)", stagger: 0.06 }, 3.367);
+        tl.to("#h2 .hl-in", { opacity: 0, y: -20, duration: 0.18, ease: "power2.in" }, 5.704);
+        tl.fromTo("#h5 .hl-in", { opacity: 0 }, { opacity: 1, duration: 0.06 }, 11.368);
+        tl.fromTo("#h5 .hw", { yPercent: 80, opacity: 0, rotation: -4 }, { yPercent: 0, opacity: 1, rotation: 0, duration: 0.32, ease: "back.out(2.2)", stagger: 0.06 }, 11.368);
+        tl.to("#h5 .hl-in", { opacity: 0, y: -20, duration: 0.18, ease: "power2.in" }, 12.471);
+        tl.fromTo("#h6 .hl-in", { opacity: 0 }, { opacity: 1, duration: 0.06 }, 12.801);
+        tl.fromTo("#h6 .hw", { yPercent: 80, opacity: 0, rotation: -4 }, { yPercent: 0, opacity: 1, rotation: 0, duration: 0.32, ease: "back.out(2.2)", stagger: 0.06 }, 12.801);
+        tl.to("#h6 .hl-in", { opacity: 0, y: -20, duration: 0.18, ease: "power2.in" }, 14.604);
+        tl.fromTo("#cta .cta-tx", { scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.42, ease: "back.out(1.2)" }, 18.567);
+        tl.fromTo("#cta .cta-zu", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "power3.out" }, 18.867);
+        tl.fromTo("#cta .pfeil path", { strokeDashoffset: 260 }, { strokeDashoffset: 0, duration: 0.45, ease: "power2.out", stagger: 0.12 }, 18.967);
         window.__timelines["grafik"] = tl;
       </script>
     </template>
