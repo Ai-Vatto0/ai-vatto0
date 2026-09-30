@@ -47,3 +47,18 @@ Unteragenten nicht verfügbar? Dann die Rollen nacheinander im Hauptchat ausfüh
 - whisper dehnt Wortzeiten über Pausen → `schnittplan.mjs` ordnet Wörter Sprechinseln aus dem Tonpegel zu.
 - `komposition-*/index.html` und `compositions/*.html` sind generiert – Änderungen immer über Plan/B-Roll-JSON + `baue.mjs`.
 - Eigene Jobs unter `jobs/` und `material/` sind gitignored (privat). Nur `jobs/test/` (synthetischer Testclip) ist versioniert.
+
+## Weg 2: Skript-Workflow (viel Rohmaterial → mehrere unterschiedliche Videos mit KI-Voiceover)
+Für Produkt-Footage ohne Sprache (z. B. Drohnen-Clips). Ordner `projekte/<projekt>/` (Beispiel: `projekte/neo2/`).
+| # | Werkzeug | Ergebnis |
+|---|---|---|
+| 1 | `manifest.json` (Drive-Liste) → `node tools/bibliothek.mjs <p> laden` | Kopien in `roh/` (gitignored), Größe geprüft |
+| 2 | `node tools/bibliothek.mjs <p> sichten` + Sichtungs-Agenten → `bibliothek.json` (Tags) | echte fps/HDR, 1-fps-Kontaktbögen, Rolle, beste Sekunden, Risiken |
+| 3 | Specs `videos/<v>/spec.json` (Winkel, Hook, VO-Sätze mit Belegen aus `fakten.json`, Szenen mit `ab_wort`) → `node tools/pruefe-spec.mjs <p>` | Belege, Sperrwörter, Diversität A↔B + gegen alte Videos, Abdeckung |
+| 4 | **Vatto gibt Skripte frei** → Yapper eleven_v3 (dryRun, 0 Credits) → `node tools/vo-ausrichten.mjs <p> <v> <mp3>` | VO -14 LUFS, Wortzeiten, Untertitel = Skripttext |
+| 5 | `node tools/timing.mjs <p> <v>` | Schnitte 0,12 s vor dem Wort-Anker, CTA 1,4 s nach dem letzten Wort |
+| 6 | `zwischenclip.mjs` → `baue-spec.mjs` → `render-spec.mjs` | native 9:16-Ausschnitte (Zoom-Reserve), HDR→SDR, Zeitlupe/Ramp ohne Interpolation, Vorschau + QA |
+| 7 | Agent **qualitaetspruefer** → Vatto sichtet → `render-spec.mjs <p> <v> --final --freigabe "…"` | Final, nie überschrieben |
+Regeln zusätzlich: Produkt in Sekunde 0 sichtbar · Hook-Text ergänzt das VO, wiederholt es nicht · KI-Stimme nie in Ich-Form (kein Fake-Testimonial) ·
+Zeitlupe nur aus ≥ 50 fps und nur als dokumentierte Ausnahme (Faruk: „keine Zeitlupe“) · private Stellen per `bis_max` sperren ·
+Remotion-Vergleich: `node tools/remotion-props.mjs <p> <v>` + in `video-edit/`: `npx remotion render SpecVideo …`.

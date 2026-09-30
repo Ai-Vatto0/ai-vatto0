@@ -26,6 +26,18 @@ Erst dann kommt das finale Video: `video-cutter/jobs/<name>/exporte/final-…-v0
 
 ---
 
+## 1b. Viel Rohmaterial → mehrere verschiedene Videos (Skript-Weg)
+
+```
+Neue Videos aus Rohmaterial (Skript-Workflow, video-cutter/CLAUDE.md „Weg 2“).
+Material: <Google-Drive-Ordner-Link>
+Produkt: <Name> – Faktenblatt/Shop-Link: <…>
+Anzahl Videos: <z. B. 2>
+Wünsche: <z. B. „einmal Lifestyle, einmal Funktionen erklären“>
+```
+Du bekommst zuerst die **Skripte als Tabelle** (Hook, Voiceover-Text, Shotliste) zur Freigabe,
+dann Vorschauen mit Zoom, Speed-Ramps, Übergängen, animierten Texten und KI-Voiceover, dann die Finals.
+
 ## 2. Einmalig einrichten
 
 **Cloud-Sitzung (claude.ai/code):** passiert automatisch beim Start (Log: `/tmp/video-cutter-setup.log`).
