@@ -33,6 +33,10 @@ dann nächstes Produkt – mit **verschiedenen Formaten** statt nur verschiedene
   (klein oben rechts, optional groß als Intro); bei Marker-Looks liegen alle Texte in der oberen Bildhälfte (Produkt unten frei).
 - Fotos als 6-s-Standbild-Clips (`stills/`) in der Bibliothek → Ken Burns über den normalen Spec-Weg.
 - Lehre: Drohnen-Footage 9:16 → Roller sitzt im unteren Drittel; Headline bei 1150 px lag über dem Produkt (v001 von Video a verworfen).
+- Vorschauen a v004 · b v002 · c v003 · d v001 · e v003 im Drive `02-Fertig/RCB-D5-Pro/Vorschau`. Selbst gefundene Fehler: Kind im Bild (a),
+  Gesicht zu lange frontal (b, c, e), Passanten (c, e), Text-Überlauf (lange Einzelwörter → Schrift passt sich jetzt an).
+- **Offen:** Vattos Sichtung + Antwort zur Variante (NFC/Blinker) und Sperrstatus → erst dann Finals (`produziere.mjs … --final`).
+- Lehre: frontale Drohnen-Verfolgung = Gesicht dauerhaft im Bild; Kontaktbögen mit 1 Bild/s täuschen bei Distanz → Stichbild in voller Größe prüfen.
 
 ### 2026-10-01 – Fester Drive-Ordner für Videos (beide Richtungen)
 

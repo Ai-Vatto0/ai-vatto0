@@ -1,5 +1,5 @@
 {
-  "gebaut": "2026-10-01T14:09:33.369Z",
+  "gebaut": "2026-10-01T14:27:31.193Z",
   "video": "e",
   "dauer_s": 24.333,
   "fps": 30,
@@ -10,12 +10,20 @@
       "szene": 1,
       "clip": "dji0925-0012",
       "start": 0,
-      "dauer": 5.7,
+      "dauer": 2.433,
       "zoom": "kenburns_in",
       "uebergang": "zoom"
     },
     {
       "szene": 2,
+      "clip": "ciwl3941",
+      "start": 2.433,
+      "dauer": 3.267,
+      "zoom": "punch",
+      "uebergang": "cut"
+    },
+    {
+      "szene": 3,
       "clip": "dji0924-0004",
       "start": 5.7,
       "dauer": 3.3,
@@ -23,7 +31,7 @@
       "uebergang": "whip"
     },
     {
-      "szene": 3,
+      "szene": 4,
       "clip": "foto-front",
       "start": 9,
       "dauer": 4.433,
@@ -31,15 +39,23 @@
       "uebergang": "flash"
     },
     {
-      "szene": 4,
+      "szene": 5,
       "clip": "dji0925-0012",
       "start": 13.433,
-      "dauer": 7.8,
+      "dauer": 5.333,
       "zoom": "none",
       "uebergang": "zoom"
     },
     {
-      "szene": 5,
+      "szene": 6,
+      "clip": "dji0924-0004",
+      "start": 18.766,
+      "dauer": 2.467,
+      "zoom": "kenburns_in",
+      "uebergang": "cut"
+    },
+    {
+      "szene": 7,
       "clip": "foto-wald2",
       "start": 21.233,
       "dauer": 3.1,
