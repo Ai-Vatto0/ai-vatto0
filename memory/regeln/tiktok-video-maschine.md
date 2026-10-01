@@ -136,7 +136,8 @@ Typen: junge Mutter (Geschenke), Horror-Fan abends mit LED (Halloween), Sammler 
 Caption: „Werbung · [Hook] [Emoji]" + 1 Zeile Nutzen + 5 Hashtags.
 **Caption-Regel Vatto (01.10.2026, geht vor):** Caption 5–6× so lang wie früher und enthält **alle Schlüsselwörter, die im
 Video gesagt oder eingeblendet werden** (SEO). Letzter Satz immer: „Originalvideo, KI-generiertes Voiceover." (bei echtem
-Material + KI-Stimme). Hashtags: **erster #RCB** (bzw. Marke des Produkts), **letzter #AIGC**. „Werbung" bleibt vorne. Erster Kommentar: Lieferzeit/Versand (wenn wahr), „gelber Warenkorb unten links 👇", Frage an die Community. 2–3 Videos/Tag, nie zwei zum selben Produkt hintereinander.
+Material + KI-Stimme). Hashtags: **genau 5** (TikTok-Limit), **erster #RCB** (bzw. Marke des Produkts), **letzter #AIGC**. „Werbung" bleibt vorne.
+Ausgabe im Chat: **kein Code-Block** (läuft auf dem Handy nach rechts weg) – kurze Zeilen untereinander, direkt kopierbar. Erster Kommentar: Lieferzeit/Versand (wenn wahr), „gelber Warenkorb unten links 👇", Frage an die Community. 2–3 Videos/Tag, nie zwei zum selben Produkt hintereinander.
 
 ## 9. LEARNINGS (Faruk, praxisbelegt)
 
