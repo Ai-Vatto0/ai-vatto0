@@ -1,0 +1,302 @@
+[
+  {
+    "text": "Bro,",
+    "start": 0,
+    "end": 0.29,
+    "id": "w0"
+  },
+  {
+    "text": "du",
+    "start": 0.35,
+    "end": 0.42,
+    "id": "w1"
+  },
+  {
+    "text": "willst",
+    "start": 0.42,
+    "end": 0.64,
+    "id": "w2"
+  },
+  {
+    "text": "einen",
+    "start": 0.98,
+    "end": 1.08,
+    "id": "w3"
+  },
+  {
+    "text": "Roller,",
+    "start": 1.08,
+    "end": 1.56,
+    "id": "w4"
+  },
+  {
+    "text": "der",
+    "start": 1.56,
+    "end": 1.74,
+    "id": "w5"
+  },
+  {
+    "text": "nicht",
+    "start": 1.74,
+    "end": 2.04,
+    "id": "w6"
+  },
+  {
+    "text": "beim",
+    "start": 2.04,
+    "end": 2.28,
+    "id": "w7"
+  },
+  {
+    "text": "ersten",
+    "start": 2.28,
+    "end": 2.64,
+    "id": "w8"
+  },
+  {
+    "text": "Bordstein",
+    "start": 2.64,
+    "end": 3.18,
+    "id": "w9"
+  },
+  {
+    "text": "auseinander",
+    "start": 3.18,
+    "end": 3.84,
+    "id": "w10"
+  },
+  {
+    "text": "fällt?",
+    "start": 3.84,
+    "end": 4.4,
+    "id": "w11"
+  },
+  {
+    "text": "Dann",
+    "start": 4.41,
+    "end": 4.72,
+    "id": "w12"
+  },
+  {
+    "text": "guck",
+    "start": 4.75,
+    "end": 5.02,
+    "id": "w13"
+  },
+  {
+    "text": "dir",
+    "start": 5.05,
+    "end": 5.08,
+    "id": "w14"
+  },
+  {
+    "text": "den",
+    "start": 5.38,
+    "end": 5.56,
+    "id": "w15"
+  },
+  {
+    "text": "hier",
+    "start": 5.56,
+    "end": 5.89,
+    "id": "w16"
+  },
+  {
+    "text": "an.",
+    "start": 5.95,
+    "end": 6.2,
+    "id": "w17"
+  },
+  {
+    "text": "Wiese,",
+    "start": 6.2,
+    "end": 6.72,
+    "id": "w18"
+  },
+  {
+    "text": "Waldweg,",
+    "start": 6.72,
+    "end": 7.38,
+    "id": "w19"
+  },
+  {
+    "text": "Hügel",
+    "start": 7.46,
+    "end": 7.69,
+    "id": "w20"
+  },
+  {
+    "text": "runter,",
+    "start": 7.75,
+    "end": 8.25,
+    "id": "w21"
+  },
+  {
+    "text": "der",
+    "start": 8.37,
+    "end": 8.57,
+    "id": "w22"
+  },
+  {
+    "text": "zieht",
+    "start": 8.57,
+    "end": 8.94,
+    "id": "w23"
+  },
+  {
+    "text": "einfach",
+    "start": 8.94,
+    "end": 9.42,
+    "id": "w24"
+  },
+  {
+    "text": "durch.",
+    "start": 9.51,
+    "end": 10.16,
+    "id": "w25"
+  },
+  {
+    "text": "500",
+    "start": 10.17,
+    "end": 10.8,
+    "id": "w26"
+  },
+  {
+    "text": "Watt",
+    "start": 11.14,
+    "end": 11.47,
+    "id": "w27"
+  },
+  {
+    "text": "Motor,",
+    "start": 11.48,
+    "end": 12.19,
+    "id": "w28"
+  },
+  {
+    "text": "Federung",
+    "start": 12.19,
+    "end": 12.97,
+    "id": "w29"
+  },
+  {
+    "text": "vorne",
+    "start": 13.02,
+    "end": 13.51,
+    "id": "w30"
+  },
+  {
+    "text": "und",
+    "start": 13.51,
+    "end": 13.81,
+    "id": "w31"
+  },
+  {
+    "text": "hinten",
+    "start": 13.81,
+    "end": 14.14,
+    "id": "w32"
+  },
+  {
+    "text": "und",
+    "start": 14.48,
+    "end": 14.68,
+    "id": "w33"
+  },
+  {
+    "text": "trotzdem",
+    "start": 14.68,
+    "end": 15.27,
+    "id": "w34"
+  },
+  {
+    "text": "mit",
+    "start": 15.27,
+    "end": 15.49,
+    "id": "w35"
+  },
+  {
+    "text": "Straßenzulassung.",
+    "start": 15.49,
+    "end": 16.88,
+    "id": "w36"
+  },
+  {
+    "text": "Kein",
+    "start": 16.92,
+    "end": 17.25,
+    "id": "w37"
+  },
+  {
+    "text": "Plastikbomber",
+    "start": 17.27,
+    "end": 18.35,
+    "id": "w38"
+  },
+  {
+    "text": "Bro,",
+    "start": 18.35,
+    "end": 18.76,
+    "id": "w39"
+  },
+  {
+    "text": "ein",
+    "start": 18.76,
+    "end": 18.97,
+    "id": "w40"
+  },
+  {
+    "text": "echtes",
+    "start": 19.09,
+    "end": 19.53,
+    "id": "w41"
+  },
+  {
+    "text": "Teil.",
+    "start": 19.53,
+    "end": 20.17,
+    "id": "w42"
+  },
+  {
+    "text": "Jetzt",
+    "start": 20.21,
+    "end": 20.56,
+    "id": "w43"
+  },
+  {
+    "text": "im",
+    "start": 20.56,
+    "end": 20.7,
+    "id": "w44"
+  },
+  {
+    "text": "TikTok",
+    "start": 20.7,
+    "end": 20.84,
+    "id": "w45"
+  },
+  {
+    "text": "Shop,",
+    "start": 21.18,
+    "end": 21.57,
+    "id": "w46"
+  },
+  {
+    "text": "link",
+    "start": 21.57,
+    "end": 21.86,
+    "id": "w47"
+  },
+  {
+    "text": "ist",
+    "start": 21.86,
+    "end": 22.08,
+    "id": "w48"
+  },
+  {
+    "text": "unten.",
+    "start": 22.08,
+    "end": 22.48,
+    "id": "w49"
+  }
+]
