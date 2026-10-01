@@ -1,5 +1,5 @@
 {
-  "gebaut": "2026-10-01T13:26:39.445Z",
+  "gebaut": "2026-10-01T13:57:59.812Z",
   "video": "b",
   "dauer_s": 27.001,
   "fps": 30,
@@ -48,10 +48,10 @@
     },
     {
       "szene": 6,
-      "clip": "dji0925-0012-seg4",
+      "clip": "foto-abend",
       "start": 19.334,
       "dauer": 4.567,
-      "zoom": "punch",
+      "zoom": "kenburns_out",
       "uebergang": "cut"
     },
     {
