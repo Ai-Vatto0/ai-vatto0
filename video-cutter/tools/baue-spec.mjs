@@ -181,10 +181,10 @@ szenen.forEach((s) => {
   const top = s.stat.top ?? TEXT_Y.headline;
   hm += `
         <div id="${id}" class="clip statkarte" data-start="${a}" data-duration="${r3(e - a)}" data-track-index="6" style="top:${top}px"><div class="st-in"><div class="st-zahl"><span id="${id}-n">${typeof z.zahl === "number" ? 0 : esc(z.zahl)}</span><span class="st-einheit">${esc(z.einheit || "")}</span></div><div class="st-label">${esc(z.label || "")}</div></div></div>`;
-  hj += `\n        tl.fromTo("#${id} .st-in", { x: 760, rotation: 10, opacity: 0 }, { x: 0, rotation: -3, opacity: 1, duration: 0.34, ease: "power4.out" }, ${a});`;
+  hj += `\n        tl.fromTo("#${id} .st-in", { y: 260, scale: 0.35, rotation: 14, opacity: 0 }, { y: 0, scale: 1, rotation: -3, opacity: 1, duration: 0.36, ease: "power4.out" }, ${a});`;
   if (typeof z.zahl === "number") hj += `\n        (() => { const o = { v: 0 }; const el = () => document.querySelector("#${id}-n"); tl.fromTo(o, { v: 0 }, { v: ${z.zahl}, duration: 0.6, ease: "power2.out", onUpdate: () => { const n = el(); if (n) n.textContent = Math.round(o.v); } }, ${r3(a + 0.1)}); })();`;
   hj += `\n        tl.fromTo("#${id} .st-label", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.25, ease: "power3.out" }, ${r3(a + 0.3)});`;
-  hj += `\n        tl.to("#${id} .st-in", { x: -900, opacity: 0, duration: 0.2, ease: "power3.in" }, ${r3(e - 0.2)});`;
+  hj += `\n        tl.to("#${id} .st-in", { scale: 0.6, y: -30, opacity: 0, duration: 0.2, ease: "power3.in" }, ${r3(e - 0.2)});`;
 });
 const cta = szenen.at(-1);
 hm += `
