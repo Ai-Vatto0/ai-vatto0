@@ -12,30 +12,30 @@
       "wort": "(Start)",
       "start": 0,
       "dauer": 5.7,
-      "von": 18,
-      "bis": 23.7,
+      "von": 33.5,
+      "bis": 39.2,
       "tempo": 1
     },
     {
       "szene": 2,
-      "clip": "dji0925-0012-seg1",
+      "clip": "dji0924-0004",
       "ab_wort": 10,
       "wort": "Der",
       "start": 5.7,
       "dauer": 3.3,
-      "von": 1.1,
-      "bis": 4.4,
+      "von": 26,
+      "bis": 29.3,
       "tempo": 1
     },
     {
       "szene": 3,
-      "clip": "dji0925-0012",
+      "clip": "foto-front",
       "ab_wort": 15,
       "wort": "Zehn-Zoll-Reifen,",
       "start": 9,
       "dauer": 4.433,
-      "von": 70,
-      "bis": 74.433,
+      "von": 0,
+      "bis": 4.433,
       "tempo": 1
     },
     {
@@ -45,19 +45,19 @@
       "wort": "Und",
       "start": 13.433333333333334,
       "dauer": 7.8,
-      "von": 106,
-      "bis": 113.8,
+      "von": 0.5,
+      "bis": 8.3,
       "tempo": 1
     },
     {
       "szene": 5,
-      "clip": "dji0925-0012",
+      "clip": "foto-wald2",
       "ab_wort": 43,
       "wort": "Jetzt",
       "start": 21.233333333333334,
       "dauer": 3.1,
-      "von": 136,
-      "bis": 139.1,
+      "von": 0,
+      "bis": 3.1,
       "tempo": 1
     }
   ],

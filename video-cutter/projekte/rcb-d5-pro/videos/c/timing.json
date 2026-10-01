@@ -29,13 +29,13 @@
     },
     {
       "szene": 3,
-      "clip": "dji0925-0012",
+      "clip": "dji0924-0001-seg1",
       "ab_wort": 15,
       "wort": "Doppelbremse",
       "start": 6.866666666666666,
       "dauer": 2.2,
-      "von": 84,
-      "bis": 86.2,
+      "von": 2.2,
+      "bis": 4.4,
       "tempo": 1
     },
     {
@@ -51,24 +51,24 @@
     },
     {
       "szene": 5,
-      "clip": "dji0925-0012",
+      "clip": "foto-karton",
       "ab_wort": 27,
       "wort": "Nach",
       "start": 12.2,
       "dauer": 3.167,
-      "von": 110,
-      "bis": 113.167,
+      "von": 0,
+      "bis": 3.167,
       "tempo": 1
     },
     {
       "szene": 6,
-      "clip": "dji0925-0012",
+      "clip": "dji0924-0004",
       "ab_wort": 34,
       "wort": "Und",
       "start": 15.366666666666667,
       "dauer": 5.167,
-      "von": 60.5,
-      "bis": 65.667,
+      "von": 0.5,
+      "bis": 5.667,
       "tempo": 1
     },
     {

@@ -92,9 +92,9 @@
       "ab_wort": 6
     },
     {
-      "clip": "dji0925-0012",
-      "von": 84.0,
-      "bis": 85.455,
+      "clip": "dji0924-0001-seg1",
+      "von": 2.2,
+      "bis": 3.655,
       "rolle": "beweis",
       "zoom": "none",
       "uebergang": "cut",
@@ -110,18 +110,18 @@
       "ab_wort": 19
     },
     {
-      "clip": "dji0925-0012",
-      "von": 110.0,
-      "bis": 112.545,
+      "clip": "foto-karton",
+      "von": 0,
+      "bis": 2.545,
       "rolle": "beweis",
       "zoom": "none",
       "uebergang": "cut",
       "ab_wort": 27
     },
     {
-      "clip": "dji0925-0012",
-      "von": 60.5,
-      "bis": 64.5,
+      "clip": "dji0924-0004",
+      "von": 0.5,
+      "bis": 4.5,
       "rolle": "beweis",
       "zoom": "none",
       "uebergang": "cut",

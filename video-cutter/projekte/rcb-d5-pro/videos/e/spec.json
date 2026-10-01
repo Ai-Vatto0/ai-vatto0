@@ -68,8 +68,8 @@
   "szenen": [
     {
       "clip": "dji0925-0012",
-      "von": 18.0,
-      "bis": 21.766,
+      "von": 33.5,
+      "bis": 37.266,
       "rolle": "hook",
       "zoom": "kenburns_in",
       "uebergang": "zoom",
@@ -84,18 +84,18 @@
       }
     },
     {
-      "clip": "dji0925-0012-seg1",
-      "von": 1.1,
-      "bis": 2.918,
+      "clip": "dji0924-0004",
+      "von": 26.0,
+      "bis": 27.818,
       "rolle": "beweis",
       "zoom": "none",
       "uebergang": "whip",
       "ab_wort": 10
     },
     {
-      "clip": "dji0925-0012",
-      "von": 70.0,
-      "bis": 73.273,
+      "clip": "foto-front",
+      "von": 0,
+      "bis": 3.273,
       "rolle": "beweis",
       "zoom": "kenburns_in",
       "uebergang": "flash",
@@ -112,17 +112,17 @@
     },
     {
       "clip": "dji0925-0012",
-      "von": 106.0,
-      "bis": 112.909,
+      "von": 0.5,
+      "bis": 7.409,
       "rolle": "emotion",
       "zoom": "none",
       "uebergang": "zoom",
       "ab_wort": 24
     },
     {
-      "clip": "dji0925-0012",
-      "von": 136.0,
-      "bis": 138.975,
+      "clip": "foto-wald2",
+      "von": 0,
+      "bis": 2.975,
       "rolle": "cta",
       "zoom": "kenburns_in",
       "ab_wort": 43

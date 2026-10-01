@@ -62,13 +62,13 @@
     },
     {
       "szene": 6,
-      "clip": "dji0925-0012-seg4",
+      "clip": "foto-abend",
       "ab_wort": 35,
       "wort": "Einmal",
       "start": 19.333333333333332,
       "dauer": 4.567,
-      "von": 0.7,
-      "bis": 5.267,
+      "von": 0,
+      "bis": 4.567,
       "tempo": 1
     },
     {
