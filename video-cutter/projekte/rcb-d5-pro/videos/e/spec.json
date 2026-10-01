@@ -69,7 +69,7 @@
     {
       "clip": "dji0925-0012",
       "von": 33.5,
-      "bis": 37.266,
+      "bis": 34.721,
       "rolle": "hook",
       "zoom": "kenburns_in",
       "uebergang": "zoom",
@@ -82,6 +82,15 @@
           "meinung"
         ]
       }
+    },
+    {
+      "clip": "ciwl3941",
+      "von": 0,
+      "bis": 2.545,
+      "rolle": "beweis",
+      "zoom": "punch",
+      "uebergang": "cut",
+      "ab_wort": 3
     },
     {
       "clip": "dji0924-0004",
@@ -113,11 +122,20 @@
     {
       "clip": "dji0925-0012",
       "von": 0.5,
-      "bis": 7.409,
+      "bis": 5.591,
       "rolle": "emotion",
       "zoom": "none",
       "uebergang": "zoom",
       "ab_wort": 24
+    },
+    {
+      "clip": "dji0924-0004",
+      "von": 29.4,
+      "bis": 31.218,
+      "rolle": "emotion",
+      "zoom": "kenburns_in",
+      "uebergang": "cut",
+      "ab_wort": 38
     },
     {
       "clip": "foto-wald2",

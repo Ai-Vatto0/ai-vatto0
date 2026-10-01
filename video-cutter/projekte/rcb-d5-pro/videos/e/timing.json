@@ -11,13 +11,24 @@
       "ab_wort": null,
       "wort": "(Start)",
       "start": 0,
-      "dauer": 5.7,
+      "dauer": 2.433,
       "von": 33.5,
-      "bis": 39.2,
+      "bis": 35.933,
       "tempo": 1
     },
     {
       "szene": 2,
+      "clip": "ciwl3941",
+      "ab_wort": 3,
+      "wort": "Mit",
+      "start": 2.433333333333333,
+      "dauer": 3.267,
+      "von": 0,
+      "bis": 3.267,
+      "tempo": 1
+    },
+    {
+      "szene": 3,
       "clip": "dji0924-0004",
       "ab_wort": 10,
       "wort": "Der",
@@ -28,7 +39,7 @@
       "tempo": 1
     },
     {
-      "szene": 3,
+      "szene": 4,
       "clip": "foto-front",
       "ab_wort": 15,
       "wort": "Zehn-Zoll-Reifen,",
@@ -39,18 +50,29 @@
       "tempo": 1
     },
     {
-      "szene": 4,
+      "szene": 5,
       "clip": "dji0925-0012",
       "ab_wort": 24,
       "wort": "Und",
       "start": 13.433333333333334,
-      "dauer": 7.8,
+      "dauer": 5.333,
       "von": 0.5,
-      "bis": 8.3,
+      "bis": 5.833,
       "tempo": 1
     },
     {
-      "szene": 5,
+      "szene": 6,
+      "clip": "dji0924-0004",
+      "ab_wort": 38,
+      "wort": "Kurz",
+      "start": 18.766666666666666,
+      "dauer": 2.467,
+      "von": 29.4,
+      "bis": 31.867,
+      "tempo": 1
+    },
+    {
+      "szene": 7,
       "clip": "foto-wald2",
       "ab_wort": 43,
       "wort": "Jetzt",

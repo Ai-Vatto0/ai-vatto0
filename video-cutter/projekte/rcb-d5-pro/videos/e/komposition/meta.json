@@ -1,5 +1,5 @@
 {
-  "gebaut": "2026-10-01T13:43:30.349Z",
+  "gebaut": "2026-10-01T14:09:33.369Z",
   "video": "e",
   "dauer_s": 24.333,
   "fps": 30,
@@ -16,7 +16,7 @@
     },
     {
       "szene": 2,
-      "clip": "dji0925-0012-seg1",
+      "clip": "dji0924-0004",
       "start": 5.7,
       "dauer": 3.3,
       "zoom": "none",
@@ -24,7 +24,7 @@
     },
     {
       "szene": 3,
-      "clip": "dji0925-0012",
+      "clip": "foto-front",
       "start": 9,
       "dauer": 4.433,
       "zoom": "kenburns_in",
@@ -40,7 +40,7 @@
     },
     {
       "szene": 5,
-      "clip": "dji0925-0012",
+      "clip": "foto-wald2",
       "start": 21.233,
       "dauer": 3.1,
       "zoom": "kenburns_in"
