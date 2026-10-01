@@ -49,7 +49,10 @@ die Repo-Doku, nicht das Gedächtnis.
 5. `memory/regeln/lyra-ads-v4.1-aktiv.md` + `lyra-ads-master-v4.0.md` – **nur noch** für
    klassische KI-Produkt-Renders mit Startframe, wenn Vatto das ausdrücklich will,
    und als Quelle für Evidenz-, QA- und Gate-Details, die Faruk nicht regelt
-6. `memory/archiv/` – historisch, **nie** mit aktiven Regeln mischen oder reaktivieren
+6. `memory/regeln/modell-routing.md` – **Arbeitsweise, gilt immer** (seit 01.10.2026):
+   Sub-Agents mit dem günstigsten tauglichen Modell, Schwelle für Delegation, keine
+   bezahlten Renders durch Sub-Agents. Wird über `CLAUDE.md` automatisch geladen
+7. `memory/archiv/` – historisch, **nie** mit aktiven Regeln mischen oder reaktivieren
 
 ---
 

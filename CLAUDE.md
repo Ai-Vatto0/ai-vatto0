@@ -8,6 +8,9 @@
 | `MEMORY.md` | aktueller Arbeitsstand und Session-Log |
 | `memory/` | Regelwerke, Projektnotizen, Quellen, Archiv |
 
+**Modell-Routing gilt immer** (Sub-Agents mit dem günstigsten tauglichen Modell):
+@memory/regeln/modell-routing.md
+
 **Hauptgeschäft ist TikTok-Shop-Werbung** (`memory/regeln/lyra-ads-v4.1-aktiv.md`).
 **Videos schneiden / TikTok-Verkaufsvideos aus Rohmaterial (Hook, Skript, Voiceover):** Video-Cutting-Agent in
 `video-cutter/` → `video-cutter/START-HIER.md` (Weg 1: eigene Aufnahme schneiden · Weg 2: Rohmaterial → Skripte → Videos)
