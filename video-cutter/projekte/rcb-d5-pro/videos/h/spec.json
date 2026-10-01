@@ -23,35 +23,21 @@
       "belege": [
         "meinung"
       ],
-      "dauer": 2.0
-    },
-    {
-      "satz": "500 W MOTOR",
-      "belege": [
-        "motor_500w"
-      ],
-      "dauer": 2.0
+      "dauer": 3.0
     },
     {
       "satz": "20 KM/H MIT ABE",
       "belege": [
         "abe_20kmh"
       ],
-      "dauer": 2.0
-    },
-    {
-      "satz": "BIS 150 KG",
-      "belege": [
-        "max_150kg"
-      ],
-      "dauer": 2.0
+      "dauer": 3.2
     },
     {
       "satz": "10 ZOLL GELREIFEN",
       "belege": [
         "gelreifen"
       ],
-      "dauer": 2.0,
+      "dauer": 3.5,
       "bedingung_ok": true
     },
     {
@@ -59,21 +45,21 @@
       "belege": [
         "federung"
       ],
-      "dauer": 2.0
+      "dauer": 3.2
     },
     {
-      "satz": "3 FAHRSTUFEN",
+      "satz": "BIS 150 KG",
       "belege": [
-        "drei_gaenge"
+        "max_150kg"
       ],
-      "dauer": 2.0
+      "dauer": 3.2
     },
     {
-      "satz": "WALD. WIESE. WEG.",
+      "satz": "500 W MOTOR",
       "belege": [
-        "meinung"
+        "motor_500w"
       ],
-      "dauer": 2.0
+      "dauer": 3.2
     },
     {
       "satz": "JETZT IM TIKTOK SHOP",
@@ -101,29 +87,12 @@
     },
     {
       "clip": "img8258",
-      "von": 13.0,
-      "bis": 14.091,
+      "von": 1.0,
+      "bis": 2.455,
       "rolle": "beweis",
-      "zoom": "punch",
+      "zoom": "none",
       "uebergang": "whip",
       "ab_wort": 2,
-      "stat": {
-        "zahl": 500,
-        "einheit": "W",
-        "label": "Motor",
-        "belege": [
-          "motor_500w"
-        ]
-      }
-    },
-    {
-      "clip": "img8239",
-      "von": 8.0,
-      "bis": 9.455,
-      "rolle": "emotion",
-      "zoom": "none",
-      "uebergang": "zoom",
-      "ab_wort": 5,
       "stat": {
         "zahl": 20,
         "einheit": "KM/H",
@@ -134,30 +103,13 @@
       }
     },
     {
-      "clip": "img8240",
-      "von": 12.5,
-      "bis": 13.591,
-      "rolle": "beweis",
-      "zoom": "punch",
-      "uebergang": "flash",
-      "ab_wort": 9,
-      "stat": {
-        "zahl": 150,
-        "einheit": "KG",
-        "label": "belastbar",
-        "belege": [
-          "max_150kg"
-        ]
-      }
-    },
-    {
-      "clip": "img8239",
-      "von": 14.0,
-      "bis": 15.091,
+      "clip": "img8251",
+      "von": 31.0,
+      "bis": 32.091,
       "rolle": "emotion",
       "zoom": "none",
-      "uebergang": "whip",
-      "ab_wort": 12,
+      "uebergang": "zoom",
+      "ab_wort": 6,
       "stat": {
         "zahl": 10,
         "einheit": "ZOLL",
@@ -173,9 +125,9 @@
       "von": 17.6,
       "bis": 19.055,
       "rolle": "beweis",
-      "zoom": "kenburns_in",
-      "uebergang": "zoom",
-      "ab_wort": 15,
+      "zoom": "none",
+      "uebergang": "flash",
+      "ab_wort": 9,
       "text": {
         "inhalt": "FEDERUNG VORNE + HINTEN",
         "betonung": [
@@ -187,37 +139,36 @@
       }
     },
     {
-      "clip": "img7955",
-      "von": 92.0,
-      "bis": 92.727,
-      "rolle": "detail",
-      "zoom": "punch",
-      "uebergang": "flash",
-      "ab_wort": 19,
+      "clip": "img8240",
+      "von": 9.0,
+      "bis": 10.091,
+      "rolle": "beweis",
+      "zoom": "none",
+      "uebergang": "whip",
+      "ab_wort": 13,
       "stat": {
-        "zahl": 3,
-        "einheit": "",
-        "label": "Fahrstufen",
+        "zahl": 150,
+        "einheit": "KG",
+        "label": "belastbar",
         "belege": [
-          "drei_gaenge"
+          "max_150kg"
         ]
       }
     },
     {
-      "clip": "img8252",
-      "von": 12.5,
-      "bis": 13.591,
-      "rolle": "emotion",
+      "clip": "img8258",
+      "von": 13.0,
+      "bis": 14.091,
+      "rolle": "beweis",
       "zoom": "kenburns_out",
-      "uebergang": "whip",
-      "ab_wort": 21,
-      "text": {
-        "inhalt": "WALD. WIESE. WEG.",
-        "betonung": [
-          "WALD."
-        ],
+      "uebergang": "zoom",
+      "ab_wort": 16,
+      "stat": {
+        "zahl": 500,
+        "einheit": "W",
+        "label": "Motor",
         "belege": [
-          "meinung"
+          "motor_500w"
         ]
       }
     },
@@ -227,7 +178,7 @@
       "bis": 2.975,
       "rolle": "cta",
       "zoom": "kenburns_out",
-      "ab_wort": 24
+      "ab_wort": 19
     }
   ],
   "cta": {

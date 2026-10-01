@@ -1,5 +1,5 @@
 {
-  "gebaut": "2026-10-01T22:37:29.501Z",
+  "gebaut": "2026-10-01T22:52:38.903Z",
   "video": "g",
   "dauer_s": 25.966,
   "fps": 30,
@@ -8,7 +8,7 @@
   "szenen": [
     {
       "szene": 1,
-      "clip": "img8251",
+      "clip": "foto-wald3",
       "start": 0,
       "dauer": 3.133,
       "zoom": "kenburns_in",
@@ -16,7 +16,7 @@
     },
     {
       "szene": 2,
-      "clip": "img8238",
+      "clip": "img8251",
       "start": 3.133,
       "dauer": 3.9,
       "zoom": "none",
