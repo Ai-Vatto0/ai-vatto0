@@ -1,0 +1,296 @@
+[
+  {
+    "text": "Viele",
+    "start": 0.32,
+    "end": 0.43,
+    "id": "w0"
+  },
+  {
+    "text": "Roller",
+    "start": 0.43,
+    "end": 0.94,
+    "id": "w1"
+  },
+  {
+    "text": "da",
+    "start": 0.94,
+    "end": 1.11,
+    "id": "w2"
+  },
+  {
+    "text": "draußen?",
+    "start": 1.11,
+    "end": 1.97,
+    "id": "w3"
+  },
+  {
+    "text": "Plastikbomber.",
+    "start": 2.05,
+    "end": 2.97,
+    "id": "w4"
+  },
+  {
+    "text": "Der",
+    "start": 3.21,
+    "end": 3.29,
+    "id": "w5"
+  },
+  {
+    "text": "hier",
+    "start": 3.49,
+    "end": 3.68,
+    "id": "w6"
+  },
+  {
+    "text": "ist",
+    "start": 3.68,
+    "end": 3.97,
+    "id": "w7"
+  },
+  {
+    "text": "anders",
+    "start": 3.97,
+    "end": 4.29,
+    "id": "w8"
+  },
+  {
+    "text": "gebaut.",
+    "start": 4.57,
+    "end": 5.44,
+    "id": "w9"
+  },
+  {
+    "text": "Rahmen",
+    "start": 5.8,
+    "end": 6.2,
+    "id": "w10"
+  },
+  {
+    "text": "und",
+    "start": 6.2,
+    "end": 6.44,
+    "id": "w11"
+  },
+  {
+    "text": "Gabel",
+    "start": 6.44,
+    "end": 6.84,
+    "id": "w12"
+  },
+  {
+    "text": "aus",
+    "start": 6.84,
+    "end": 7.04,
+    "id": "w13"
+  },
+  {
+    "text": "Metall,",
+    "start": 7.36,
+    "end": 7.76,
+    "id": "w14"
+  },
+  {
+    "text": "vorne",
+    "start": 7.77,
+    "end": 8.23,
+    "id": "w15"
+  },
+  {
+    "text": "doppelt",
+    "start": 8.23,
+    "end": 8.6,
+    "id": "w16"
+  },
+  {
+    "text": "gefedert,",
+    "start": 9.09,
+    "end": 9.77,
+    "id": "w17"
+  },
+  {
+    "text": "hinten",
+    "start": 9.77,
+    "end": 10.02,
+    "id": "w18"
+  },
+  {
+    "text": "auch.",
+    "start": 10.52,
+    "end": 10.96,
+    "id": "w19"
+  },
+  {
+    "text": "Trägt",
+    "start": 10.96,
+    "end": 11.36,
+    "id": "w20"
+  },
+  {
+    "text": "bis",
+    "start": 11.61,
+    "end": 11.68,
+    "id": "w21"
+  },
+  {
+    "text": "150",
+    "start": 11.68,
+    "end": 12.41,
+    "id": "w22"
+  },
+  {
+    "text": "Kilo.",
+    "start": 12.55,
+    "end": 13.28,
+    "id": "w23"
+  },
+  {
+    "text": "Und",
+    "start": 13.28,
+    "end": 13.49,
+    "id": "w24"
+  },
+  {
+    "text": "die",
+    "start": 13.54,
+    "end": 13.8,
+    "id": "w25"
+  },
+  {
+    "text": "10",
+    "start": 13.8,
+    "end": 14.23,
+    "id": "w26"
+  },
+  {
+    "text": "Zoll",
+    "start": 14.23,
+    "end": 14.52,
+    "id": "w27"
+  },
+  {
+    "text": "Gelreifen",
+    "start": 14.52,
+    "end": 15.56,
+    "id": "w28"
+  },
+  {
+    "text": "dichten",
+    "start": 15.56,
+    "end": 16.1,
+    "id": "w29"
+  },
+  {
+    "text": "kleine",
+    "start": 16.1,
+    "end": 16.57,
+    "id": "w30"
+  },
+  {
+    "text": "Löcher",
+    "start": 16.57,
+    "end": 17.02,
+    "id": "w31"
+  },
+  {
+    "text": "bis",
+    "start": 17.02,
+    "end": 17.06,
+    "id": "w32"
+  },
+  {
+    "text": "3",
+    "start": 17.26,
+    "end": 17.49,
+    "id": "w33"
+  },
+  {
+    "text": "Millimeter",
+    "start": 17.61,
+    "end": 18.27,
+    "id": "w34"
+  },
+  {
+    "text": "selbst",
+    "start": 18.27,
+    "end": 18.53,
+    "id": "w35"
+  },
+  {
+    "text": "ab.",
+    "start": 18.7,
+    "end": 19.2,
+    "id": "w36"
+  },
+  {
+    "text": "Einmal",
+    "start": 19.2,
+    "end": 19.79,
+    "id": "w37"
+  },
+  {
+    "text": "draufgestanden",
+    "start": 19.79,
+    "end": 21,
+    "id": "w38"
+  },
+  {
+    "text": "und",
+    "start": 21.36,
+    "end": 21.47,
+    "id": "w39"
+  },
+  {
+    "text": "Plastik",
+    "start": 21.47,
+    "end": 22.2,
+    "id": "w40"
+  },
+  {
+    "text": "ist",
+    "start": 22.2,
+    "end": 22.4,
+    "id": "w41"
+  },
+  {
+    "text": "für",
+    "start": 22.41,
+    "end": 22.66,
+    "id": "w42"
+  },
+  {
+    "text": "dich",
+    "start": 22.72,
+    "end": 23.01,
+    "id": "w43"
+  },
+  {
+    "text": "erledigt.",
+    "start": 23.01,
+    "end": 23.89,
+    "id": "w44"
+  },
+  {
+    "text": "Jetzt",
+    "start": 23.89,
+    "end": 24.45,
+    "id": "w45"
+  },
+  {
+    "text": "im",
+    "start": 24.45,
+    "end": 24.63,
+    "id": "w46"
+  },
+  {
+    "text": "TikTok",
+    "start": 24.63,
+    "end": 25.18,
+    "id": "w47"
+  },
+  {
+    "text": "Shop.",
+    "start": 25.18,
+    "end": 25.6,
+    "id": "w48"
+  }
+]
