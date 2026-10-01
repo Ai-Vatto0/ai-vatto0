@@ -8,6 +8,9 @@
 | `MEMORY.md` | aktueller Arbeitsstand und Session-Log |
 | `memory/` | Regelwerke, Projektnotizen, Quellen, Archiv |
 
+**Modell-Routing gilt immer** (Sub-Agents mit dem günstigsten tauglichen Modell):
+@memory/regeln/modell-routing.md
+
 **Hauptgeschäft ist TikTok-Shop-Werbung** (`memory/regeln/lyra-ads-v4.1-aktiv.md`).
 Die Snova-Studio-Dokumentation unten ist Repo-Doku für den Code, nicht der
 Arbeitsschwerpunkt.
