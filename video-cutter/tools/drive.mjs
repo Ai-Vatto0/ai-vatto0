@@ -16,9 +16,23 @@ const ROH = `${BASIS}/01-Rohmaterial`, FERTIG = `${BASIS}/02-Fertig`;
 const { pos } = parseArgs(process.argv.slice(2));
 const [befehl, a1, a2] = pos;
 
-const token = process.env.VATTO_DRIVE_TOKEN;
-if (!token) fail("Drive-Schlüssel fehlt (Umgebungsvariable VATTO_DRIVE_TOKEN). Einrichtung: video-cutter/START-HIER.md, Kapitel 7.");
-try { if (!JSON.parse(token).refresh_token) throw 0; } catch { fail("VATTO_DRIVE_TOKEN ist kein gültiges rclone-Token (JSON mit refresh_token). Neu erzeugen: rclone authorize \"drive\"."); }
+// Schlüssel lesen: rclone gibt je nach Version JSON oder einen Base64-Text aus (ggf. mit Feld "token"); Anführungszeichen tolerieren
+const liesToken = (roh) => {
+  const t = roh.replace(/\s+/g, "").replace(/^(['"])(.*)\1$/, "$2");
+  const versuche = [() => JSON.parse(t), () => JSON.parse(Buffer.from(t, "base64").toString("utf8"))];
+  for (const v of versuche) {
+    try {
+      let o = v();
+      if (typeof o?.token === "string") o = JSON.parse(o.token);
+      else if (o?.token?.refresh_token) o = o.token;
+      if (o?.refresh_token) return JSON.stringify(o);
+    } catch {}
+  }
+  return null;
+};
+if (!process.env.VATTO_DRIVE_TOKEN) fail("Drive-Schlüssel fehlt (Umgebungsvariable VATTO_DRIVE_TOKEN). Einrichtung: video-cutter/START-HIER.md, Kapitel 7.");
+const token = liesToken(process.env.VATTO_DRIVE_TOKEN);
+if (!token) fail("Drive-Schlüssel unvollständig kopiert. Im schwarzen Fenster ALLES zwischen ---> und <---End paste markieren, kopieren und VATTO_DRIVE_TOKEN ersetzen.");
 if (spawnSync("rclone", ["version"], { stdio: "ignore" }).status !== 0) fail("rclone fehlt → bash tools/setup.sh");
 
 // Remote nur über Umgebung (keine Konfigurationsdatei, Schlüssel nie in Argumenten/Logs)

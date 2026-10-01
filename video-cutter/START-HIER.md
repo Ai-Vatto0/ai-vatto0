@@ -123,13 +123,14 @@ Google Drive (dein Konto)
    rclone authorize "drive"
    ```
    (nach der Installation das Fenster einmal schließen und neu öffnen). Der Browser geht auf → mit deinem Google-Konto
-   anmelden → „Zulassen“. Im Fenster erscheint danach ein Text, der mit `{"access_token":` beginnt und mit `}` endet.
-   Diesen ganzen Text kopieren. **Nicht in den Chat einfügen.**
+   anmelden → „Zulassen“. Im schwarzen Fenster steht danach ein langer Text zwischen `--->` und `<---End paste`
+   (je nach Version `{"access_token":…}` oder eine lange Zeichenkette). Genau diesen Text markieren und kopieren. **Nicht in den Chat einfügen.**
 3. **Schlüssel hinterlegen:** in Claude Code oben in der Titelleiste auf die Cloud-Umgebung → **Bearbeiten** →
    Umgebungsvariablen → eine neue Zeile:
    ```
    VATTO_DRIVE_TOKEN=<hier den kopierten Text einfügen>
    ```
+   (direkt hinter dem `=`, ohne Leerzeichen und ohne Anführungszeichen)
    Speichern → **neue Sitzung starten**. Den Ordner `Snova-Videos` lege ich beim ersten Mal selbst an.
 
 **iPhone (Google-Drive-App):**
