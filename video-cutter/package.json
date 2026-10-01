@@ -14,7 +14,8 @@
     "varianten": "node tools/varianten.mjs",
     "selbsttest": "bash tools/selbsttest.sh",
     "produziere": "node tools/produziere.mjs",
-    "pruefe-spec": "node tools/pruefe-spec.mjs"
+    "pruefe-spec": "node tools/pruefe-spec.mjs",
+    "drive": "node tools/drive.mjs"
   },
   "license": "UNLICENSED",
   "dependencies": {

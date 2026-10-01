@@ -52,16 +52,20 @@ Unteragenten nicht verfügbar? Dann die Rollen nacheinander im Hauptchat ausfüh
 Für Produkt-Footage ohne Sprache (z. B. Drohnen-Clips). Ordner `projekte/<projekt>/` (Beispiel: `projekte/neo2/`).
 | # | Werkzeug | Ergebnis |
 |---|---|---|
-| 1 | `manifest.json` (Drive-Liste) → `node tools/bibliothek.mjs <p> laden` | Kopien in `roh/` (gitignored), Größe geprüft |
+| 1 | „Videos sind im Drive“ → `node tools/drive.mjs neu` → `node tools/drive.mjs holen <Produktordner>` (Rückfall ohne Schlüssel: öffentlicher Link + `bibliothek.mjs <p> laden`) | Kopien in `roh/` (gitignored), Größe + MD5 geprüft, `manifest.json` |
 | 2 | `node tools/bibliothek.mjs <p> sichten` + Sichtungs-Agenten → `bibliothek.json` (Tags) | echte fps/HDR, 1-fps-Kontaktbögen, Rolle, beste Sekunden, Risiken |
 | 3 | Specs `videos/<v>/spec.json` (Winkel, Hook, VO-Sätze mit Belegen aus `fakten.json`, Szenen mit `ab_wort`) → `node tools/pruefe-spec.mjs <p>` | Belege, Sperrwörter, Diversität A↔B + gegen alte Videos, Abdeckung |
 | 4 | **Vatto gibt Skripte frei** → Yapper eleven_v3 (dryRun, 0 Credits) → `node tools/vo-ausrichten.mjs <p> <v> <mp3>` | VO -14 LUFS, Wortzeiten, Untertitel = Skripttext |
 | 5 | `node tools/produziere.mjs <p> <v>` (= pruefe-spec → timing → zwischenclip → baue-spec → render-spec) | Vorschau + automatische QA in **einem** Befehl; Schnitte 0,12 s vor dem Wort-Anker, CTA 1,4 s nach dem letzten Wort |
-| 6 | Vatto sichtet → `node tools/produziere.mjs <p> <v> --final --freigabe "…"` | Final, nie überschrieben. Über 30 MB? Zum Teilen zusätzlich `-tiktok.mp4` (H.264 9 Mbit/s) |
+| 6 | Vatto sichtet → `node tools/produziere.mjs <p> <v> --final --freigabe "…"` | Final, nie überschrieben, **lädt automatisch** nach `Snova-Videos/02-Fertig/<p>` hoch inkl. automatischer `-tiktok.mp4`-Kopie, wenn > 30 MB |
 Regeln zusätzlich: Produkt in Sekunde 0 sichtbar · **Schlagzeile ergänzt das VO, wiederholt es nie** (pruefe-spec blockiert, sonst steht der Satz doppelt im Bild) ·
 KI-Stimme nie in Ich-Form (kein Fake-Testimonial) · nur Stimmen aus der Bibliothek oder mit Einwilligung geklonte (nie Film-/Promi-Stimmen) ·
 Zeitlupe nur aus ≥ 50 fps und nur als dokumentierte Ausnahme (Faruk: „keine Zeitlupe“) · private Stellen per `bis_max` sperren ·
 Standard-Look `nacht` (Vatto mag die Farben).
+
+**Drive-Ordner (`tools/drive.mjs`, Schlüssel `VATTO_DRIVE_TOKEN`):** nur innerhalb `Snova-Videos` · nur kopieren, nie löschen,
+nie `sync`/`move` · Schlüssel nie ausgeben · holen und abgeben ohne Rückfrage (Vatto will es automatisch) · für Videoinhalte nie den
+Google-Drive-Konnektor nutzen (schiebt Daten durch den Chat). Fehlt der Schlüssel → Vatto auf START-HIER Kapitel 7 verweisen.
 
 **Sparsam arbeiten (Zeit + Tokens):** Engine ist **nur HyperFrames** (Remotion-`SpecVideo` in `video-edit/` = Archiv, nicht nutzen).
 Qualitätsprüfer-Agent nur auf Wunsch oder bei QA-WARNUNG, die man nicht selbst klären kann. Kontaktbögen statt Einzelbilder ansehen.

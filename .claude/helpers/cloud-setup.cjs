@@ -25,7 +25,8 @@ const cutterReady =
   fs.existsSync(path.join(root, "video-cutter/node_modules/hyperframes")) &&
   fs.existsSync(path.join(home, ".cache/hyperframes/whisper/whisper.cpp/build/bin/whisper-cli")) &&
   fs.existsSync(path.join(home, ".cache/hyperframes/whisper/models/ggml-small.bin")) &&
-  fs.existsSync(path.join(home, ".claude/skills/general-video"));
+  fs.existsSync(path.join(home, ".claude/skills/general-video")) &&
+  has("rclone", ["version"]);
 if (maschineReady && cutterReady) process.exit(0);
 
 const log = fs.openSync("/tmp/video-maschine-setup.log", "a");
