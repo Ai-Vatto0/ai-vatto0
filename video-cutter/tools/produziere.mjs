@@ -1,6 +1,6 @@
 // EIN BEFEHL für ein Spec-Video (spart Zeit und Tokens): Timing → Zwischenclips → Komposition → Render + QA.
 // node tools/produziere.mjs <projekt> <video>                         → Vorschau
-// node tools/produziere.mjs <projekt> <video> --final --freigabe "…"  → Final (nur nach Vattos Freigabe)
+// node tools/produziere.mjs <projekt> <video> --final --freigabe "…" [--drive <Ordner in 02-Fertig>]  → Final (nur nach Vattos Freigabe)
 // Voraussetzung: pruefe-spec grün, vo/woerter.json vorhanden (vo-ausrichten.mjs). Bricht beim ersten Fehler ab.
 import { execFileSync } from "node:child_process";
 import fs from "node:fs";
@@ -40,6 +40,6 @@ if (opt.final) {
 // Final fertig → automatisch in Vattos Drive-Ordner 02-Fertig/<projekt> (nur wenn der Schlüssel eingerichtet ist)
 if (opt.final && process.env.VATTO_DRIVE_TOKEN) {
   console.log("\n▶ drive.mjs abgeben");
-  try { execFileSync("node", [path.join(ROOT, "tools", "drive.mjs"), "abgeben", projekt], { cwd: ROOT, stdio: "inherit" }); }
+  try { execFileSync("node", [path.join(ROOT, "tools", "drive.mjs"), "abgeben", projekt, ...(opt.drive ? [String(opt.drive)] : [])], { cwd: ROOT, stdio: "inherit" }); }
   catch { console.log("⚠ Hochladen ins Drive fehlgeschlagen – Final liegt lokal, später: node tools/drive.mjs abgeben " + projekt); }
 }
