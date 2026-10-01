@@ -1,0 +1,272 @@
+[
+  {
+    "text": "Du",
+    "start": 0,
+    "end": 0.26,
+    "id": "w0"
+  },
+  {
+    "text": "fährst",
+    "start": 0.26,
+    "end": 1.05,
+    "id": "w1"
+  },
+  {
+    "text": "los",
+    "start": 1.05,
+    "end": 1.21,
+    "id": "w2"
+  },
+  {
+    "text": "und",
+    "start": 1.21,
+    "end": 1.69,
+    "id": "w3"
+  },
+  {
+    "text": "sie",
+    "start": 1.69,
+    "end": 1.83,
+    "id": "w4"
+  },
+  {
+    "text": "fliegt",
+    "start": 1.85,
+    "end": 2.17,
+    "id": "w5"
+  },
+  {
+    "text": "einfach",
+    "start": 2.18,
+    "end": 2.56,
+    "id": "w6"
+  },
+  {
+    "text": "mit.",
+    "start": 2.59,
+    "end": 3.24,
+    "id": "w7"
+  },
+  {
+    "text": "Sie",
+    "start": 3.6,
+    "end": 3.66,
+    "id": "w8"
+  },
+  {
+    "text": "bleibt",
+    "start": 3.66,
+    "end": 4.01,
+    "id": "w9"
+  },
+  {
+    "text": "an",
+    "start": 4.01,
+    "end": 4.13,
+    "id": "w10"
+  },
+  {
+    "text": "dir",
+    "start": 4.13,
+    "end": 4.31,
+    "id": "w11"
+  },
+  {
+    "text": "dran",
+    "start": 4.31,
+    "end": 4.56,
+    "id": "w12"
+  },
+  {
+    "text": "und",
+    "start": 4.56,
+    "end": 4.78,
+    "id": "w13"
+  },
+  {
+    "text": "folgt",
+    "start": 4.78,
+    "end": 5.06,
+    "id": "w14"
+  },
+  {
+    "text": "dir",
+    "start": 5.17,
+    "end": 5.24,
+    "id": "w15"
+  },
+  {
+    "text": "automatisch.",
+    "start": 5.24,
+    "end": 6.33,
+    "id": "w16"
+  },
+  {
+    "text": "Sogar",
+    "start": 6.36,
+    "end": 6.76,
+    "id": "w17"
+  },
+  {
+    "text": "bis",
+    "start": 6.76,
+    "end": 7.01,
+    "id": "w18"
+  },
+  {
+    "text": "zu",
+    "start": 7.01,
+    "end": 7.17,
+    "id": "w19"
+  },
+  {
+    "text": "43",
+    "start": 7.17,
+    "end": 7.54,
+    "id": "w20"
+  },
+  {
+    "text": "Kilometer",
+    "start": 7.54,
+    "end": 8.39,
+    "id": "w21"
+  },
+  {
+    "text": "pro",
+    "start": 8.41,
+    "end": 8.65,
+    "id": "w22"
+  },
+  {
+    "text": "Stunde.",
+    "start": 8.65,
+    "end": 9.24,
+    "id": "w23"
+  },
+  {
+    "text": "Du",
+    "start": 9.43,
+    "end": 9.55,
+    "id": "w24"
+  },
+  {
+    "text": "konzentrierst",
+    "start": 9.57,
+    "end": 10.44,
+    "id": "w25"
+  },
+  {
+    "text": "dich",
+    "start": 10.44,
+    "end": 10.7,
+    "id": "w26"
+  },
+  {
+    "text": "nur",
+    "start": 10.7,
+    "end": 10.91,
+    "id": "w27"
+  },
+  {
+    "text": "aufs",
+    "start": 10.91,
+    "end": 11.17,
+    "id": "w28"
+  },
+  {
+    "text": "Fahren,",
+    "start": 11.17,
+    "end": 11.74,
+    "id": "w29"
+  },
+  {
+    "text": "nur",
+    "start": 11.77,
+    "end": 12.12,
+    "id": "w30"
+  },
+  {
+    "text": "151",
+    "start": 12.15,
+    "end": 13.34,
+    "id": "w31"
+  },
+  {
+    "text": "Gramm",
+    "start": 13.34,
+    "end": 13.96,
+    "id": "w32"
+  },
+  {
+    "text": "und",
+    "start": 14.08,
+    "end": 14.17,
+    "id": "w33"
+  },
+  {
+    "text": "am",
+    "start": 14.29,
+    "end": 14.32,
+    "id": "w34"
+  },
+  {
+    "text": "Ende",
+    "start": 14.32,
+    "end": 14.7,
+    "id": "w35"
+  },
+  {
+    "text": "hast",
+    "start": 14.81,
+    "end": 15.09,
+    "id": "w36"
+  },
+  {
+    "text": "du",
+    "start": 15.1,
+    "end": 15.25,
+    "id": "w37"
+  },
+  {
+    "text": "alles",
+    "start": 15.25,
+    "end": 15.62,
+    "id": "w38"
+  },
+  {
+    "text": "in",
+    "start": 15.62,
+    "end": 15.77,
+    "id": "w39"
+  },
+  {
+    "text": "4K.",
+    "start": 15.77,
+    "end": 16.17,
+    "id": "w40"
+  },
+  {
+    "text": "Jetzt",
+    "start": 16.49,
+    "end": 16.75,
+    "id": "w41"
+  },
+  {
+    "text": "im",
+    "start": 16.82,
+    "end": 16.95,
+    "id": "w42"
+  },
+  {
+    "text": "TikTok",
+    "start": 16.95,
+    "end": 17.5,
+    "id": "w43"
+  },
+  {
+    "text": "Shop!",
+    "start": 17.5,
+    "end": 17.92,
+    "id": "w44"
+  }
+]

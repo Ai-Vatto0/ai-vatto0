@@ -1,0 +1,98 @@
+{
+  "video": "b",
+  "vo_start": 0.25,
+  "vorlauf": 0.12,
+  "cta_halt": 1.4,
+  "gesamt_s": 21.333,
+  "szenen": [
+    {
+      "szene": 1,
+      "clip": "palm",
+      "ab_wort": null,
+      "wort": "(Start)",
+      "start": 0,
+      "dauer": 3.267,
+      "von": 0,
+      "bis": 3.267,
+      "tempo": 1
+    },
+    {
+      "szene": 2,
+      "clip": "launch_sky",
+      "ab_wort": 7,
+      "wort": "Die",
+      "start": 3.2666666666666666,
+      "dauer": 2.667,
+      "von": 0.8,
+      "bis": 2.134,
+      "tempo": 0.5
+    },
+    {
+      "szene": 3,
+      "clip": "app_modes",
+      "ab_wort": 13,
+      "wort": "Im",
+      "start": 5.933333333333334,
+      "dauer": 1.467,
+      "von": 5,
+      "bis": 6.467,
+      "tempo": 1
+    },
+    {
+      "szene": 4,
+      "clip": "rocket_b",
+      "ab_wort": 18,
+      "wort": "Dronie",
+      "start": 7.4,
+      "dauer": 3.867,
+      "von": 0,
+      "bis": 3.867,
+      "tempo": 1
+    },
+    {
+      "szene": 5,
+      "clip": "forest_behind",
+      "ab_wort": 28,
+      "wort": "Sie",
+      "start": 11.266666666666667,
+      "dauer": 1.433,
+      "von": 4.4,
+      "bis": 5.833,
+      "tempo": 1
+    },
+    {
+      "szene": 6,
+      "clip": "gesture6",
+      "ab_wort": 32,
+      "wort": "und",
+      "start": 12.7,
+      "dauer": 2.133,
+      "von": 4.3,
+      "bis": 6.433,
+      "tempo": 1
+    },
+    {
+      "szene": 7,
+      "clip": "akku",
+      "ab_wort": 39,
+      "wort": "Wird",
+      "start": 14.833333333333334,
+      "dauer": 3.633,
+      "von": 11,
+      "bis": 14.633,
+      "tempo": 1
+    },
+    {
+      "szene": 8,
+      "clip": "palm",
+      "ab_wort": 51,
+      "wort": "Jetzt",
+      "start": 18.466666666666665,
+      "dauer": 2.867,
+      "von": 3.3,
+      "bis": 6.167,
+      "tempo": 1
+    }
+  ],
+  "fehler": []
+}

@@ -1,0 +1,337 @@
+{
+  "projekt": "neo2",
+  "quelle": "Google Drive Ordner 1CnEQuc1s-3yntrPLQwMX7T7dJu8Ez38J (Vatto), nur lesen",
+  "erstellt": "2026-09-30T20:56:30.211Z",
+  "clips": [
+    {
+      "id": "side1",
+      "drive_id": "1UM51Ne_fNeWvKd48KUFnyECX9nrVWRhk",
+      "datei": "DJI_0001_seg1.MP4",
+      "bytes": 23771155,
+      "inhalt_laut_faktenblatt": "seitlich (Scooter)"
+    },
+    {
+      "id": "side2",
+      "drive_id": "1TrYLgN-wsLMiNDxM0eed-EXGALo_cm9W",
+      "datei": "DJI_0001_seg2.MP4",
+      "bytes": 70462295,
+      "inhalt_laut_faktenblatt": "seitlich"
+    },
+    {
+      "id": "side3",
+      "drive_id": "1KYDLJVnu2Z1NMumRZ0BvYONEa0jzqYK3",
+      "datei": "DJI_0001_seg3.MP4",
+      "bytes": 32354520,
+      "inhalt_laut_faktenblatt": "seitlich"
+    },
+    {
+      "id": "behind_field",
+      "drive_id": "1a2flq-zhCmGE-Xnws118al7IUGIVgHoi",
+      "datei": "DJI_0001_seg4.MP4",
+      "bytes": 16286480,
+      "inhalt_laut_faktenblatt": "folgt von hinten"
+    },
+    {
+      "id": "top_track",
+      "drive_id": "1PuELZ0_d9AARJIuk3khkSVR13tHjTRrc",
+      "datei": "DJI_0003.MP4",
+      "bytes": 67435982,
+      "inhalt_laut_faktenblatt": "Rocket/von oben"
+    },
+    {
+      "id": "sunset",
+      "drive_id": "1AU4r3A2KoS9-fDkrqGClp0LT_XNQl4bB",
+      "datei": "DJI_0004_cut.MP4",
+      "bytes": 251369321,
+      "inhalt_laut_faktenblatt": "folgt von hinten Sonnenuntergang"
+    },
+    {
+      "id": "sunset2",
+      "drive_id": "1kM2rs_2zajU1yoi7FzHMAE9afWDT-fO5",
+      "datei": "DJI_0006_seg1.MP4",
+      "bytes": 171139824,
+      "inhalt_laut_faktenblatt": "folgt von hinten"
+    },
+    {
+      "id": "wave",
+      "drive_id": "1QFAMcHXCc916vFHdoZ_Wct580eZLqWKc",
+      "datei": "DJI_0006_seg4.MP4",
+      "bytes": 17629210,
+      "inhalt_laut_faktenblatt": "Winken"
+    },
+    {
+      "id": "gesture5",
+      "drive_id": "1tkFzmtdsghb3cINUo7svOun2eySm_Lx9",
+      "datei": "DJI_0006_seg5.MP4",
+      "bytes": 68375780,
+      "inhalt_laut_faktenblatt": "Gestensteuerung"
+    },
+    {
+      "id": "gesture6",
+      "drive_id": "1wvINNmsHvxuFVuip8zyF-fSCMZdcFuIQ",
+      "datei": "DJI_0006_seg6.MP4",
+      "bytes": 41793244,
+      "inhalt_laut_faktenblatt": "Gestensteuerung"
+    },
+    {
+      "id": "top_descend",
+      "drive_id": "1IVoijwtc8RlvWVpskS6VX977h5abERdc",
+      "datei": "DJI_0009.MP4",
+      "bytes": 69786422,
+      "inhalt_laut_faktenblatt": "von oben sinkend"
+    },
+    {
+      "id": "forest1",
+      "drive_id": "1fpRNJaxsfqRTA3ut9oFARM9uBgZx7ko1",
+      "datei": "DJI_0012_seg1.MP4",
+      "bytes": 42194019,
+      "inhalt_laut_faktenblatt": "von vorne Wald"
+    },
+    {
+      "id": "forest2",
+      "drive_id": "1VU_24RRdThPRbHYvmKfvoFTY7MKS4aSi",
+      "datei": "DJI_0012_seg2.MP4",
+      "bytes": 16525823,
+      "inhalt_laut_faktenblatt": "von vorne Wald"
+    },
+    {
+      "id": "forest3",
+      "drive_id": "1lf1VRZKQK2Jrd6lOFEleIHRfUB8CFTjX",
+      "datei": "DJI_0012_seg3.MP4",
+      "bytes": 46718620,
+      "inhalt_laut_faktenblatt": "von vorne Wald"
+    },
+    {
+      "id": "forest4",
+      "drive_id": "1jEUt6tUXEZmJMKe88hH_QPaD7CsGdkf7",
+      "datei": "DJI_0012_seg4.MP4",
+      "bytes": 26851907,
+      "inhalt_laut_faktenblatt": "von vorne Wald"
+    },
+    {
+      "id": "forest5",
+      "drive_id": "1OwHjuC1hufutp2JnmdKYTgeWG0aILlZV",
+      "datei": "DJI_0012_seg5.MP4",
+      "bytes": 34696721,
+      "inhalt_laut_faktenblatt": "von vorne Wald"
+    },
+    {
+      "id": "forest6",
+      "drive_id": "1QTHKzsf8jgpena3vFoxXI_8I0erJseer",
+      "datei": "DJI_0012_seg6.MP4",
+      "bytes": 34657968,
+      "inhalt_laut_faktenblatt": "von vorne Wald"
+    },
+    {
+      "id": "forest7",
+      "drive_id": "1n1jhugZomeAh-pcRXpSAfTmy8s-BZUNh",
+      "datei": "DJI_0012_seg7.MP4",
+      "bytes": 69973968,
+      "inhalt_laut_faktenblatt": "von vorne Wald"
+    },
+    {
+      "id": "hill1",
+      "drive_id": "1YPxXLvDBdInXEWDQmPe6lXRFqXms-LZQ",
+      "datei": "DJI_0021_seg1.MP4",
+      "bytes": 50559789,
+      "inhalt_laut_faktenblatt": "Hügel"
+    },
+    {
+      "id": "hill2",
+      "drive_id": "1mom2lrxygQHnDYRTRVuP3rO90cEyi6jy",
+      "datei": "DJI_0021_seg2.MP4",
+      "bytes": 60611168,
+      "inhalt_laut_faktenblatt": "Hügel"
+    },
+    {
+      "id": "hill3",
+      "drive_id": "1VP9Q8fyhbFtzaLiKSlESuY8Iu6oqaA1E",
+      "datei": "DJI_0021_seg3.MP4",
+      "bytes": 89712564,
+      "inhalt_laut_faktenblatt": "Hügel"
+    },
+    {
+      "id": "hill4",
+      "drive_id": "1cEp3Rk5ym_WECPAPaJetXWq4Lo1J3w8S",
+      "datei": "DJI_0021_seg4.MP4",
+      "bytes": 67992659,
+      "inhalt_laut_faktenblatt": "Hügel"
+    },
+    {
+      "id": "forest_behind",
+      "drive_id": "1j1Drawy8q8OJnD5Zto07qVUkBMKNGJrA",
+      "datei": "DJI_0026_cut.MP4",
+      "bytes": 43828996,
+      "inhalt_laut_faktenblatt": "Wald von hinten"
+    },
+    {
+      "id": "vert_bridge",
+      "drive_id": "1PwsCHJE4ddtVg4HtD4uDleyxC8Xgb7pr",
+      "datei": "DJI_0032_seg4_cut.MP4",
+      "bytes": 40219807,
+      "inhalt_laut_faktenblatt": "hochkant Brücke 50fps"
+    },
+    {
+      "id": "vert_bridge2",
+      "drive_id": "1aRSsmtJuHK8DjkGeu1MD3f5XgN87gaao",
+      "datei": "DJI_0032_seg5_cut.MP4",
+      "bytes": 20086653,
+      "inhalt_laut_faktenblatt": "hochkant Brücke 50fps"
+    },
+    {
+      "id": "vert_bridge3",
+      "drive_id": "1ffQq_C_eceniHpx8jxkwiI8nsgYUMv43",
+      "datei": "DJI_0032_seg8_cut.MP4",
+      "bytes": 36232849,
+      "inhalt_laut_faktenblatt": "hochkant 50fps"
+    },
+    {
+      "id": "vert_grass1",
+      "drive_id": "1fwH24tfyAA1viLjwET7NfHa1T-E-R5eY",
+      "datei": "DJI_0036_seg1.MP4",
+      "bytes": 36300463,
+      "inhalt_laut_faktenblatt": "hochkant Wiese 50fps"
+    },
+    {
+      "id": "vert_grass2",
+      "drive_id": "1mJjeDYa-aO7nCImM_itzQ984I99YzM0O",
+      "datei": "DJI_0036_seg2.MP4",
+      "bytes": 78680084,
+      "inhalt_laut_faktenblatt": "hochkant Wiese 50fps"
+    },
+    {
+      "id": "dji0039",
+      "drive_id": "19b_yZ7OVcTwGfR3EGKmFGwnaSsaHG8Gc",
+      "datei": "DJI_0039.MP4",
+      "bytes": 80131029,
+      "inhalt_laut_faktenblatt": "ungesichtet"
+    },
+    {
+      "id": "dji0040",
+      "drive_id": "1VwzgKMSmmkKfEkB2umlPnO2lmXw6fAS0",
+      "datei": "DJI_0040_cut.MP4",
+      "bytes": 45162617,
+      "inhalt_laut_faktenblatt": "ungesichtet"
+    },
+    {
+      "id": "reveal41",
+      "drive_id": "1wBYqRrZiTRGCD5SnnxN4kDsPiEkRthe7",
+      "datei": "DJI_0041.MP4",
+      "bytes": 74763227,
+      "inhalt_laut_faktenblatt": "Reveal"
+    },
+    {
+      "id": "reveal42",
+      "drive_id": "18O4OQQXda8JkcH7_CyqXQ3i_5wPArYW2",
+      "datei": "DJI_0042.MP4",
+      "bytes": 83588294,
+      "inhalt_laut_faktenblatt": "Reveal"
+    },
+    {
+      "id": "rocket_a",
+      "drive_id": "1iFPLZQs9GxvGXTeO28Jk9YVHhsTkd78-",
+      "datei": "CIWL3941_cut.MP4",
+      "bytes": 28486794,
+      "inhalt_laut_faktenblatt": "Rocket von oben"
+    },
+    {
+      "id": "rocket_b",
+      "drive_id": "1OEvysSpu0MdUpQZTRHHeDmYoiSWIxIo-",
+      "datei": "DFWV4297_cut.MP4",
+      "bytes": 30525126,
+      "inhalt_laut_faktenblatt": "Rocket von oben"
+    },
+    {
+      "id": "unbox1",
+      "drive_id": "16hIILX9efxmsg5cgO-Txs4Y-8jwOGglE",
+      "datei": "IMG_0200_seg1.mov",
+      "bytes": 6009354,
+      "inhalt_laut_faktenblatt": "Unboxing Hände"
+    },
+    {
+      "id": "unbox2",
+      "drive_id": "15YPfVpMbyzh208SZ0-isi35UsE7I-PzM",
+      "datei": "IMG_0200_seg2.mov",
+      "bytes": 50096791,
+      "inhalt_laut_faktenblatt": "Unboxing Hände"
+    },
+    {
+      "id": "unbox3",
+      "drive_id": "15yoFUq45sHht6WYgln2o0581UEheC-2-",
+      "datei": "IMG_0200_seg3.mov",
+      "bytes": 8384858,
+      "inhalt_laut_faktenblatt": "Unboxing Hände"
+    },
+    {
+      "id": "palm",
+      "drive_id": "1u0kTJ-DduZkLfFlsv2S35N6vpFoErdRW",
+      "datei": "IMG_0203.MOV",
+      "bytes": 41308624,
+      "inhalt_laut_faktenblatt": "Start aus der Hand (HDR)"
+    },
+    {
+      "id": "fly_car",
+      "drive_id": "1bumckjoCvYJr4KFfjTpAlt3ikxx-M6xH",
+      "datei": "IMG_0204.MOV",
+      "bytes": 74751095,
+      "inhalt_laut_faktenblatt": "fliegt tief am Auto (HDR)"
+    },
+    {
+      "id": "launch_sky",
+      "drive_id": "1LwdPnUOJF0KtDLristSVOTOc5aB-aVdI",
+      "datei": "IMG_0205_seg1.MOV",
+      "bytes": 55418208,
+      "inhalt_laut_faktenblatt": "steigt in den Himmel (HDR)"
+    },
+    {
+      "id": "launch_sky2",
+      "drive_id": "1S_LvlSABaVByGG9CA-xKChMqCI8SYFgT",
+      "datei": "IMG_0205_seg2.MOV",
+      "bytes": 4827526,
+      "inhalt_laut_faktenblatt": "steigt (HDR)"
+    },
+    {
+      "id": "app_modes",
+      "drive_id": "13NiyuWyaNzRBKIkcCaGTxqqE7B-F6pmt",
+      "datei": "LHAJ4878_seg1.MP4",
+      "bytes": 28255912,
+      "inhalt_laut_faktenblatt": "App Modus-Menü"
+    },
+    {
+      "id": "phone_cam",
+      "drive_id": "1AocyE2PU3Az0JjoGn6NQLPqEKwD-WCID",
+      "datei": "LHAJ4878_seg2.MP4",
+      "bytes": 24140134,
+      "inhalt_laut_faktenblatt": "Handy filmt Drohne"
+    },
+    {
+      "id": "app_manual",
+      "drive_id": "1FZJz8i0sNmygwM4Y7ScAbIDTHPDj_Cyl",
+      "datei": "LHAJ4878_seg3.MP4",
+      "bytes": 23527919,
+      "inhalt_laut_faktenblatt": "App manuell"
+    },
+    {
+      "id": "akku",
+      "drive_id": "1nqT5YIiHSOdhGoQ9TT_77uCgBmCt-kBD",
+      "datei": "LHAJ4878_seg4.MP4",
+      "bytes": 62021519,
+      "inhalt_laut_faktenblatt": "App Akku leer → Rückkehr"
+    },
+    {
+      "id": "export_app",
+      "drive_id": "1AmKtOjqYsTSpkPOfinPhUoo8DZrTKo5O",
+      "datei": "DMLP7517_cut.MP4",
+      "bytes": 31573389,
+      "inhalt_laut_faktenblatt": "App Export"
+    }
+  ],
+  "ausgeschlossen": [
+    "app_* / dji_fly_*: fremde Drohne, 720p",
+    "DJI_0017/0018: Balkon, Kinder",
+    "DJI_0011: Gesicht groß",
+    "file_*.png: DJI-Werbeplakat (Urheberrecht)",
+    "IMG_0201.jpeg: Foto (ggf. später)",
+    "Originale 0006/0012/0021/0036 (bis 900 MB): Segmente reichen"
+  ]
+}

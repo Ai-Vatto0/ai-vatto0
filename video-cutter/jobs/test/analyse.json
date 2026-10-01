@@ -1,0 +1,735 @@
+{
+  "hinweis": "Sprechinseln aus dem Tonpegel + monoton zugeordnete Wörter. Grundlage für Grenzprüfung, Untertitel und Varianten.",
+  "schwelle_db": -39.331,
+  "rauschboden_db": -120,
+  "sprachpegel_p95_db": -9.331,
+  "inseln": [
+    {
+      "id": "i0",
+      "a": 0.65,
+      "b": 1.41,
+      "woerter": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "id": "i1",
+      "a": 1.62,
+      "b": 4.56,
+      "woerter": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ]
+    },
+    {
+      "id": "i2",
+      "a": 5.44,
+      "b": 6.92,
+      "woerter": [
+        12,
+        13,
+        14,
+        15,
+        16
+      ]
+    },
+    {
+      "id": "i3",
+      "a": 7.14,
+      "b": 7.39,
+      "woerter": [
+        17
+      ]
+    },
+    {
+      "id": "i4",
+      "a": 8.11,
+      "b": 8.61,
+      "woerter": [
+        18
+      ]
+    },
+    {
+      "id": "i5",
+      "a": 8.8,
+      "b": 9.32,
+      "woerter": [
+        19
+      ]
+    },
+    {
+      "id": "i6",
+      "a": 10.91,
+      "b": 13.46,
+      "woerter": [
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ]
+    },
+    {
+      "id": "i7",
+      "a": 16.46,
+      "b": 17.24,
+      "woerter": [
+        28,
+        29,
+        30,
+        31
+      ]
+    },
+    {
+      "id": "i8",
+      "a": 17.38,
+      "b": 18.46,
+      "woerter": [
+        32,
+        33,
+        34
+      ]
+    },
+    {
+      "id": "i9",
+      "a": 19.45,
+      "b": 22.1,
+      "woerter": [
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42
+      ]
+    },
+    {
+      "id": "i10",
+      "a": 23.39,
+      "b": 24.99,
+      "woerter": [
+        43,
+        44,
+        45
+      ]
+    }
+  ],
+  "woerter": [
+    {
+      "i": 0,
+      "text": "Kennt",
+      "whisper": [
+        0,
+        0.42
+      ],
+      "s": 0.65,
+      "e": 1.03,
+      "insel": "i0",
+      "zeit": "verteilt"
+    },
+    {
+      "i": 1,
+      "text": "du",
+      "whisper": [
+        0.42,
+        0.65
+      ],
+      "s": 1.03,
+      "e": 1.182,
+      "insel": "i0",
+      "zeit": "verteilt"
+    },
+    {
+      "i": 2,
+      "text": "das,",
+      "whisper": [
+        0.65,
+        1
+      ],
+      "s": 1.182,
+      "e": 1.41,
+      "insel": "i0",
+      "zeit": "verteilt"
+    },
+    {
+      "i": 3,
+      "text": "wenn",
+      "whisper": [
+        1,
+        1.35
+      ],
+      "s": 1.62,
+      "e": 1.922,
+      "insel": "i1",
+      "zeit": "verteilt"
+    },
+    {
+      "i": 4,
+      "text": "dein",
+      "whisper": [
+        1.35,
+        1.69
+      ],
+      "s": 1.922,
+      "e": 2.223,
+      "insel": "i1",
+      "zeit": "verteilt"
+    },
+    {
+      "i": 5,
+      "text": "Kaffee",
+      "whisper": [
+        1.69,
+        2.18
+      ],
+      "s": 2.223,
+      "e": 2.675,
+      "insel": "i1",
+      "zeit": "verteilt"
+    },
+    {
+      "i": 6,
+      "text": "nach",
+      "whisper": [
+        2.2,
+        2.49
+      ],
+      "s": 2.675,
+      "e": 2.977,
+      "insel": "i1",
+      "zeit": "verteilt"
+    },
+    {
+      "i": 7,
+      "text": "10",
+      "whisper": [
+        2.53,
+        3.04
+      ],
+      "s": 2.977,
+      "e": 3.128,
+      "insel": "i1",
+      "zeit": "verteilt"
+    },
+    {
+      "i": 8,
+      "text": "Minuten",
+      "whisper": [
+        3.04,
+        3.64
+      ],
+      "s": 3.128,
+      "e": 3.655,
+      "insel": "i1",
+      "zeit": "verteilt"
+    },
+    {
+      "i": 9,
+      "text": "schon",
+      "whisper": [
+        3.64,
+        4.07
+      ],
+      "s": 3.655,
+      "e": 4.032,
+      "insel": "i1",
+      "zeit": "verteilt"
+    },
+    {
+      "i": 10,
+      "text": "kalt",
+      "whisper": [
+        4.07,
+        4.4
+      ],
+      "s": 4.032,
+      "e": 4.334,
+      "insel": "i1",
+      "zeit": "verteilt"
+    },
+    {
+      "i": 11,
+      "text": "ist?",
+      "whisper": [
+        4.4,
+        5
+      ],
+      "s": 4.334,
+      "e": 4.56,
+      "insel": "i1",
+      "zeit": "verteilt"
+    },
+    {
+      "i": 12,
+      "text": "Mit",
+      "whisper": [
+        5,
+        5.26
+      ],
+      "s": 5.44,
+      "e": 5.633,
+      "insel": "i2",
+      "zeit": "verteilt"
+    },
+    {
+      "i": 13,
+      "text": "diesem",
+      "whisper": [
+        5.65,
+        5.78
+      ],
+      "s": 5.633,
+      "e": 6.019,
+      "insel": "i2",
+      "zeit": "verteilt"
+    },
+    {
+      "i": 14,
+      "text": "Becher",
+      "whisper": [
+        5.78,
+        6.29
+      ],
+      "s": 6.019,
+      "e": 6.405,
+      "insel": "i2",
+      "zeit": "verteilt"
+    },
+    {
+      "i": 15,
+      "text": "bleibt",
+      "whisper": [
+        6.29,
+        6.81
+      ],
+      "s": 6.405,
+      "e": 6.791,
+      "insel": "i2",
+      "zeit": "verteilt"
+    },
+    {
+      "i": 16,
+      "text": "er.",
+      "whisper": [
+        6.81,
+        7
+      ],
+      "s": 6.791,
+      "e": 6.92,
+      "insel": "i2",
+      "zeit": "verteilt"
+    },
+    {
+      "i": 17,
+      "text": "Äh.",
+      "whisper": [
+        7,
+        8
+      ],
+      "s": 7.14,
+      "e": 7.39,
+      "insel": "i3",
+      "zeit": "verteilt"
+    },
+    {
+      "i": 18,
+      "text": "Moment,",
+      "whisper": [
+        8.65,
+        8.87
+      ],
+      "s": 8.11,
+      "e": 8.61,
+      "insel": "i4",
+      "zeit": "verteilt"
+    },
+    {
+      "i": 19,
+      "text": "nochmal.",
+      "whisper": [
+        8.88,
+        9.99
+      ],
+      "s": 8.8,
+      "e": 9.32,
+      "insel": "i5",
+      "zeit": "verteilt"
+    },
+    {
+      "i": 20,
+      "text": "Mit",
+      "whisper": [
+        10,
+        10.29
+      ],
+      "s": 10.91,
+      "e": 11.097,
+      "insel": "i6",
+      "zeit": "verteilt"
+    },
+    {
+      "i": 21,
+      "text": "diesem",
+      "whisper": [
+        10.65,
+        10.86
+      ],
+      "s": 11.097,
+      "e": 11.47,
+      "insel": "i6",
+      "zeit": "verteilt"
+    },
+    {
+      "i": 22,
+      "text": "Becher",
+      "whisper": [
+        10.87,
+        11.4
+      ],
+      "s": 11.47,
+      "e": 11.843,
+      "insel": "i6",
+      "zeit": "verteilt"
+    },
+    {
+      "i": 23,
+      "text": "bleibt",
+      "whisper": [
+        11.62,
+        12.01
+      ],
+      "s": 11.843,
+      "e": 12.216,
+      "insel": "i6",
+      "zeit": "verteilt"
+    },
+    {
+      "i": 24,
+      "text": "er",
+      "whisper": [
+        12.02,
+        12.21
+      ],
+      "s": 12.216,
+      "e": 12.34,
+      "insel": "i6",
+      "zeit": "verteilt"
+    },
+    {
+      "i": 25,
+      "text": "deutlich",
+      "whisper": [
+        12.21,
+        12.98
+      ],
+      "s": 12.34,
+      "e": 12.838,
+      "insel": "i6",
+      "zeit": "verteilt"
+    },
+    {
+      "i": 26,
+      "text": "länger",
+      "whisper": [
+        12.98,
+        13.56
+      ],
+      "s": 12.838,
+      "e": 13.211,
+      "insel": "i6",
+      "zeit": "verteilt"
+    },
+    {
+      "i": 27,
+      "text": "warm.",
+      "whisper": [
+        13.56,
+        14
+      ],
+      "s": 13.211,
+      "e": 13.46,
+      "insel": "i6",
+      "zeit": "verteilt"
+    },
+    {
+      "i": 28,
+      "text": "Der",
+      "whisper": [
+        14,
+        15
+      ],
+      "s": 16.46,
+      "e": 16.606,
+      "insel": "i7",
+      "zeit": "verteilt"
+    },
+    {
+      "i": 29,
+      "text": "Deckel",
+      "whisper": [
+        15,
+        16
+      ],
+      "s": 16.606,
+      "e": 16.899,
+      "insel": "i7",
+      "zeit": "verteilt"
+    },
+    {
+      "i": 30,
+      "text": "geht",
+      "whisper": [
+        16,
+        16.3
+      ],
+      "s": 16.899,
+      "e": 17.094,
+      "insel": "i7",
+      "zeit": "verteilt"
+    },
+    {
+      "i": 31,
+      "text": "mit",
+      "whisper": [
+        16.65,
+        16.83
+      ],
+      "s": 17.094,
+      "e": 17.24,
+      "insel": "i7",
+      "zeit": "verteilt"
+    },
+    {
+      "i": 32,
+      "text": "einer",
+      "whisper": [
+        16.83,
+        17.72
+      ],
+      "s": 17.38,
+      "e": 17.83,
+      "insel": "i8",
+      "zeit": "verteilt"
+    },
+    {
+      "i": 33,
+      "text": "Hand",
+      "whisper": [
+        17.72,
+        18.43
+      ],
+      "s": 17.83,
+      "e": 18.19,
+      "insel": "i8",
+      "zeit": "verteilt"
+    },
+    {
+      "i": 34,
+      "text": "auf.",
+      "whisper": [
+        18.43,
+        19
+      ],
+      "s": 18.19,
+      "e": 18.46,
+      "insel": "i8",
+      "zeit": "verteilt"
+    },
+    {
+      "i": 35,
+      "text": "Und",
+      "whisper": [
+        19,
+        19.3
+      ],
+      "s": 19.45,
+      "e": 19.665,
+      "insel": "i9",
+      "zeit": "verteilt"
+    },
+    {
+      "i": 36,
+      "text": "er",
+      "whisper": [
+        19.3,
+        19.5
+      ],
+      "s": 19.665,
+      "e": 19.808,
+      "insel": "i9",
+      "zeit": "verteilt"
+    },
+    {
+      "i": 37,
+      "text": "passt",
+      "whisper": [
+        19.65,
+        20
+      ],
+      "s": 19.808,
+      "e": 20.166,
+      "insel": "i9",
+      "zeit": "verteilt"
+    },
+    {
+      "i": 38,
+      "text": "in",
+      "whisper": [
+        20,
+        20.19
+      ],
+      "s": 20.166,
+      "e": 20.309,
+      "insel": "i9",
+      "zeit": "verteilt"
+    },
+    {
+      "i": 39,
+      "text": "meinen",
+      "whisper": [
+        20.2,
+        20.79
+      ],
+      "s": 20.309,
+      "e": 20.739,
+      "insel": "i9",
+      "zeit": "verteilt"
+    },
+    {
+      "i": 40,
+      "text": "Getränkealter",
+      "whisper": [
+        20.79,
+        22.06
+      ],
+      "s": 20.739,
+      "e": 21.67,
+      "insel": "i9",
+      "zeit": "verteilt"
+    },
+    {
+      "i": 41,
+      "text": "im",
+      "whisper": [
+        22.06,
+        22.25
+      ],
+      "s": 21.67,
+      "e": 21.814,
+      "insel": "i9",
+      "zeit": "verteilt"
+    },
+    {
+      "i": 42,
+      "text": "Auto.",
+      "whisper": [
+        22.26,
+        23
+      ],
+      "s": 21.814,
+      "e": 22.1,
+      "insel": "i9",
+      "zeit": "verteilt"
+    },
+    {
+      "i": 43,
+      "text": "Jetzt",
+      "whisper": [
+        23,
+        23.52
+      ],
+      "s": 23.39,
+      "e": 23.811,
+      "insel": "i10",
+      "zeit": "verteilt"
+    },
+    {
+      "i": 44,
+      "text": "im",
+      "whisper": [
+        23.65,
+        23.73
+      ],
+      "s": 23.811,
+      "e": 23.979,
+      "insel": "i10",
+      "zeit": "verteilt"
+    },
+    {
+      "i": 45,
+      "text": "Ticktockshop.",
+      "whisper": [
+        23.73,
+        25
+      ],
+      "s": 23.979,
+      "e": 24.99,
+      "insel": "i10",
+      "zeit": "verteilt"
+    }
+  ],
+  "phrasen": [
+    {
+      "id": "p0",
+      "s": 0.65,
+      "e": 4.56,
+      "text": "Kennt du das, wenn dein Kaffee nach 10 Minuten schon kalt ist?"
+    },
+    {
+      "id": "p1",
+      "s": 5.44,
+      "e": 6.92,
+      "text": "Mit diesem Becher bleibt er."
+    },
+    {
+      "id": "p2",
+      "s": 7.14,
+      "e": 7.39,
+      "text": "Äh."
+    },
+    {
+      "id": "p3",
+      "s": 8.11,
+      "e": 9.32,
+      "text": "Moment, nochmal."
+    },
+    {
+      "id": "p4",
+      "s": 10.91,
+      "e": 13.46,
+      "text": "Mit diesem Becher bleibt er deutlich länger warm."
+    },
+    {
+      "id": "p5",
+      "s": 16.46,
+      "e": 18.46,
+      "text": "Der Deckel geht mit einer Hand auf."
+    },
+    {
+      "id": "p6",
+      "s": 19.45,
+      "e": 22.1,
+      "text": "Und er passt in meinen Getränkealter im Auto."
+    },
+    {
+      "id": "p7",
+      "s": 23.39,
+      "e": 24.99,
+      "text": "Jetzt im Ticktockshop."
+    }
+  ]
+}

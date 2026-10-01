@@ -1,0 +1,162 @@
+{
+  "titel": "Allein unterwegs – und keiner filmt?",
+  "idee": {
+    "winkel": "problem_loesung",
+    "zielgruppe": "Leute, die allein unterwegs sind und niemanden zum Filmen haben",
+    "hook": "Drohne liegt in Sekunde 0 auf der Hand – „Allein unterwegs, und keiner, der dich filmt?“",
+    "emotion": "Lösung, Sicherheit"
+  },
+  "regel_ausnahme": "Eine Zeitlupe (Szene 2, 60-fps-Quelle, 0,5x ohne Interpolation) als A/B-Test gegen Faruks Learning „keine Zeitlupe“ – Video A hat keine.",
+  "look": "nacht",
+  "textposition": "oben",
+  "stimme": {
+    "anbieter": "yapper",
+    "modell": "eleven_v3",
+    "name": "Helena (Faruk-Liste)",
+    "voice_id": "2etPlvmUpTvN6iCGyIDC"
+  },
+  "voiceover": [
+    {
+      "satz": "Allein unterwegs, und keiner, der dich filmt?",
+      "belege": [
+        "meinung"
+      ]
+    },
+    {
+      "satz": "Die hier wiegt nur 151 Gramm.",
+      "belege": [
+        "gewicht_151g"
+      ]
+    },
+    {
+      "satz": "Im Menü wählst du Rocket, Dronie oder Helix, und sie fliegt die Aufnahme von selbst.",
+      "belege": [
+        "quickshots"
+      ]
+    },
+    {
+      "satz": "Sie folgt dir automatisch, und du steuerst sie sogar per Handgeste.",
+      "belege": [
+        "folgt_automatisch",
+        "gestensteuerung"
+      ]
+    },
+    {
+      "satz": "Wird der Akku knapp, meldet sie sich und fliegt von selbst zurück.",
+      "belege": [
+        "akku_rueckkehr"
+      ]
+    },
+    {
+      "satz": "Jetzt im TikTok Shop.",
+      "belege": []
+    }
+  ],
+  "szenen": [
+    {
+      "clip": "palm",
+      "von": 0.0,
+      "rolle": "hook",
+      "zoom": "kenburns_in",
+      "uebergang": "zoom",
+      "text": {
+        "inhalt": "SIE PASST AUF DEINE HAND",
+        "betonung": [
+          "HAND"
+        ],
+        "belege": [
+          "meinung"
+        ]
+      }
+    },
+    {
+      "clip": "launch_sky",
+      "von": 0.8,
+      "rolle": "emotion",
+      "tempo": 0.5,
+      "zoom": "kenburns_in",
+      "uebergang": "flash",
+      "text": {
+        "inhalt": "NUR 151 GRAMM",
+        "betonung": [
+          "151"
+        ],
+        "belege": [
+          "gewicht_151g"
+        ]
+      },
+      "ab_wort": 7
+    },
+    {
+      "clip": "app_modes",
+      "von": 5.0,
+      "rolle": "beweis",
+      "zoom": "punch",
+      "uebergang": "whip",
+      "ab_wort": 13,
+      "bis_max": 7.2
+    },
+    {
+      "clip": "rocket_b",
+      "von": 0.0,
+      "rolle": "beweis",
+      "zoom": "kenburns_out",
+      "uebergang": "cut",
+      "ab_wort": 18
+    },
+    {
+      "clip": "forest_behind",
+      "von": 4.4,
+      "rolle": "beweis",
+      "zoom": "kenburns_in",
+      "uebergang": "zoom",
+      "ab_wort": 28,
+      "text": {
+        "inhalt": "FOLGT DIR AUTOMATISCH",
+        "betonung": [
+          "AUTOMATISCH"
+        ],
+        "belege": [
+          "folgt_automatisch"
+        ]
+      }
+    },
+    {
+      "clip": "gesture6",
+      "von": 4.3,
+      "rolle": "beweis",
+      "zoom": "punch",
+      "uebergang": "flash",
+      "text": {
+        "inhalt": "STEUERUNG PER GESTE",
+        "betonung": [
+          "GESTE"
+        ],
+        "belege": [
+          "gestensteuerung"
+        ]
+      },
+      "ab_wort": 32
+    },
+    {
+      "clip": "akku",
+      "von": 11.0,
+      "rolle": "beweis",
+      "zoom": "punch",
+      "uebergang": "cut",
+      "ab_wort": 39
+    },
+    {
+      "clip": "palm",
+      "von": 3.3,
+      "rolle": "cta",
+      "zoom": "kenburns_out",
+      "ab_wort": 51
+    }
+  ],
+  "cta": {
+    "text": "Jetzt im TikTok Shop",
+    "zusatz": "Deine Kamera, die mitfliegt.",
+    "top": 330
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "quelle": "memory/projekte/dji-neo-2.md (Faktenblatt, Stand 29.09.2026) – Abschnitt 5 Claim-Ampel",
+  "hinweis": "Nur diese Schlüssel dürfen als Beleg verwendet werden. Gelb nur mit erfüllter Bedingung. Zahlen vor dem Posten gegen dji.com/de/neo-2/specs prüfen.",
+  "fakten": {
+    "gewicht_151g": { "text": "Nur 151 g", "ampel": "gruen" },
+    "handstart": { "text": "Startet aus deiner Hand", "ampel": "gruen" },
+    "return_to_palm": { "text": "Landet wieder in der Hand (Return to Palm)", "ampel": "gruen" },
+    "folgt_automatisch": { "text": "Folgt dir automatisch (ActiveTrack, 8 Richtungen)", "ampel": "gruen" },
+    "folgt_43kmh": { "text": "Folgt bis zu 43 km/h", "ampel": "gelb", "bedingung": "nur als „bis zu“" },
+    "radfahren_ski_modus": { "text": "Eigene Modi für Radfahren und Ski", "ampel": "gruen" },
+    "4k": { "text": "Filmt in 4K", "ampel": "gruen" },
+    "4k_100fps": { "text": "4K mit 100 fps", "ampel": "gelb", "bedingung": "nur mit Fernsteuerung" },
+    "gimbal": { "text": "Mechanischer 2-Achsen-Gimbal", "ampel": "gruen" },
+    "hinderniserkennung": { "text": "Rundum-Hinderniserkennung", "ampel": "gruen", "bedingung": "nie „weicht allem aus / crashsicher“" },
+    "speicher_49gb": { "text": "49 GB Speicher an Bord", "ampel": "gruen" },
+    "steuerung": { "text": "Steuerung per Handy, Geste oder Stimme", "ampel": "gruen" },
+    "gestensteuerung": { "text": "Gestensteuerung mit der Handfläche", "ampel": "gruen" },
+    "flugzeit_19min": { "text": "Bis zu 19 Minuten Flugzeit", "ampel": "gruen", "bedingung": "nur mit „bis zu“" },
+    "quickshots": { "text": "QuickShots wie Dronie, Rocket, Circle, Helix", "ampel": "gruen" },
+    "akku_rueckkehr": { "text": "Meldet sich bei niedrigem Akku und fliegt von selbst zurück", "ampel": "gruen", "bedingung": "nie „kann nie abstürzen“" },
+    "c0_kein_fuehrerschein": { "text": "Unter 250 g, C0 – kein Drohnenführerschein nötig", "ampel": "gelb", "bedingung": "nur mit Hinweis auf LBA-Registrierung + Versicherung" },
+    "hochkant": { "text": "Filmt auch hochkant", "ampel": "gruen", "bedingung": "Hochkant-Clips mit 1512×2688 im Material belegt" },
+    "meinung": { "text": "Persönliche Meinung/Gefühl ohne Produktbehauptung (z. B. „macht einfach Spaß“)", "ampel": "gruen" }
+  },
+  "rot": ["2000 m hoch", "weicht allem aus", "crashsicher", "keine Regeln", "ohne Anmeldung", "günstigste", "beste Drohne", "viral", "Bewertung", "Preis", "Rabatt"]
+}

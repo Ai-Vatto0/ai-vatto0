@@ -1,0 +1,18 @@
+{
+  "geprueft": "2026-09-30T16:54:47.362Z",
+  "engine": "whisper",
+  "model": "small",
+  "sprache": "de",
+  "woerter": 46,
+  "sprechgeschwindigkeit_wps": 1.84,
+  "gehoert_zu": {
+    "datei": "media/arbeitskopie.mp4",
+    "sha256": "c1d7071d80cfefe484e0f324b10369ff500d5ac20d1e9092a0b68509e3955a4d",
+    "offset_zum_original_s": 0
+  },
+  "transcript_sha256": "bc2008cb0225a305e4870e5ab344d112344ac2241661ca8b35fd1fe42be14881",
+  "ok": true,
+  "probleme": [],
+  "warnungen": [],
+  "hinweis": "Wortzeiten sind Schätzungen. Pausen und Schnittgrenzen werden in schnittplan.mjs am Tonpegel geprüft."
+}

@@ -1,0 +1,38 @@
+{
+  "export": "vorschau-schnittplan-v002.mp4",
+  "plan": "schnittplan",
+  "art": "vorschau",
+  "freigabe": null,
+  "erstellt": "2026-09-30T16:58:09.802Z",
+  "ffprobe": {
+    "datei": "/home/user/ai-vatto0/video-cutter/jobs/test/exporte/vorschau-schnittplan-v002.mp4",
+    "dauer_s": 14.681333,
+    "bytes": 3487973,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "video": {
+      "codec": "h264",
+      "breite_gespeichert": 1080,
+      "hoehe_gespeichert": 1920,
+      "rotation_grad": 0,
+      "breite_angezeigt": 1080,
+      "hoehe_angezeigt": 1920,
+      "orientierung": "hochkant",
+      "r_frame_rate": "30000/1001",
+      "avg_frame_rate": "30000/1001",
+      "fps": 29.97003,
+      "variable_bildrate": false,
+      "pix_fmt": "yuv420p",
+      "frames": 440
+    },
+    "audio": [
+      {
+        "index": 1,
+        "codec": "aac",
+        "kanaele": 2,
+        "samplerate": 48000,
+        "sprache": "und",
+        "dauer_s": 14.681
+      }
+    ]
+  }
+}

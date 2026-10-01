@@ -1,0 +1,30 @@
+{
+  "name": "video-cutter",
+  "version": "1.0.0",
+  "description": "Video-Cutting-Agent für TikTok-Shop-Werbung (HyperFrames 0.8.77 + whisper.cpp)",
+  "scripts": {
+    "setup": "bash tools/setup.sh",
+    "quelle": "node tools/quelle.mjs",
+    "transkript": "node tools/transkript.mjs",
+    "schnittplan": "node tools/schnittplan.mjs",
+    "pruefe-plan": "node tools/pruefe-plan.mjs",
+    "baue": "node tools/baue.mjs",
+    "render": "node tools/render.mjs",
+    "qa": "node tools/qa.mjs",
+    "varianten": "node tools/varianten.mjs",
+    "selbsttest": "bash tools/selbsttest.sh",
+    "produziere": "node tools/produziere.mjs",
+    "pruefe-spec": "node tools/pruefe-spec.mjs"
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "fontkit": "2.0.4",
+    "gsap": "3.14.2",
+    "hyperframes": "0.8.77"
+  },
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  }
+}

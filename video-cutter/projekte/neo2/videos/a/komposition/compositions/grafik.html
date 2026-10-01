@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="de">
+  <head><meta charset="UTF-8" /><!-- GENERIERT von tools/baue-spec.mjs – nicht von Hand ändern. --></head>
+  <body>
+    <template>
+      <style>
+        @font-face { font-family: "Poppins"; src: url("assets/fonts/Poppins-Bold.ttf") format("truetype"); font-weight: 700; }
+        #root { position: absolute; inset: 0; font-family: "Poppins", sans-serif; font-weight: 700; }
+        /* Safe Zone 1080x1920: oben 150, rechts 140, unten 400, links 60 */
+        .cap { position: absolute; left: 60px; right: 140px; top: 1290px; display: flex; justify-content: center; }
+        .cap-in { max-width: 860px; text-align: center; font-size: 70px; line-height: 1.12; color: #FFFFFF; -webkit-text-stroke: 12px #000000; paint-order: stroke fill; background: transparent; padding: 0; border-radius: 26px; text-shadow: 0 6px 18px rgba(0,0,0,.45); }
+        .headline { position: absolute; left: 60px; right: 140px; top: 250px; display: flex; justify-content: center; }
+        .hl-in { max-width: 860px; text-align: center; font-size: 104px; line-height: 1.04; color: #FFFFFF; -webkit-text-stroke: 14px #000; paint-order: stroke fill; }
+        .hw { display: inline-block; }
+        .hw.em { color: #FFD400; }
+        .ctabox { position: absolute; left: 60px; right: 140px; top: 1080px; display: flex; flex-direction: column; align-items: center; }
+        .cta-tx { color: #FFD400; font-size: 76px; line-height: 1.05; text-align: center; max-width: 720px; -webkit-text-stroke: 14px #000; paint-order: stroke fill; }
+        .cta-zu { color: #fff; font-size: 44px; margin-top: 12px; text-align: center; max-width: 720px; background: rgba(0,0,0,.55); padding: 6px 18px; border-radius: 16px; }
+        .pfeil { width: 150px; height: 150px; margin-top: 4px; margin-right: 400px; }
+        .pfeil path { stroke-dasharray: 260; }
+        .ki { position: absolute; left: 70px; top: 160px; font-size: 26px; color: #FFFFFF; letter-spacing: .04em; background: rgba(0,0,0,.62); padding: 6px 14px; border-radius: 12px; }
+      </style>
+      <div id="root" data-composition-id="grafik" data-width="1080" data-height="1920">
+        <div id="h1" class="clip headline" data-start="0.1" data-duration="3.417" data-track-index="1"><div class="hl-in"><span class="hw">DEIN</span> <span class="hw">NEUER</span> <span class="hw em">KAMERAMANN</span></div></div>
+        <div id="h2" class="clip headline" data-start="3.667" data-duration="1.183" data-track-index="1"><div class="hl-in"><span class="hw">VON</span> <span class="hw em">HINTEN</span></div></div>
+        <div id="h3" class="clip headline" data-start="5" data-duration="1.35" data-track-index="1"><div class="hl-in"><span class="hw">VON</span> <span class="hw em">VORNE</span></div></div>
+        <div id="h4" class="clip headline" data-start="6.5" data-duration="2.917" data-track-index="1"><div class="hl-in"><span class="hw">BIS</span> <span class="hw">ZU</span> <span class="hw em">43</span> <span class="hw">KM/H</span></div></div>
+        <div id="h5" class="clip headline" data-start="9.567" data-duration="2.05" data-track-index="1"><div class="hl-in"><span class="hw">HÄNDE</span> <span class="hw">AM</span> <span class="hw em">LENKER</span></div></div>
+        <div id="h6" class="clip headline" data-start="11.767" data-duration="2.117" data-track-index="1"><div class="hl-in"><span class="hw">NUR</span> <span class="hw em">151</span> <span class="hw">GRAMM</span></div></div>
+        <div id="h7" class="clip headline" data-start="14.034" data-duration="2.317" data-track-index="1"><div class="hl-in"><span class="hw">ALLES</span> <span class="hw">IN</span> <span class="hw em">4K</span></div></div>
+        <div id="cta" class="clip ctabox" data-start="16.401" data-duration="2.9" data-track-index="2"><div class="cta-tx">Jetzt im TikTok Shop</div><div class="cta-zu">Du fährst. Sie filmt.</div><svg class="pfeil" viewBox="0 0 200 200"><path d="M170 20 C 150 90, 110 130, 40 160" fill="none" stroke="#FFD400" stroke-width="14" stroke-linecap="round"/><path d="M40 160 L 70 118 M40 160 L 92 170" fill="none" stroke="#FFD400" stroke-width="14" stroke-linecap="round"/></svg></div>
+        <div id="ki" class="clip ki" data-start="0" data-duration="19.301" data-track-index="3">KI-Stimme</div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#h1 .hl-in", { opacity: 0 }, { opacity: 1, duration: 0.06 }, 0.1);
+        tl.fromTo("#h1 .hw", { yPercent: 80, opacity: 0, rotation: -4 }, { yPercent: 0, opacity: 1, rotation: 0, duration: 0.32, ease: "back.out(2.2)", stagger: 0.06 }, 0.1);
+        tl.to("#h1 .hl-in", { opacity: 0, y: -20, duration: 0.18, ease: "power2.in" }, 3.337);
+        tl.fromTo("#h2 .hl-in", { opacity: 0 }, { opacity: 1, duration: 0.06 }, 3.667);
+        tl.fromTo("#h2 .hw", { yPercent: 80, opacity: 0, rotation: -4 }, { yPercent: 0, opacity: 1, rotation: 0, duration: 0.32, ease: "back.out(2.2)", stagger: 0.06 }, 3.667);
+        tl.to("#h2 .hl-in", { opacity: 0, y: -20, duration: 0.18, ease: "power2.in" }, 4.67);
+        tl.fromTo("#h3 .hl-in", { opacity: 0 }, { opacity: 1, duration: 0.06 }, 5);
+        tl.fromTo("#h3 .hw", { yPercent: 80, opacity: 0, rotation: -4 }, { yPercent: 0, opacity: 1, rotation: 0, duration: 0.32, ease: "back.out(2.2)", stagger: 0.06 }, 5);
+        tl.to("#h3 .hl-in", { opacity: 0, y: -20, duration: 0.18, ease: "power2.in" }, 6.17);
+        tl.fromTo("#h4 .hl-in", { opacity: 0 }, { opacity: 1, duration: 0.06 }, 6.5);
+        tl.fromTo("#h4 .hw", { yPercent: 80, opacity: 0, rotation: -4 }, { yPercent: 0, opacity: 1, rotation: 0, duration: 0.32, ease: "back.out(2.2)", stagger: 0.06 }, 6.5);
+        tl.to("#h4 .hl-in", { opacity: 0, y: -20, duration: 0.18, ease: "power2.in" }, 9.237);
+        tl.fromTo("#h5 .hl-in", { opacity: 0 }, { opacity: 1, duration: 0.06 }, 9.567);
+        tl.fromTo("#h5 .hw", { yPercent: 80, opacity: 0, rotation: -4 }, { yPercent: 0, opacity: 1, rotation: 0, duration: 0.32, ease: "back.out(2.2)", stagger: 0.06 }, 9.567);
+        tl.to("#h5 .hl-in", { opacity: 0, y: -20, duration: 0.18, ease: "power2.in" }, 11.437);
+        tl.fromTo("#h6 .hl-in", { opacity: 0 }, { opacity: 1, duration: 0.06 }, 11.767);
+        tl.fromTo("#h6 .hw", { yPercent: 80, opacity: 0, rotation: -4 }, { yPercent: 0, opacity: 1, rotation: 0, duration: 0.32, ease: "back.out(2.2)", stagger: 0.06 }, 11.767);
+        tl.to("#h6 .hl-in", { opacity: 0, y: -20, duration: 0.18, ease: "power2.in" }, 13.704);
+        tl.fromTo("#h7 .hl-in", { opacity: 0 }, { opacity: 1, duration: 0.06 }, 14.034);
+        tl.fromTo("#h7 .hw", { yPercent: 80, opacity: 0, rotation: -4 }, { yPercent: 0, opacity: 1, rotation: 0, duration: 0.32, ease: "back.out(2.2)", stagger: 0.06 }, 14.034);
+        tl.to("#h7 .hl-in", { opacity: 0, y: -20, duration: 0.18, ease: "power2.in" }, 16.171);
+        tl.fromTo("#cta .cta-tx", { scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.42, ease: "back.out(1.2)" }, 16.501);
+        tl.fromTo("#cta .cta-zu", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "power3.out" }, 16.801);
+        tl.fromTo("#cta .pfeil path", { strokeDashoffset: 260 }, { strokeDashoffset: 0, duration: 0.45, ease: "power2.out", stagger: 0.12 }, 16.901);
+        window.__timelines["grafik"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

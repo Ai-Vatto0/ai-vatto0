@@ -1,0 +1,54 @@
+{
+  "export": "vorschau-a-v002.mp4",
+  "art": "vorschau",
+  "freigabe": null,
+  "renderzeit_s": 140,
+  "status": "OK",
+  "checks": [
+    {
+      "pruefung": "Spuren",
+      "status": "OK",
+      "detail": "1 Video, 1 Ton"
+    },
+    {
+      "pruefung": "Auflösung",
+      "status": "OK",
+      "detail": "1080x1920"
+    },
+    {
+      "pruefung": "Bildrate",
+      "status": "OK",
+      "detail": "30/1"
+    },
+    {
+      "pruefung": "Dauer",
+      "status": "OK",
+      "detail": "19.333 s (Plan 19.301 s)"
+    },
+    {
+      "pruefung": "Lautheit",
+      "status": "OK",
+      "detail": "-12.7 LUFS (Ziel -14 ±2)"
+    },
+    {
+      "pruefung": "True Peak",
+      "status": "OK",
+      "detail": "-2.6 dBTP"
+    },
+    {
+      "pruefung": "Stille",
+      "status": "OK",
+      "detail": "längste Stille 0.2 s"
+    },
+    {
+      "pruefung": "Voiceover = Skript",
+      "status": "OK",
+      "detail": "45 Wörter wiedergefunden"
+    },
+    {
+      "pruefung": "Safe Zone",
+      "status": "OK",
+      "detail": "193 Bilder geprüft, nichts außerhalb"
+    }
+  ]
+}
