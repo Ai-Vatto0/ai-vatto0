@@ -1,13 +1,14 @@
 {
-  "hook_effekt": true,
+  "hook_effekt": "slam",
+  "regel_ausnahme": "Eine Zeitlupe (Szene 2, 60-fps-iPhone-Quelle, 0,5x ohne Interpolation) – Produkt-Reveal",
   "titel": "Groß und schwer? Kein Problem.",
   "idee": {
     "winkel": "problem_loesung",
     "zielgruppe": "große, schwere Fahrer (100–150 kg), die bei Plastikrollern Angst haben",
-    "hook": "Weißblitz + Punch-In auf die Doppelfederung + „Stopp!“ + Text „ÜBER 100 KILO?“",
+    "hook": "Slam: Weißblitz + Wackler + Punch-In auf den RCB am Felsen mit Licht an + „Stopp!“ + Text „ÜBER 100 KILO?“",
     "emotion": "endlich ernst genommen"
   },
-  "format": "Problem-Lösung für schwere Fahrer, Pattern-Interrupt-Hook, Fotos + Wald + Wiese",
+  "format": "Problem-Lösung für schwere Fahrer: Felsen-Rundgang, Zeitlupe, Daten-Karten, Fahrt von hinten",
   "look": "rcb_dunkel",
   "textposition": "unten",
   "stimme": {
@@ -67,8 +68,8 @@
   ],
   "szenen": [
     {
-      "clip": "foto-federung",
-      "von": 0,
+      "clip": "img8258",
+      "von": 0.0,
       "bis": 4.13,
       "rolle": "hook",
       "zoom": "kenburns_in",
@@ -84,63 +85,61 @@
       }
     },
     {
-      "clip": "forest_behind",
-      "von": 2.4,
-      "bis": 4.582,
-      "rolle": "beweis",
+      "clip": "img8241",
+      "von": 16.0,
+      "bis": 18.182,
+      "rolle": "detail",
       "zoom": "none",
-      "uebergang": "cut",
+      "uebergang": "whip",
       "ab_wort": 11,
-      "text": {
-        "inhalt": "BIS 150 KG",
-        "betonung": [
-          "150"
-        ],
+      "tempo": 0.5
+    },
+    {
+      "clip": "img8241",
+      "von": 20.0,
+      "bis": 21.455,
+      "rolle": "beweis",
+      "zoom": "punch",
+      "uebergang": "zoom",
+      "ab_wort": 17,
+      "stat": {
+        "zahl": 150,
+        "einheit": "KG",
+        "label": "max. Belastung",
         "belege": [
           "max_150kg"
         ]
       }
     },
     {
-      "clip": "dji0926-0021",
-      "von": 24.0,
-      "bis": 25.455,
-      "rolle": "emotion",
-      "zoom": "none",
-      "uebergang": "whip",
-      "ab_wort": 17
-    },
-    {
-      "clip": "dji0925-0012",
-      "von": 40.0,
-      "bis": 44.727,
+      "clip": "img8252",
+      "von": 4.5,
+      "bis": 9.227,
       "rolle": "beweis",
       "zoom": "none",
       "uebergang": "cut",
       "ab_wort": 21,
-      "text": {
-        "inhalt": "FEDERUNG V + H",
-        "betonung": [
-          "FEDERUNG"
-        ],
+      "stat": {
+        "zahl": 500,
+        "einheit": "W",
+        "label": "Motor",
         "belege": [
-          "federung"
+          "motor_500w"
         ]
       }
     },
     {
-      "clip": "foto-front",
-      "von": 0,
-      "bis": 4.0,
+      "clip": "img8251",
+      "von": 23.0,
+      "bis": 27.0,
       "rolle": "beweis",
-      "zoom": "kenburns_in",
-      "uebergang": "zoom",
+      "zoom": "none",
+      "uebergang": "whip",
       "ab_wort": 34,
-      "text": {
-        "inhalt": "10 ZOLL GEL",
-        "betonung": [
-          "GEL"
-        ],
+      "stat": {
+        "zahl": 10,
+        "einheit": "ZOLL",
+        "label": "Gelreifen",
         "belege": [
           "gelreifen"
         ],
@@ -148,16 +147,17 @@
       }
     },
     {
-      "clip": "forest6",
-      "von": 1.2,
-      "bis": 3.745,
+      "clip": "img8251",
+      "von": 3.3,
+      "bis": 6.482,
       "rolle": "emotion",
       "zoom": "none",
       "uebergang": "cut",
-      "ab_wort": 45
+      "ab_wort": 45,
+      "tempo": "ramp"
     },
     {
-      "clip": "foto-wald2-endkarte",
+      "clip": "foto-stein-endkarte",
       "von": 0,
       "bis": 2.975,
       "rolle": "cta",

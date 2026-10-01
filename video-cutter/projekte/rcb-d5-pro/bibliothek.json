@@ -1403,6 +1403,230 @@
         "qualitaet": "gut",
         "risiko": "Fremdmarke WILD MAN auf der Lenkertasche (Zubehör, nicht im Lieferumfang) wo sichtbar"
       }
+    },
+    "foto-stein": {
+      "datei": "stills/foto-stein.mp4",
+      "dauer_s": 6,
+      "breite": 1216,
+      "hoehe": 2160,
+      "orientierung": "hochkant",
+      "typ": "foto",
+      "fps": 30,
+      "variable_bildrate": false,
+      "hdr": false,
+      "ton": false,
+      "zeitlupe_moeglich": "nein",
+      "tags": {
+        "beschreibung": "Foto: RCB vor großem Felsen im Wald (IMG_8253, „Stein-Szene“)",
+        "rolle": [
+          "detail",
+          "beweis"
+        ],
+        "person": "keine",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [
+          [
+            0,
+            6
+          ]
+        ],
+        "bewegung": "ruhig (nur Zoom)",
+        "qualitaet": "gut",
+        "risiko": "Fremdmarke WILD MAN auf der Lenkertasche (Zubehör, nicht im Lieferumfang) wo sichtbar"
+      }
+    },
+    "foto-nacht-oben": {
+      "datei": "stills/foto-nacht-oben.mp4",
+      "dauer_s": 6,
+      "breite": 1216,
+      "hoehe": 2160,
+      "orientierung": "hochkant",
+      "typ": "foto",
+      "fps": 30,
+      "variable_bildrate": false,
+      "hdr": false,
+      "ton": false,
+      "zeitlupe_moeglich": "nein",
+      "tags": {
+        "beschreibung": "Foto bei Nacht von oben: Trittbrett mit RCB, Scheinwerfer an, Rücklicht rot (IMG_7961)",
+        "rolle": [
+          "detail",
+          "beweis"
+        ],
+        "person": "keine",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [
+          [
+            0,
+            6
+          ]
+        ],
+        "bewegung": "ruhig (nur Zoom)",
+        "qualitaet": "gut",
+        "risiko": "Fremdmarke WILD MAN auf der Lenkertasche (Zubehör, nicht im Lieferumfang) wo sichtbar"
+      }
+    },
+    "foto-wald3": {
+      "datei": "stills/foto-wald3.mp4",
+      "dauer_s": 6,
+      "breite": 1216,
+      "hoehe": 2160,
+      "orientierung": "hochkant",
+      "typ": "foto",
+      "fps": 30,
+      "variable_bildrate": false,
+      "hdr": false,
+      "ton": false,
+      "zeitlupe_moeglich": "nein",
+      "tags": {
+        "beschreibung": "Foto Wald Froschperspektive, Licht an (IMG_8248)",
+        "rolle": [
+          "detail",
+          "beweis"
+        ],
+        "person": "keine",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [
+          [
+            0,
+            6
+          ]
+        ],
+        "bewegung": "ruhig (nur Zoom)",
+        "qualitaet": "gut",
+        "risiko": "Fremdmarke WILD MAN auf der Lenkertasche (Zubehör, nicht im Lieferumfang) wo sichtbar"
+      }
+    },
+    "foto-wald-licht": {
+      "datei": "stills/foto-wald-licht.mp4",
+      "dauer_s": 6,
+      "breite": 1216,
+      "hoehe": 2160,
+      "orientierung": "hochkant",
+      "typ": "foto",
+      "fps": 30,
+      "variable_bildrate": false,
+      "hdr": false,
+      "ton": false,
+      "zeitlupe_moeglich": "nein",
+      "tags": {
+        "beschreibung": "Foto Wald, ganzer Roller, Licht an, „RCB Rock our Life“ am Lenkrohr (Chat-Foto)",
+        "rolle": [
+          "detail",
+          "beweis"
+        ],
+        "person": "keine",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [
+          [
+            0,
+            6
+          ]
+        ],
+        "bewegung": "ruhig (nur Zoom)",
+        "qualitaet": "gut",
+        "risiko": "Fremdmarke WILD MAN auf der Lenkertasche (Zubehör, nicht im Lieferumfang) wo sichtbar"
+      }
+    },
+    "foto-stein-endkarte": {
+      "datei": "stills/foto-stein-endkarte.mp4",
+      "dauer_s": 6,
+      "breite": 1216,
+      "hoehe": 2160,
+      "orientierung": "hochkant",
+      "typ": "foto",
+      "fps": 30,
+      "variable_bildrate": false,
+      "hdr": false,
+      "ton": false,
+      "zeitlupe_moeglich": "nein",
+      "tags": {
+        "beschreibung": "Endkarte aus foto-stein",
+        "rolle": [
+          "detail",
+          "beweis"
+        ],
+        "person": "keine",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [
+          [
+            0,
+            6
+          ]
+        ],
+        "bewegung": "ruhig (nur Zoom)",
+        "qualitaet": "gut",
+        "risiko": "Fremdmarke WILD MAN auf der Lenkertasche (Zubehör, nicht im Lieferumfang) wo sichtbar"
+      }
+    },
+    "foto-wald-licht-endkarte": {
+      "datei": "stills/foto-wald-licht-endkarte.mp4",
+      "dauer_s": 6,
+      "breite": 1216,
+      "hoehe": 2160,
+      "orientierung": "hochkant",
+      "typ": "foto",
+      "fps": 30,
+      "variable_bildrate": false,
+      "hdr": false,
+      "ton": false,
+      "zeitlupe_moeglich": "nein",
+      "tags": {
+        "beschreibung": "Endkarte aus foto-wald-licht",
+        "rolle": [
+          "detail",
+          "beweis"
+        ],
+        "person": "keine",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [
+          [
+            0,
+            6
+          ]
+        ],
+        "bewegung": "ruhig (nur Zoom)",
+        "qualitaet": "gut",
+        "risiko": "Fremdmarke WILD MAN auf der Lenkertasche (Zubehör, nicht im Lieferumfang) wo sichtbar"
+      }
+    },
+    "foto-nacht-oben-endkarte": {
+      "datei": "stills/foto-nacht-oben-endkarte.mp4",
+      "dauer_s": 6,
+      "breite": 1216,
+      "hoehe": 2160,
+      "orientierung": "hochkant",
+      "typ": "foto",
+      "fps": 30,
+      "variable_bildrate": false,
+      "hdr": false,
+      "ton": false,
+      "zeitlupe_moeglich": "nein",
+      "tags": {
+        "beschreibung": "Endkarte aus foto-nacht-oben",
+        "rolle": [
+          "detail",
+          "beweis"
+        ],
+        "person": "keine",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [
+          [
+            0,
+            6
+          ]
+        ],
+        "bewegung": "ruhig (nur Zoom)",
+        "qualitaet": "gut",
+        "risiko": "Fremdmarke WILD MAN auf der Lenkertasche (Zubehör, nicht im Lieferumfang) wo sichtbar"
+      }
     }
   }
 }

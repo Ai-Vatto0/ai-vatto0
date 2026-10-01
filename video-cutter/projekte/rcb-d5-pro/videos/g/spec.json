@@ -1,13 +1,13 @@
 {
-  "hook_effekt": true,
+  "hook_effekt": "slam",
   "titel": "Wald-Modus: Federung bügelt alles weg",
   "idee": {
     "winkel": "feature_demo",
     "zielgruppe": "Pendler und Feierabend-Fahrer mit schlechten Wegen",
-    "hook": "Weißblitz + Abfahrt von der Brücke in den Wald + „Wurzeln, Schotter, Bordsteinkanten?“",
+    "hook": "Slam: POV-Speedfahrt durch den Wald + Weißblitz + Wackler + Text „WALD-MODUS: AN“",
     "emotion": "Souveränität, Komfort"
   },
-  "format": "Feature-Demo Federung/Ausstattung, Wald von hinten + Detailfotos, wenig Effekte",
+  "format": "Feature-Demo im POV: Display-Fahrten, Felsen-Details (Federbeine, Bremse), Daten-Karten",
   "look": "rcb_tag",
   "textposition": "oben",
   "stimme": {
@@ -66,9 +66,9 @@
   ],
   "szenen": [
     {
-      "clip": "dji0925-0012",
-      "von": 15.0,
-      "bis": 16.221,
+      "clip": "img8251",
+      "von": 9.9,
+      "bis": 11.121,
       "rolle": "hook",
       "zoom": "kenburns_in",
       "uebergang": "cut",
@@ -83,9 +83,9 @@
       }
     },
     {
-      "clip": "forest_behind",
-      "von": 4.4,
-      "bis": 7.309,
+      "clip": "img8238",
+      "von": 4.0,
+      "bis": 6.909,
       "rolle": "beweis",
       "zoom": "none",
       "uebergang": "cut",
@@ -101,27 +101,60 @@
       }
     },
     {
-      "clip": "foto-federung",
-      "von": 0,
-      "bis": 3.273,
+      "clip": "img8258",
+      "von": 5.0,
+      "bis": 6.818,
       "rolle": "beweis",
       "zoom": "kenburns_in",
-      "uebergang": "cut",
-      "ab_wort": 11
+      "uebergang": "whip",
+      "ab_wort": 11,
+      "stat": {
+        "zahl": "V+H",
+        "einheit": "",
+        "label": "Doppel-Federung",
+        "belege": [
+          "federung"
+        ]
+      }
     },
     {
-      "clip": "foto-pov",
-      "von": 0,
+      "clip": "img8258",
+      "von": 8.0,
+      "bis": 9.455,
+      "rolle": "beweis",
+      "zoom": "punch",
+      "uebergang": "flash",
+      "ab_wort": 16,
+      "stat": {
+        "zahl": 2,
+        "einheit": "×",
+        "label": "Scheibenbremse",
+        "belege": [
+          "doppelbremse"
+        ]
+      }
+    },
+    {
+      "clip": "img8241",
+      "von": 0.0,
       "bis": 4.364,
       "rolle": "detail",
       "zoom": "none",
       "uebergang": "cut",
-      "ab_wort": 20
+      "ab_wort": 20,
+      "stat": {
+        "zahl": 3,
+        "einheit": "",
+        "label": "Fahrstufen",
+        "belege": [
+          "drei_gaenge"
+        ]
+      }
     },
     {
-      "clip": "forest7",
-      "von": 3.0,
-      "bis": 7.0,
+      "clip": "img8252",
+      "von": 9.0,
+      "bis": 13.0,
       "rolle": "beweis",
       "zoom": "none",
       "uebergang": "cut",
@@ -137,7 +170,7 @@
       }
     },
     {
-      "clip": "foto-wald1-endkarte",
+      "clip": "foto-wald-licht-endkarte",
       "von": 0,
       "bis": 2.975,
       "rolle": "cta",

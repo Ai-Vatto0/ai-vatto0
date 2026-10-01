@@ -1,0 +1,246 @@
+{
+  "quelle": "yapper-original.mp3",
+  "sha256": "7bd401f87aa3532b17ce774531eb06f69d15f2fabef2976ef4467d957bbe4eec",
+  "lautheit_vorher": "-15.94",
+  "dauer_s": 24.32,
+  "treffer": 0.915,
+  "woerter": [
+    {
+      "text": "Wurzeln,",
+      "s": 0.05,
+      "e": 0.68
+    },
+    {
+      "text": "Schotter,",
+      "s": 0.68,
+      "e": 1.35
+    },
+    {
+      "text": "Bordsteinkanten?",
+      "s": 1.53,
+      "e": 2.87
+    },
+    {
+      "text": "Die",
+      "s": 3.01,
+      "e": 3.1
+    },
+    {
+      "text": "Federung",
+      "s": 3.1,
+      "e": 3.68
+    },
+    {
+      "text": "bügelt",
+      "s": 3.68,
+      "e": 4.11
+    },
+    {
+      "text": "das",
+      "s": 4.11,
+      "e": 4.33
+    },
+    {
+      "text": "einfach",
+      "s": 4.33,
+      "e": 4.84
+    },
+    {
+      "text": "weg,",
+      "s": 4.84,
+      "e": 5.2
+    },
+    {
+      "text": "super",
+      "s": 5.24,
+      "e": 5.6
+    },
+    {
+      "text": "smooth.",
+      "s": 5.6,
+      "e": 6.84
+    },
+    {
+      "text": "Vorne",
+      "s": 6.89,
+      "e": 7.07
+    },
+    {
+      "text": "doppelt",
+      "s": 7.22,
+      "e": 7.76
+    },
+    {
+      "text": "gefedert,",
+      "s": 7.77,
+      "e": 8.52
+    },
+    {
+      "text": "hinten",
+      "s": 8.52,
+      "e": 8.98
+    },
+    {
+      "text": "auch,",
+      "s": 8.98,
+      "e": 9.34
+    },
+    {
+      "text": "dazu",
+      "s": 9.63,
+      "e": 9.66
+    },
+    {
+      "text": "Zehn-Zoll-Gelreifen",
+      "s": 10.51,
+      "e": 11.19
+    },
+    {
+      "text": "und",
+      "s": 11.19,
+      "e": 11.33
+    },
+    {
+      "text": "Doppelbremse.",
+      "s": 11.42,
+      "e": 12.68
+    },
+    {
+      "text": "Licht",
+      "s": 12.73,
+      "e": 12.92
+    },
+    {
+      "text": "an,",
+      "s": 13.06,
+      "e": 13.36
+    },
+    {
+      "text": "Display",
+      "s": 13.36,
+      "e": 13.9
+    },
+    {
+      "text": "im",
+      "s": 13.9,
+      "e": 14.02
+    },
+    {
+      "text": "Blick,",
+      "s": 14.24,
+      "e": 14.53
+    },
+    {
+      "text": "drei",
+      "s": 14.59,
+      "e": 14.81
+    },
+    {
+      "text": "Fahrstufen",
+      "s": 14.81,
+      "e": 15.58
+    },
+    {
+      "text": "bis",
+      "s": 15.69,
+      "e": 15.81
+    },
+    {
+      "text": "zwanzig",
+      "s": 15.91,
+      "e": 16.27
+    },
+    {
+      "text": "Kilometer",
+      "s": 16.27,
+      "e": 16.96
+    },
+    {
+      "text": "pro",
+      "s": 16.96,
+      "e": 17.17
+    },
+    {
+      "text": "Stunde.",
+      "s": 17.22,
+      "e": 17.96
+    },
+    {
+      "text": "Und",
+      "s": 18.01,
+      "e": 18.17
+    },
+    {
+      "text": "mit",
+      "s": 18.17,
+      "e": 18.38
+    },
+    {
+      "text": "deutscher",
+      "s": 18.38,
+      "e": 18.96
+    },
+    {
+      "text": "ABE",
+      "s": 19.03,
+      "e": 19.2
+    },
+    {
+      "text": "und",
+      "s": 19.2,
+      "e": 19.3
+    },
+    {
+      "text": "Versicherungskennzeichen",
+      "s": 19.51,
+      "e": 21.04
+    },
+    {
+      "text": "ganz",
+      "s": 21.04,
+      "e": 21.32
+    },
+    {
+      "text": "legal",
+      "s": 21.32,
+      "e": 21.67
+    },
+    {
+      "text": "auf",
+      "s": 21.67,
+      "e": 21.88
+    },
+    {
+      "text": "die",
+      "s": 21.88,
+      "e": 22.08
+    },
+    {
+      "text": "Straße.",
+      "s": 22.1,
+      "e": 22.62
+    },
+    {
+      "text": "Jetzt",
+      "s": 22.74,
+      "e": 23.21
+    },
+    {
+      "text": "im",
+      "s": 23.21,
+      "e": 23.4
+    },
+    {
+      "text": "TikTok",
+      "s": 23.4,
+      "e": 24.32
+    },
+    {
+      "text": "Shop.",
+      "s": 24.32,
+      "e": 24.32,
+      "interpoliert": true
+    }
+  ],
+  "probleme": []
+}

@@ -1,14 +1,14 @@
 {
-  "hook_effekt": true,
+  "hook_effekt": "slam",
   "ohne_vo": true,
-  "titel": "Text-Montage ohne Sprecher (Musik von Vatto)",
+  "titel": "Daten-Montage ohne Sprecher (Musik von Vatto)",
   "idee": {
     "winkel": "alltag",
     "zielgruppe": "Scroller, die ohne Ton schauen",
-    "hook": "Fahrt von hinten in den Wald + großer Graffiti-Text „KEIN PLASTIKBOMBER.“",
+    "hook": "Slam: Annäherung an den RCB im Wald + Weißblitz + Wackler + „KEIN PLASTIKBOMBER.“",
     "emotion": "Lust aufs Fahren"
   },
-  "format": "Text-only-Montage, schneller Takt, keine Stimme – Vatto legt Musik drauf",
+  "format": "Text-/Daten-Montage im Takt, keine Stimme – Vatto legt Musik drauf",
   "look": "rcb",
   "textposition": "unten",
   "stimme": null,
@@ -26,16 +26,16 @@
       "dauer": 2.0
     },
     {
-      "satz": "FEDERUNG VORNE + HINTEN",
+      "satz": "500 W MOTOR",
       "belege": [
-        "federung"
+        "motor_500w"
       ],
       "dauer": 2.0
     },
     {
-      "satz": "500 W MOTOR",
+      "satz": "20 KM/H MIT ABE",
       "belege": [
-        "motor_500w"
+        "abe_20kmh"
       ],
       "dauer": 2.0
     },
@@ -47,7 +47,7 @@
       "dauer": 2.0
     },
     {
-      "satz": "10 ZOLL GEL",
+      "satz": "10 ZOLL GELREIFEN",
       "belege": [
         "gelreifen"
       ],
@@ -55,16 +55,16 @@
       "bedingung_ok": true
     },
     {
-      "satz": "3 FAHRSTUFEN",
+      "satz": "FEDERUNG VORNE + HINTEN",
       "belege": [
-        "drei_gaenge"
+        "federung"
       ],
       "dauer": 2.0
     },
     {
-      "satz": "ABE · 20 KM/H",
+      "satz": "3 FAHRSTUFEN",
       "belege": [
-        "abe_20kmh"
+        "drei_gaenge"
       ],
       "dauer": 2.0
     },
@@ -83,7 +83,7 @@
   ],
   "szenen": [
     {
-      "clip": "forest_behind",
+      "clip": "img8240",
       "von": 0.3,
       "bis": 1.157,
       "rolle": "hook",
@@ -100,13 +100,82 @@
       }
     },
     {
-      "clip": "foto-federung",
-      "von": 0,
-      "bis": 1.455,
+      "clip": "img8258",
+      "von": 13.0,
+      "bis": 14.091,
       "rolle": "beweis",
       "zoom": "punch",
       "uebergang": "whip",
       "ab_wort": 2,
+      "stat": {
+        "zahl": 500,
+        "einheit": "W",
+        "label": "Motor",
+        "belege": [
+          "motor_500w"
+        ]
+      }
+    },
+    {
+      "clip": "img8251",
+      "von": 72.0,
+      "bis": 73.455,
+      "rolle": "emotion",
+      "zoom": "none",
+      "uebergang": "zoom",
+      "ab_wort": 5,
+      "stat": {
+        "zahl": 20,
+        "einheit": "KM/H",
+        "label": "mit ABE",
+        "belege": [
+          "abe_20kmh"
+        ]
+      }
+    },
+    {
+      "clip": "img8240",
+      "von": 12.5,
+      "bis": 13.591,
+      "rolle": "beweis",
+      "zoom": "punch",
+      "uebergang": "flash",
+      "ab_wort": 9,
+      "stat": {
+        "zahl": 150,
+        "einheit": "KG",
+        "label": "belastbar",
+        "belege": [
+          "max_150kg"
+        ]
+      }
+    },
+    {
+      "clip": "img8239",
+      "von": 14.0,
+      "bis": 15.091,
+      "rolle": "emotion",
+      "zoom": "none",
+      "uebergang": "whip",
+      "ab_wort": 12,
+      "stat": {
+        "zahl": 10,
+        "einheit": "ZOLL",
+        "label": "Gelreifen",
+        "belege": [
+          "gelreifen"
+        ],
+        "bedingung_ok": true
+      }
+    },
+    {
+      "clip": "img8240",
+      "von": 16.0,
+      "bis": 17.455,
+      "rolle": "beweis",
+      "zoom": "kenburns_in",
+      "uebergang": "zoom",
+      "ab_wort": 15,
       "text": {
         "inhalt": "FEDERUNG VORNE + HINTEN",
         "betonung": [
@@ -118,100 +187,26 @@
       }
     },
     {
-      "clip": "dji0926-0021",
-      "von": 59.0,
-      "bis": 60.091,
-      "rolle": "emotion",
-      "zoom": "kenburns_in",
-      "uebergang": "zoom",
-      "ab_wort": 6,
-      "text": {
-        "inhalt": "500 W MOTOR",
-        "betonung": [
-          "500"
-        ],
-        "belege": [
-          "motor_500w"
-        ]
-      }
-    },
-    {
-      "clip": "foto-front",
-      "von": 0,
-      "bis": 1.091,
-      "rolle": "beweis",
-      "zoom": "punch",
-      "uebergang": "flash",
-      "ab_wort": 9,
-      "text": {
-        "inhalt": "BIS 150 KG",
-        "betonung": [
-          "150"
-        ],
-        "belege": [
-          "max_150kg"
-        ]
-      }
-    },
-    {
-      "clip": "dji0925-0012",
-      "von": 66.0,
-      "bis": 67.091,
-      "rolle": "emotion",
-      "zoom": "kenburns_out",
-      "uebergang": "whip",
-      "ab_wort": 12,
-      "text": {
-        "inhalt": "10 ZOLL GEL",
-        "betonung": [
-          "GEL"
-        ],
-        "belege": [
-          "gelreifen"
-        ],
-        "bedingung_ok": true
-      }
-    },
-    {
-      "clip": "foto-display",
-      "von": 0,
-      "bis": 0.727,
+      "clip": "img7955",
+      "von": 92.0,
+      "bis": 92.727,
       "rolle": "detail",
       "zoom": "punch",
-      "uebergang": "zoom",
-      "ab_wort": 15,
-      "text": {
-        "inhalt": "3 FAHRSTUFEN",
-        "betonung": [
-          "3"
-        ],
+      "uebergang": "flash",
+      "ab_wort": 19,
+      "stat": {
+        "zahl": 3,
+        "einheit": "",
+        "label": "Fahrstufen",
         "belege": [
           "drei_gaenge"
         ]
       }
     },
     {
-      "clip": "forest6",
-      "von": 4.5,
-      "bis": 5.955,
-      "rolle": "beweis",
-      "zoom": "kenburns_in",
-      "uebergang": "flash",
-      "ab_wort": 17,
-      "text": {
-        "inhalt": "ABE · 20 KM/H",
-        "betonung": [
-          "ABE"
-        ],
-        "belege": [
-          "abe_20kmh"
-        ]
-      }
-    },
-    {
-      "clip": "dji0926-0021",
-      "von": 25.0,
-      "bis": 26.091,
+      "clip": "img8252",
+      "von": 12.5,
+      "bis": 13.591,
       "rolle": "emotion",
       "zoom": "kenburns_out",
       "uebergang": "whip",
@@ -227,7 +222,7 @@
       }
     },
     {
-      "clip": "foto-front-endkarte",
+      "clip": "foto-nacht-oben-endkarte",
       "von": 0,
       "bis": 2.975,
       "rolle": "cta",

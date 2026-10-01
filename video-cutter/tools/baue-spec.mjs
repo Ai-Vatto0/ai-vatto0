@@ -81,6 +81,8 @@ if (spec.hook_effekt) {
   html += `\n      <div id="hookflash" class="clip flash" data-start="0" data-duration="0.4" data-track-index="59"></div>`;
   js += `\n      tl.fromTo("#hookflash", { opacity: 0.95 }, { opacity: 0, duration: 0.32, ease: "power2.out" }, 0);`;
   js += `\n      tl.fromTo("#sz1 .tr", { scale: 1.35 }, { scale: 1, duration: 0.38, ease: "power4.out" }, 0);`;
+  if (spec.hook_effekt === "slam") [[0.06, 18, -10], [0.12, -16, 12], [0.18, 12, -8], [0.24, -8, 6], [0.3, 4, -3], [0.36, 0, 0]].forEach(([t, x, y]) =>
+    js += `\n      tl.to("#sz1 .inner", { x: ${x}, y: ${y}, duration: 0.06, ease: "none" }, ${r3(t - 0.06)});`);
 }
 // Szenen: Clip-Wrapper (timed) → .inner (Zoom/Whip) → video
 szenen.forEach((s) => {
@@ -171,6 +173,19 @@ szenen.forEach((s) => {
   hj += `\n        tl.fromTo("#${id} .hw", { yPercent: 80, opacity: 0, rotation: -4 }, { yPercent: 0, opacity: 1, rotation: 0, duration: 0.32, ease: "back.out(2.2)", stagger: 0.06 }, ${a});`;
   hj += `\n        tl.to("#${id} .hl-in", { opacity: 0, y: -20, duration: 0.18, ease: "power2.in" }, ${r3(e - 0.18)});`;
 });
+szenen.forEach((s) => {
+  if (!s.stat || s.i === szenen.length - 1) return;
+  const a = r3(s.start + 0.12), e = r3(s.start + s.dauer - 0.05);
+  if (e - a < 0.8) return;
+  const id = `st${s.i + 1}`, z = s.stat;
+  const top = s.stat.top ?? TEXT_Y.headline;
+  hm += `
+        <div id="${id}" class="clip statkarte" data-start="${a}" data-duration="${r3(e - a)}" data-track-index="6" style="top:${top}px"><div class="st-in"><div class="st-zahl"><span id="${id}-n">${typeof z.zahl === "number" ? 0 : esc(z.zahl)}</span><span class="st-einheit">${esc(z.einheit || "")}</span></div><div class="st-label">${esc(z.label || "")}</div></div></div>`;
+  hj += `\n        tl.fromTo("#${id} .st-in", { x: 760, rotation: 10, opacity: 0 }, { x: 0, rotation: -3, opacity: 1, duration: 0.34, ease: "power4.out" }, ${a});`;
+  if (typeof z.zahl === "number") hj += `\n        (() => { const o = { v: 0 }; const el = () => document.querySelector("#${id}-n"); tl.fromTo(o, { v: 0 }, { v: ${z.zahl}, duration: 0.6, ease: "power2.out", onUpdate: () => { const n = el(); if (n) n.textContent = Math.round(o.v); } }, ${r3(a + 0.1)}); })();`;
+  hj += `\n        tl.fromTo("#${id} .st-label", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.25, ease: "power3.out" }, ${r3(a + 0.3)});`;
+  hj += `\n        tl.to("#${id} .st-in", { x: -900, opacity: 0, duration: 0.2, ease: "power3.in" }, ${r3(e - 0.2)});`;
+});
 const cta = szenen.at(-1);
 hm += `
         <div id="cta" class="clip ctabox"${spec.cta.top ? ` style="top:${spec.cta.top}px"` : ""} data-start="${cta.start}" data-duration="${r3(GESAMT - cta.start)}" data-track-index="2"><div class="cta-tx">${esc(spec.cta.text)}</div>${spec.cta.zusatz ? `<div class="cta-zu">${esc(spec.cta.zusatz)}</div>` : ""}<svg class="pfeil" viewBox="0 0 200 200"><path d="M170 20 C 150 90, 110 130, 40 160" fill="none" stroke="${L.akzent}" stroke-width="14" stroke-linecap="round"/><path d="M40 160 L 70 118 M40 160 L 92 170" fill="none" stroke="${L.akzent}" stroke-width="14" stroke-linecap="round"/></svg></div>`;
@@ -201,6 +216,11 @@ const CSS = `
         .cta-zu { color: #fff; font-size: 44px; margin-top: 12px; text-align: center; max-width: 720px; background: rgba(0,0,0,.55); padding: 6px 18px; border-radius: 16px; }
         .pfeil { width: 150px; height: 150px; margin-top: 4px; margin-right: 400px; }
         .pfeil path { stroke-dasharray: 260; }
+        .statkarte { position: absolute; left: 60px; right: 140px; display: flex; justify-content: center; }
+        .st-in { background: rgba(20,15,5,.86); border-left: 18px solid ${L.akzent}; border-radius: 22px; padding: 10px 40px 18px 34px; box-shadow: 0 14px 0 rgba(12,9,3,.55); transform-origin: 50% 50%; }
+        .st-zahl { font-family: "Marker", sans-serif; font-size: 168px; line-height: 1.02; color: ${L.akzent}; -webkit-text-stroke: 10px #140F05; paint-order: stroke fill; }
+        .st-einheit { font-size: 92px; margin-left: 14px; color: #FFF7E8; }
+        .st-label { font-family: "Poppins", sans-serif; font-weight: 700; font-size: 44px; letter-spacing: .12em; color: #FFF7E8; text-transform: uppercase; margin-top: -6px; }
         .logo-gross { position: absolute; left: 110px; top: 300px; width: 760px; }
         .logo-klein { position: absolute; left: 680px; top: 150px; width: 250px; opacity: .92; }
         .ki { position: absolute; left: 70px; top: 160px; font-size: 26px; color: #FFFFFF; letter-spacing: .04em; background: rgba(0,0,0,.62); padding: 6px 14px; border-radius: 12px; }`;

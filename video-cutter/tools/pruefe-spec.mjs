@@ -80,6 +80,7 @@ for (const s of specs) {
     if (z.zoom && !["none", "punch", "kenburns_in", "kenburns_out"].includes(z.zoom)) E(sid, `${w}: zoom „${z.zoom}“ unbekannt`);
     if ((z.zoom_max || 1.2) > 1.25) E(sid, `${w}: Zoom über 1,25x (Qualität/Produkt)`);
     if (z.text) pruefeText(sid, `${w} Text`, z.text.inhalt, z.text.belege, z.text.bedingung_ok);
+    if (z.stat) pruefeText(sid, `${w} Daten-Karte`, `${z.stat.zahl} ${z.stat.einheit || ""} ${z.stat.label || ""}`, z.stat.belege, z.stat.bedingung_ok);
     gesamt += d;
   });
   // Schlagzeile darf das gleichzeitig gesprochene VO nicht wiederholen (sonst steht derselbe Satz doppelt im Bild: Headline + Untertitel)
