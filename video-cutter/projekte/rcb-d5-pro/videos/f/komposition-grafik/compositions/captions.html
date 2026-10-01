@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="de">
+  <head><meta charset="UTF-8" /><!-- GENERIERT von tools/baue-spec.mjs – nicht von Hand ändern. --></head>
+  <body>
+    <template>
+      <style>
+        @font-face { font-family: "Poppins"; src: url("assets/fonts/Poppins-Bold.ttf") format("truetype"); font-weight: 700; } @font-face { font-family: "Marker"; src: url("assets/fonts/PermanentMarker.ttf") format("truetype"); font-weight: 400; }
+        #root { position: absolute; inset: 0; font-family: "Poppins", sans-serif; font-weight: 700; }
+        /* Safe Zone 1080x1920: oben 150, rechts 140, unten 400, links 60 */
+        .cap { position: absolute; left: 60px; right: 140px; top: 660px; display: flex; justify-content: center; }
+        .cap-in { max-width: 860px; text-align: center; font-size: 72px; line-height: 1.12; color: #FFF7E8;  background: rgba(20,15,5,.82); padding: 14px 30px; border-radius: 26px; text-shadow: 0 6px 18px rgba(0,0,0,.45); font-family: "Marker", sans-serif; font-weight: 400; letter-spacing: .01em; }
+        .headline { position: absolute; left: 60px; right: 140px; top: 250px; display: flex; justify-content: center; }
+        .hl-in { max-width: 860px; text-align: center; font-size: 128px; line-height: 1.04; color: #FFF7E8; font-family: "Marker", sans-serif; font-weight: 400; color: #FFF7E8 !important; background: rgba(20,15,5,.86); padding: 8px 30px 14px; border-radius: 18px; transform: rotate(-2deg); box-shadow: 0 10px 0 rgba(12,9,3,.55); }
+        .hw { display: inline-block; }
+        .hw.em { color: #FF7B1C; }
+        .ctabox { position: absolute; left: 60px; right: 140px; top: 1080px; display: flex; flex-direction: column; align-items: center; }
+        .cta-tx { color: #FF7B1C; font-size: 76px; line-height: 1.05; text-align: center; max-width: 720px; font-family: "Marker", sans-serif; font-weight: 400; font-size: 92px; -webkit-text-stroke: 12px #140F05; paint-order: stroke fill; text-shadow: 0 10px 0 rgba(12,9,3,.55); transform: rotate(-2deg); }
+        .cta-zu { color: #fff; font-size: 44px; margin-top: 12px; text-align: center; max-width: 720px; background: rgba(0,0,0,.55); padding: 6px 18px; border-radius: 16px; }
+        .pfeil { width: 150px; height: 150px; margin-top: 4px; margin-right: 400px; }
+        .pfeil path { stroke-dasharray: 260; }
+        .statkarte { position: absolute; left: 60px; right: 140px; display: flex; justify-content: center; }
+        .st-in { background: rgba(20,15,5,.86); border-left: 18px solid #FF7B1C; border-radius: 22px; padding: 10px 40px 18px 34px; box-shadow: 0 14px 0 rgba(12,9,3,.55); transform-origin: 50% 50%; }
+        .st-zahl { font-family: "Marker", sans-serif; font-size: 168px; line-height: 1.02; color: #FF7B1C; -webkit-text-stroke: 10px #140F05; paint-order: stroke fill; }
+        .st-einheit { font-size: 92px; margin-left: 14px; color: #FFF7E8; }
+        .st-label { font-family: "Poppins", sans-serif; font-weight: 700; font-size: 44px; letter-spacing: .12em; color: #FFF7E8; text-transform: uppercase; margin-top: -6px; }
+        .logo-gross { position: absolute; left: 110px; top: 300px; width: 760px; }
+        .logo-klein { position: absolute; left: 680px; top: 150px; width: 250px; opacity: .92; }
+        .ki { position: absolute; left: 70px; top: 160px; font-size: 26px; color: #FFFFFF; letter-spacing: .04em; background: rgba(0,0,0,.62); padding: 6px 14px; border-radius: 12px; }
+      </style>
+      <div id="root" data-composition-id="captions" data-width="1080" data-height="1920">
+        <div id="c1" class="clip cap" data-start="0.31" data-duration="0.96" data-track-index="0"><p class="cap-in"><span id="c1-0" class="w">Stopp!</span></p></div>
+        <div id="c2" class="clip cap" data-start="1.31" data-duration="1.31" data-track-index="0"><p class="cap-in"><span id="c2-0" class="w">Du</span> <span id="c2-1" class="w">bist</span> <span id="c2-2" class="w">groß</span></p></div>
+        <div id="c3" class="clip cap" data-start="2.62" data-duration="0.83" data-track-index="0"><p class="cap-in"><span id="c3-0" class="w">schwer</span></p></div>
+        <div id="c4" class="clip cap" data-start="3.55" data-duration="1.34" data-track-index="0"><p class="cap-in"><span id="c4-0" class="w">und</span> <span id="c4-1" class="w">jeder</span> <span id="c4-2" class="w">Roller</span> <span id="c4-3" class="w">ächzt</span></p></div>
+        <div id="c5" class="clip cap" data-start="4.89" data-duration="0.94" data-track-index="0"><p class="cap-in"><span id="c5-0" class="w">unter</span> <span id="c5-1" class="w">dir?</span></p></div>
+        <div id="c6" class="clip cap" data-start="5.83" data-duration="0.74" data-track-index="0"><p class="cap-in"><span id="c6-0" class="w">Dann</span> <span id="c6-1" class="w">schau</span> <span id="c6-2" class="w">dir</span> <span id="c6-3" class="w">den</span></p></div>
+        <div id="c7" class="clip cap" data-start="6.57" data-duration="1.22" data-track-index="0"><p class="cap-in"><span id="c7-0" class="w">hier</span> <span id="c7-1" class="w">an</span></p></div>
+        <div id="c8" class="clip cap" data-start="7.79" data-duration="2.19" data-track-index="0"><p class="cap-in"><span id="c8-0" class="w">Bis</span> <span id="c8-1" class="w">150</span> <span id="c8-2" class="w">Kilo</span> <span id="c8-3" class="w">belastbar</span></p></div>
+        <div id="c9" class="clip cap" data-start="9.98" data-duration="1.82" data-track-index="0"><p class="cap-in"><span id="c9-0" class="w">Getestet</span> <span id="c9-1" class="w">mit</span> <span id="c9-2" class="w">einem</span> <span id="c9-3" class="w">Fahrer</span></p></div>
+        <div id="c10" class="clip cap" data-start="11.8" data-duration="1.51" data-track-index="0"><p class="cap-in"><span id="c10-0" class="w">von</span> <span id="c10-1" class="w">140</span> <span id="c10-2" class="w">Kilo</span></p></div>
+        <div id="c11" class="clip cap" data-start="13.31" data-duration="1.24" data-track-index="0"><p class="cap-in"><span id="c11-0" class="w">und</span> <span id="c11-1" class="w">der</span> <span id="c11-2" class="w">zieht</span> <span id="c11-3" class="w">trotzdem</span></p></div>
+        <div id="c12" class="clip cap" data-start="14.55" data-duration="1.64" data-track-index="0"><p class="cap-in"><span id="c12-0" class="w">sauber</span> <span id="c12-1" class="w">durch</span></p></div>
+        <div id="c13" class="clip cap" data-start="16.19" data-duration="1.95" data-track-index="0"><p class="cap-in"><span id="c13-0" class="w">Starker</span> <span id="c13-1" class="w">Motor</span> <span id="c13-2" class="w">mit</span> <span id="c13-3" class="w">500</span></p></div>
+        <div id="c14" class="clip cap" data-start="18.14" data-duration="0.57" data-track-index="0"><p class="cap-in"><span id="c14-0" class="w">Watt</span></p></div>
+        <div id="c15" class="clip cap" data-start="18.71" data-duration="2" data-track-index="0"><p class="cap-in"><span id="c15-0" class="w">dazu</span> <span id="c15-1" class="w">ein</span> <span id="c15-2" class="w">stabiler</span> <span id="c15-3" class="w">Rahmen</span></p></div>
+        <div id="c16" class="clip cap" data-start="20.71" data-duration="1" data-track-index="0"><p class="cap-in"><span id="c16-0" class="w">aus</span> <span id="c16-1" class="w">Metall</span></p></div>
+        <div id="c17" class="clip cap" data-start="21.71" data-duration="1.53" data-track-index="0"><p class="cap-in"><span id="c17-0" class="w">Gebaut</span> <span id="c17-1" class="w">für</span> <span id="c17-2" class="w">große</span> <span id="c17-3" class="w">Jungs</span></p></div>
+        <div id="c18" class="clip cap" data-start="23.24" data-duration="1.927" data-track-index="0"><p class="cap-in" style="font-size:62px"><span id="c18-0" class="w">nicht</span> <span id="c18-1" class="w">für</span> <span id="c18-2" class="w">Plastikspielzeug</span></p></div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#c1 .cap-in", { y: 18, scale: 0.9, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.13, ease: "back.out(2)" }, 0.31);
+        tl.set("#c1-0", { color: "#FF7B1C" }, 0.31);
+        tl.fromTo("#c2 .cap-in", { y: 18, scale: 0.9, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.13, ease: "back.out(2)" }, 1.31);
+        tl.set("#c2-0", { color: "#FF7B1C" }, 1.31);
+        tl.set("#c2-0", { color: "#FFF7E8" }, 1.4);
+        tl.set("#c2-1", { color: "#FF7B1C" }, 1.4);
+        tl.set("#c2-1", { color: "#FFF7E8" }, 1.87);
+        tl.set("#c2-2", { color: "#FF7B1C" }, 1.87);
+        tl.fromTo("#c3 .cap-in", { y: 18, scale: 0.9, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.13, ease: "back.out(2)" }, 2.62);
+        tl.set("#c3-0", { color: "#FF7B1C" }, 2.62);
+        tl.fromTo("#c4 .cap-in", { y: 18, scale: 0.9, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.13, ease: "back.out(2)" }, 3.55);
+        tl.set("#c4-0", { color: "#FF7B1C" }, 3.55);
+        tl.set("#c4-0", { color: "#FFF7E8" }, 3.67);
+        tl.set("#c4-1", { color: "#FF7B1C" }, 3.67);
+        tl.set("#c4-1", { color: "#FFF7E8" }, 4.08);
+        tl.set("#c4-2", { color: "#FF7B1C" }, 4.08);
+        tl.set("#c4-2", { color: "#FFF7E8" }, 4.49);
+        tl.set("#c4-3", { color: "#FF7B1C" }, 4.49);
+        tl.fromTo("#c5 .cap-in", { y: 18, scale: 0.9, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.13, ease: "back.out(2)" }, 4.89);
+        tl.set("#c5-0", { color: "#FF7B1C" }, 4.89);
+        tl.set("#c5-0", { color: "#FFF7E8" }, 5.3);
+        tl.set("#c5-1", { color: "#FF7B1C" }, 5.3);
+        tl.fromTo("#c6 .cap-in", { y: 18, scale: 0.9, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.13, ease: "back.out(2)" }, 5.83);
+        tl.set("#c6-0", { color: "#FF7B1C" }, 5.83);
+        tl.set("#c6-0", { color: "#FFF7E8" }, 5.95);
+        tl.set("#c6-1", { color: "#FF7B1C" }, 5.95);
+        tl.set("#c6-1", { color: "#FFF7E8" }, 6.22);
+        tl.set("#c6-2", { color: "#FF7B1C" }, 6.22);
+        tl.set("#c6-2", { color: "#FFF7E8" }, 6.41);
+        tl.set("#c6-3", { color: "#FF7B1C" }, 6.41);
+        tl.fromTo("#c7 .cap-in", { y: 18, scale: 0.9, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.13, ease: "back.out(2)" }, 6.57);
+        tl.set("#c7-0", { color: "#FF7B1C" }, 6.57);
+        tl.set("#c7-0", { color: "#FFF7E8" }, 6.72);
+        tl.set("#c7-1", { color: "#FF7B1C" }, 6.72);
+        tl.fromTo("#c8 .cap-in", { y: 18, scale: 0.9, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.13, ease: "back.out(2)" }, 7.79);
+        tl.set("#c8-0", { color: "#FF7B1C" }, 7.79);
+        tl.set("#c8-0", { color: "#FFF7E8" }, 7.98);
+        tl.set("#c8-1", { color: "#FF7B1C" }, 7.98);
+        tl.set("#c8-1", { color: "#FFF7E8" }, 8.79);
+        tl.set("#c8-2", { color: "#FF7B1C" }, 8.79);
+        tl.set("#c8-2", { color: "#FFF7E8" }, 9.07);
+        tl.set("#c8-3", { color: "#FF7B1C" }, 9.07);
+        tl.fromTo("#c9 .cap-in", { y: 18, scale: 0.9, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.13, ease: "back.out(2)" }, 9.98);
+        tl.set("#c9-0", { color: "#FF7B1C" }, 9.98);
+        tl.set("#c9-0", { color: "#FFF7E8" }, 10.74);
+        tl.set("#c9-1", { color: "#FF7B1C" }, 10.74);
+        tl.set("#c9-1", { color: "#FFF7E8" }, 11.03);
+        tl.set("#c9-2", { color: "#FF7B1C" }, 11.03);
+        tl.set("#c9-2", { color: "#FFF7E8" }, 11.31);
+        tl.set("#c9-3", { color: "#FF7B1C" }, 11.31);
+        tl.fromTo("#c10 .cap-in", { y: 18, scale: 0.9, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.13, ease: "back.out(2)" }, 11.8);
+        tl.set("#c10-0", { color: "#FF7B1C" }, 11.8);
+        tl.set("#c10-0", { color: "#FFF7E8" }, 12.05);
+        tl.set("#c10-1", { color: "#FF7B1C" }, 12.05);
+        tl.set("#c10-1", { color: "#FFF7E8" }, 12.81);
+        tl.set("#c10-2", { color: "#FF7B1C" }, 12.81);
+        tl.fromTo("#c11 .cap-in", { y: 18, scale: 0.9, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.13, ease: "back.out(2)" }, 13.31);
+        tl.set("#c11-0", { color: "#FF7B1C" }, 13.31);
+        tl.set("#c11-0", { color: "#FFF7E8" }, 13.45);
+        tl.set("#c11-1", { color: "#FF7B1C" }, 13.45);
+        tl.set("#c11-1", { color: "#FFF7E8" }, 13.65);
+        tl.set("#c11-2", { color: "#FF7B1C" }, 13.65);
+        tl.set("#c11-2", { color: "#FFF7E8" }, 13.98);
+        tl.set("#c11-3", { color: "#FF7B1C" }, 13.98);
+        tl.fromTo("#c12 .cap-in", { y: 18, scale: 0.9, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.13, ease: "back.out(2)" }, 14.55);
+        tl.set("#c12-0", { color: "#FF7B1C" }, 14.55);
+        tl.set("#c12-0", { color: "#FFF7E8" }, 15.25);
+        tl.set("#c12-1", { color: "#FF7B1C" }, 15.25);
+        tl.fromTo("#c13 .cap-in", { y: 18, scale: 0.9, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.13, ease: "back.out(2)" }, 16.19);
+        tl.set("#c13-0", { color: "#FF7B1C" }, 16.19);
+        tl.set("#c13-0", { color: "#FFF7E8" }, 16.7);
+        tl.set("#c13-1", { color: "#FF7B1C" }, 16.7);
+        tl.set("#c13-1", { color: "#FFF7E8" }, 17.28);
+        tl.set("#c13-2", { color: "#FF7B1C" }, 17.28);
+        tl.set("#c13-2", { color: "#FFF7E8" }, 17.42);
+        tl.set("#c13-3", { color: "#FF7B1C" }, 17.42);
+        tl.fromTo("#c14 .cap-in", { y: 18, scale: 0.9, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.13, ease: "back.out(2)" }, 18.14);
+        tl.set("#c14-0", { color: "#FF7B1C" }, 18.14);
+        tl.fromTo("#c15 .cap-in", { y: 18, scale: 0.9, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.13, ease: "back.out(2)" }, 18.71);
+        tl.set("#c15-0", { color: "#FF7B1C" }, 18.71);
+        tl.set("#c15-0", { color: "#FFF7E8" }, 19.14);
+        tl.set("#c15-1", { color: "#FF7B1C" }, 19.14);
+        tl.set("#c15-1", { color: "#FFF7E8" }, 19.43);
+        tl.set("#c15-2", { color: "#FF7B1C" }, 19.43);
+        tl.set("#c15-2", { color: "#FFF7E8" }, 20.01);
+        tl.set("#c15-3", { color: "#FF7B1C" }, 20.01);
+        tl.fromTo("#c16 .cap-in", { y: 18, scale: 0.9, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.13, ease: "back.out(2)" }, 20.71);
+        tl.set("#c16-0", { color: "#FF7B1C" }, 20.71);
+        tl.set("#c16-0", { color: "#FFF7E8" }, 20.79);
+        tl.set("#c16-1", { color: "#FF7B1C" }, 20.79);
+        tl.fromTo("#c17 .cap-in", { y: 18, scale: 0.9, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.13, ease: "back.out(2)" }, 21.71);
+        tl.set("#c17-0", { color: "#FF7B1C" }, 21.71);
+        tl.set("#c17-0", { color: "#FFF7E8" }, 22.1);
+        tl.set("#c17-1", { color: "#FF7B1C" }, 22.1);
+        tl.set("#c17-1", { color: "#FFF7E8" }, 22.59);
+        tl.set("#c17-2", { color: "#FF7B1C" }, 22.59);
+        tl.set("#c17-2", { color: "#FFF7E8" }, 22.79);
+        tl.set("#c17-3", { color: "#FF7B1C" }, 22.79);
+        tl.fromTo("#c18 .cap-in", { y: 18, scale: 0.9, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.13, ease: "back.out(2)" }, 23.24);
+        tl.set("#c18-0", { color: "#FF7B1C" }, 23.24);
+        tl.set("#c18-0", { color: "#FFF7E8" }, 23.57);
+        tl.set("#c18-1", { color: "#FF7B1C" }, 23.57);
+        tl.set("#c18-1", { color: "#FFF7E8" }, 23.88);
+        tl.set("#c18-2", { color: "#FF7B1C" }, 23.88);
+        window.__timelines["captions"] = tl;
+      </script>
+    </template>
+  </body>
+</html>
