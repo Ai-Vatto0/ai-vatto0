@@ -34,6 +34,7 @@ const LOOKS = {
   gelb: { akzent: "#FFD400", text: "#FFFFFF", kontur: "#000000", pille: "transparent", headlineGross: 104, captionPx: 70, flash: "#FFFFFF" },
   nacht: { akzent: "#4DD8FF", text: "#FFFFFF", kontur: "rgba(0,0,0,0)", pille: "rgba(8,12,22,.78)", headlineGross: 92, captionPx: 62, flash: "#CFF4FF" },
 };
+spec.look ??= "nacht"; // Standard-Look (Vatto 01.10.: Farben von Video B passen besser)
 const L = LOOKS[spec.look] || fail(`Look „${spec.look}“ unbekannt (${Object.keys(LOOKS).join(", ")})`);
 // oben: Untertitel oben, Headlines im unteren Drittel · unten: Headlines oben, Untertitel unten (je Szene überschreibbar: text.top)
 const TEXT_Y = spec.textposition === "oben" ? { caption: 230, headline: 1150 } : { caption: 1290, headline: 250 };

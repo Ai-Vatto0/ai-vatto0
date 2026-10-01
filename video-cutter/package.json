@@ -12,7 +12,9 @@
     "render": "node tools/render.mjs",
     "qa": "node tools/qa.mjs",
     "varianten": "node tools/varianten.mjs",
-    "selbsttest": "bash tools/selbsttest.sh"
+    "selbsttest": "bash tools/selbsttest.sh",
+    "produziere": "node tools/produziere.mjs",
+    "pruefe-spec": "node tools/pruefe-spec.mjs"
   },
   "license": "UNLICENSED",
   "dependencies": {

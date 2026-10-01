@@ -1,6 +1,6 @@
 # Spec-Prüfung neo2
 
-**GRÜN** · 30.9.2026, 22:29:36
+**ROT** · 1.10.2026, 09:50:41
 
 ## Videos
 - Video a „Du fährst. Sie filmt.“: 19.301 s, 8 Szenen, 46 VO-Wörter (2.49 W/s), Winkel pov_erlebnis, Look gelb, Text unten, Zeitlupe 0
@@ -19,7 +19,11 @@ Alte 20 Videos: mittlere Shot-Überlappung je Paar 0.051, Maximum 0.267 · Neu: 
 41 s von 562.695 s gesichtetem Material genutzt (7 %), 14/46 Clips
 
 ## Fehler
-- keine
+- ✗ Video a: Szene 4: Schlagzeile „BIS ZU 43 KM/H“ wiederholt das VO (43) – Text muss ergänzen, nicht doppeln
+- ✗ Video a: Szene 6: Schlagzeile „NUR 151 GRAMM“ wiederholt das VO (151, gramm) – Text muss ergänzen, nicht doppeln
+- ✗ Video a: Szene 7: Schlagzeile „ALLES IN 4K“ wiederholt das VO (alles, 4k) – Text muss ergänzen, nicht doppeln
+- ✗ Video b: Szene 2: Schlagzeile „NUR 151 GRAMM“ wiederholt das VO (151, gramm) – Text muss ergänzen, nicht doppeln
+- ✗ Video b: Szene 5: Schlagzeile „FOLGT DIR AUTOMATISCH“ wiederholt das VO (folgt, automatisch) – Text muss ergänzen, nicht doppeln
 
 ## Warnungen
 - keine

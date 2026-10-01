@@ -27,7 +27,7 @@
 | **Video-Maschine (Faruk)** | `tools/video-maschine/`, Skill `tiktok-video-maschine` | Formate, ffmpeg-Schnitt, VO, Captions, Posting | `memory/regeln/tiktok-video-maschine.md` |
 | **Werkzeuge & Konnektoren** | `.mcp.json`, `.claude/settings.json` | Plugins, MCP-Server, Keys, gesperrte Hosts | `memory/projekte/werkzeuge-und-konnektoren.md` |
 | **Video-Schnitt (Remotion)** | `video-edit/` | KI-Clips zu fertigem TikTok montieren, Hook-/CTA-Overlays | `memory/regeln/video-schnitt-workflow.md` |
-| **Video-Cutting-Agent (HyperFrames)** | `video-cutter/` | Eigene Aufnahmen schneiden (Versprecher/Takes/Pausen), Untertitel, animierte Textgrafiken, Varianten, QA | `video-cutter/START-HIER.md` |
+| **Video-Cutting-Agent (HyperFrames)** | `video-cutter/` | Eigene Aufnahmen schneiden **und** aus Rohmaterial Verkaufsvideos per Skript (Hook, KI-Voiceover, Zoom, Ramps, QA) | `video-cutter/START-HIER.md` |
 
 **Bewusst NICHT im Gedächtnis** (auf Wunsch von Vatto, 27.09.2026):
 Snova Studio, menu-wall-app, sora-warrior. Die Ordner bleiben im Repo, werden aber

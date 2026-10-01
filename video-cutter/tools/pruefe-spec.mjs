@@ -82,6 +82,19 @@ for (const s of specs) {
     if (z.text) pruefeText(sid, `${w} Text`, z.text.inhalt, z.text.belege, z.text.bedingung_ok);
     gesamt += d;
   });
+  // Schlagzeile darf das gleichzeitig gesprochene VO nicht wiederholen (sonst steht derselbe Satz doppelt im Bild: Headline + Untertitel)
+  const STOPP = new Set("der die das den dem ein eine und oder zu in im am an auf aus mit von bis per für du dich dir sie es nur so sogar ganz".split(" "));
+  const norm = (t) => t.toLowerCase().replace(/[^a-zäöüß0-9/ ]/g, " ").split(/\s+/).filter((x) => x && !STOPP.has(x));
+  const voWoerter = (s.voiceover || []).map((x) => x.satz).join(" ").split(/\s+/);
+  (s.szenen || []).forEach((z, i) => {
+    if (!z.text?.inhalt || z.ab_wort === undefined) return;
+    const naechste = s.szenen.slice(i + 1).find((n) => n.ab_wort !== undefined)?.ab_wort ?? voWoerter.length;
+    const gesprochen = new Set(norm(voWoerter.slice(z.ab_wort, naechste).join(" ")));
+    const hl = norm(z.text.inhalt);
+    const gleich = hl.filter((x) => gesprochen.has(x));
+    if (hl.length && gleich.length / hl.length >= 0.5)
+      E(sid, `Szene ${i + 1}: Schlagzeile „${z.text.inhalt}“ wiederholt das VO (${gleich.join(", ")}) – Text muss ergänzen, nicht doppeln`);
+  });
   if (zeitlupe && !s.regel_ausnahme) E(sid, "Zeitlupe verwendet, aber regel_ausnahme fehlt (Faruk: „keine Zeitlupe“)");
   if (zeitlupe > 1) E(sid, "mehr als ein Zeitlupen-Moment");
   if (gesamt < 15 || gesamt > 35) E(sid, `Länge ${r3(gesamt)} s außerhalb 15–35 s`);

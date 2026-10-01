@@ -28,6 +28,11 @@ Erst dann kommt das finale Video: `video-cutter/jobs/<name>/exporte/final-…-v0
 
 ## 1b. Viel Rohmaterial → mehrere verschiedene Videos (Skript-Weg)
 
+Neuer Chat im Repo `ai-vatto0`, dann einfach (Kurzform reicht):
+```
+Schneide mir aus diesen Dateien coole TikTok-Verkaufsvideos mit Hook und Skript: <Drive-Ordner-Link>
+```
+Ausführlich:
 ```
 Neue Videos aus Rohmaterial (Skript-Workflow, video-cutter/CLAUDE.md „Weg 2“).
 Material: <Google-Drive-Ordner-Link>
@@ -37,6 +42,8 @@ Wünsche: <z. B. „einmal Lifestyle, einmal Funktionen erklären“>
 ```
 Du bekommst zuerst die **Skripte als Tabelle** (Hook, Voiceover-Text, Shotliste) zur Freigabe,
 dann Vorschauen mit Zoom, Speed-Ramps, Übergängen, animierten Texten und KI-Voiceover, dann die Finals.
+Jedes Video bekommt ein **anderes Format** (z. B. Voiceover-Montage, App-Demo, POV ohne Stimme), damit sie sich wirklich unterscheiden.
+Beispiel-Projekt mit allen Dateien: `projekte/neo2/` (DJI Neo 2, Okt. 2026).
 
 ## 2. Einmalig einrichten
 
