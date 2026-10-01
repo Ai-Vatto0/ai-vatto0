@@ -30,12 +30,12 @@ Erst dann kommt das finale Video: `video-cutter/jobs/<name>/exporte/final-…-v0
 
 Neuer Chat im Repo `ai-vatto0`, dann einfach (Kurzform reicht):
 ```
-Schneide mir aus diesen Dateien coole TikTok-Verkaufsvideos mit Hook und Skript: <Drive-Ordner-Link>
+Neue Videos von <Produkt> sind im Drive. Mach coole TikTok-Verkaufsvideos mit Hook und Skript.
 ```
 Ausführlich:
 ```
 Neue Videos aus Rohmaterial (Skript-Workflow, video-cutter/CLAUDE.md „Weg 2“).
-Material: <Google-Drive-Ordner-Link>
+Material: <Produktordner in Snova-Videos/01-Rohmaterial, z. B. „Mixer“ – oder Drive-Link>
 Produkt: <Name> – Faktenblatt/Shop-Link: <…>
 Anzahl Videos: <z. B. 2>
 Wünsche: <z. B. „einmal Lifestyle, einmal Funktionen erklären“>
@@ -67,7 +67,8 @@ Claude-Code-Sitzung** – neue Agenten-Ordner werden erst beim Sitzungsstart erk
 
 - **Am PC (empfohlen):** Datei irgendwo ablegen und den Pfad in den Auftrag schreiben, z. B. `video-cutter/material/becher.mp4`.
   Der Ordner `material/` wird **nicht** zu GitHub hochgeladen.
-- **Cloud-Sitzung:** über deinen Google-Drive-Konnektor (Datei-Link in den Auftrag). Größere Dateien vorher kürzen/komprimieren.
+- **Cloud-Sitzung (empfohlen):** in deinen festen Drive-Ordner `Snova-Videos/01-Rohmaterial/<Produkt>` legen → Kapitel 7.
+  Keine Freigabe-Links, keine Größenbeschränkung, Originalqualität.
 - Das Original wird **nie verändert**: Der Agent merkt sich eine Prüfsumme und arbeitet mit einer Kopie.
 
 ---
@@ -100,3 +101,51 @@ cd video-cutter && bash tools/selbsttest.sh
 ```
 Baut einen synthetischen Testclip (Computerstimme mit Versprecher und langen Pausen) und schickt ihn durch die ganze Kette.
 Beispiel-Ergebnis liegt in `jobs/test/` (Schnittplan, Komposition, QA-Bericht).
+
+---
+
+## 7. Dateien austauschen: dein fester Drive-Ordner (einmal einrichten, ca. 10 Min.)
+
+So sieht es danach aus – **nie mehr Freigaben, nie mehr WeTransfer:**
+```
+Google Drive (dein Konto)
+└── Snova-Videos/
+    ├── 01-Rohmaterial/<Produkt>/   ← du legst Videos rein (Laptop oder iPhone)
+    └── 02-Fertig/<Produkt>/        ← hier landen die fertigen Videos automatisch
+```
+
+**Einmalig am Laptop (Windows):**
+1. **Google Drive für Desktop** installieren (google.com/drive/download) und mit deinem Konto anmelden.
+   Im Explorer erscheint Laufwerk `G:` → `Meine Ablage`. Alles, was du dort hineinziehst, lädt automatisch hoch.
+2. **Schlüssel für mich erzeugen:** Eingabeaufforderung öffnen und eintippen:
+   ```
+   winget install Rclone.Rclone
+   rclone authorize "drive"
+   ```
+   (nach der Installation das Fenster einmal schließen und neu öffnen). Der Browser geht auf → mit deinem Google-Konto
+   anmelden → „Zulassen“. Im schwarzen Fenster steht danach ein langer Text zwischen `--->` und `<---End paste`
+   (je nach Version `{"access_token":…}` oder eine lange Zeichenkette). Genau diesen Text markieren und kopieren. **Nicht in den Chat einfügen.**
+3. **Schlüssel hinterlegen:** in Claude Code oben in der Titelleiste auf die Cloud-Umgebung → **Bearbeiten** →
+   Umgebungsvariablen → eine neue Zeile:
+   ```
+   VATTO_DRIVE_TOKEN=<hier den kopierten Text einfügen>
+   ```
+   (direkt hinter dem `=`, ohne Leerzeichen und ohne Anführungszeichen)
+   Speichern → **neue Sitzung starten**. Den Ordner `Snova-Videos` lege ich beim ersten Mal selbst an.
+
+**iPhone (Google-Drive-App):**
+- **Hochladen:** Drive-App → `Snova-Videos/01-Rohmaterial` → Produktordner anlegen/öffnen → **+** → **Hochladen** → **Fotos und Videos**.
+  Drive speichert das Original (4K, HDR) – anders als Google Fotos im Speichersparmodus. Großes Material im WLAN hochladen.
+- **Fertige Videos aufs iPhone:** Drive-App → `Snova-Videos/02-Fertig/<Produkt>` → bei der Datei **⋮** → **Kopie senden** → **Video sichern**
+  → liegt in deiner Fotos-App, bereit für TikTok.
+- Tipp: die beiden Ordner in der Drive-App mit ⭐ markieren, dann sind sie unter „Markiert“ sofort da.
+
+**Drohne → Laptop:** Dateien direkt in `G:\Meine Ablage\Snova-Videos\01-Rohmaterial\<Produkt>` ziehen – fertig.
+
+**Im Chat reicht dann:** „Neue Videos von <Produkt> sind im Drive.“ Ich hole sie, prüfe jede Datei (Größe + Prüfsumme),
+schneide, und nach deiner Freigabe liegen die Finals in `02-Fertig/<Produkt>` – in voller Qualität und zusätzlich als kleinere `-tiktok.mp4`.
+
+**Sicherheit (ehrlich):** Der Schlüssel könnte technisch dein ganzes Drive lesen. Ich arbeite nur in `Snova-Videos`,
+kopiere nur und lösche nie. Widerrufen jederzeit: myaccount.google.com → Sicherheit → Drittanbieter-Zugriff → „rclone“ entfernen.
+Speicher: 15 GB sind gratis – fertige Projekte im Drive aufräumen (das machst du, ich lösche nichts).
+

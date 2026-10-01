@@ -39,6 +39,12 @@ if [ ! -s "$M" ]; then
   curl -fsSL -o "$M" https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-small.bin || { echo "[cutter] FEHLER: Modell-Download"; rm -f "$M"; FAIL=1; }
 fi
 
+# Dateiaustausch mit Vattos Drive-Ordner „Snova-Videos“ (tools/drive.mjs)
+if ! command -v rclone >/dev/null; then
+  echo "[cutter] rclone installieren …"
+  (apt-get install -y -qq rclone >/dev/null 2>&1 || { apt-get update -qq >/dev/null 2>&1 && apt-get install -y -qq rclone >/dev/null 2>&1; }) || { echo "[cutter] FEHLER: rclone"; FAIL=1; }
+fi
+if [ -n "${VATTO_DRIVE_TOKEN:-}" ]; then echo "[cutter] Drive: $(node "$(dirname "$0")/drive.mjs" test 2>&1 | tr -s '\n' ' ')"; else echo "[cutter] Drive: kein VATTO_DRIVE_TOKEN gesetzt (START-HIER Kapitel 7)"; fi
 echo "[cutter] $($HF --version 2>/dev/null | head -1) · $($HF doctor 2>&1 | grep -E 'whisper-cpp|Chrome ' | sed 's/  */ /g' | tr '\n' ' ')"
 [ "$FAIL" -eq 0 ] && echo "[cutter] Video-Cutting-Agent bereit." || echo "[cutter] Unvollständig, siehe oben."
 exit "$FAIL"

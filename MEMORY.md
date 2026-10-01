@@ -25,6 +25,14 @@ dann nächstes Produkt – mit **verschiedenen Formaten** statt nur verschiedene
 
 ## SESSION-LOG
 
+### 2026-10-01 – Fester Drive-Ordner für Videos (beide Richtungen)
+
+- Austausch über `Snova-Videos/01-Rohmaterial/<Produkt>` (Vatto lädt hoch) und `02-Fertig/<Produkt>` (Finals automatisch).
+  Werkzeug `video-cutter/tools/drive.mjs` (rclone, Größe + MD5 geprüft), Schlüssel = **eine** Umgebungsvariable `VATTO_DRIVE_TOKEN`.
+- Vatto-Entscheidung: Hauptkonto (Risiko bewusst: Schlüssel könnte ganzes Drive lesen; wir arbeiten nur im Ordner, nie löschen).
+- **Offen:** Vatto richtet nach START-HIER Kapitel 7 ein (Drive für Desktop, `rclone authorize "drive"`, Variable) → neue Sitzung → `drive.mjs test`.
+- Der alte Weg (Ordner „Jeder mit Link“) entfällt; der Neo-2-Ordner kann wieder auf „Eingeschränkt“.
+
 ### 2026-10-01 – Skript-Workflow fertig, 2 Neo-2-Videos final
 
 - **Ergebnis:** `video-cutter/projekte/neo2/videos/{a,b}/exporte/final-*-v001.mp4` (+ `-tiktok.mp4` < 30 MB zum Teilen).
