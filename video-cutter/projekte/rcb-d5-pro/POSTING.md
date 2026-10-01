@@ -33,3 +33,21 @@ Originalvideo, KI-generiertes Voiceover.
 #RCB #escooter #elektroroller #tiktokshop #AIGC
 
 Erster Kommentar: `Gelber Warenkorb unten links 👇 Wie viel wiegt ihr – würde euer aktueller Roller das aushalten? 😄`
+
+## H – Daten-Montage ohne Stimme (final-h, 22 s, Vattos Song)
+
+Werbung · Kein Plastikbomber. 🛴🔥
+
+RCB E-Scooter im Wald-Check: Offroad über den engen Waldweg, Kamerafahrt um den Roller.
+
+500 W Motor, 10 Zoll Gelreifen, Federung vorne und hinten, bis 150 kg belastbar.
+
+Mit deutscher ABE und 20 km/h – ganz legal auf die Straße.
+
+Jetzt im TikTok Shop – gelber Warenkorb unten links.
+
+Originalvideo.
+
+#RCB #escooter #elektroroller #tiktokshop #offroad
+
+Hinweis: kein KI-Inhalt (keine KI-Stimme) → #AIGC und „KI-generiert“ hier bewusst weggelassen; Vatto entscheidet.
