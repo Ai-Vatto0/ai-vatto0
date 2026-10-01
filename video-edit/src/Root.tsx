@@ -1,12 +1,14 @@
 import "./index.css";
 import { Composition } from "remotion";
 import { MyComposition } from "./Composition";
+import { ScooterViral, scooterViralMeta } from "./scooter/ScooterViral";
 import { SpecVideo, SpecProps } from "./SpecVideo";
 
 export const RemotionRoot: React.FC = () => {
   return (
     <>
       <MyComposition />
+      <Composition component={ScooterViral} {...scooterViralMeta} />
       {/* Engine-Vergleich: liest props.json aus video-cutter/tools/remotion-props.mjs */}
       <Composition
         id="SpecVideo"

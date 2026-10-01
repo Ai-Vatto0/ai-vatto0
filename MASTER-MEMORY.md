@@ -52,7 +52,9 @@ die Repo-Doku, nicht das Gedächtnis.
 6. `memory/regeln/modell-routing.md` – **Arbeitsweise, gilt immer** (seit 01.10.2026):
    Sub-Agents mit dem günstigsten tauglichen Modell, Schwelle für Delegation, keine
    bezahlten Renders durch Sub-Agents. Wird über `CLAUDE.md` automatisch geladen
-7. `memory/archiv/` – historisch, **nie** mit aktiven Regeln mischen oder reaktivieren
+7. `memory/regeln/text-einblendungen.md` – **Vattos Standard-Look für Texteinblendungen**
+   (Permanent Marker, eine Akzentfarbe, Pop-in 0,25 s, keine Dauerbewegung). Gilt für jedes Video.
+8. `memory/archiv/` – historisch, **nie** mit aktiven Regeln mischen oder reaktivieren
 
 ---
 
