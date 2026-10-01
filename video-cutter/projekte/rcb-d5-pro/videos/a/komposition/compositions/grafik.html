@@ -9,7 +9,7 @@
         /* Safe Zone 1080x1920: oben 150, rechts 140, unten 400, links 60 */
         .cap { position: absolute; left: 60px; right: 140px; top: 230px; display: flex; justify-content: center; }
         .cap-in { max-width: 860px; text-align: center; font-size: 64px; line-height: 1.12; color: #FFF7E8; -webkit-text-stroke: 10px #140F05; paint-order: stroke fill; background: transparent; padding: 0; border-radius: 26px; text-shadow: 0 6px 18px rgba(0,0,0,.45); }
-        .headline { position: absolute; left: 60px; right: 140px; top: 1150px; display: flex; justify-content: center; }
+        .headline { position: absolute; left: 60px; right: 140px; top: 440px; display: flex; justify-content: center; }
         .hl-in { max-width: 860px; text-align: center; font-size: 112px; line-height: 1.04; color: #FFF7E8; font-family: "Marker", sans-serif; font-weight: 400; -webkit-text-stroke: 12px #140F05; paint-order: stroke fill; text-shadow: 0 10px 0 rgba(12,9,3,.55); transform: rotate(-2deg); }
         .hw { display: inline-block; }
         .hw.em { color: #FF7B1C; }
@@ -27,9 +27,8 @@
         <div id="h3" class="clip headline" data-start="6.133" data-duration="2.383" data-track-index="1"><div class="hl-in"><span class="hw">OFFROAD?</span> <span class="hw em">LÄUFT.</span></div></div>
         <div id="h5" class="clip headline" data-start="10.933" data-duration="3.383" data-track-index="1"><div class="hl-in"><span class="hw em">METALL</span> <span class="hw">STATT</span> <span class="hw">PLASTIK</span></div></div>
         <div id="h6" class="clip headline" data-start="14.466" data-duration="2.283" data-track-index="1"><div class="hl-in"><span class="hw em">ABE</span> <span class="hw">·</span> <span class="hw">20</span> <span class="hw">KM/H</span></div></div>
-        <div id="cta" class="clip ctabox" style="top:1080px" data-start="20.066" data-duration="3.767" data-track-index="2"><div class="cta-tx">Jetzt im TikTok Shop</div><div class="cta-zu">Dein neuer Daily Driver.</div><svg class="pfeil" viewBox="0 0 200 200"><path d="M170 20 C 150 90, 110 130, 40 160" fill="none" stroke="#FF7B1C" stroke-width="14" stroke-linecap="round"/><path d="M40 160 L 70 118 M40 160 L 92 170" fill="none" stroke="#FF7B1C" stroke-width="14" stroke-linecap="round"/></svg></div>
-        <img id="logo-klein" class="clip logo-klein" src="assets/logo.png" data-start="0" data-duration="20.066" data-track-index="5" />
-        <img id="logo-ende" class="clip logo-gross" style="top:420px" src="assets/logo.png" data-start="20.066" data-duration="3.767" data-track-index="4" />
+        <div id="cta" class="clip ctabox" style="top:330px" data-start="20.066" data-duration="3.767" data-track-index="2"><div class="cta-tx">Jetzt im TikTok Shop</div><div class="cta-zu">Dein neuer Daily Driver.</div><svg class="pfeil" viewBox="0 0 200 200"><path d="M170 20 C 150 90, 110 130, 40 160" fill="none" stroke="#FF7B1C" stroke-width="14" stroke-linecap="round"/><path d="M40 160 L 70 118 M40 160 L 92 170" fill="none" stroke="#FF7B1C" stroke-width="14" stroke-linecap="round"/></svg></div>
+        <img id="logo-klein" class="clip logo-klein" src="assets/logo.png" data-start="0" data-duration="23.833" data-track-index="5" />
         <div id="ki" class="clip ki" data-start="0" data-duration="23.833" data-track-index="3">KI-Stimme</div>
       </div>
       <script>
@@ -49,7 +48,6 @@
         tl.fromTo("#cta .cta-tx", { scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.42, ease: "back.out(1.2)" }, 20.166);
         tl.fromTo("#cta .cta-zu", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "power3.out" }, 20.466);
         tl.fromTo("#cta .pfeil path", { strokeDashoffset: 260 }, { strokeDashoffset: 0, duration: 0.45, ease: "power2.out", stagger: 0.12 }, 20.566);
-        tl.fromTo("#logo-ende", { scale: 0.86, y: 24, opacity: 0 }, { scale: 1, y: 0, opacity: 1, duration: 0.25, ease: "power3.out" }, 20.116);
         window.__timelines["grafik"] = tl;
       </script>
     </template>
