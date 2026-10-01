@@ -51,3 +51,43 @@ Originalvideo.
 #RCB #escooter #elektroroller #tiktokshop #offroad
 
 Hinweis: kein KI-Inhalt (keine KI-Stimme) → #AIGC und „KI-generiert“ hier bewusst weggelassen; Vatto entscheidet.
+
+## F – Groß und schwer? (final-f, 28 s, Stimme Markus)
+
+Werbung · Über 100 Kilo? Stopp! 🛑🛴
+
+Du bist groß, schwer, und jeder Roller ächzt unter dir? Dann schau dir den RCB E-Scooter an.
+
+Bis 150 Kilo belastbar – getestet mit einem Fahrer von 140 Kilo, und der zieht trotzdem sauber durch.
+
+Starker 500 Watt Motor, stabiler Rahmen aus Metall, 10 Zoll Gelreifen.
+
+Gebaut für große Jungs, nicht für Plastikspielzeug.
+
+Jetzt im TikTok Shop – gelber Warenkorb unten links.
+
+Originalvideo, KI-generiertes Voiceover.
+
+#RCB #escooter #elektroroller #tiktokshop #AIGC
+
+Erster Kommentar: `Gelber Warenkorb unten links 👇 Wer von euch ist über 1,90 – was fahrt ihr gerade? 😄`
+
+## G – Wald-Modus (final-g, 26 s, Stimme Markus)
+
+Werbung · Wald-Modus: an 🌲🛴
+
+Wurzeln, Schotter, Bordsteinkanten? Die Federung vom RCB E-Scooter bügelt das einfach weg – super smooth.
+
+Vorne doppelt gefedert, hinten auch, dazu 10-Zoll-Gelreifen und Doppelbremse mit Scheibenbremsen.
+
+Licht an, Display im Blick, drei Fahrstufen bis 20 km/h.
+
+Mit deutscher ABE und Versicherungskennzeichen ganz legal auf die Straße – straßentauglich, Bordstein egal.
+
+Jetzt im TikTok Shop – gelber Warenkorb unten links.
+
+Originalvideo, KI-generiertes Voiceover.
+
+#RCB #escooter #elektroroller #tiktokshop #AIGC
+
+Erster Kommentar: `Gelber Warenkorb unten links 👇 Wo fahrt ihr lieber – Wald oder Stadt? 🌲🏙️`

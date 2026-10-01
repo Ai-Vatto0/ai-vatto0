@@ -25,6 +25,16 @@ dann nächstes Produkt – mit **verschiedenen Formaten** statt nur verschiedene
 
 ## SESSION-LOG
 
+### 2026-10-01 (Abend) – RCB D5 Pro: F, G, H von Vatto abgenommen („richtig gut“)
+
+- Finals A, B, H (ohne Ton, Vattos Song) + F, G (Stimme Markus) in `02-Fertig/RCB-D5-Pro`; Captions in `video-cutter/projekte/rcb-d5-pro/POSTING.md`.
+- Was gewirkt hat: neues iPhone-Material (POV mit Display, Felsen-Rundgang, Füße auf dem Trittbrett), **Slam-Hook** (Weißblitz +
+  Wackler + Punch-In), **Daten-Karten** mit Hochzählen, Szenen ≥ 3 s (Vatto: „tack, tack, tack – man sieht nichts“), Endkarten.
+- Vatto mag nicht: Landstraße, Draufsicht, Brücke, Lauf-ins-Bild-Stativszene, Stakkato-Schnitte, Stimme „Patrick“, leere Bilder.
+- Werkzeuge neu: `stumm-vo.mjs` (Videos ohne Sprecher), `spec.hook_effekt: "slam"`, `szenen[].stat`, `spec.schrift_alt`, `produziere --drive`.
+- Regeln neu: Caption (Keywords, 5 Hashtags, #RCB zuerst, #AIGC zuletzt) · Tacho 22 ok, nie unter „20 km/h“-Aussage ·
+  Neo-2-Vorbeiflüge zeigen Fremd-Roller → gesperrt · Vatto will nur die großen Finals im Drive.
+
 ### 2026-10-01 – RCB D5 Pro: 5 Videos aus Originalmaterial (erster Test der neuen Cut-Linie)
 
 - Material aus Drive (51 Dateien, MD5 geprüft) → `video-cutter/projekte/rcb-d5-pro/`. Faktenblatt: `memory/projekte/rcb-d5-pro.md`.
