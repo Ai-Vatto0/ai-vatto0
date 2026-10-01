@@ -1,0 +1,54 @@
+{
+  "export": "vorschau-c-v002.mp4",
+  "art": "vorschau",
+  "freigabe": null,
+  "renderzeit_s": 126,
+  "status": "FEHLER",
+  "checks": [
+    {
+      "pruefung": "Spuren",
+      "status": "OK",
+      "detail": "1 Video, 1 Ton"
+    },
+    {
+      "pruefung": "Auflösung",
+      "status": "OK",
+      "detail": "1080x1920"
+    },
+    {
+      "pruefung": "Bildrate",
+      "status": "OK",
+      "detail": "30/1"
+    },
+    {
+      "pruefung": "Dauer",
+      "status": "OK",
+      "detail": "23.433 s (Plan 23.401 s)"
+    },
+    {
+      "pruefung": "Lautheit",
+      "status": "OK",
+      "detail": "-13 LUFS (Ziel -14 ±2)"
+    },
+    {
+      "pruefung": "True Peak",
+      "status": "OK",
+      "detail": "-2.3 dBTP"
+    },
+    {
+      "pruefung": "Stille",
+      "status": "WARNUNG",
+      "detail": "1.3 s Stille bis 23.4 s"
+    },
+    {
+      "pruefung": "Voiceover = Skript",
+      "status": "WARNUNG",
+      "detail": "nicht wiedergefunden: draufhat, dunkeln → anhören (Aussprache oder nur Hörfehler von whisper?)"
+    },
+    {
+      "pruefung": "Safe Zone",
+      "status": "FEHLER",
+      "detail": "17.3 s: x 942–944, y 676–710; 17.4 s: x 942–974, y 654–700; 17.5 s: x 942–972, y 656–700; 17.6 s: x 942–972, y 656–700; 17.7 s: x 942–972, y 656–700; 17.8 s: x 942–972, y 656–700 … (17 Bilder)"
+    }
+  ]
+}

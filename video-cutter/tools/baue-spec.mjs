@@ -134,7 +134,7 @@ bloecke.forEach((b, k) => {
   const ende = Math.min(e, ctaStart);
   const id = `c${k + 1}`;
   cm += `
-        <div id="${id}" class="clip cap" data-start="${s}" data-duration="${r3(ende - s)}" data-track-index="0"><p class="cap-in">${b.map((w, j) => `<span id="${id}-${j}" class="w">${esc(w.text.replace(/[,.]$/, ""))}</span>`).join(" ")}</p></div>`;
+        <div id="${id}" class="clip cap" data-start="${s}" data-duration="${r3(ende - s)}" data-track-index="0"><p class="cap-in"${(() => { const n = Math.max(...b.map((w) => w.text.length)); const f = Math.floor(780 / (n * 0.64)); return f < L.captionPx ? ` style="font-size:${f}px"` : ""; })()}>${b.map((w, j) => `<span id="${id}-${j}" class="w">${esc(w.text.replace(/[,.]$/, ""))}</span>`).join(" ")}</p></div>`;
   cj += `\n        tl.fromTo("#${id} .cap-in", { y: 18, scale: 0.9, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.13, ease: "back.out(2)" }, ${s});`;
   b.forEach((w, j) => {
     cj += `\n        tl.set("#${id}-${j}", { color: "${L.akzent}" }, ${r3(Math.max(s, VO_START + w.s))});`;
