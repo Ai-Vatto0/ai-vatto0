@@ -1,0 +1,87 @@
+{
+  "video": "f",
+  "vo_start": 0.25,
+  "vorlauf": 0.12,
+  "cta_halt": 1.4,
+  "gesamt_s": 28.033,
+  "szenen": [
+    {
+      "szene": 1,
+      "clip": "img8258",
+      "ab_wort": null,
+      "wort": "(Start)",
+      "start": 0,
+      "dauer": 5.7,
+      "von": 0,
+      "bis": 5.7,
+      "tempo": 1
+    },
+    {
+      "szene": 2,
+      "clip": "img8241",
+      "ab_wort": 11,
+      "wort": "Dann",
+      "start": 5.7,
+      "dauer": 1.967,
+      "von": 16,
+      "bis": 16.984,
+      "tempo": 0.5
+    },
+    {
+      "szene": 3,
+      "clip": "img8241",
+      "ab_wort": 17,
+      "wort": "Bis",
+      "start": 7.666666666666667,
+      "dauer": 2.2,
+      "von": 20,
+      "bis": 22.2,
+      "tempo": 1
+    },
+    {
+      "szene": 4,
+      "clip": "img8252",
+      "ab_wort": 21,
+      "wort": "Getestet",
+      "start": 9.866666666666667,
+      "dauer": 6.2,
+      "von": 4.5,
+      "bis": 10.7,
+      "tempo": 1
+    },
+    {
+      "szene": 5,
+      "clip": "img8251",
+      "ab_wort": 34,
+      "wort": "Starker",
+      "start": 16.066666666666666,
+      "dauer": 5.533,
+      "von": 23,
+      "bis": 28.533,
+      "tempo": 1
+    },
+    {
+      "szene": 6,
+      "clip": "img8251",
+      "ab_wort": 45,
+      "wort": "Gebaut",
+      "start": 21.6,
+      "dauer": 3.567,
+      "von": 3.3,
+      "bis": 7.759,
+      "tempo": "ramp"
+    },
+    {
+      "szene": 7,
+      "clip": "foto-stein-endkarte",
+      "ab_wort": 52,
+      "wort": "Jetzt",
+      "start": 25.166666666666668,
+      "dauer": 2.867,
+      "von": 0,
+      "bis": 2.867,
+      "tempo": 1
+    }
+  ],
+  "fehler": []
+}

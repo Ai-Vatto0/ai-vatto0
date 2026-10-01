@@ -1404,6 +1404,254 @@
         "risiko": "Fremdmarke WILD MAN auf der Lenkertasche (Zubehör, nicht im Lieferumfang) wo sichtbar"
       }
     },
+    "img7955": {
+      "datei": "roh/IMG_7955.MOV",
+      "sha256": "794aeeb6b88bbc08168f4c6a1f6dd3320fb7bbc4aa3b01a378b189aab4682578",
+      "dauer_s": 132.217,
+      "breite": 1080,
+      "hoehe": 1920,
+      "orientierung": "hochkant",
+      "typ": "hochkant",
+      "fps": 29.98828,
+      "variable_bildrate": true,
+      "hdr": true,
+      "farbe": "arib-std-b67",
+      "ton": true,
+      "zeitlupe_moeglich": "nein (< 50 fps)",
+      "kontaktbogen": "kontakt/img7955.jpg",
+      "tags": {
+        "beschreibung": "Rundgang zu Hause: Trittbrett RCB, Lenker, Display wird eingeschaltet (89–102, 122–128 s)",
+        "rolle": [
+          "beweis",
+          "detail",
+          "emotion"
+        ],
+        "person": "keine",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [],
+        "bewegung": "mittel",
+        "qualitaet": "gut (iPhone, HDR)",
+        "risiko": null
+      }
+    },
+    "img8238": {
+      "datei": "roh/IMG_8238.MOV",
+      "sha256": "b085a7f8c680fb96c31f22156ce801063d74d3667880f47ac07b88102bd234cd",
+      "dauer_s": 36.353,
+      "breite": 1080,
+      "hoehe": 1920,
+      "orientierung": "hochkant",
+      "typ": "hochkant",
+      "fps": 59.93948,
+      "variable_bildrate": false,
+      "hdr": true,
+      "farbe": "arib-std-b67",
+      "ton": true,
+      "zeitlupe_moeglich": "bis 0.501x ohne doppelte Bilder",
+      "kontaktbogen": "kontakt/img8238.jpg",
+      "tags": {
+        "beschreibung": "POV-Fahrt Wald mit leuchtendem Display im Vordergrund (0–21 s gut, danach verwackelt)",
+        "rolle": [
+          "beweis",
+          "detail",
+          "emotion"
+        ],
+        "person": "keine",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [],
+        "bewegung": "mittel",
+        "qualitaet": "gut (iPhone, HDR)",
+        "risiko": null
+      }
+    },
+    "img8239": {
+      "datei": "roh/IMG_8239.MOV",
+      "sha256": "5d5f25f65db743d8bd7f8eead7169e8232dc491deb9ec7391b98f16c6941f88a",
+      "dauer_s": 31.013,
+      "breite": 1080,
+      "hoehe": 1920,
+      "orientierung": "hochkant",
+      "typ": "hochkant",
+      "fps": 59.93874,
+      "variable_bildrate": false,
+      "hdr": true,
+      "farbe": "arib-std-b67",
+      "ton": true,
+      "zeitlupe_moeglich": "bis 0.501x ohne doppelte Bilder",
+      "kontaktbogen": "kontakt/img8239.jpg",
+      "tags": {
+        "beschreibung": "POV-Fahrt Wald, Display ab 13 s (13–21 s gut)",
+        "rolle": [
+          "beweis",
+          "detail",
+          "emotion"
+        ],
+        "person": "keine",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [],
+        "bewegung": "mittel",
+        "qualitaet": "gut (iPhone, HDR)",
+        "risiko": null
+      }
+    },
+    "img8240": {
+      "datei": "roh/IMG_8240.MOV",
+      "sha256": "6e6674c91cb379693e730ef152305619d0104ea75e20a9a4d0c4e52a76fbc48b",
+      "dauer_s": 41.66,
+      "breite": 1080,
+      "hoehe": 1920,
+      "orientierung": "hochkant",
+      "typ": "hochkant",
+      "fps": 59.93759,
+      "variable_bildrate": false,
+      "hdr": true,
+      "farbe": "arib-std-b67",
+      "ton": true,
+      "zeitlupe_moeglich": "bis 0.501x ohne doppelte Bilder",
+      "kontaktbogen": "kontakt/img8240.jpg",
+      "tags": {
+        "beschreibung": "Rundgang Wald: Annäherung 0–5 s, Rücklicht 9–11 s, Details Rad/Trittbrett/Federbein 12–17 s, Lenker/Display 19–24 s; ab 30 s Finger vor der Linse",
+        "rolle": [
+          "beweis",
+          "detail",
+          "emotion"
+        ],
+        "person": "keine",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [],
+        "bewegung": "mittel",
+        "qualitaet": "gut (iPhone, HDR)",
+        "risiko": null
+      }
+    },
+    "img8241": {
+      "datei": "roh/IMG_8241.MOV",
+      "sha256": "d42a21a8234b350cf82c1e90c3d3a45605bbf0d31e19ba7ad1b62cc40eacfc93",
+      "dauer_s": 30.447,
+      "breite": 1080,
+      "hoehe": 1920,
+      "orientierung": "hochkant",
+      "typ": "hochkant",
+      "fps": 59.94088,
+      "variable_bildrate": false,
+      "hdr": true,
+      "farbe": "arib-std-b67",
+      "ton": true,
+      "zeitlupe_moeglich": "bis 0.5x ohne doppelte Bilder",
+      "kontaktbogen": "kontakt/img8241.jpg",
+      "tags": {
+        "beschreibung": "Rundgang Wald: Rücklicht 0–3 s, Trittbrett 4–12 s, Annäherung mit Licht 16–19 s, Federbeine vorne Nahaufnahme 20–22 s",
+        "rolle": [
+          "beweis",
+          "detail",
+          "emotion"
+        ],
+        "person": "keine",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [],
+        "bewegung": "mittel",
+        "qualitaet": "gut (iPhone, HDR)",
+        "risiko": null
+      }
+    },
+    "img8251": {
+      "datei": "roh/IMG_8251.MOV",
+      "sha256": "78126db94a21c36d2fe19ad1e1403658a08eae2effb81f6d740c385763cd1290",
+      "dauer_s": 131.448,
+      "breite": 2160,
+      "hoehe": 3840,
+      "orientierung": "hochkant",
+      "typ": "hochkant",
+      "fps": 42.23713,
+      "variable_bildrate": true,
+      "hdr": true,
+      "farbe": "arib-std-b67",
+      "ton": true,
+      "zeitlupe_moeglich": "nein (< 50 fps)",
+      "kontaktbogen": "kontakt/img8251.jpg",
+      "tags": {
+        "beschreibung": "Lange POV-Fahrt Wald 4K60: Weg 3–16 s (schnell), Display-POV 19–42 s und 62–82 s, Roller steht 98–128 s",
+        "rolle": [
+          "beweis",
+          "detail",
+          "emotion"
+        ],
+        "person": "keine",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [],
+        "bewegung": "mittel",
+        "qualitaet": "gut (iPhone, HDR)",
+        "risiko": null
+      }
+    },
+    "img8252": {
+      "datei": "roh/IMG_8252.MOV",
+      "sha256": "1aaa87410199b9819a094bbaa38c92ef35e20d98628cc3df4556da950ca4392a",
+      "dauer_s": 41.99,
+      "breite": 2160,
+      "hoehe": 3840,
+      "orientierung": "hochkant",
+      "typ": "hochkant",
+      "fps": 58.94261,
+      "variable_bildrate": true,
+      "hdr": true,
+      "farbe": "arib-std-b67",
+      "ton": true,
+      "zeitlupe_moeglich": "bis 0.509x ohne doppelte Bilder",
+      "kontaktbogen": "kontakt/img8252.jpg",
+      "tags": {
+        "beschreibung": "Stativ: Vatto kommt von hinten (4–7 s), steigt auf, fährt seitlich weg (7–14 s), Rest leer; ab 39 s Finger",
+        "rolle": [
+          "beweis",
+          "detail",
+          "emotion"
+        ],
+        "person": "klein",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [],
+        "bewegung": "mittel",
+        "qualitaet": "gut (iPhone, HDR)",
+        "risiko": null
+      }
+    },
+    "img8258": {
+      "datei": "roh/IMG_8258.MOV",
+      "sha256": "6ff720d9e18e98354600d1785c3fa9eddc5053db3ead54a3475926e4e20c2ac7",
+      "dauer_s": 21.537,
+      "breite": 2160,
+      "hoehe": 3840,
+      "orientierung": "hochkant",
+      "typ": "hochkant",
+      "fps": 59.93964,
+      "variable_bildrate": false,
+      "hdr": true,
+      "farbe": "arib-std-b67",
+      "ton": true,
+      "zeitlupe_moeglich": "bis 0.501x ohne doppelte Bilder",
+      "kontaktbogen": "kontakt/img8258.jpg",
+      "tags": {
+        "beschreibung": "Felsen-Rundgang 4K60: Roller am Felsen mit Licht 0–3 s, Lichtreflex 4 s, Federbeine vorne 5 s, Heck/Bremse 6–11 s, Trittbrett RCB 13 s, Lenkrohr „Rock our Life“ 14–15 s, Display 19–20 s",
+        "rolle": [
+          "beweis",
+          "detail",
+          "emotion"
+        ],
+        "person": "keine",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [],
+        "bewegung": "mittel",
+        "qualitaet": "gut (iPhone, HDR)",
+        "risiko": null
+      }
+    },
     "foto-stein": {
       "datei": "stills/foto-stein.mp4",
       "dauer_s": 6,
