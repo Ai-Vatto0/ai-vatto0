@@ -22,7 +22,9 @@ Ziel: Muster-Gegenleistung, danach ggf. D7 Max.
 - **Verstoß 26.09.2026** (Screenshot IMG_0507): −24 Punkte, „inkonsistente Produktwerbung“, Sichtbarkeit reduziert,
   Videoprodukte entfernt, betroffenes Produkt deaktiviert. → Nur Eigenmaterial, nichts KI-verändert, nur gemeinsame Merkmale.
 - **Variante geklärt (Vatto, 01.10.):** Verlinkt wird Vattos Version OHNE NFC/Blinker. Videos zeigen nur diese → konsistent. Händlerbilder mit NFC/Blinker (IMG_8297, IMG_0514) nie verwenden.
-- IMG_7963 (Display Nacht) = Vattos Roller → freigegeben. IMG_0356–0358 zeigen beide Roller → weiter nicht verwenden.
+- IMG_7963 (Display Nacht) = Vattos Roller → freigegeben (zeigt aber mph + Blinker-Symbole → nicht unter km/h-Aussagen).
+- **Beide Roller nebeneinander (Vatto, 01.10.):** erlaubt („zwei Bros“), war schon gepostet ohne Verstoß. Bedingung bei uns:
+  der D5 Pro ist klar markiert (Pfeil/Text „DEINER“) und im Fokus; das Blinker-Modell nie allein und nie während Feature-Aussagen im Bild.
 - Lenkertasche „WILD MAN“ (Fremdmarke, nicht im Lieferumfang) ist in fast allem Material sichtbar – Vatto: ok.
 - Logo-Datei `0FCB837A…png` hat weißen Grund (kein Alpha) → als weiße Logo-Karte mit runden Ecken genutzt; Marken-Akzent im Logo ist Türkis.
 - Wald-Clip DJI_0012 ab ~148 s: Verkehrsschild „Verbot für Kfz“ + Gesicht → gesperrt. DJI_0021 0–15 s Kennzeichen, 45–48 s Kind → gesperrt.
