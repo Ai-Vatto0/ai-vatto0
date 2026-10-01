@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="de">
+  <head><meta charset="UTF-8" /><!-- GENERIERT von tools/baue-spec.mjs – nicht von Hand ändern. --></head>
+  <body>
+    <template>
+      <style>
+        @font-face { font-family: "Poppins"; src: url("assets/fonts/Poppins-Bold.ttf") format("truetype"); font-weight: 700; } @font-face { font-family: "Marker"; src: url("assets/fonts/PermanentMarker.ttf") format("truetype"); font-weight: 400; }
+        #root { position: absolute; inset: 0; font-family: "Poppins", sans-serif; font-weight: 700; }
+        /* Safe Zone 1080x1920: oben 150, rechts 140, unten 400, links 60 */
+        .cap { position: absolute; left: 60px; right: 140px; top: 230px; display: flex; justify-content: center; }
+        .cap-in { max-width: 860px; text-align: center; font-size: 60px; line-height: 1.12; color: #FFF7E8;  background: rgba(20,15,5,.82); padding: 14px 30px; border-radius: 26px; text-shadow: 0 6px 18px rgba(0,0,0,.45); }
+        .headline { position: absolute; left: 60px; right: 140px; top: 440px; display: flex; justify-content: center; }
+        .hl-in { max-width: 860px; text-align: center; font-size: 100px; line-height: 1.04; color: #FFF7E8; font-family: "Marker", sans-serif; font-weight: 400; color: #140F05 !important; background: #FF7B1C; padding: 8px 30px 14px; border-radius: 18px; transform: rotate(-2deg); box-shadow: 0 10px 0 rgba(12,9,3,.55); }
+        .hw { display: inline-block; }
+        .hw.em { color: #FFF7E8; }
+        .ctabox { position: absolute; left: 60px; right: 140px; top: 1080px; display: flex; flex-direction: column; align-items: center; }
+        .cta-tx { color: #FF7B1C; font-size: 76px; line-height: 1.05; text-align: center; max-width: 720px; font-family: "Marker", sans-serif; font-weight: 400; font-size: 92px; -webkit-text-stroke: 12px #140F05; paint-order: stroke fill; text-shadow: 0 10px 0 rgba(12,9,3,.55); transform: rotate(-2deg); }
+        .cta-zu { color: #fff; font-size: 44px; margin-top: 12px; text-align: center; max-width: 720px; background: rgba(0,0,0,.55); padding: 6px 18px; border-radius: 16px; }
+        .pfeil { width: 150px; height: 150px; margin-top: 4px; margin-right: 400px; }
+        .pfeil path { stroke-dasharray: 260; }
+        .logo-gross { position: absolute; left: 110px; top: 300px; width: 760px; }
+        .logo-klein { position: absolute; left: 680px; top: 150px; width: 250px; opacity: .92; }
+        .ki { position: absolute; left: 70px; top: 160px; font-size: 26px; color: #FFFFFF; letter-spacing: .04em; background: rgba(0,0,0,.62); padding: 6px 14px; border-radius: 12px; }
+      </style>
+      <div id="root" data-composition-id="captions" data-width="1080" data-height="1920">
+        <div id="c1" class="clip cap" data-start="0.34" data-duration="0.94" data-track-index="0"><p class="cap-in"><span id="c1-0" class="w">Feierabend</span></p></div>
+        <div id="c2" class="clip cap" data-start="1.28" data-duration="0.8" data-track-index="0"><p class="cap-in"><span id="c2-0" class="w">Handy</span> <span id="c2-1" class="w">weg</span></p></div>
+        <div id="c3" class="clip cap" data-start="2.08" data-duration="0.96" data-track-index="0"><p class="cap-in"><span id="c3-0" class="w">Roller</span> <span id="c3-1" class="w">raus</span></p></div>
+        <div id="c4" class="clip cap" data-start="3.04" data-duration="1.35" data-track-index="0"><p class="cap-in"><span id="c4-0" class="w">und</span> <span id="c4-1" class="w">einfach</span> <span id="c4-2" class="w">los</span></p></div>
+        <div id="c5" class="clip cap" data-start="4.39" data-duration="0.97" data-track-index="0"><p class="cap-in"><span id="c5-0" class="w">Noch</span> <span id="c5-1" class="w">eine</span> <span id="c5-2" class="w">Runde</span></p></div>
+        <div id="c6" class="clip cap" data-start="5.36" data-duration="0.87" data-track-index="0"><p class="cap-in"><span id="c6-0" class="w">bevor</span> <span id="c6-1" class="w">die</span> <span id="c6-2" class="w">Sonne</span> <span id="c6-3" class="w">weg</span></p></div>
+        <div id="c7" class="clip cap" data-start="6.23" data-duration="0.48" data-track-index="0"><p class="cap-in"><span id="c7-0" class="w">ist</span></p></div>
+        <div id="c8" class="clip cap" data-start="6.71" data-duration="1.48" data-track-index="0"><p class="cap-in"><span id="c8-0" class="w">Keine</span> <span id="c8-1" class="w">Parkplatzsuche</span></p></div>
+        <div id="c9" class="clip cap" data-start="8.19" data-duration="1.25" data-track-index="0"><p class="cap-in"><span id="c9-0" class="w">kein</span> <span id="c9-1" class="w">Gedränge</span></p></div>
+        <div id="c10" class="clip cap" data-start="9.44" data-duration="0.72" data-track-index="0"><p class="cap-in"><span id="c10-0" class="w">nur</span> <span id="c10-1" class="w">du</span> <span id="c10-2" class="w">und</span> <span id="c10-3" class="w">der</span></p></div>
+        <div id="c11" class="clip cap" data-start="10.16" data-duration="0.99" data-track-index="0"><p class="cap-in"><span id="c11-0" class="w">Feldweg</span></p></div>
+        <div id="c12" class="clip cap" data-start="11.15" data-duration="1.26" data-track-index="0"><p class="cap-in"><span id="c12-0" class="w">Mit</span> <span id="c12-1" class="w">20</span> <span id="c12-2" class="w">Sachen</span></p></div>
+        <div id="c13" class="clip cap" data-start="12.41" data-duration="1.47" data-track-index="0"><p class="cap-in"><span id="c13-0" class="w">und</span> <span id="c13-1" class="w">die</span> <span id="c13-2" class="w">Federung</span> <span id="c13-3" class="w">bügelt</span></p></div>
+        <div id="c14" class="clip cap" data-start="13.88" data-duration="1.47" data-track-index="0"><p class="cap-in"><span id="c14-0" class="w">die</span> <span id="c14-1" class="w">Huckel</span> <span id="c14-2" class="w">einfach</span> <span id="c14-3" class="w">weg</span></p></div>
+        <div id="c15" class="clip cap" data-start="15.35" data-duration="1.2" data-track-index="0"><p class="cap-in"><span id="c15-0" class="w">Genau</span> <span id="c15-1" class="w">für</span> <span id="c15-2" class="w">solche</span> <span id="c15-3" class="w">Abende</span></p></div>
+        <div id="c16" class="clip cap" data-start="16.55" data-duration="0.85" data-track-index="0"><p class="cap-in"><span id="c16-0" class="w">ist</span> <span id="c16-1" class="w">der</span> <span id="c16-2" class="w">gemacht</span></p></div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#c1 .cap-in", { y: 18, scale: 0.9, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.13, ease: "back.out(2)" }, 0.34);
+        tl.set("#c1-0", { color: "#FF7B1C" }, 0.34);
+        tl.fromTo("#c2 .cap-in", { y: 18, scale: 0.9, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.13, ease: "back.out(2)" }, 1.28);
+        tl.set("#c2-0", { color: "#FF7B1C" }, 1.28);
+        tl.set("#c2-0", { color: "#FFF7E8" }, 1.66);
+        tl.set("#c2-1", { color: "#FF7B1C" }, 1.66);
+        tl.fromTo("#c3 .cap-in", { y: 18, scale: 0.9, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.13, ease: "back.out(2)" }, 2.08);
+        tl.set("#c3-0", { color: "#FF7B1C" }, 2.08);
+        tl.set("#c3-0", { color: "#FFF7E8" }, 2.57);
+        tl.set("#c3-1", { color: "#FF7B1C" }, 2.57);
+        tl.fromTo("#c4 .cap-in", { y: 18, scale: 0.9, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.13, ease: "back.out(2)" }, 3.04);
+        tl.set("#c4-0", { color: "#FF7B1C" }, 3.04);
+        tl.set("#c4-0", { color: "#FFF7E8" }, 3.22);
+        tl.set("#c4-1", { color: "#FF7B1C" }, 3.22);
+        tl.set("#c4-1", { color: "#FFF7E8" }, 3.81);
+        tl.set("#c4-2", { color: "#FF7B1C" }, 3.81);
+        tl.fromTo("#c5 .cap-in", { y: 18, scale: 0.9, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.13, ease: "back.out(2)" }, 4.39);
+        tl.set("#c5-0", { color: "#FF7B1C" }, 4.39);
+        tl.set("#c5-0", { color: "#FFF7E8" }, 4.58);
+        tl.set("#c5-1", { color: "#FF7B1C" }, 4.58);
+        tl.set("#c5-1", { color: "#FFF7E8" }, 4.82);
+        tl.set("#c5-2", { color: "#FF7B1C" }, 4.82);
+        tl.fromTo("#c6 .cap-in", { y: 18, scale: 0.9, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.13, ease: "back.out(2)" }, 5.36);
+        tl.set("#c6-0", { color: "#FF7B1C" }, 5.36);
+        tl.set("#c6-0", { color: "#FFF7E8" }, 5.57);
+        tl.set("#c6-1", { color: "#FF7B1C" }, 5.57);
+        tl.set("#c6-1", { color: "#FFF7E8" }, 5.75);
+        tl.set("#c6-2", { color: "#FF7B1C" }, 5.75);
+        tl.set("#c6-2", { color: "#FFF7E8" }, 6.09);
+        tl.set("#c6-3", { color: "#FF7B1C" }, 6.09);
+        tl.fromTo("#c7 .cap-in", { y: 18, scale: 0.9, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.13, ease: "back.out(2)" }, 6.23);
+        tl.set("#c7-0", { color: "#FF7B1C" }, 6.23);
+        tl.fromTo("#c8 .cap-in", { y: 18, scale: 0.9, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.13, ease: "back.out(2)" }, 6.71);
+        tl.set("#c8-0", { color: "#FF7B1C" }, 6.71);
+        tl.set("#c8-0", { color: "#FFF7E8" }, 6.99);
+        tl.set("#c8-1", { color: "#FF7B1C" }, 6.99);
+        tl.fromTo("#c9 .cap-in", { y: 18, scale: 0.9, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.13, ease: "back.out(2)" }, 8.19);
+        tl.set("#c9-0", { color: "#FF7B1C" }, 8.19);
+        tl.set("#c9-0", { color: "#FFF7E8" }, 8.44);
+        tl.set("#c9-1", { color: "#FF7B1C" }, 8.44);
+        tl.fromTo("#c10 .cap-in", { y: 18, scale: 0.9, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.13, ease: "back.out(2)" }, 9.44);
+        tl.set("#c10-0", { color: "#FF7B1C" }, 9.44);
+        tl.set("#c10-0", { color: "#FFF7E8" }, 9.47);
+        tl.set("#c10-1", { color: "#FF7B1C" }, 9.47);
+        tl.set("#c10-1", { color: "#FFF7E8" }, 9.64);
+        tl.set("#c10-2", { color: "#FF7B1C" }, 9.64);
+        tl.set("#c10-2", { color: "#FFF7E8" }, 9.9);
+        tl.set("#c10-3", { color: "#FF7B1C" }, 9.9);
+        tl.fromTo("#c11 .cap-in", { y: 18, scale: 0.9, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.13, ease: "back.out(2)" }, 10.16);
+        tl.set("#c11-0", { color: "#FF7B1C" }, 10.16);
+        tl.fromTo("#c12 .cap-in", { y: 18, scale: 0.9, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.13, ease: "back.out(2)" }, 11.15);
+        tl.set("#c12-0", { color: "#FF7B1C" }, 11.15);
+        tl.set("#c12-0", { color: "#FFF7E8" }, 11.35);
+        tl.set("#c12-1", { color: "#FF7B1C" }, 11.35);
+        tl.set("#c12-1", { color: "#FFF7E8" }, 12.11);
+        tl.set("#c12-2", { color: "#FF7B1C" }, 12.11);
+        tl.fromTo("#c13 .cap-in", { y: 18, scale: 0.9, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.13, ease: "back.out(2)" }, 12.41);
+        tl.set("#c13-0", { color: "#FF7B1C" }, 12.41);
+        tl.set("#c13-0", { color: "#FFF7E8" }, 12.62);
+        tl.set("#c13-1", { color: "#FF7B1C" }, 12.62);
+        tl.set("#c13-1", { color: "#FFF7E8" }, 12.85);
+        tl.set("#c13-2", { color: "#FF7B1C" }, 12.85);
+        tl.set("#c13-2", { color: "#FFF7E8" }, 13.35);
+        tl.set("#c13-3", { color: "#FF7B1C" }, 13.35);
+        tl.fromTo("#c14 .cap-in", { y: 18, scale: 0.9, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.13, ease: "back.out(2)" }, 13.88);
+        tl.set("#c14-0", { color: "#FF7B1C" }, 13.88);
+        tl.set("#c14-0", { color: "#FFF7E8" }, 13.94);
+        tl.set("#c14-1", { color: "#FF7B1C" }, 13.94);
+        tl.set("#c14-1", { color: "#FFF7E8" }, 14.33);
+        tl.set("#c14-2", { color: "#FF7B1C" }, 14.33);
+        tl.set("#c14-2", { color: "#FFF7E8" }, 14.74);
+        tl.set("#c14-3", { color: "#FF7B1C" }, 14.74);
+        tl.fromTo("#c15 .cap-in", { y: 18, scale: 0.9, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.13, ease: "back.out(2)" }, 15.35);
+        tl.set("#c15-0", { color: "#FF7B1C" }, 15.35);
+        tl.set("#c15-0", { color: "#FFF7E8" }, 15.61);
+        tl.set("#c15-1", { color: "#FF7B1C" }, 15.61);
+        tl.set("#c15-1", { color: "#FFF7E8" }, 15.8);
+        tl.set("#c15-2", { color: "#FF7B1C" }, 15.8);
+        tl.set("#c15-2", { color: "#FFF7E8" }, 16.3);
+        tl.set("#c15-3", { color: "#FF7B1C" }, 16.3);
+        tl.fromTo("#c16 .cap-in", { y: 18, scale: 0.9, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.13, ease: "back.out(2)" }, 16.55);
+        tl.set("#c16-0", { color: "#FF7B1C" }, 16.55);
+        tl.set("#c16-0", { color: "#FFF7E8" }, 16.74);
+        tl.set("#c16-1", { color: "#FF7B1C" }, 16.74);
+        tl.set("#c16-1", { color: "#FFF7E8" }, 17.05);
+        tl.set("#c16-2", { color: "#FF7B1C" }, 17.05);
+        window.__timelines["captions"] = tl;
+      </script>
+    </template>
+  </body>
+</html>
