@@ -67,7 +67,7 @@
     {
       "clip": "dji0926-0021",
       "von": 29.8,
-      "bis": 33.93,
+      "bis": 32.839,
       "rolle": "hook",
       "zoom": "kenburns_in",
       "uebergang": "zoom",
@@ -82,13 +82,13 @@
       }
     },
     {
-      "clip": "dji0926-0021",
-      "von": 51.2,
-      "bis": 53.382,
-      "rolle": "beweis",
-      "zoom": "punch",
+      "clip": "foto-wald1",
+      "von": 0,
+      "bis": 3.273,
+      "rolle": "detail",
+      "zoom": "kenburns_in",
       "uebergang": "whip",
-      "ab_wort": 11
+      "ab_wort": 8
     },
     {
       "clip": "dji0926-0021",
@@ -110,9 +110,9 @@
       "tempo": "ramp"
     },
     {
-      "clip": "dji0926-0021",
-      "von": 63.2,
-      "bis": 64.655,
+      "clip": "dji0924-0004",
+      "von": 17.1,
+      "bis": 18.555,
       "rolle": "emotion",
       "zoom": "kenburns_out",
       "uebergang": "flash",
@@ -137,9 +137,9 @@
       }
     },
     {
-      "clip": "dji0926-0021",
-      "von": 53.0,
-      "bis": 54.455,
+      "clip": "foto-display",
+      "von": 0,
+      "bis": 1.455,
       "rolle": "beweis",
       "zoom": "punch",
       "uebergang": "whip",
@@ -156,17 +156,17 @@
     },
     {
       "clip": "dji0926-0021",
-      "von": 24.9,
-      "bis": 27.082,
+      "von": 53.0,
+      "bis": 55.182,
       "rolle": "emotion",
       "zoom": "kenburns_in",
       "uebergang": "cut",
       "ab_wort": 36
     },
     {
-      "clip": "dji0926-0021",
-      "von": 19.8,
-      "bis": 23.865,
+      "clip": "foto-abend-endkarte",
+      "von": 0,
+      "bis": 4.065,
       "rolle": "cta",
       "zoom": "kenburns_out",
       "ab_wort": 42

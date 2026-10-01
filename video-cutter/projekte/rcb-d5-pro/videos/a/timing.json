@@ -11,20 +11,20 @@
       "ab_wort": null,
       "wort": "(Start)",
       "start": 0,
-      "dauer": 4.333,
+      "dauer": 2.167,
       "von": 29.8,
-      "bis": 34.133,
+      "bis": 31.967,
       "tempo": 1
     },
     {
       "szene": 2,
-      "clip": "dji0926-0021",
-      "ab_wort": 11,
-      "wort": "Dann",
-      "start": 4.333333333333333,
-      "dauer": 1.7,
-      "von": 51.2,
-      "bis": 52.9,
+      "clip": "foto-wald1",
+      "ab_wort": 8,
+      "wort": "ersten",
+      "start": 2.1666666666666665,
+      "dauer": 3.867,
+      "von": 0,
+      "bis": 3.867,
       "tempo": 1
     },
     {
@@ -40,13 +40,13 @@
     },
     {
       "szene": 4,
-      "clip": "dji0926-0021",
+      "clip": "dji0924-0004",
       "ab_wort": 21,
       "wort": "der",
       "start": 8.566666666666666,
       "dauer": 2.267,
-      "von": 63.2,
-      "bis": 65.467,
+      "von": 17.1,
+      "bis": 19.367,
       "tempo": 1
     },
     {
@@ -62,13 +62,13 @@
     },
     {
       "szene": 6,
-      "clip": "dji0926-0021",
+      "clip": "foto-display",
       "ab_wort": 32,
       "wort": "Und",
       "start": 14.366666666666667,
       "dauer": 2.433,
-      "von": 53,
-      "bis": 55.433,
+      "von": 0,
+      "bis": 2.433,
       "tempo": 1
     },
     {
@@ -78,19 +78,19 @@
       "wort": "Kein",
       "start": 16.8,
       "dauer": 3.267,
-      "von": 24.9,
-      "bis": 28.167,
+      "von": 53,
+      "bis": 56.267,
       "tempo": 1
     },
     {
       "szene": 8,
-      "clip": "dji0926-0021",
+      "clip": "foto-abend-endkarte",
       "ab_wort": 42,
       "wort": "Jetzt",
       "start": 20.066666666666666,
       "dauer": 3.767,
-      "von": 19.8,
-      "bis": 23.567,
+      "von": 0,
+      "bis": 3.767,
       "tempo": 1
     }
   ],

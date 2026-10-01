@@ -204,6 +204,18 @@
       "datei": "stills/foto-karton.mp4",
       "bytes": 632326,
       "quelle": "Foto von Vatto (Standbild-Clip, 6 s)"
+    },
+    {
+      "id": "foto-display-nacht",
+      "datei": "stills/foto-display-nacht.mp4",
+      "bytes": 916171,
+      "quelle": "Foto IMG_7963 von Vatto (Standbild-Clip, 6 s)"
+    },
+    {
+      "id": "foto-abend-endkarte",
+      "datei": "stills/foto-abend-endkarte.mp4",
+      "bytes": 616118,
+      "quelle": "Foto IMG_7960 als Endkarte (verkleinert, weichgezeichneter Rand)"
     }
   ]
 }

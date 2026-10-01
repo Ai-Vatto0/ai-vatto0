@@ -37,16 +37,16 @@ const LOOKS = {
   gelb: { akzent: "#FFD400", text: "#FFFFFF", kontur: "#000000", pille: "transparent", headlineGross: 104, captionPx: 70, flash: "#FFFFFF" },
   nacht: { akzent: "#4DD8FF", text: "#FFFFFF", kontur: "rgba(0,0,0,0)", pille: "rgba(8,12,22,.78)", headlineGross: 92, captionPx: 62, flash: "#CFF4FF" },
   // RCB: Graffiti-Look nach memory/regeln/text-einblendungen.md, Akzent Metallic-Orange aus dem Produkt
-  rcb: { akzent: "#FF7B1C", text: "#FFF7E8", kontur: "#140F05", pille: "transparent", headlineGross: 112, captionPx: 64, flash: "#FFE2C8", marker: true },
-  rcb_tag: { akzent: "#FF7B1C", text: "#FFF7E8", kontur: "#140F05", pille: "rgba(20,15,5,.82)", headlineGross: 100, captionPx: 60, flash: "#FFFFFF", marker: true, tag: true, tagBg: "#FF7B1C", tagFg: "#140F05", em: "#FFF7E8" },
-  rcb_dunkel: { akzent: "#FF7B1C", text: "#FFF7E8", kontur: "#140F05", pille: "rgba(20,15,5,.82)", headlineGross: 100, captionPx: 60, flash: "#FFE2C8", marker: true, tag: true, tagBg: "rgba(20,15,5,.86)", tagFg: "#FFF7E8", em: "#FF7B1C" },
+  rcb: { akzent: "#FF7B1C", text: "#FFF7E8", kontur: "#140F05", pille: "transparent", headlineGross: 150, captionPx: 78, flash: "#FFE2C8", marker: true },
+  rcb_tag: { akzent: "#FF7B1C", text: "#FFF7E8", kontur: "#140F05", pille: "rgba(20,15,5,.82)", headlineGross: 128, captionPx: 72, flash: "#FFFFFF", marker: true, tag: true, tagBg: "#FF7B1C", tagFg: "#140F05", em: "#FFF7E8" },
+  rcb_dunkel: { akzent: "#FF7B1C", text: "#FFF7E8", kontur: "#140F05", pille: "rgba(20,15,5,.82)", headlineGross: 128, captionPx: 72, flash: "#FFE2C8", marker: true, tag: true, tagBg: "rgba(20,15,5,.86)", tagFg: "#FFF7E8", em: "#FF7B1C" },
 };
 spec.look ??= "nacht"; // Standard-Look (Vatto 01.10.: Farben von Video B passen besser)
 const L = LOOKS[spec.look] || fail(`Look „${spec.look}“ unbekannt (${Object.keys(LOOKS).join(", ")})`);
 // oben: Untertitel oben, Headlines im unteren Drittel · unten: Headlines oben, Untertitel unten (je Szene überschreibbar: text.top)
 // Marker-Looks (RCB): Produkt sitzt im unteren Bilddrittel → alle Texte in die obere Hälfte (text-einblendungen.md: Text verdeckt nie das Produkt)
 const TEXT_Y = L.marker
-  ? (spec.textposition === "oben" ? { caption: 230, headline: 440 } : { caption: 640, headline: 250 })
+  ? (spec.textposition === "oben" ? { caption: 230, headline: 500 } : { caption: 660, headline: 250 })
   : spec.textposition === "oben" ? { caption: 230, headline: 1150 } : { caption: 1290, headline: 250 };
 
 // ---- Zeitplan der Szenen (Übergänge überlappen nicht – harte Grenzen, Effekt liegt auf den Wrappern) ----
@@ -134,7 +134,7 @@ bloecke.forEach((b, k) => {
   const ende = Math.min(e, ctaStart);
   const id = `c${k + 1}`;
   cm += `
-        <div id="${id}" class="clip cap" data-start="${s}" data-duration="${r3(ende - s)}" data-track-index="0"><p class="cap-in"${(() => { const n = Math.max(...b.map((w) => w.text.length)); const f = Math.floor(780 / (n * 0.64)); return f < L.captionPx ? ` style="font-size:${f}px"` : ""; })()}>${b.map((w, j) => `<span id="${id}-${j}" class="w">${esc(w.text.replace(/[,.]$/, ""))}</span>`).join(" ")}</p></div>`;
+        <div id="${id}" class="clip cap" data-start="${s}" data-duration="${r3(ende - s)}" data-track-index="0"><p class="cap-in"${(() => { const n = Math.max(...b.map((w) => w.text.length)); const f = Math.floor(780 / (n * (L.marker ? 0.74 : 0.64))); return f < L.captionPx ? ` style="font-size:${f}px"` : ""; })()}>${b.map((w, j) => `<span id="${id}-${j}" class="w">${esc(w.text.replace(/[,.]$/, ""))}</span>`).join(" ")}</p></div>`;
   cj += `\n        tl.fromTo("#${id} .cap-in", { y: 18, scale: 0.9, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.13, ease: "back.out(2)" }, ${s});`;
   b.forEach((w, j) => {
     cj += `\n        tl.set("#${id}-${j}", { color: "${L.akzent}" }, ${r3(Math.max(s, VO_START + w.s))});`;
@@ -153,7 +153,7 @@ szenen.forEach((s) => {
   const worte = s.text.inhalt.split(/\s+/);
   // Schriftgröße so wählen, dass das längste Wort (nicht umbrechbar) sicher in die Safe Zone passt (≈0,66 em je Zeichen, Marker breiter)
   const laengstes = Math.max(...worte.map((x) => x.length));
-  const fit = Math.floor(780 / (laengstes * (L.marker ? 0.72 : 0.62)));
+  const fit = Math.floor((L.marker ? 840 : 780) / (laengstes * (L.marker ? 0.74 : 0.62)));
   const groesse = Math.min(L.headlineGross, fit);
   const betont = new Set((s.text.betonung || []).map((x) => x.toLowerCase()));
   hm += `
@@ -170,18 +170,19 @@ if (spec.cta.zusatz) hj += `\n        tl.fromTo("#cta .cta-zu", { y: 20, opacity
 hj += `\n        tl.fromTo("#cta .pfeil path", { strokeDashoffset: 260 }, { strokeDashoffset: 0, duration: 0.45, ease: "power2.out", stagger: 0.12 }, ${r3(cta.start + 0.5)});`;
 
 const FONT = `@font-face { font-family: "Poppins"; src: url("assets/fonts/Poppins-Bold.ttf") format("truetype"); font-weight: 700; } @font-face { font-family: "Marker"; src: url("assets/fonts/PermanentMarker.ttf") format("truetype"); font-weight: 400; }`;
-const stroke = spec.look === "gelb" || (L.marker && !L.tag) ? `-webkit-text-stroke: ${L.marker ? 10 : 12}px ${L.kontur}; paint-order: stroke fill;` : "";
+const stroke = spec.look === "gelb" || (L.marker && !L.tag) ? `-webkit-text-stroke: ${L.marker ? 12 : 12}px ${L.kontur}; paint-order: stroke fill;` : "";
+const CAP_FONT = L.marker ? `font-family: "Marker", sans-serif; font-weight: 400; letter-spacing: .01em;${L.tag ? "" : ` text-shadow: 3px 3px 0 ${L.kontur}, 6px 6px 0 rgba(12,9,3,.6) !important;`}` : "";
 // Headline/CTA-Stil je Look: Marker = Permanent Marker, harter Versatzschatten, −2° (text-einblendungen.md); tag = orange Fläche, dunkle Schrift
 const HL_STIL = L.marker
   ? (L.tag ? `font-family: "Marker", sans-serif; font-weight: 400; color: ${L.tagFg} !important; background: ${L.tagBg}; padding: 8px 30px 14px; border-radius: 18px; transform: rotate(-2deg); box-shadow: 0 10px 0 rgba(12,9,3,.55);`
-           : `font-family: "Marker", sans-serif; font-weight: 400; -webkit-text-stroke: 12px ${L.kontur}; paint-order: stroke fill; text-shadow: 0 10px 0 rgba(12,9,3,.55); transform: rotate(-2deg);`)
+           : `font-family: "Marker", sans-serif; font-weight: 400; -webkit-text-stroke: 16px ${L.kontur}; paint-order: stroke fill; text-shadow: 4px 4px 0 ${L.kontur}, 8px 8px 0 #7A3200, 12px 12px 0 #7A3200, 16px 16px 0 rgba(12,9,3,.7); transform: rotate(-3deg); letter-spacing: .01em;`)
   : spec.look === "gelb" ? "-webkit-text-stroke: 14px #000; paint-order: stroke fill;" : "background: rgba(8,12,22,.78); padding: 10px 26px 14px; border-radius: 28px; text-shadow: 0 0 22px rgba(77,216,255,.45);";
 const EM_FARBE = L.tag ? L.em : L.akzent;
 const CSS = `
         #root { position: absolute; inset: 0; font-family: "Poppins", sans-serif; font-weight: 700; }
         /* Safe Zone 1080x1920: oben 150, rechts 140, unten 400, links 60 */
         .cap { position: absolute; left: 60px; right: 140px; top: ${TEXT_Y.caption}px; display: flex; justify-content: center; }
-        .cap-in { max-width: 860px; text-align: center; font-size: ${L.captionPx}px; line-height: 1.12; color: ${L.text}; ${stroke} background: ${L.pille}; padding: ${spec.look === "nacht" || L.tag ? "14px 30px" : "0"}; border-radius: 26px; text-shadow: 0 6px 18px rgba(0,0,0,.45); }
+        .cap-in { max-width: 860px; text-align: center; font-size: ${L.captionPx}px; line-height: 1.12; color: ${L.text}; ${stroke} background: ${L.pille}; padding: ${spec.look === "nacht" || L.tag ? "14px 30px" : "0"}; border-radius: 26px; text-shadow: 0 6px 18px rgba(0,0,0,.45); ${CAP_FONT} }
         .headline { position: absolute; left: 60px; right: 140px; top: ${TEXT_Y.headline}px; display: flex; justify-content: center; }
         .hl-in { max-width: 860px; text-align: center; font-size: ${L.headlineGross}px; line-height: 1.04; color: ${L.text}; ${HL_STIL} }
         .hw { display: inline-block; }

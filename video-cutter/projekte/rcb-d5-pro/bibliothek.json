@@ -1121,6 +1121,70 @@
         "qualitaet": "gut",
         "risiko": "Fremdmarke WILD MAN auf der Lenkertasche (Zubehör, nicht im Lieferumfang) wo sichtbar"
       }
+    },
+    "foto-display-nacht": {
+      "datei": "stills/foto-display-nacht.mp4",
+      "dauer_s": 6,
+      "breite": 1216,
+      "hoehe": 2160,
+      "orientierung": "hochkant",
+      "typ": "foto",
+      "fps": 30,
+      "variable_bildrate": false,
+      "hdr": false,
+      "ton": false,
+      "zeitlupe_moeglich": "nein",
+      "tags": {
+        "beschreibung": "Foto Display bei Nacht (Vattos Roller, IMG_7963): Tacho-Anzeige, RCB-Schriftzug",
+        "rolle": [
+          "detail",
+          "beweis"
+        ],
+        "person": "keine",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [
+          [
+            0,
+            6
+          ]
+        ],
+        "bewegung": "ruhig (nur Zoom)",
+        "qualitaet": "gut",
+        "risiko": "Display zeigt mph und Blinker-Pfeile → nicht unter km/h-/ABE-Aussagen verwenden"
+      }
+    },
+    "foto-abend-endkarte": {
+      "datei": "stills/foto-abend-endkarte.mp4",
+      "dauer_s": 6,
+      "breite": 1216,
+      "hoehe": 2160,
+      "orientierung": "hochkant",
+      "typ": "foto",
+      "fps": 30,
+      "variable_bildrate": false,
+      "hdr": false,
+      "ton": false,
+      "zeitlupe_moeglich": "nein",
+      "tags": {
+        "beschreibung": "Endkarte: Foto IMG_7960 verkleinert unten, Rand weichgezeichnet – oben Platz für CTA",
+        "rolle": [
+          "detail",
+          "beweis"
+        ],
+        "person": "keine",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [
+          [
+            0,
+            6
+          ]
+        ],
+        "bewegung": "ruhig (nur Zoom)",
+        "qualitaet": "gut",
+        "risiko": "Fremdmarke WILD MAN auf der Lenkertasche (Zubehör, nicht im Lieferumfang) wo sichtbar"
+      }
     }
   }
 }
