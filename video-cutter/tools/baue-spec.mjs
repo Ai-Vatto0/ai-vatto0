@@ -151,9 +151,13 @@ szenen.forEach((s) => {
   if (e - a < 0.6) return;
   const id = `h${s.i + 1}`;
   const worte = s.text.inhalt.split(/\s+/);
+  // Schriftgröße so wählen, dass das längste Wort (nicht umbrechbar) sicher in die Safe Zone passt (≈0,66 em je Zeichen, Marker breiter)
+  const laengstes = Math.max(...worte.map((x) => x.length));
+  const fit = Math.floor(780 / (laengstes * (L.marker ? 0.72 : 0.62)));
+  const groesse = Math.min(L.headlineGross, fit);
   const betont = new Set((s.text.betonung || []).map((x) => x.toLowerCase()));
   hm += `
-        <div id="${id}" class="clip headline" data-start="${a}" data-duration="${r3(e - a)}" data-track-index="1"${s.text.top ? ` style="top:${s.text.top}px"` : ""}><div class="hl-in">${worte.map((w) => `<span class="hw${betont.has(w.toLowerCase()) ? " em" : ""}">${esc(w)}</span>`).join(" ")}</div></div>`;
+        <div id="${id}" class="clip headline" data-start="${a}" data-duration="${r3(e - a)}" data-track-index="1"${s.text.top ? ` style="top:${s.text.top}px"` : ""}><div class="hl-in"${groesse < L.headlineGross ? ` style="font-size:${groesse}px"` : ""}>${worte.map((w) => `<span class="hw${betont.has(w.toLowerCase()) ? " em" : ""}">${esc(w)}</span>`).join(" ")}</div></div>`;
   hj += `\n        tl.fromTo("#${id} .hl-in", { opacity: 0 }, { opacity: 1, duration: 0.06 }, ${a});`;
   hj += `\n        tl.fromTo("#${id} .hw", { yPercent: 80, opacity: 0, rotation: -4 }, { yPercent: 0, opacity: 1, rotation: 0, duration: 0.32, ease: "back.out(2.2)", stagger: 0.06 }, ${a});`;
   hj += `\n        tl.to("#${id} .hl-in", { opacity: 0, y: -20, duration: 0.18, ease: "power2.in" }, ${r3(e - 0.18)});`;
