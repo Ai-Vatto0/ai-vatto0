@@ -1,0 +1,243 @@
+{
+  "hook_effekt": true,
+  "ohne_vo": true,
+  "titel": "Text-Montage ohne Sprecher (Musik von Vatto)",
+  "idee": {
+    "winkel": "alltag",
+    "zielgruppe": "Scroller, die ohne Ton schauen",
+    "hook": "Fahrt von hinten in den Wald + großer Graffiti-Text „KEIN PLASTIKBOMBER.“",
+    "emotion": "Lust aufs Fahren"
+  },
+  "format": "Text-only-Montage, schneller Takt, keine Stimme – Vatto legt Musik drauf",
+  "look": "rcb",
+  "textposition": "unten",
+  "stimme": null,
+  "logo": {
+    "datei": "assets/rcb-logo-karte.png",
+    "intro": 0,
+    "ende": false
+  },
+  "voiceover": [
+    {
+      "satz": "KEIN PLASTIKBOMBER.",
+      "belege": [
+        "meinung"
+      ],
+      "dauer": 2.0
+    },
+    {
+      "satz": "FEDERUNG VORNE + HINTEN",
+      "belege": [
+        "federung"
+      ],
+      "dauer": 2.0
+    },
+    {
+      "satz": "500 W MOTOR",
+      "belege": [
+        "motor_500w"
+      ],
+      "dauer": 2.0
+    },
+    {
+      "satz": "BIS 150 KG",
+      "belege": [
+        "max_150kg"
+      ],
+      "dauer": 2.0
+    },
+    {
+      "satz": "10 ZOLL GEL",
+      "belege": [
+        "gelreifen"
+      ],
+      "dauer": 2.0,
+      "bedingung_ok": true
+    },
+    {
+      "satz": "3 FAHRSTUFEN",
+      "belege": [
+        "drei_gaenge"
+      ],
+      "dauer": 2.0
+    },
+    {
+      "satz": "ABE · 20 KM/H",
+      "belege": [
+        "abe_20kmh"
+      ],
+      "dauer": 2.0
+    },
+    {
+      "satz": "WALD. WIESE. WEG.",
+      "belege": [
+        "meinung"
+      ],
+      "dauer": 2.0
+    },
+    {
+      "satz": "JETZT IM TIKTOK SHOP",
+      "belege": [],
+      "dauer": 1.0
+    }
+  ],
+  "szenen": [
+    {
+      "clip": "forest_behind",
+      "von": 0.3,
+      "bis": 1.157,
+      "rolle": "hook",
+      "zoom": "kenburns_in",
+      "uebergang": "flash",
+      "text": {
+        "inhalt": "KEIN PLASTIKBOMBER.",
+        "betonung": [
+          "PLASTIKBOMBER."
+        ],
+        "belege": [
+          "meinung"
+        ]
+      }
+    },
+    {
+      "clip": "foto-federung",
+      "von": 0,
+      "bis": 1.455,
+      "rolle": "beweis",
+      "zoom": "punch",
+      "uebergang": "whip",
+      "ab_wort": 2,
+      "text": {
+        "inhalt": "FEDERUNG VORNE + HINTEN",
+        "betonung": [
+          "FEDERUNG"
+        ],
+        "belege": [
+          "federung"
+        ]
+      }
+    },
+    {
+      "clip": "dji0926-0021",
+      "von": 59.0,
+      "bis": 60.091,
+      "rolle": "emotion",
+      "zoom": "kenburns_in",
+      "uebergang": "zoom",
+      "ab_wort": 6,
+      "text": {
+        "inhalt": "500 W MOTOR",
+        "betonung": [
+          "500"
+        ],
+        "belege": [
+          "motor_500w"
+        ]
+      }
+    },
+    {
+      "clip": "foto-front",
+      "von": 0,
+      "bis": 1.091,
+      "rolle": "beweis",
+      "zoom": "punch",
+      "uebergang": "flash",
+      "ab_wort": 9,
+      "text": {
+        "inhalt": "BIS 150 KG",
+        "betonung": [
+          "150"
+        ],
+        "belege": [
+          "max_150kg"
+        ]
+      }
+    },
+    {
+      "clip": "dji0925-0012",
+      "von": 66.0,
+      "bis": 67.091,
+      "rolle": "emotion",
+      "zoom": "kenburns_out",
+      "uebergang": "whip",
+      "ab_wort": 12,
+      "text": {
+        "inhalt": "10 ZOLL GEL",
+        "betonung": [
+          "GEL"
+        ],
+        "belege": [
+          "gelreifen"
+        ],
+        "bedingung_ok": true
+      }
+    },
+    {
+      "clip": "foto-display",
+      "von": 0,
+      "bis": 0.727,
+      "rolle": "detail",
+      "zoom": "punch",
+      "uebergang": "zoom",
+      "ab_wort": 15,
+      "text": {
+        "inhalt": "3 FAHRSTUFEN",
+        "betonung": [
+          "3"
+        ],
+        "belege": [
+          "drei_gaenge"
+        ]
+      }
+    },
+    {
+      "clip": "forest6",
+      "von": 4.5,
+      "bis": 5.955,
+      "rolle": "beweis",
+      "zoom": "kenburns_in",
+      "uebergang": "flash",
+      "ab_wort": 17,
+      "text": {
+        "inhalt": "ABE · 20 KM/H",
+        "betonung": [
+          "ABE"
+        ],
+        "belege": [
+          "abe_20kmh"
+        ]
+      }
+    },
+    {
+      "clip": "dji0926-0021",
+      "von": 25.0,
+      "bis": 26.091,
+      "rolle": "emotion",
+      "zoom": "kenburns_out",
+      "uebergang": "whip",
+      "ab_wort": 21,
+      "text": {
+        "inhalt": "WALD. WIESE. WEG.",
+        "betonung": [
+          "WALD."
+        ],
+        "belege": [
+          "meinung"
+        ]
+      }
+    },
+    {
+      "clip": "foto-front-endkarte",
+      "von": 0,
+      "bis": 2.975,
+      "rolle": "cta",
+      "zoom": "kenburns_out",
+      "ab_wort": 24
+    }
+  ],
+  "cta": {
+    "text": "Jetzt im TikTok Shop",
+    "zusatz": "RCB D5 Pro · mit ABE",
+    "top": 330
+  }
+}

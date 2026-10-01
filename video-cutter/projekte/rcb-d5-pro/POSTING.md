@@ -11,3 +11,25 @@ Werbung · Kein Spielzeug, Bro 🛴🔥 Du willst einen E-Scooter, der nicht bei
 ```
 
 Erster Kommentar: `Gelber Warenkorb unten links 👇 Ehrliche Frage: Was fahrt ihr gerade – Plastik oder Metall? 😄`
+
+## B – Plastikbomber? Dieser nicht. (final-b, 27 s, Stimme Patrick)
+
+Werbung · Plastikbomber? Dieser nicht. 💪🛴
+
+Viele E-Scooter da draußen sind Plastikbomber – der RCB ist anders gebaut.
+
+Rahmen und Gabel aus Metall, massiv gebaut, vorne doppelt gefedert, hinten auch.
+
+Trägt bis 150 Kilo – auch für kräftige Fahrer.
+
+Die 10-Zoll-Gelreifen dichten kleine Löcher bis 3 Millimeter selbst ab.
+
+Einmal draufgestanden, und Plastik ist für dich erledigt.
+
+Jetzt im TikTok Shop – gelber Warenkorb unten links.
+
+Originalvideo, KI-generiertes Voiceover.
+
+#RCB #escooter #elektroroller #tiktokshop #AIGC
+
+Erster Kommentar: `Gelber Warenkorb unten links 👇 Wie viel wiegt ihr – würde euer aktueller Roller das aushalten? 😄`

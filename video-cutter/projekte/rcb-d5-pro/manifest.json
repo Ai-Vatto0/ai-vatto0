@@ -216,6 +216,51 @@
       "datei": "stills/foto-abend-endkarte.mp4",
       "bytes": 616118,
       "quelle": "Foto IMG_7960 als Endkarte (verkleinert, weichgezeichneter Rand)"
+    },
+    {
+      "id": "forest6",
+      "datei": "neo2/forest6.MP4",
+      "bytes": 34657968,
+      "neo2_id": "forest6",
+      "quelle": "Neo-2-Drive-Ordner (Vatto), per Datei-ID kopiert"
+    },
+    {
+      "id": "forest7",
+      "datei": "neo2/forest7.MP4",
+      "bytes": 69973968,
+      "neo2_id": "forest7",
+      "quelle": "Neo-2-Drive-Ordner (Vatto), per Datei-ID kopiert"
+    },
+    {
+      "id": "forest_behind",
+      "datei": "neo2/forest_behind.MP4",
+      "bytes": 43828996,
+      "neo2_id": "forest_behind",
+      "quelle": "Neo-2-Drive-Ordner (Vatto), per Datei-ID kopiert"
+    },
+    {
+      "id": "foto-wald1-endkarte",
+      "datei": "stills/foto-wald1-endkarte.mp4",
+      "bytes": 762542,
+      "quelle": "Foto IMG_8246 als Endkarte"
+    },
+    {
+      "id": "foto-wald2-endkarte",
+      "datei": "stills/foto-wald2-endkarte.mp4",
+      "bytes": 719710,
+      "quelle": "Foto IMG_8247 als Endkarte"
+    },
+    {
+      "id": "foto-front-endkarte",
+      "datei": "stills/foto-front-endkarte.mp4",
+      "bytes": 569002,
+      "quelle": "Foto IMG_7944 als Endkarte"
     }
-  ]
+  ],
+  "gesperrt": {
+    "vert_bridge, vert_bridge2, vert_bridge3, vert_grass1, vert_grass2": "FREMDER Roller (HIDIS u. a.), nicht der RCB → nie in RCB-Werbung (Verstoß-Risiko inkonsistente Produktwerbung)",
+    "dji0924-0001-seg1..4, dji0924-0003, dji0924-0004, ciwl3941": "Vatto 01.10.: Landstraße/von oben nicht mehr verwenden",
+    "dji0925-0012 0–12 s": "Vatto: Brücken-Nahaufnahme nicht mehr",
+    "foto-display-nacht": "zeigt mph + Blinker-Symbole"
+  }
 }

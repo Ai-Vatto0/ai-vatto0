@@ -1185,6 +1185,224 @@
         "qualitaet": "gut",
         "risiko": "Fremdmarke WILD MAN auf der Lenkertasche (Zubehör, nicht im Lieferumfang) wo sichtbar"
       }
+    },
+    "forest6": {
+      "datei": "roh/neo2/forest6.MP4",
+      "drive_id": "1QTHKzsf8jgpena3vFoxXI_8I0erJseer",
+      "sha256": "f234da2e8c2028de795a300d3ae809d96e6d42dae8f7ee07bc1b491170330f9f",
+      "dauer_s": 6.94,
+      "breite": 3840,
+      "hoehe": 2160,
+      "orientierung": "quer",
+      "typ": "quer",
+      "fps": 29.97003,
+      "variable_bildrate": false,
+      "hdr": false,
+      "farbe": "bt709",
+      "ton": false,
+      "zeitlupe_moeglich": "nein (< 50 fps)",
+      "kontaktbogen": "kontakt/forest6.jpg",
+      "tags": {
+        "beschreibung": "Ruhiges Frontal-Tracking: Fahrer mittig auf Waldweg, Drohne fliegt gleichmäßig rückwärts vor ihm.",
+        "rolle": [
+          "beweis",
+          "emotion"
+        ],
+        "drohne_sichtbar": "nein",
+        "person": "mittel",
+        "gesicht_erkennbar": true,
+        "bildmitte": 0.5,
+        "beste_sekunden": [
+          [
+            1.2,
+            4.6
+          ]
+        ],
+        "bewegung": "ruhig",
+        "qualitaet": "gut",
+        "risiko": null,
+        "quelle": "neo2-sichtung forest6"
+      }
+    },
+    "forest7": {
+      "datei": "roh/neo2/forest7.MP4",
+      "drive_id": "1n1jhugZomeAh-pcRXpSAfTmy8s-BZUNh",
+      "sha256": "f5168f7cd292cc073d87dda82ad5df9f8bf490a7aad7a4861cc687f6c615bde0",
+      "dauer_s": 14.014,
+      "breite": 3840,
+      "hoehe": 2160,
+      "orientierung": "quer",
+      "typ": "quer",
+      "fps": 29.97003,
+      "variable_bildrate": false,
+      "hdr": false,
+      "farbe": "bt709",
+      "ton": false,
+      "zeitlupe_moeglich": "nein (< 50 fps)",
+      "kontaktbogen": "kontakt/forest7.jpg",
+      "tags": {
+        "beschreibung": "Längeres Frontal-Tracking auf grünem Waldweg, Fahrer leicht rechts der Mitte; bei ca. 10 s stehen zwei Spaziergänger links am Wegrand.",
+        "rolle": [
+          "beweis",
+          "emotion"
+        ],
+        "drohne_sichtbar": "nein",
+        "person": "mittel",
+        "gesicht_erkennbar": true,
+        "bildmitte": 0.56,
+        "beste_sekunden": [
+          [
+            3,
+            7
+          ],
+          [
+            0,
+            2.5
+          ]
+        ],
+        "bewegung": "mittel",
+        "qualitaet": "gut",
+        "risiko": "fremde Personen (zwei Spaziergänger links, ca. 9,5–11 s, im 9:16-Ausschnitt meist außerhalb; winzige Personen im Hintergrund 11–13 s)",
+        "quelle": "neo2-sichtung forest7"
+      }
+    },
+    "forest_behind": {
+      "datei": "roh/neo2/forest_behind.MP4",
+      "drive_id": "1j1Drawy8q8OJnD5Zto07qVUkBMKNGJrA",
+      "sha256": "2b492c8c0b2c368ca4171916372318cc96e07baba81151a2f54d58c5bda37dc7",
+      "dauer_s": 8.775,
+      "breite": 3840,
+      "hoehe": 2160,
+      "orientierung": "quer",
+      "typ": "quer",
+      "fps": 29.97003,
+      "variable_bildrate": false,
+      "hdr": false,
+      "farbe": "bt709",
+      "ton": false,
+      "zeitlupe_moeglich": "nein (< 50 fps)",
+      "kontaktbogen": "kontakt/forest_behind.jpg",
+      "tags": {
+        "beschreibung": "Drohne folgt dem Fahrer im gelben Shirt von hinten über einen laubbedeckten Waldweg.",
+        "rolle": [
+          "beweis",
+          "uebergang"
+        ],
+        "drohne_sichtbar": "nein",
+        "person": "mittel",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.51,
+        "beste_sekunden": [
+          [
+            4.4,
+            7.7
+          ],
+          [
+            0,
+            2.2
+          ]
+        ],
+        "bewegung": "mittel",
+        "qualitaet": "gut",
+        "risiko": null,
+        "quelle": "neo2-sichtung forest_behind"
+      }
+    },
+    "foto-wald1-endkarte": {
+      "datei": "stills/foto-wald1-endkarte.mp4",
+      "dauer_s": 6,
+      "breite": 1216,
+      "hoehe": 2160,
+      "orientierung": "hochkant",
+      "typ": "foto",
+      "fps": 30,
+      "variable_bildrate": false,
+      "hdr": false,
+      "ton": false,
+      "zeitlupe_moeglich": "nein",
+      "tags": {
+        "beschreibung": "Endkarte: Foto IMG_8246 verkleinert unten, Rand weichgezeichnet – oben Platz für CTA",
+        "rolle": [
+          "detail",
+          "beweis"
+        ],
+        "person": "keine",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [
+          [
+            0,
+            6
+          ]
+        ],
+        "bewegung": "ruhig (nur Zoom)",
+        "qualitaet": "gut",
+        "risiko": "Fremdmarke WILD MAN auf der Lenkertasche (Zubehör, nicht im Lieferumfang) wo sichtbar"
+      }
+    },
+    "foto-wald2-endkarte": {
+      "datei": "stills/foto-wald2-endkarte.mp4",
+      "dauer_s": 6,
+      "breite": 1216,
+      "hoehe": 2160,
+      "orientierung": "hochkant",
+      "typ": "foto",
+      "fps": 30,
+      "variable_bildrate": false,
+      "hdr": false,
+      "ton": false,
+      "zeitlupe_moeglich": "nein",
+      "tags": {
+        "beschreibung": "Endkarte: Foto IMG_8247 verkleinert unten, Rand weichgezeichnet – oben Platz für CTA",
+        "rolle": [
+          "detail",
+          "beweis"
+        ],
+        "person": "keine",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [
+          [
+            0,
+            6
+          ]
+        ],
+        "bewegung": "ruhig (nur Zoom)",
+        "qualitaet": "gut",
+        "risiko": "Fremdmarke WILD MAN auf der Lenkertasche (Zubehör, nicht im Lieferumfang) wo sichtbar"
+      }
+    },
+    "foto-front-endkarte": {
+      "datei": "stills/foto-front-endkarte.mp4",
+      "dauer_s": 6,
+      "breite": 1216,
+      "hoehe": 2160,
+      "orientierung": "hochkant",
+      "typ": "foto",
+      "fps": 30,
+      "variable_bildrate": false,
+      "hdr": false,
+      "ton": false,
+      "zeitlupe_moeglich": "nein",
+      "tags": {
+        "beschreibung": "Endkarte: Foto IMG_7944 verkleinert unten, Rand weichgezeichnet – oben Platz für CTA",
+        "rolle": [
+          "detail",
+          "beweis"
+        ],
+        "person": "keine",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [
+          [
+            0,
+            6
+          ]
+        ],
+        "bewegung": "ruhig (nur Zoom)",
+        "qualitaet": "gut",
+        "risiko": "Fremdmarke WILD MAN auf der Lenkertasche (Zubehör, nicht im Lieferumfang) wo sichtbar"
+      }
     }
   }
 }

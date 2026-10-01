@@ -42,11 +42,14 @@ const LOOKS = {
   rcb_dunkel: { akzent: "#FF7B1C", text: "#FFF7E8", kontur: "#140F05", pille: "rgba(20,15,5,.82)", headlineGross: 128, captionPx: 72, flash: "#FFE2C8", marker: true, tag: true, tagBg: "rgba(20,15,5,.86)", tagFg: "#FFF7E8", em: "#FF7B1C" },
 };
 spec.look ??= "nacht"; // Standard-Look (Vatto 01.10.: Farben von Video B passen besser)
-const L = LOOKS[spec.look] || fail(`Look „${spec.look}“ unbekannt (${Object.keys(LOOKS).join(", ")})`);
+const L0 = LOOKS[spec.look] || fail(`Look „${spec.look}“ unbekannt (${Object.keys(LOOKS).join(", ")})`);
+// spec.schrift_alt: Schriftstand vor dem 01.10.-Abend (kleiner, Untertitel Poppins) – für bereits abgenommene Vorschauen (RCB b)
+const ALT = Boolean(spec.schrift_alt);
+const L = ALT ? { ...L0, headlineGross: L0.tag ? 100 : 112, captionPx: L0.tag ? 60 : 64 } : L0;
 // oben: Untertitel oben, Headlines im unteren Drittel · unten: Headlines oben, Untertitel unten (je Szene überschreibbar: text.top)
 // Marker-Looks (RCB): Produkt sitzt im unteren Bilddrittel → alle Texte in die obere Hälfte (text-einblendungen.md: Text verdeckt nie das Produkt)
 const TEXT_Y = L.marker
-  ? (spec.textposition === "oben" ? { caption: 230, headline: 500 } : { caption: 660, headline: 250 })
+  ? (spec.textposition === "oben" ? { caption: 230, headline: ALT ? 440 : 500 } : { caption: ALT ? 640 : 660, headline: 250 })
   : spec.textposition === "oben" ? { caption: 230, headline: 1150 } : { caption: 1290, headline: 250 };
 
 // ---- Zeitplan der Szenen (Übergänge überlappen nicht – harte Grenzen, Effekt liegt auf den Wrappern) ----
@@ -73,6 +76,12 @@ const MIX = 1.26; // gemessener HyperFrames-0.8.77-Mix-Ausgleich (siehe baue.mjs
 let html = "", js = "";
 const flashes = [];
 
+// Pattern-Interrupt-Hook (spec.hook_effekt): Weißblitz ab Bild 0, harter Punch-In 1,35→1 auf Szene 1
+if (spec.hook_effekt) {
+  html += `\n      <div id="hookflash" class="clip flash" data-start="0" data-duration="0.4" data-track-index="59"></div>`;
+  js += `\n      tl.fromTo("#hookflash", { opacity: 0.95 }, { opacity: 0, duration: 0.32, ease: "power2.out" }, 0);`;
+  js += `\n      tl.fromTo("#sz1 .tr", { scale: 1.35 }, { scale: 1, duration: 0.38, ease: "power4.out" }, 0);`;
+}
 // Szenen: Clip-Wrapper (timed) → .inner (Zoom/Whip) → video
 szenen.forEach((s) => {
   const id = `sz${s.i + 1}`;
@@ -106,7 +115,7 @@ szenen.forEach((s) => {
       js += `\n      tl.fromTo("#${id} .tr", { scale: 1, filter: "blur(0px)" }, { scale: 1.22, filter: "blur(8px)", duration: 0.14, ease: "power2.in" }, ${r3(cut - 0.14)});`;
       js += `\n      tl.fromTo("#${nid} .tr", { scale: 1.3, filter: "blur(10px)" }, { scale: 1, filter: "blur(0px)", duration: 0.24, ease: "power3.out", immediateRender: false }, ${r3(cut)});`;
     }
-    html += `
+    if (!spec.ohne_vo) html += `
       <audio id="wumms-${s.i + 1}" src="assets/wumms.wav" data-start="${r3(cut - 0.02)}" data-duration="0.18" data-track-index="${40 + s.i}" data-volume="1"></audio>`;
   }
   if (s.produktton) {
@@ -115,8 +124,8 @@ szenen.forEach((s) => {
   }
 });
 html += `
-      <audio id="boom" src="assets/boom.wav" data-start="0" data-duration="0.9" data-track-index="39" data-volume="1"></audio>
-      <audio id="vo" src="assets/vo.wav" data-start="${VO_START}" data-duration="${r3(voEnde - VO_START + 0.3)}" data-media-start="0" data-track-index="10" data-volume="${MIX}"></audio>`;
+      <audio id="boom" src="assets/boom.wav" data-start="0" data-duration="0.9" data-track-index="39" data-volume="1"></audio>${spec.ohne_vo ? "" : `
+      <audio id="vo" src="assets/vo.wav" data-start="${VO_START}" data-duration="${r3(voEnde - VO_START + 0.3)}" data-media-start="0" data-track-index="10" data-volume="${MIX}"></audio>`}`;
 
 // ---- Captions (VO-Wörter, 2–4 pro Block, aktives Wort in Akzentfarbe) als Sub-Komposition ----
 const bloecke = [];
@@ -130,11 +139,11 @@ const ctaStart = szenen.at(-1).start;
 let cm = "", cj = "";
 bloecke.forEach((b, k) => {
   const s = r3(VO_START + b[0].s), e = r3(Math.min(bloecke[k + 1] ? VO_START + bloecke[k + 1][0].s : GESAMT, VO_START + b.at(-1).e + 0.35));
-  if (s >= ctaStart - 0.05) return; // CTA-Szene hat eigene Grafik
+  if (s >= ctaStart - 0.05 || spec.ohne_vo) return; // CTA-Szene hat eigene Grafik; ohne VO keine Untertitel
   const ende = Math.min(e, ctaStart);
   const id = `c${k + 1}`;
   cm += `
-        <div id="${id}" class="clip cap" data-start="${s}" data-duration="${r3(ende - s)}" data-track-index="0"><p class="cap-in"${(() => { const n = Math.max(...b.map((w) => w.text.length)); const f = Math.floor(780 / (n * (L.marker ? 0.74 : 0.64))); return f < L.captionPx ? ` style="font-size:${f}px"` : ""; })()}>${b.map((w, j) => `<span id="${id}-${j}" class="w">${esc(w.text.replace(/[,.]$/, ""))}</span>`).join(" ")}</p></div>`;
+        <div id="${id}" class="clip cap" data-start="${s}" data-duration="${r3(ende - s)}" data-track-index="0"><p class="cap-in"${(() => { const n = Math.max(...b.map((w) => w.text.length)); const f = Math.floor(780 / (n * (L.marker && !ALT ? 0.74 : 0.64))); return f < L.captionPx ? ` style="font-size:${f}px"` : ""; })()}>${b.map((w, j) => `<span id="${id}-${j}" class="w">${esc(w.text.replace(/[,.]$/, ""))}</span>`).join(" ")}</p></div>`;
   cj += `\n        tl.fromTo("#${id} .cap-in", { y: 18, scale: 0.9, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.13, ease: "back.out(2)" }, ${s});`;
   b.forEach((w, j) => {
     cj += `\n        tl.set("#${id}-${j}", { color: "${L.akzent}" }, ${r3(Math.max(s, VO_START + w.s))});`;
@@ -153,7 +162,7 @@ szenen.forEach((s) => {
   const worte = s.text.inhalt.split(/\s+/);
   // Schriftgröße so wählen, dass das längste Wort (nicht umbrechbar) sicher in die Safe Zone passt (≈0,66 em je Zeichen, Marker breiter)
   const laengstes = Math.max(...worte.map((x) => x.length));
-  const fit = Math.floor((L.marker ? 840 : 780) / (laengstes * (L.marker ? 0.74 : 0.62)));
+  const fit = Math.floor((L.marker && !ALT ? 840 : 780) / (laengstes * (L.marker ? (ALT ? 0.72 : 0.74) : 0.62)));
   const groesse = Math.min(L.headlineGross, fit);
   const betont = new Set((s.text.betonung || []).map((x) => x.toLowerCase()));
   hm += `
@@ -171,7 +180,7 @@ hj += `\n        tl.fromTo("#cta .pfeil path", { strokeDashoffset: 260 }, { stro
 
 const FONT = `@font-face { font-family: "Poppins"; src: url("assets/fonts/Poppins-Bold.ttf") format("truetype"); font-weight: 700; } @font-face { font-family: "Marker"; src: url("assets/fonts/PermanentMarker.ttf") format("truetype"); font-weight: 400; }`;
 const stroke = spec.look === "gelb" || (L.marker && !L.tag) ? `-webkit-text-stroke: ${L.marker ? 12 : 12}px ${L.kontur}; paint-order: stroke fill;` : "";
-const CAP_FONT = L.marker ? `font-family: "Marker", sans-serif; font-weight: 400; letter-spacing: .01em;${L.tag ? "" : ` text-shadow: 3px 3px 0 ${L.kontur}, 6px 6px 0 rgba(12,9,3,.6) !important;`}` : "";
+const CAP_FONT = L.marker && !ALT ? `font-family: "Marker", sans-serif; font-weight: 400; letter-spacing: .01em;${L.tag ? "" : ` text-shadow: 3px 3px 0 ${L.kontur}, 6px 6px 0 rgba(12,9,3,.6) !important;`}` : "";
 // Headline/CTA-Stil je Look: Marker = Permanent Marker, harter Versatzschatten, −2° (text-einblendungen.md); tag = orange Fläche, dunkle Schrift
 const HL_STIL = L.marker
   ? (L.tag ? `font-family: "Marker", sans-serif; font-weight: 400; color: ${L.tagFg} !important; background: ${L.tagBg}; padding: 8px 30px 14px; border-radius: 18px; transform: rotate(-2deg); box-shadow: 0 10px 0 rgba(12,9,3,.55);`
@@ -229,7 +238,7 @@ if (spec.logo) {
     hj += `\n        tl.fromTo("#logo-ende", { scale: 0.86, y: 24, opacity: 0 }, { scale: 1, y: 0, opacity: 1, duration: 0.25, ease: "power3.out" }, ${r3(cta.start + 0.05)});`;
   }
 }
-subcomp("grafik", hm + `\n        <div id="ki" class="clip ki" data-start="0" data-duration="${GESAMT}" data-track-index="3">KI-Stimme</div>`, hj);
+subcomp("grafik", hm + (spec.ohne_vo ? "" : `\n        <div id="ki" class="clip ki" data-start="0" data-duration="${GESAMT}" data-track-index="3">KI-Stimme</div>`), hj);
 const host = (cid, track) => `
       <div id="${cid}"${cid === "captions" ? ' data-track-kind="captions"' : ""} data-composition-id="${cid}" data-composition-src="compositions/${cid}.html" data-start="0" data-duration="${GESAMT}" data-track-index="${track}" data-width="${W}" data-height="${H}"></div>`;
 html += host("captions", 50) + host("grafik", 51);

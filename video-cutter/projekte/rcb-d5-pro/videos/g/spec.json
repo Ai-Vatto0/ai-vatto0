@@ -1,0 +1,153 @@
+{
+  "hook_effekt": true,
+  "titel": "Wald-Modus: Federung bügelt alles weg",
+  "idee": {
+    "winkel": "feature_demo",
+    "zielgruppe": "Pendler und Feierabend-Fahrer mit schlechten Wegen",
+    "hook": "Weißblitz + Abfahrt von der Brücke in den Wald + „Wurzeln, Schotter, Bordsteinkanten?“",
+    "emotion": "Souveränität, Komfort"
+  },
+  "format": "Feature-Demo Federung/Ausstattung, Wald von hinten + Detailfotos, wenig Effekte",
+  "look": "rcb_tag",
+  "textposition": "oben",
+  "stimme": {
+    "anbieter": "yapper",
+    "modell": "eleven_v3",
+    "name": "Markus – Young Natural German",
+    "voice_id": "IeQubAjK1ujbppIdhJw4"
+  },
+  "logo": {
+    "datei": "assets/rcb-logo-karte.png",
+    "intro": 0,
+    "ende": false
+  },
+  "voiceover": [
+    {
+      "satz": "Wurzeln, Schotter, Bordsteinkanten?",
+      "belege": [
+        "meinung"
+      ]
+    },
+    {
+      "satz": "Die Federung bügelt das einfach weg, super smooth.",
+      "belege": [
+        "federung",
+        "meinung"
+      ]
+    },
+    {
+      "satz": "Vorne doppelt gefedert, hinten auch, dazu Zehn-Zoll-Gelreifen und Doppelbremse.",
+      "belege": [
+        "federung",
+        "gelreifen",
+        "doppelbremse"
+      ],
+      "bedingung_ok": true
+    },
+    {
+      "satz": "Licht an, Display im Blick, drei Fahrstufen bis zwanzig Kilometer pro Stunde.",
+      "belege": [
+        "licht",
+        "display",
+        "drei_gaenge",
+        "abe_20kmh"
+      ]
+    },
+    {
+      "satz": "Und mit deutscher ABE und Versicherungskennzeichen ganz legal auf die Straße.",
+      "belege": [
+        "abe_20kmh"
+      ]
+    },
+    {
+      "satz": "Jetzt im TikTok Shop.",
+      "belege": []
+    }
+  ],
+  "szenen": [
+    {
+      "clip": "dji0925-0012",
+      "von": 15.0,
+      "bis": 16.221,
+      "rolle": "hook",
+      "zoom": "kenburns_in",
+      "uebergang": "cut",
+      "text": {
+        "inhalt": "WALD-MODUS: AN",
+        "betonung": [
+          "AN"
+        ],
+        "belege": [
+          "meinung"
+        ]
+      }
+    },
+    {
+      "clip": "forest_behind",
+      "von": 4.4,
+      "bis": 7.309,
+      "rolle": "beweis",
+      "zoom": "none",
+      "uebergang": "cut",
+      "ab_wort": 3,
+      "text": {
+        "inhalt": "BORDSTEIN? EGAL.",
+        "betonung": [
+          "EGAL."
+        ],
+        "belege": [
+          "meinung"
+        ]
+      }
+    },
+    {
+      "clip": "foto-federung",
+      "von": 0,
+      "bis": 3.273,
+      "rolle": "beweis",
+      "zoom": "kenburns_in",
+      "uebergang": "cut",
+      "ab_wort": 11
+    },
+    {
+      "clip": "foto-pov",
+      "von": 0,
+      "bis": 4.364,
+      "rolle": "detail",
+      "zoom": "none",
+      "uebergang": "cut",
+      "ab_wort": 20
+    },
+    {
+      "clip": "forest7",
+      "von": 3.0,
+      "bis": 7.0,
+      "rolle": "beweis",
+      "zoom": "none",
+      "uebergang": "cut",
+      "ab_wort": 32,
+      "text": {
+        "inhalt": "STRASSENTAUGLICH",
+        "betonung": [
+          "STRASSENTAUGLICH"
+        ],
+        "belege": [
+          "abe_20kmh"
+        ]
+      }
+    },
+    {
+      "clip": "foto-wald1-endkarte",
+      "von": 0,
+      "bis": 2.975,
+      "rolle": "cta",
+      "zoom": "kenburns_out",
+      "ab_wort": 43
+    }
+  ],
+  "cta": {
+    "text": "Jetzt im TikTok Shop",
+    "zusatz": "Mit deutscher ABE.",
+    "top": 330
+  }
+}

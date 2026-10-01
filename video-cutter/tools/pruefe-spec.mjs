@@ -87,7 +87,7 @@ for (const s of specs) {
   const norm = (t) => t.toLowerCase().replace(/[^a-zäöüß0-9/ ]/g, " ").split(/\s+/).filter((x) => x && !STOPP.has(x));
   const voWoerter = (s.voiceover || []).map((x) => x.satz).join(" ").split(/\s+/);
   (s.szenen || []).forEach((z, i) => {
-    if (!z.text?.inhalt || z.ab_wort === undefined) return;
+    if (!z.text?.inhalt || z.ab_wort === undefined || s.ohne_vo) return; // ohne VO sind die Texte der „Takt“ selbst
     const naechste = s.szenen.slice(i + 1).find((n) => n.ab_wort !== undefined)?.ab_wort ?? voWoerter.length;
     const gesprochen = new Set(norm(voWoerter.slice(z.ab_wort, naechste).join(" ")));
     const hl = norm(z.text.inhalt);
@@ -102,8 +102,8 @@ for (const s of specs) {
   (s.voiceover || []).forEach((x, i) => pruefeText(sid, `VO-Satz ${i + 1}`, x.satz, x.belege, x.bedingung_ok));
   const woerter = vo.split(/\s+/).filter(Boolean).length;
   const wps = woerter / Math.max(1, gesamt - 0.8);
-  if (wps > 3.4) E(sid, `Voiceover zu dicht: ${woerter} Wörter für ${r3(gesamt)} s (${wps.toFixed(2)} W/s, max 3,4)`);
-  if (wps < 1.8) W(sid, `Voiceover eher dünn: ${wps.toFixed(2)} W/s`);
+  if (wps > 3.4 && !s.ohne_vo) E(sid, `Voiceover zu dicht: ${woerter} Wörter für ${r3(gesamt)} s (${wps.toFixed(2)} W/s, max 3,4)`);
+  if (wps < 1.8 && !s.ohne_vo) W(sid, `Voiceover eher dünn: ${wps.toFixed(2)} W/s`);
   if (!/tiktok shop/i.test(s.cta?.text || "")) E(sid, "CTA muss „Jetzt im TikTok Shop“ enthalten");
   s._gesamt = r3(gesamt); s._woerter = woerter; s._vo = vo; s._zeitlupe = zeitlupe;
   info.push(`${sid} „${s.titel}“: ${r3(gesamt)} s, ${s.szenen.length} Szenen, ${woerter} VO-Wörter (${wps.toFixed(2)} W/s), Winkel ${s.idee?.winkel}, Look ${s.look}, Text ${s.textposition}, Zeitlupe ${zeitlupe}`);
