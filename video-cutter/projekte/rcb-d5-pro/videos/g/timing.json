@@ -7,24 +7,24 @@
   "szenen": [
     {
       "szene": 1,
-      "clip": "img8251",
+      "clip": "foto-wald3",
       "ab_wort": null,
       "wort": "(Start)",
       "start": 0,
       "dauer": 3.133,
-      "von": 9.9,
-      "bis": 13.033,
+      "von": 0,
+      "bis": 3.133,
       "tempo": 1
     },
     {
       "szene": 2,
-      "clip": "img8238",
+      "clip": "img8251",
       "ab_wort": 3,
       "wort": "Die",
       "start": 3.1333333333333333,
       "dauer": 3.9,
-      "von": 3,
-      "bis": 6.9,
+      "von": 69,
+      "bis": 72.9,
       "tempo": 1
     },
     {

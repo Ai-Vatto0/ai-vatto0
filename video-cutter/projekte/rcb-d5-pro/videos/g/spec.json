@@ -4,7 +4,7 @@
   "idee": {
     "winkel": "feature_demo",
     "zielgruppe": "Pendler und Feierabend-Fahrer mit schlechten Wegen",
-    "hook": "Slam: POV-Speedfahrt durch den Wald + Weißblitz + Wackler + Text „WALD-MODUS: AN“",
+    "hook": "Slam: sauberes Rollerfoto im Wald (Licht an) + Weißblitz + Wackler + Text „WALD-MODUS: AN“",
     "emotion": "Souveränität, Komfort"
   },
   "format": "Feature-Demo im POV: Display-Fahrten, Felsen-Details (Federbeine, Bremse), Daten-Karten",
@@ -66,9 +66,9 @@
   ],
   "szenen": [
     {
-      "clip": "img8251",
-      "von": 9.9,
-      "bis": 11.121,
+      "clip": "foto-wald3",
+      "von": 0,
+      "bis": 1.221,
       "rolle": "hook",
       "zoom": "kenburns_in",
       "uebergang": "cut",
@@ -83,9 +83,9 @@
       }
     },
     {
-      "clip": "img8238",
-      "von": 3.0,
-      "bis": 5.909,
+      "clip": "img8251",
+      "von": 69.0,
+      "bis": 71.909,
       "rolle": "beweis",
       "zoom": "none",
       "uebergang": "cut",

@@ -26,7 +26,8 @@ Ziel: Muster-Gegenleistung, danach ggf. D7 Max.
 - **Beide Roller nebeneinander (Vatto, 01.10.):** erlaubt („zwei Bros“), war schon gepostet ohne Verstoß. Bedingung bei uns:
   der D5 Pro ist klar markiert (Pfeil/Text „DEINER“) und im Fokus; das Blinker-Modell nie allein und nie während Feature-Aussagen im Bild.
 - **Tacho im Bild:** Vattos Roller zeigt in POV-Clips bis **22,0 km/h** (IMG_8251 ~72–74 s, IMG_8238 ab ~7,5 s ≈ 20,5).
-  Unter ABE-/20-km/h-Aussagen nie einen Tacho > 20 zeigen → Szenen mit lesbarem Display vorher prüfen (Stichbilder).
+  **Vatto-Entscheidung 01.10.:** Tacho mit 22 darf ins Bild (20 eingetragen + Toleranz, schon 5× ohne Problem gepostet),
+  aber nie gleichzeitig mit einer gesprochenen/eingeblendeten „20 km/h“-Aussage. Beste POV-Fahrt: IMG_8251 ~69–82 s (Waldweg).
 - Fremd-Roller (HIDIS u. a.) in Neo-2-Clips vert_bridge*/vert_grass* → nie verwenden.
 - Lenkertasche „WILD MAN“ (Fremdmarke, nicht im Lieferumfang) ist in fast allem Material sichtbar – Vatto: ok.
 - Logo-Datei `0FCB837A…png` hat weißen Grund (kein Alpha) → als weiße Logo-Karte mit runden Ecken genutzt; Marken-Akzent im Logo ist Türkis.
