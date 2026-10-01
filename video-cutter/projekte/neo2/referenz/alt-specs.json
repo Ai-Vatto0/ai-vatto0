@@ -1,0 +1,1266 @@
+{
+ "neo2-v1-unboxing": {
+  "titel": "Neo 2 – Unboxing mit Action",
+  "shots": [
+   {
+    "datei": "IMG_0200.mov",
+    "von": 7.0,
+    "bis": 8.254,
+    "mezz": "n_unbox"
+   },
+   {
+    "datei": "CIWL3941_cut.MP4",
+    "von": 0.4,
+    "bis": 1.236,
+    "mezz": "n_rocket_top"
+   },
+   {
+    "datei": "DJI_0004_cut.MP4",
+    "von": 7.0,
+    "bis": 7.836,
+    "mezz": "n_behind_sunset"
+   },
+   {
+    "datei": "DJI_0001_seg2.MP4",
+    "von": 5.0,
+    "bis": 6.254,
+    "mezz": "n_side"
+   },
+   {
+    "datei": "IMG_0200.mov",
+    "von": 31.5,
+    "bis": 33.59,
+    "mezz": "n_unbox"
+   },
+   {
+    "datei": "IMG_0200.mov",
+    "von": 45.0,
+    "bis": 46.672,
+    "mezz": "n_unbox"
+   },
+   {
+    "datei": "IMG_0203.MOV",
+    "von": 1.2,
+    "bis": 3.29,
+    "mezz": "n_palm"
+   },
+   {
+    "datei": "IMG_0205_seg1.MOV",
+    "von": 0.2,
+    "bis": 1.454,
+    "mezz": "n_launch_sky"
+   },
+   {
+    "datei": "DJI_0001_seg4.MP4",
+    "von": 0.2,
+    "bis": 1.872,
+    "mezz": "n_behind_field"
+   },
+   {
+    "foto": "p_drohne_box.jpg",
+    "dauer": 3.344
+   }
+  ],
+  "texte": [
+   "WAS IN DIESER BOX STECKT?",
+   "EINE DROHNE, DIE DIR FOLGT.",
+   "NUR 151 GRAMM.",
+   "AUSGEPACKT. LOS GEHT'S.",
+   "STARTET AUS DEINER HAND.",
+   "FILMT IN 4K.",
+   "JETZT IM TIKTOK SHOP."
+  ]
+ },
+ "neo2-v2-kameramann": {
+  "titel": "Neo 2 – Mein neuer Kameramann",
+  "shots": [
+   {
+    "datei": "LHAJ4878_seg2.MP4",
+    "von": 5.6,
+    "bis": 6.854,
+    "mezz": "n_phone_cam"
+   },
+   {
+    "datei": "LHAJ4878_seg2.MP4",
+    "von": 9.5,
+    "bis": 10.336,
+    "mezz": "n_phone_cam"
+   },
+   {
+    "datei": "DJI_0001_seg4.MP4",
+    "von": 0.2,
+    "bis": 1.872,
+    "mezz": "n_behind_field"
+   },
+   {
+    "datei": "DJI_0012_seg5.MP4",
+    "von": 1.0,
+    "bis": 2.672,
+    "mezz": "n_front_forest"
+   },
+   {
+    "datei": "DJI_0001_seg2.MP4",
+    "von": 2.5,
+    "bis": 4.172,
+    "mezz": "n_side"
+   },
+   {
+    "datei": "DJI_0026_cut.MP4",
+    "von": 2.0,
+    "bis": 3.672,
+    "mezz": "n_forest_behind"
+   },
+   {
+    "datei": "DJI_0006_seg1.MP4",
+    "von": 10.0,
+    "bis": 12.09,
+    "mezz": "n_behind_sunset2"
+   },
+   {
+    "datei": "DFWV4297_cut.MP4",
+    "von": 3.0,
+    "bis": 4.254,
+    "mezz": "n_rocket_top2"
+   },
+   {
+    "datei": "IMG_0203.MOV",
+    "von": 3.0,
+    "bis": 6.344,
+    "mezz": "n_palm"
+   }
+  ],
+  "texte": [
+   "MEIN NEUER KAMERAMANN.",
+   "FOLGT VON HINTEN.",
+   "VON VORNE.",
+   "VON DER SEITE.",
+   "8 RICHTUNGEN. AUTOMATISCH.",
+   "HÄLT MIT BIS ZU 43 KM/H.",
+   "UND VON OBEN.",
+   "JETZT IM TIKTOK SHOP."
+  ]
+ },
+ "neo2-v3-zuckerbuckel": {
+  "titel": "Neo 2 – Zuckerbuckel runter",
+  "shots": [
+   {
+    "datei": "IMG_0205_seg1.MOV",
+    "von": 0.2,
+    "bis": 1.454,
+    "mezz": "n_launch_sky"
+   },
+   {
+    "unbekannt": "n_hill_wide"
+   },
+   {
+    "unbekannt": "n_hill_wide"
+   },
+   {
+    "datei": "DFWV4297_cut.MP4",
+    "von": 2.0,
+    "bis": 3.672,
+    "mezz": "n_rocket_top2"
+   },
+   {
+    "datei": "DJI_0006_seg1.MP4",
+    "von": 20.0,
+    "bis": 21.672,
+    "mezz": "n_behind_sunset2"
+   },
+   {
+    "datei": "DJI_0001_seg2.MP4",
+    "von": 9.0,
+    "bis": 10.672,
+    "mezz": "n_side"
+   },
+   {
+    "datei": "DJI_0026_cut.MP4",
+    "von": 4.0,
+    "bis": 5.672,
+    "mezz": "n_forest_behind"
+   },
+   {
+    "datei": "IMG_0204.MOV",
+    "von": 5.6,
+    "bis": 8.944,
+    "mezz": "n_fly_car"
+   }
+  ],
+  "texte": [
+   "BERG RUNTER. UND DIE DROHNE?",
+   "BLEIBT DRAN.",
+   "ROCKET MODUS.",
+   "FILMT IN 4K.",
+   "ALLES AUTOMATISCH.",
+   "MECHANISCHER GIMBAL.",
+   "JETZT IM TIKTOK SHOP."
+  ]
+ },
+ "neo2-v4-handy": {
+  "titel": "Neo 2 – Nur dein Handy",
+  "shots": [
+   {
+    "datei": "IMG_0203.MOV",
+    "von": 0.2,
+    "bis": 1.454,
+    "mezz": "n_palm"
+   },
+   {
+    "datei": "LHAJ4878_seg1.MP4",
+    "von": 5.6,
+    "bis": 6.854,
+    "mezz": "n_app_modes"
+   },
+   {
+    "datei": "LHAJ4878_seg1.MP4",
+    "von": 2.9,
+    "bis": 4.154,
+    "mezz": "n_app_modes"
+   },
+   {
+    "datei": "CIWL3941_cut.MP4",
+    "von": 0.4,
+    "bis": 2.908,
+    "mezz": "n_rocket_top"
+   },
+   {
+    "datei": "LHAJ4878_seg4.MP4",
+    "von": 12.8,
+    "bis": 14.89,
+    "mezz": "n_akku"
+   },
+   {
+    "datei": "LHAJ4878_seg4.MP4",
+    "von": 17.0,
+    "bis": 18.672,
+    "mezz": "n_akku"
+   },
+   {
+    "datei": "DJI_0004_cut.MP4",
+    "von": 17.0,
+    "bis": 18.672,
+    "mezz": "n_behind_sunset"
+   },
+   {
+    "datei": "IMG_0203.MOV",
+    "von": 3.5,
+    "bis": 6.844,
+    "mezz": "n_palm"
+   }
+  ],
+  "texte": [
+   "KEIN CONTROLLER. NUR DEIN HANDY.",
+   "MODUS WÄHLEN.",
+   "START DRÜCKEN.",
+   "SIE MACHT DEN REST.",
+   "AKKU FAST LEER?",
+   "FLIEGT VON SELBST ZURÜCK.",
+   "FOLGT DIR AUTOMATISCH.",
+   "JETZT IM TIKTOK SHOP."
+  ]
+ },
+ "neo2-v5-hallo": {
+  "titel": "Neo 2 – Wenn deine Drohne reden könnte",
+  "shots": [
+   {
+    "datei": "LHAJ4878_seg2.MP4",
+    "von": 4.8,
+    "bis": 6.89,
+    "mezz": "n_phone_cam"
+   },
+   {
+    "datei": "DJI_0006_seg4.MP4",
+    "von": 0.3,
+    "bis": 2.39,
+    "mezz": "n_wave"
+   },
+   {
+    "datei": "DJI_0004_cut.MP4",
+    "von": 11.0,
+    "bis": 13.09,
+    "mezz": "n_behind_sunset"
+   },
+   {
+    "datei": "DJI_0006_seg6.MP4",
+    "von": 1.0,
+    "bis": 3.09,
+    "mezz": "n_gesture"
+   },
+   {
+    "datei": "CIWL3941_cut.MP4",
+    "von": 0.4,
+    "bis": 2.072,
+    "mezz": "n_rocket_top"
+   },
+   {
+    "datei": "LHAJ4878_seg4.MP4",
+    "von": 12.8,
+    "bis": 14.472,
+    "mezz": "n_akku"
+   },
+   {
+    "datei": "IMG_0204.MOV",
+    "von": 6.0,
+    "bis": 9.344,
+    "mezz": "n_fly_car"
+   }
+  ],
+  "texte": [
+   "WENN DEINE DROHNE REDEN KÖNNTE",
+   "Hi! Wie geht's dir?",
+   "Gut! Und dir?",
+   "Ich flieg hier nur rum. Und folg dir mal ...",
+   "FOLGT DIR AUTOMATISCH.",
+   "Ok ok, ich komm ja schon!",
+   "GESTEN STEUERUNG.",
+   "Und tschüss!",
+   "Akku fast leer ... ich flieg heim.",
+   "JETZT IM TIKTOK SHOP."
+  ]
+ },
+ "neo2-v06-3gruende": {
+  "titel": "Neo 2 – 3 Gründe",
+  "shots": [
+   {
+    "foto": "p_dji_poster.jpg",
+    "dauer": 1.672
+   },
+   {
+    "datei": "IMG_0203.MOV",
+    "von": 1.0,
+    "bis": 2.672,
+    "mezz": "n_palm"
+   },
+   {
+    "datei": "IMG_0205_seg1.MOV",
+    "von": 0.2,
+    "bis": 1.454,
+    "mezz": "n_launch_sky"
+   },
+   {
+    "datei": "DJI_0001_seg4.MP4",
+    "von": 0.2,
+    "bis": 1.872,
+    "mezz": "n_behind_field"
+   },
+   {
+    "datei": "DJI_0026_cut.MP4",
+    "von": 1.0,
+    "bis": 2.672,
+    "mezz": "n_forest_behind"
+   },
+   {
+    "datei": "IMG_0200.mov",
+    "von": 30.0,
+    "bis": 31.672,
+    "mezz": "n_unbox"
+   },
+   {
+    "datei": "DFWV4297_cut.MP4",
+    "von": 1.0,
+    "bis": 2.672,
+    "mezz": "n_rocket_top2"
+   },
+   {
+    "foto": "p_drohne_box.jpg",
+    "dauer": 3.344
+   }
+  ],
+  "texte": [
+   "3 GRÜNDE FÜR DIESE DROHNE",
+   "1 STARTET AUS DER HAND",
+   "2 FOLGT DIR VON ALLEIN",
+   "3 NUR 151 GRAMM",
+   "JETZT IM TIKTOK SHOP."
+  ]
+ },
+ "neo2-v07-drohnen-date": {
+  "titel": "Neo 2 – Zwei Drohnen, ein Date",
+  "shots": [
+   {
+    "datei": "IMG_0205_seg1.MOV",
+    "von": 0.2,
+    "bis": 1.454,
+    "mezz": "n_launch_sky"
+   },
+   {
+    "datei": "app_full.mp4",
+    "von": 12.0,
+    "bis": 14.09,
+    "mezz": "w_dd1"
+   },
+   {
+    "datei": "app_full.mp4",
+    "von": 18.5,
+    "bis": 20.172,
+    "mezz": "w_dd1"
+   },
+   {
+    "datei": "app_full.mp4",
+    "von": 36.0,
+    "bis": 37.672,
+    "mezz": "w_dd2"
+   },
+   {
+    "datei": "app_full.mp4",
+    "von": 52.0,
+    "bis": 54.09,
+    "mezz": "w_dd_pilots"
+   },
+   {
+    "datei": "app_full.mp4",
+    "von": 61.0,
+    "bis": 62.672,
+    "mezz": "w_dd_pilots"
+   },
+   {
+    "datei": "LHAJ4878_seg2.MP4",
+    "von": 9.3,
+    "bis": 10.554,
+    "mezz": "n_phone_cam"
+   },
+   {
+    "datei": "IMG_0203.MOV",
+    "von": 3.0,
+    "bis": 6.344,
+    "mezz": "n_palm"
+   }
+  ],
+  "texte": [
+   "ZWEI DROHNEN. EIN DATE.",
+   "Na? Auch hier unterwegs?",
+   "Komm, wir fliegen ne Runde.",
+   "DROHNE FILMT DROHNE.",
+   "UND DIE PILOTEN?",
+   "Landeanflug!",
+   "UND DAS IST MEINE.",
+   "JETZT IM TIKTOK SHOP."
+  ]
+ },
+ "neo2-v08-speed-unboxing": {
+  "titel": "Neo 2 – Speed-Unboxing",
+  "shots": [
+   {
+    "datei": "IMG_0200.mov",
+    "von": 5.0,
+    "bis": 5.836,
+    "mezz": "n_unbox"
+   },
+   {
+    "datei": "IMG_0200.mov",
+    "von": 14.5,
+    "bis": 15.336,
+    "mezz": "n_unbox"
+   },
+   {
+    "datei": "IMG_0200.mov",
+    "von": 21.0,
+    "bis": 21.836,
+    "mezz": "n_unbox"
+   },
+   {
+    "datei": "IMG_0200.mov",
+    "von": 27.0,
+    "bis": 28.254,
+    "mezz": "n_unbox"
+   },
+   {
+    "datei": "IMG_0200.mov",
+    "von": 43.0,
+    "bis": 43.836,
+    "mezz": "n_unbox"
+   },
+   {
+    "datei": "IMG_0200.mov",
+    "von": 63.0,
+    "bis": 63.836,
+    "mezz": "n_unbox"
+   },
+   {
+    "datei": "IMG_0200.mov",
+    "von": 84.5,
+    "bis": 85.336,
+    "mezz": "n_unbox"
+   },
+   {
+    "datei": "IMG_0200.mov",
+    "von": 100.0,
+    "bis": 101.254,
+    "mezz": "n_unbox"
+   },
+   {
+    "datei": "IMG_0203.MOV",
+    "von": 1.0,
+    "bis": 2.672,
+    "mezz": "n_palm"
+   },
+   {
+    "datei": "IMG_0205_seg1.MOV",
+    "von": 0.3,
+    "bis": 1.554,
+    "mezz": "n_launch_sky"
+   },
+   {
+    "datei": "DJI_0004_cut.MP4",
+    "von": 5.0,
+    "bis": 6.672,
+    "mezz": "n_behind_sunset"
+   },
+   {
+    "foto": "p_drohne_box.jpg",
+    "dauer": 2.926
+   }
+  ],
+  "texte": [
+   "SPEED UNBOXING",
+   "AUF.",
+   "RAUS.",
+   "DA IST SIE.",
+   "AUSPACKEN.",
+   "STICKER.",
+   "ANLEITUNG.",
+   "FERTIG.",
+   "UND JETZT ...",
+   "ABHEBEN.",
+   "FOLGT DIR AUTOMATISCH.",
+   "JETZT IM TIKTOK SHOP."
+  ]
+ },
+ "neo2-v09-dronie": {
+  "titel": "Neo 2 – Ein Knopf",
+  "shots": [
+   {
+    "datei": "IMG_0203.MOV",
+    "von": 4.0,
+    "bis": 4.836,
+    "mezz": "n_palm"
+   },
+   {
+    "datei": "LHAJ4878_seg1.MP4",
+    "von": 3.0,
+    "bis": 3.836,
+    "mezz": "n_app_modes"
+   },
+   {
+    "datei": "DJI_0011.MP4",
+    "von": 0.3,
+    "bis": 2.808,
+    "mezz": "w_bridge"
+   },
+   {
+    "datei": "DJI_0011.MP4",
+    "von": 6.5,
+    "bis": 9.008,
+    "mezz": "w_bridge"
+   },
+   {
+    "datei": "DJI_0041.MP4",
+    "von": 2.0,
+    "bis": 4.09,
+    "mezz": "w_reveal41"
+   },
+   {
+    "datei": "CIWL3941_cut.MP4",
+    "von": 0.4,
+    "bis": 2.072,
+    "mezz": "n_rocket_top"
+   },
+   {
+    "datei": "DJI_0009.MP4",
+    "von": 0.8,
+    "bis": 2.472,
+    "mezz": "n_top_descend"
+   },
+   {
+    "datei": "IMG_0204.MOV",
+    "von": 5.6,
+    "bis": 8.944,
+    "mezz": "n_fly_car"
+   }
+  ],
+  "texte": [
+   "EIN KNOPF. UND DANN?",
+   "DRONIE. AUF KNOPFDRUCK.",
+   "HÖHER. NOCH HÖHER.",
+   "ROCKET.",
+   "UND WIEDER RUNTER.",
+   "JETZT IM TIKTOK SHOP."
+  ]
+ },
+ "neo2-v10-hausberg": {
+  "titel": "Neo 2 – Mein Hausberg",
+  "shots": [
+   {
+    "datei": "IMG_0203.MOV",
+    "von": 0.2,
+    "bis": 1.036,
+    "mezz": "n_palm"
+   },
+   {
+    "datei": "DJI_0021_seg2.MP4",
+    "von": 0.5,
+    "bis": 2.59,
+    "mezz": "w_hill_s2"
+   },
+   {
+    "datei": "DJI_0021_seg1.MP4",
+    "von": 1.0,
+    "bis": 2.672,
+    "mezz": "n_hill_s1"
+   },
+   {
+    "unbekannt": "n_hill_wide"
+   },
+   {
+    "datei": "DJI_0021_seg3.MP4",
+    "von": 3.7,
+    "bis": 5.372,
+    "mezz": "n_hill"
+   },
+   {
+    "datei": "DJI_0021_seg4.MP4",
+    "von": 6.5,
+    "bis": 8.59,
+    "mezz": "n_hill_s4"
+   },
+   {
+    "datei": "DJI_0021_seg1.MP4",
+    "von": 4.0,
+    "bis": 5.672,
+    "mezz": "w_hill_s1"
+   },
+   {
+    "foto": "p_dji_poster.jpg",
+    "dauer": 3.344
+   }
+  ],
+  "texte": [
+   "MEIN HAUSBERG. MEINE DROHNE.",
+   "ÜBER DIE WIESE.",
+   "DEN BERG RUNTER.",
+   "SIE BLEIBT DRAN.",
+   "FOLGT BIS ZU 43 KM/H.",
+   "VON VORNE.",
+   "JETZT IM TIKTOK SHOP."
+  ]
+ },
+ "neo2-v11-wald": {
+  "titel": "Neo 2 – Wald, Roller, Drohne",
+  "shots": [
+   {
+    "datei": "LHAJ4878_seg2.MP4",
+    "von": 9.3,
+    "bis": 10.136,
+    "mezz": "n_phone_cam"
+   },
+   {
+    "datei": "DJI_0012_seg7.MP4",
+    "von": 0.5,
+    "bis": 2.59,
+    "mezz": "n_forest_s7"
+   },
+   {
+    "datei": "DJI_0012_seg3.MP4",
+    "von": 2.8,
+    "bis": 4.472,
+    "mezz": "n_forest_s3"
+   },
+   {
+    "datei": "DJI_0026_cut.MP4",
+    "von": 0.5,
+    "bis": 2.172,
+    "mezz": "n_forest_behind"
+   },
+   {
+    "datei": "DJI_0012_seg4.MP4",
+    "von": 0.5,
+    "bis": 2.172,
+    "mezz": "n_forest_s4"
+   },
+   {
+    "datei": "DJI_0012_seg6.MP4",
+    "von": 1.0,
+    "bis": 2.672,
+    "mezz": "n_forest_s6"
+   },
+   {
+    "datei": "DJI_0012_seg7.MP4",
+    "von": 8.0,
+    "bis": 10.09,
+    "mezz": "n_forest_s7"
+   },
+   {
+    "foto": "p_drohne_box.jpg",
+    "dauer": 3.344
+   }
+  ],
+  "texte": [
+   "WALD. ROLLER. DROHNE.",
+   "FOLGT DIR DURCH DEN WALD.",
+   "VON HINTEN.",
+   "VON VORNE.",
+   "RUNDUM- HINDERNIS- ERKENNUNG.",
+   "MECHANISCHER GIMBAL.",
+   "JETZT IM TIKTOK SHOP."
+  ]
+ },
+ "neo2-v12-feierabend": {
+  "titel": "Neo 2 – Feierabend-Runde",
+  "shots": [
+   {
+    "datei": "IMG_0204.MOV",
+    "von": 8.5,
+    "bis": 9.336,
+    "mezz": "n_fly_car"
+   },
+   {
+    "datei": "DJI_0004_cut.MP4",
+    "von": 3.5,
+    "bis": 6.008,
+    "mezz": "n_behind_sunset"
+   },
+   {
+    "datei": "DJI_0006_seg1.MP4",
+    "von": 3.0,
+    "bis": 5.09,
+    "mezz": "n_behind_sunset2"
+   },
+   {
+    "datei": "DJI_0001_seg2.MP4",
+    "von": 7.0,
+    "bis": 8.672,
+    "mezz": "n_side"
+   },
+   {
+    "datei": "DJI_0004_cut.MP4",
+    "von": 21.0,
+    "bis": 23.09,
+    "mezz": "n_behind_sunset"
+   },
+   {
+    "datei": "DJI_0006_seg1.MP4",
+    "von": 26.0,
+    "bis": 28.09,
+    "mezz": "n_behind_sunset2"
+   },
+   {
+    "datei": "DJI_0004_cut.MP4",
+    "von": 25.5,
+    "bis": 26.754,
+    "mezz": "n_behind_sunset"
+   },
+   {
+    "datei": "IMG_0203.MOV",
+    "von": 3.0,
+    "bis": 6.344,
+    "mezz": "n_palm"
+   }
+  ],
+  "texte": [
+   "FEIERABEND. KURZ RAUS.",
+   "KEIN STATIV.",
+   "KEIN KAMERAMANN.",
+   "NUR DU UND DER WEG.",
+   "SIE FILMT MIT.",
+   "JETZT IM TIKTOK SHOP."
+  ]
+ },
+ "neo2-v13-akku": {
+  "titel": "Neo 2 – Akku leer mitten im Flug",
+  "shots": [
+   {
+    "datei": "IMG_0200.mov",
+    "von": 32.0,
+    "bis": 33.254,
+    "mezz": "n_unbox"
+   },
+   {
+    "datei": "LHAJ4878_seg4.MP4",
+    "von": 2.0,
+    "bis": 3.672,
+    "mezz": "n_akku"
+   },
+   {
+    "datei": "LHAJ4878_seg4.MP4",
+    "von": 9.5,
+    "bis": 11.172,
+    "mezz": "n_akku"
+   },
+   {
+    "datei": "LHAJ4878_seg4.MP4",
+    "von": 13.5,
+    "bis": 15.59,
+    "mezz": "n_akku"
+   },
+   {
+    "datei": "LHAJ4878_seg4.MP4",
+    "von": 18.0,
+    "bis": 20.09,
+    "mezz": "n_akku"
+   },
+   {
+    "datei": "LHAJ4878_seg4.MP4",
+    "von": 24.5,
+    "bis": 26.59,
+    "mezz": "n_akku"
+   },
+   {
+    "datei": "DJI_0006_seg1.MP4",
+    "von": 12.0,
+    "bis": 13.672,
+    "mezz": "n_behind_sunset2"
+   },
+   {
+    "datei": "IMG_0204.MOV",
+    "von": 6.0,
+    "bis": 9.344,
+    "mezz": "n_fly_car"
+   }
+  ],
+  "texte": [
+   "AKKU LEER MITTEN IM FLUG?",
+   "ICH HAB'S AUSPROBIERT.",
+   "ERST DIE WARNUNG.",
+   "DANN DIE FRAGE.",
+   "SIE FLIEGT ZURÜCK.",
+   "UND LANDET.",
+   "BIS ZU 19 MIN FLUGZEIT.",
+   "JETZT IM TIKTOK SHOP."
+  ]
+ },
+ "neo2-v14-modi": {
+  "titel": "Neo 2 – Welchen Modus nimmst du?",
+  "shots": [
+   {
+    "datei": "IMG_0205_seg1.MOV",
+    "von": 0.2,
+    "bis": 1.036,
+    "mezz": "n_launch_sky"
+   },
+   {
+    "datei": "LHAJ4878_seg1.MP4",
+    "von": 5.6,
+    "bis": 7.272,
+    "mezz": "n_app_modes"
+   },
+   {
+    "datei": "DJI_0001_seg4.MP4",
+    "von": 0.3,
+    "bis": 1.972,
+    "mezz": "n_behind_field"
+   },
+   {
+    "datei": "DFWV4297_cut.MP4",
+    "von": 1.0,
+    "bis": 2.672,
+    "mezz": "n_rocket_top2"
+   },
+   {
+    "datei": "DJI_0011.MP4",
+    "von": 3.0,
+    "bis": 5.09,
+    "mezz": "w_bridge"
+   },
+   {
+    "datei": "DJI_0001_seg3.MP4",
+    "von": 1.0,
+    "bis": 2.672,
+    "mezz": "n_side3"
+   },
+   {
+    "datei": "LHAJ4878_seg1.MP4",
+    "von": 5.6,
+    "bis": 6.854,
+    "mezz": "n_app_modes"
+   },
+   {
+    "datei": "IMG_0203.MOV",
+    "von": 3.5,
+    "bis": 7.262,
+    "mezz": "n_palm"
+   }
+  ],
+  "texte": [
+   "WELCHEN MODUS NIMMST DU?",
+   "FOLGEN.",
+   "ROCKET.",
+   "DRONIE.",
+   "8 RICHTUNGEN.",
+   "UND NOCH MEHR.",
+   "JETZT IM TIKTOK SHOP."
+  ]
+ },
+ "neo2-v15-hochkant": {
+  "titel": "Neo 2 – Direkt im Hochformat",
+  "shots": [
+   {
+    "datei": "IMG_0203.MOV",
+    "von": 5.5,
+    "bis": 6.336,
+    "mezz": "n_palm"
+   },
+   {
+    "datei": "DJI_0032_seg4.MP4",
+    "von": 1.0,
+    "bis": 3.09,
+    "mezz": "n_vert_bridge"
+   },
+   {
+    "datei": "DJI_0032_seg4.MP4",
+    "von": 10.0,
+    "bis": 12.09,
+    "mezz": "n_vert_bridge"
+   },
+   {
+    "datei": "DJI_0036_seg2.MP4",
+    "von": 7.5,
+    "bis": 9.172,
+    "mezz": "n_vert_grass"
+   },
+   {
+    "datei": "DJI_0032_seg5.MP4",
+    "von": 5.0,
+    "bis": 7.09,
+    "mezz": "n_vert_bridge2"
+   },
+   {
+    "datei": "DJI_0032_seg4.MP4",
+    "von": 14.5,
+    "bis": 16.172,
+    "mezz": "n_vert_bridge"
+   },
+   {
+    "datei": "DJI_0032_seg5.MP4",
+    "von": 9.3,
+    "bis": 10.972,
+    "mezz": "n_vert_bridge2"
+   },
+   {
+    "foto": "p_drohne_box.jpg",
+    "dauer": 3.344
+   }
+  ],
+  "texte": [
+   "FILMT DIREKT IM HOCHFORMAT.",
+   "OHNE ZUSCHNEIDEN.",
+   "TIEF ÜBER DEM BODEN.",
+   "RUHIG DANK GIMBAL.",
+   "MIT 49 GB SPEICHER.",
+   "JETZT IM TIKTOK SHOP."
+  ]
+ },
+ "neo2-v16-gesten": {
+  "titel": "Neo 2 – Sie hört auf deine Hand",
+  "shots": [
+   {
+    "datei": "IMG_0203.MOV",
+    "von": 0.2,
+    "bis": 1.454,
+    "mezz": "n_palm"
+   },
+   {
+    "datei": "DJI_0006_seg5.MP4",
+    "von": 6.0,
+    "bis": 8.09,
+    "mezz": "n_gesture5"
+   },
+   {
+    "datei": "DJI_0006_seg5.MP4",
+    "von": 12.0,
+    "bis": 13.672,
+    "mezz": "n_gesture5"
+   },
+   {
+    "datei": "DJI_0006_seg6.MP4",
+    "von": 3.0,
+    "bis": 5.09,
+    "mezz": "n_gesture"
+   },
+   {
+    "datei": "DJI_0006_seg6.MP4",
+    "von": 7.5,
+    "bis": 9.172,
+    "mezz": "n_gesture"
+   },
+   {
+    "datei": "DJI_0006_seg4.MP4",
+    "von": 0.3,
+    "bis": 1.972,
+    "mezz": "n_wave"
+   },
+   {
+    "datei": "IMG_0205_seg1.MOV",
+    "von": 0.3,
+    "bis": 1.554,
+    "mezz": "n_launch_sky"
+   },
+   {
+    "foto": "p_dji_poster.jpg",
+    "dauer": 3.344
+   }
+  ],
+  "texte": [
+   "SIE HÖRT AUF DEINE HAND.",
+   "HAND HOCH.",
+   "SIE SCHAUT HER.",
+   "SIE KOMMT NÄHER.",
+   "ZURÜCK IN DIE HAND.",
+   "Hi! Hier oben!",
+   "GESTEN- STEUERUNG.",
+   "JETZT IM TIKTOK SHOP."
+  ]
+ },
+ "neo2-v17-von-oben": {
+  "titel": "Neo 2 – Dein Weg von oben",
+  "shots": [
+   {
+    "datei": "IMG_0205_seg1.MOV",
+    "von": 0.2,
+    "bis": 1.454,
+    "mezz": "n_launch_sky"
+   },
+   {
+    "datei": "CIWL3941_cut.MP4",
+    "von": 0.3,
+    "bis": 1.972,
+    "mezz": "n_rocket_top"
+   },
+   {
+    "datei": "DJI_0003.MP4",
+    "von": 0.5,
+    "bis": 2.172,
+    "mezz": "n_top_track"
+   },
+   {
+    "datei": "DFWV4297_cut.MP4",
+    "von": 0.5,
+    "bis": 2.172,
+    "mezz": "n_rocket_top2"
+   },
+   {
+    "datei": "DJI_0009.MP4",
+    "von": 0.5,
+    "bis": 2.59,
+    "mezz": "n_top_descend"
+   },
+   {
+    "datei": "DJI_0042.MP4",
+    "von": 0.5,
+    "bis": 2.59,
+    "mezz": "w_reveal42"
+   },
+   {
+    "datei": "DJI_0041.MP4",
+    "von": 6.0,
+    "bis": 7.672,
+    "mezz": "w_reveal41"
+   },
+   {
+    "datei": "IMG_0204.MOV",
+    "von": 6.0,
+    "bis": 9.344,
+    "mezz": "n_fly_car"
+   }
+  ],
+  "texte": [
+   "SO SIEHT DEIN WEG VON OBEN AUS.",
+   "HÖHER.",
+   "ROCKET.",
+   "UND ZURÜCK.",
+   "AUSSICHT.",
+   "FILMT IN 4K.",
+   "JETZT IM TIKTOK SHOP."
+  ]
+ },
+ "neo2-v18-joysticks": {
+  "titel": "Neo 2 – Manuell mit dem Handy",
+  "shots": [
+   {
+    "datei": "IMG_0203.MOV",
+    "von": 4.5,
+    "bis": 5.336,
+    "mezz": "n_palm"
+   },
+   {
+    "datei": "LHAJ4878_seg3.MP4",
+    "von": 3.0,
+    "bis": 5.09,
+    "mezz": "n_app_manual"
+   },
+   {
+    "datei": "LHAJ4878_seg3.MP4",
+    "von": 7.0,
+    "bis": 8.672,
+    "mezz": "n_app_manual"
+   },
+   {
+    "datei": "LHAJ4878_seg2.MP4",
+    "von": 6.0,
+    "bis": 7.672,
+    "mezz": "n_phone_cam"
+   },
+   {
+    "datei": "LHAJ4878_seg2.MP4",
+    "von": 9.5,
+    "bis": 10.754,
+    "mezz": "n_phone_cam"
+   },
+   {
+    "datei": "DMLP7517_cut.MP4",
+    "von": 5.5,
+    "bis": 7.172,
+    "mezz": "n_export"
+   },
+   {
+    "datei": "DMLP7517_cut.MP4",
+    "von": 12.0,
+    "bis": 13.254,
+    "mezz": "n_export"
+   },
+   {
+    "foto": "p_dji_poster.jpg",
+    "dauer": 3.762
+   }
+  ],
+  "texte": [
+   "MANUELL FLIEGEN MIT DEM HANDY.",
+   "VIRTUELLE JOYSTICKS.",
+   "SIE KOMMT ZU DIR.",
+   "EXPORT IN 4K.",
+   "JETZT IM TIKTOK SHOP."
+  ]
+ },
+ "neo2-v19-rennen": {
+  "titel": "Neo 2 – Ich gegen die Drohne",
+  "shots": [
+   {
+    "datei": "IMG_0200.mov",
+    "von": 33.0,
+    "bis": 33.836,
+    "mezz": "n_unbox"
+   },
+   {
+    "datei": "DJI_0001_seg4.MP4",
+    "von": 0.2,
+    "bis": 1.872,
+    "mezz": "n_behind_field"
+   },
+   {
+    "datei": "DJI_0001_seg2.MP4",
+    "von": 2.0,
+    "bis": 3.672,
+    "mezz": "n_side"
+   },
+   {
+    "datei": "DJI_0012_seg7.MP4",
+    "von": 3.0,
+    "bis": 4.672,
+    "mezz": "n_forest_s7"
+   },
+   {
+    "datei": "DJI_0021_seg4.MP4",
+    "von": 7.0,
+    "bis": 8.672,
+    "mezz": "n_hill_s4"
+   },
+   {
+    "datei": "DJI_0004_cut.MP4",
+    "von": 13.0,
+    "bis": 14.672,
+    "mezz": "n_behind_sunset"
+   },
+   {
+    "datei": "DJI_0001_seg1.MP4",
+    "von": 2.3,
+    "bis": 3.554,
+    "mezz": "n_side1"
+   },
+   {
+    "datei": "IMG_0203.MOV",
+    "von": 3.0,
+    "bis": 6.344,
+    "mezz": "n_palm"
+   }
+  ],
+  "texte": [
+   "ICH GEGEN DIE DROHNE.",
+   "Zu langsam!",
+   "SIE FOLGT BIS ZU 43 KM/H.",
+   "Ich bin immer noch da.",
+   "KEINE CHANCE.",
+   "Feierabend? Ok.",
+   "JETZT IM TIKTOK SHOP."
+  ]
+ },
+ "neo2-v20-auspacken-losfliegen": {
+  "titel": "Neo 2 – Auspacken und losfliegen",
+  "shots": [
+   {
+    "datei": "IMG_0200.mov",
+    "von": 5.5,
+    "bis": 6.754,
+    "mezz": "n_unbox"
+   },
+   {
+    "datei": "IMG_0200.mov",
+    "von": 27.5,
+    "bis": 28.754,
+    "mezz": "n_unbox"
+   },
+   {
+    "datei": "IMG_0203.MOV",
+    "von": 1.0,
+    "bis": 2.672,
+    "mezz": "n_palm"
+   },
+   {
+    "datei": "IMG_0205_seg1.MOV",
+    "von": 0.2,
+    "bis": 1.872,
+    "mezz": "n_launch_sky"
+   },
+   {
+    "datei": "LHAJ4878_seg2.MP4",
+    "von": 6.0,
+    "bis": 7.254,
+    "mezz": "n_phone_cam"
+   },
+   {
+    "datei": "DJI_0001_seg4.MP4",
+    "von": 0.5,
+    "bis": 1.754,
+    "mezz": "n_behind_field"
+   },
+   {
+    "datei": "CIWL3941_cut.MP4",
+    "von": 0.4,
+    "bis": 1.654,
+    "mezz": "n_rocket_top"
+   },
+   {
+    "datei": "DJI_0012_seg7.MP4",
+    "von": 5.0,
+    "bis": 6.254,
+    "mezz": "n_forest_s7"
+   },
+   {
+    "datei": "DJI_0004_cut.MP4",
+    "von": 8.0,
+    "bis": 9.254,
+    "mezz": "n_behind_sunset"
+   },
+   {
+    "foto": "p_drohne_box.jpg",
+    "dauer": 3.344
+   }
+  ],
+  "texte": [
+   "AUSPACKEN. UND LOSFLIEGEN.",
+   "AUS DER HAND.",
+   "ABHEBEN.",
+   "UND DANN DAS HIER.",
+   "FILMT IN 4K.",
+   "JETZT IM TIKTOK SHOP."
+  ]
+ }
+}

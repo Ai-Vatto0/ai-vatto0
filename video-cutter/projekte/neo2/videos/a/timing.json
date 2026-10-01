@@ -1,0 +1,98 @@
+{
+  "video": "a",
+  "vo_start": 0.25,
+  "vorlauf": 0.12,
+  "cta_halt": 1.4,
+  "gesamt_s": 19.3,
+  "szenen": [
+    {
+      "szene": 1,
+      "clip": "fly_car",
+      "ab_wort": null,
+      "wort": "(Start)",
+      "start": 0,
+      "dauer": 3.567,
+      "von": 0.8,
+      "bis": 4.367,
+      "tempo": 1
+    },
+    {
+      "szene": 2,
+      "clip": "sunset",
+      "ab_wort": 8,
+      "wort": "Sie",
+      "start": 3.566666666666667,
+      "dauer": 1.333,
+      "von": 9,
+      "bis": 10.666,
+      "tempo": "ramp"
+    },
+    {
+      "szene": 3,
+      "clip": "forest6",
+      "ab_wort": 14,
+      "wort": "folgt",
+      "start": 4.9,
+      "dauer": 1.5,
+      "von": 1.2,
+      "bis": 2.7,
+      "tempo": 1
+    },
+    {
+      "szene": 4,
+      "clip": "side2",
+      "ab_wort": 17,
+      "wort": "Sogar",
+      "start": 6.4,
+      "dauer": 3.067,
+      "von": 0,
+      "bis": 3.834,
+      "tempo": "ramp"
+    },
+    {
+      "szene": 5,
+      "clip": "behind_field",
+      "ab_wort": 24,
+      "wort": "Du",
+      "start": 9.466666666666667,
+      "dauer": 2.2,
+      "von": 0.6,
+      "bis": 2.8,
+      "tempo": 1
+    },
+    {
+      "szene": 6,
+      "clip": "hill2",
+      "ab_wort": 30,
+      "wort": "Nur",
+      "start": 11.666666666666666,
+      "dauer": 2.267,
+      "von": 8.4,
+      "bis": 10.667,
+      "tempo": 1
+    },
+    {
+      "szene": 7,
+      "clip": "reveal41",
+      "ab_wort": 34,
+      "wort": "und",
+      "start": 13.933333333333334,
+      "dauer": 2.467,
+      "von": 7,
+      "bis": 9.467,
+      "tempo": 1
+    },
+    {
+      "szene": 8,
+      "clip": "fly_car",
+      "ab_wort": 42,
+      "wort": "Jetzt",
+      "start": 16.4,
+      "dauer": 2.9,
+      "von": 7.2,
+      "bis": 10.1,
+      "tempo": 1
+    }
+  ],
+  "fehler": []
+}

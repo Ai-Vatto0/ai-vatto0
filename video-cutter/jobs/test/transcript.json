@@ -1,0 +1,278 @@
+[
+  {
+    "text": "Kennt",
+    "start": 0,
+    "end": 0.42,
+    "id": "w0"
+  },
+  {
+    "text": "du",
+    "start": 0.42,
+    "end": 0.65,
+    "id": "w1"
+  },
+  {
+    "text": "das,",
+    "start": 0.65,
+    "end": 1,
+    "id": "w2"
+  },
+  {
+    "text": "wenn",
+    "start": 1,
+    "end": 1.35,
+    "id": "w3"
+  },
+  {
+    "text": "dein",
+    "start": 1.35,
+    "end": 1.69,
+    "id": "w4"
+  },
+  {
+    "text": "Kaffee",
+    "start": 1.69,
+    "end": 2.18,
+    "id": "w5"
+  },
+  {
+    "text": "nach",
+    "start": 2.2,
+    "end": 2.49,
+    "id": "w6"
+  },
+  {
+    "text": "10",
+    "start": 2.53,
+    "end": 3.04,
+    "id": "w7"
+  },
+  {
+    "text": "Minuten",
+    "start": 3.04,
+    "end": 3.64,
+    "id": "w8"
+  },
+  {
+    "text": "schon",
+    "start": 3.64,
+    "end": 4.07,
+    "id": "w9"
+  },
+  {
+    "text": "kalt",
+    "start": 4.07,
+    "end": 4.4,
+    "id": "w10"
+  },
+  {
+    "text": "ist?",
+    "start": 4.4,
+    "end": 5,
+    "id": "w11"
+  },
+  {
+    "text": "Mit",
+    "start": 5,
+    "end": 5.26,
+    "id": "w12"
+  },
+  {
+    "text": "diesem",
+    "start": 5.65,
+    "end": 5.78,
+    "id": "w13"
+  },
+  {
+    "text": "Becher",
+    "start": 5.78,
+    "end": 6.29,
+    "id": "w14"
+  },
+  {
+    "text": "bleibt",
+    "start": 6.29,
+    "end": 6.81,
+    "id": "w15"
+  },
+  {
+    "text": "er.",
+    "start": 6.81,
+    "end": 7,
+    "id": "w16"
+  },
+  {
+    "text": "Äh.",
+    "start": 7,
+    "end": 8,
+    "id": "w17"
+  },
+  {
+    "text": "Moment,",
+    "start": 8.65,
+    "end": 8.87,
+    "id": "w18"
+  },
+  {
+    "text": "nochmal.",
+    "start": 8.88,
+    "end": 9.99,
+    "id": "w19"
+  },
+  {
+    "text": "Mit",
+    "start": 10,
+    "end": 10.29,
+    "id": "w20"
+  },
+  {
+    "text": "diesem",
+    "start": 10.65,
+    "end": 10.86,
+    "id": "w21"
+  },
+  {
+    "text": "Becher",
+    "start": 10.87,
+    "end": 11.4,
+    "id": "w22"
+  },
+  {
+    "text": "bleibt",
+    "start": 11.62,
+    "end": 12.01,
+    "id": "w23"
+  },
+  {
+    "text": "er",
+    "start": 12.02,
+    "end": 12.21,
+    "id": "w24"
+  },
+  {
+    "text": "deutlich",
+    "start": 12.21,
+    "end": 12.98,
+    "id": "w25"
+  },
+  {
+    "text": "länger",
+    "start": 12.98,
+    "end": 13.56,
+    "id": "w26"
+  },
+  {
+    "text": "warm.",
+    "start": 13.56,
+    "end": 14,
+    "id": "w27"
+  },
+  {
+    "text": "Der",
+    "start": 14,
+    "end": 15,
+    "id": "w28"
+  },
+  {
+    "text": "Deckel",
+    "start": 15,
+    "end": 16,
+    "id": "w29"
+  },
+  {
+    "text": "geht",
+    "start": 16,
+    "end": 16.3,
+    "id": "w30"
+  },
+  {
+    "text": "mit",
+    "start": 16.65,
+    "end": 16.83,
+    "id": "w31"
+  },
+  {
+    "text": "einer",
+    "start": 16.83,
+    "end": 17.72,
+    "id": "w32"
+  },
+  {
+    "text": "Hand",
+    "start": 17.72,
+    "end": 18.43,
+    "id": "w33"
+  },
+  {
+    "text": "auf.",
+    "start": 18.43,
+    "end": 19,
+    "id": "w34"
+  },
+  {
+    "text": "Und",
+    "start": 19,
+    "end": 19.3,
+    "id": "w35"
+  },
+  {
+    "text": "er",
+    "start": 19.3,
+    "end": 19.5,
+    "id": "w36"
+  },
+  {
+    "text": "passt",
+    "start": 19.65,
+    "end": 20,
+    "id": "w37"
+  },
+  {
+    "text": "in",
+    "start": 20,
+    "end": 20.19,
+    "id": "w38"
+  },
+  {
+    "text": "meinen",
+    "start": 20.2,
+    "end": 20.79,
+    "id": "w39"
+  },
+  {
+    "text": "Getränkealter",
+    "start": 20.79,
+    "end": 22.06,
+    "id": "w40"
+  },
+  {
+    "text": "im",
+    "start": 22.06,
+    "end": 22.25,
+    "id": "w41"
+  },
+  {
+    "text": "Auto.",
+    "start": 22.26,
+    "end": 23,
+    "id": "w42"
+  },
+  {
+    "text": "Jetzt",
+    "start": 23,
+    "end": 23.52,
+    "id": "w43"
+  },
+  {
+    "text": "im",
+    "start": 23.65,
+    "end": 23.73,
+    "id": "w44"
+  },
+  {
+    "text": "Ticktockshop.",
+    "start": 23.73,
+    "end": 25,
+    "id": "w45"
+  }
+]

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="de">
+  <head><meta charset="UTF-8" /><!-- GENERIERT von tools/baue-spec.mjs – nicht von Hand ändern. --></head>
+  <body>
+    <template>
+      <style>
+        @font-face { font-family: "Poppins"; src: url("assets/fonts/Poppins-Bold.ttf") format("truetype"); font-weight: 700; }
+        #root { position: absolute; inset: 0; font-family: "Poppins", sans-serif; font-weight: 700; }
+        /* Safe Zone 1080x1920: oben 150, rechts 140, unten 400, links 60 */
+        .cap { position: absolute; left: 60px; right: 140px; top: 230px; display: flex; justify-content: center; }
+        .cap-in { max-width: 860px; text-align: center; font-size: 62px; line-height: 1.12; color: #FFFFFF;  background: rgba(8,12,22,.78); padding: 14px 30px; border-radius: 26px; text-shadow: 0 6px 18px rgba(0,0,0,.45); }
+        .headline { position: absolute; left: 60px; right: 140px; top: 1150px; display: flex; justify-content: center; }
+        .hl-in { max-width: 860px; text-align: center; font-size: 92px; line-height: 1.04; color: #FFFFFF; background: rgba(8,12,22,.78); padding: 10px 26px 14px; border-radius: 28px; text-shadow: 0 0 22px rgba(77,216,255,.45); }
+        .hw { display: inline-block; }
+        .hw.em { color: #4DD8FF; }
+        .ctabox { position: absolute; left: 60px; right: 140px; top: 1080px; display: flex; flex-direction: column; align-items: center; }
+        .cta-tx { color: #4DD8FF; font-size: 76px; line-height: 1.05; text-align: center; max-width: 720px; background: rgba(8,12,22,.8); padding: 12px 28px 16px; border-radius: 30px; text-shadow: 0 0 22px rgba(77,216,255,.45); }
+        .cta-zu { color: #fff; font-size: 44px; margin-top: 12px; text-align: center; max-width: 720px; background: rgba(0,0,0,.55); padding: 6px 18px; border-radius: 16px; }
+        .pfeil { width: 150px; height: 150px; margin-top: 4px; margin-right: 400px; }
+        .pfeil path { stroke-dasharray: 260; }
+        .ki { position: absolute; left: 70px; top: 160px; font-size: 26px; color: #FFFFFF; letter-spacing: .04em; background: rgba(0,0,0,.62); padding: 6px 14px; border-radius: 12px; }
+      </style>
+      <div id="root" data-composition-id="grafik" data-width="1080" data-height="1920">
+        <div id="h1" class="clip headline" data-start="0.1" data-duration="3.117" data-track-index="1"><div class="hl-in"><span class="hw">SIE</span> <span class="hw">PASST</span> <span class="hw">AUF</span> <span class="hw">DEINE</span> <span class="hw em">HAND</span></div></div>
+        <div id="h2" class="clip headline" data-start="3.367" data-duration="2.517" data-track-index="1"><div class="hl-in"><span class="hw">NUR</span> <span class="hw em">151</span> <span class="hw">GRAMM</span></div></div>
+        <div id="h5" class="clip headline" data-start="11.368" data-duration="1.283" data-track-index="1"><div class="hl-in"><span class="hw">FOLGT</span> <span class="hw">DIR</span> <span class="hw em">AUTOMATISCH</span></div></div>
+        <div id="h6" class="clip headline" data-start="12.801" data-duration="1.983" data-track-index="1"><div class="hl-in"><span class="hw">STEUERUNG</span> <span class="hw">PER</span> <span class="hw em">GESTE</span></div></div>
+        <div id="cta" class="clip ctabox" style="top:330px" data-start="18.467" data-duration="2.867" data-track-index="2"><div class="cta-tx">Jetzt im TikTok Shop</div><div class="cta-zu">Deine Kamera, die mitfliegt.</div><svg class="pfeil" viewBox="0 0 200 200"><path d="M170 20 C 150 90, 110 130, 40 160" fill="none" stroke="#4DD8FF" stroke-width="14" stroke-linecap="round"/><path d="M40 160 L 70 118 M40 160 L 92 170" fill="none" stroke="#4DD8FF" stroke-width="14" stroke-linecap="round"/></svg></div>
+        <div id="ki" class="clip ki" data-start="0" data-duration="21.334" data-track-index="3">KI-Stimme</div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#h1 .hl-in", { opacity: 0 }, { opacity: 1, duration: 0.06 }, 0.1);
+        tl.fromTo("#h1 .hw", { yPercent: 80, opacity: 0, rotation: -4 }, { yPercent: 0, opacity: 1, rotation: 0, duration: 0.32, ease: "back.out(2.2)", stagger: 0.06 }, 0.1);
+        tl.to("#h1 .hl-in", { opacity: 0, y: -20, duration: 0.18, ease: "power2.in" }, 3.037);
+        tl.fromTo("#h2 .hl-in", { opacity: 0 }, { opacity: 1, duration: 0.06 }, 3.367);
+        tl.fromTo("#h2 .hw", { yPercent: 80, opacity: 0, rotation: -4 }, { yPercent: 0, opacity: 1, rotation: 0, duration: 0.32, ease: "back.out(2.2)", stagger: 0.06 }, 3.367);
+        tl.to("#h2 .hl-in", { opacity: 0, y: -20, duration: 0.18, ease: "power2.in" }, 5.704);
+        tl.fromTo("#h5 .hl-in", { opacity: 0 }, { opacity: 1, duration: 0.06 }, 11.368);
+        tl.fromTo("#h5 .hw", { yPercent: 80, opacity: 0, rotation: -4 }, { yPercent: 0, opacity: 1, rotation: 0, duration: 0.32, ease: "back.out(2.2)", stagger: 0.06 }, 11.368);
+        tl.to("#h5 .hl-in", { opacity: 0, y: -20, duration: 0.18, ease: "power2.in" }, 12.471);
+        tl.fromTo("#h6 .hl-in", { opacity: 0 }, { opacity: 1, duration: 0.06 }, 12.801);
+        tl.fromTo("#h6 .hw", { yPercent: 80, opacity: 0, rotation: -4 }, { yPercent: 0, opacity: 1, rotation: 0, duration: 0.32, ease: "back.out(2.2)", stagger: 0.06 }, 12.801);
+        tl.to("#h6 .hl-in", { opacity: 0, y: -20, duration: 0.18, ease: "power2.in" }, 14.604);
+        tl.fromTo("#cta .cta-tx", { scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.42, ease: "back.out(1.2)" }, 18.567);
+        tl.fromTo("#cta .cta-zu", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "power3.out" }, 18.867);
+        tl.fromTo("#cta .pfeil path", { strokeDashoffset: 260 }, { strokeDashoffset: 0, duration: 0.45, ease: "power2.out", stagger: 0.12 }, 18.967);
+        window.__timelines["grafik"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

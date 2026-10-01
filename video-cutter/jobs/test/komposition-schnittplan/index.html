@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <!-- GENERIERT von tools/baue.mjs aus schnittplan.json – nicht von Hand ändern, sondern Plan/B-Roll ändern und neu bauen. -->
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Poppins"; src: url("assets/fonts/Poppins-Bold.ttf") format("truetype"); font-weight: 700; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #000; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: #000; }
+      video.quelle { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="14.681" data-width="1080" data-height="1920">
+      <video id="v-b1" class="clip quelle" src="assets/quelle.mp4" data-start="0" data-duration="4.104" data-media-start="0.567" data-track-index="0" muted playsinline></video>
+      <audio id="a-b1" src="assets/quelle.mp4" data-start="0" data-duration="4.104" data-media-start="0.567" data-track-index="10" data-volume="1.26" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0},{"t":0.012,"v":1},{"t":4.092,"v":1},{"t":4.104,"v":0}]}]}'></audio>
+      <video id="v-b2" class="clip quelle" src="assets/quelle.mp4" data-start="4.104" data-duration="2.903" data-media-start="10.677" data-track-index="0" muted playsinline></video>
+      <audio id="a-b2" src="assets/quelle.mp4" data-start="4.104" data-duration="2.903" data-media-start="10.677" data-track-index="10" data-volume="1.26" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0},{"t":0.012,"v":1},{"t":2.891,"v":1},{"t":2.903,"v":0}]}]}'></audio>
+      <video id="v-b3" class="clip quelle" src="assets/quelle.mp4" data-start="7.007" data-duration="2.369" data-media-start="16.216" data-track-index="0" muted playsinline></video>
+      <audio id="a-b3" src="assets/quelle.mp4" data-start="7.007" data-duration="2.369" data-media-start="16.216" data-track-index="10" data-volume="1.26" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0},{"t":0.012,"v":1},{"t":2.357,"v":1},{"t":2.369,"v":0}]}]}'></audio>
+      <video id="v-b4" class="clip quelle" src="assets/quelle.mp4" data-start="9.376" data-duration="3.003" data-media-start="19.219" data-track-index="0" muted playsinline></video>
+      <audio id="a-b4" src="assets/quelle.mp4" data-start="9.376" data-duration="3.003" data-media-start="19.219" data-track-index="10" data-volume="1.26" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0},{"t":0.012,"v":1},{"t":2.991,"v":1},{"t":3.003,"v":0}]}]}'></audio>
+      <video id="v-b5" class="clip quelle" src="assets/quelle.mp4" data-start="12.379" data-duration="2.302" data-media-start="23.156" data-track-index="0" muted playsinline></video>
+      <audio id="a-b5" src="assets/quelle.mp4" data-start="12.379" data-duration="2.302" data-media-start="23.156" data-track-index="10" data-volume="1.26" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0},{"t":0.012,"v":1},{"t":2.29,"v":1},{"t":2.302,"v":0}]}]}'></audio>
+      <div id="untertitel" data-composition-id="untertitel" data-composition-src="compositions/untertitel.html" data-start="0" data-duration="14.681" data-track-index="20" data-width="1080" data-height="1920"></div>
+      <div id="br1" data-composition-id="br1" data-composition-src="compositions/br1.html" data-start="0.033" data-duration="3.4" data-track-index="30" data-width="1080" data-height="1920"></div>
+      <div id="br2" data-composition-id="br2" data-composition-src="compositions/br2.html" data-start="5.027" data-duration="7.2" data-track-index="31" data-width="1080" data-height="1920"></div>
+      <div id="br3" data-composition-id="br3" data-composition-src="compositions/br3.html" data-start="12.473" data-duration="2.208" data-track-index="32" data-width="1080" data-height="1920"></div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

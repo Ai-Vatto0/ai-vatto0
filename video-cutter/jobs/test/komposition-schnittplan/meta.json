@@ -1,0 +1,73 @@
+{
+  "gebaut": "2026-09-30T17:22:13.654Z",
+  "plan": "schnittplan",
+  "broll": "broll-schnittplan",
+  "dauer_s": 14.681,
+  "fps": 29.97,
+  "bildrate": "30000/1001",
+  "zeitkarte": [
+    {
+      "bereich": "b1",
+      "quelle_start": 0.567,
+      "quelle_ende": 4.671,
+      "schnitt_start": 0,
+      "schnitt_ende": 4.104,
+      "frames": 123
+    },
+    {
+      "bereich": "b2",
+      "quelle_start": 10.677,
+      "quelle_ende": 13.58,
+      "schnitt_start": 4.104,
+      "schnitt_ende": 7.007,
+      "frames": 87
+    },
+    {
+      "bereich": "b3",
+      "quelle_start": 16.216,
+      "quelle_ende": 18.585,
+      "schnitt_start": 7.007,
+      "schnitt_ende": 9.376,
+      "frames": 71
+    },
+    {
+      "bereich": "b4",
+      "quelle_start": 19.219,
+      "quelle_ende": 22.222,
+      "schnitt_start": 9.376,
+      "schnitt_ende": 12.379,
+      "frames": 90
+    },
+    {
+      "bereich": "b5",
+      "quelle_start": 23.156,
+      "quelle_ende": 25.459,
+      "schnitt_start": 12.379,
+      "schnitt_ende": 14.681,
+      "frames": 69
+    }
+  ],
+  "einblendungen": [
+    {
+      "id": "br1",
+      "typ": "titel",
+      "start": 0.033,
+      "dauer": 3.4,
+      "zweck": "Hook: Problem aus Satz 1 wörtlich und sofort lesbar (Ton-aus-Zuschauer)"
+    },
+    {
+      "id": "br2",
+      "typ": "punkte",
+      "start": 5.027,
+      "dauer": 7.2,
+      "zweck": "Nutzen, die im Video gesagt werden, als Liste sichtbar machen"
+    },
+    {
+      "id": "br3",
+      "typ": "cta",
+      "start": 12.473,
+      "dauer": 2.208,
+      "zweck": "Handlungsaufforderung zum Shop-Warenkorb"
+    }
+  ]
+}

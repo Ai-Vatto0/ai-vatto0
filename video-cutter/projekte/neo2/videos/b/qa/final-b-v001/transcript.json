@@ -1,0 +1,332 @@
+[
+  {
+    "text": "Allein",
+    "start": 0.01,
+    "end": 0.64,
+    "id": "w0"
+  },
+  {
+    "text": "unterwegs",
+    "start": 0.64,
+    "end": 1.42,
+    "id": "w1"
+  },
+  {
+    "text": "und",
+    "start": 1.75,
+    "end": 1.84,
+    "id": "w2"
+  },
+  {
+    "text": "keiner",
+    "start": 1.84,
+    "end": 2.24,
+    "id": "w3"
+  },
+  {
+    "text": "der",
+    "start": 2.24,
+    "end": 2.44,
+    "id": "w4"
+  },
+  {
+    "text": "dich",
+    "start": 2.44,
+    "end": 2.67,
+    "id": "w5"
+  },
+  {
+    "text": "filmt?",
+    "start": 2.74,
+    "end": 3.28,
+    "id": "w6"
+  },
+  {
+    "text": "Die",
+    "start": 3.29,
+    "end": 3.54,
+    "id": "w7"
+  },
+  {
+    "text": "hier",
+    "start": 3.62,
+    "end": 3.89,
+    "id": "w8"
+  },
+  {
+    "text": "wiegt",
+    "start": 3.89,
+    "end": 4.32,
+    "id": "w9"
+  },
+  {
+    "text": "nur",
+    "start": 4.32,
+    "end": 4.57,
+    "id": "w10"
+  },
+  {
+    "text": "151",
+    "start": 4.57,
+    "end": 5.37,
+    "id": "w11"
+  },
+  {
+    "text": "Gramm.",
+    "start": 5.37,
+    "end": 5.9,
+    "id": "w12"
+  },
+  {
+    "text": "Im",
+    "start": 5.9,
+    "end": 6.05,
+    "id": "w13"
+  },
+  {
+    "text": "Menü",
+    "start": 6.05,
+    "end": 6.34,
+    "id": "w14"
+  },
+  {
+    "text": "wählst",
+    "start": 6.34,
+    "end": 6.78,
+    "id": "w15"
+  },
+  {
+    "text": "du",
+    "start": 6.78,
+    "end": 6.93,
+    "id": "w16"
+  },
+  {
+    "text": "Rocket,",
+    "start": 6.93,
+    "end": 7.49,
+    "id": "w17"
+  },
+  {
+    "text": "Droni",
+    "start": 7.65,
+    "end": 8.08,
+    "id": "w18"
+  },
+  {
+    "text": "oder",
+    "start": 8.08,
+    "end": 8.51,
+    "id": "w19"
+  },
+  {
+    "text": "Helix",
+    "start": 8.51,
+    "end": 9,
+    "id": "w20"
+  },
+  {
+    "text": "und",
+    "start": 9.15,
+    "end": 9.25,
+    "id": "w21"
+  },
+  {
+    "text": "sie",
+    "start": 9.33,
+    "end": 9.46,
+    "id": "w22"
+  },
+  {
+    "text": "fliegt",
+    "start": 9.46,
+    "end": 9.85,
+    "id": "w23"
+  },
+  {
+    "text": "die",
+    "start": 9.85,
+    "end": 10.04,
+    "id": "w24"
+  },
+  {
+    "text": "Aufnahme",
+    "start": 10.04,
+    "end": 10.54,
+    "id": "w25"
+  },
+  {
+    "text": "von",
+    "start": 10.58,
+    "end": 10.75,
+    "id": "w26"
+  },
+  {
+    "text": "selbst.",
+    "start": 10.75,
+    "end": 11.2,
+    "id": "w27"
+  },
+  {
+    "text": "Sie",
+    "start": 11.2,
+    "end": 11.41,
+    "id": "w28"
+  },
+  {
+    "text": "folgt",
+    "start": 11.41,
+    "end": 11.75,
+    "id": "w29"
+  },
+  {
+    "text": "dir",
+    "start": 11.75,
+    "end": 11.96,
+    "id": "w30"
+  },
+  {
+    "text": "automatisch",
+    "start": 11.96,
+    "end": 12.7,
+    "id": "w31"
+  },
+  {
+    "text": "und",
+    "start": 12.76,
+    "end": 12.79,
+    "id": "w32"
+  },
+  {
+    "text": "du",
+    "start": 12.95,
+    "end": 13.02,
+    "id": "w33"
+  },
+  {
+    "text": "steuerst",
+    "start": 13.02,
+    "end": 13.47,
+    "id": "w34"
+  },
+  {
+    "text": "sie",
+    "start": 13.47,
+    "end": 13.64,
+    "id": "w35"
+  },
+  {
+    "text": "sogar",
+    "start": 13.64,
+    "end": 13.87,
+    "id": "w36"
+  },
+  {
+    "text": "per",
+    "start": 13.94,
+    "end": 14.1,
+    "id": "w37"
+  },
+  {
+    "text": "Handgäste.",
+    "start": 14.1,
+    "end": 14.85,
+    "id": "w38"
+  },
+  {
+    "text": "Wird",
+    "start": 14.86,
+    "end": 15.1,
+    "id": "w39"
+  },
+  {
+    "text": "der",
+    "start": 15.1,
+    "end": 15.28,
+    "id": "w40"
+  },
+  {
+    "text": "Akku",
+    "start": 15.28,
+    "end": 15.52,
+    "id": "w41"
+  },
+  {
+    "text": "knapp,",
+    "start": 15.52,
+    "end": 15.94,
+    "id": "w42"
+  },
+  {
+    "text": "meldet",
+    "start": 15.94,
+    "end": 16.29,
+    "id": "w43"
+  },
+  {
+    "text": "sie",
+    "start": 16.29,
+    "end": 16.47,
+    "id": "w44"
+  },
+  {
+    "text": "sich",
+    "start": 16.61,
+    "end": 16.72,
+    "id": "w45"
+  },
+  {
+    "text": "und",
+    "start": 16.72,
+    "end": 16.9,
+    "id": "w46"
+  },
+  {
+    "text": "fliegt",
+    "start": 16.9,
+    "end": 17.26,
+    "id": "w47"
+  },
+  {
+    "text": "von",
+    "start": 17.26,
+    "end": 17.44,
+    "id": "w48"
+  },
+  {
+    "text": "selbst",
+    "start": 17.44,
+    "end": 17.8,
+    "id": "w49"
+  },
+  {
+    "text": "zurück.",
+    "start": 17.8,
+    "end": 18.4,
+    "id": "w50"
+  },
+  {
+    "text": "Jetzt",
+    "start": 18.41,
+    "end": 18.77,
+    "id": "w51"
+  },
+  {
+    "text": "im",
+    "start": 18.77,
+    "end": 18.92,
+    "id": "w52"
+  },
+  {
+    "text": "TikTok",
+    "start": 18.92,
+    "end": 19.36,
+    "id": "w53"
+  },
+  {
+    "text": "Shop.",
+    "start": 19.36,
+    "end": 19.88,
+    "id": "w54"
+  }
+]

@@ -1,0 +1,170 @@
+{
+  "version": 1,
+  "job": "test",
+  "erstellt": "2026-09-30T16:54:47.694Z",
+  "erstellt_von": "tools/schnittplan.mjs (Vorschlag – vom Schnittplaner zu prüfen)",
+  "quelle": {
+    "datei": "media/arbeitskopie.mp4",
+    "sha256": "c1d7071d80cfefe484e0f324b10369ff500d5ac20d1e9092a0b68509e3955a4d",
+    "offset_zum_original_s": 0,
+    "fps": 29.97,
+    "bildrate": "30000/1001"
+  },
+  "transcript_sha256": "bc2008cb0225a305e4870e5ab344d112344ac2241661ca8b35fd1fe42be14881",
+  "einstellungen": {
+    "tempo": "tiktok",
+    "maxPause": 0.7,
+    "restPause": 0.35,
+    "minSegment": 1.2,
+    "vorlauf": 0.08,
+    "nachlauf": 0.5,
+    "fps": 29.97
+  },
+  "format": {
+    "breite": 1080,
+    "hoehe": 1920,
+    "bildausschnitt_x_prozent": 50
+  },
+  "regel": "bereiche = Reihenfolge im fertigen Video. Zeiten = Sekunden in der ARBEITSKOPIE. Nur schneiden, was belegt ist.",
+  "bereiche": [
+    {
+      "id": "b1",
+      "start": 0.567,
+      "ende": 4.671,
+      "dauer": 4.104,
+      "text": "Kennt du das, wenn dein Kaffee nach 10 Minuten schon kalt ist?",
+      "grund": "Aussage behalten",
+      "unsicherheit": "niedrig"
+    },
+    {
+      "id": "b2",
+      "start": 10.677,
+      "ende": 13.58,
+      "dauer": 2.903,
+      "text": "Mit diesem Becher bleibt er deutlich länger warm.",
+      "grund": "Aussage behalten",
+      "unsicherheit": "niedrig"
+    },
+    {
+      "id": "b3",
+      "start": 16.216,
+      "ende": 18.585,
+      "dauer": 2.369,
+      "text": "Der Deckel geht mit einer Hand auf.",
+      "grund": "Aussage behalten",
+      "unsicherheit": "niedrig"
+    },
+    {
+      "id": "b4",
+      "start": 19.219,
+      "ende": 22.222,
+      "dauer": 3.003,
+      "text": "Und er passt in meinen Getränkealter im Auto.",
+      "grund": "Aussage behalten",
+      "unsicherheit": "niedrig"
+    },
+    {
+      "id": "b5",
+      "start": 23.156,
+      "ende": 25.459,
+      "dauer": 2.303,
+      "text": "Jetzt im Ticktockshop.",
+      "grund": "Aussage behalten",
+      "unsicherheit": "niedrig"
+    }
+  ],
+  "entfernt": [
+    {
+      "start": 4.717,
+      "ende": 10.718,
+      "dauer": 6.001,
+      "typ": "verworfener_take",
+      "text": "Mit diesem Becher bleibt er. … Äh. Moment, nochmal.",
+      "grund": "Satz „Mit diesem Becher bleibt er.“ wird bei 10.91 s neu begonnen („Mit diesem Becher bleibt er deutlich länger warm.“), Abbruch-Signal „Moment“.",
+      "unsicherheit": "niedrig"
+    },
+    {
+      "start": 13.618,
+      "ende": 16.268,
+      "dauer": 2.65,
+      "typ": "pause",
+      "text": "",
+      "grund": "Pause 3 s → 0.35 s",
+      "unsicherheit": "niedrig"
+    },
+    {
+      "start": 18.618,
+      "ende": 19.258,
+      "dauer": 0.64,
+      "typ": "pause",
+      "text": "",
+      "grund": "Pause 0.99 s → 0.35 s",
+      "unsicherheit": "niedrig"
+    },
+    {
+      "start": 22.258,
+      "ende": 23.198,
+      "dauer": 0.94,
+      "typ": "pause",
+      "text": "",
+      "grund": "Pause 1.29 s → 0.35 s",
+      "unsicherheit": "niedrig"
+    }
+  ],
+  "pruefen": [],
+  "statistik": {
+    "quelle_s": 26.181,
+    "schnitt_s": 14.681,
+    "schnitte": 4,
+    "geprueft": "2026-09-30T17:07:32.829Z"
+  },
+  "warnungen": [],
+  "untertitel_korrekturen": {
+    "w40": "Getränkehalter",
+    "w45": "TikTok Shop.",
+    "w0": "Kennst"
+  },
+  "untertitel_korrekturen_grund": "Testclip: Originalskript ist bekannt (synthetische Stimme).",
+  "zeitkarte": [
+    {
+      "bereich": "b1",
+      "quelle_start": 0.567,
+      "quelle_ende": 4.671,
+      "schnitt_start": 0,
+      "schnitt_ende": 4.104,
+      "frames": 123
+    },
+    {
+      "bereich": "b2",
+      "quelle_start": 10.677,
+      "quelle_ende": 13.58,
+      "schnitt_start": 4.104,
+      "schnitt_ende": 7.007,
+      "frames": 87
+    },
+    {
+      "bereich": "b3",
+      "quelle_start": 16.216,
+      "quelle_ende": 18.585,
+      "schnitt_start": 7.007,
+      "schnitt_ende": 9.376,
+      "frames": 71
+    },
+    {
+      "bereich": "b4",
+      "quelle_start": 19.219,
+      "quelle_ende": 22.222,
+      "schnitt_start": 9.376,
+      "schnitt_ende": 12.379,
+      "frames": 90
+    },
+    {
+      "bereich": "b5",
+      "quelle_start": 23.156,
+      "quelle_ende": 25.459,
+      "schnitt_start": 12.379,
+      "schnitt_ende": 14.681,
+      "frames": 69
+    }
+  ]
+}

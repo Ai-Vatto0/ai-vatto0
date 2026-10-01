@@ -27,6 +27,7 @@
 | **Video-Maschine (Faruk)** | `tools/video-maschine/`, Skill `tiktok-video-maschine` | Formate, ffmpeg-Schnitt, VO, Captions, Posting | `memory/regeln/tiktok-video-maschine.md` |
 | **Werkzeuge & Konnektoren** | `.mcp.json`, `.claude/settings.json` | Plugins, MCP-Server, Keys, gesperrte Hosts | `memory/projekte/werkzeuge-und-konnektoren.md` |
 | **Video-Schnitt (Remotion)** | `video-edit/` | KI-Clips zu fertigem TikTok montieren, Hook-/CTA-Overlays | `memory/regeln/video-schnitt-workflow.md` |
+| **Video-Cutting-Agent (HyperFrames)** | `video-cutter/` | Eigene Aufnahmen schneiden **und** aus Rohmaterial Verkaufsvideos per Skript (Hook, KI-Voiceover, Zoom, Ramps, QA) | `video-cutter/START-HIER.md` |
 
 **Bewusst NICHT im Gedächtnis** (auf Wunsch von Vatto, 27.09.2026):
 Snova Studio, menu-wall-app, sora-warrior. Die Ordner bleiben im Repo, werden aber
@@ -48,7 +49,12 @@ die Repo-Doku, nicht das Gedächtnis.
 5. `memory/regeln/lyra-ads-v4.1-aktiv.md` + `lyra-ads-master-v4.0.md` – **nur noch** für
    klassische KI-Produkt-Renders mit Startframe, wenn Vatto das ausdrücklich will,
    und als Quelle für Evidenz-, QA- und Gate-Details, die Faruk nicht regelt
-6. `memory/archiv/` – historisch, **nie** mit aktiven Regeln mischen oder reaktivieren
+6. `memory/regeln/modell-routing.md` – **Arbeitsweise, gilt immer** (seit 01.10.2026):
+   Sub-Agents mit dem günstigsten tauglichen Modell, Schwelle für Delegation, keine
+   bezahlten Renders durch Sub-Agents. Wird über `CLAUDE.md` automatisch geladen
+7. `memory/regeln/text-einblendungen.md` – **Vattos Standard-Look für Texteinblendungen**
+   (Permanent Marker, eine Akzentfarbe, Pop-in 0,25 s, keine Dauerbewegung). Gilt für jedes Video.
+8. `memory/archiv/` – historisch, **nie** mit aktiven Regeln mischen oder reaktivieren
 
 ---
 

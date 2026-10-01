@@ -8,3 +8,6 @@ out
 
 # Quellclips (groß, lokal erzeugt)
 public/clips
+# Vergleichs-Medien (aus video-cutter/tools/remotion-props.mjs)
+public/spec-*/
+.claude-flow/

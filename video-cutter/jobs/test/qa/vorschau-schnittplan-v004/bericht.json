@@ -1,0 +1,251 @@
+{
+  "job": "test",
+  "plan": "schnittplan",
+  "export": "/home/user/ai-vatto0/video-cutter/jobs/test/exporte/vorschau-schnittplan-v004.mp4",
+  "geprueft": "2026-09-30T17:14:23.969Z",
+  "status": "FEHLER",
+  "checks": [
+    {
+      "bereich": "datei",
+      "pruefung": "Spuren",
+      "status": "OK",
+      "detail": "1 Video, 1 Ton"
+    },
+    {
+      "bereich": "datei",
+      "pruefung": "Auflösung",
+      "status": "OK",
+      "detail": "1080x1920"
+    },
+    {
+      "bereich": "datei",
+      "pruefung": "Bildrate",
+      "status": "OK",
+      "detail": "29.97 fps (Quelle 29.97)"
+    },
+    {
+      "bereich": "datei",
+      "pruefung": "Dauer",
+      "status": "OK",
+      "detail": "14.681 s (Plan 14.681 s, Abweichung 0 s)"
+    },
+    {
+      "bereich": "datei",
+      "pruefung": "Lautheit",
+      "status": "OK",
+      "detail": "-14.7 LUFS (Ziel -14 ±2)"
+    },
+    {
+      "bereich": "datei",
+      "pruefung": "True Peak",
+      "status": "OK",
+      "detail": "-1.9 dBTP (Ziel ≤ -1)"
+    },
+    {
+      "bereich": "b1",
+      "pruefung": "Ton-Versatz",
+      "status": "OK",
+      "detail": "0 ms, Korrelation 1.00"
+    },
+    {
+      "bereich": "b1",
+      "pruefung": "Ton einfach (nicht doppelt)",
+      "status": "OK",
+      "detail": "Pegel Export−Quelle -0.1 dB (doppelte Spur ≈ +6 dB)"
+    },
+    {
+      "bereich": "b1",
+      "pruefung": "Bild-Versatz",
+      "status": "OK",
+      "detail": "0 Frames (Unterschied 4.55/4.63/4.39/4.36/4.57/4.20/4.39/4.49/4.93/4.95/4.91)"
+    },
+    {
+      "bereich": "b2",
+      "pruefung": "Ton-Versatz",
+      "status": "OK",
+      "detail": "0 ms, Korrelation 1.00"
+    },
+    {
+      "bereich": "b2",
+      "pruefung": "Ton einfach (nicht doppelt)",
+      "status": "OK",
+      "detail": "Pegel Export−Quelle -0.0 dB (doppelte Spur ≈ +6 dB)"
+    },
+    {
+      "bereich": "b2",
+      "pruefung": "Bild-Versatz",
+      "status": "OK",
+      "detail": "0 Frames (Unterschied 8.37/7.98/8.05/8.65/8.31/6.92/8.24/7.82/7.75/8.37/8.22)"
+    },
+    {
+      "bereich": "b3",
+      "pruefung": "Ton-Versatz",
+      "status": "OK",
+      "detail": "0 ms, Korrelation 1.00"
+    },
+    {
+      "bereich": "b3",
+      "pruefung": "Ton einfach (nicht doppelt)",
+      "status": "OK",
+      "detail": "Pegel Export−Quelle -0.0 dB (doppelte Spur ≈ +6 dB)"
+    },
+    {
+      "bereich": "b3",
+      "pruefung": "Bild-Versatz",
+      "status": "OK",
+      "detail": "0 Frames (Unterschied 8.39/8.27/7.25/8.34/8.49/6.85/8.45/8.30/7.69/8.39/8.35)"
+    },
+    {
+      "bereich": "b4",
+      "pruefung": "Ton-Versatz",
+      "status": "OK",
+      "detail": "0 ms, Korrelation 1.00"
+    },
+    {
+      "bereich": "b4",
+      "pruefung": "Ton einfach (nicht doppelt)",
+      "status": "OK",
+      "detail": "Pegel Export−Quelle -0.0 dB (doppelte Spur ≈ +6 dB)"
+    },
+    {
+      "bereich": "b4",
+      "pruefung": "Bild-Versatz",
+      "status": "OK",
+      "detail": "0 Frames (Unterschied 9.73/9.55/8.86/9.70/9.84/8.17/9.85/9.56/9.17/10.00/9.98)"
+    },
+    {
+      "bereich": "b5",
+      "pruefung": "Ton-Versatz",
+      "status": "OK",
+      "detail": "0 ms, Korrelation 1.00"
+    },
+    {
+      "bereich": "b5",
+      "pruefung": "Ton einfach (nicht doppelt)",
+      "status": "OK",
+      "detail": "Pegel Export−Quelle -0.1 dB (doppelte Spur ≈ +6 dB)"
+    },
+    {
+      "bereich": "b5",
+      "pruefung": "Bild-Versatz",
+      "status": "OK",
+      "detail": "0 Frames (Unterschied 2.09/1.93/2.42/2.71/3.02/1.55/2.80/2.92/2.13/2.94/2.92)"
+    },
+    {
+      "bereich": "schnitt 1 (b1→b2)",
+      "pruefung": "Stille am Schnitt",
+      "status": "OK",
+      "detail": "max -120.0 dB bei 4.104 s (Sprachschwelle -39.331 dB)"
+    },
+    {
+      "bereich": "schnitt 2 (b2→b3)",
+      "pruefung": "Stille am Schnitt",
+      "status": "OK",
+      "detail": "max -120.0 dB bei 7.007 s (Sprachschwelle -39.331 dB)"
+    },
+    {
+      "bereich": "schnitt 3 (b3→b4)",
+      "pruefung": "Stille am Schnitt",
+      "status": "OK",
+      "detail": "max -120.0 dB bei 9.376 s (Sprachschwelle -39.331 dB)"
+    },
+    {
+      "bereich": "schnitt 4 (b4→b5)",
+      "pruefung": "Stille am Schnitt",
+      "status": "OK",
+      "detail": "max -120.0 dB bei 12.379 s (Sprachschwelle -39.331 dB)"
+    },
+    {
+      "bereich": "grafik",
+      "pruefung": "Safe Zone (oben 150, rechts 140, unten 400, links 60)",
+      "status": "FEHLER",
+      "detail": "br3 @12.773s: 912 px² außerhalb, Bereich x 944–968, y 952–1012"
+    }
+  ],
+  "transkript": null,
+  "kontaktboegen": {
+    "schnitte": "/home/user/ai-vatto0/video-cutter/jobs/test/qa/vorschau-schnittplan-v004/kontakt-schnitte.jpg",
+    "untertitel": "/home/user/ai-vatto0/video-cutter/jobs/test/qa/vorschau-schnittplan-v004/kontakt-untertitel.jpg"
+  },
+  "untertitel": [
+    {
+      "id": "ut1",
+      "start": 0.083,
+      "ende": 1.355,
+      "text": "Kennst du das wenn"
+    },
+    {
+      "id": "ut2",
+      "start": 1.355,
+      "ende": 2.561,
+      "text": "dein Kaffee nach 10"
+    },
+    {
+      "id": "ut3",
+      "start": 2.561,
+      "ende": 4.104,
+      "text": "Minuten schon kalt ist?"
+    },
+    {
+      "id": "ut4",
+      "start": 4.337,
+      "ende": 5.27,
+      "text": "Mit diesem Becher"
+    },
+    {
+      "id": "ut5",
+      "start": 5.27,
+      "ende": 6.265,
+      "text": "bleibt er deutlich"
+    },
+    {
+      "id": "ut6",
+      "start": 6.265,
+      "ende": 7.007,
+      "text": "länger warm"
+    },
+    {
+      "id": "ut7",
+      "start": 7.251,
+      "ende": 8.171,
+      "text": "Der Deckel geht mit"
+    },
+    {
+      "id": "ut8",
+      "start": 8.171,
+      "ende": 9.376,
+      "text": "einer Hand auf"
+    },
+    {
+      "id": "ut9",
+      "start": 9.607,
+      "ende": 10.896,
+      "text": "Und er passt in meinen"
+    },
+    {
+      "id": "ut10",
+      "start": 10.896,
+      "ende": 11.971,
+      "text": "Getränkehalter im"
+    },
+    {
+      "id": "ut11",
+      "start": 11.971,
+      "ende": 12.379,
+      "text": "Auto"
+    },
+    {
+      "id": "ut12",
+      "start": 12.613,
+      "ende": 14.513,
+      "text": "Jetzt im TikTok Shop"
+    }
+  ],
+  "offen_fuer_menschliche_sichtung": [
+    "Anhören: klingt jeder Schnitt natürlich (Atem, Satzmelodie, kein abgehackter Ausklang)?",
+    "Untertitel lesen: stimmt jeder Block mit dem Gesprochenen überein (v. a. Produkt-/Markennamen)?",
+    "Produkt: wirkt es im Export exakt wie in der Aufnahme (Farbe, Form, Teile) – nichts verdeckt oder abgeschnitten?",
+    "Gesichter und Produkt nicht von Text verdeckt? Text in der Safe Zone?",
+    "Aussagen in Einblendungen: alles im Video gesagt oder belegt? Keine Preise/Rabatte/Superlative?"
+  ]
+}

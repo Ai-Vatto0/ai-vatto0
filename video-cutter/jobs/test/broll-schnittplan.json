@@ -1,0 +1,52 @@
+{
+  "stil": "textgrafik",
+  "hinweis": "Testclip – Einblendungen nur aus Gesprochenem abgeleitet, keine neuen Behauptungen.",
+  "einblendungen": [
+    {
+      "id": "br1",
+      "typ": "titel",
+      "zweck": "Hook: Problem aus Satz 1 wörtlich und sofort lesbar (Ton-aus-Zuschauer)",
+      "quelle_start": 0.6,
+      "dauer": 3.4,
+      "position": "oben",
+      "zeilen": [
+        "Kaffee schon",
+        "kalt?"
+      ],
+      "betonung": [
+        "kalt?"
+      ]
+    },
+    {
+      "id": "br2",
+      "typ": "punkte",
+      "zweck": "Nutzen, die im Video gesagt werden, als Liste sichtbar machen",
+      "quelle_start": 11.6,
+      "dauer": 7.2,
+      "position": "oben",
+      "titel": "Im Alltag",
+      "punkte": [
+        {
+          "text": "Länger warm",
+          "wort": "w26"
+        },
+        {
+          "text": "Mit einer Hand auf",
+          "wort": "w28"
+        },
+        {
+          "text": "Passt in den Halter",
+          "wort": "w35"
+        }
+      ]
+    },
+    {
+      "id": "br3",
+      "typ": "cta",
+      "zweck": "Handlungsaufforderung zum Shop-Warenkorb",
+      "quelle_start": 23.25,
+      "dauer": 2.3,
+      "text": "Jetzt im TikTok Shop"
+    }
+  ]
+}

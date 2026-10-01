@@ -15,14 +15,24 @@ const path = require("path");
 if (process.env.CLAUDE_CODE_REMOTE !== "true") process.exit(0);
 
 const has = (cmd, args) => spawnSync(cmd, args, { stdio: "ignore" }).status === 0;
-const ready =
+const root = process.env.CLAUDE_PROJECT_DIR || path.resolve(__dirname, "../..");
+const home = require("os").homedir();
+const maschineReady =
   has("ffmpeg", ["-version"]) &&
   has("python3", ["-c", "import PIL, numpy, faster_whisper"]);
-if (ready) process.exit(0);
+// Video-Cutting-Agent (video-cutter/): npm-Pakete, whisper.cpp, Modell, Render-Chrome
+const cutterReady =
+  fs.existsSync(path.join(root, "video-cutter/node_modules/hyperframes")) &&
+  fs.existsSync(path.join(home, ".cache/hyperframes/whisper/whisper.cpp/build/bin/whisper-cli")) &&
+  fs.existsSync(path.join(home, ".cache/hyperframes/whisper/models/ggml-small.bin")) &&
+  fs.existsSync(path.join(home, ".claude/skills/general-video")) &&
+  has("rclone", ["version"]);
+if (maschineReady && cutterReady) process.exit(0);
 
-const root = process.env.CLAUDE_PROJECT_DIR || path.resolve(__dirname, "../..");
 const log = fs.openSync("/tmp/video-maschine-setup.log", "a");
-const child = spawn("bash", [path.join(root, "tools/video-maschine/setup.sh")], {
+// Nacheinander: erst ffmpeg & Co., dann der Video-Cutting-Agent (braucht ffmpeg).
+const cmd = `bash "${path.join(root, "tools/video-maschine/setup.sh")}"; bash "${path.join(root, "video-cutter/tools/setup.sh")}" > /tmp/video-cutter-setup.log 2>&1`;
+const child = spawn("bash", ["-c", cmd], {
   detached: true,
   stdio: ["ignore", log, log],
 });
