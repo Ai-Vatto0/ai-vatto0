@@ -25,6 +25,15 @@ dann nächstes Produkt – mit **verschiedenen Formaten** statt nur verschiedene
 
 ## SESSION-LOG
 
+### 2026-10-01 – RCB D5 Pro: 5 Videos aus Originalmaterial (erster Test der neuen Cut-Linie)
+
+- Material aus Drive (51 Dateien, MD5 geprüft) → `video-cutter/projekte/rcb-d5-pro/`. Faktenblatt: `memory/projekte/rcb-d5-pro.md`.
+- **Fund:** TikTok-Verstoß vom 26.09. (−24 Punkte, „inkonsistente Produktwerbung“) liegt im Material → Varianten-Frage (NFC/Blinker) an Vatto.
+- Werkzeug: `baue-spec.mjs` kann jetzt Marker-Looks `rcb`, `rcb_tag`, `rcb_dunkel` (Permanent Marker, Orange #FF7B1C) und `spec.logo`
+  (klein oben rechts, optional groß als Intro); bei Marker-Looks liegen alle Texte in der oberen Bildhälfte (Produkt unten frei).
+- Fotos als 6-s-Standbild-Clips (`stills/`) in der Bibliothek → Ken Burns über den normalen Spec-Weg.
+- Lehre: Drohnen-Footage 9:16 → Roller sitzt im unteren Drittel; Headline bei 1150 px lag über dem Produkt (v001 von Video a verworfen).
+
 ### 2026-10-01 – Fester Drive-Ordner für Videos (beide Richtungen)
 
 - Austausch über `Snova-Videos/01-Rohmaterial/<Produkt>` (Vatto lädt hoch) und `02-Fertig/<Produkt>` (Finals automatisch).

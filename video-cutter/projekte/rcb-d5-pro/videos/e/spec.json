@@ -1,0 +1,136 @@
+{
+  "titel": "Wald-Test: Schotter, Wurzeln, Schlaglöcher",
+  "idee": {
+    "winkel": "problem_loesung",
+    "zielgruppe": "Fahrer mit schlechten Wegen, Pendler über Feld- und Waldwege",
+    "hook": "Fahrt aus dem hellen Waldrand in den Wald + „Schotter, Wurzeln, Schlaglöcher?“",
+    "emotion": "Souveränität"
+  },
+  "format": "Problem-Lösung, lange Drohnen-Fahrten mit Ken Burns, dunkler Text-Look",
+  "look": "rcb_dunkel",
+  "textposition": "unten",
+  "stimme": {
+    "anbieter": "yapper",
+    "modell": "eleven_v3",
+    "name": "Markus – Young Natural German",
+    "voice_id": "IeQubAjK1ujbppIdhJw4"
+  },
+  "logo": {
+    "datei": "assets/rcb-logo-karte.png",
+    "intro": 0,
+    "ende": false
+  },
+  "voiceover": [
+    {
+      "satz": "Schotter, Wurzeln, Schlaglöcher?",
+      "belege": [
+        "meinung"
+      ]
+    },
+    {
+      "satz": "Mit einem Plastikroller wird das schnell ungemütlich.",
+      "belege": [
+        "meinung"
+      ]
+    },
+    {
+      "satz": "Der RCB fährt einfach drüber.",
+      "belege": [
+        "meinung"
+      ]
+    },
+    {
+      "satz": "Zehn-Zoll-Reifen, Federung vorne und hinten und 500 Watt Motor.",
+      "belege": [
+        "gelreifen",
+        "federung",
+        "motor_500w"
+      ],
+      "bedingung_ok": true
+    },
+    {
+      "satz": "Und mit bis zu 150 Kilo Zuladung nimmt er auch deinen großen Kumpel mit.",
+      "belege": [
+        "max_150kg"
+      ]
+    },
+    {
+      "satz": "Kurz gesagt: der kann was.",
+      "belege": [
+        "meinung"
+      ]
+    },
+    {
+      "satz": "Jetzt im TikTok Shop.",
+      "belege": []
+    }
+  ],
+  "szenen": [
+    {
+      "clip": "dji0925-0012",
+      "von": 18.0,
+      "bis": 21.766,
+      "rolle": "hook",
+      "zoom": "kenburns_in",
+      "uebergang": "zoom",
+      "text": {
+        "inhalt": "WALD-TEST",
+        "betonung": [
+          "TEST"
+        ],
+        "belege": [
+          "meinung"
+        ]
+      }
+    },
+    {
+      "clip": "dji0925-0012-seg1",
+      "von": 1.1,
+      "bis": 2.918,
+      "rolle": "beweis",
+      "zoom": "none",
+      "uebergang": "whip",
+      "ab_wort": 10
+    },
+    {
+      "clip": "dji0925-0012",
+      "von": 70.0,
+      "bis": 73.273,
+      "rolle": "beweis",
+      "zoom": "kenburns_in",
+      "uebergang": "flash",
+      "ab_wort": 15,
+      "text": {
+        "inhalt": "HARDWARE STATT PLASTIK",
+        "betonung": [
+          "HARDWARE"
+        ],
+        "belege": [
+          "metall"
+        ]
+      }
+    },
+    {
+      "clip": "dji0925-0012",
+      "von": 106.0,
+      "bis": 112.909,
+      "rolle": "emotion",
+      "zoom": "none",
+      "uebergang": "zoom",
+      "ab_wort": 24
+    },
+    {
+      "clip": "dji0925-0012",
+      "von": 136.0,
+      "bis": 138.975,
+      "rolle": "cta",
+      "zoom": "kenburns_in",
+      "ab_wort": 43
+    }
+  ],
+  "cta": {
+    "text": "Jetzt im TikTok Shop",
+    "zusatz": "Für Wald, Feld und Stadt.",
+    "top": 330
+  }
+}

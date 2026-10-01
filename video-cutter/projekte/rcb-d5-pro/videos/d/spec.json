@@ -1,0 +1,144 @@
+{
+  "titel": "Feierabendrunde",
+  "idee": {
+    "winkel": "alltag",
+    "zielgruppe": "Berufstätige, die nach der Arbeit abschalten wollen",
+    "hook": "Abendlicht, Fahrt über den Feldweg + großes RCB-Logo + „Feierabend.“",
+    "emotion": "Ruhe, Freiheit"
+  },
+  "format": "Stimmungs-Video, lange ruhige Einstellungen, Logo-Intro groß",
+  "look": "rcb_tag",
+  "textposition": "oben",
+  "stimme": {
+    "anbieter": "yapper",
+    "modell": "eleven_v3",
+    "name": "Markus – Young Natural German",
+    "voice_id": "IeQubAjK1ujbppIdhJw4"
+  },
+  "logo": {
+    "datei": "assets/rcb-logo-karte.png",
+    "intro": 1.4,
+    "ende": false,
+    "top": 740
+  },
+  "voiceover": [
+    {
+      "satz": "Feierabend.",
+      "belege": [
+        "meinung"
+      ]
+    },
+    {
+      "satz": "Handy weg, Roller raus, und einfach los.",
+      "belege": [
+        "meinung"
+      ]
+    },
+    {
+      "satz": "Noch eine Runde, bevor die Sonne weg ist.",
+      "belege": [
+        "meinung"
+      ]
+    },
+    {
+      "satz": "Keine Parkplatzsuche, kein Gedränge, nur du und der Feldweg.",
+      "belege": [
+        "meinung"
+      ]
+    },
+    {
+      "satz": "Mit 20 Sachen, und die Federung bügelt die Huckel einfach weg.",
+      "belege": [
+        "abe_20kmh",
+        "federung"
+      ]
+    },
+    {
+      "satz": "Genau für solche Abende ist der gemacht.",
+      "belege": [
+        "meinung"
+      ]
+    },
+    {
+      "satz": "Jetzt im TikTok Shop.",
+      "belege": []
+    }
+  ],
+  "szenen": [
+    {
+      "clip": "dji0924-0004",
+      "von": 9.0,
+      "bis": 12.039,
+      "rolle": "hook",
+      "zoom": "none",
+      "uebergang": "cut",
+      "text": {
+        "inhalt": "DEINE ABENDRUNDE",
+        "betonung": [
+          "ABENDRUNDE"
+        ],
+        "belege": [
+          "meinung"
+        ]
+      }
+    },
+    {
+      "clip": "foto-abend",
+      "von": 0,
+      "bis": 2.909,
+      "rolle": "emotion",
+      "zoom": "kenburns_in",
+      "uebergang": "cut",
+      "ab_wort": 8
+    },
+    {
+      "clip": "dji0924-0004",
+      "von": 21.5,
+      "bis": 24.773,
+      "rolle": "emotion",
+      "zoom": "none",
+      "uebergang": "cut",
+      "ab_wort": 16
+    },
+    {
+      "clip": "dji0924-0001-seg2",
+      "von": 3.5,
+      "bis": 7.5,
+      "rolle": "beweis",
+      "zoom": "none",
+      "uebergang": "cut",
+      "ab_wort": 25,
+      "text": {
+        "inhalt": "FELDWEG? KEIN THEMA.",
+        "betonung": [
+          "THEMA."
+        ],
+        "belege": [
+          "meinung"
+        ]
+      }
+    },
+    {
+      "clip": "dji0924-0001-seg4",
+      "von": 0.3,
+      "bis": 2.845,
+      "rolle": "emotion",
+      "zoom": "none",
+      "uebergang": "cut",
+      "ab_wort": 36
+    },
+    {
+      "clip": "dji0924-0004",
+      "von": 14.0,
+      "bis": 16.975,
+      "rolle": "cta",
+      "zoom": "kenburns_out",
+      "ab_wort": 43
+    }
+  ],
+  "cta": {
+    "text": "Jetzt im TikTok Shop",
+    "zusatz": "Für deine Abendrunde.",
+    "top": 330
+  }
+}

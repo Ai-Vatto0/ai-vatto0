@@ -1,0 +1,76 @@
+{
+  "video": "d",
+  "vo_start": 0.25,
+  "vorlauf": 0.12,
+  "cta_halt": 1.4,
+  "gesamt_s": 20.367,
+  "szenen": [
+    {
+      "szene": 1,
+      "clip": "dji0924-0004",
+      "ab_wort": null,
+      "wort": "(Start)",
+      "start": 0,
+      "dauer": 4.267,
+      "von": 9,
+      "bis": 13.267,
+      "tempo": 1
+    },
+    {
+      "szene": 2,
+      "clip": "foto-abend",
+      "ab_wort": 8,
+      "wort": "Noch",
+      "start": 4.266666666666667,
+      "dauer": 2.333,
+      "von": 0,
+      "bis": 2.333,
+      "tempo": 1
+    },
+    {
+      "szene": 3,
+      "clip": "dji0924-0004",
+      "ab_wort": 16,
+      "wort": "Keine",
+      "start": 6.6,
+      "dauer": 4.433,
+      "von": 21.5,
+      "bis": 25.933,
+      "tempo": 1
+    },
+    {
+      "szene": 4,
+      "clip": "dji0924-0001-seg2",
+      "ab_wort": 25,
+      "wort": "Mit",
+      "start": 11.033333333333333,
+      "dauer": 4.2,
+      "von": 3.5,
+      "bis": 7.7,
+      "tempo": 1
+    },
+    {
+      "szene": 5,
+      "clip": "dji0924-0001-seg4",
+      "ab_wort": 36,
+      "wort": "Genau",
+      "start": 15.233333333333333,
+      "dauer": 2.167,
+      "von": 0.3,
+      "bis": 2.467,
+      "tempo": 1
+    },
+    {
+      "szene": 6,
+      "clip": "dji0924-0004",
+      "ab_wort": 43,
+      "wort": "Jetzt",
+      "start": 17.4,
+      "dauer": 2.967,
+      "von": 14,
+      "bis": 16.967,
+      "tempo": 1
+    }
+  ],
+  "fehler": []
+}

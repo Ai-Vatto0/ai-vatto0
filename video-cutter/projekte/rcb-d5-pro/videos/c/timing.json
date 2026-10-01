@@ -1,0 +1,87 @@
+{
+  "video": "c",
+  "vo_start": 0.25,
+  "vorlauf": 0.12,
+  "cta_halt": 1.4,
+  "gesamt_s": 23.4,
+  "szenen": [
+    {
+      "szene": 1,
+      "clip": "foto-display",
+      "ab_wort": null,
+      "wort": "(Start)",
+      "start": 0,
+      "dauer": 2.5,
+      "von": 0,
+      "bis": 2.5,
+      "tempo": 1
+    },
+    {
+      "szene": 2,
+      "clip": "foto-pov",
+      "ab_wort": 6,
+      "wort": "Display",
+      "start": 2.5,
+      "dauer": 4.367,
+      "von": 0,
+      "bis": 4.367,
+      "tempo": 1
+    },
+    {
+      "szene": 3,
+      "clip": "dji0925-0012",
+      "ab_wort": 15,
+      "wort": "Doppelbremse",
+      "start": 6.866666666666666,
+      "dauer": 2.2,
+      "von": 84,
+      "bis": 86.2,
+      "tempo": 1
+    },
+    {
+      "szene": 4,
+      "clip": "dji0925-0012-seg2",
+      "ab_wort": 19,
+      "wort": "Scheinwerfer",
+      "start": 9.066666666666666,
+      "dauer": 3.133,
+      "von": 0.1,
+      "bis": 3.233,
+      "tempo": 1
+    },
+    {
+      "szene": 5,
+      "clip": "dji0925-0012",
+      "ab_wort": 27,
+      "wort": "Nach",
+      "start": 12.2,
+      "dauer": 3.167,
+      "von": 110,
+      "bis": 113.167,
+      "tempo": 1
+    },
+    {
+      "szene": 6,
+      "clip": "dji0925-0012",
+      "ab_wort": 34,
+      "wort": "Und",
+      "start": 15.366666666666667,
+      "dauer": 5.167,
+      "von": 60.5,
+      "bis": 65.667,
+      "tempo": 1
+    },
+    {
+      "szene": 7,
+      "clip": "foto-wald1",
+      "ab_wort": 45,
+      "wort": "Jetzt",
+      "start": 20.533333333333335,
+      "dauer": 2.867,
+      "von": 0,
+      "bis": 2.867,
+      "tempo": 1
+    }
+  ],
+  "fehler": []
+}

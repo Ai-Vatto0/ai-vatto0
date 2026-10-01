@@ -1,0 +1,162 @@
+{
+  "titel": "Plastikbomber? Dieser nicht.",
+  "idee": {
+    "winkel": "einwand",
+    "zielgruppe": "Käufer, die Angst vor billigen, klapprigen Rollern haben",
+    "hook": "Nahaufnahme Doppelfederung + „Viele Roller da draußen? Plastikbomber.“",
+    "emotion": "Vertrauen, Trotz"
+  },
+  "format": "Einwand-Antwort mit Detail-Fotos (Ken Burns), andere Stimme (A/B-Test Patrick)",
+  "look": "rcb_tag",
+  "textposition": "unten",
+  "stimme": {
+    "anbieter": "yapper",
+    "modell": "eleven_v3",
+    "name": "Patrick – Northern German Chat",
+    "voice_id": "rUxG6T3T35OAyiiJgocG"
+  },
+  "logo": {
+    "datei": "assets/rcb-logo-karte.png",
+    "intro": 0,
+    "ende": false
+  },
+  "voiceover": [
+    {
+      "satz": "Viele Roller da draußen? Plastikbomber.",
+      "belege": [
+        "meinung"
+      ]
+    },
+    {
+      "satz": "Der hier ist anders gebaut.",
+      "belege": [
+        "meinung"
+      ]
+    },
+    {
+      "satz": "Rahmen und Gabel aus Metall, vorne doppelt gefedert, hinten auch.",
+      "belege": [
+        "metall",
+        "federung"
+      ]
+    },
+    {
+      "satz": "Trägt bis 150 Kilo.",
+      "belege": [
+        "max_150kg"
+      ]
+    },
+    {
+      "satz": "Und die Zehn-Zoll-Gelreifen dichten kleine Löcher bis drei Millimeter selbst ab.",
+      "belege": [
+        "gelreifen"
+      ],
+      "bedingung_ok": true
+    },
+    {
+      "satz": "Einmal draufgestanden, und Plastik ist für dich erledigt.",
+      "belege": [
+        "meinung"
+      ]
+    },
+    {
+      "satz": "Jetzt im TikTok Shop.",
+      "belege": []
+    }
+  ],
+  "szenen": [
+    {
+      "clip": "foto-front",
+      "von": 0,
+      "bis": 1.948,
+      "rolle": "hook",
+      "zoom": "kenburns_in",
+      "uebergang": "flash",
+      "text": {
+        "inhalt": "DIESER NICHT.",
+        "betonung": [
+          "NICHT."
+        ],
+        "belege": [
+          "meinung"
+        ]
+      }
+    },
+    {
+      "clip": "dji0924-0001-seg2",
+      "von": 0,
+      "bis": 1.818,
+      "rolle": "beweis",
+      "zoom": "punch",
+      "uebergang": "zoom",
+      "ab_wort": 5
+    },
+    {
+      "clip": "foto-wald2",
+      "von": 0,
+      "bis": 3.636,
+      "rolle": "beweis",
+      "zoom": "kenburns_in",
+      "uebergang": "whip",
+      "ab_wort": 10,
+      "text": {
+        "inhalt": "MASSIV GEBAUT",
+        "betonung": [
+          "MASSIV"
+        ],
+        "belege": [
+          "meinung"
+        ]
+      }
+    },
+    {
+      "clip": "foto-karton",
+      "von": 0,
+      "bis": 1.455,
+      "rolle": "beweis",
+      "zoom": "kenburns_in",
+      "uebergang": "flash",
+      "ab_wort": 20,
+      "text": {
+        "inhalt": "AUCH FÜR KRÄFTIGE FAHRER",
+        "betonung": [
+          "KRÄFTIGE"
+        ],
+        "belege": [
+          "max_150kg"
+        ]
+      }
+    },
+    {
+      "clip": "dji0924-0001-seg2",
+      "von": 7.8,
+      "bis": 11.8,
+      "rolle": "beweis",
+      "zoom": "kenburns_out",
+      "uebergang": "zoom",
+      "ab_wort": 24
+    },
+    {
+      "clip": "dji0925-0012-seg4",
+      "von": 0.7,
+      "bis": 3.609,
+      "rolle": "emotion",
+      "zoom": "punch",
+      "uebergang": "cut",
+      "ab_wort": 35
+    },
+    {
+      "clip": "dji0924-0001-seg3",
+      "von": 0,
+      "bis": 2.975,
+      "rolle": "cta",
+      "zoom": "kenburns_out",
+      "ab_wort": 43
+    }
+  ],
+  "cta": {
+    "text": "Jetzt im TikTok Shop",
+    "zusatz": "Rahmen und Gabel aus Metall.",
+    "top": 330
+  }
+}

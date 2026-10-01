@@ -1,0 +1,284 @@
+[
+  {
+    "text": "Feierabend,",
+    "start": 0.09,
+    "end": 0.99,
+    "id": "w0"
+  },
+  {
+    "text": "Handy",
+    "start": 1.03,
+    "end": 1.41,
+    "id": "w1"
+  },
+  {
+    "text": "weg,",
+    "start": 1.41,
+    "end": 1.81,
+    "id": "w2"
+  },
+  {
+    "text": "Roller",
+    "start": 1.83,
+    "end": 2.32,
+    "id": "w3"
+  },
+  {
+    "text": "raus",
+    "start": 2.32,
+    "end": 2.46,
+    "id": "w4"
+  },
+  {
+    "text": "und",
+    "start": 2.79,
+    "end": 2.96,
+    "id": "w5"
+  },
+  {
+    "text": "einfach",
+    "start": 2.97,
+    "end": 3.56,
+    "id": "w6"
+  },
+  {
+    "text": "los.",
+    "start": 3.56,
+    "end": 4.08,
+    "id": "w7"
+  },
+  {
+    "text": "Noch",
+    "start": 4.14,
+    "end": 4.33,
+    "id": "w8"
+  },
+  {
+    "text": "eine",
+    "start": 4.33,
+    "end": 4.56,
+    "id": "w9"
+  },
+  {
+    "text": "Runde,",
+    "start": 4.57,
+    "end": 5.01,
+    "id": "w10"
+  },
+  {
+    "text": "bevor",
+    "start": 5.11,
+    "end": 5.32,
+    "id": "w11"
+  },
+  {
+    "text": "die",
+    "start": 5.32,
+    "end": 5.5,
+    "id": "w12"
+  },
+  {
+    "text": "Sonne",
+    "start": 5.5,
+    "end": 5.8,
+    "id": "w13"
+  },
+  {
+    "text": "weg",
+    "start": 5.84,
+    "end": 5.98,
+    "id": "w14"
+  },
+  {
+    "text": "ist.",
+    "start": 5.98,
+    "end": 6.4,
+    "id": "w15"
+  },
+  {
+    "text": "Keine",
+    "start": 6.46,
+    "end": 6.74,
+    "id": "w16"
+  },
+  {
+    "text": "Parkplatzsuche,",
+    "start": 6.74,
+    "end": 7.87,
+    "id": "w17"
+  },
+  {
+    "text": "kein",
+    "start": 7.94,
+    "end": 8.19,
+    "id": "w18"
+  },
+  {
+    "text": "Gedränge,",
+    "start": 8.19,
+    "end": 8.86,
+    "id": "w19"
+  },
+  {
+    "text": "nur",
+    "start": 9.19,
+    "end": 9.22,
+    "id": "w20"
+  },
+  {
+    "text": "du",
+    "start": 9.22,
+    "end": 9.39,
+    "id": "w21"
+  },
+  {
+    "text": "und",
+    "start": 9.39,
+    "end": 9.65,
+    "id": "w22"
+  },
+  {
+    "text": "der",
+    "start": 9.65,
+    "end": 9.91,
+    "id": "w23"
+  },
+  {
+    "text": "Feldweg.",
+    "start": 9.91,
+    "end": 10.84,
+    "id": "w24"
+  },
+  {
+    "text": "Mit",
+    "start": 10.9,
+    "end": 11.1,
+    "id": "w25"
+  },
+  {
+    "text": "20",
+    "start": 11.1,
+    "end": 11.49,
+    "id": "w26"
+  },
+  {
+    "text": "Sachen",
+    "start": 11.86,
+    "end": 12.16,
+    "id": "w27"
+  },
+  {
+    "text": "und",
+    "start": 12.16,
+    "end": 12.31,
+    "id": "w28"
+  },
+  {
+    "text": "die",
+    "start": 12.37,
+    "end": 12.38,
+    "id": "w29"
+  },
+  {
+    "text": "Federung",
+    "start": 12.6,
+    "end": 13.1,
+    "id": "w30"
+  },
+  {
+    "text": "bügelt",
+    "start": 13.1,
+    "end": 13.33,
+    "id": "w31"
+  },
+  {
+    "text": "die",
+    "start": 13.63,
+    "end": 13.69,
+    "id": "w32"
+  },
+  {
+    "text": "Huckel",
+    "start": 13.69,
+    "end": 14.08,
+    "id": "w33"
+  },
+  {
+    "text": "einfach",
+    "start": 14.08,
+    "end": 14.49,
+    "id": "w34"
+  },
+  {
+    "text": "weg.",
+    "start": 14.49,
+    "end": 15.04,
+    "id": "w35"
+  },
+  {
+    "text": "Genau",
+    "start": 15.1,
+    "end": 15.36,
+    "id": "w36"
+  },
+  {
+    "text": "für",
+    "start": 15.36,
+    "end": 15.55,
+    "id": "w37"
+  },
+  {
+    "text": "solche",
+    "start": 15.55,
+    "end": 15.7,
+    "id": "w38"
+  },
+  {
+    "text": "Abende",
+    "start": 16.05,
+    "end": 16.3,
+    "id": "w39"
+  },
+  {
+    "text": "ist",
+    "start": 16.3,
+    "end": 16.49,
+    "id": "w40"
+  },
+  {
+    "text": "der",
+    "start": 16.49,
+    "end": 16.58,
+    "id": "w41"
+  },
+  {
+    "text": "gemacht,",
+    "start": 16.8,
+    "end": 17.28,
+    "id": "w42"
+  },
+  {
+    "text": "jetzt",
+    "start": 17.28,
+    "end": 17.5,
+    "id": "w43"
+  },
+  {
+    "text": "im",
+    "start": 17.5,
+    "end": 17.83,
+    "id": "w44"
+  },
+  {
+    "text": "TikTok",
+    "start": 17.83,
+    "end": 18.24,
+    "id": "w45"
+  },
+  {
+    "text": "Shop.",
+    "start": 18.27,
+    "end": 18.73,
+    "id": "w46"
+  }
+]

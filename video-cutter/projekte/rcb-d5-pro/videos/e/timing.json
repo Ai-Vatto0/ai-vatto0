@@ -1,0 +1,65 @@
+{
+  "video": "e",
+  "vo_start": 0.25,
+  "vorlauf": 0.12,
+  "cta_halt": 1.4,
+  "gesamt_s": 24.333,
+  "szenen": [
+    {
+      "szene": 1,
+      "clip": "dji0925-0012",
+      "ab_wort": null,
+      "wort": "(Start)",
+      "start": 0,
+      "dauer": 5.7,
+      "von": 18,
+      "bis": 23.7,
+      "tempo": 1
+    },
+    {
+      "szene": 2,
+      "clip": "dji0925-0012-seg1",
+      "ab_wort": 10,
+      "wort": "Der",
+      "start": 5.7,
+      "dauer": 3.3,
+      "von": 1.1,
+      "bis": 4.4,
+      "tempo": 1
+    },
+    {
+      "szene": 3,
+      "clip": "dji0925-0012",
+      "ab_wort": 15,
+      "wort": "Zehn-Zoll-Reifen,",
+      "start": 9,
+      "dauer": 4.433,
+      "von": 70,
+      "bis": 74.433,
+      "tempo": 1
+    },
+    {
+      "szene": 4,
+      "clip": "dji0925-0012",
+      "ab_wort": 24,
+      "wort": "Und",
+      "start": 13.433333333333334,
+      "dauer": 7.8,
+      "von": 106,
+      "bis": 113.8,
+      "tempo": 1
+    },
+    {
+      "szene": 5,
+      "clip": "dji0925-0012",
+      "ab_wort": 43,
+      "wort": "Jetzt",
+      "start": 21.233333333333334,
+      "dauer": 3.1,
+      "von": 136,
+      "bis": 139.1,
+      "tempo": 1
+    }
+  ],
+  "fehler": []
+}

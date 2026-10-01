@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="de">
+  <head><meta charset="UTF-8" /><!-- GENERIERT von tools/baue-spec.mjs – nicht von Hand ändern. --></head>
+  <body>
+    <template>
+      <style>
+        @font-face { font-family: "Poppins"; src: url("assets/fonts/Poppins-Bold.ttf") format("truetype"); font-weight: 700; } @font-face { font-family: "Marker"; src: url("assets/fonts/PermanentMarker.ttf") format("truetype"); font-weight: 400; }
+        #root { position: absolute; inset: 0; font-family: "Poppins", sans-serif; font-weight: 700; }
+        /* Safe Zone 1080x1920: oben 150, rechts 140, unten 400, links 60 */
+        .cap { position: absolute; left: 60px; right: 140px; top: 230px; display: flex; justify-content: center; }
+        .cap-in { max-width: 860px; text-align: center; font-size: 64px; line-height: 1.12; color: #FFF7E8; -webkit-text-stroke: 10px #140F05; paint-order: stroke fill; background: transparent; padding: 0; border-radius: 26px; text-shadow: 0 6px 18px rgba(0,0,0,.45); }
+        .headline { position: absolute; left: 60px; right: 140px; top: 1150px; display: flex; justify-content: center; }
+        .hl-in { max-width: 860px; text-align: center; font-size: 112px; line-height: 1.04; color: #FFF7E8; font-family: "Marker", sans-serif; font-weight: 400; -webkit-text-stroke: 12px #140F05; paint-order: stroke fill; text-shadow: 0 10px 0 rgba(12,9,3,.55); transform: rotate(-2deg); }
+        .hw { display: inline-block; }
+        .hw.em { color: #FF7B1C; }
+        .ctabox { position: absolute; left: 60px; right: 140px; top: 1080px; display: flex; flex-direction: column; align-items: center; }
+        .cta-tx { color: #FF7B1C; font-size: 76px; line-height: 1.05; text-align: center; max-width: 720px; font-family: "Marker", sans-serif; font-weight: 400; font-size: 92px; -webkit-text-stroke: 12px #140F05; paint-order: stroke fill; text-shadow: 0 10px 0 rgba(12,9,3,.55); transform: rotate(-2deg); }
+        .cta-zu { color: #fff; font-size: 44px; margin-top: 12px; text-align: center; max-width: 720px; background: rgba(0,0,0,.55); padding: 6px 18px; border-radius: 16px; }
+        .pfeil { width: 150px; height: 150px; margin-top: 4px; margin-right: 400px; }
+        .pfeil path { stroke-dasharray: 260; }
+        .logo-gross { position: absolute; left: 110px; top: 300px; width: 760px; }
+        .logo-klein { position: absolute; left: 680px; top: 150px; width: 250px; opacity: .92; }
+        .ki { position: absolute; left: 70px; top: 160px; font-size: 26px; color: #FFFFFF; letter-spacing: .04em; background: rgba(0,0,0,.62); padding: 6px 14px; border-radius: 12px; }
+      </style>
+      <div id="root" data-composition-id="grafik" data-width="1080" data-height="1920">
+        <div id="h1" class="clip headline" data-start="0.1" data-duration="4.183" data-track-index="1"><div class="hl-in"><span class="hw">KEIN</span> <span class="hw em">SPIELZEUG</span></div></div>
+        <div id="h3" class="clip headline" data-start="6.133" data-duration="2.383" data-track-index="1"><div class="hl-in"><span class="hw">OFFROAD?</span> <span class="hw em">LÄUFT.</span></div></div>
+        <div id="h5" class="clip headline" data-start="10.933" data-duration="3.383" data-track-index="1"><div class="hl-in"><span class="hw em">METALL</span> <span class="hw">STATT</span> <span class="hw">PLASTIK</span></div></div>
+        <div id="h6" class="clip headline" data-start="14.466" data-duration="2.283" data-track-index="1"><div class="hl-in"><span class="hw em">ABE</span> <span class="hw">·</span> <span class="hw">20</span> <span class="hw">KM/H</span></div></div>
+        <div id="cta" class="clip ctabox" style="top:1080px" data-start="20.066" data-duration="3.767" data-track-index="2"><div class="cta-tx">Jetzt im TikTok Shop</div><div class="cta-zu">Dein neuer Daily Driver.</div><svg class="pfeil" viewBox="0 0 200 200"><path d="M170 20 C 150 90, 110 130, 40 160" fill="none" stroke="#FF7B1C" stroke-width="14" stroke-linecap="round"/><path d="M40 160 L 70 118 M40 160 L 92 170" fill="none" stroke="#FF7B1C" stroke-width="14" stroke-linecap="round"/></svg></div>
+        <img id="logo-klein" class="clip logo-klein" src="assets/logo.png" data-start="0" data-duration="20.066" data-track-index="5" />
+        <img id="logo-ende" class="clip logo-gross" style="top:420px" src="assets/logo.png" data-start="20.066" data-duration="3.767" data-track-index="4" />
+        <div id="ki" class="clip ki" data-start="0" data-duration="23.833" data-track-index="3">KI-Stimme</div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#h1 .hl-in", { opacity: 0 }, { opacity: 1, duration: 0.06 }, 0.1);
+        tl.fromTo("#h1 .hw", { yPercent: 80, opacity: 0, rotation: -4 }, { yPercent: 0, opacity: 1, rotation: 0, duration: 0.32, ease: "back.out(2.2)", stagger: 0.06 }, 0.1);
+        tl.to("#h1 .hl-in", { opacity: 0, y: -20, duration: 0.18, ease: "power2.in" }, 4.103);
+        tl.fromTo("#h3 .hl-in", { opacity: 0 }, { opacity: 1, duration: 0.06 }, 6.133);
+        tl.fromTo("#h3 .hw", { yPercent: 80, opacity: 0, rotation: -4 }, { yPercent: 0, opacity: 1, rotation: 0, duration: 0.32, ease: "back.out(2.2)", stagger: 0.06 }, 6.133);
+        tl.to("#h3 .hl-in", { opacity: 0, y: -20, duration: 0.18, ease: "power2.in" }, 8.336);
+        tl.fromTo("#h5 .hl-in", { opacity: 0 }, { opacity: 1, duration: 0.06 }, 10.933);
+        tl.fromTo("#h5 .hw", { yPercent: 80, opacity: 0, rotation: -4 }, { yPercent: 0, opacity: 1, rotation: 0, duration: 0.32, ease: "back.out(2.2)", stagger: 0.06 }, 10.933);
+        tl.to("#h5 .hl-in", { opacity: 0, y: -20, duration: 0.18, ease: "power2.in" }, 14.136);
+        tl.fromTo("#h6 .hl-in", { opacity: 0 }, { opacity: 1, duration: 0.06 }, 14.466);
+        tl.fromTo("#h6 .hw", { yPercent: 80, opacity: 0, rotation: -4 }, { yPercent: 0, opacity: 1, rotation: 0, duration: 0.32, ease: "back.out(2.2)", stagger: 0.06 }, 14.466);
+        tl.to("#h6 .hl-in", { opacity: 0, y: -20, duration: 0.18, ease: "power2.in" }, 16.569);
+        tl.fromTo("#cta .cta-tx", { scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.42, ease: "back.out(1.2)" }, 20.166);
+        tl.fromTo("#cta .cta-zu", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "power3.out" }, 20.466);
+        tl.fromTo("#cta .pfeil path", { strokeDashoffset: 260 }, { strokeDashoffset: 0, duration: 0.45, ease: "power2.out", stagger: 0.12 }, 20.566);
+        tl.fromTo("#logo-ende", { scale: 0.86, y: 24, opacity: 0 }, { scale: 1, y: 0, opacity: 1, duration: 0.25, ease: "power3.out" }, 20.116);
+        window.__timelines["grafik"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

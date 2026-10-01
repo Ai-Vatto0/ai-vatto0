@@ -1,0 +1,74 @@
+{
+  "gebaut": "2026-10-01T13:10:51.380Z",
+  "video": "a",
+  "dauer_s": 23.833,
+  "fps": 30,
+  "vo_start": 0.25,
+  "vo_ende": 22.45,
+  "szenen": [
+    {
+      "szene": 1,
+      "clip": "dji0926-0021",
+      "start": 0,
+      "dauer": 4.333,
+      "zoom": "kenburns_in",
+      "uebergang": "zoom"
+    },
+    {
+      "szene": 2,
+      "clip": "dji0926-0021",
+      "start": 4.333,
+      "dauer": 1.7,
+      "zoom": "punch",
+      "uebergang": "whip"
+    },
+    {
+      "szene": 3,
+      "clip": "dji0926-0021",
+      "start": 6.033,
+      "dauer": 2.533,
+      "zoom": "kenburns_in",
+      "tempo": "ramp",
+      "uebergang": "cut"
+    },
+    {
+      "szene": 4,
+      "clip": "dji0926-0021",
+      "start": 8.566,
+      "dauer": 2.267,
+      "zoom": "kenburns_out",
+      "uebergang": "flash"
+    },
+    {
+      "szene": 5,
+      "clip": "foto-federung",
+      "start": 10.833,
+      "dauer": 3.533,
+      "zoom": "kenburns_in",
+      "uebergang": "zoom"
+    },
+    {
+      "szene": 6,
+      "clip": "dji0926-0021",
+      "start": 14.366,
+      "dauer": 2.433,
+      "zoom": "punch",
+      "uebergang": "whip"
+    },
+    {
+      "szene": 7,
+      "clip": "dji0926-0021",
+      "start": 16.799,
+      "dauer": 3.267,
+      "zoom": "kenburns_in",
+      "uebergang": "cut"
+    },
+    {
+      "szene": 8,
+      "clip": "dji0926-0021",
+      "start": 20.066,
+      "dauer": 3.767,
+      "zoom": "kenburns_out"
+    }
+  ]
+}

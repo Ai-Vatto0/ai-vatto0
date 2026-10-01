@@ -1,0 +1,21 @@
+{
+  "quelle": "TikTok-Shop-Angebot RCB DIRECT (Screenshots IMG_0509–0515, IMG_8296–8307 von Vatto, 01.10.2026) + Vattos Angaben + eigene Fotos/Clips",
+  "hinweis": "Nur Merkmale, die ALLE Varianten (D5 / D5 PRO / ABE NFC) gemeinsam haben. Akku, Reichweite, NFC und Blinker unterscheiden sich je Variante → rot, bis Vatto die verlinkte Variante bestätigt.",
+  "fakten": {
+    "motor_500w": { "text": "500-W-Motor", "ampel": "gruen" },
+    "spitze_1600w": { "text": "1600 W Spitzenleistung (Händler-Infografik)", "ampel": "gelb", "bedingung": "nur als Spitzenleistung, nie als Dauerleistung" },
+    "abe_20kmh": { "text": "Deutsche ABE, 20 km/h – darf auf die Straße (mit Versicherungskennzeichen)", "ampel": "gruen" },
+    "drei_gaenge": { "text": "3 Fahrstufen (10 / 15 / 20 km/h)", "ampel": "gruen" },
+    "gelreifen": { "text": "10-Zoll-Gelreifen, die kleine Löcher bis 3 mm selbst abdichten", "ampel": "gelb", "bedingung": "nur mit „bis 3 mm“/„kleine Löcher“, nie „pannenfrei/platt-sicher“" },
+    "doppelbremse": { "text": "Doppelbremse (vorne und hinten)", "ampel": "gruen" },
+    "federung": { "text": "Federung vorne und hinten (Doppelfederung vorne, im Foto sichtbar)", "ampel": "gruen" },
+    "max_150kg": { "text": "Bis 150 kg belastbar", "ampel": "gruen", "bedingung": "nur mit „bis“" },
+    "faltbar": { "text": "Faltbar", "ampel": "gruen" },
+    "gewicht_30kg": { "text": "Rund 30 kg (30,6 kg)", "ampel": "gruen" },
+    "display": { "text": "Multifunktionsdisplay mit Tastensteuerung", "ampel": "gruen" },
+    "licht": { "text": "Scheinwerfer und Rücklicht", "ampel": "gruen" },
+    "metall": { "text": "Rahmen und Gabel aus Metall (sichtbar, Vatto)", "ampel": "gruen", "bedingung": "kein Werkstoff-Superlativ" },
+    "meinung": { "text": "Persönliche Meinung/Gefühl ohne Produktbehauptung", "ampel": "gruen" }
+  },
+  "rot": ["Reichweite", "27 Ah", "20,8 Ah", "NFC", "Blinker", "pannenfrei", "unkaputtbar", "robusteste", "stärkste", "günstigste", "beste", "Segway", "Xiaomi", "Polizei", "Cops", "schneller als", "Preis", "Rabatt"]
+}
