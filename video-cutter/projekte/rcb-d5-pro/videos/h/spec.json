@@ -118,8 +118,8 @@
     },
     {
       "clip": "img8251",
-      "von": 72.0,
-      "bis": 73.455,
+      "von": 13.2,
+      "bis": 14.655,
       "rolle": "emotion",
       "zoom": "none",
       "uebergang": "zoom",
@@ -170,8 +170,8 @@
     },
     {
       "clip": "img8240",
-      "von": 16.0,
-      "bis": 17.455,
+      "von": 17.6,
+      "bis": 19.055,
       "rolle": "beweis",
       "zoom": "kenburns_in",
       "uebergang": "zoom",
