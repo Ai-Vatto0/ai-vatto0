@@ -25,6 +25,15 @@ dann nächstes Produkt – mit **verschiedenen Formaten** statt nur verschiedene
 
 ## SESSION-LOG
 
+### 2026-10-02 – RCB D5 Pro: 3 Show-Videos à 15 s (nur Roller, ohne Stimme) – Vorschau
+- Auftrag (/hyperframes-animation): Vatto nicht zeigen, Roller immer im Bild, Texte mit Animationen, neues Logo orange-metallic/schwarz.
+- Neu: `video-cutter/tools/metall.mjs` (Looks metall / metall_dunkel / metall_glanz): Info-Karten mit eigenen SVG-Icons
+  (feder, bremse, reifen, gewicht, blitz, haken, licht, tacho, display, smiley) – Flip-Pop, Icon-Eigenanimation, Hochzählen, Glanz-Sweep;
+  Metallic-Schlagzeilen + Cool-Smiley-Sticker (`text.sticker`); RCB-D5-PRO-Schriftzug als SVG (`spec.badge`), ersetzt das alte Logo („sah billig aus“).
+- Videos i Detail-Tour · j Fahrgefühl (POV + Wiese im Zuschnitt `ausschnitt`) · k Licht-Check (neue Endkarte foto-nacht-heck-endkarte).
+- Fester Zuschnitt aus Drohnen-Fahrten taugt kaum (Jeans dominieren, Roller wandert raus) → Fahren nur als POV; einmal Wiese ab Knie (j, Vatto fragen).
+- pruefe-spec: Winkel detail_tour/fahrgefuehl/licht_check; 5. Diversitätsachse „Ton-Format“ (Sprecher vs. ohne). specs.py schreibt a,b,f,g,h nicht mehr neu (FERTIG).
+
 ### 2026-10-01 (Abend) – RCB D5 Pro: F, G, H von Vatto abgenommen („richtig gut“)
 
 - Finals A, B, H (ohne Ton, Vattos Song) + F, G (Stimme Markus) in `02-Fertig/RCB-D5-Pro`; Captions in `video-cutter/projekte/rcb-d5-pro/POSTING.md`.

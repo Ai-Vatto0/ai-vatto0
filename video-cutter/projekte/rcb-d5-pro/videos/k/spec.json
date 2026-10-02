@@ -1,0 +1,165 @@
+{
+  "hook_effekt": "slam",
+  "ohne_vo": true,
+  "titel": "Licht-Check: Tag, Wald, Nacht",
+  "idee": {
+    "winkel": "licht_check",
+    "zielgruppe": "Pendler, die auch abends und im Wald unterwegs sind",
+    "hook": "Slam auf den RCB bei Nacht mit Scheinwerfer + „LICHT AN.“",
+    "emotion": "Sicherheit, Stil"
+  },
+  "format": "Licht-Fokus: Nachtfoto, Scheinwerfer und Rücklicht im Wald, Display, Metall-Karten auf Orange, keine Stimme",
+  "look": "metall_glanz",
+  "textposition": "oben",
+  "stimme": null,
+  "badge": {
+    "ende": true
+  },
+  "voiceover": [
+    {
+      "satz": "LICHT AN.",
+      "belege": [
+        "meinung"
+      ],
+      "dauer": 2.7
+    },
+    {
+      "satz": "SCHEINWERFER UND RÜCKLICHT",
+      "belege": [
+        "licht"
+      ],
+      "dauer": 2.5
+    },
+    {
+      "satz": "GESEHEN WERDEN",
+      "belege": [
+        "meinung"
+      ],
+      "dauer": 2.5
+    },
+    {
+      "satz": "DISPLAY",
+      "belege": [
+        "display"
+      ],
+      "dauer": 2.5
+    },
+    {
+      "satz": "FEIERABEND",
+      "belege": [
+        "meinung"
+      ],
+      "dauer": 2.5
+    },
+    {
+      "satz": "JETZT IM TIKTOK SHOP",
+      "belege": [],
+      "dauer": 1.0
+    }
+  ],
+  "szenen": [
+    {
+      "clip": "foto-nacht-oben",
+      "von": 0,
+      "bis": 2.83,
+      "rolle": "hook",
+      "zoom": "kenburns_in",
+      "uebergang": "flash",
+      "text": {
+        "inhalt": "LICHT AN.",
+        "betonung": [
+          "AN."
+        ],
+        "belege": [
+          "meinung"
+        ]
+      }
+    },
+    {
+      "clip": "img8240",
+      "von": 2.6,
+      "bis": 5.1,
+      "rolle": "beweis",
+      "zoom": "kenburns_in",
+      "uebergang": "whip",
+      "ab_wort": 2,
+      "stat": {
+        "zahl": "V+H",
+        "einheit": "",
+        "label": "Licht",
+        "belege": [
+          "licht"
+        ],
+        "icon": "licht"
+      }
+    },
+    {
+      "clip": "img8251",
+      "von": 110.6,
+      "bis": 113.1,
+      "rolle": "emotion",
+      "zoom": "none",
+      "uebergang": "cut",
+      "ab_wort": 5,
+      "text": {
+        "inhalt": "GESEHEN WERDEN.",
+        "betonung": [
+          "WERDEN."
+        ],
+        "belege": [
+          "meinung"
+        ]
+      }
+    },
+    {
+      "clip": "img8258",
+      "von": 18.0,
+      "bis": 20.5,
+      "rolle": "beweis",
+      "zoom": "kenburns_in",
+      "uebergang": "zoom",
+      "ab_wort": 7,
+      "stat": {
+        "zahl": "ALLES",
+        "einheit": "",
+        "label": "im Blick",
+        "belege": [
+          "display"
+        ],
+        "icon": "display"
+      }
+    },
+    {
+      "clip": "foto-wald-licht",
+      "von": 0,
+      "bis": 2.5,
+      "rolle": "emotion",
+      "zoom": "kenburns_out",
+      "uebergang": "flash",
+      "ab_wort": 8,
+      "text": {
+        "inhalt": "FEIERABEND? LOS.",
+        "betonung": [
+          "LOS."
+        ],
+        "belege": [
+          "meinung"
+        ],
+        "sticker": "smiley"
+      }
+    },
+    {
+      "clip": "foto-nacht-heck-endkarte",
+      "von": 0,
+      "bis": 2.52,
+      "rolle": "cta",
+      "zoom": "kenburns_out",
+      "ab_wort": 9
+    }
+  ],
+  "cta": {
+    "text": "Jetzt im TikTok Shop",
+    "zusatz": "Licht vorne + hinten.",
+    "top": 450
+  }
+}

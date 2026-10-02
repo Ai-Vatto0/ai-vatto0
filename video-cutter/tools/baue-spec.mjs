@@ -6,6 +6,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { ROOT, readJSON, writeJSON, parseArgs, fail, run, r3, HF_VERSION } from "./lib.mjs";
+import * as MT from "./metall.mjs";
 
 const { pos } = parseArgs(process.argv.slice(2));
 const [projekt, video] = pos;
@@ -40,6 +41,10 @@ const LOOKS = {
   rcb: { akzent: "#FF7B1C", text: "#FFF7E8", kontur: "#140F05", pille: "transparent", headlineGross: 150, captionPx: 78, flash: "#FFE2C8", marker: true },
   rcb_tag: { akzent: "#FF7B1C", text: "#FFF7E8", kontur: "#140F05", pille: "rgba(20,15,5,.82)", headlineGross: 128, captionPx: 72, flash: "#FFFFFF", marker: true, tag: true, tagBg: "#FF7B1C", tagFg: "#140F05", em: "#FFF7E8" },
   rcb_dunkel: { akzent: "#FF7B1C", text: "#FFF7E8", kontur: "#140F05", pille: "rgba(20,15,5,.82)", headlineGross: 128, captionPx: 72, flash: "#FFE2C8", marker: true, tag: true, tagBg: "rgba(20,15,5,.86)", tagFg: "#FFF7E8", em: "#FF7B1C" },
+  // Metall-Stil (tools/metall.mjs): Metallic-Orange/Schwarz, Info-Karten mit Icons, RCB-Schriftzug (Vatto 02.10.)
+  metall: { akzent: "#FF8A2A", text: "#FFF7E8", kontur: "#140F05", pille: "transparent", headlineGross: 140, captionPx: 72, flash: "#FFE2C8", marker: true, metall: true },
+  metall_dunkel: { akzent: "#FF8A2A", text: "#FFF7E8", kontur: "#140F05", pille: "transparent", headlineGross: 124, captionPx: 72, flash: "#FFFFFF", marker: true, metall: true },
+  metall_glanz: { akzent: "#FF8A2A", text: "#FFF7E8", kontur: "#140F05", pille: "transparent", headlineGross: 140, captionPx: 72, flash: "#FFE2C8", marker: true, metall: true },
 };
 spec.look ??= "nacht"; // Standard-Look (Vatto 01.10.: Farben von Video B passen besser)
 const L0 = LOOKS[spec.look] || fail(`Look „${spec.look}“ unbekannt (${Object.keys(LOOKS).join(", ")})`);
@@ -168,7 +173,8 @@ szenen.forEach((s) => {
   const groesse = Math.min(L.headlineGross, fit);
   const betont = new Set((s.text.betonung || []).map((x) => x.toLowerCase()));
   hm += `
-        <div id="${id}" class="clip headline" data-start="${a}" data-duration="${r3(e - a)}" data-track-index="1"${s.text.top ? ` style="top:${s.text.top}px"` : ""}><div class="hl-in"${groesse < L.headlineGross ? ` style="font-size:${groesse}px"` : ""}>${worte.map((w) => `<span class="hw${betont.has(w.toLowerCase()) ? " em" : ""}">${esc(w)}</span>`).join(" ")}</div></div>`;
+        <div id="${id}" class="clip headline" data-start="${a}" data-duration="${r3(e - a)}" data-track-index="1"${s.text.top ? ` style="top:${s.text.top}px"` : ""}><div class="hl-in${L.metall ? " metall" : ""}"${groesse < L.headlineGross ? ` style="font-size:${groesse}px"` : ""}>${worte.map((w) => `<span class="hw${betont.has(w.toLowerCase()) ? " em" : ""}">${esc(w)}</span>`).join(" ")}${s.text.sticker ? MT.sticker(`${id}-st`, s.text.sticker) : ""}</div></div>`;
+  if (s.text.sticker) hj += MT.stickerJs(`${id}-st`, s.text.sticker, a);
   hj += `\n        tl.fromTo("#${id} .hl-in", { opacity: 0 }, { opacity: 1, duration: 0.06 }, ${a});`;
   hj += `\n        tl.fromTo("#${id} .hw", { yPercent: 80, opacity: 0, rotation: -4 }, { yPercent: 0, opacity: 1, rotation: 0, duration: 0.32, ease: "back.out(2.2)", stagger: 0.06 }, ${a});`;
   hj += `\n        tl.to("#${id} .hl-in", { opacity: 0, y: -20, duration: 0.18, ease: "power2.in" }, ${r3(e - 0.18)});`;
@@ -179,6 +185,7 @@ szenen.forEach((s) => {
   if (e - a < 0.8) return;
   const id = `st${s.i + 1}`, z = s.stat;
   const top = s.stat.top ?? TEXT_Y.headline;
+  if (L.metall) { const k = MT.karte(id, z, a, e, top); hm += k.html; hj += k.js; return; }
   hm += `
         <div id="${id}" class="clip statkarte" data-start="${a}" data-duration="${r3(e - a)}" data-track-index="6" style="top:${top}px"><div class="st-in"><div class="st-zahl"><span id="${id}-n">${typeof z.zahl === "number" ? 0 : esc(z.zahl)}</span><span class="st-einheit">${esc(z.einheit || "")}</span></div><div class="st-label">${esc(z.label || "")}</div></div></div>`;
   hj += `\n        tl.fromTo("#${id} .st-in", { y: 260, scale: 0.35, rotation: 14, opacity: 0 }, { y: 0, scale: 1, rotation: -3, opacity: 1, duration: 0.36, ease: "power4.out" }, ${a});`;
@@ -197,7 +204,7 @@ const FONT = `@font-face { font-family: "Poppins"; src: url("assets/fonts/Poppin
 const stroke = spec.look === "gelb" || (L.marker && !L.tag) ? `-webkit-text-stroke: ${L.marker ? 12 : 12}px ${L.kontur}; paint-order: stroke fill;` : "";
 const CAP_FONT = L.marker && !ALT ? `font-family: "Marker", sans-serif; font-weight: 400; letter-spacing: .01em;${L.tag ? "" : ` text-shadow: 3px 3px 0 ${L.kontur}, 6px 6px 0 rgba(12,9,3,.6) !important;`}` : "";
 // Headline/CTA-Stil je Look: Marker = Permanent Marker, harter Versatzschatten, −2° (text-einblendungen.md); tag = orange Fläche, dunkle Schrift
-const HL_STIL = L.marker
+const HL_STIL = L.metall ? "" : L.marker
   ? (L.tag ? `font-family: "Marker", sans-serif; font-weight: 400; color: ${L.tagFg} !important; background: ${L.tagBg}; padding: 8px 30px 14px; border-radius: 18px; transform: rotate(-2deg); box-shadow: 0 10px 0 rgba(12,9,3,.55);`
            : `font-family: "Marker", sans-serif; font-weight: 400; -webkit-text-stroke: 16px ${L.kontur}; paint-order: stroke fill; text-shadow: 4px 4px 0 ${L.kontur}, 8px 8px 0 #7A3200, 12px 12px 0 #7A3200, 16px 16px 0 rgba(12,9,3,.7); transform: rotate(-3deg); letter-spacing: .01em;`)
   : spec.look === "gelb" ? "-webkit-text-stroke: 14px #000; paint-order: stroke fill;" : "background: rgba(8,12,22,.78); padding: 10px 26px 14px; border-radius: 28px; text-shadow: 0 0 22px rgba(77,216,255,.45);";
@@ -223,7 +230,8 @@ const CSS = `
         .st-label { font-family: "Poppins", sans-serif; font-weight: 700; font-size: 44px; letter-spacing: .12em; color: #FFF7E8; text-transform: uppercase; margin-top: -6px; }
         .logo-gross { position: absolute; left: 110px; top: 300px; width: 760px; }
         .logo-klein { position: absolute; left: 680px; top: 150px; width: 250px; opacity: .92; }
-        .ki { position: absolute; left: 70px; top: 160px; font-size: 26px; color: #FFFFFF; letter-spacing: .04em; background: rgba(0,0,0,.62); padding: 6px 14px; border-radius: 12px; }`;
+        .ki { position: absolute; left: 70px; top: 160px; font-size: 26px; color: #FFFFFF; letter-spacing: .04em; background: rgba(0,0,0,.62); padding: 6px 14px; border-radius: 12px; }${L.metall ? MT.css(spec.look) + `
+        .ctabox .cta-tx { -webkit-text-stroke: 0; text-shadow: none; background: ${MT.CSS_GRAD}; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(5px 0 0 #140F05) drop-shadow(-5px 0 0 #140F05) drop-shadow(0 5px 0 #140F05) drop-shadow(0 -5px 0 #140F05) drop-shadow(0 12px 0 rgba(12,9,3,.6)); }` : ""}`;
 const subcomp = (cid, markup, code) => fs.writeFileSync(path.join(out, "compositions", `${cid}.html`), `<!doctype html>
 <html lang="de">
   <head><meta charset="UTF-8" /><!-- GENERIERT von tools/baue-spec.mjs – nicht von Hand ändern. --></head>
@@ -257,6 +265,12 @@ if (spec.logo) {
     hm += `\n        <img id="logo-ende" class="clip logo-gross" style="top:${spec.logo.ende_top ?? 420}px" src="assets/logo.png" data-start="${r3(cta.start)}" data-duration="${r3(GESAMT - cta.start)}" data-track-index="4" />`;
     hj += `\n        tl.fromTo("#logo-ende", { scale: 0.86, y: 24, opacity: 0 }, { scale: 1, y: 0, opacity: 1, duration: 0.25, ease: "power3.out" }, ${r3(cta.start + 0.05)});`;
   }
+}
+if (spec.badge) {
+  // RCB-D5-PRO-Schriftzug: klein oben rechts bis zur Endkarte, groß auf der Endkarte
+  const b = spec.badge, bisKlein = b.ende ? cta.start : GESAMT;
+  const k = MT.badge("badge-klein", { left: 690, top: b.top ?? 160, breite: 240 }, b.ab ?? 0, bisKlein, false); hm += k.html; hj += k.js;
+  if (b.ende) { const g = MT.badge("badge-gross", { left: 210, top: b.ende_top ?? 170, breite: 640 }, cta.start, GESAMT, true); hm += g.html; hj += g.js; }
 }
 subcomp("grafik", hm + (spec.ohne_vo ? "" : `\n        <div id="ki" class="clip ki" data-start="0" data-duration="${GESAMT}" data-track-index="3">KI-Stimme</div>`), hj);
 const host = (cid, track) => `

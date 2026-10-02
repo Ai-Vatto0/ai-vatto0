@@ -1875,6 +1875,38 @@
         "qualitaet": "gut",
         "risiko": "Fremdmarke WILD MAN auf der Lenkertasche (Zubehör, nicht im Lieferumfang) wo sichtbar"
       }
+    },
+    "foto-nacht-heck-endkarte": {
+      "datei": "stills/foto-nacht-heck-endkarte.mp4",
+      "dauer_s": 6,
+      "breite": 1216,
+      "hoehe": 2160,
+      "orientierung": "hochkant",
+      "typ": "foto",
+      "fps": 30,
+      "variable_bildrate": false,
+      "hdr": false,
+      "ton": false,
+      "zeitlupe_moeglich": "nein",
+      "tags": {
+        "beschreibung": "Endkarte: Nachtfoto IMG_7962 (Heck mit Rücklicht, Scheinwerferkegel) verkleinert unten – oben Platz für CTA",
+        "rolle": [
+          "detail",
+          "beweis"
+        ],
+        "person": "keine",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [
+          [
+            0,
+            6
+          ]
+        ],
+        "bewegung": "ruhig (nur Zoom)",
+        "qualitaet": "gut",
+        "risiko": "keins erkennbar"
+      }
     }
   }
 }

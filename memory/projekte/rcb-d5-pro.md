@@ -39,3 +39,10 @@ Ziel: Muster-Gegenleistung, danach ggf. D7 Max.
 c Funktions-Check (rcb, ruhig) · d Feierabend (rcb_tag, Logo-Intro) · e Wald-Test (rcb_dunkel).
 Stimme Markus `IeQubAjK1ujbppIdhJw4` (jung), Patrick `rUxG6T3T35OAyiiJgocG` als A/B. eleven_v3 = 0 Credits.
 Musik fügt Vatto in TikTok hinzu (Commercial Music Library) → Exporte haben nur VO + tiefe Schnitt-Sounds.
+
+## 4. SHOW-SERIE 02.10.2026 (nur Roller, 15 s, ohne Stimme)
+
+i Detail-Tour (metall, Karten Federung/Bremse/150 kg/500 W) · j Fahrgefühl (metall_dunkel, POV img8239/img8251 + Wiese-Zuschnitt dji0021 21 s) ·
+k Licht-Check (metall_glanz, Nachtfoto, Scheinwerfer/Rücklicht, Display). Logo: eigener SVG-Schriftzug „RCB D5 PRO“ (metall.mjs), nicht mehr rcb-logo-karte.png.
+Gute Roller-only-Stellen: img8241 3–5 (Heck/Bremse), 8–11 (Trittbrett RCB), 16–22 (Licht + Doppelfeder) · img8252 0–3 (Roller im Wald, Zuschnitt) ·
+img8251 98–100, 105, 111 (Roller auf Waldweg/Rücklicht), POV 38–41, 76–80 · img8239 16–21 POV Display.

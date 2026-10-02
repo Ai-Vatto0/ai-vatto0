@@ -33,8 +33,25 @@ V = {
    vo=[("KEIN PLASTIKBOMBER.",["meinung"],3.0),("20 KM/H MIT ABE",["abe_20kmh"],3.2),("10 ZOLL GELREIFEN",["gelreifen"],3.5),("FEDERUNG VORNE + HINTEN",["federung"],3.2),("BIS 150 KG",["max_150kg"],3.2),("500 W MOTOR",["motor_500w"],3.2),("JETZT IM TIKTOK SHOP",[],1.0)],
    sz=[("img8240",0.3,None,"hook","kenburns_in","flash",T("KEIN PLASTIKBOMBER.",["PLASTIKBOMBER."],["meinung"])),("img8258",1.0,"20","beweis","none","whip",None,{"stat":ST(20,"KM/H","mit ABE",["abe_20kmh"])}),("img8251",31.0,"10","emotion","none","zoom",None,{"stat":ST(10,"ZOLL","Gelreifen",["gelreifen"])}),("img8240",17.6,"FEDERUNG","beweis","none","flash",T("FEDERUNG VORNE + HINTEN",["FEDERUNG"],["federung"])),("img8240",9.0,"BIS","beweis","none","whip",None,{"stat":ST(150,"KG","belastbar",["max_150kg"])}),("img8258",13.0,"500","beweis","kenburns_out","zoom",None,{"stat":ST(500,"W","Motor",["motor_500w"])}),("foto-nacht-oben-endkarte",0,"JETZT","cta","kenburns_out",None,None)],
    cta=dict(text="Jetzt im TikTok Shop", zusatz="RCB D5 Pro · mit ABE")),
+ "i": dict(titel="Detail-Tour: nur der Roller", idee=dict(winkel="detail_tour", zielgruppe="Käufer, die genau hinschauen, bevor sie bestellen", hook="Slam auf den RCB im Wald (Licht an) + „SCHAU GENAU HIN.“ + Cool-Smiley", emotion="Neugier, Wertigkeit"),
+   format="Detail-Rundgang ohne Person, Ken Burns, animierte Metall-Infokarten mit Icons, keine Stimme (Musik von Vatto)", look="metall", textposition="unten", stimme=None, hook_effekt="slam", ohne_vo=True, logo=None, badge={"ende": True},
+   vo=[("SCHAU GENAU HIN.",["meinung"],2.7),("Federbeine vorne doppelt",["federung"],2.5),("Bremsscheibe hinten",["doppelbremse"],2.5),("Trittbrett trägt viel",["max_150kg"],2.5),("Lenkrohr mit Antrieb",["motor_500w"],2.5),("Link im Shop",[],1.0)],
+   sz=[("img8252",0.2,None,"hook","kenburns_in","flash",T("SCHAU GENAU HIN.",["HIN."],["meinung"],sticker="smiley"),{"ausschnitt":{"x":0.42,"y":0.2,"h":0.42}}),("img8241",20.0,"Federbeine","beweis","kenburns_in","whip",None,{"stat":{**ST("V+H","","Federung",["federung"]),"icon":"feder"}}),("img8241",3.3,"Bremsscheibe","beweis","kenburns_out","zoom",None,{"stat":{**ST(2,"×","Bremsen v + h",["doppelbremse"]),"icon":"bremse"}}),("img8241",8.6,"Trittbrett","beweis","kenburns_in","whip",None,{"stat":{**ST(150,"KG","belastbar",["max_150kg"]),"icon":"gewicht"}}),("img8240",19.0,"Lenkrohr","beweis","kenburns_out","flash",None,{"stat":{**ST(500,"W","Motor",["motor_500w"]),"icon":"blitz"}}),("foto-wald1-endkarte",0,"Link","cta","kenburns_out",None,None)],
+   cta=dict(text="Jetzt im TikTok Shop", zusatz="Federung vorne + hinten.")),
+ "j": dict(titel="Fahrgefühl: Wald und Wiese aus Fahrersicht", idee=dict(winkel="fahrgefuehl", zielgruppe="Fahrer, die Lust auf Touren abseits der Straße haben", hook="Slam auf den RCB auf dem Waldweg + „AB IN DEN WALD.“ + Cool-Smiley", emotion="Fahrspaß, Freiheit"),
+   format="POV-Fahrten (nur Lenker, Display, Weg) + Wiese im Zuschnitt, harte Schnitte ohne Zoom, Metall-Karten, keine Stimme", look="metall_dunkel", textposition="unten", stimme=None, hook_effekt="slam", ohne_vo=True, logo=None, badge={"ende": True},
+   vo=[("AB IN DEN WALD.",["meinung"],2.4),("3 FAHRSTUFEN",["drei_gaenge"],2.1),("WALDWEG",["meinung"],2.1),("WIESE",["meinung"],1.6),("10 ZOLL GELREIFEN",["gelreifen"],2.1),("ABE",["abe_20kmh"],2.1),("JETZT IM TIKTOK SHOP",[],1.2)],
+   sz=[("img8251",98.0,None,"hook","none","cut",T("AB IN DEN WALD.",["WALD."],["meinung"],sticker="smiley")),("img8239",16.0,"3","beweis","none","cut",None,{"stat":{**ST(3,"","Fahrstufen",["drei_gaenge"]),"icon":"tacho"}}),("img8251",38.5,"WALDWEG","emotion","none","cut",T("WALDWEG? EASY.",["EASY."],["meinung"])),("dji0926-0021",21.0,"WIESE","emotion","none","cut",T("WIESE? LÄUFT.",["LÄUFT."],["meinung"]),{"ausschnitt":{"x":0.48,"y":0.64,"h":0.32}}),("img8251",76.5,"10","beweis","none","cut",None,{"stat":{**ST(10,"ZOLL","Gelreifen",["gelreifen"]),"icon":"reifen"}}),("img8239",19.0,"ABE","beweis","none","cut",None,{"stat":{**ST("ABE","","Straßenzulassung",["abe_20kmh"]),"icon":"haken"}}),("foto-wald2-endkarte",0,"JETZT","cta","kenburns_out",None,None)],
+   cta=dict(text="Jetzt im TikTok Shop", zusatz="RCB D5 Pro · mit ABE.")),
+ "k": dict(titel="Licht-Check: Tag, Wald, Nacht", idee=dict(winkel="licht_check", zielgruppe="Pendler, die auch abends und im Wald unterwegs sind", hook="Slam auf den RCB bei Nacht mit Scheinwerfer + „LICHT AN.“", emotion="Sicherheit, Stil"),
+   format="Licht-Fokus: Nachtfoto, Scheinwerfer und Rücklicht im Wald, Display, Metall-Karten auf Orange, keine Stimme", look="metall_glanz", textposition="oben", stimme=None, hook_effekt="slam", ohne_vo=True, logo=None, badge={"ende": True},
+   vo=[("LICHT AN.",["meinung"],2.7),("SCHEINWERFER UND RÜCKLICHT",["licht"],2.5),("GESEHEN WERDEN",["meinung"],2.5),("DISPLAY",["display"],2.5),("FEIERABEND",["meinung"],2.5),("JETZT IM TIKTOK SHOP",[],1.0)],
+   sz=[("foto-nacht-oben",0,None,"hook","kenburns_in","flash",T("LICHT AN.",["AN."],["meinung"])),("img8240",2.6,"SCHEINWERFER","beweis","kenburns_in","whip",None,{"stat":{**ST("V+H","","Licht",["licht"]),"icon":"licht"}}),("img8251",110.6,"GESEHEN","emotion","none","cut",T("GESEHEN WERDEN.",["WERDEN."],["meinung"])),("img8258",18.0,"DISPLAY","beweis","kenburns_in","zoom",None,{"stat":{**ST("ALLES","","im Blick",["display"]),"icon":"display"}}),("foto-wald-licht",0,"FEIERABEND","emotion","kenburns_out","flash",T("FEIERABEND? LOS.",["LOS."],["meinung"],sticker="smiley")),("foto-nacht-heck-endkarte",0,"JETZT","cta","kenburns_out",None,None)],
+   cta=dict(text="Jetzt im TikTok Shop", zusatz="Licht vorne + hinten.")),
 }
+FERTIG = {"a", "b", "f", "g", "h"}  # abgenommen + im Drive → Spec nie mehr neu schreiben
 for vid, d in V.items():
+    if vid in FERTIG and os.path.exists(f"videos/{vid}/spec.json"): continue
     worte = " ".join(v[0] for v in d["vo"]).split()
     szenen, idx = [], -1
     for z in d["sz"]:
@@ -49,13 +66,18 @@ for vid, d in V.items():
             s["text"] = text
         s.update(extra); szenen.append(s)
     t = lambda i: 0.25 + i / 2.75
+    if d.get("ohne_vo"):  # gleiche Zeitspur wie tools/stumm-vo.mjs: je Takt „dauer“ s, Wörter gleichmäßig verteilt
+        ws, t0 = [], 0.0
+        for v in d["vo"]:
+            n = len(v[0].split()); ws += [t0 + k * v[2] / n for k in range(n)]; t0 += v[2]
+        ws.append(t0); t = lambda i, ws=ws: 0.25 + ws[i]
     for k, s in enumerate(szenen):
         a = 0 if k == 0 else t(s["ab_wort"]) - 0.12
         e = t(szenen[k + 1]["ab_wort"]) - 0.12 if k + 1 < len(szenen) else t(len(worte)) + 1.4
         s["bis"] = round(s["von"] + (e - a) * (1.25 if s.get("tempo") == "ramp" else 1), 3)
     vo = [{"satz": v[0], "belege": v[1], **({"dauer": v[2]} if len(v) > 2 else {}), **({"bedingung_ok": True} if any(x in v[1] for x in ("gelreifen", "getestet_140kg")) else {})} for v in d["vo"]]
     spec = {**{k: d[k] for k in ("schrift_alt", "hook_effekt", "ohne_vo", "regel_ausnahme") if d.get(k)}, "titel": d["titel"], "idee": d["idee"], "format": d["format"], "look": d["look"], "textposition": d["textposition"], "stimme": d["stimme"],
-            "logo": d.get("logo", LOGO), "voiceover": vo, "szenen": szenen, "cta": {**d["cta"], "top": 330}}
+            **({"logo": d.get("logo", LOGO)} if d.get("logo", LOGO) else {}), **({"badge": d["badge"]} if d.get("badge") else {}), "voiceover": vo, "szenen": szenen, "cta": {**d["cta"], "top": 450 if d.get("badge", {}).get("ende") else 330}}
     os.makedirs(f"videos/{vid}", exist_ok=True)
     json.dump(spec, open(f"videos/{vid}/spec.json", "w"), ensure_ascii=False, indent=2)
     print(vid, len(worte), "Wörter", len(szenen), "Szenen")

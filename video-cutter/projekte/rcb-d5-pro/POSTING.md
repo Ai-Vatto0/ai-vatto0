@@ -91,3 +91,47 @@ Originalvideo, KI-generiertes Voiceover.
 #RCB #escooter #elektroroller #tiktokshop #AIGC
 
 Erster Kommentar: `Gelber Warenkorb unten links 👇 Wo fahrt ihr lieber – Wald oder Stadt? 🌲🏙️`
+
+## I – Detail-Tour, nur der Roller (vorschau-i, 15 s, ohne Stimme)
+
+Werbung · Schau genau hin. 😎🛴
+
+RCB D5 Pro im Wald, nur der Roller im Detail: Federung vorne und hinten, Doppelbremse mit Bremsscheiben vorne und hinten, breites Trittbrett.
+
+Bis 150 kg belastbar, 500 W Motor, 10 Zoll Reifen mit orangen Felgen.
+
+Jetzt im TikTok Shop – gelber Warenkorb unten links.
+
+Originalvideo.
+
+#RCB #escooter #elektroroller #tiktokshop #rcbd5pro
+
+## J – Fahrgefühl, Wald und Wiese aus Fahrersicht (vorschau-j, 15 s, ohne Stimme)
+
+Werbung · Ab in den Wald. 🌲🛴
+
+RCB D5 Pro aus Fahrersicht: Waldweg, Wiese, Display immer im Blick.
+
+3 Fahrstufen, 10 Zoll Gelreifen, deutsche ABE mit Straßenzulassung.
+
+Jetzt im TikTok Shop – gelber Warenkorb unten links.
+
+Originalvideo.
+
+#RCB #escooter #elektroroller #tiktokshop #offroad
+
+## K – Licht-Check, Tag und Nacht (vorschau-k, 15 s, ohne Stimme)
+
+Werbung · Licht an. 💡🛴
+
+RCB D5 Pro bei Nacht und im Wald: Scheinwerfer vorne, Rücklicht hinten, gesehen werden.
+
+Display mit allen Infos im Blick, perfekt für die Feierabend-Runde.
+
+Jetzt im TikTok Shop – gelber Warenkorb unten links.
+
+Originalvideo.
+
+#RCB #escooter #elektroroller #tiktokshop #feierabend
+
+Hinweis I–K: keine KI-Stimme → #AIGC und „KI-generiert“ wie bei H weggelassen; Vatto entscheidet.
