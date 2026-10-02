@@ -173,7 +173,7 @@ szenen.forEach((s) => {
   const groesse = Math.min(L.headlineGross, fit);
   const betont = new Set((s.text.betonung || []).map((x) => x.toLowerCase()));
   hm += `
-        <div id="${id}" class="clip headline" data-start="${a}" data-duration="${r3(e - a)}" data-track-index="1"${s.text.top ? ` style="top:${s.text.top}px"` : ""}><div class="hl-in${L.metall ? " metall" : ""}"${groesse < L.headlineGross ? ` style="font-size:${groesse}px"` : ""}>${worte.map((w) => `<span class="hw${betont.has(w.toLowerCase()) ? " em" : ""}">${esc(w)}</span>`).join(" ")}${s.text.sticker ? MT.sticker(`${id}-st`, s.text.sticker) : ""}</div></div>`;
+        <div id="${id}" class="clip headline" data-start="${a}" data-duration="${r3(e - a)}" data-track-index="1"${s.text.top ? ` style="top:${s.text.top}px"` : ""}><div class="hl-in${L.metall ? " metall" : ""}"${groesse < L.headlineGross ? ` style="font-size:${groesse}px"` : ""}>${worte.map((w) => `<span class="hw${betont.has(w.toLowerCase()) ? " em" : ""}" data-t="${esc(w)}">${esc(w)}</span>`).join(" ")}${s.text.sticker ? MT.sticker(`${id}-st`, s.text.sticker) : ""}</div></div>`;
   if (s.text.sticker) hj += MT.stickerJs(`${id}-st`, s.text.sticker, a);
   hj += `\n        tl.fromTo("#${id} .hl-in", { opacity: 0 }, { opacity: 1, duration: 0.06 }, ${a});`;
   hj += `\n        tl.fromTo("#${id} .hw", { yPercent: 80, opacity: 0, rotation: -4 }, { yPercent: 0, opacity: 1, rotation: 0, duration: 0.32, ease: "back.out(2.2)", stagger: 0.06 }, ${a});`;
@@ -195,7 +195,7 @@ szenen.forEach((s) => {
 });
 const cta = szenen.at(-1);
 hm += `
-        <div id="cta" class="clip ctabox"${spec.cta.top ? ` style="top:${spec.cta.top}px"` : ""} data-start="${cta.start}" data-duration="${r3(GESAMT - cta.start)}" data-track-index="2"><div class="cta-tx">${esc(spec.cta.text)}</div>${spec.cta.zusatz ? `<div class="cta-zu">${esc(spec.cta.zusatz)}</div>` : ""}<svg class="pfeil" viewBox="0 0 200 200"><path d="M170 20 C 150 90, 110 130, 40 160" fill="none" stroke="${L.akzent}" stroke-width="14" stroke-linecap="round"/><path d="M40 160 L 70 118 M40 160 L 92 170" fill="none" stroke="${L.akzent}" stroke-width="14" stroke-linecap="round"/></svg></div>`;
+        <div id="cta" class="clip ctabox"${spec.cta.top ? ` style="top:${spec.cta.top}px"` : ""} data-start="${cta.start}" data-duration="${r3(GESAMT - cta.start)}" data-track-index="2"><div class="cta-tx" data-t="${esc(spec.cta.text)}">${esc(spec.cta.text)}</div>${spec.cta.zusatz ? `<div class="cta-zu">${esc(spec.cta.zusatz)}</div>` : ""}<svg class="pfeil" viewBox="0 0 200 200"><path d="M170 20 C 150 90, 110 130, 40 160" fill="none" stroke="${L.akzent}" stroke-width="14" stroke-linecap="round"/><path d="M40 160 L 70 118 M40 160 L 92 170" fill="none" stroke="${L.akzent}" stroke-width="14" stroke-linecap="round"/></svg></div>`;
 hj += `\n        tl.fromTo("#cta .cta-tx", { scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.42, ease: "back.out(1.2)" }, ${r3(cta.start + 0.1)});`;
 if (spec.cta.zusatz) hj += `\n        tl.fromTo("#cta .cta-zu", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "power3.out" }, ${r3(cta.start + 0.4)});`;
 hj += `\n        tl.fromTo("#cta .pfeil path", { strokeDashoffset: 260 }, { strokeDashoffset: 0, duration: 0.45, ease: "power2.out", stagger: 0.12 }, ${r3(cta.start + 0.5)});`;
@@ -230,8 +230,7 @@ const CSS = `
         .st-label { font-family: "Poppins", sans-serif; font-weight: 700; font-size: 44px; letter-spacing: .12em; color: #FFF7E8; text-transform: uppercase; margin-top: -6px; }
         .logo-gross { position: absolute; left: 110px; top: 300px; width: 760px; }
         .logo-klein { position: absolute; left: 680px; top: 150px; width: 250px; opacity: .92; }
-        .ki { position: absolute; left: 70px; top: 160px; font-size: 26px; color: #FFFFFF; letter-spacing: .04em; background: rgba(0,0,0,.62); padding: 6px 14px; border-radius: 12px; }${L.metall ? MT.css(spec.look) + `
-        .ctabox .cta-tx { -webkit-text-stroke: 0; text-shadow: none; background: ${MT.CSS_GRAD}; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(5px 0 0 #140F05) drop-shadow(-5px 0 0 #140F05) drop-shadow(0 5px 0 #140F05) drop-shadow(0 -5px 0 #140F05) drop-shadow(0 12px 0 rgba(12,9,3,.6)); }` : ""}`;
+        .ki { position: absolute; left: 70px; top: 160px; font-size: 26px; color: #FFFFFF; letter-spacing: .04em; background: rgba(0,0,0,.62); padding: 6px 14px; border-radius: 12px; }${L.metall ? MT.css(spec.look) + MT.ctaCss() : ""}`;
 const subcomp = (cid, markup, code) => fs.writeFileSync(path.join(out, "compositions", `${cid}.html`), `<!doctype html>
 <html lang="de">
   <head><meta charset="UTF-8" /><!-- GENERIERT von tools/baue-spec.mjs – nicht von Hand ändern. --></head>

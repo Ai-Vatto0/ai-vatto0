@@ -81,7 +81,8 @@
         "belege": [
           "meinung"
         ],
-        "sticker": "smiley"
+        "sticker": "smiley",
+        "top": 300
       }
     },
     {
@@ -117,7 +118,8 @@
         ],
         "belege": [
           "meinung"
-        ]
+        ],
+        "top": 300
       }
     },
     {
@@ -135,7 +137,8 @@
         ],
         "belege": [
           "meinung"
-        ]
+        ],
+        "top": 300
       },
       "ausschnitt": {
         "x": 0.48,

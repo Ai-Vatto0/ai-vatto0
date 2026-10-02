@@ -49,9 +49,15 @@ export const VARIANTE = {
   metall_glanz: { karteBg: CSS_GRAD, zahl: "dunkel", label: "#140F05", hl: "grad", em: "chrom", plate: false, karteHell: true },
 };
 
-const fill = (art) => art === "grad" ? `background: ${CSS_GRAD}; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;`
-  : art === "chrom" ? `background: ${CHROM}; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;`
-  : "color: #140F05;";
+// Metallic-Füllung: echte Schrift in Grundfarbe (für hyperframes check: sichtbar + Kontrast) + Verlauf als ::after-Ebene (data-t = gleicher Text)
+const GRUND = { grad: MO[1], chrom: "#F4EFE8", dunkel: "#140F05" };
+const VERLAUF = { grad: CSS_GRAD, chrom: CHROM };
+const fill = (art) => `color: ${GRUND[art]};`;
+const ebene = (sel, art) => VERLAUF[art] ? `
+        ${sel} { position: relative; }
+        ${sel}::after { content: attr(data-t); position: absolute; left: 0; top: 0; right: 0; bottom: 0; padding: inherit; white-space: inherit; background: ${VERLAUF[art]}; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; pointer-events: none; }` : "";
+export const ctaCss = () => `
+        .ctabox .cta-tx { -webkit-text-stroke: 0; text-shadow: none; color: ${MO[1]}; filter: drop-shadow(5px 0 0 #140F05) drop-shadow(-5px 0 0 #140F05) drop-shadow(0 5px 0 #140F05) drop-shadow(0 -5px 0 #140F05) drop-shadow(0 12px 0 rgba(12,9,3,.6)); }${ebene(".ctabox .cta-tx", "grad")}`;
 const KONTUR = "filter: drop-shadow(4px 0 0 #140F05) drop-shadow(-4px 0 0 #140F05) drop-shadow(0 4px 0 #140F05) drop-shadow(0 -4px 0 #140F05) drop-shadow(0 12px 0 rgba(12,9,3,.6));";
 
 export function css(look, TEXT_Y) {
@@ -59,17 +65,17 @@ export function css(look, TEXT_Y) {
   return `
         .hl-in.metall { font-family: "Marker", sans-serif; font-weight: 400; transform: rotate(-3deg); letter-spacing: .01em; ${v.plate ? "background: rgba(8,7,6,.82); padding: 6px 30px 16px; border-radius: 20px; border-bottom: 8px solid #E85D00;" : ""} }
         .hl-in.metall .hw { ${fill(v.hl)} ${KONTUR} padding: 0 6px; }
-        .hl-in.metall .hw.em { ${fill(v.em)} }
+        .hl-in.metall .hw.em { ${fill(v.em)} }${ebene(".hl-in.metall .hw", v.hl)}${ebene(".hl-in.metall .hw.em", v.em)}
         .sticker { display: inline-block; width: 150px; height: 150px; vertical-align: middle; margin-left: 10px; }
         .mk { position: absolute; left: 60px; right: 140px; display: flex; justify-content: center; perspective: 900px; }
         .mk-rahmen { position: relative; padding: 7px; border-radius: 30px; background: ${v.karteHell ? "#140F05" : CSS_GRAD}; box-shadow: 0 16px 0 rgba(12,9,3,.5); transform-origin: 50% 50%; }
         .mk-in { position: relative; overflow: hidden; display: flex; align-items: center; gap: 26px; padding: 18px 44px 22px 22px; border-radius: 24px; background: ${v.karteBg}; }
         .mk-icon { width: 150px; height: 150px; flex: none; }
-        .mk-zahl { font-family: "Marker", sans-serif; font-size: 150px; line-height: .98; ${fill(v.zahl)} ${v.zahl === "dunkel" ? "" : "filter: drop-shadow(0 6px 0 rgba(0,0,0,.55));"} white-space: nowrap; }
+        .mk-zahl { font-family: "Marker", sans-serif; font-size: 150px; line-height: .98; ${fill(v.zahl)} ${v.zahl === "dunkel" ? "" : "filter: drop-shadow(0 6px 0 rgba(0,0,0,.55));"} white-space: nowrap; }${ebene(".mk-zahl .mz", v.zahl)}
         .mk-einheit { font-size: 76px; margin-left: 12px; }
         .mk-label { font-family: "Poppins", sans-serif; font-weight: 700; font-size: 42px; letter-spacing: .1em; text-transform: uppercase; color: ${v.label}; margin-top: 2px; white-space: nowrap; }
         .mk-glanz { position: absolute; top: -40px; bottom: -40px; left: 0; width: 140px; background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.55) 50%, rgba(255,255,255,0) 100%); transform: translateX(-260px) skewX(-20deg); pointer-events: none; }
-        .badge { position: absolute; }
+        .badge { position: absolute; color: ${MO[1]}; }
         .badge svg { width: 100%; height: auto; display: block; overflow: visible; }`;
 }
 
@@ -77,11 +83,11 @@ export function css(look, TEXT_Y) {
 export function karte(id, z, a, e, top) {
   const zahlNum = typeof z.zahl === "number";
   const html = `
-        <div id="${id}" class="clip mk" data-start="${a}" data-duration="${r3(e - a)}" data-track-index="6" style="top:${top}px"><div class="mk-rahmen"><div class="mk-in">${iconSvg(z.icon || "blitz", id)}<div class="mk-txt"><div class="mk-zahl"><span id="${id}-n">${zahlNum ? 0 : esc(z.zahl)}</span><span class="mk-einheit">${esc(z.einheit || "")}</span></div><div class="mk-label">${esc(z.label || "")}</div></div><div class="mk-glanz"></div></div></div></div>`;
+        <div id="${id}" class="clip mk" data-start="${a}" data-duration="${r3(e - a)}" data-track-index="6" style="top:${top}px"><div class="mk-rahmen"><div class="mk-in">${iconSvg(z.icon || "blitz", id)}<div class="mk-txt"><div class="mk-zahl"><span id="${id}-n" class="mz" data-t="${zahlNum ? 0 : esc(z.zahl)}">${zahlNum ? 0 : esc(z.zahl)}</span><span class="mz mk-einheit" data-t="${esc(z.einheit || "")}">${esc(z.einheit || "")}</span></div><div class="mk-label">${esc(z.label || "")}</div></div><div class="mk-glanz"></div></div></div></div>`;
   let js = `\n        tl.fromTo("#${id} .mk-rahmen", { scale: 0.3, rotationY: -75, rotation: 8, opacity: 0 }, { scale: 1, rotationY: 0, rotation: -2, opacity: 1, duration: 0.42, ease: "back.out(1.6)" }, ${a});`;
   js += `\n        tl.fromTo("#${id} .mk-icon", { scale: 0, rotation: -160 }, { scale: 1, rotation: 0, duration: 0.45, ease: "back.out(2.2)" }, ${r3(a + 0.12)});`;
   js += `\n        ${(ICON_ANIM[z.icon] || ICON_ANIM.blitz)(`#${id} .ia`, a + 0.5)}`;
-  if (zahlNum) js += `\n        (() => { const o = { v: 0 }; const el = () => document.querySelector("#${id}-n"); tl.fromTo(o, { v: 0 }, { v: ${z.zahl}, duration: 0.6, ease: "power2.out", onUpdate: () => { const n = el(); if (n) n.textContent = Math.round(o.v); } }, ${r3(a + 0.15)}); })();`;
+  if (zahlNum) js += `\n        (() => { const o = { v: 0 }; const el = () => document.querySelector("#${id}-n"); tl.fromTo(o, { v: 0 }, { v: ${z.zahl}, duration: 0.6, ease: "power2.out", onUpdate: () => { const n = el(); if (n) { n.textContent = Math.round(o.v); n.dataset.t = Math.round(o.v); } } }, ${r3(a + 0.15)}); })();`;
   else js += `\n        tl.fromTo("#${id} .mk-zahl", { scale: 1.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2.5)" }, ${r3(a + 0.18)});`;
   js += `\n        tl.fromTo("#${id} .mk-label", { y: 26, opacity: 0 }, { y: 0, opacity: 1, duration: 0.25, ease: "power3.out" }, ${r3(a + 0.32)});`;
   js += `\n        tl.fromTo("#${id} .mk-glanz", { x: -260 }, { x: 980, duration: 0.6, ease: "power2.inOut" }, ${r3(a + 0.62)});`;
@@ -96,7 +102,7 @@ export const stickerJs = (id, name, a) => `\n        tl.fromTo("#${id}", { scale
 export function badge(id, { left, top, breite }, a, e, gross) {
   const g = `${id}-g`;
   const html = `
-        <div id="${id}" class="clip badge" data-start="${r3(a)}" data-duration="${r3(e - a)}" data-track-index="${gross ? 4 : 5}" style="left:${left}px; top:${top}px; width:${breite}px"><svg viewBox="0 0 560 210"><defs>${grad(g)}<clipPath id="${id}-c"><text x="132" y="128" font-family="Poppins" font-weight="700" font-style="italic" font-size="142" letter-spacing="-6">RCB</text></clipPath></defs>
+        <div id="${id}" class="clip badge" data-start="${r3(a)}" data-duration="${r3(e - a)}" data-track-index="${gross ? 4 : 5}" style="left:${left}px; top:${top}px; width:${breite}px"><svg viewBox="0 0 560 210">${gross ? "" : `<rect x="-14" y="6" width="588" height="214" rx="30" fill="rgba(10,8,5,.78)"/>`}<defs>${grad(g)}<clipPath id="${id}-c"><text x="132" y="128" font-family="Poppins" font-weight="700" font-style="italic" font-size="142" letter-spacing="-6">RCB</text></clipPath></defs>
           <g class="bd-str">${[0, 1, 2, 3].map((k) => `<path d="M${18 + k * 26} 128 L${58 + k * 26} 22 H${74 + k * 26} L${34 + k * 26} 128 Z" fill="url(#${g})" stroke="#140F05" stroke-width="5" stroke-linejoin="round"/>`).join("")}</g>
           <text class="bd-rcb" x="132" y="128" font-family="Poppins" font-weight="700" font-style="italic" font-size="142" letter-spacing="-6" fill="url(#${g})" stroke="#140F05" stroke-width="12" paint-order="stroke" stroke-linejoin="round">RCB</text>
           <g clip-path="url(#${id}-c)"><rect class="bd-glanz" x="-160" y="0" width="70" height="160" fill="#FFFFFF" opacity=".6" transform="skewX(-20)"/></g>
