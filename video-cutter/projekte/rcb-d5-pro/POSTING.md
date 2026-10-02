@@ -92,7 +92,7 @@ Originalvideo, KI-generiertes Voiceover.
 
 Erster Kommentar: `Gelber Warenkorb unten links 👇 Wo fahrt ihr lieber – Wald oder Stadt? 🌲🏙️`
 
-## I – Detail-Tour, nur der Roller (vorschau-i, 15 s, ohne Stimme)
+## I – Detail-Tour, nur der Roller (final-i-v001, 15 s, ohne Stimme)
 
 Werbung · Schau genau hin. 😎🛴
 
@@ -106,7 +106,7 @@ Originalvideo.
 
 #RCB #escooter #elektroroller #tiktokshop #rcbd5pro
 
-## J – Fahrgefühl, Wald und Wiese aus Fahrersicht (vorschau-j, 15 s, ohne Stimme)
+## J – Fahrgefühl, Wald und Wiese aus Fahrersicht (final-j-v002, 15 s, ohne Stimme)
 
 Werbung · Ab in den Wald. 🌲🛴
 
@@ -120,7 +120,7 @@ Originalvideo.
 
 #RCB #escooter #elektroroller #tiktokshop #offroad
 
-## K – Licht-Check, Tag und Nacht (vorschau-k, 15 s, ohne Stimme)
+## K – Licht-Check, Tag und Nacht (final-k-v002, 15 s, ohne Stimme – k-v001 im Drive ist überholt)
 
 Werbung · Licht an. 💡🛴
 
