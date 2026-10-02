@@ -29,26 +29,18 @@
         .hl-in.metall { font-family: "Marker", sans-serif; font-weight: 400; transform: rotate(-3deg); letter-spacing: .01em;  }
         .hl-in.metall .hw { color: #FFA24A; filter: drop-shadow(4px 0 0 #140F05) drop-shadow(-4px 0 0 #140F05) drop-shadow(0 4px 0 #140F05) drop-shadow(0 -4px 0 #140F05) drop-shadow(0 12px 0 rgba(12,9,3,.6)); padding: 0 6px; }
         .hl-in.metall .hw.em { color: #F4EFE8; }
-        .hl-in.metall .hw { position: relative; }
-        .hl-in.metall .hw::after { content: attr(data-t); position: absolute; left: 0; top: 0; right: 0; bottom: 0; padding: inherit; white-space: inherit; background: linear-gradient(180deg, #FFE7C7 0%, #FFA24A 30%, #E85D00 52%, #FFB46B 68%, #A33F00 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; pointer-events: none; }
-        .hl-in.metall .hw.em { position: relative; }
-        .hl-in.metall .hw.em::after { content: attr(data-t); position: absolute; left: 0; top: 0; right: 0; bottom: 0; padding: inherit; white-space: inherit; background: linear-gradient(180deg, #FFFFFF 0%, #E9E4DC 40%, #9C958B 55%, #F4EFE8 75%, #BDB5AA 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; pointer-events: none; }
         .sticker { display: inline-block; width: 150px; height: 150px; vertical-align: middle; margin-left: 10px; }
         .mk { position: absolute; left: 60px; right: 140px; display: flex; justify-content: center; perspective: 900px; }
         .mk-rahmen { position: relative; padding: 7px; border-radius: 30px; background: linear-gradient(180deg, #FFE7C7 0%, #FFA24A 30%, #E85D00 52%, #FFB46B 68%, #A33F00 100%); box-shadow: 0 16px 0 rgba(12,9,3,.5); transform-origin: 50% 50%; }
         .mk-in { position: relative; overflow: hidden; display: flex; align-items: center; gap: 26px; padding: 18px 44px 22px 22px; border-radius: 24px; background: linear-gradient(160deg,#241b12 0%,#0c0906 70%); }
         .mk-icon { width: 150px; height: 150px; flex: none; }
-        .mk-zahl { font-family: "Marker", sans-serif; font-size: 150px; line-height: .98; color: #FFA24A; filter: drop-shadow(0 6px 0 rgba(0,0,0,.55)); white-space: nowrap; }
-        .mk-zahl .mz { position: relative; }
-        .mk-zahl .mz::after { content: attr(data-t); position: absolute; left: 0; top: 0; right: 0; bottom: 0; padding: inherit; white-space: inherit; background: linear-gradient(180deg, #FFE7C7 0%, #FFA24A 30%, #E85D00 52%, #FFB46B 68%, #A33F00 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; pointer-events: none; }
+        .mk-zahl { font-family: "Marker", sans-serif; font-size: 150px; line-height: .98; color: #FFA24A; -webkit-text-stroke: 8px #140F05; paint-order: stroke fill; filter: drop-shadow(0 6px 0 rgba(0,0,0,.55)); white-space: nowrap; }
         .mk-einheit { font-size: 76px; margin-left: 12px; }
         .mk-label { font-family: "Poppins", sans-serif; font-weight: 700; font-size: 42px; letter-spacing: .1em; text-transform: uppercase; color: #FFF7E8; margin-top: 2px; white-space: nowrap; }
         .mk-glanz { position: absolute; top: -40px; bottom: -40px; left: 0; width: 140px; background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.55) 50%, rgba(255,255,255,0) 100%); transform: translateX(-260px) skewX(-20deg); pointer-events: none; }
         .badge { position: absolute; color: #FFA24A; }
         .badge svg { width: 100%; height: auto; display: block; overflow: visible; }
         .ctabox .cta-tx { -webkit-text-stroke: 0; text-shadow: none; color: #FFA24A; filter: drop-shadow(5px 0 0 #140F05) drop-shadow(-5px 0 0 #140F05) drop-shadow(0 5px 0 #140F05) drop-shadow(0 -5px 0 #140F05) drop-shadow(0 12px 0 rgba(12,9,3,.6)); }
-        .ctabox .cta-tx { position: relative; }
-        .ctabox .cta-tx::after { content: attr(data-t); position: absolute; left: 0; top: 0; right: 0; bottom: 0; padding: inherit; white-space: inherit; background: linear-gradient(180deg, #FFE7C7 0%, #FFA24A 30%, #E85D00 52%, #FFB46B 68%, #A33F00 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; pointer-events: none; }
       </style>
       <div id="root" data-composition-id="grafik" data-width="1080" data-height="1920">
         <div id="h1" class="clip headline" data-start="0.1" data-duration="2.683" data-track-index="1"><div class="hl-in metall"><span class="hw" data-t="SCHAU">SCHAU</span> <span class="hw" data-t="GENAU">GENAU</span> <span class="hw em" data-t="HIN.">HIN.</span><svg id="h1-st" class="sticker" viewBox="0 0 100 100"><circle cx="50" cy="50" r="38" fill="#FFC21C" stroke="#140F05" stroke-width="6"/><g class="ia"><path d="M20 40 H80 L76 52 Q66 60 56 50 L50 44 L44 50 Q34 60 24 52 Z" fill="#140F05"/></g><path d="M34 66 Q50 80 68 64" fill="none" stroke="#140F05" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/></svg></div></div>

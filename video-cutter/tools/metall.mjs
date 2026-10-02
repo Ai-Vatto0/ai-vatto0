@@ -53,9 +53,8 @@ export const VARIANTE = {
 const GRUND = { grad: MO[1], chrom: "#F4EFE8", dunkel: "#140F05" };
 const VERLAUF = { grad: CSS_GRAD, chrom: CHROM };
 const fill = (art) => `color: ${GRUND[art]};`;
-const ebene = (sel, art) => VERLAUF[art] ? `
-        ${sel} { position: relative; }
-        ${sel}::after { content: attr(data-t); position: absolute; left: 0; top: 0; right: 0; bottom: 0; padding: inherit; white-space: inherit; background: ${VERLAUF[art]}; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; pointer-events: none; }` : "";
+// Verlaufs-Ebene aus seit 02.10. (Vatto: „Schrift doppelt, irritiert“) → volle Farbe + schwarzer Rand
+const ebene = () => "";
 export const ctaCss = () => `
         .ctabox .cta-tx { -webkit-text-stroke: 0; text-shadow: none; color: ${MO[1]}; filter: drop-shadow(5px 0 0 #140F05) drop-shadow(-5px 0 0 #140F05) drop-shadow(0 5px 0 #140F05) drop-shadow(0 -5px 0 #140F05) drop-shadow(0 12px 0 rgba(12,9,3,.6)); }${ebene(".ctabox .cta-tx", "grad")}`;
 const KONTUR = "filter: drop-shadow(4px 0 0 #140F05) drop-shadow(-4px 0 0 #140F05) drop-shadow(0 4px 0 #140F05) drop-shadow(0 -4px 0 #140F05) drop-shadow(0 12px 0 rgba(12,9,3,.6));";
@@ -71,7 +70,7 @@ export function css(look, TEXT_Y) {
         .mk-rahmen { position: relative; padding: 7px; border-radius: 30px; background: ${v.karteHell ? "#140F05" : CSS_GRAD}; box-shadow: 0 16px 0 rgba(12,9,3,.5); transform-origin: 50% 50%; }
         .mk-in { position: relative; overflow: hidden; display: flex; align-items: center; gap: 26px; padding: 18px 44px 22px 22px; border-radius: 24px; background: ${v.karteBg}; }
         .mk-icon { width: 150px; height: 150px; flex: none; }
-        .mk-zahl { font-family: "Marker", sans-serif; font-size: 150px; line-height: .98; ${fill(v.zahl)} ${v.zahl === "dunkel" ? "" : "filter: drop-shadow(0 6px 0 rgba(0,0,0,.55));"} white-space: nowrap; }${ebene(".mk-zahl .mz", v.zahl)}
+        .mk-zahl { font-family: "Marker", sans-serif; font-size: 150px; line-height: .98; ${fill(v.zahl)} ${v.zahl === "dunkel" ? "" : "-webkit-text-stroke: 8px #140F05; paint-order: stroke fill; filter: drop-shadow(0 6px 0 rgba(0,0,0,.55));"} white-space: nowrap; }${ebene(".mk-zahl .mz", v.zahl)}
         .mk-einheit { font-size: 76px; margin-left: 12px; }
         .mk-label { font-family: "Poppins", sans-serif; font-weight: 700; font-size: 42px; letter-spacing: .1em; text-transform: uppercase; color: ${v.label}; margin-top: 2px; white-space: nowrap; }
         .mk-glanz { position: absolute; top: -40px; bottom: -40px; left: 0; width: 140px; background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.55) 50%, rgba(255,255,255,0) 100%); transform: translateX(-260px) skewX(-20deg); pointer-events: none; }

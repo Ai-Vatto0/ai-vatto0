@@ -1,6 +1,6 @@
 # Spec-Prüfung rcb-d5-pro
 
-**GRÜN** · 2.10.2026, 14:47:59
+**GRÜN** · 2.10.2026, 14:51:22
 
 ## Videos
 - Video a „Kein Spielzeug – Wiese, Hügel, Waldweg“: 23.834 s, 8 Szenen, 49 VO-Wörter (2.13 W/s), Winkel pov_erlebnis, Look rcb, Text oben, Zeitlupe 0
