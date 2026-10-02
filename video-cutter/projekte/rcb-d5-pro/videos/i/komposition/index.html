@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <!-- GENERIERT von tools/baue-spec.mjs aus videos/i/spec.json – Änderungen im Spec, dann neu bauen. -->
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Poppins"; src: url("assets/fonts/Poppins-Bold.ttf") format("truetype"); font-weight: 700; } @font-face { font-family: "Marker"; src: url("assets/fonts/PermanentMarker.ttf") format("truetype"); font-weight: 400; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #000; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: #000; }
+      .szene { position: absolute; inset: 0; overflow: hidden; }
+      .szene .inner { position: absolute; inset: 0; transform-origin: 50% 45%; }
+      .szene video { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; }
+      .szene .tr { position: absolute; inset: 0; transform-origin: 50% 50%; }
+      .flash { position: absolute; inset: 0; background: #FFE2C8; opacity: 0; pointer-events: none; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="15.333" data-width="1080" data-height="1920">
+      <div id="hookflash" class="clip flash" data-start="0" data-duration="0.4" data-track-index="59"></div>
+      <div id="sz1" class="szene">
+        <div class="tr" data-layout-allow-overflow><div class="inner" data-layout-allow-overflow><video id="sz1-v" class="clip" src="assets/i-s01.mp4" data-start="0" data-duration="2.833" data-media-start="0" data-track-index="0" muted playsinline></video></div></div>
+      </div>
+      <div id="flash-1" class="clip flash" data-start="2.753" data-duration="0.3" data-track-index="60"></div>
+      <audio id="sz1-ton" src="assets/i-s01.mp4" data-start="0" data-duration="2.833" data-media-start="0" data-track-index="20" data-volume="0.202"></audio>
+      <div id="sz2" class="szene">
+        <div class="tr" data-layout-allow-overflow><div class="inner" data-layout-allow-overflow><video id="sz2-v" class="clip" src="assets/i-s02.mp4" data-start="2.833" data-duration="2.5" data-media-start="0" data-track-index="0" muted playsinline></video></div></div>
+      </div>
+      <audio id="sz2-ton" src="assets/i-s02.mp4" data-start="2.833" data-duration="2.5" data-media-start="0" data-track-index="21" data-volume="0.202"></audio>
+      <div id="sz3" class="szene">
+        <div class="tr" data-layout-allow-overflow><div class="inner" data-layout-allow-overflow><video id="sz3-v" class="clip" src="assets/i-s03.mp4" data-start="5.333" data-duration="2.5" data-media-start="0" data-track-index="0" muted playsinline></video></div></div>
+      </div>
+      <audio id="sz3-ton" src="assets/i-s03.mp4" data-start="5.333" data-duration="2.5" data-media-start="0" data-track-index="22" data-volume="0.202"></audio>
+      <div id="sz4" class="szene">
+        <div class="tr" data-layout-allow-overflow><div class="inner" data-layout-allow-overflow><video id="sz4-v" class="clip" src="assets/i-s04.mp4" data-start="7.833" data-duration="2.5" data-media-start="0" data-track-index="0" muted playsinline></video></div></div>
+      </div>
+      <audio id="sz4-ton" src="assets/i-s04.mp4" data-start="7.833" data-duration="2.5" data-media-start="0" data-track-index="23" data-volume="0.202"></audio>
+      <div id="sz5" class="szene">
+        <div class="tr" data-layout-allow-overflow><div class="inner" data-layout-allow-overflow><video id="sz5-v" class="clip" src="assets/i-s05.mp4" data-start="10.333" data-duration="2.5" data-media-start="0" data-track-index="0" muted playsinline></video></div></div>
+      </div>
+      <div id="flash-5" class="clip flash" data-start="12.753" data-duration="0.3" data-track-index="64"></div>
+      <audio id="sz5-ton" src="assets/i-s05.mp4" data-start="10.333" data-duration="2.5" data-media-start="0" data-track-index="24" data-volume="0.202"></audio>
+      <div id="sz6" class="szene">
+        <div class="tr" data-layout-allow-overflow><div class="inner" data-layout-allow-overflow><video id="sz6-v" class="clip" src="assets/i-s06.mp4" data-start="12.833" data-duration="2.5" data-media-start="0" data-track-index="0" muted playsinline></video></div></div>
+      </div>
+      <audio id="boom" src="assets/boom.wav" data-start="0" data-duration="0.9" data-track-index="39" data-volume="1"></audio>
+      <div id="captions" data-track-kind="captions" data-composition-id="captions" data-composition-src="compositions/captions.html" data-start="0" data-duration="15.333" data-track-index="50" data-width="1080" data-height="1920"></div>
+      <div id="grafik" data-composition-id="grafik" data-composition-src="compositions/grafik.html" data-start="0" data-duration="15.333" data-track-index="51" data-width="1080" data-height="1920"></div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#hookflash", { opacity: 0.95 }, { opacity: 0, duration: 0.32, ease: "power2.out" }, 0);
+      tl.fromTo("#sz1 .tr", { scale: 1.35 }, { scale: 1, duration: 0.38, ease: "power4.out" }, 0);
+      tl.to("#sz1 .inner", { x: 18, y: -10, duration: 0.06, ease: "none" }, 0);
+      tl.to("#sz1 .inner", { x: -16, y: 12, duration: 0.06, ease: "none" }, 0.06);
+      tl.to("#sz1 .inner", { x: 12, y: -8, duration: 0.06, ease: "none" }, 0.12);
+      tl.to("#sz1 .inner", { x: -8, y: 6, duration: 0.06, ease: "none" }, 0.18);
+      tl.to("#sz1 .inner", { x: 4, y: -3, duration: 0.06, ease: "none" }, 0.24);
+      tl.to("#sz1 .inner", { x: 0, y: 0, duration: 0.06, ease: "none" }, 0.3);
+      tl.fromTo("#sz1 .inner", { scale: 1.0 }, { scale: 1.12, duration: 2.833, ease: "none" }, 0);
+      tl.fromTo("#flash-1", { opacity: 0 }, { opacity: 0.85, duration: 0.06, ease: "power2.out" }, 2.773);
+      tl.to("#flash-1", { opacity: 0, duration: 0.14, ease: "power2.in" }, 2.833);
+      tl.fromTo("#sz2 .inner", { scale: 1.0 }, { scale: 1.12, duration: 2.5, ease: "none" }, 2.833);
+      tl.fromTo("#sz2 .tr", { xPercent: 0, scale: 1, filter: "blur(0px)" }, { xPercent: -10, scale: 1.25, filter: "blur(16px)", duration: 0.16, ease: "power3.in" }, 5.173);
+      tl.fromTo("#sz3 .tr", { xPercent: 10, scale: 1.25, filter: "blur(16px)" }, { xPercent: 0, scale: 1, filter: "blur(0px)", duration: 0.2, ease: "power3.out", immediateRender: false }, 5.333);
+      tl.fromTo("#sz3 .inner", { scale: 1.12 }, { scale: 1.0, duration: 2.5, ease: "none" }, 5.333);
+      tl.fromTo("#sz3 .tr", { scale: 1, filter: "blur(0px)" }, { scale: 1.22, filter: "blur(8px)", duration: 0.14, ease: "power2.in" }, 7.693);
+      tl.fromTo("#sz4 .tr", { scale: 1.3, filter: "blur(10px)" }, { scale: 1, filter: "blur(0px)", duration: 0.24, ease: "power3.out", immediateRender: false }, 7.833);
+      tl.fromTo("#sz4 .inner", { scale: 1.0 }, { scale: 1.12, duration: 2.5, ease: "none" }, 7.833);
+      tl.fromTo("#sz4 .tr", { xPercent: 0, scale: 1, filter: "blur(0px)" }, { xPercent: -10, scale: 1.25, filter: "blur(16px)", duration: 0.16, ease: "power3.in" }, 10.173);
+      tl.fromTo("#sz5 .tr", { xPercent: 10, scale: 1.25, filter: "blur(16px)" }, { xPercent: 0, scale: 1, filter: "blur(0px)", duration: 0.2, ease: "power3.out", immediateRender: false }, 10.333);
+      tl.fromTo("#sz5 .inner", { scale: 1.12 }, { scale: 1.0, duration: 2.5, ease: "none" }, 10.333);
+      tl.fromTo("#flash-5", { opacity: 0 }, { opacity: 0.85, duration: 0.06, ease: "power2.out" }, 12.773);
+      tl.to("#flash-5", { opacity: 0, duration: 0.14, ease: "power2.in" }, 12.833);
+      tl.fromTo("#sz6 .inner", { scale: 1.12 }, { scale: 1.0, duration: 2.5, ease: "none" }, 12.833);
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

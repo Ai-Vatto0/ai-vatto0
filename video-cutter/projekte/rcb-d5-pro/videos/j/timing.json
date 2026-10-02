@@ -1,0 +1,87 @@
+{
+  "video": "j",
+  "vo_start": 0.25,
+  "vorlauf": 0.12,
+  "cta_halt": 1.4,
+  "gesamt_s": 15.233,
+  "szenen": [
+    {
+      "szene": 1,
+      "clip": "img8251",
+      "ab_wort": null,
+      "wort": "(Start)",
+      "start": 0,
+      "dauer": 2.533,
+      "von": 98,
+      "bis": 100.533,
+      "tempo": 1
+    },
+    {
+      "szene": 2,
+      "clip": "img8239",
+      "ab_wort": 4,
+      "wort": "3",
+      "start": 2.533333333333333,
+      "dauer": 2.1,
+      "von": 16,
+      "bis": 18.1,
+      "tempo": 1
+    },
+    {
+      "szene": 3,
+      "clip": "img8251",
+      "ab_wort": 6,
+      "wort": "WALDWEG",
+      "start": 4.633333333333334,
+      "dauer": 2.1,
+      "von": 38.5,
+      "bis": 40.6,
+      "tempo": 1
+    },
+    {
+      "szene": 4,
+      "clip": "dji0926-0021",
+      "ab_wort": 7,
+      "wort": "WIESE",
+      "start": 6.733333333333333,
+      "dauer": 1.6,
+      "von": 21,
+      "bis": 22.6,
+      "tempo": 1
+    },
+    {
+      "szene": 5,
+      "clip": "img8251",
+      "ab_wort": 8,
+      "wort": "10",
+      "start": 8.333333333333334,
+      "dauer": 2.1,
+      "von": 76.5,
+      "bis": 78.6,
+      "tempo": 1
+    },
+    {
+      "szene": 6,
+      "clip": "img8239",
+      "ab_wort": 11,
+      "wort": "ABE",
+      "start": 10.433333333333334,
+      "dauer": 2.1,
+      "von": 19,
+      "bis": 21.1,
+      "tempo": 1
+    },
+    {
+      "szene": 7,
+      "clip": "foto-wald2-endkarte",
+      "ab_wort": 12,
+      "wort": "JETZT",
+      "start": 12.533333333333333,
+      "dauer": 2.7,
+      "von": 0,
+      "bis": 2.7,
+      "tempo": 1
+    }
+  ],
+  "fehler": []
+}

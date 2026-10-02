@@ -6,6 +6,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { ROOT, readJSON, writeJSON, parseArgs, fail, run, r3, HF_VERSION } from "./lib.mjs";
+import * as MT from "./metall.mjs";
 
 const { pos } = parseArgs(process.argv.slice(2));
 const [projekt, video] = pos;
@@ -27,17 +28,34 @@ fs.mkdirSync(path.join(out, "compositions"), { recursive: true });
 const link = (src, dst) => { if (fs.existsSync(dst)) fs.rmSync(dst); try { fs.linkSync(src, dst); } catch { fs.copyFileSync(src, dst); } };
 link(path.join(ROOT, "node_modules", "gsap", "dist", "gsap.min.js"), path.join(out, "assets", "gsap.min.js"));
 link(path.join(ROOT, "..", "assets", "fonts", "Poppins-Bold.ttf"), path.join(out, "assets", "fonts", "Poppins-Bold.ttf"));
+link(path.join(ROOT, "..", "assets", "fonts", "PermanentMarker.ttf"), path.join(out, "assets", "fonts", "PermanentMarker.ttf"));
+// Marken-Logo (optional): spec.logo = { datei: "<relativ zum Projekt>", intro: <Sekunden groß am Anfang> } → danach klein oben rechts
+if (spec.logo) link(path.join(dir, spec.logo.datei), path.join(out, "assets", "logo.png"));
 link(path.join(voDir, "vo.wav"), path.join(out, "assets", "vo.wav"));
 
 // ---- Looks (bewusst verschieden, damit Videos nicht gleich aussehen) ----
 const LOOKS = {
   gelb: { akzent: "#FFD400", text: "#FFFFFF", kontur: "#000000", pille: "transparent", headlineGross: 104, captionPx: 70, flash: "#FFFFFF" },
   nacht: { akzent: "#4DD8FF", text: "#FFFFFF", kontur: "rgba(0,0,0,0)", pille: "rgba(8,12,22,.78)", headlineGross: 92, captionPx: 62, flash: "#CFF4FF" },
+  // RCB: Graffiti-Look nach memory/regeln/text-einblendungen.md, Akzent Metallic-Orange aus dem Produkt
+  rcb: { akzent: "#FF7B1C", text: "#FFF7E8", kontur: "#140F05", pille: "transparent", headlineGross: 150, captionPx: 78, flash: "#FFE2C8", marker: true },
+  rcb_tag: { akzent: "#FF7B1C", text: "#FFF7E8", kontur: "#140F05", pille: "rgba(20,15,5,.82)", headlineGross: 128, captionPx: 72, flash: "#FFFFFF", marker: true, tag: true, tagBg: "#FF7B1C", tagFg: "#140F05", em: "#FFF7E8" },
+  rcb_dunkel: { akzent: "#FF7B1C", text: "#FFF7E8", kontur: "#140F05", pille: "rgba(20,15,5,.82)", headlineGross: 128, captionPx: 72, flash: "#FFE2C8", marker: true, tag: true, tagBg: "rgba(20,15,5,.86)", tagFg: "#FFF7E8", em: "#FF7B1C" },
+  // Metall-Stil (tools/metall.mjs): Metallic-Orange/Schwarz, Info-Karten mit Icons, RCB-Schriftzug (Vatto 02.10.)
+  metall: { akzent: "#FF8A2A", text: "#FFF7E8", kontur: "#140F05", pille: "transparent", headlineGross: 140, captionPx: 72, flash: "#FFE2C8", marker: true, metall: true },
+  metall_dunkel: { akzent: "#FF8A2A", text: "#FFF7E8", kontur: "#140F05", pille: "transparent", headlineGross: 124, captionPx: 72, flash: "#FFFFFF", marker: true, metall: true },
+  metall_glanz: { akzent: "#FF8A2A", text: "#FFF7E8", kontur: "#140F05", pille: "transparent", headlineGross: 140, captionPx: 72, flash: "#FFE2C8", marker: true, metall: true },
 };
 spec.look ??= "nacht"; // Standard-Look (Vatto 01.10.: Farben von Video B passen besser)
-const L = LOOKS[spec.look] || fail(`Look „${spec.look}“ unbekannt (${Object.keys(LOOKS).join(", ")})`);
+const L0 = LOOKS[spec.look] || fail(`Look „${spec.look}“ unbekannt (${Object.keys(LOOKS).join(", ")})`);
+// spec.schrift_alt: Schriftstand vor dem 01.10.-Abend (kleiner, Untertitel Poppins) – für bereits abgenommene Vorschauen (RCB b)
+const ALT = Boolean(spec.schrift_alt);
+const L = ALT ? { ...L0, headlineGross: L0.tag ? 100 : 112, captionPx: L0.tag ? 60 : 64 } : L0;
 // oben: Untertitel oben, Headlines im unteren Drittel · unten: Headlines oben, Untertitel unten (je Szene überschreibbar: text.top)
-const TEXT_Y = spec.textposition === "oben" ? { caption: 230, headline: 1150 } : { caption: 1290, headline: 250 };
+// Marker-Looks (RCB): Produkt sitzt im unteren Bilddrittel → alle Texte in die obere Hälfte (text-einblendungen.md: Text verdeckt nie das Produkt)
+const TEXT_Y = L.marker
+  ? (spec.textposition === "oben" ? { caption: 230, headline: ALT ? 440 : 500 } : { caption: ALT ? 640 : 660, headline: 250 })
+  : spec.textposition === "oben" ? { caption: 230, headline: 1150 } : { caption: 1290, headline: 250 };
 
 // ---- Zeitplan der Szenen (Übergänge überlappen nicht – harte Grenzen, Effekt liegt auf den Wrappern) ----
 let t = 0;
@@ -63,6 +81,14 @@ const MIX = 1.26; // gemessener HyperFrames-0.8.77-Mix-Ausgleich (siehe baue.mjs
 let html = "", js = "";
 const flashes = [];
 
+// Pattern-Interrupt-Hook (spec.hook_effekt): Weißblitz ab Bild 0, harter Punch-In 1,35→1 auf Szene 1
+if (spec.hook_effekt) {
+  html += `\n      <div id="hookflash" class="clip flash" data-start="0" data-duration="0.4" data-track-index="59"></div>`;
+  js += `\n      tl.fromTo("#hookflash", { opacity: 0.95 }, { opacity: 0, duration: 0.32, ease: "power2.out" }, 0);`;
+  js += `\n      tl.fromTo("#sz1 .tr", { scale: 1.35 }, { scale: 1, duration: 0.38, ease: "power4.out" }, 0);`;
+  if (spec.hook_effekt === "slam") [[0.06, 18, -10], [0.12, -16, 12], [0.18, 12, -8], [0.24, -8, 6], [0.3, 4, -3], [0.36, 0, 0]].forEach(([t, x, y]) =>
+    js += `\n      tl.to("#sz1 .inner", { x: ${x}, y: ${y}, duration: 0.06, ease: "none" }, ${r3(t - 0.06)});`);
+}
 // Szenen: Clip-Wrapper (timed) → .inner (Zoom/Whip) → video
 szenen.forEach((s) => {
   const id = `sz${s.i + 1}`;
@@ -96,7 +122,7 @@ szenen.forEach((s) => {
       js += `\n      tl.fromTo("#${id} .tr", { scale: 1, filter: "blur(0px)" }, { scale: 1.22, filter: "blur(8px)", duration: 0.14, ease: "power2.in" }, ${r3(cut - 0.14)});`;
       js += `\n      tl.fromTo("#${nid} .tr", { scale: 1.3, filter: "blur(10px)" }, { scale: 1, filter: "blur(0px)", duration: 0.24, ease: "power3.out", immediateRender: false }, ${r3(cut)});`;
     }
-    html += `
+    if (!spec.ohne_vo) html += `
       <audio id="wumms-${s.i + 1}" src="assets/wumms.wav" data-start="${r3(cut - 0.02)}" data-duration="0.18" data-track-index="${40 + s.i}" data-volume="1"></audio>`;
   }
   if (s.produktton) {
@@ -105,8 +131,8 @@ szenen.forEach((s) => {
   }
 });
 html += `
-      <audio id="boom" src="assets/boom.wav" data-start="0" data-duration="0.9" data-track-index="39" data-volume="1"></audio>
-      <audio id="vo" src="assets/vo.wav" data-start="${VO_START}" data-duration="${r3(voEnde - VO_START + 0.3)}" data-media-start="0" data-track-index="10" data-volume="${MIX}"></audio>`;
+      <audio id="boom" src="assets/boom.wav" data-start="0" data-duration="0.9" data-track-index="39" data-volume="1"></audio>${spec.ohne_vo ? "" : `
+      <audio id="vo" src="assets/vo.wav" data-start="${VO_START}" data-duration="${r3(voEnde - VO_START + 0.3)}" data-media-start="0" data-track-index="10" data-volume="${MIX}"></audio>`}`;
 
 // ---- Captions (VO-Wörter, 2–4 pro Block, aktives Wort in Akzentfarbe) als Sub-Komposition ----
 const bloecke = [];
@@ -120,11 +146,11 @@ const ctaStart = szenen.at(-1).start;
 let cm = "", cj = "";
 bloecke.forEach((b, k) => {
   const s = r3(VO_START + b[0].s), e = r3(Math.min(bloecke[k + 1] ? VO_START + bloecke[k + 1][0].s : GESAMT, VO_START + b.at(-1).e + 0.35));
-  if (s >= ctaStart - 0.05) return; // CTA-Szene hat eigene Grafik
+  if (s >= ctaStart - 0.05 || spec.ohne_vo) return; // CTA-Szene hat eigene Grafik; ohne VO keine Untertitel
   const ende = Math.min(e, ctaStart);
   const id = `c${k + 1}`;
   cm += `
-        <div id="${id}" class="clip cap" data-start="${s}" data-duration="${r3(ende - s)}" data-track-index="0"><p class="cap-in">${b.map((w, j) => `<span id="${id}-${j}" class="w">${esc(w.text.replace(/[,.]$/, ""))}</span>`).join(" ")}</p></div>`;
+        <div id="${id}" class="clip cap" data-start="${s}" data-duration="${r3(ende - s)}" data-track-index="0"><p class="cap-in"${(() => { const n = Math.max(...b.map((w) => w.text.length)); const f = Math.floor(780 / (n * (L.marker && !ALT ? 0.74 : 0.64))); return f < L.captionPx ? ` style="font-size:${f}px"` : ""; })()}>${b.map((w, j) => `<span id="${id}-${j}" class="w">${esc(w.text.replace(/[,.]$/, ""))}</span>`).join(" ")}</p></div>`;
   cj += `\n        tl.fromTo("#${id} .cap-in", { y: 18, scale: 0.9, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.13, ease: "back.out(2)" }, ${s});`;
   b.forEach((w, j) => {
     cj += `\n        tl.set("#${id}-${j}", { color: "${L.akzent}" }, ${r3(Math.max(s, VO_START + w.s))});`;
@@ -141,37 +167,70 @@ szenen.forEach((s) => {
   if (e - a < 0.6) return;
   const id = `h${s.i + 1}`;
   const worte = s.text.inhalt.split(/\s+/);
+  // Schriftgröße so wählen, dass das längste Wort (nicht umbrechbar) sicher in die Safe Zone passt (≈0,66 em je Zeichen, Marker breiter)
+  const laengstes = Math.max(...worte.map((x) => x.length));
+  const fit = Math.floor((L.marker && !ALT ? 840 : 780) / (laengstes * (L.marker ? (ALT ? 0.72 : 0.74) : 0.62)));
+  const groesse = Math.min(L.headlineGross, fit);
   const betont = new Set((s.text.betonung || []).map((x) => x.toLowerCase()));
   hm += `
-        <div id="${id}" class="clip headline" data-start="${a}" data-duration="${r3(e - a)}" data-track-index="1"${s.text.top ? ` style="top:${s.text.top}px"` : ""}><div class="hl-in">${worte.map((w) => `<span class="hw${betont.has(w.toLowerCase()) ? " em" : ""}">${esc(w)}</span>`).join(" ")}</div></div>`;
+        <div id="${id}" class="clip headline" data-start="${a}" data-duration="${r3(e - a)}" data-track-index="1"${s.text.top ? ` style="top:${s.text.top}px"` : ""}><div class="hl-in${L.metall ? " metall" : ""}"${groesse < L.headlineGross ? ` style="font-size:${groesse}px"` : ""}>${worte.map((w) => `<span class="hw${betont.has(w.toLowerCase()) ? " em" : ""}" data-t="${esc(w)}">${esc(w)}</span>`).join(" ")}${s.text.sticker ? MT.sticker(`${id}-st`, s.text.sticker) : ""}</div></div>`;
+  if (s.text.sticker) hj += MT.stickerJs(`${id}-st`, s.text.sticker, a);
   hj += `\n        tl.fromTo("#${id} .hl-in", { opacity: 0 }, { opacity: 1, duration: 0.06 }, ${a});`;
   hj += `\n        tl.fromTo("#${id} .hw", { yPercent: 80, opacity: 0, rotation: -4 }, { yPercent: 0, opacity: 1, rotation: 0, duration: 0.32, ease: "back.out(2.2)", stagger: 0.06 }, ${a});`;
   hj += `\n        tl.to("#${id} .hl-in", { opacity: 0, y: -20, duration: 0.18, ease: "power2.in" }, ${r3(e - 0.18)});`;
 });
+szenen.forEach((s) => {
+  if (!s.stat || s.i === szenen.length - 1) return;
+  const a = r3(s.start + 0.12), e = r3(s.start + s.dauer - 0.05);
+  if (e - a < 0.8) return;
+  const id = `st${s.i + 1}`, z = s.stat;
+  const top = s.stat.top ?? TEXT_Y.headline;
+  if (L.metall) { const k = MT.karte(id, z, a, e, top); hm += k.html; hj += k.js; return; }
+  hm += `
+        <div id="${id}" class="clip statkarte" data-start="${a}" data-duration="${r3(e - a)}" data-track-index="6" style="top:${top}px"><div class="st-in"><div class="st-zahl"><span id="${id}-n">${typeof z.zahl === "number" ? 0 : esc(z.zahl)}</span><span class="st-einheit">${esc(z.einheit || "")}</span></div><div class="st-label">${esc(z.label || "")}</div></div></div>`;
+  hj += `\n        tl.fromTo("#${id} .st-in", { y: 260, scale: 0.35, rotation: 14, opacity: 0 }, { y: 0, scale: 1, rotation: -3, opacity: 1, duration: 0.36, ease: "power4.out" }, ${a});`;
+  if (typeof z.zahl === "number") hj += `\n        (() => { const o = { v: 0 }; const el = () => document.querySelector("#${id}-n"); tl.fromTo(o, { v: 0 }, { v: ${z.zahl}, duration: 0.6, ease: "power2.out", onUpdate: () => { const n = el(); if (n) n.textContent = Math.round(o.v); } }, ${r3(a + 0.1)}); })();`;
+  hj += `\n        tl.fromTo("#${id} .st-label", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.25, ease: "power3.out" }, ${r3(a + 0.3)});`;
+  hj += `\n        tl.to("#${id} .st-in", { scale: 0.6, y: -30, opacity: 0, duration: 0.2, ease: "power3.in" }, ${r3(e - 0.2)});`;
+});
 const cta = szenen.at(-1);
 hm += `
-        <div id="cta" class="clip ctabox"${spec.cta.top ? ` style="top:${spec.cta.top}px"` : ""} data-start="${cta.start}" data-duration="${r3(GESAMT - cta.start)}" data-track-index="2"><div class="cta-tx">${esc(spec.cta.text)}</div>${spec.cta.zusatz ? `<div class="cta-zu">${esc(spec.cta.zusatz)}</div>` : ""}<svg class="pfeil" viewBox="0 0 200 200"><path d="M170 20 C 150 90, 110 130, 40 160" fill="none" stroke="${L.akzent}" stroke-width="14" stroke-linecap="round"/><path d="M40 160 L 70 118 M40 160 L 92 170" fill="none" stroke="${L.akzent}" stroke-width="14" stroke-linecap="round"/></svg></div>`;
+        <div id="cta" class="clip ctabox"${spec.cta.top ? ` style="top:${spec.cta.top}px"` : ""} data-start="${cta.start}" data-duration="${r3(GESAMT - cta.start)}" data-track-index="2"><div class="cta-tx" data-t="${esc(spec.cta.text)}">${esc(spec.cta.text)}</div>${spec.cta.zusatz ? `<div class="cta-zu">${esc(spec.cta.zusatz)}</div>` : ""}<svg class="pfeil" viewBox="0 0 200 200"><path d="M170 20 C 150 90, 110 130, 40 160" fill="none" stroke="${L.akzent}" stroke-width="14" stroke-linecap="round"/><path d="M40 160 L 70 118 M40 160 L 92 170" fill="none" stroke="${L.akzent}" stroke-width="14" stroke-linecap="round"/></svg></div>`;
 hj += `\n        tl.fromTo("#cta .cta-tx", { scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.42, ease: "back.out(1.2)" }, ${r3(cta.start + 0.1)});`;
 if (spec.cta.zusatz) hj += `\n        tl.fromTo("#cta .cta-zu", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "power3.out" }, ${r3(cta.start + 0.4)});`;
 hj += `\n        tl.fromTo("#cta .pfeil path", { strokeDashoffset: 260 }, { strokeDashoffset: 0, duration: 0.45, ease: "power2.out", stagger: 0.12 }, ${r3(cta.start + 0.5)});`;
 
-const FONT = `@font-face { font-family: "Poppins"; src: url("assets/fonts/Poppins-Bold.ttf") format("truetype"); font-weight: 700; }`;
-const stroke = spec.look === "gelb" ? `-webkit-text-stroke: 12px ${L.kontur}; paint-order: stroke fill;` : "";
+const FONT = `@font-face { font-family: "Poppins"; src: url("assets/fonts/Poppins-Bold.ttf") format("truetype"); font-weight: 700; } @font-face { font-family: "Marker"; src: url("assets/fonts/PermanentMarker.ttf") format("truetype"); font-weight: 400; }`;
+const stroke = spec.look === "gelb" || (L.marker && !L.tag) ? `-webkit-text-stroke: ${L.marker ? 12 : 12}px ${L.kontur}; paint-order: stroke fill;` : "";
+const CAP_FONT = L.marker && !ALT ? `font-family: "Marker", sans-serif; font-weight: 400; letter-spacing: .01em;${L.tag ? "" : ` text-shadow: 3px 3px 0 ${L.kontur}, 6px 6px 0 rgba(12,9,3,.6) !important;`}` : "";
+// Headline/CTA-Stil je Look: Marker = Permanent Marker, harter Versatzschatten, −2° (text-einblendungen.md); tag = orange Fläche, dunkle Schrift
+const HL_STIL = L.metall ? "" : L.marker
+  ? (L.tag ? `font-family: "Marker", sans-serif; font-weight: 400; color: ${L.tagFg} !important; background: ${L.tagBg}; padding: 8px 30px 14px; border-radius: 18px; transform: rotate(-2deg); box-shadow: 0 10px 0 rgba(12,9,3,.55);`
+           : `font-family: "Marker", sans-serif; font-weight: 400; -webkit-text-stroke: 16px ${L.kontur}; paint-order: stroke fill; text-shadow: 4px 4px 0 ${L.kontur}, 8px 8px 0 #7A3200, 12px 12px 0 #7A3200, 16px 16px 0 rgba(12,9,3,.7); transform: rotate(-3deg); letter-spacing: .01em;`)
+  : spec.look === "gelb" ? "-webkit-text-stroke: 14px #000; paint-order: stroke fill;" : "background: rgba(8,12,22,.78); padding: 10px 26px 14px; border-radius: 28px; text-shadow: 0 0 22px rgba(77,216,255,.45);";
+const EM_FARBE = L.tag ? L.em : L.akzent;
 const CSS = `
         #root { position: absolute; inset: 0; font-family: "Poppins", sans-serif; font-weight: 700; }
         /* Safe Zone 1080x1920: oben 150, rechts 140, unten 400, links 60 */
         .cap { position: absolute; left: 60px; right: 140px; top: ${TEXT_Y.caption}px; display: flex; justify-content: center; }
-        .cap-in { max-width: 860px; text-align: center; font-size: ${L.captionPx}px; line-height: 1.12; color: ${L.text}; ${stroke} background: ${L.pille}; padding: ${spec.look === "nacht" ? "14px 30px" : "0"}; border-radius: 26px; text-shadow: 0 6px 18px rgba(0,0,0,.45); }
+        .cap-in { max-width: 860px; text-align: center; font-size: ${L.captionPx}px; line-height: 1.12; color: ${L.text}; ${stroke} background: ${L.pille}; padding: ${spec.look === "nacht" || L.tag ? "14px 30px" : "0"}; border-radius: 26px; text-shadow: 0 6px 18px rgba(0,0,0,.45); ${CAP_FONT} }
         .headline { position: absolute; left: 60px; right: 140px; top: ${TEXT_Y.headline}px; display: flex; justify-content: center; }
-        .hl-in { max-width: 860px; text-align: center; font-size: ${L.headlineGross}px; line-height: 1.04; color: ${L.text}; ${spec.look === "gelb" ? "-webkit-text-stroke: 14px #000; paint-order: stroke fill;" : "background: rgba(8,12,22,.78); padding: 10px 26px 14px; border-radius: 28px; text-shadow: 0 0 22px rgba(77,216,255,.45);"} }
+        .hl-in { max-width: 860px; text-align: center; font-size: ${L.headlineGross}px; line-height: 1.04; color: ${L.text}; ${HL_STIL} }
         .hw { display: inline-block; }
-        .hw.em { color: ${L.akzent}; }
+        .hw.em { color: ${EM_FARBE}; }
         .ctabox { position: absolute; left: 60px; right: 140px; top: 1080px; display: flex; flex-direction: column; align-items: center; }
-        .cta-tx { color: ${L.akzent}; font-size: 76px; line-height: 1.05; text-align: center; max-width: 720px; ${spec.look === "gelb" ? "-webkit-text-stroke: 14px #000; paint-order: stroke fill;" : "background: rgba(8,12,22,.8); padding: 12px 28px 16px; border-radius: 30px; text-shadow: 0 0 22px rgba(77,216,255,.45);"} }
+        .cta-tx { color: ${L.akzent}; font-size: 76px; line-height: 1.05; text-align: center; max-width: 720px; ${L.marker ? `font-family: "Marker", sans-serif; font-weight: 400; font-size: 92px; -webkit-text-stroke: 12px ${L.kontur}; paint-order: stroke fill; text-shadow: 0 10px 0 rgba(12,9,3,.55); transform: rotate(-2deg);` : spec.look === "gelb" ? "-webkit-text-stroke: 14px #000; paint-order: stroke fill;" : "background: rgba(8,12,22,.8); padding: 12px 28px 16px; border-radius: 30px; text-shadow: 0 0 22px rgba(77,216,255,.45);"} }
         .cta-zu { color: #fff; font-size: 44px; margin-top: 12px; text-align: center; max-width: 720px; background: rgba(0,0,0,.55); padding: 6px 18px; border-radius: 16px; }
         .pfeil { width: 150px; height: 150px; margin-top: 4px; margin-right: 400px; }
         .pfeil path { stroke-dasharray: 260; }
-        .ki { position: absolute; left: 70px; top: 160px; font-size: 26px; color: #FFFFFF; letter-spacing: .04em; background: rgba(0,0,0,.62); padding: 6px 14px; border-radius: 12px; }`;
+        .statkarte { position: absolute; left: 60px; right: 140px; display: flex; justify-content: center; }
+        .st-in { background: rgba(20,15,5,.86); border-left: 18px solid ${L.akzent}; border-radius: 22px; padding: 10px 40px 18px 34px; box-shadow: 0 14px 0 rgba(12,9,3,.55); transform-origin: 50% 50%; }
+        .st-zahl { font-family: "Marker", sans-serif; font-size: 168px; line-height: 1.02; color: ${L.akzent}; -webkit-text-stroke: 10px #140F05; paint-order: stroke fill; }
+        .st-einheit { font-size: 92px; margin-left: 14px; color: #FFF7E8; }
+        .st-label { font-family: "Poppins", sans-serif; font-weight: 700; font-size: 44px; letter-spacing: .12em; color: #FFF7E8; text-transform: uppercase; margin-top: -6px; }
+        .logo-gross { position: absolute; left: 110px; top: 300px; width: 760px; }
+        .logo-klein { position: absolute; left: 680px; top: 150px; width: 250px; opacity: .92; }
+        .ki { position: absolute; left: 70px; top: 160px; font-size: 26px; color: #FFFFFF; letter-spacing: .04em; background: rgba(0,0,0,.62); padding: 6px 14px; border-radius: 12px; }${L.metall ? MT.css(spec.look) + MT.ctaCss() : ""}`;
 const subcomp = (cid, markup, code) => fs.writeFileSync(path.join(out, "compositions", `${cid}.html`), `<!doctype html>
 <html lang="de">
   <head><meta charset="UTF-8" /><!-- GENERIERT von tools/baue-spec.mjs – nicht von Hand ändern. --></head>
@@ -191,7 +250,28 @@ const subcomp = (cid, markup, code) => fs.writeFileSync(path.join(out, "composit
 </html>
 `);
 subcomp("captions", cm, cj);
-subcomp("grafik", hm + `\n        <div id="ki" class="clip ki" data-start="0" data-duration="${GESAMT}" data-track-index="3">KI-Stimme</div>`, hj);
+if (spec.logo) {
+  // intro: Sekunden groß am Anfang (0 = aus, Hook bleibt frei) · ende: groß auf der CTA-Endkarte · dazwischen klein oben rechts
+  const intro = spec.logo.intro ?? 0, endeAb = spec.logo.ende ? cta.start : GESAMT, top = spec.logo.top ?? 300;
+  if (intro > 0) {
+    hm += `\n        <img id="logo-intro" class="clip logo-gross" style="top:${top}px" src="assets/logo.png" data-start="0" data-duration="${r3(intro)}" data-track-index="4" />`;
+    hj += `\n        tl.fromTo("#logo-intro", { scale: 0.86, y: 24, opacity: 0 }, { scale: 1, y: 0, opacity: 1, duration: 0.25, ease: "power3.out" }, 0.05);`;
+    hj += `\n        tl.to("#logo-intro", { opacity: 0, scale: 0.9, duration: 0.15, ease: "power2.in" }, ${r3(intro - 0.15)});`;
+  }
+  hm += `\n        <img id="logo-klein" class="clip logo-klein" src="assets/logo.png" data-start="${r3(intro)}" data-duration="${r3(endeAb - intro)}" data-track-index="5" />`;
+  if (intro > 0) hj += `\n        tl.fromTo("#logo-klein", { opacity: 0 }, { opacity: 0.92, duration: 0.2 }, ${r3(intro)});`;
+  if (spec.logo.ende) {
+    hm += `\n        <img id="logo-ende" class="clip logo-gross" style="top:${spec.logo.ende_top ?? 420}px" src="assets/logo.png" data-start="${r3(cta.start)}" data-duration="${r3(GESAMT - cta.start)}" data-track-index="4" />`;
+    hj += `\n        tl.fromTo("#logo-ende", { scale: 0.86, y: 24, opacity: 0 }, { scale: 1, y: 0, opacity: 1, duration: 0.25, ease: "power3.out" }, ${r3(cta.start + 0.05)});`;
+  }
+}
+if (spec.badge) {
+  // RCB-D5-PRO-Schriftzug: klein oben rechts bis zur Endkarte, groß auf der Endkarte
+  const b = spec.badge, bisKlein = b.ende ? cta.start : GESAMT;
+  const k = MT.badge("badge-klein", { left: 690, top: b.top ?? 160, breite: 240 }, b.ab ?? 0, bisKlein, false); hm += k.html; hj += k.js;
+  if (b.ende) { const g = MT.badge("badge-gross", { left: 210, top: b.ende_top ?? 170, breite: 640 }, cta.start, GESAMT, true); hm += g.html; hj += g.js; }
+}
+subcomp("grafik", hm + (spec.ohne_vo ? "" : `\n        <div id="ki" class="clip ki" data-start="0" data-duration="${GESAMT}" data-track-index="3">KI-Stimme</div>`), hj);
 const host = (cid, track) => `
       <div id="${cid}"${cid === "captions" ? ' data-track-kind="captions"' : ""} data-composition-id="${cid}" data-composition-src="compositions/${cid}.html" data-start="0" data-duration="${GESAMT}" data-track-index="${track}" data-width="${W}" data-height="${H}"></div>`;
 html += host("captions", 50) + host("grafik", 51);
@@ -232,7 +312,7 @@ const gout = path.join(vdir, "komposition-grafik");
 fs.rmSync(gout, { recursive: true, force: true });
 fs.mkdirSync(path.join(gout, "assets", "fonts"), { recursive: true });
 fs.mkdirSync(path.join(gout, "compositions"), { recursive: true });
-for (const f of ["gsap.min.js", "fonts/Poppins-Bold.ttf"]) link(path.join(out, "assets", f), path.join(gout, "assets", f));
+for (const f of ["gsap.min.js", "fonts/Poppins-Bold.ttf", "fonts/PermanentMarker.ttf", ...(spec.logo ? ["logo.png"] : [])]) link(path.join(out, "assets", f), path.join(gout, "assets", f));
 for (const f of ["captions.html", "grafik.html"]) fs.copyFileSync(path.join(out, "compositions", f), path.join(gout, "compositions", f));
 writeJSON(path.join(gout, "hyperframes.json"), { paths: { blocks: "compositions", components: "compositions/components", assets: "assets" } });
 fs.writeFileSync(path.join(gout, "index.html"), `<!doctype html>

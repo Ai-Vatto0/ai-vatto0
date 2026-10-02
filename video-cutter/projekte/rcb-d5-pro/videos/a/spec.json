@@ -1,0 +1,180 @@
+{
+  "titel": "Kein Spielzeug – Wiese, Hügel, Waldweg",
+  "idee": {
+    "winkel": "pov_erlebnis",
+    "zielgruppe": "Männer 20–45, wollen Fahrspaß ohne Wackel-Roller",
+    "hook": "Fahrer rollt über die Wiese direkt auf die Kamera zu – „Bro, du willst einen Roller, der nicht beim ersten Bordstein auseinanderfällt?“",
+    "emotion": "Freiheit, Action"
+  },
+  "format": "Action-Voiceover-Montage, schneller Schnitt, Speed-Ramp",
+  "look": "rcb",
+  "textposition": "oben",
+  "stimme": {
+    "anbieter": "yapper",
+    "modell": "eleven_v3",
+    "name": "Markus – Young Natural German",
+    "voice_id": "IeQubAjK1ujbppIdhJw4"
+  },
+  "logo": {
+    "datei": "assets/rcb-logo-karte.png",
+    "intro": 0,
+    "ende": false
+  },
+  "voiceover": [
+    {
+      "satz": "Bro, du willst einen Roller, der nicht beim ersten Bordstein auseinanderfällt?",
+      "belege": [
+        "meinung"
+      ]
+    },
+    {
+      "satz": "Dann guck dir den hier an.",
+      "belege": [
+        "meinung"
+      ]
+    },
+    {
+      "satz": "Wiese, Waldweg, Hügel runter, der zieht einfach durch.",
+      "belege": [
+        "meinung"
+      ]
+    },
+    {
+      "satz": "500 Watt Motor, Federung vorne und hinten.",
+      "belege": [
+        "motor_500w",
+        "federung"
+      ]
+    },
+    {
+      "satz": "Und trotzdem mit Straßenzulassung.",
+      "belege": [
+        "abe_20kmh"
+      ]
+    },
+    {
+      "satz": "Kein Plastikbomber, Bro. Ein echtes Teil.",
+      "belege": [
+        "meinung"
+      ]
+    },
+    {
+      "satz": "Jetzt im TikTok Shop, Link ist unten.",
+      "belege": []
+    }
+  ],
+  "szenen": [
+    {
+      "clip": "dji0926-0021",
+      "von": 29.8,
+      "bis": 32.839,
+      "rolle": "hook",
+      "zoom": "kenburns_in",
+      "uebergang": "zoom",
+      "text": {
+        "inhalt": "KEIN SPIELZEUG",
+        "betonung": [
+          "SPIELZEUG"
+        ],
+        "belege": [
+          "meinung"
+        ]
+      }
+    },
+    {
+      "clip": "foto-wald1",
+      "von": 0,
+      "bis": 3.273,
+      "rolle": "detail",
+      "zoom": "kenburns_in",
+      "uebergang": "whip",
+      "ab_wort": 8
+    },
+    {
+      "clip": "dji0926-0021",
+      "von": 35.0,
+      "bis": 36.818,
+      "rolle": "emotion",
+      "zoom": "kenburns_in",
+      "uebergang": "cut",
+      "ab_wort": 17,
+      "text": {
+        "inhalt": "OFFROAD? LÄUFT.",
+        "betonung": [
+          "LÄUFT."
+        ],
+        "belege": [
+          "meinung"
+        ]
+      },
+      "tempo": "ramp"
+    },
+    {
+      "clip": "dji0924-0004",
+      "von": 17.1,
+      "bis": 18.555,
+      "rolle": "emotion",
+      "zoom": "kenburns_out",
+      "uebergang": "flash",
+      "ab_wort": 21
+    },
+    {
+      "clip": "foto-federung",
+      "von": 0,
+      "bis": 2.545,
+      "rolle": "beweis",
+      "zoom": "kenburns_in",
+      "uebergang": "zoom",
+      "ab_wort": 25,
+      "text": {
+        "inhalt": "METALL STATT PLASTIK",
+        "betonung": [
+          "METALL"
+        ],
+        "belege": [
+          "metall"
+        ]
+      }
+    },
+    {
+      "clip": "foto-display",
+      "von": 0,
+      "bis": 1.455,
+      "rolle": "beweis",
+      "zoom": "punch",
+      "uebergang": "whip",
+      "ab_wort": 32,
+      "text": {
+        "inhalt": "ABE · 20 KM/H",
+        "betonung": [
+          "ABE"
+        ],
+        "belege": [
+          "abe_20kmh"
+        ]
+      }
+    },
+    {
+      "clip": "dji0926-0021",
+      "von": 53.0,
+      "bis": 55.182,
+      "rolle": "emotion",
+      "zoom": "kenburns_in",
+      "uebergang": "cut",
+      "ab_wort": 36
+    },
+    {
+      "clip": "foto-abend-endkarte",
+      "von": 0,
+      "bis": 4.065,
+      "rolle": "cta",
+      "zoom": "kenburns_out",
+      "ab_wort": 42
+    }
+  ],
+  "cta": {
+    "text": "Jetzt im TikTok Shop",
+    "zusatz": "Dein neuer Daily Driver.",
+    "top": 330
+  }
+}

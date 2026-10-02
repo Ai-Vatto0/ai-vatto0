@@ -1,0 +1,338 @@
+[
+  {
+    "text": "Stopp!",
+    "start": 0.01,
+    "end": 0.82,
+    "id": "w0"
+  },
+  {
+    "text": "Du",
+    "start": 1.01,
+    "end": 1.26,
+    "id": "w1"
+  },
+  {
+    "text": "bist",
+    "start": 1.4,
+    "end": 1.68,
+    "id": "w2"
+  },
+  {
+    "text": "groß,",
+    "start": 1.79,
+    "end": 2.56,
+    "id": "w3"
+  },
+  {
+    "text": "schwer",
+    "start": 2.56,
+    "end": 3.1,
+    "id": "w4"
+  },
+  {
+    "text": "und",
+    "start": 3.55,
+    "end": 3.58,
+    "id": "w5"
+  },
+  {
+    "text": "jeder",
+    "start": 3.58,
+    "end": 3.94,
+    "id": "w6"
+  },
+  {
+    "text": "Rolle",
+    "start": 3.94,
+    "end": 4.3,
+    "id": "w7"
+  },
+  {
+    "text": "ächzt",
+    "start": 4.3,
+    "end": 4.62,
+    "id": "w8"
+  },
+  {
+    "text": "unter",
+    "start": 4.83,
+    "end": 5.01,
+    "id": "w9"
+  },
+  {
+    "text": "dir?",
+    "start": 5.01,
+    "end": 5.38,
+    "id": "w10"
+  },
+  {
+    "text": "Dann",
+    "start": 5.68,
+    "end": 5.76,
+    "id": "w11"
+  },
+  {
+    "text": "schau",
+    "start": 5.83,
+    "end": 6.07,
+    "id": "w12"
+  },
+  {
+    "text": "dir",
+    "start": 6.08,
+    "end": 6.26,
+    "id": "w13"
+  },
+  {
+    "text": "den",
+    "start": 6.27,
+    "end": 6.48,
+    "id": "w14"
+  },
+  {
+    "text": "hier",
+    "start": 6.48,
+    "end": 6.72,
+    "id": "w15"
+  },
+  {
+    "text": "an!",
+    "start": 6.72,
+    "end": 7,
+    "id": "w16"
+  },
+  {
+    "text": "Bis",
+    "start": 7.01,
+    "end": 7.27,
+    "id": "w17"
+  },
+  {
+    "text": "150",
+    "start": 7.27,
+    "end": 7.84,
+    "id": "w18"
+  },
+  {
+    "text": "Kilo",
+    "start": 8.09,
+    "end": 8.46,
+    "id": "w19"
+  },
+  {
+    "text": "belastbar,",
+    "start": 8.46,
+    "end": 9.34,
+    "id": "w20"
+  },
+  {
+    "text": "getestet",
+    "start": 9.48,
+    "end": 10.11,
+    "id": "w21"
+  },
+  {
+    "text": "mit",
+    "start": 10.26,
+    "end": 10.44,
+    "id": "w22"
+  },
+  {
+    "text": "einem",
+    "start": 10.55,
+    "end": 10.9,
+    "id": "w23"
+  },
+  {
+    "text": "Fahrer",
+    "start": 10.9,
+    "end": 11.43,
+    "id": "w24"
+  },
+  {
+    "text": "von",
+    "start": 11.45,
+    "end": 11.62,
+    "id": "w25"
+  },
+  {
+    "text": "140",
+    "start": 11.83,
+    "end": 12.38,
+    "id": "w26"
+  },
+  {
+    "text": "Kilo",
+    "start": 12.63,
+    "end": 13,
+    "id": "w27"
+  },
+  {
+    "text": "und",
+    "start": 13,
+    "end": 13.24,
+    "id": "w28"
+  },
+  {
+    "text": "der",
+    "start": 13.24,
+    "end": 13.48,
+    "id": "w29"
+  },
+  {
+    "text": "zieht",
+    "start": 13.48,
+    "end": 13.88,
+    "id": "w30"
+  },
+  {
+    "text": "trotzdem",
+    "start": 13.88,
+    "end": 14.55,
+    "id": "w31"
+  },
+  {
+    "text": "sauber",
+    "start": 14.65,
+    "end": 14.92,
+    "id": "w32"
+  },
+  {
+    "text": "durch.",
+    "start": 14.92,
+    "end": 16,
+    "id": "w33"
+  },
+  {
+    "text": "Starker",
+    "start": 16.01,
+    "end": 16.54,
+    "id": "w34"
+  },
+  {
+    "text": "Motor",
+    "start": 16.54,
+    "end": 16.82,
+    "id": "w35"
+  },
+  {
+    "text": "mit",
+    "start": 16.82,
+    "end": 17.16,
+    "id": "w36"
+  },
+  {
+    "text": "500",
+    "start": 17.4,
+    "end": 17.87,
+    "id": "w37"
+  },
+  {
+    "text": "Watt,",
+    "start": 17.87,
+    "end": 18.32,
+    "id": "w38"
+  },
+  {
+    "text": "dazu",
+    "start": 18.48,
+    "end": 18.64,
+    "id": "w39"
+  },
+  {
+    "text": "ein",
+    "start": 18.64,
+    "end": 18.87,
+    "id": "w40"
+  },
+  {
+    "text": "stabiler",
+    "start": 18.87,
+    "end": 19.49,
+    "id": "w41"
+  },
+  {
+    "text": "Rahmen",
+    "start": 19.55,
+    "end": 19.96,
+    "id": "w42"
+  },
+  {
+    "text": "aus",
+    "start": 19.96,
+    "end": 20.19,
+    "id": "w43"
+  },
+  {
+    "text": "Metall.",
+    "start": 20.19,
+    "end": 21,
+    "id": "w44"
+  },
+  {
+    "text": "Gebaut",
+    "start": 21.01,
+    "end": 21.5,
+    "id": "w45"
+  },
+  {
+    "text": "für",
+    "start": 21.5,
+    "end": 21.74,
+    "id": "w46"
+  },
+  {
+    "text": "große",
+    "start": 21.74,
+    "end": 21.91,
+    "id": "w47"
+  },
+  {
+    "text": "Jungs,",
+    "start": 22.1,
+    "end": 22.67,
+    "id": "w48"
+  },
+  {
+    "text": "nicht",
+    "start": 22.79,
+    "end": 23.16,
+    "id": "w49"
+  },
+  {
+    "text": "für",
+    "start": 23.16,
+    "end": 23.33,
+    "id": "w50"
+  },
+  {
+    "text": "Plastikspielzeug,",
+    "start": 23.48,
+    "end": 25,
+    "id": "w51"
+  },
+  {
+    "text": "jetzt",
+    "start": 25,
+    "end": 25.5,
+    "id": "w52"
+  },
+  {
+    "text": "im",
+    "start": 25.5,
+    "end": 25.63,
+    "id": "w53"
+  },
+  {
+    "text": "TikTok",
+    "start": 25.83,
+    "end": 26.29,
+    "id": "w54"
+  },
+  {
+    "text": "Shop.",
+    "start": 26.29,
+    "end": 27,
+    "id": "w55"
+  }
+]

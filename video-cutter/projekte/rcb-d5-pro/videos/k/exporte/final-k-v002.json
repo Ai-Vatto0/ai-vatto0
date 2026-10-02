@@ -1,0 +1,54 @@
+{
+  "export": "final-k-v002.mp4",
+  "art": "final",
+  "freigabe": "Vatto 02.10.: K direkt fertig machen (v002: Kameraschwenk ohne Roller bei 5 s entfernt)",
+  "renderzeit_s": 141,
+  "status": "WARNUNG",
+  "checks": [
+    {
+      "pruefung": "Spuren",
+      "status": "OK",
+      "detail": "1 Video, 1 Ton"
+    },
+    {
+      "pruefung": "Auflösung",
+      "status": "OK",
+      "detail": "1080x1920"
+    },
+    {
+      "pruefung": "Bildrate",
+      "status": "OK",
+      "detail": "30/1"
+    },
+    {
+      "pruefung": "Dauer",
+      "status": "OK",
+      "detail": "15.333 s (Plan 15.333 s)"
+    },
+    {
+      "pruefung": "Lautheit",
+      "status": "WARNUNG",
+      "detail": "-37.7 LUFS (Ziel -14 ±2)"
+    },
+    {
+      "pruefung": "True Peak",
+      "status": "OK",
+      "detail": "-24.5 dBTP"
+    },
+    {
+      "pruefung": "Stille",
+      "status": "WARNUNG",
+      "detail": "10.8 s Stille bis 15.3 s"
+    },
+    {
+      "pruefung": "Voiceover = Skript",
+      "status": "OK",
+      "detail": "ohne Voiceover (Musik legt Vatto in TikTok drauf)"
+    },
+    {
+      "pruefung": "Safe Zone",
+      "status": "OK",
+      "detail": "153 Bilder geprüft, nichts außerhalb"
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "video": "b",
+  "vo_start": 0.25,
+  "vorlauf": 0.12,
+  "cta_halt": 1.4,
+  "gesamt_s": 27,
+  "szenen": [
+    {
+      "szene": 1,
+      "clip": "foto-front",
+      "ab_wort": null,
+      "wort": "(Start)",
+      "start": 0,
+      "dauer": 3.5,
+      "von": 0,
+      "bis": 3.5,
+      "tempo": 1
+    },
+    {
+      "szene": 2,
+      "clip": "dji0924-0001-seg2",
+      "ab_wort": 5,
+      "wort": "Der",
+      "start": 3.5,
+      "dauer": 2.167,
+      "von": 0,
+      "bis": 2.167,
+      "tempo": 1
+    },
+    {
+      "szene": 3,
+      "clip": "foto-wald2",
+      "ab_wort": 10,
+      "wort": "Rahmen",
+      "start": 5.666666666666667,
+      "dauer": 5.4,
+      "von": 0,
+      "bis": 5.4,
+      "tempo": 1
+    },
+    {
+      "szene": 4,
+      "clip": "foto-karton",
+      "ab_wort": 20,
+      "wort": "Trägt",
+      "start": 11.066666666666666,
+      "dauer": 2.2,
+      "von": 0,
+      "bis": 2.2,
+      "tempo": 1
+    },
+    {
+      "szene": 5,
+      "clip": "dji0924-0001-seg2",
+      "ab_wort": 24,
+      "wort": "Und",
+      "start": 13.266666666666667,
+      "dauer": 6.067,
+      "von": 7.8,
+      "bis": 13.867,
+      "tempo": 1
+    },
+    {
+      "szene": 6,
+      "clip": "foto-abend",
+      "ab_wort": 35,
+      "wort": "Einmal",
+      "start": 19.333333333333332,
+      "dauer": 4.567,
+      "von": 0,
+      "bis": 4.567,
+      "tempo": 1
+    },
+    {
+      "szene": 7,
+      "clip": "dji0924-0001-seg3",
+      "ab_wort": 43,
+      "wort": "Jetzt",
+      "start": 23.9,
+      "dauer": 3.1,
+      "von": 0,
+      "bis": 3.1,
+      "tempo": 1
+    }
+  ],
+  "fehler": []
+}

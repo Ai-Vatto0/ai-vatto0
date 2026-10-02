@@ -1,0 +1,48 @@
+# PRODUKT: RCB D5 PRO (E-Scooter, ABE) – Faktenblatt für TikTok-Shop-Werbung
+
+**Stand:** 01.10.2026 · **Shop:** RCB DIRECT (TikTok Shop, Gratismuster) · **Material:** Vattos eigene
+Drohnen-/Handyclips + Fotos in `video-cutter/projekte/rcb-d5-pro/` (Drive `Snova-Videos/01-Rohmaterial`, direkt im Ordner).
+Ziel: Muster-Gegenleistung, danach ggf. D7 Max.
+
+## 1. FAKTEN (Shop-Screenshots IMG_0509–0515, IMG_8296–8307)
+
+| Punkt | Wert | Ampel |
+|---|---|---|
+| Motor | 500 W (Infografik: 1600 W Spitze) | ✅ / 🟡 nur „Spitze“ |
+| Tempo | 20 km/h, 3 Stufen 10/15/20 | ✅ |
+| Zulassung | Deutsche ABE (Vatto: beide Versionen, angemeldet) | ✅ Versicherungskennzeichen erwähnen |
+| Reifen | 10 Zoll Gel, dichten Löcher bis 3 mm | 🟡 nie „pannenfrei“ |
+| Bremse / Federung | Doppelbremse, Federung vorne (Doppelfeder je Seite, Foto) + hinten | ✅ |
+| Last / Gewicht | bis 150 kg / 30,6 kg, faltbar 121×21,5×56 cm | ✅ |
+| Akku/Reichweite | D5: 20,8 Ah (998 Wh) 80–100 km · D5 PRO: 27 Ah (1296 Wh) 120–140 km (Text) bzw. 110–130 km (Bild) | 🔴 widersprüchlich + variantenabhängig |
+| NFC / Blinker | Händlerbild „D5 PRO Premium Version“ zeigt NFC + Blinker | 🔴 Vattos Roller hat beides NICHT |
+
+## 2. RISIKEN (wichtig)
+
+- **Verstoß 26.09.2026** (Screenshot IMG_0507): −24 Punkte, „inkonsistente Produktwerbung“, Sichtbarkeit reduziert,
+  Videoprodukte entfernt, betroffenes Produkt deaktiviert. → Nur Eigenmaterial, nichts KI-verändert, nur gemeinsame Merkmale.
+- **Variante geklärt (Vatto, 01.10.):** Verlinkt wird Vattos Version OHNE NFC/Blinker. Videos zeigen nur diese → konsistent. Händlerbilder mit NFC/Blinker (IMG_8297, IMG_0514) nie verwenden.
+- IMG_7963 (Display Nacht) = Vattos Roller → freigegeben (zeigt aber mph + Blinker-Symbole → nicht unter km/h-Aussagen).
+- **Beide Roller nebeneinander (Vatto, 01.10.):** erlaubt („zwei Bros“), war schon gepostet ohne Verstoß. Bedingung bei uns:
+  der D5 Pro ist klar markiert (Pfeil/Text „DEINER“) und im Fokus; das Blinker-Modell nie allein und nie während Feature-Aussagen im Bild.
+- **Tacho im Bild:** Vattos Roller zeigt in POV-Clips bis **22,0 km/h** (IMG_8251 ~72–74 s, IMG_8238 ab ~7,5 s ≈ 20,5).
+  **Vatto-Entscheidung 01.10.:** Tacho mit 22 darf ins Bild (20 eingetragen + Toleranz, schon 5× ohne Problem gepostet),
+  aber nie gleichzeitig mit einer gesprochenen/eingeblendeten „20 km/h“-Aussage. Beste POV-Fahrt: IMG_8251 ~69–82 s (Waldweg).
+- Fremd-Roller (HIDIS u. a.) in Neo-2-Clips vert_bridge*/vert_grass* → nie verwenden.
+- Lenkertasche „WILD MAN“ (Fremdmarke, nicht im Lieferumfang) ist in fast allem Material sichtbar – Vatto: ok.
+- Logo-Datei `0FCB837A…png` hat weißen Grund (kein Alpha) → als weiße Logo-Karte mit runden Ecken genutzt; Marken-Akzent im Logo ist Türkis.
+- Wald-Clip DJI_0012 ab ~148 s: Verkehrsschild „Verbot für Kfz“ + Gesicht → gesperrt. DJI_0021 0–15 s Kennzeichen, 45–48 s Kind → gesperrt.
+
+## 3. PRODUKTION 01.10.2026
+
+5 Specs (`videos/a–e`, Generator `specs.py`): a Action/Wiese (rcb, oben) · b Einwand „Plastikbomber“ (rcb_tag, Stimme Patrick) ·
+c Funktions-Check (rcb, ruhig) · d Feierabend (rcb_tag, Logo-Intro) · e Wald-Test (rcb_dunkel).
+Stimme Markus `IeQubAjK1ujbppIdhJw4` (jung), Patrick `rUxG6T3T35OAyiiJgocG` als A/B. eleven_v3 = 0 Credits.
+Musik fügt Vatto in TikTok hinzu (Commercial Music Library) → Exporte haben nur VO + tiefe Schnitt-Sounds.
+
+## 4. SHOW-SERIE 02.10.2026 (nur Roller, 15 s, ohne Stimme)
+
+i Detail-Tour (metall, Karten Federung/Bremse/150 kg/500 W) · j Fahrgefühl (metall_dunkel, POV img8239/img8251 + Wiese-Zuschnitt dji0021 21 s) ·
+k Licht-Check (metall_glanz, Nachtfoto, Scheinwerfer/Rücklicht, Display). Logo: eigener SVG-Schriftzug „RCB D5 PRO“ (metall.mjs), nicht mehr rcb-logo-karte.png.
+Gute Roller-only-Stellen: img8241 3–5 (Heck/Bremse), 8–11 (Trittbrett RCB), 16–22 (Licht + Doppelfeder) · img8252 0–3 (Roller im Wald, Zuschnitt) ·
+img8251 98–100, 105, 111 (Roller auf Waldweg/Rücklicht), POV 38–41, 76–80 · img8239 16–21 POV Display.

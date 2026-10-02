@@ -1,0 +1,200 @@
+{
+  "hook_effekt": "slam",
+  "ohne_vo": true,
+  "titel": "Fahrgefühl: Wald und Wiese aus Fahrersicht",
+  "idee": {
+    "winkel": "fahrgefuehl",
+    "zielgruppe": "Fahrer, die Lust auf Touren abseits der Straße haben",
+    "hook": "Slam auf den RCB auf dem Waldweg + „AB IN DEN WALD.“ + Cool-Smiley",
+    "emotion": "Fahrspaß, Freiheit"
+  },
+  "format": "POV-Fahrten (nur Lenker, Display, Weg) + Wiese im Zuschnitt, harte Schnitte ohne Zoom, Metall-Karten, keine Stimme",
+  "look": "metall_dunkel",
+  "textposition": "unten",
+  "stimme": null,
+  "badge": {
+    "ende": true
+  },
+  "voiceover": [
+    {
+      "satz": "AB IN DEN WALD.",
+      "belege": [
+        "meinung"
+      ],
+      "dauer": 2.4
+    },
+    {
+      "satz": "3 FAHRSTUFEN",
+      "belege": [
+        "drei_gaenge"
+      ],
+      "dauer": 2.1
+    },
+    {
+      "satz": "WALDWEG",
+      "belege": [
+        "meinung"
+      ],
+      "dauer": 2.1
+    },
+    {
+      "satz": "WIESE",
+      "belege": [
+        "meinung"
+      ],
+      "dauer": 1.6
+    },
+    {
+      "satz": "10 ZOLL GELREIFEN",
+      "belege": [
+        "gelreifen"
+      ],
+      "dauer": 2.1,
+      "bedingung_ok": true
+    },
+    {
+      "satz": "ABE",
+      "belege": [
+        "abe_20kmh"
+      ],
+      "dauer": 2.1
+    },
+    {
+      "satz": "JETZT IM TIKTOK SHOP",
+      "belege": [],
+      "dauer": 1.2
+    }
+  ],
+  "szenen": [
+    {
+      "clip": "img8251",
+      "von": 98.0,
+      "bis": 100.53,
+      "rolle": "hook",
+      "zoom": "none",
+      "uebergang": "cut",
+      "text": {
+        "inhalt": "AB IN DEN WALD.",
+        "betonung": [
+          "WALD."
+        ],
+        "belege": [
+          "meinung"
+        ],
+        "sticker": "smiley",
+        "top": 300
+      }
+    },
+    {
+      "clip": "img8239",
+      "von": 16.0,
+      "bis": 18.1,
+      "rolle": "beweis",
+      "zoom": "none",
+      "uebergang": "cut",
+      "ab_wort": 4,
+      "stat": {
+        "zahl": 3,
+        "einheit": "",
+        "label": "Fahrstufen",
+        "belege": [
+          "drei_gaenge"
+        ],
+        "icon": "tacho"
+      }
+    },
+    {
+      "clip": "img8251",
+      "von": 38.5,
+      "bis": 40.6,
+      "rolle": "emotion",
+      "zoom": "none",
+      "uebergang": "cut",
+      "ab_wort": 6,
+      "text": {
+        "inhalt": "WALDWEG? EASY.",
+        "betonung": [
+          "EASY."
+        ],
+        "belege": [
+          "meinung"
+        ],
+        "top": 300
+      }
+    },
+    {
+      "clip": "dji0926-0021",
+      "von": 21.0,
+      "bis": 22.6,
+      "rolle": "emotion",
+      "zoom": "none",
+      "uebergang": "cut",
+      "ab_wort": 7,
+      "text": {
+        "inhalt": "WIESE? LÄUFT.",
+        "betonung": [
+          "LÄUFT."
+        ],
+        "belege": [
+          "meinung"
+        ],
+        "top": 300
+      },
+      "ausschnitt": {
+        "x": 0.48,
+        "y": 0.64,
+        "h": 0.32
+      }
+    },
+    {
+      "clip": "img8251",
+      "von": 76.5,
+      "bis": 78.6,
+      "rolle": "beweis",
+      "zoom": "none",
+      "uebergang": "cut",
+      "ab_wort": 8,
+      "stat": {
+        "zahl": 10,
+        "einheit": "ZOLL",
+        "label": "Gelreifen",
+        "belege": [
+          "gelreifen"
+        ],
+        "bedingung_ok": true,
+        "icon": "reifen"
+      }
+    },
+    {
+      "clip": "img8239",
+      "von": 19.0,
+      "bis": 21.1,
+      "rolle": "beweis",
+      "zoom": "none",
+      "uebergang": "cut",
+      "ab_wort": 11,
+      "stat": {
+        "zahl": "ABE",
+        "einheit": "",
+        "label": "Straßenzulassung",
+        "belege": [
+          "abe_20kmh"
+        ],
+        "icon": "haken"
+      }
+    },
+    {
+      "clip": "foto-wald2-endkarte",
+      "von": 0,
+      "bis": 2.72,
+      "rolle": "cta",
+      "zoom": "kenburns_out",
+      "ab_wort": 12
+    }
+  ],
+  "cta": {
+    "text": "Jetzt im TikTok Shop",
+    "zusatz": "RCB D5 Pro · mit ABE.",
+    "top": 450
+  }
+}

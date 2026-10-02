@@ -1,0 +1,1912 @@
+{
+  "projekt": "rcb-d5-pro",
+  "clips": {
+    "ciwl3941": {
+      "datei": "roh/CIWL3941-00.00.00.000-00.00.06.131.MP4",
+      "sha256": "74ec00e269cc6fad2b9f16ff5e427b12641378d1745fb5ca71aa56245f416795",
+      "dauer_s": 6.139,
+      "breite": 3840,
+      "hoehe": 2160,
+      "orientierung": "quer",
+      "typ": "quer",
+      "fps": 29.97003,
+      "variable_bildrate": false,
+      "hdr": false,
+      "farbe": "bt709",
+      "ton": false,
+      "zeitlupe_moeglich": "nein (< 50 fps)",
+      "kontaktbogen": "kontakt/ciwl3941.jpg",
+      "tags": {
+        "beschreibung": "Top-Down über einem Asphaltweg: Mann im weißen T-Shirt schiebt einen E-Scooter, die Drohne steigt schnell senkrecht auf, der Mann läuft nach links aus dem Bild (ab ~3 s nur noch Weg und Gras).",
+        "rolle": [
+          "uebergang"
+        ],
+        "drohne_sichtbar": "nein",
+        "person": "mittel",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.33,
+        "beste_sekunden": [
+          [
+            0,
+            2
+          ]
+        ],
+        "bewegung": "schnell",
+        "qualitaet": "mittel: 4K scharf, aber Person verlässt früh das Bild, zweite Hälfte inhaltsarm",
+        "zeitlupe_geeignet": false,
+        "belegt_fakt": null,
+        "risiko": "Person mit Scooter auf Weg (Scooter-Marke/Display kurz sichtbar); Rocket-Modus im Bild selbst nicht belegt (nur mit app_modes)",
+        "quelle": "neo2-sichtung rocket_a"
+      }
+    },
+    "dji0924-0001-seg1": {
+      "datei": "roh/DJI_20260924185506_0001_D-00.01.36.505-00.02.38.977-00.00.10.854-00.00.15.133-seg1.MP4",
+      "sha256": "ffd0f3016b4de9d103bc5500bcbc1dafc43061c46c6e1b3799e0e628ccd16245",
+      "dauer_s": 5.138,
+      "breite": 3840,
+      "hoehe": 2160,
+      "orientierung": "quer",
+      "typ": "quer",
+      "fps": 29.97003,
+      "variable_bildrate": false,
+      "hdr": false,
+      "farbe": "bt709",
+      "ton": false,
+      "zeitlupe_moeglich": "nein (< 50 fps)",
+      "kontaktbogen": "kontakt/dji0924-0001-seg1.jpg",
+      "tags": {
+        "beschreibung": "Mann mit Rucksack steigt auf dem Feldweg auf seinen E-Scooter und rollt an, Drohne filmt schräg von oben-seitlich; links unten ragt das Dach des eigenen Autos ins Bild.",
+        "rolle": [
+          "uebergang"
+        ],
+        "drohne_sichtbar": "nein",
+        "person": "mittel",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.46,
+        "beste_sekunden": [
+          [
+            2.2,
+            5
+          ]
+        ],
+        "bewegung": "mittel",
+        "qualitaet": "mittel – Autodach im Vordergrund links unten (0–2,5 s), Motiv nur Anfahren",
+        "risiko": null,
+        "quelle": "neo2-sichtung side1"
+      }
+    },
+    "dji0924-0001-seg2": {
+      "datei": "roh/DJI_20260924185506_0001_D-00.01.36.505-00.02.38.977-00.00.19.870-00.00.33.069-seg2.MP4",
+      "sha256": "2224e0dc48ae3508b759e986fd620577a28dd811948d24ff4d71772ce32cbe12",
+      "dauer_s": 14.081,
+      "breite": 3840,
+      "hoehe": 2160,
+      "orientierung": "quer",
+      "typ": "quer",
+      "fps": 29.97003,
+      "variable_bildrate": false,
+      "hdr": false,
+      "farbe": "bt709",
+      "ton": false,
+      "zeitlupe_moeglich": "nein (< 50 fps)",
+      "kontaktbogen": "kontakt/dji0924-0001-seg2.jpg",
+      "tags": {
+        "beschreibung": "Drohne begleitet den Scooter-Fahrer seitlich-schräg von oben über einen schmalen Asphaltweg an Hecke und Wiese entlang.",
+        "rolle": [
+          "beweis",
+          "emotion"
+        ],
+        "drohne_sichtbar": "nein",
+        "person": "mittel",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.48,
+        "beste_sekunden": [
+          [
+            0,
+            3.5
+          ],
+          [
+            9,
+            12.5
+          ]
+        ],
+        "bewegung": "mittel",
+        "qualitaet": "gut",
+        "risiko": null,
+        "quelle": "neo2-sichtung side2"
+      }
+    },
+    "dji0924-0001-seg3": {
+      "datei": "roh/DJI_20260924185506_0001_D-00.01.36.505-00.02.38.977-00.00.36.909-00.00.42.535-seg3.MP4",
+      "sha256": "00c283805c2f554f3fded8161e7f6c1fe7a983447bcee493fe0291de71956087",
+      "dauer_s": 6.507,
+      "breite": 3840,
+      "hoehe": 2160,
+      "orientierung": "quer",
+      "typ": "quer",
+      "fps": 29.97003,
+      "variable_bildrate": false,
+      "hdr": false,
+      "farbe": "bt709",
+      "ton": false,
+      "zeitlupe_moeglich": "nein (< 50 fps)",
+      "kontaktbogen": "kontakt/dji0924-0001-seg3.jpg",
+      "tags": {
+        "beschreibung": "Seitliche Verfolgung des Scooter-Fahrers auf dem Heckenweg, gegen Ende schwenkt die Kamera und die Hecke verwischt.",
+        "rolle": [
+          "beweis",
+          "uebergang"
+        ],
+        "drohne_sichtbar": "nein",
+        "person": "mittel",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.48,
+        "beste_sekunden": [
+          [
+            0,
+            2.6
+          ]
+        ],
+        "bewegung": "schnell",
+        "qualitaet": "mittel – Bewegungsunschärfe in der Hecke ab ca. 3,3 s",
+        "risiko": null,
+        "quelle": "neo2-sichtung side3"
+      }
+    },
+    "dji0924-0001-seg4": {
+      "datei": "roh/DJI_20260924185506_0001_D-00.01.36.505-00.02.38.977-00.00.45.457-00.00.48.311-seg4.MP4",
+      "sha256": "8ae13d298dd7244947f6b5741b53d82dafba3e6d13a327fe71a2a42015067bd4",
+      "dauer_s": 3.27,
+      "breite": 3840,
+      "hoehe": 2160,
+      "orientierung": "quer",
+      "typ": "quer",
+      "fps": 29.97003,
+      "variable_bildrate": false,
+      "hdr": false,
+      "farbe": "bt709",
+      "ton": false,
+      "zeitlupe_moeglich": "nein (< 50 fps)",
+      "kontaktbogen": "kontakt/dji0924-0001-seg4.jpg",
+      "tags": {
+        "beschreibung": "Drohne folgt dem Fahrer tief von hinten auf einem schmalen Weg zwischen Wiese und abgeerntetem Feld, Fußballtor im Hintergrund.",
+        "rolle": [
+          "hook",
+          "beweis"
+        ],
+        "drohne_sichtbar": "nein",
+        "person": "mittel",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.47,
+        "beste_sekunden": [
+          [
+            0.6,
+            3
+          ]
+        ],
+        "bewegung": "schnell",
+        "qualitaet": "mittel – Randunschärfe durch Tempo, Fahrer wandert im Bild von links (0.35) zur Mitte",
+        "risiko": null,
+        "quelle": "neo2-sichtung behind_field"
+      }
+    },
+    "dji0924-0003": {
+      "datei": "roh/DJI_20260924185913_0003_D.MP4",
+      "sha256": "00005b8abda8c71253042a70f146009af902e7796745ac48e1fde161b11aeadd",
+      "dauer_s": 10.511,
+      "breite": 3840,
+      "hoehe": 2160,
+      "orientierung": "quer",
+      "typ": "quer",
+      "fps": 29.97003,
+      "variable_bildrate": false,
+      "hdr": false,
+      "farbe": "bt709",
+      "ton": false,
+      "zeitlupe_moeglich": "nein (< 50 fps)",
+      "kontaktbogen": "kontakt/dji0924-0003.jpg",
+      "tags": {
+        "beschreibung": "Senkrechte Draufsicht: winziger Fahrer rollt von links nach rechts über den Weg, danach verliert die Kamera ihn und zeigt nur noch Asphalt.",
+        "rolle": [
+          "uebergang"
+        ],
+        "drohne_sichtbar": "nein",
+        "person": "klein",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.45,
+        "beste_sekunden": [
+          [
+            1,
+            4.2
+          ]
+        ],
+        "bewegung": "ruhig",
+        "qualitaet": "mittel – Person sehr klein, ab ca. 5 s kein Motiv mehr (nur Straße)",
+        "risiko": null,
+        "quelle": "neo2-sichtung top_track"
+      }
+    },
+    "dji0924-0004": {
+      "datei": "roh/DJI_20260924190146_0004_D-00.00.11.370-00.01.01.976.MP4",
+      "sha256": "d3d14847926e4bf5460e1e1a03051f6fcd960fe8482cc8d06f718276c088d5e0",
+      "dauer_s": 50.984,
+      "breite": 3840,
+      "hoehe": 2160,
+      "orientierung": "quer",
+      "typ": "quer",
+      "fps": 29.97003,
+      "variable_bildrate": false,
+      "hdr": false,
+      "farbe": "bt709",
+      "ton": false,
+      "zeitlupe_moeglich": "nein (< 50 fps)",
+      "kontaktbogen": "kontakt/dji0924-0004.jpg",
+      "tags": {
+        "beschreibung": "Lange Verfolgung von hinten: Fahrer rollt am Abend über Feldwege, zuerst unter Himmel mit Kondensstreifen und Abendlicht, später durch eine Baumallee und an parkenden Autos vorbei.",
+        "rolle": [
+          "emotion",
+          "hook",
+          "beweis"
+        ],
+        "drohne_sichtbar": "nein",
+        "person": "mittel",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.49,
+        "beste_sekunden": [
+          [
+            9,
+            13
+          ],
+          [
+            21.5,
+            25.5
+          ]
+        ],
+        "bewegung": "mittel",
+        "qualitaet": "gut",
+        "risiko": "fremde Personen (zwei Fußgänger auf dem Weg ca. 34–39 s, direkt neben der Bildmitte), Kennzeichen (parkende Autos ca. 37–51 s)",
+        "quelle": "neo2-sichtung sunset"
+      }
+    },
+    "dji0925-0011": {
+      "datei": "roh/DJI_20260925185813_0011_D-00.00.08.132-00.00.11.667.MP4",
+      "sha256": "d95344d8813e5fa64b3e897fdfa96ed971cc0284297b7e7139d043efa75266e2",
+      "dauer_s": 3.67,
+      "breite": 3840,
+      "hoehe": 2160,
+      "orientierung": "quer",
+      "typ": "quer",
+      "fps": 29.97003,
+      "variable_bildrate": false,
+      "hdr": false,
+      "farbe": "bt709",
+      "ton": false,
+      "zeitlupe_moeglich": "nein (< 50 fps)",
+      "kontaktbogen": "kontakt/dji0925-0011.jpg",
+      "tags": {
+        "beschreibung": "Mann steht neben seinem geparkten schwarzen SUV am Schotterweg, hält ein Handy und winkt zur Drohne; rechts fährt ein Motorroller vorbei.",
+        "rolle": [
+          "detail",
+          "beweis"
+        ],
+        "drohne_sichtbar": "nein",
+        "person": "mittel",
+        "gesicht_erkennbar": true,
+        "bildmitte": 0.5,
+        "beste_sekunden": [
+          [
+            1.9,
+            3.6
+          ]
+        ],
+        "bewegung": "mittel",
+        "qualitaet": "gut",
+        "risiko": "fremde Person (Motorrollerfahrer, 0–ca. 1,5 s rechts), Kennzeichen (eigenes Auto)",
+        "quelle": "neo2-sichtung wave"
+      }
+    },
+    "dji0925-0012-seg1": {
+      "datei": "roh/DJI_20260925185844_0012_D-00.00.27.640-00.00.35.603-seg1.MP4",
+      "sha256": "691b0151548396c1d109f45acb653b70fc27ead80a36d9d11f8ee9958d737afa",
+      "dauer_s": 8.609,
+      "breite": 3840,
+      "hoehe": 2160,
+      "orientierung": "quer",
+      "typ": "quer",
+      "fps": 29.97003,
+      "variable_bildrate": false,
+      "hdr": false,
+      "farbe": "bt709",
+      "ton": false,
+      "zeitlupe_moeglich": "nein (< 50 fps)",
+      "kontaktbogen": "kontakt/dji0925-0012-seg1.jpg",
+      "tags": {
+        "beschreibung": "Drohne fliegt frontal rückwärts vor dem Scooter-Fahrer (Sonnenbrille) auf einem hellen Waldweg her.",
+        "rolle": [
+          "beweis",
+          "emotion"
+        ],
+        "drohne_sichtbar": "nein",
+        "person": "mittel",
+        "gesicht_erkennbar": true,
+        "bildmitte": 0.5,
+        "beste_sekunden": [
+          [
+            1.1,
+            4.3
+          ],
+          [
+            5.4,
+            8
+          ]
+        ],
+        "bewegung": "mittel",
+        "qualitaet": "gut",
+        "risiko": null,
+        "quelle": "neo2-sichtung forest1"
+      }
+    },
+    "dji0925-0012-seg2": {
+      "datei": "roh/DJI_20260925185844_0012_D-00.00.37.581-00.00.40.303-seg2.MP4",
+      "sha256": "02ae85fc31d28fee69d0451474130deca4a727cbf3571fb1aef6ee075b679bdf",
+      "dauer_s": 3.27,
+      "breite": 3840,
+      "hoehe": 2160,
+      "orientierung": "quer",
+      "typ": "quer",
+      "fps": 29.97003,
+      "variable_bildrate": false,
+      "hdr": false,
+      "farbe": "bt709",
+      "ton": false,
+      "zeitlupe_moeglich": "nein (< 50 fps)",
+      "kontaktbogen": "kontakt/dji0925-0012-seg2.jpg",
+      "tags": {
+        "beschreibung": "Kurzer Frontal-Shot des Fahrers auf einem dunklen, schattigen Waldweg, helles Wegende im Hintergrund.",
+        "rolle": [
+          "uebergang"
+        ],
+        "drohne_sichtbar": "nein",
+        "person": "mittel",
+        "gesicht_erkennbar": true,
+        "bildmitte": 0.54,
+        "beste_sekunden": [
+          [
+            0.5,
+            3
+          ]
+        ],
+        "bewegung": "mittel",
+        "qualitaet": "mittel – dunkel/schattig, Wegende überbelichtet",
+        "risiko": null,
+        "quelle": "neo2-sichtung forest2"
+      }
+    },
+    "dji0925-0012-seg3": {
+      "datei": "roh/DJI_20260925185844_0012_D-00.00.47.899-00.00.56.850-seg3.MP4",
+      "sha256": "4edf495047af0acb988fa03bcc0e97a6f14e7081609fa0bd4b9a6fbaabbab159",
+      "dauer_s": 9.81,
+      "breite": 3840,
+      "hoehe": 2160,
+      "orientierung": "quer",
+      "typ": "quer",
+      "fps": 29.97003,
+      "variable_bildrate": false,
+      "hdr": false,
+      "farbe": "bt709",
+      "ton": false,
+      "zeitlupe_moeglich": "nein (< 50 fps)",
+      "kontaktbogen": "kontakt/dji0925-0012-seg3.jpg",
+      "tags": {
+        "beschreibung": "Fahrer kommt frontal auf die Drohne zu, winkt anfangs einhändig in die Kamera und fährt dann beidhändig nah heran; zu Beginn fährt ein Radfahrer neben ihm.",
+        "rolle": [
+          "beweis",
+          "emotion"
+        ],
+        "drohne_sichtbar": "nein",
+        "person": "mittel",
+        "gesicht_erkennbar": true,
+        "bildmitte": 0.52,
+        "beste_sekunden": [
+          [
+            5.5,
+            8.7
+          ]
+        ],
+        "bewegung": "mittel",
+        "qualitaet": "gut",
+        "risiko": "fremde Person (Radfahrer mit Gesicht, 0–ca. 1 s), einhändig winken während der Fahrt (ca. 1–3,5 s)",
+        "quelle": "neo2-sichtung forest3"
+      }
+    },
+    "dji0925-0012-seg4": {
+      "datei": "roh/DJI_20260925185844_0012_D-00.01.03.316-00.01.08.382-seg4.MP4",
+      "sha256": "f5b7cf799a611cf9977abb8105620f3416eb962c23fbc6c6f106317d1f730e09",
+      "dauer_s": 5.339,
+      "breite": 3840,
+      "hoehe": 2160,
+      "orientierung": "quer",
+      "typ": "quer",
+      "fps": 29.97003,
+      "variable_bildrate": false,
+      "hdr": false,
+      "farbe": "bt709",
+      "ton": false,
+      "zeitlupe_moeglich": "nein (< 50 fps)",
+      "kontaktbogen": "kontakt/dji0925-0012-seg4.jpg",
+      "tags": {
+        "beschreibung": "Frontal-Tracking des Fahrers auf breitem Waldweg zwischen hohen Buchen, leichtes seitliches Pendeln.",
+        "rolle": [
+          "beweis",
+          "emotion"
+        ],
+        "drohne_sichtbar": "nein",
+        "person": "mittel",
+        "gesicht_erkennbar": true,
+        "bildmitte": 0.52,
+        "beste_sekunden": [
+          [
+            2.5,
+            5
+          ]
+        ],
+        "bewegung": "mittel",
+        "qualitaet": "gut",
+        "risiko": null,
+        "quelle": "neo2-sichtung forest4"
+      }
+    },
+    "dji0925-0012-seg5": {
+      "datei": "roh/DJI_20260925185844_0012_D-00.01.10.054-00.01.15.989-seg5.MP4",
+      "sha256": "8f0f9ac463790bf5f6a291557569cce3675ea49634a6681d2ba4bd2ed310136b",
+      "dauer_s": 6.94,
+      "breite": 3840,
+      "hoehe": 2160,
+      "orientierung": "quer",
+      "typ": "quer",
+      "fps": 29.97003,
+      "variable_bildrate": false,
+      "hdr": false,
+      "farbe": "bt709",
+      "ton": false,
+      "zeitlupe_moeglich": "nein (< 50 fps)",
+      "kontaktbogen": "kontakt/dji0925-0012-seg5.jpg",
+      "tags": {
+        "beschreibung": "Fahrer rollt frontal auf die Drohne zu durch lichten Hochwald mit Laubboden.",
+        "rolle": [
+          "beweis",
+          "emotion"
+        ],
+        "drohne_sichtbar": "nein",
+        "person": "mittel",
+        "gesicht_erkennbar": true,
+        "bildmitte": 0.51,
+        "beste_sekunden": [
+          [
+            3.5,
+            6.5
+          ]
+        ],
+        "bewegung": "mittel",
+        "qualitaet": "gut",
+        "risiko": null,
+        "quelle": "neo2-sichtung forest5"
+      }
+    },
+    "dji0925-0012": {
+      "datei": "roh/DJI_20260925185844_0012_D.MP4",
+      "sha256": "837305152e8a6392fc4201e69ad1f5f827c37d3d2318a9d97268d92fe63ab14c",
+      "dauer_s": 163.964,
+      "breite": 3840,
+      "hoehe": 2160,
+      "orientierung": "quer",
+      "typ": "quer",
+      "fps": 29.97003,
+      "variable_bildrate": false,
+      "hdr": false,
+      "farbe": "bt709",
+      "ton": false,
+      "zeitlupe_moeglich": "nein (< 50 fps)",
+      "kontaktbogen": "kontakt/dji0925-0012.jpg",
+      "tags": {
+        "beschreibung": "Lange Frontal-Verfolgung: Vatto (weißes Shirt, Sonnenbrille) fährt über eine Brücke, dann über breite Waldwege durch Buchenwald; Drohne fliegt rückwärts vor ihm.",
+        "rolle": [
+          "beweis",
+          "emotion"
+        ],
+        "person": "mittel",
+        "gesicht_erkennbar": true,
+        "bildmitte": 0.5,
+        "beste_sekunden": [
+          [
+            18,
+            30
+          ],
+          [
+            56,
+            66
+          ],
+          [
+            70,
+            95
+          ],
+          [
+            106,
+            128
+          ]
+        ],
+        "bewegung": "mittel",
+        "qualitaet": "gut",
+        "risiko": "0–16 s Brücke (ok); fremde Personen: Radfahrer ~44–48 s, zwei Personen links ~100–104 s, Spaziergänger ~129–134 s; ab ~148 s Stand mit Verkehrsschild (Verbot für Kfz) und Gesicht groß → NICHT verwenden"
+      }
+    },
+    "dji0926-0021-seg1": {
+      "datei": "roh/DJI_20260926155756_0021_D-00.00.19.795-00.00.28.221-seg1.MP4",
+      "sha256": "5c2dc5084177e2cf106db03a68f2d6090c16452f57523e22ebddbb50fe6f023f",
+      "dauer_s": 9.209,
+      "breite": 3840,
+      "hoehe": 2160,
+      "orientierung": "quer",
+      "typ": "quer",
+      "fps": 29.97003,
+      "variable_bildrate": false,
+      "hdr": false,
+      "farbe": "bt709",
+      "ton": false,
+      "zeitlupe_moeglich": "nein (< 50 fps)",
+      "kontaktbogen": "kontakt/dji0926-0021-seg1.jpg",
+      "tags": {
+        "beschreibung": "Mann im gelben Shirt steht auf dem Scooter auf einer sonnigen Wiese, Drohne schwebt vor ihm und schwenkt leicht.",
+        "rolle": [
+          "uebergang",
+          "emotion"
+        ],
+        "drohne_sichtbar": "nein",
+        "person": "mittel",
+        "gesicht_erkennbar": true,
+        "bildmitte": 0.47,
+        "beste_sekunden": [
+          [
+            0,
+            3.1
+          ],
+          [
+            5.1,
+            8.2
+          ]
+        ],
+        "bewegung": "ruhig",
+        "qualitaet": "gut",
+        "risiko": null,
+        "quelle": "neo2-sichtung hill1"
+      }
+    },
+    "dji0926-0021-seg2": {
+      "datei": "roh/DJI_20260926155756_0021_D-00.00.29.771-00.00.40.569-seg2.MP4",
+      "sha256": "bf436949dee5680c5a83b0fb70977af5b51e59cadd1bfed00cbe394bad34e9cf",
+      "dauer_s": 11.545,
+      "breite": 3840,
+      "hoehe": 2160,
+      "orientierung": "quer",
+      "typ": "quer",
+      "fps": 29.97003,
+      "variable_bildrate": false,
+      "hdr": false,
+      "farbe": "bt709",
+      "ton": false,
+      "zeitlupe_moeglich": "nein (< 50 fps)",
+      "kontaktbogen": "kontakt/dji0926-0021-seg2.jpg",
+      "tags": {
+        "beschreibung": "Fahrer rollt über die Wiese auf die Drohne zu, Drohne zieht zurück und kreist um ihn an einem umgestürzten Baumstamm, Häuser am Horizont.",
+        "rolle": [
+          "beweis",
+          "emotion"
+        ],
+        "drohne_sichtbar": "nein",
+        "person": "mittel",
+        "gesicht_erkennbar": true,
+        "bildmitte": 0.51,
+        "beste_sekunden": [
+          [
+            0,
+            3.1
+          ],
+          [
+            8.4,
+            11
+          ]
+        ],
+        "bewegung": "mittel",
+        "qualitaet": "gut",
+        "risiko": null,
+        "quelle": "neo2-sichtung hill2"
+      }
+    },
+    "dji0926-0021-seg3": {
+      "datei": "roh/DJI_20260926155756_0021_D-00.00.41.723-00.00.57.920-seg3.MP4",
+      "sha256": "a6e5672897c12a2939e9b3d961bb9f5e2b1a0d0d67643838fb4d22a6a2b3a937",
+      "dauer_s": 16.884,
+      "breite": 3840,
+      "hoehe": 2160,
+      "orientierung": "quer",
+      "typ": "quer",
+      "fps": 29.97003,
+      "variable_bildrate": false,
+      "hdr": false,
+      "farbe": "bt709",
+      "ton": false,
+      "zeitlupe_moeglich": "nein (< 50 fps)",
+      "kontaktbogen": "kontakt/dji0926-0021-seg3.jpg",
+      "tags": {
+        "beschreibung": "Beginnt mit Nahaufnahme des Gesichts, Drohne zieht zurück und zeigt den Mann auf dem Scooter in einer weiten Wiesensenke.",
+        "rolle": [
+          "hook",
+          "beweis",
+          "emotion"
+        ],
+        "drohne_sichtbar": "nein",
+        "person": "gross",
+        "gesicht_erkennbar": true,
+        "bildmitte": 0.5,
+        "beste_sekunden": [
+          [
+            0.3,
+            3.2
+          ],
+          [
+            9.5,
+            13.5
+          ]
+        ],
+        "bewegung": "mittel",
+        "qualitaet": "gut",
+        "risiko": "Kinder (blondes Kind direkt hinter dem Fahrer ca. 5–8 s, zweites Kind links ca. 15,5–16,9 s), fremde Personen klein im Hintergrund",
+        "quelle": "neo2-sichtung hill3"
+      }
+    },
+    "dji0926-0021-seg4": {
+      "datei": "roh/DJI_20260926155756_0021_D-00.00.58.943-00.01.11.038-seg4.MP4",
+      "sha256": "9a98d102728622740b34ed519d2e64434ffc93e74a0f523caa4b8d250dbce907",
+      "dauer_s": 12.98,
+      "breite": 3840,
+      "hoehe": 2160,
+      "orientierung": "quer",
+      "typ": "quer",
+      "fps": 29.97003,
+      "variable_bildrate": false,
+      "hdr": false,
+      "farbe": "bt709",
+      "ton": false,
+      "zeitlupe_moeglich": "nein (< 50 fps)",
+      "kontaktbogen": "kontakt/dji0926-0021-seg4.jpg",
+      "tags": {
+        "beschreibung": "Mann auf dem Scooter an gepflasterten Parkwegen mit Wiese und Teich, Drohne umkreist ihn; zum Schluss fliegt sie in Blätter und Äste.",
+        "rolle": [
+          "emotion",
+          "uebergang"
+        ],
+        "drohne_sichtbar": "nein",
+        "person": "mittel",
+        "gesicht_erkennbar": true,
+        "bildmitte": 0.5,
+        "beste_sekunden": [
+          [
+            0,
+            2.2
+          ],
+          [
+            4.3,
+            7.6
+          ]
+        ],
+        "bewegung": "mittel",
+        "qualitaet": "mittel – ab ca. 10,8 s Blätter im Vordergrund, ab ca. 12 s dunkel/verdeckt",
+        "risiko": "fremde Personen (kleine Spaziergänger im Hintergrund, ca. 2–4 s)",
+        "quelle": "neo2-sichtung hill4"
+      }
+    },
+    "dji0926-0021": {
+      "datei": "roh/DJI_20260926155756_0021_D.MP4",
+      "sha256": "4c626bc2810ed26b8596c8117e6171fa8de4b992213a0cae4c05d2be94f1e610",
+      "dauer_s": 71.038,
+      "breite": 3840,
+      "hoehe": 2160,
+      "orientierung": "quer",
+      "typ": "quer",
+      "fps": 29.97003,
+      "variable_bildrate": false,
+      "hdr": false,
+      "farbe": "bt709",
+      "ton": false,
+      "zeitlupe_moeglich": "nein (< 50 fps)",
+      "kontaktbogen": "kontakt/dji0926-0021.jpg",
+      "tags": {
+        "beschreibung": "Wiese/Grashügel: Vatto (gelbes Shirt) startet am Parkplatz, fährt über eine hügelige Wiese, an einem Baumstamm vorbei, danach Parkweg; Drohne umkreist und folgt.",
+        "rolle": [
+          "hook",
+          "beweis",
+          "emotion"
+        ],
+        "person": "mittel",
+        "gesicht_erkennbar": true,
+        "bildmitte": 0.5,
+        "beste_sekunden": [
+          [
+            17,
+            27
+          ],
+          [
+            28,
+            34
+          ],
+          [
+            49,
+            57
+          ],
+          [
+            58,
+            68
+          ]
+        ],
+        "bewegung": "mittel",
+        "qualitaet": "gut",
+        "risiko": "0–15 s Parkplatz mit Kennzeichen + Gesicht groß → NICHT verwenden; ~39–42 s Gesicht groß; ~45–48 s Kind mit Erwachsenem → NICHT verwenden"
+      }
+    },
+    "dji0927-0042": {
+      "datei": "roh/DJI_20260927172236_0042_D.MP4",
+      "sha256": "8925be0c55763cb05cca98b99286d3b1b7fd6eb871e66332dfce7e06121f7166",
+      "dauer_s": 13.881,
+      "breite": 3840,
+      "hoehe": 2160,
+      "orientierung": "quer",
+      "typ": "quer",
+      "fps": 29.97003,
+      "variable_bildrate": false,
+      "hdr": false,
+      "farbe": "bt709",
+      "ton": false,
+      "zeitlupe_moeglich": "nein (< 50 fps)",
+      "kontaktbogen": "kontakt/dji0927-0042.jpg",
+      "tags": {
+        "beschreibung": "Umgekehrter Reveal: aus der Weite (Wiese, Scheune, Dorf) fliegt die Drohne auf die zwei Männer zu, kippt nach unten und endet senkrecht von oben über ihnen.",
+        "rolle": [
+          "emotion",
+          "uebergang"
+        ],
+        "drohne_sichtbar": "nein",
+        "person": "mittel",
+        "gesicht_erkennbar": true,
+        "bildmitte": 0.47,
+        "beste_sekunden": [
+          [
+            4,
+            8
+          ],
+          [
+            9.5,
+            13
+          ]
+        ],
+        "bewegung": "mittel",
+        "qualitaet": "gut: 4K, ruhige Fahrt, gleiches schönes Licht wie reveal41",
+        "zeitlupe_geeignet": false,
+        "belegt_fakt": null,
+        "risiko": "zwei Personen, Gesichter beim Anflug (~6-9 s) teils erkennbar – Einwilligung klären",
+        "quelle": "neo2-sichtung reveal42"
+      }
+    },
+    "img0203": {
+      "datei": "roh/IMG_0203.MOV",
+      "sha256": "e7c90c10ac98a7d8590d6f9214051bb9a078098c8aaf05877408c429c54b8d24",
+      "dauer_s": 6.337,
+      "breite": 2160,
+      "hoehe": 3840,
+      "orientierung": "hochkant",
+      "typ": "hochkant",
+      "fps": 59.90541,
+      "variable_bildrate": true,
+      "hdr": true,
+      "farbe": "arib-std-b67",
+      "ton": true,
+      "zeitlupe_moeglich": "bis 0.501x ohne doppelte Bilder",
+      "kontaktbogen": "kontakt/img0203.jpg",
+      "tags": {
+        "beschreibung": "Drohne liegt auf der flachen Hand vor Feldweg und Maisfeld, wird zur Kamera gedreht (Kamera, Gimbal und kleines Status-Display mit Text 'CyclingFollow' sichtbar) – sie startet im Clip NICHT.",
+        "rolle": [
+          "detail",
+          "hook"
+        ],
+        "drohne_sichtbar": "ja",
+        "person": "klein",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [
+          [
+            1.5,
+            3.2
+          ],
+          [
+            3.8,
+            6.2
+          ]
+        ],
+        "bewegung": "ruhig",
+        "qualitaet": "gut: Drohne groß und scharf, schönes Abendlicht; HDR (Farben ohne Konvertierung blass); 0-1 s Bewegungsunschärfe – für Scooter-Werbung ungeeignet (kein Roller)",
+        "zeitlupe_geeignet": false,
+        "belegt_fakt": "Größe/Handlichkeit (Drohne passt auf eine Hand); On-Board-Display zeigt Modus 'CyclingFollow' (Hinweis auf radfahren_ski_modus). KEIN Handstart-Beleg",
+        "risiko": "Faktenblatt sagt 'Start aus der Hand', im Clip startet die Drohne nicht – nicht als Handstart-Beleg verwenden",
+        "quelle": "neo2-sichtung palm"
+      }
+    },
+    "img0205": {
+      "datei": "roh/IMG_0205.MOV",
+      "sha256": "e6802152be995da81d029313321e5f229586a7991abfa72362e25c6037e82ce2",
+      "dauer_s": 27.352,
+      "breite": 2160,
+      "hoehe": 3840,
+      "orientierung": "hochkant",
+      "typ": "hochkant",
+      "fps": 59.94517,
+      "variable_bildrate": false,
+      "hdr": true,
+      "farbe": "arib-std-b67",
+      "ton": true,
+      "zeitlupe_moeglich": "bis 0.5x ohne doppelte Bilder",
+      "kontaktbogen": "kontakt/img0205.jpg",
+      "tags": {
+        "beschreibung": "Handyaufnahme in den Himmel: kleine Drohne steigt auf, danach Boden.",
+        "rolle": [],
+        "person": "keine",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [],
+        "bewegung": "ruhig",
+        "qualitaet": "für Scooter-Werbung ungeeignet (kein Roller)",
+        "risiko": "zeigt Drohne statt Produkt"
+      }
+    },
+    "foto-federung": {
+      "datei": "stills/foto-federung.mp4",
+      "dauer_s": 6,
+      "breite": 1216,
+      "hoehe": 2160,
+      "orientierung": "hochkant",
+      "typ": "foto",
+      "fps": 30,
+      "variable_bildrate": false,
+      "hdr": false,
+      "ton": false,
+      "zeitlupe_moeglich": "nein",
+      "tags": {
+        "beschreibung": "Foto Nahaufnahme Vorderrad: zwei Federbeine je Seite, Bremsscheibe, RCB-Schriftzug am Lenkrohr, Trittbrett mit RCB",
+        "rolle": [
+          "detail",
+          "beweis"
+        ],
+        "person": "keine",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [
+          [
+            0,
+            6
+          ]
+        ],
+        "bewegung": "ruhig (nur Zoom)",
+        "qualitaet": "gut",
+        "risiko": "Fremdmarke WILD MAN auf der Lenkertasche (Zubehör, nicht im Lieferumfang) wo sichtbar"
+      }
+    },
+    "foto-front": {
+      "datei": "stills/foto-front.mp4",
+      "dauer_s": 6,
+      "breite": 1216,
+      "hoehe": 2160,
+      "orientierung": "hochkant",
+      "typ": "foto",
+      "fps": 30,
+      "variable_bildrate": false,
+      "hdr": false,
+      "ton": false,
+      "zeitlupe_moeglich": "nein",
+      "tags": {
+        "beschreibung": "Foto Front: Doppelfederung vorne, Scheinwerfer, Trittbrett mit RCB, Ladegerät am Boden",
+        "rolle": [
+          "detail",
+          "beweis"
+        ],
+        "person": "keine",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [
+          [
+            0,
+            6
+          ]
+        ],
+        "bewegung": "ruhig (nur Zoom)",
+        "qualitaet": "gut",
+        "risiko": "Fremdmarke WILD MAN auf der Lenkertasche (Zubehör, nicht im Lieferumfang) wo sichtbar"
+      }
+    },
+    "foto-abend": {
+      "datei": "stills/foto-abend.mp4",
+      "dauer_s": 6,
+      "breite": 1216,
+      "hoehe": 2160,
+      "orientierung": "hochkant",
+      "typ": "foto",
+      "fps": 30,
+      "variable_bildrate": false,
+      "hdr": false,
+      "ton": false,
+      "zeitlupe_moeglich": "nein",
+      "tags": {
+        "beschreibung": "Foto abends vor Hauswand: ganzer Roller schräg, Licht an, Tasche am Lenkrohr",
+        "rolle": [
+          "detail",
+          "beweis"
+        ],
+        "person": "keine",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [
+          [
+            0,
+            6
+          ]
+        ],
+        "bewegung": "ruhig (nur Zoom)",
+        "qualitaet": "gut",
+        "risiko": "Fremdmarke WILD MAN auf der Lenkertasche (Zubehör, nicht im Lieferumfang) wo sichtbar"
+      }
+    },
+    "foto-wald1": {
+      "datei": "stills/foto-wald1.mp4",
+      "dauer_s": 6,
+      "breite": 1216,
+      "hoehe": 2160,
+      "orientierung": "hochkant",
+      "typ": "foto",
+      "fps": 30,
+      "variable_bildrate": false,
+      "hdr": false,
+      "ton": false,
+      "zeitlupe_moeglich": "nein",
+      "tags": {
+        "beschreibung": "Foto im Wald (Froschperspektive): ganzer Roller, Licht an, breiter Geländereifen",
+        "rolle": [
+          "detail",
+          "beweis"
+        ],
+        "person": "keine",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [
+          [
+            0,
+            6
+          ]
+        ],
+        "bewegung": "ruhig (nur Zoom)",
+        "qualitaet": "gut",
+        "risiko": "Fremdmarke WILD MAN auf der Lenkertasche (Zubehör, nicht im Lieferumfang) wo sichtbar"
+      }
+    },
+    "foto-wald2": {
+      "datei": "stills/foto-wald2.mp4",
+      "dauer_s": 6,
+      "breite": 1216,
+      "hoehe": 2160,
+      "orientierung": "hochkant",
+      "typ": "foto",
+      "fps": 30,
+      "variable_bildrate": false,
+      "hdr": false,
+      "ton": false,
+      "zeitlupe_moeglich": "nein",
+      "tags": {
+        "beschreibung": "Foto im Wald (Froschperspektive), Variante",
+        "rolle": [
+          "detail",
+          "beweis"
+        ],
+        "person": "keine",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [
+          [
+            0,
+            6
+          ]
+        ],
+        "bewegung": "ruhig (nur Zoom)",
+        "qualitaet": "gut",
+        "risiko": "Fremdmarke WILD MAN auf der Lenkertasche (Zubehör, nicht im Lieferumfang) wo sichtbar"
+      }
+    },
+    "foto-display": {
+      "datei": "stills/foto-display.mp4",
+      "dauer_s": 6,
+      "breite": 1216,
+      "hoehe": 2160,
+      "orientierung": "hochkant",
+      "typ": "foto",
+      "fps": 30,
+      "variable_bildrate": false,
+      "hdr": false,
+      "ton": false,
+      "zeitlupe_moeglich": "nein",
+      "tags": {
+        "beschreibung": "Foto Display im Wald: Fahrstufe 3, Turbo-Anzeige, 0,0 km/h, RCB-Schriftzug",
+        "rolle": [
+          "detail",
+          "beweis"
+        ],
+        "person": "keine",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [
+          [
+            0,
+            6
+          ]
+        ],
+        "bewegung": "ruhig (nur Zoom)",
+        "qualitaet": "gut",
+        "risiko": "Fremdmarke WILD MAN auf der Lenkertasche (Zubehör, nicht im Lieferumfang) wo sichtbar"
+      }
+    },
+    "foto-pov": {
+      "datei": "stills/foto-pov.mp4",
+      "dauer_s": 6,
+      "breite": 1216,
+      "hoehe": 2160,
+      "orientierung": "hochkant",
+      "typ": "foto",
+      "fps": 30,
+      "variable_bildrate": false,
+      "hdr": false,
+      "ton": false,
+      "zeitlupe_moeglich": "nein",
+      "tags": {
+        "beschreibung": "Foto Lenker-POV auf Waldweg: Display mittig, Weg voraus",
+        "rolle": [
+          "detail",
+          "beweis"
+        ],
+        "person": "keine",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [
+          [
+            0,
+            6
+          ]
+        ],
+        "bewegung": "ruhig (nur Zoom)",
+        "qualitaet": "gut",
+        "risiko": "Fremdmarke WILD MAN auf der Lenkertasche (Zubehör, nicht im Lieferumfang) wo sichtbar"
+      }
+    },
+    "foto-karton": {
+      "datei": "stills/foto-karton.mp4",
+      "dauer_s": 6,
+      "breite": 1216,
+      "hoehe": 2160,
+      "orientierung": "hochkant",
+      "typ": "foto",
+      "fps": 30,
+      "variable_bildrate": false,
+      "hdr": false,
+      "ton": false,
+      "zeitlupe_moeglich": "nein",
+      "tags": {
+        "beschreibung": "Foto Garten: Roller neben geöffnetem RCB-Karton (Querformat mit weichgezeichnetem Rand)",
+        "rolle": [
+          "detail",
+          "beweis"
+        ],
+        "person": "keine",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [
+          [
+            0,
+            6
+          ]
+        ],
+        "bewegung": "ruhig (nur Zoom)",
+        "qualitaet": "gut",
+        "risiko": "Fremdmarke WILD MAN auf der Lenkertasche (Zubehör, nicht im Lieferumfang) wo sichtbar"
+      }
+    },
+    "foto-display-nacht": {
+      "datei": "stills/foto-display-nacht.mp4",
+      "dauer_s": 6,
+      "breite": 1216,
+      "hoehe": 2160,
+      "orientierung": "hochkant",
+      "typ": "foto",
+      "fps": 30,
+      "variable_bildrate": false,
+      "hdr": false,
+      "ton": false,
+      "zeitlupe_moeglich": "nein",
+      "tags": {
+        "beschreibung": "Foto Display bei Nacht (Vattos Roller, IMG_7963): Tacho-Anzeige, RCB-Schriftzug",
+        "rolle": [
+          "detail",
+          "beweis"
+        ],
+        "person": "keine",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [
+          [
+            0,
+            6
+          ]
+        ],
+        "bewegung": "ruhig (nur Zoom)",
+        "qualitaet": "gut",
+        "risiko": "Display zeigt mph und Blinker-Pfeile → nicht unter km/h-/ABE-Aussagen verwenden"
+      }
+    },
+    "foto-abend-endkarte": {
+      "datei": "stills/foto-abend-endkarte.mp4",
+      "dauer_s": 6,
+      "breite": 1216,
+      "hoehe": 2160,
+      "orientierung": "hochkant",
+      "typ": "foto",
+      "fps": 30,
+      "variable_bildrate": false,
+      "hdr": false,
+      "ton": false,
+      "zeitlupe_moeglich": "nein",
+      "tags": {
+        "beschreibung": "Endkarte: Foto IMG_7960 verkleinert unten, Rand weichgezeichnet – oben Platz für CTA",
+        "rolle": [
+          "detail",
+          "beweis"
+        ],
+        "person": "keine",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [
+          [
+            0,
+            6
+          ]
+        ],
+        "bewegung": "ruhig (nur Zoom)",
+        "qualitaet": "gut",
+        "risiko": "Fremdmarke WILD MAN auf der Lenkertasche (Zubehör, nicht im Lieferumfang) wo sichtbar"
+      }
+    },
+    "forest6": {
+      "datei": "roh/neo2/forest6.MP4",
+      "drive_id": "1QTHKzsf8jgpena3vFoxXI_8I0erJseer",
+      "sha256": "f234da2e8c2028de795a300d3ae809d96e6d42dae8f7ee07bc1b491170330f9f",
+      "dauer_s": 6.94,
+      "breite": 3840,
+      "hoehe": 2160,
+      "orientierung": "quer",
+      "typ": "quer",
+      "fps": 29.97003,
+      "variable_bildrate": false,
+      "hdr": false,
+      "farbe": "bt709",
+      "ton": false,
+      "zeitlupe_moeglich": "nein (< 50 fps)",
+      "kontaktbogen": "kontakt/forest6.jpg",
+      "tags": {
+        "beschreibung": "Ruhiges Frontal-Tracking: Fahrer mittig auf Waldweg, Drohne fliegt gleichmäßig rückwärts vor ihm.",
+        "rolle": [
+          "beweis",
+          "emotion"
+        ],
+        "drohne_sichtbar": "nein",
+        "person": "mittel",
+        "gesicht_erkennbar": true,
+        "bildmitte": 0.5,
+        "beste_sekunden": [
+          [
+            1.2,
+            4.6
+          ]
+        ],
+        "bewegung": "ruhig",
+        "qualitaet": "gut",
+        "risiko": null,
+        "quelle": "neo2-sichtung forest6"
+      }
+    },
+    "forest7": {
+      "datei": "roh/neo2/forest7.MP4",
+      "drive_id": "1n1jhugZomeAh-pcRXpSAfTmy8s-BZUNh",
+      "sha256": "f5168f7cd292cc073d87dda82ad5df9f8bf490a7aad7a4861cc687f6c615bde0",
+      "dauer_s": 14.014,
+      "breite": 3840,
+      "hoehe": 2160,
+      "orientierung": "quer",
+      "typ": "quer",
+      "fps": 29.97003,
+      "variable_bildrate": false,
+      "hdr": false,
+      "farbe": "bt709",
+      "ton": false,
+      "zeitlupe_moeglich": "nein (< 50 fps)",
+      "kontaktbogen": "kontakt/forest7.jpg",
+      "tags": {
+        "beschreibung": "Längeres Frontal-Tracking auf grünem Waldweg, Fahrer leicht rechts der Mitte; bei ca. 10 s stehen zwei Spaziergänger links am Wegrand.",
+        "rolle": [
+          "beweis",
+          "emotion"
+        ],
+        "drohne_sichtbar": "nein",
+        "person": "mittel",
+        "gesicht_erkennbar": true,
+        "bildmitte": 0.56,
+        "beste_sekunden": [
+          [
+            3,
+            7
+          ],
+          [
+            0,
+            2.5
+          ]
+        ],
+        "bewegung": "mittel",
+        "qualitaet": "gut",
+        "risiko": "fremde Personen (zwei Spaziergänger links, ca. 9,5–11 s, im 9:16-Ausschnitt meist außerhalb; winzige Personen im Hintergrund 11–13 s)",
+        "quelle": "neo2-sichtung forest7"
+      }
+    },
+    "forest_behind": {
+      "datei": "roh/neo2/forest_behind.MP4",
+      "drive_id": "1j1Drawy8q8OJnD5Zto07qVUkBMKNGJrA",
+      "sha256": "2b492c8c0b2c368ca4171916372318cc96e07baba81151a2f54d58c5bda37dc7",
+      "dauer_s": 8.775,
+      "breite": 3840,
+      "hoehe": 2160,
+      "orientierung": "quer",
+      "typ": "quer",
+      "fps": 29.97003,
+      "variable_bildrate": false,
+      "hdr": false,
+      "farbe": "bt709",
+      "ton": false,
+      "zeitlupe_moeglich": "nein (< 50 fps)",
+      "kontaktbogen": "kontakt/forest_behind.jpg",
+      "tags": {
+        "beschreibung": "Drohne folgt dem Fahrer im gelben Shirt von hinten über einen laubbedeckten Waldweg.",
+        "rolle": [
+          "beweis",
+          "uebergang"
+        ],
+        "drohne_sichtbar": "nein",
+        "person": "mittel",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.51,
+        "beste_sekunden": [
+          [
+            4.4,
+            7.7
+          ],
+          [
+            0,
+            2.2
+          ]
+        ],
+        "bewegung": "mittel",
+        "qualitaet": "gut",
+        "risiko": null,
+        "quelle": "neo2-sichtung forest_behind"
+      }
+    },
+    "foto-wald1-endkarte": {
+      "datei": "stills/foto-wald1-endkarte.mp4",
+      "dauer_s": 6,
+      "breite": 1216,
+      "hoehe": 2160,
+      "orientierung": "hochkant",
+      "typ": "foto",
+      "fps": 30,
+      "variable_bildrate": false,
+      "hdr": false,
+      "ton": false,
+      "zeitlupe_moeglich": "nein",
+      "tags": {
+        "beschreibung": "Endkarte: Foto IMG_8246 verkleinert unten, Rand weichgezeichnet – oben Platz für CTA",
+        "rolle": [
+          "detail",
+          "beweis"
+        ],
+        "person": "keine",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [
+          [
+            0,
+            6
+          ]
+        ],
+        "bewegung": "ruhig (nur Zoom)",
+        "qualitaet": "gut",
+        "risiko": "Fremdmarke WILD MAN auf der Lenkertasche (Zubehör, nicht im Lieferumfang) wo sichtbar"
+      }
+    },
+    "foto-wald2-endkarte": {
+      "datei": "stills/foto-wald2-endkarte.mp4",
+      "dauer_s": 6,
+      "breite": 1216,
+      "hoehe": 2160,
+      "orientierung": "hochkant",
+      "typ": "foto",
+      "fps": 30,
+      "variable_bildrate": false,
+      "hdr": false,
+      "ton": false,
+      "zeitlupe_moeglich": "nein",
+      "tags": {
+        "beschreibung": "Endkarte: Foto IMG_8247 verkleinert unten, Rand weichgezeichnet – oben Platz für CTA",
+        "rolle": [
+          "detail",
+          "beweis"
+        ],
+        "person": "keine",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [
+          [
+            0,
+            6
+          ]
+        ],
+        "bewegung": "ruhig (nur Zoom)",
+        "qualitaet": "gut",
+        "risiko": "Fremdmarke WILD MAN auf der Lenkertasche (Zubehör, nicht im Lieferumfang) wo sichtbar"
+      }
+    },
+    "foto-front-endkarte": {
+      "datei": "stills/foto-front-endkarte.mp4",
+      "dauer_s": 6,
+      "breite": 1216,
+      "hoehe": 2160,
+      "orientierung": "hochkant",
+      "typ": "foto",
+      "fps": 30,
+      "variable_bildrate": false,
+      "hdr": false,
+      "ton": false,
+      "zeitlupe_moeglich": "nein",
+      "tags": {
+        "beschreibung": "Endkarte: Foto IMG_7944 verkleinert unten, Rand weichgezeichnet – oben Platz für CTA",
+        "rolle": [
+          "detail",
+          "beweis"
+        ],
+        "person": "keine",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [
+          [
+            0,
+            6
+          ]
+        ],
+        "bewegung": "ruhig (nur Zoom)",
+        "qualitaet": "gut",
+        "risiko": "Fremdmarke WILD MAN auf der Lenkertasche (Zubehör, nicht im Lieferumfang) wo sichtbar"
+      }
+    },
+    "img7955": {
+      "datei": "roh/IMG_7955.MOV",
+      "sha256": "794aeeb6b88bbc08168f4c6a1f6dd3320fb7bbc4aa3b01a378b189aab4682578",
+      "dauer_s": 132.217,
+      "breite": 1080,
+      "hoehe": 1920,
+      "orientierung": "hochkant",
+      "typ": "hochkant",
+      "fps": 29.98828,
+      "variable_bildrate": true,
+      "hdr": true,
+      "farbe": "arib-std-b67",
+      "ton": true,
+      "zeitlupe_moeglich": "nein (< 50 fps)",
+      "kontaktbogen": "kontakt/img7955.jpg",
+      "tags": {
+        "beschreibung": "Rundgang zu Hause: Trittbrett RCB, Lenker, Display wird eingeschaltet (89–102, 122–128 s)",
+        "rolle": [
+          "beweis",
+          "detail",
+          "emotion"
+        ],
+        "person": "keine",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [],
+        "bewegung": "mittel",
+        "qualitaet": "gut (iPhone, HDR)",
+        "risiko": null
+      }
+    },
+    "img8238": {
+      "datei": "roh/IMG_8238.MOV",
+      "sha256": "b085a7f8c680fb96c31f22156ce801063d74d3667880f47ac07b88102bd234cd",
+      "dauer_s": 36.353,
+      "breite": 1080,
+      "hoehe": 1920,
+      "orientierung": "hochkant",
+      "typ": "hochkant",
+      "fps": 59.93948,
+      "variable_bildrate": false,
+      "hdr": true,
+      "farbe": "arib-std-b67",
+      "ton": true,
+      "zeitlupe_moeglich": "bis 0.501x ohne doppelte Bilder",
+      "kontaktbogen": "kontakt/img8238.jpg",
+      "tags": {
+        "beschreibung": "POV-Fahrt Wald mit leuchtendem Display im Vordergrund (0–21 s gut, danach verwackelt)",
+        "rolle": [
+          "beweis",
+          "detail",
+          "emotion"
+        ],
+        "person": "keine",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [],
+        "bewegung": "mittel",
+        "qualitaet": "gut (iPhone, HDR)",
+        "risiko": null
+      }
+    },
+    "img8239": {
+      "datei": "roh/IMG_8239.MOV",
+      "sha256": "5d5f25f65db743d8bd7f8eead7169e8232dc491deb9ec7391b98f16c6941f88a",
+      "dauer_s": 31.013,
+      "breite": 1080,
+      "hoehe": 1920,
+      "orientierung": "hochkant",
+      "typ": "hochkant",
+      "fps": 59.93874,
+      "variable_bildrate": false,
+      "hdr": true,
+      "farbe": "arib-std-b67",
+      "ton": true,
+      "zeitlupe_moeglich": "bis 0.501x ohne doppelte Bilder",
+      "kontaktbogen": "kontakt/img8239.jpg",
+      "tags": {
+        "beschreibung": "POV-Fahrt Wald, Display ab 13 s (13–21 s gut)",
+        "rolle": [
+          "beweis",
+          "detail",
+          "emotion"
+        ],
+        "person": "keine",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [],
+        "bewegung": "mittel",
+        "qualitaet": "gut (iPhone, HDR)",
+        "risiko": null
+      }
+    },
+    "img8240": {
+      "datei": "roh/IMG_8240.MOV",
+      "sha256": "6e6674c91cb379693e730ef152305619d0104ea75e20a9a4d0c4e52a76fbc48b",
+      "dauer_s": 41.66,
+      "breite": 1080,
+      "hoehe": 1920,
+      "orientierung": "hochkant",
+      "typ": "hochkant",
+      "fps": 59.93759,
+      "variable_bildrate": false,
+      "hdr": true,
+      "farbe": "arib-std-b67",
+      "ton": true,
+      "zeitlupe_moeglich": "bis 0.501x ohne doppelte Bilder",
+      "kontaktbogen": "kontakt/img8240.jpg",
+      "tags": {
+        "beschreibung": "Rundgang Wald: Annäherung 0–5 s, Rücklicht 9–11 s, Details Rad/Trittbrett/Federbein 12–17 s, Lenker/Display 19–24 s; ab 30 s Finger vor der Linse",
+        "rolle": [
+          "beweis",
+          "detail",
+          "emotion"
+        ],
+        "person": "keine",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [],
+        "bewegung": "mittel",
+        "qualitaet": "gut (iPhone, HDR)",
+        "risiko": null
+      }
+    },
+    "img8241": {
+      "datei": "roh/IMG_8241.MOV",
+      "sha256": "d42a21a8234b350cf82c1e90c3d3a45605bbf0d31e19ba7ad1b62cc40eacfc93",
+      "dauer_s": 30.447,
+      "breite": 1080,
+      "hoehe": 1920,
+      "orientierung": "hochkant",
+      "typ": "hochkant",
+      "fps": 59.94088,
+      "variable_bildrate": false,
+      "hdr": true,
+      "farbe": "arib-std-b67",
+      "ton": true,
+      "zeitlupe_moeglich": "bis 0.5x ohne doppelte Bilder",
+      "kontaktbogen": "kontakt/img8241.jpg",
+      "tags": {
+        "beschreibung": "Rundgang Wald: Rücklicht 0–3 s, Trittbrett 4–12 s, Annäherung mit Licht 16–19 s, Federbeine vorne Nahaufnahme 20–22 s",
+        "rolle": [
+          "beweis",
+          "detail",
+          "emotion"
+        ],
+        "person": "keine",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [],
+        "bewegung": "mittel",
+        "qualitaet": "gut (iPhone, HDR)",
+        "risiko": null
+      }
+    },
+    "img8251": {
+      "datei": "roh/IMG_8251.MOV",
+      "sha256": "78126db94a21c36d2fe19ad1e1403658a08eae2effb81f6d740c385763cd1290",
+      "dauer_s": 131.448,
+      "breite": 2160,
+      "hoehe": 3840,
+      "orientierung": "hochkant",
+      "typ": "hochkant",
+      "fps": 42.23713,
+      "variable_bildrate": true,
+      "hdr": true,
+      "farbe": "arib-std-b67",
+      "ton": true,
+      "zeitlupe_moeglich": "nein (< 50 fps)",
+      "kontaktbogen": "kontakt/img8251.jpg",
+      "tags": {
+        "beschreibung": "Lange POV-Fahrt Wald 4K60: Weg 3–16 s (schnell), Display-POV 19–42 s und 62–82 s, Roller steht 98–128 s",
+        "rolle": [
+          "beweis",
+          "detail",
+          "emotion"
+        ],
+        "person": "keine",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [],
+        "bewegung": "mittel",
+        "qualitaet": "gut (iPhone, HDR)",
+        "risiko": null
+      }
+    },
+    "img8252": {
+      "datei": "roh/IMG_8252.MOV",
+      "sha256": "1aaa87410199b9819a094bbaa38c92ef35e20d98628cc3df4556da950ca4392a",
+      "dauer_s": 41.99,
+      "breite": 2160,
+      "hoehe": 3840,
+      "orientierung": "hochkant",
+      "typ": "hochkant",
+      "fps": 58.94261,
+      "variable_bildrate": true,
+      "hdr": true,
+      "farbe": "arib-std-b67",
+      "ton": true,
+      "zeitlupe_moeglich": "bis 0.509x ohne doppelte Bilder",
+      "kontaktbogen": "kontakt/img8252.jpg",
+      "tags": {
+        "beschreibung": "Stativ: Vatto kommt von hinten (4–7 s), steigt auf, fährt seitlich weg (7–14 s), Rest leer; ab 39 s Finger",
+        "rolle": [
+          "beweis",
+          "detail",
+          "emotion"
+        ],
+        "person": "klein",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [],
+        "bewegung": "mittel",
+        "qualitaet": "gut (iPhone, HDR)",
+        "risiko": null
+      }
+    },
+    "img8258": {
+      "datei": "roh/IMG_8258.MOV",
+      "sha256": "6ff720d9e18e98354600d1785c3fa9eddc5053db3ead54a3475926e4e20c2ac7",
+      "dauer_s": 21.537,
+      "breite": 2160,
+      "hoehe": 3840,
+      "orientierung": "hochkant",
+      "typ": "hochkant",
+      "fps": 59.93964,
+      "variable_bildrate": false,
+      "hdr": true,
+      "farbe": "arib-std-b67",
+      "ton": true,
+      "zeitlupe_moeglich": "bis 0.501x ohne doppelte Bilder",
+      "kontaktbogen": "kontakt/img8258.jpg",
+      "tags": {
+        "beschreibung": "Felsen-Rundgang 4K60: Roller am Felsen mit Licht 0–3 s, Lichtreflex 4 s, Federbeine vorne 5 s, Heck/Bremse 6–11 s, Trittbrett RCB 13 s, Lenkrohr „Rock our Life“ 14–15 s, Display 19–20 s",
+        "rolle": [
+          "beweis",
+          "detail",
+          "emotion"
+        ],
+        "person": "keine",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [],
+        "bewegung": "mittel",
+        "qualitaet": "gut (iPhone, HDR)",
+        "risiko": null
+      }
+    },
+    "foto-stein": {
+      "datei": "stills/foto-stein.mp4",
+      "dauer_s": 6,
+      "breite": 1216,
+      "hoehe": 2160,
+      "orientierung": "hochkant",
+      "typ": "foto",
+      "fps": 30,
+      "variable_bildrate": false,
+      "hdr": false,
+      "ton": false,
+      "zeitlupe_moeglich": "nein",
+      "tags": {
+        "beschreibung": "Foto: RCB vor großem Felsen im Wald (IMG_8253, „Stein-Szene“)",
+        "rolle": [
+          "detail",
+          "beweis"
+        ],
+        "person": "keine",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [
+          [
+            0,
+            6
+          ]
+        ],
+        "bewegung": "ruhig (nur Zoom)",
+        "qualitaet": "gut",
+        "risiko": "Fremdmarke WILD MAN auf der Lenkertasche (Zubehör, nicht im Lieferumfang) wo sichtbar"
+      }
+    },
+    "foto-nacht-oben": {
+      "datei": "stills/foto-nacht-oben.mp4",
+      "dauer_s": 6,
+      "breite": 1216,
+      "hoehe": 2160,
+      "orientierung": "hochkant",
+      "typ": "foto",
+      "fps": 30,
+      "variable_bildrate": false,
+      "hdr": false,
+      "ton": false,
+      "zeitlupe_moeglich": "nein",
+      "tags": {
+        "beschreibung": "Foto bei Nacht von oben: Trittbrett mit RCB, Scheinwerfer an, Rücklicht rot (IMG_7961)",
+        "rolle": [
+          "detail",
+          "beweis"
+        ],
+        "person": "keine",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [
+          [
+            0,
+            6
+          ]
+        ],
+        "bewegung": "ruhig (nur Zoom)",
+        "qualitaet": "gut",
+        "risiko": "Fremdmarke WILD MAN auf der Lenkertasche (Zubehör, nicht im Lieferumfang) wo sichtbar"
+      }
+    },
+    "foto-wald3": {
+      "datei": "stills/foto-wald3.mp4",
+      "dauer_s": 6,
+      "breite": 1216,
+      "hoehe": 2160,
+      "orientierung": "hochkant",
+      "typ": "foto",
+      "fps": 30,
+      "variable_bildrate": false,
+      "hdr": false,
+      "ton": false,
+      "zeitlupe_moeglich": "nein",
+      "tags": {
+        "beschreibung": "Foto Wald Froschperspektive, Licht an (IMG_8248)",
+        "rolle": [
+          "detail",
+          "beweis"
+        ],
+        "person": "keine",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [
+          [
+            0,
+            6
+          ]
+        ],
+        "bewegung": "ruhig (nur Zoom)",
+        "qualitaet": "gut",
+        "risiko": "Fremdmarke WILD MAN auf der Lenkertasche (Zubehör, nicht im Lieferumfang) wo sichtbar"
+      }
+    },
+    "foto-wald-licht": {
+      "datei": "stills/foto-wald-licht.mp4",
+      "dauer_s": 6,
+      "breite": 1216,
+      "hoehe": 2160,
+      "orientierung": "hochkant",
+      "typ": "foto",
+      "fps": 30,
+      "variable_bildrate": false,
+      "hdr": false,
+      "ton": false,
+      "zeitlupe_moeglich": "nein",
+      "tags": {
+        "beschreibung": "Foto Wald, ganzer Roller, Licht an, „RCB Rock our Life“ am Lenkrohr (Chat-Foto)",
+        "rolle": [
+          "detail",
+          "beweis"
+        ],
+        "person": "keine",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [
+          [
+            0,
+            6
+          ]
+        ],
+        "bewegung": "ruhig (nur Zoom)",
+        "qualitaet": "gut",
+        "risiko": "Fremdmarke WILD MAN auf der Lenkertasche (Zubehör, nicht im Lieferumfang) wo sichtbar"
+      }
+    },
+    "foto-stein-endkarte": {
+      "datei": "stills/foto-stein-endkarte.mp4",
+      "dauer_s": 6,
+      "breite": 1216,
+      "hoehe": 2160,
+      "orientierung": "hochkant",
+      "typ": "foto",
+      "fps": 30,
+      "variable_bildrate": false,
+      "hdr": false,
+      "ton": false,
+      "zeitlupe_moeglich": "nein",
+      "tags": {
+        "beschreibung": "Endkarte aus foto-stein",
+        "rolle": [
+          "detail",
+          "beweis"
+        ],
+        "person": "keine",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [
+          [
+            0,
+            6
+          ]
+        ],
+        "bewegung": "ruhig (nur Zoom)",
+        "qualitaet": "gut",
+        "risiko": "Fremdmarke WILD MAN auf der Lenkertasche (Zubehör, nicht im Lieferumfang) wo sichtbar"
+      }
+    },
+    "foto-wald-licht-endkarte": {
+      "datei": "stills/foto-wald-licht-endkarte.mp4",
+      "dauer_s": 6,
+      "breite": 1216,
+      "hoehe": 2160,
+      "orientierung": "hochkant",
+      "typ": "foto",
+      "fps": 30,
+      "variable_bildrate": false,
+      "hdr": false,
+      "ton": false,
+      "zeitlupe_moeglich": "nein",
+      "tags": {
+        "beschreibung": "Endkarte aus foto-wald-licht",
+        "rolle": [
+          "detail",
+          "beweis"
+        ],
+        "person": "keine",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [
+          [
+            0,
+            6
+          ]
+        ],
+        "bewegung": "ruhig (nur Zoom)",
+        "qualitaet": "gut",
+        "risiko": "Fremdmarke WILD MAN auf der Lenkertasche (Zubehör, nicht im Lieferumfang) wo sichtbar"
+      }
+    },
+    "foto-nacht-oben-endkarte": {
+      "datei": "stills/foto-nacht-oben-endkarte.mp4",
+      "dauer_s": 6,
+      "breite": 1216,
+      "hoehe": 2160,
+      "orientierung": "hochkant",
+      "typ": "foto",
+      "fps": 30,
+      "variable_bildrate": false,
+      "hdr": false,
+      "ton": false,
+      "zeitlupe_moeglich": "nein",
+      "tags": {
+        "beschreibung": "Endkarte aus foto-nacht-oben",
+        "rolle": [
+          "detail",
+          "beweis"
+        ],
+        "person": "keine",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [
+          [
+            0,
+            6
+          ]
+        ],
+        "bewegung": "ruhig (nur Zoom)",
+        "qualitaet": "gut",
+        "risiko": "Fremdmarke WILD MAN auf der Lenkertasche (Zubehör, nicht im Lieferumfang) wo sichtbar"
+      }
+    },
+    "foto-nacht-heck-endkarte": {
+      "datei": "stills/foto-nacht-heck-endkarte.mp4",
+      "dauer_s": 6,
+      "breite": 1216,
+      "hoehe": 2160,
+      "orientierung": "hochkant",
+      "typ": "foto",
+      "fps": 30,
+      "variable_bildrate": false,
+      "hdr": false,
+      "ton": false,
+      "zeitlupe_moeglich": "nein",
+      "tags": {
+        "beschreibung": "Endkarte: Nachtfoto IMG_7962 (Heck mit Rücklicht, Scheinwerferkegel) verkleinert unten – oben Platz für CTA",
+        "rolle": [
+          "detail",
+          "beweis"
+        ],
+        "person": "keine",
+        "gesicht_erkennbar": false,
+        "bildmitte": 0.5,
+        "beste_sekunden": [
+          [
+            0,
+            6
+          ]
+        ],
+        "bewegung": "ruhig (nur Zoom)",
+        "qualitaet": "gut",
+        "risiko": "keins erkennbar"
+      }
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "gebaut": "2026-10-01T23:45:36.487Z",
+  "video": "f",
+  "dauer_s": 28.034,
+  "fps": 30,
+  "vo_start": 0.25,
+  "vo_ende": 26.65,
+  "szenen": [
+    {
+      "szene": 1,
+      "clip": "img8258",
+      "start": 0,
+      "dauer": 5.7,
+      "zoom": "kenburns_in",
+      "uebergang": "flash"
+    },
+    {
+      "szene": 2,
+      "clip": "img8241",
+      "start": 5.7,
+      "dauer": 1.967,
+      "zoom": "none",
+      "tempo": 0.5,
+      "uebergang": "whip"
+    },
+    {
+      "szene": 3,
+      "clip": "img8241",
+      "start": 7.667,
+      "dauer": 2.2,
+      "zoom": "punch",
+      "uebergang": "zoom"
+    },
+    {
+      "szene": 4,
+      "clip": "img8251",
+      "start": 9.867,
+      "dauer": 6.2,
+      "zoom": "none",
+      "uebergang": "cut"
+    },
+    {
+      "szene": 5,
+      "clip": "img8251",
+      "start": 16.067,
+      "dauer": 5.533,
+      "zoom": "none",
+      "uebergang": "whip"
+    },
+    {
+      "szene": 6,
+      "clip": "img8251",
+      "start": 21.6,
+      "dauer": 3.567,
+      "zoom": "none",
+      "tempo": "ramp",
+      "uebergang": "cut"
+    },
+    {
+      "szene": 7,
+      "clip": "foto-stein-endkarte",
+      "start": 25.167,
+      "dauer": 2.867,
+      "zoom": "kenburns_out"
+    }
+  ]
+}

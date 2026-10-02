@@ -1,0 +1,170 @@
+{
+  "hook_effekt": "slam",
+  "ohne_vo": true,
+  "titel": "Detail-Tour: nur der Roller",
+  "idee": {
+    "winkel": "detail_tour",
+    "zielgruppe": "Käufer, die genau hinschauen, bevor sie bestellen",
+    "hook": "Slam auf den RCB im Wald (Licht an) + „SCHAU GENAU HIN.“ + Cool-Smiley",
+    "emotion": "Neugier, Wertigkeit"
+  },
+  "format": "Detail-Rundgang ohne Person, Ken Burns, animierte Metall-Infokarten mit Icons, keine Stimme (Musik von Vatto)",
+  "look": "metall",
+  "textposition": "unten",
+  "stimme": null,
+  "badge": {
+    "ende": true
+  },
+  "voiceover": [
+    {
+      "satz": "SCHAU GENAU HIN.",
+      "belege": [
+        "meinung"
+      ],
+      "dauer": 2.7
+    },
+    {
+      "satz": "Federbeine vorne doppelt",
+      "belege": [
+        "federung"
+      ],
+      "dauer": 2.5
+    },
+    {
+      "satz": "Bremsscheibe hinten",
+      "belege": [
+        "doppelbremse"
+      ],
+      "dauer": 2.5
+    },
+    {
+      "satz": "Trittbrett trägt viel",
+      "belege": [
+        "max_150kg"
+      ],
+      "dauer": 2.5
+    },
+    {
+      "satz": "Lenkrohr mit Antrieb",
+      "belege": [
+        "motor_500w"
+      ],
+      "dauer": 2.5
+    },
+    {
+      "satz": "Link im Shop",
+      "belege": [],
+      "dauer": 1.0
+    }
+  ],
+  "szenen": [
+    {
+      "clip": "img8252",
+      "von": 0.2,
+      "bis": 3.03,
+      "rolle": "hook",
+      "zoom": "kenburns_in",
+      "uebergang": "flash",
+      "text": {
+        "inhalt": "SCHAU GENAU HIN.",
+        "betonung": [
+          "HIN."
+        ],
+        "belege": [
+          "meinung"
+        ],
+        "sticker": "smiley"
+      },
+      "ausschnitt": {
+        "x": 0.42,
+        "y": 0.2,
+        "h": 0.42
+      }
+    },
+    {
+      "clip": "img8241",
+      "von": 20.0,
+      "bis": 22.5,
+      "rolle": "beweis",
+      "zoom": "kenburns_in",
+      "uebergang": "whip",
+      "ab_wort": 3,
+      "stat": {
+        "zahl": "V+H",
+        "einheit": "",
+        "label": "Federung",
+        "belege": [
+          "federung"
+        ],
+        "icon": "feder"
+      }
+    },
+    {
+      "clip": "img8241",
+      "von": 3.3,
+      "bis": 5.8,
+      "rolle": "beweis",
+      "zoom": "kenburns_out",
+      "uebergang": "zoom",
+      "ab_wort": 6,
+      "stat": {
+        "zahl": 2,
+        "einheit": "×",
+        "label": "Bremsen v + h",
+        "belege": [
+          "doppelbremse"
+        ],
+        "icon": "bremse"
+      }
+    },
+    {
+      "clip": "img8241",
+      "von": 8.1,
+      "bis": 10.6,
+      "rolle": "beweis",
+      "zoom": "kenburns_in",
+      "uebergang": "whip",
+      "ab_wort": 8,
+      "stat": {
+        "zahl": 150,
+        "einheit": "KG",
+        "label": "belastbar",
+        "belege": [
+          "max_150kg"
+        ],
+        "icon": "gewicht"
+      }
+    },
+    {
+      "clip": "img8240",
+      "von": 19.0,
+      "bis": 21.5,
+      "rolle": "beweis",
+      "zoom": "kenburns_out",
+      "uebergang": "flash",
+      "ab_wort": 11,
+      "stat": {
+        "zahl": 500,
+        "einheit": "W",
+        "label": "Motor",
+        "belege": [
+          "motor_500w"
+        ],
+        "icon": "blitz"
+      }
+    },
+    {
+      "clip": "foto-wald1-endkarte",
+      "von": 0,
+      "bis": 2.52,
+      "rolle": "cta",
+      "zoom": "kenburns_out",
+      "ab_wort": 14
+    }
+  ],
+  "cta": {
+    "text": "Jetzt im TikTok Shop",
+    "zusatz": "Federung vorne + hinten.",
+    "top": 450
+  }
+}

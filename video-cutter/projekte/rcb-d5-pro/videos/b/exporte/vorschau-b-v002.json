@@ -1,0 +1,54 @@
+{
+  "export": "vorschau-b-v002.mp4",
+  "art": "vorschau",
+  "freigabe": null,
+  "renderzeit_s": 165,
+  "status": "WARNUNG",
+  "checks": [
+    {
+      "pruefung": "Spuren",
+      "status": "OK",
+      "detail": "1 Video, 1 Ton"
+    },
+    {
+      "pruefung": "Auflösung",
+      "status": "OK",
+      "detail": "1080x1920"
+    },
+    {
+      "pruefung": "Bildrate",
+      "status": "OK",
+      "detail": "30/1"
+    },
+    {
+      "pruefung": "Dauer",
+      "status": "OK",
+      "detail": "27.033 s (Plan 27.001 s)"
+    },
+    {
+      "pruefung": "Lautheit",
+      "status": "OK",
+      "detail": "-13.2 LUFS (Ziel -14 ±2)"
+    },
+    {
+      "pruefung": "True Peak",
+      "status": "OK",
+      "detail": "-2.3 dBTP"
+    },
+    {
+      "pruefung": "Stille",
+      "status": "WARNUNG",
+      "detail": "1.4 s Stille bis 27 s"
+    },
+    {
+      "pruefung": "Voiceover = Skript",
+      "status": "WARNUNG",
+      "detail": "nicht wiedergefunden: zehnzollgelreifen, drei → anhören (Aussprache oder nur Hörfehler von whisper?)"
+    },
+    {
+      "pruefung": "Safe Zone",
+      "status": "OK",
+      "detail": "270 Bilder geprüft, nichts außerhalb"
+    }
+  ]
+}

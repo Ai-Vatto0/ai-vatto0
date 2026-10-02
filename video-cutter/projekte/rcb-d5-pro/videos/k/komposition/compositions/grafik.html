@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="de">
+  <head><meta charset="UTF-8" /><!-- GENERIERT von tools/baue-spec.mjs – nicht von Hand ändern. --></head>
+  <body>
+    <template>
+      <style>
+        @font-face { font-family: "Poppins"; src: url("assets/fonts/Poppins-Bold.ttf") format("truetype"); font-weight: 700; } @font-face { font-family: "Marker"; src: url("assets/fonts/PermanentMarker.ttf") format("truetype"); font-weight: 400; }
+        #root { position: absolute; inset: 0; font-family: "Poppins", sans-serif; font-weight: 700; }
+        /* Safe Zone 1080x1920: oben 150, rechts 140, unten 400, links 60 */
+        .cap { position: absolute; left: 60px; right: 140px; top: 230px; display: flex; justify-content: center; }
+        .cap-in { max-width: 860px; text-align: center; font-size: 72px; line-height: 1.12; color: #FFF7E8; -webkit-text-stroke: 12px #140F05; paint-order: stroke fill; background: transparent; padding: 0; border-radius: 26px; text-shadow: 0 6px 18px rgba(0,0,0,.45); font-family: "Marker", sans-serif; font-weight: 400; letter-spacing: .01em; text-shadow: 3px 3px 0 #140F05, 6px 6px 0 rgba(12,9,3,.6) !important; }
+        .headline { position: absolute; left: 60px; right: 140px; top: 500px; display: flex; justify-content: center; }
+        .hl-in { max-width: 860px; text-align: center; font-size: 140px; line-height: 1.04; color: #FFF7E8;  }
+        .hw { display: inline-block; }
+        .hw.em { color: #FF8A2A; }
+        .ctabox { position: absolute; left: 60px; right: 140px; top: 1080px; display: flex; flex-direction: column; align-items: center; }
+        .cta-tx { color: #FF8A2A; font-size: 76px; line-height: 1.05; text-align: center; max-width: 720px; font-family: "Marker", sans-serif; font-weight: 400; font-size: 92px; -webkit-text-stroke: 12px #140F05; paint-order: stroke fill; text-shadow: 0 10px 0 rgba(12,9,3,.55); transform: rotate(-2deg); }
+        .cta-zu { color: #fff; font-size: 44px; margin-top: 12px; text-align: center; max-width: 720px; background: rgba(0,0,0,.55); padding: 6px 18px; border-radius: 16px; }
+        .pfeil { width: 150px; height: 150px; margin-top: 4px; margin-right: 400px; }
+        .pfeil path { stroke-dasharray: 260; }
+        .statkarte { position: absolute; left: 60px; right: 140px; display: flex; justify-content: center; }
+        .st-in { background: rgba(20,15,5,.86); border-left: 18px solid #FF8A2A; border-radius: 22px; padding: 10px 40px 18px 34px; box-shadow: 0 14px 0 rgba(12,9,3,.55); transform-origin: 50% 50%; }
+        .st-zahl { font-family: "Marker", sans-serif; font-size: 168px; line-height: 1.02; color: #FF8A2A; -webkit-text-stroke: 10px #140F05; paint-order: stroke fill; }
+        .st-einheit { font-size: 92px; margin-left: 14px; color: #FFF7E8; }
+        .st-label { font-family: "Poppins", sans-serif; font-weight: 700; font-size: 44px; letter-spacing: .12em; color: #FFF7E8; text-transform: uppercase; margin-top: -6px; }
+        .logo-gross { position: absolute; left: 110px; top: 300px; width: 760px; }
+        .logo-klein { position: absolute; left: 680px; top: 150px; width: 250px; opacity: .92; }
+        .ki { position: absolute; left: 70px; top: 160px; font-size: 26px; color: #FFFFFF; letter-spacing: .04em; background: rgba(0,0,0,.62); padding: 6px 14px; border-radius: 12px; }
+        .hl-in.metall { font-family: "Marker", sans-serif; font-weight: 400; transform: rotate(-3deg); letter-spacing: .01em;  }
+        .hl-in.metall .hw { color: #FFA24A; filter: drop-shadow(4px 0 0 #140F05) drop-shadow(-4px 0 0 #140F05) drop-shadow(0 4px 0 #140F05) drop-shadow(0 -4px 0 #140F05) drop-shadow(0 12px 0 rgba(12,9,3,.6)); padding: 0 6px; }
+        .hl-in.metall .hw.em { color: #F4EFE8; }
+        .sticker { display: inline-block; width: 150px; height: 150px; vertical-align: middle; margin-left: 10px; }
+        .mk { position: absolute; left: 60px; right: 140px; display: flex; justify-content: center; perspective: 900px; }
+        .mk-rahmen { position: relative; padding: 7px; border-radius: 30px; background: #140F05; box-shadow: 0 16px 0 rgba(12,9,3,.5); transform-origin: 50% 50%; }
+        .mk-in { position: relative; overflow: hidden; display: flex; align-items: center; gap: 26px; padding: 18px 44px 22px 22px; border-radius: 24px; background: linear-gradient(180deg, #FFE7C7 0%, #FFA24A 30%, #E85D00 52%, #FFB46B 68%, #A33F00 100%); }
+        .mk-icon { width: 150px; height: 150px; flex: none; }
+        .mk-zahl { font-family: "Marker", sans-serif; font-size: 150px; line-height: .98; color: #140F05;  white-space: nowrap; }
+        .mk-einheit { font-size: 76px; margin-left: 12px; }
+        .mk-label { font-family: "Poppins", sans-serif; font-weight: 700; font-size: 42px; letter-spacing: .1em; text-transform: uppercase; color: #140F05; margin-top: 2px; white-space: nowrap; }
+        .mk-glanz { position: absolute; top: -40px; bottom: -40px; left: 0; width: 140px; background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.55) 50%, rgba(255,255,255,0) 100%); transform: translateX(-260px) skewX(-20deg); pointer-events: none; }
+        .badge { position: absolute; color: #FFA24A; }
+        .badge svg { width: 100%; height: auto; display: block; overflow: visible; }
+        .ctabox .cta-tx { -webkit-text-stroke: 0; text-shadow: none; color: #FFA24A; filter: drop-shadow(5px 0 0 #140F05) drop-shadow(-5px 0 0 #140F05) drop-shadow(0 5px 0 #140F05) drop-shadow(0 -5px 0 #140F05) drop-shadow(0 12px 0 rgba(12,9,3,.6)); }
+      </style>
+      <div id="root" data-composition-id="grafik" data-width="1080" data-height="1920">
+        <div id="h1" class="clip headline" data-start="0.1" data-duration="2.683" data-track-index="1"><div class="hl-in metall"><span class="hw" data-t="LICHT">LICHT</span> <span class="hw em" data-t="AN.">AN.</span></div></div>
+        <div id="h3" class="clip headline" data-start="5.433" data-duration="2.35" data-track-index="1"><div class="hl-in metall"><span class="hw" data-t="GESEHEN">GESEHEN</span> <span class="hw em" data-t="WERDEN.">WERDEN.</span></div></div>
+        <div id="h5" class="clip headline" data-start="10.433" data-duration="2.35" data-track-index="1"><div class="hl-in metall" style="font-size:103px"><span class="hw" data-t="FEIERABEND?">FEIERABEND?</span> <span class="hw em" data-t="LOS.">LOS.</span><svg id="h5-st" class="sticker" viewBox="0 0 100 100"><circle cx="50" cy="50" r="38" fill="#FFC21C" stroke="#140F05" stroke-width="6"/><g class="ia"><path d="M20 40 H80 L76 52 Q66 60 56 50 L50 44 L44 50 Q34 60 24 52 Z" fill="#140F05"/></g><path d="M34 66 Q50 80 68 64" fill="none" stroke="#140F05" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/></svg></div></div>
+        <div id="st2" class="clip mk" data-start="2.953" data-duration="2.33" data-track-index="6" style="top:500px"><div class="mk-rahmen"><div class="mk-in"><svg class="mk-icon" viewBox="0 0 120 120"><defs><linearGradient id="st2-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFE7C7"/><stop offset=".28" stop-color="#FFA24A"/><stop offset=".52" stop-color="#E85D00"/><stop offset=".68" stop-color="#FFB46B"/><stop offset="1" stop-color="#A33F00"/></linearGradient></defs><circle cx="60" cy="60" r="56" fill="url(#st2-g)" stroke="#140F05" stroke-width="5"/><g transform="translate(10 10)"><g class="ia" style="transform-origin:40px 50px"><path d="M60 26 Q34 26 30 50 Q34 74 60 74 Z" fill="#140F05"/><path d="M68 34 H88 M68 50 H92 M68 66 H88" fill="none" stroke="#140F05" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/></g></g></svg><div class="mk-txt"><div class="mk-zahl"><span id="st2-n" class="mz" data-t="V+H">V+H</span><span class="mz mk-einheit" data-t=""></span></div><div class="mk-label">Licht</div></div><div class="mk-glanz"></div></div></div></div>
+        <div id="st4" class="clip mk" data-start="7.953" data-duration="2.33" data-track-index="6" style="top:500px"><div class="mk-rahmen"><div class="mk-in"><svg class="mk-icon" viewBox="0 0 120 120"><defs><linearGradient id="st4-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFE7C7"/><stop offset=".28" stop-color="#FFA24A"/><stop offset=".52" stop-color="#E85D00"/><stop offset=".68" stop-color="#FFB46B"/><stop offset="1" stop-color="#A33F00"/></linearGradient></defs><circle cx="60" cy="60" r="56" fill="url(#st4-g)" stroke="#140F05" stroke-width="5"/><g transform="translate(10 10)"><rect x="16" y="24" width="68" height="46" rx="8" fill="none" stroke="#140F05" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><g class="ia"><path d="M28 56 A12 12 0 0 1 52 56" fill="none" stroke="#140F05" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/><path d="M58 40 H74 M58 52 H70" fill="none" stroke="#140F05" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/></g><path d="M40 82 H60" fill="none" stroke="#140F05" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></g></svg><div class="mk-txt"><div class="mk-zahl"><span id="st4-n" class="mz" data-t="ALLES">ALLES</span><span class="mz mk-einheit" data-t=""></span></div><div class="mk-label">im Blick</div></div><div class="mk-glanz"></div></div></div></div>
+        <div id="cta" class="clip ctabox" style="top:450px" data-start="12.833" data-duration="2.5" data-track-index="2"><div class="cta-tx" data-t="Jetzt im TikTok Shop">Jetzt im TikTok Shop</div><div class="cta-zu">Licht vorne + hinten.</div><svg class="pfeil" viewBox="0 0 200 200"><path d="M170 20 C 150 90, 110 130, 40 160" fill="none" stroke="#FF8A2A" stroke-width="14" stroke-linecap="round"/><path d="M40 160 L 70 118 M40 160 L 92 170" fill="none" stroke="#FF8A2A" stroke-width="14" stroke-linecap="round"/></svg></div>
+        <div id="badge-klein" class="clip badge" data-start="0" data-duration="12.833" data-track-index="5" style="left:690px; top:160px; width:240px"><svg viewBox="0 0 560 210"><rect x="-14" y="6" width="588" height="214" rx="30" fill="rgba(10,8,5,.78)"/><defs><linearGradient id="badge-klein-g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFE7C7"/><stop offset=".28" stop-color="#FFA24A"/><stop offset=".52" stop-color="#E85D00"/><stop offset=".68" stop-color="#FFB46B"/><stop offset="1" stop-color="#A33F00"/></linearGradient><clipPath id="badge-klein-c"><text x="132" y="128" font-family="Poppins" font-weight="700" font-style="italic" font-size="142" letter-spacing="-6">RCB</text></clipPath></defs>
+          <g class="bd-str"><path d="M18 128 L58 22 H74 L34 128 Z" fill="url(#badge-klein-g)" stroke="#140F05" stroke-width="5" stroke-linejoin="round"/><path d="M44 128 L84 22 H100 L60 128 Z" fill="url(#badge-klein-g)" stroke="#140F05" stroke-width="5" stroke-linejoin="round"/><path d="M70 128 L110 22 H126 L86 128 Z" fill="url(#badge-klein-g)" stroke="#140F05" stroke-width="5" stroke-linejoin="round"/><path d="M96 128 L136 22 H152 L112 128 Z" fill="url(#badge-klein-g)" stroke="#140F05" stroke-width="5" stroke-linejoin="round"/></g>
+          <text class="bd-rcb" x="132" y="128" font-family="Poppins" font-weight="700" font-style="italic" font-size="142" letter-spacing="-6" fill="url(#badge-klein-g)" stroke="#140F05" stroke-width="12" paint-order="stroke" stroke-linejoin="round">RCB</text>
+          <g clip-path="url(#badge-klein-c)"><rect class="bd-glanz" x="-160" y="0" width="70" height="160" fill="#FFFFFF" opacity=".6" transform="skewX(-20)"/></g>
+          <path class="bd-linie" d="M20 150 H470" stroke="url(#badge-klein-g)" stroke-width="10" stroke-linecap="round" stroke-dasharray="460" stroke-dashoffset="460"/>
+          <g class="bd-plakette"><rect x="300" y="164" width="230" height="44" rx="10" fill="#140F05" stroke="url(#badge-klein-g)" stroke-width="4"/><text x="415" y="198" text-anchor="middle" font-family="Poppins" font-weight="700" font-size="32" letter-spacing="6" fill="#FFF7E8">D5 PRO</text></g>
+        </svg></div>
+        <div id="badge-gross" class="clip badge" data-start="12.833" data-duration="2.5" data-track-index="4" style="left:210px; top:170px; width:640px"><svg viewBox="0 0 560 210"><defs><linearGradient id="badge-gross-g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFE7C7"/><stop offset=".28" stop-color="#FFA24A"/><stop offset=".52" stop-color="#E85D00"/><stop offset=".68" stop-color="#FFB46B"/><stop offset="1" stop-color="#A33F00"/></linearGradient><clipPath id="badge-gross-c"><text x="132" y="128" font-family="Poppins" font-weight="700" font-style="italic" font-size="142" letter-spacing="-6">RCB</text></clipPath></defs>
+          <g class="bd-str"><path d="M18 128 L58 22 H74 L34 128 Z" fill="url(#badge-gross-g)" stroke="#140F05" stroke-width="5" stroke-linejoin="round"/><path d="M44 128 L84 22 H100 L60 128 Z" fill="url(#badge-gross-g)" stroke="#140F05" stroke-width="5" stroke-linejoin="round"/><path d="M70 128 L110 22 H126 L86 128 Z" fill="url(#badge-gross-g)" stroke="#140F05" stroke-width="5" stroke-linejoin="round"/><path d="M96 128 L136 22 H152 L112 128 Z" fill="url(#badge-gross-g)" stroke="#140F05" stroke-width="5" stroke-linejoin="round"/></g>
+          <text class="bd-rcb" x="132" y="128" font-family="Poppins" font-weight="700" font-style="italic" font-size="142" letter-spacing="-6" fill="url(#badge-gross-g)" stroke="#140F05" stroke-width="12" paint-order="stroke" stroke-linejoin="round">RCB</text>
+          <g clip-path="url(#badge-gross-c)"><rect class="bd-glanz" x="-160" y="0" width="70" height="160" fill="#FFFFFF" opacity=".6" transform="skewX(-20)"/></g>
+          <path class="bd-linie" d="M20 150 H470" stroke="url(#badge-gross-g)" stroke-width="10" stroke-linecap="round" stroke-dasharray="460" stroke-dashoffset="460"/>
+          <g class="bd-plakette"><rect x="300" y="164" width="230" height="44" rx="10" fill="#140F05" stroke="url(#badge-gross-g)" stroke-width="4"/><text x="415" y="198" text-anchor="middle" font-family="Poppins" font-weight="700" font-size="32" letter-spacing="6" fill="#FFF7E8">D5 PRO</text></g>
+        </svg></div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#h1 .hl-in", { opacity: 0 }, { opacity: 1, duration: 0.06 }, 0.1);
+        tl.fromTo("#h1 .hw", { yPercent: 80, opacity: 0, rotation: -4 }, { yPercent: 0, opacity: 1, rotation: 0, duration: 0.32, ease: "back.out(2.2)", stagger: 0.06 }, 0.1);
+        tl.to("#h1 .hl-in", { opacity: 0, y: -20, duration: 0.18, ease: "power2.in" }, 2.603);
+        tl.fromTo("#h3 .hl-in", { opacity: 0 }, { opacity: 1, duration: 0.06 }, 5.433);
+        tl.fromTo("#h3 .hw", { yPercent: 80, opacity: 0, rotation: -4 }, { yPercent: 0, opacity: 1, rotation: 0, duration: 0.32, ease: "back.out(2.2)", stagger: 0.06 }, 5.433);
+        tl.to("#h3 .hl-in", { opacity: 0, y: -20, duration: 0.18, ease: "power2.in" }, 7.603);
+        tl.fromTo("#h5-st", { scale: 0, rotation: -40 }, { scale: 1, rotation: 8, duration: 0.4, ease: "back.out(2.6)" }, 10.683);
+        tl.fromTo("#h5-st .ia", { y: -60, rotation: -12 }, { y: 0, rotation: 0, duration: 0.4, ease: "bounce.out" }, 10.883);
+        tl.fromTo("#h5 .hl-in", { opacity: 0 }, { opacity: 1, duration: 0.06 }, 10.433);
+        tl.fromTo("#h5 .hw", { yPercent: 80, opacity: 0, rotation: -4 }, { yPercent: 0, opacity: 1, rotation: 0, duration: 0.32, ease: "back.out(2.2)", stagger: 0.06 }, 10.433);
+        tl.to("#h5 .hl-in", { opacity: 0, y: -20, duration: 0.18, ease: "power2.in" }, 12.603);
+        tl.fromTo("#st2 .mk-rahmen", { scale: 0.3, rotationY: -60, rotation: 6, opacity: 0 }, { scale: 1, rotationY: 0, rotation: -2, opacity: 1, duration: 0.42, ease: "back.out(1.6)" }, 2.953);
+        tl.fromTo("#st2 .mk-icon", { scale: 0, rotation: -160 }, { scale: 1, rotation: 0, duration: 0.45, ease: "back.out(2.2)" }, 3.073);
+        tl.fromTo("#st2 .ia", { scale: 0.7, opacity: 0.4 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(3)" }, 3.453);
+        tl.fromTo("#st2 .mk-zahl", { scale: 1.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2.5)" }, 3.133);
+        tl.fromTo("#st2 .mk-label", { y: 26, opacity: 0 }, { y: 0, opacity: 1, duration: 0.25, ease: "power3.out" }, 3.273);
+        tl.fromTo("#st2 .mk-glanz", { x: -260 }, { x: 980, duration: 0.6, ease: "power2.inOut" }, 3.573);
+        tl.to("#st2 .mk-rahmen", { scale: 0.55, opacity: 0, duration: 0.2, ease: "power3.in" }, 5.083);
+        tl.fromTo("#st4 .mk-rahmen", { scale: 0.3, rotationY: -60, rotation: 6, opacity: 0 }, { scale: 1, rotationY: 0, rotation: -2, opacity: 1, duration: 0.42, ease: "back.out(1.6)" }, 7.953);
+        tl.fromTo("#st4 .mk-icon", { scale: 0, rotation: -160 }, { scale: 1, rotation: 0, duration: 0.45, ease: "back.out(2.2)" }, 8.073);
+        tl.fromTo("#st4 .ia", { opacity: 0 }, { opacity: 1, duration: 0.08 }, 8.453); tl.fromTo("#st4 .ia", { opacity: 0.3 }, { opacity: 1, duration: 0.08 }, 8.593);
+        tl.fromTo("#st4 .mk-zahl", { scale: 1.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2.5)" }, 8.133);
+        tl.fromTo("#st4 .mk-label", { y: 26, opacity: 0 }, { y: 0, opacity: 1, duration: 0.25, ease: "power3.out" }, 8.273);
+        tl.fromTo("#st4 .mk-glanz", { x: -260 }, { x: 980, duration: 0.6, ease: "power2.inOut" }, 8.573);
+        tl.to("#st4 .mk-rahmen", { scale: 0.55, opacity: 0, duration: 0.2, ease: "power3.in" }, 10.083);
+        tl.fromTo("#cta .cta-tx", { scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.42, ease: "back.out(1.2)" }, 12.933);
+        tl.fromTo("#cta .cta-zu", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "power3.out" }, 13.233);
+        tl.fromTo("#cta .pfeil path", { strokeDashoffset: 260 }, { strokeDashoffset: 0, duration: 0.45, ease: "power2.out", stagger: 0.12 }, 13.333);
+        tl.fromTo("#badge-klein .bd-str path", { scaleX: 0, transformOrigin: "0% 100%", opacity: 0 }, { scaleX: 1, opacity: 1, duration: 0.25, ease: "power3.out", stagger: 0.05 }, 0.05);
+        tl.fromTo("#badge-klein .bd-rcb", { scale: 0.6, opacity: 0, transformOrigin: "50% 60%" }, { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(2)" }, 0.17);
+        tl.fromTo("#badge-klein .bd-linie", { strokeDashoffset: 460 }, { strokeDashoffset: 0, duration: 0.4, ease: "power2.out" }, 0.35);
+        tl.fromTo("#badge-klein .bd-plakette", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 0.5);
+        tl.fromTo("#badge-klein .bd-glanz", { x: 0 }, { x: 620, duration: 0.7, ease: "power2.inOut" }, 0.75);
+        tl.fromTo("#badge-klein .bd-glanz", { x: 0 }, { x: 620, duration: 0.7, ease: "power2.inOut", immediateRender: false }, 4.05);
+        tl.fromTo("#badge-gross .bd-str path", { scaleX: 0, transformOrigin: "0% 100%", opacity: 0 }, { scaleX: 1, opacity: 1, duration: 0.25, ease: "power3.out", stagger: 0.05 }, 12.883);
+        tl.fromTo("#badge-gross .bd-rcb", { scale: 0.6, opacity: 0, transformOrigin: "50% 60%" }, { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(2)" }, 13.003);
+        tl.fromTo("#badge-gross .bd-linie", { strokeDashoffset: 460 }, { strokeDashoffset: 0, duration: 0.4, ease: "power2.out" }, 13.183);
+        tl.fromTo("#badge-gross .bd-plakette", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 13.333);
+        tl.fromTo("#badge-gross .bd-glanz", { x: 0 }, { x: 620, duration: 0.7, ease: "power2.inOut" }, 13.583);
+        window.__timelines["grafik"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

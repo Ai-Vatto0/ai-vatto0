@@ -1,0 +1,76 @@
+{
+  "video": "i",
+  "vo_start": 0.25,
+  "vorlauf": 0.12,
+  "cta_halt": 1.4,
+  "gesamt_s": 15.333,
+  "szenen": [
+    {
+      "szene": 1,
+      "clip": "img8252",
+      "ab_wort": null,
+      "wort": "(Start)",
+      "start": 0,
+      "dauer": 2.833,
+      "von": 0.2,
+      "bis": 3.033,
+      "tempo": 1
+    },
+    {
+      "szene": 2,
+      "clip": "img8241",
+      "ab_wort": 3,
+      "wort": "Federbeine",
+      "start": 2.8333333333333335,
+      "dauer": 2.5,
+      "von": 20,
+      "bis": 22.5,
+      "tempo": 1
+    },
+    {
+      "szene": 3,
+      "clip": "img8241",
+      "ab_wort": 6,
+      "wort": "Bremsscheibe",
+      "start": 5.333333333333333,
+      "dauer": 2.5,
+      "von": 3.3,
+      "bis": 5.8,
+      "tempo": 1
+    },
+    {
+      "szene": 4,
+      "clip": "img8241",
+      "ab_wort": 8,
+      "wort": "Trittbrett",
+      "start": 7.833333333333333,
+      "dauer": 2.5,
+      "von": 8.1,
+      "bis": 10.6,
+      "tempo": 1
+    },
+    {
+      "szene": 5,
+      "clip": "img8240",
+      "ab_wort": 11,
+      "wort": "Lenkrohr",
+      "start": 10.333333333333334,
+      "dauer": 2.5,
+      "von": 19,
+      "bis": 21.5,
+      "tempo": 1
+    },
+    {
+      "szene": 6,
+      "clip": "foto-wald1-endkarte",
+      "ab_wort": 14,
+      "wort": "Link",
+      "start": 12.833333333333334,
+      "dauer": 2.5,
+      "von": 0,
+      "bis": 2.5,
+      "tempo": 1
+    }
+  ],
+  "fehler": []
+}

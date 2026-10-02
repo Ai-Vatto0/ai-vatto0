@@ -1,0 +1,65 @@
+{
+  "gebaut": "2026-10-02T15:11:18.610Z",
+  "video": "j",
+  "dauer_s": 15.233,
+  "fps": 30,
+  "vo_start": 0.25,
+  "vo_ende": 13.83,
+  "szenen": [
+    {
+      "szene": 1,
+      "clip": "img8251",
+      "start": 0,
+      "dauer": 2.533,
+      "zoom": "none",
+      "uebergang": "cut"
+    },
+    {
+      "szene": 2,
+      "clip": "img8239",
+      "start": 2.533,
+      "dauer": 2.1,
+      "zoom": "none",
+      "uebergang": "cut"
+    },
+    {
+      "szene": 3,
+      "clip": "img8251",
+      "start": 4.633,
+      "dauer": 2.1,
+      "zoom": "none",
+      "uebergang": "cut"
+    },
+    {
+      "szene": 4,
+      "clip": "dji0926-0021",
+      "start": 6.733,
+      "dauer": 1.6,
+      "zoom": "none",
+      "uebergang": "cut"
+    },
+    {
+      "szene": 5,
+      "clip": "img8251",
+      "start": 8.333,
+      "dauer": 2.1,
+      "zoom": "none",
+      "uebergang": "cut"
+    },
+    {
+      "szene": 6,
+      "clip": "img8239",
+      "start": 10.433,
+      "dauer": 2.1,
+      "zoom": "none",
+      "uebergang": "cut"
+    },
+    {
+      "szene": 7,
+      "clip": "foto-wald2-endkarte",
+      "start": 12.533,
+      "dauer": 2.7,
+      "zoom": "kenburns_out"
+    }
+  ]
+}

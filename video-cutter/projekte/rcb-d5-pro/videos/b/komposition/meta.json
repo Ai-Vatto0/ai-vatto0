@@ -1,0 +1,65 @@
+{
+  "gebaut": "2026-10-01T20:34:01.212Z",
+  "video": "b",
+  "dauer_s": 27.001,
+  "fps": 30,
+  "vo_start": 0.25,
+  "vo_ende": 25.61,
+  "szenen": [
+    {
+      "szene": 1,
+      "clip": "foto-front",
+      "start": 0,
+      "dauer": 3.5,
+      "zoom": "kenburns_in",
+      "uebergang": "flash"
+    },
+    {
+      "szene": 2,
+      "clip": "dji0924-0001-seg2",
+      "start": 3.5,
+      "dauer": 2.167,
+      "zoom": "punch",
+      "uebergang": "zoom"
+    },
+    {
+      "szene": 3,
+      "clip": "foto-wald2",
+      "start": 5.667,
+      "dauer": 5.4,
+      "zoom": "kenburns_in",
+      "uebergang": "whip"
+    },
+    {
+      "szene": 4,
+      "clip": "foto-karton",
+      "start": 11.067,
+      "dauer": 2.2,
+      "zoom": "kenburns_in",
+      "uebergang": "flash"
+    },
+    {
+      "szene": 5,
+      "clip": "dji0924-0001-seg2",
+      "start": 13.267,
+      "dauer": 6.067,
+      "zoom": "kenburns_out",
+      "uebergang": "zoom"
+    },
+    {
+      "szene": 6,
+      "clip": "foto-abend",
+      "start": 19.334,
+      "dauer": 4.567,
+      "zoom": "kenburns_out",
+      "uebergang": "cut"
+    },
+    {
+      "szene": 7,
+      "clip": "dji0924-0001-seg3",
+      "start": 23.901,
+      "dauer": 3.1,
+      "zoom": "kenburns_out"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "gebaut": "2026-10-01T23:07:00.226Z",
+  "video": "h",
+  "dauer_s": 21.933,
+  "fps": 30,
+  "vo_start": 0.25,
+  "vo_ende": 20.53,
+  "szenen": [
+    {
+      "szene": 1,
+      "clip": "img8240",
+      "start": 0,
+      "dauer": 3.133,
+      "zoom": "kenburns_in",
+      "uebergang": "flash"
+    },
+    {
+      "szene": 2,
+      "clip": "img8258",
+      "start": 3.133,
+      "dauer": 3.2,
+      "zoom": "none",
+      "uebergang": "whip"
+    },
+    {
+      "szene": 3,
+      "clip": "img8251",
+      "start": 6.333,
+      "dauer": 3.5,
+      "zoom": "none",
+      "uebergang": "zoom"
+    },
+    {
+      "szene": 4,
+      "clip": "img8240",
+      "start": 9.833,
+      "dauer": 3.2,
+      "zoom": "none",
+      "uebergang": "flash"
+    },
+    {
+      "szene": 5,
+      "clip": "img8240",
+      "start": 13.033,
+      "dauer": 3.2,
+      "zoom": "none",
+      "uebergang": "whip"
+    },
+    {
+      "szene": 6,
+      "clip": "img8258",
+      "start": 16.233,
+      "dauer": 3.2,
+      "zoom": "kenburns_out",
+      "uebergang": "zoom"
+    },
+    {
+      "szene": 7,
+      "clip": "foto-nacht-oben-endkarte",
+      "start": 19.433,
+      "dauer": 2.5,
+      "zoom": "kenburns_out"
+    }
+  ]
+}

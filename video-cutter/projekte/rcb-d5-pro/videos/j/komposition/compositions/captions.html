@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="de">
+  <head><meta charset="UTF-8" /><!-- GENERIERT von tools/baue-spec.mjs – nicht von Hand ändern. --></head>
+  <body>
+    <template>
+      <style>
+        @font-face { font-family: "Poppins"; src: url("assets/fonts/Poppins-Bold.ttf") format("truetype"); font-weight: 700; } @font-face { font-family: "Marker"; src: url("assets/fonts/PermanentMarker.ttf") format("truetype"); font-weight: 400; }
+        #root { position: absolute; inset: 0; font-family: "Poppins", sans-serif; font-weight: 700; }
+        /* Safe Zone 1080x1920: oben 150, rechts 140, unten 400, links 60 */
+        .cap { position: absolute; left: 60px; right: 140px; top: 660px; display: flex; justify-content: center; }
+        .cap-in { max-width: 860px; text-align: center; font-size: 72px; line-height: 1.12; color: #FFF7E8; -webkit-text-stroke: 12px #140F05; paint-order: stroke fill; background: transparent; padding: 0; border-radius: 26px; text-shadow: 0 6px 18px rgba(0,0,0,.45); font-family: "Marker", sans-serif; font-weight: 400; letter-spacing: .01em; text-shadow: 3px 3px 0 #140F05, 6px 6px 0 rgba(12,9,3,.6) !important; }
+        .headline { position: absolute; left: 60px; right: 140px; top: 250px; display: flex; justify-content: center; }
+        .hl-in { max-width: 860px; text-align: center; font-size: 124px; line-height: 1.04; color: #FFF7E8;  }
+        .hw { display: inline-block; }
+        .hw.em { color: #FF8A2A; }
+        .ctabox { position: absolute; left: 60px; right: 140px; top: 1080px; display: flex; flex-direction: column; align-items: center; }
+        .cta-tx { color: #FF8A2A; font-size: 76px; line-height: 1.05; text-align: center; max-width: 720px; font-family: "Marker", sans-serif; font-weight: 400; font-size: 92px; -webkit-text-stroke: 12px #140F05; paint-order: stroke fill; text-shadow: 0 10px 0 rgba(12,9,3,.55); transform: rotate(-2deg); }
+        .cta-zu { color: #fff; font-size: 44px; margin-top: 12px; text-align: center; max-width: 720px; background: rgba(0,0,0,.55); padding: 6px 18px; border-radius: 16px; }
+        .pfeil { width: 150px; height: 150px; margin-top: 4px; margin-right: 400px; }
+        .pfeil path { stroke-dasharray: 260; }
+        .statkarte { position: absolute; left: 60px; right: 140px; display: flex; justify-content: center; }
+        .st-in { background: rgba(20,15,5,.86); border-left: 18px solid #FF8A2A; border-radius: 22px; padding: 10px 40px 18px 34px; box-shadow: 0 14px 0 rgba(12,9,3,.55); transform-origin: 50% 50%; }
+        .st-zahl { font-family: "Marker", sans-serif; font-size: 168px; line-height: 1.02; color: #FF8A2A; -webkit-text-stroke: 10px #140F05; paint-order: stroke fill; }
+        .st-einheit { font-size: 92px; margin-left: 14px; color: #FFF7E8; }
+        .st-label { font-family: "Poppins", sans-serif; font-weight: 700; font-size: 44px; letter-spacing: .12em; color: #FFF7E8; text-transform: uppercase; margin-top: -6px; }
+        .logo-gross { position: absolute; left: 110px; top: 300px; width: 760px; }
+        .logo-klein { position: absolute; left: 680px; top: 150px; width: 250px; opacity: .92; }
+        .ki { position: absolute; left: 70px; top: 160px; font-size: 26px; color: #FFFFFF; letter-spacing: .04em; background: rgba(0,0,0,.62); padding: 6px 14px; border-radius: 12px; }
+        .hl-in.metall { font-family: "Marker", sans-serif; font-weight: 400; transform: rotate(-3deg); letter-spacing: .01em; background: rgba(8,7,6,.82); padding: 6px 30px 16px; border-radius: 20px; border-bottom: 8px solid #E85D00; }
+        .hl-in.metall .hw { color: #F4EFE8; filter: drop-shadow(4px 0 0 #140F05) drop-shadow(-4px 0 0 #140F05) drop-shadow(0 4px 0 #140F05) drop-shadow(0 -4px 0 #140F05) drop-shadow(0 12px 0 rgba(12,9,3,.6)); padding: 0 6px; }
+        .hl-in.metall .hw.em { color: #FFA24A; }
+        .sticker { display: inline-block; width: 150px; height: 150px; vertical-align: middle; margin-left: 10px; }
+        .mk { position: absolute; left: 60px; right: 140px; display: flex; justify-content: center; perspective: 900px; }
+        .mk-rahmen { position: relative; padding: 7px; border-radius: 30px; background: linear-gradient(180deg, #FFE7C7 0%, #FFA24A 30%, #E85D00 52%, #FFB46B 68%, #A33F00 100%); box-shadow: 0 16px 0 rgba(12,9,3,.5); transform-origin: 50% 50%; }
+        .mk-in { position: relative; overflow: hidden; display: flex; align-items: center; gap: 26px; padding: 18px 44px 22px 22px; border-radius: 24px; background: linear-gradient(160deg,#0f0f10 0%,#000 80%); }
+        .mk-icon { width: 150px; height: 150px; flex: none; }
+        .mk-zahl { font-family: "Marker", sans-serif; font-size: 150px; line-height: .98; color: #F4EFE8; -webkit-text-stroke: 8px #140F05; paint-order: stroke fill; filter: drop-shadow(0 6px 0 rgba(0,0,0,.55)); white-space: nowrap; }
+        .mk-einheit { font-size: 76px; margin-left: 12px; }
+        .mk-label { font-family: "Poppins", sans-serif; font-weight: 700; font-size: 42px; letter-spacing: .1em; text-transform: uppercase; color: #FFB46B; margin-top: 2px; white-space: nowrap; }
+        .mk-glanz { position: absolute; top: -40px; bottom: -40px; left: 0; width: 140px; background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.55) 50%, rgba(255,255,255,0) 100%); transform: translateX(-260px) skewX(-20deg); pointer-events: none; }
+        .badge { position: absolute; color: #FFA24A; }
+        .badge svg { width: 100%; height: auto; display: block; overflow: visible; }
+        .ctabox .cta-tx { -webkit-text-stroke: 0; text-shadow: none; color: #FFA24A; filter: drop-shadow(5px 0 0 #140F05) drop-shadow(-5px 0 0 #140F05) drop-shadow(0 5px 0 #140F05) drop-shadow(0 -5px 0 #140F05) drop-shadow(0 12px 0 rgba(12,9,3,.6)); }
+      </style>
+      <div id="root" data-composition-id="captions" data-width="1080" data-height="1920">
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        window.__timelines["captions"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

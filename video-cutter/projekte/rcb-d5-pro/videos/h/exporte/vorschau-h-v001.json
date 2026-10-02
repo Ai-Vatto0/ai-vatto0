@@ -1,0 +1,54 @@
+{
+  "export": "vorschau-h-v001.mp4",
+  "art": "vorschau",
+  "freigabe": null,
+  "renderzeit_s": 169,
+  "status": "FEHLER",
+  "checks": [
+    {
+      "pruefung": "Spuren",
+      "status": "OK",
+      "detail": "1 Video, 1 Ton"
+    },
+    {
+      "pruefung": "Auflösung",
+      "status": "OK",
+      "detail": "1080x1920"
+    },
+    {
+      "pruefung": "Bildrate",
+      "status": "OK",
+      "detail": "30/1"
+    },
+    {
+      "pruefung": "Dauer",
+      "status": "OK",
+      "detail": "18.633 s (Plan 18.633 s)"
+    },
+    {
+      "pruefung": "Lautheit",
+      "status": "WARNUNG",
+      "detail": "-37.5 LUFS (Ziel -14 ±2)"
+    },
+    {
+      "pruefung": "True Peak",
+      "status": "OK",
+      "detail": "-15.9 dBTP"
+    },
+    {
+      "pruefung": "Stille",
+      "status": "WARNUNG",
+      "detail": "3.5 s Stille bis 18.6 s"
+    },
+    {
+      "pruefung": "Voiceover = Skript",
+      "status": "OK",
+      "detail": "ohne Voiceover (Musik legt Vatto in TikTok drauf)"
+    },
+    {
+      "pruefung": "Safe Zone",
+      "status": "FEHLER",
+      "detail": "4 s: x 0–58, y 258–532; 6 s: x 0–58, y 258–532; 8 s: x 0–58, y 258–532; 10 s: x 0–58, y 258–530; 14 s: x 0–58, y 258–530"
+    }
+  ]
+}

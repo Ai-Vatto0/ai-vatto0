@@ -66,7 +66,8 @@ add("True Peak", TP <= -1 ? "OK" : "WARNUNG", `${TP} dBTP`);
 // Voiceover = Skript
 const qa = path.join(vdir, "qa", path.basename(ziel, ".mp4"));
 fs.mkdirSync(qa, { recursive: true });
-if (!opt["ohne-transkript"]) {
+if (spec.ohne_vo) add("Voiceover = Skript", "OK", "ohne Voiceover (Musik legt Vatto in TikTok drauf)");
+else if (!opt["ohne-transkript"]) {
   const t = hf(["transcribe", ziel, "--engine", "whisper", "--model", "small", "--language", "de", "--dir", qa, "--json"], { allowFail: true });
   if (t.status !== 0 || !fs.existsSync(path.join(qa, "transcript.json"))) add("Voiceover = Skript", "OFFEN", "Neu-Transkription nicht möglich");
   else {

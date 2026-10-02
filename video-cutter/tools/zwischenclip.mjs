@@ -34,7 +34,12 @@ spec.szenen.forEach((z, i) => {
   const x = z.x ?? b.tags?.bildmitte ?? 0.5;
   let vf = [];
   if (b.hdr) vf.push(HDR);
-  if (b.orientierung === "quer") {
+  if (z.ausschnitt) {
+    // Ausschnitt in Anteilen des Quellbilds: { x: Mitte waagrecht, y: Oberkante, h: Höhe } → 9:16-Fenster, z. B. Fahrer oben wegschneiden
+    const { x: ax = 0.5, y: ay = 0.4, h: ah = 0.5 } = z.ausschnitt;
+    const ch = `trunc(ih*${ah}/2)*2`, cw = `trunc(ih*${ah}*9/16/2)*2`;
+    vf.push(`crop=${cw}:${ch}:'min(max(iw*${ax}-${cw}/2,0),iw-${cw})':'min(max(ih*${ay},0),ih-${ch})'`, "scale=1080:1920:flags=lanczos");
+  } else if (b.orientierung === "quer") {
     const cw = `trunc(ih*9/16/2)*2`;
     vf.push(`crop=${cw}:ih:'min(max(iw*${x}-${cw}/2,0),iw-${cw})':0`);
   }

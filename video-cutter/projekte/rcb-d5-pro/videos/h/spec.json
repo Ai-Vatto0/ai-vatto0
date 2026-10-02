@@ -1,0 +1,189 @@
+{
+  "hook_effekt": "slam",
+  "ohne_vo": true,
+  "titel": "Daten-Montage ohne Sprecher (Musik von Vatto)",
+  "idee": {
+    "winkel": "alltag",
+    "zielgruppe": "Scroller, die ohne Ton schauen",
+    "hook": "Slam: Annäherung an den RCB im Wald + Weißblitz + Wackler + „KEIN PLASTIKBOMBER.“",
+    "emotion": "Lust aufs Fahren"
+  },
+  "format": "Text-/Daten-Montage im Takt, keine Stimme – Vatto legt Musik drauf",
+  "look": "rcb",
+  "textposition": "unten",
+  "stimme": null,
+  "logo": {
+    "datei": "assets/rcb-logo-karte.png",
+    "intro": 0,
+    "ende": false
+  },
+  "voiceover": [
+    {
+      "satz": "KEIN PLASTIKBOMBER.",
+      "belege": [
+        "meinung"
+      ],
+      "dauer": 3.0
+    },
+    {
+      "satz": "20 KM/H MIT ABE",
+      "belege": [
+        "abe_20kmh"
+      ],
+      "dauer": 3.2
+    },
+    {
+      "satz": "10 ZOLL GELREIFEN",
+      "belege": [
+        "gelreifen"
+      ],
+      "dauer": 3.5,
+      "bedingung_ok": true
+    },
+    {
+      "satz": "FEDERUNG VORNE + HINTEN",
+      "belege": [
+        "federung"
+      ],
+      "dauer": 3.2
+    },
+    {
+      "satz": "BIS 150 KG",
+      "belege": [
+        "max_150kg"
+      ],
+      "dauer": 3.2
+    },
+    {
+      "satz": "500 W MOTOR",
+      "belege": [
+        "motor_500w"
+      ],
+      "dauer": 3.2
+    },
+    {
+      "satz": "JETZT IM TIKTOK SHOP",
+      "belege": [],
+      "dauer": 1.0
+    }
+  ],
+  "szenen": [
+    {
+      "clip": "img8240",
+      "von": 0.3,
+      "bis": 1.157,
+      "rolle": "hook",
+      "zoom": "kenburns_in",
+      "uebergang": "flash",
+      "text": {
+        "inhalt": "KEIN PLASTIKBOMBER.",
+        "betonung": [
+          "PLASTIKBOMBER."
+        ],
+        "belege": [
+          "meinung"
+        ]
+      }
+    },
+    {
+      "clip": "img8258",
+      "von": 1.0,
+      "bis": 2.455,
+      "rolle": "beweis",
+      "zoom": "none",
+      "uebergang": "whip",
+      "ab_wort": 2,
+      "stat": {
+        "zahl": 20,
+        "einheit": "KM/H",
+        "label": "mit ABE",
+        "belege": [
+          "abe_20kmh"
+        ]
+      }
+    },
+    {
+      "clip": "img8251",
+      "von": 31.0,
+      "bis": 32.091,
+      "rolle": "emotion",
+      "zoom": "none",
+      "uebergang": "zoom",
+      "ab_wort": 6,
+      "stat": {
+        "zahl": 10,
+        "einheit": "ZOLL",
+        "label": "Gelreifen",
+        "belege": [
+          "gelreifen"
+        ],
+        "bedingung_ok": true
+      }
+    },
+    {
+      "clip": "img8240",
+      "von": 17.6,
+      "bis": 19.055,
+      "rolle": "beweis",
+      "zoom": "none",
+      "uebergang": "flash",
+      "ab_wort": 9,
+      "text": {
+        "inhalt": "FEDERUNG VORNE + HINTEN",
+        "betonung": [
+          "FEDERUNG"
+        ],
+        "belege": [
+          "federung"
+        ]
+      }
+    },
+    {
+      "clip": "img8240",
+      "von": 9.0,
+      "bis": 10.091,
+      "rolle": "beweis",
+      "zoom": "none",
+      "uebergang": "whip",
+      "ab_wort": 13,
+      "stat": {
+        "zahl": 150,
+        "einheit": "KG",
+        "label": "belastbar",
+        "belege": [
+          "max_150kg"
+        ]
+      }
+    },
+    {
+      "clip": "img8258",
+      "von": 13.0,
+      "bis": 14.091,
+      "rolle": "beweis",
+      "zoom": "kenburns_out",
+      "uebergang": "zoom",
+      "ab_wort": 16,
+      "stat": {
+        "zahl": 500,
+        "einheit": "W",
+        "label": "Motor",
+        "belege": [
+          "motor_500w"
+        ]
+      }
+    },
+    {
+      "clip": "foto-nacht-oben-endkarte",
+      "von": 0,
+      "bis": 2.975,
+      "rolle": "cta",
+      "zoom": "kenburns_out",
+      "ab_wort": 19
+    }
+  ],
+  "cta": {
+    "text": "Jetzt im TikTok Shop",
+    "zusatz": "RCB D5 Pro · mit ABE",
+    "top": 330
+  }
+}

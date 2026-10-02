@@ -1,0 +1,98 @@
+{
+  "video": "a",
+  "vo_start": 0.25,
+  "vorlauf": 0.12,
+  "cta_halt": 1.4,
+  "gesamt_s": 23.833,
+  "szenen": [
+    {
+      "szene": 1,
+      "clip": "dji0926-0021",
+      "ab_wort": null,
+      "wort": "(Start)",
+      "start": 0,
+      "dauer": 2.167,
+      "von": 29.8,
+      "bis": 31.967,
+      "tempo": 1
+    },
+    {
+      "szene": 2,
+      "clip": "foto-wald1",
+      "ab_wort": 8,
+      "wort": "ersten",
+      "start": 2.1666666666666665,
+      "dauer": 3.867,
+      "von": 0,
+      "bis": 3.867,
+      "tempo": 1
+    },
+    {
+      "szene": 3,
+      "clip": "dji0926-0021",
+      "ab_wort": 17,
+      "wort": "Wiese,",
+      "start": 6.033333333333333,
+      "dauer": 2.533,
+      "von": 35,
+      "bis": 38.166,
+      "tempo": "ramp"
+    },
+    {
+      "szene": 4,
+      "clip": "dji0924-0004",
+      "ab_wort": 21,
+      "wort": "der",
+      "start": 8.566666666666666,
+      "dauer": 2.267,
+      "von": 17.1,
+      "bis": 19.367,
+      "tempo": 1
+    },
+    {
+      "szene": 5,
+      "clip": "foto-federung",
+      "ab_wort": 25,
+      "wort": "500",
+      "start": 10.833333333333334,
+      "dauer": 3.533,
+      "von": 0,
+      "bis": 3.533,
+      "tempo": 1
+    },
+    {
+      "szene": 6,
+      "clip": "foto-display",
+      "ab_wort": 32,
+      "wort": "Und",
+      "start": 14.366666666666667,
+      "dauer": 2.433,
+      "von": 0,
+      "bis": 2.433,
+      "tempo": 1
+    },
+    {
+      "szene": 7,
+      "clip": "dji0926-0021",
+      "ab_wort": 36,
+      "wort": "Kein",
+      "start": 16.8,
+      "dauer": 3.267,
+      "von": 53,
+      "bis": 56.267,
+      "tempo": 1
+    },
+    {
+      "szene": 8,
+      "clip": "foto-abend-endkarte",
+      "ab_wort": 42,
+      "wort": "Jetzt",
+      "start": 20.066666666666666,
+      "dauer": 3.767,
+      "von": 0,
+      "bis": 3.767,
+      "tempo": 1
+    }
+  ],
+  "fehler": []
+}

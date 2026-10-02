@@ -64,7 +64,8 @@ Zeitlupe nur aus ≥ 50 fps und nur als dokumentierte Ausnahme (Faruk: „keine 
 Standard-Look `nacht` (Vatto mag die Farben).
 
 **Drive-Ordner (`tools/drive.mjs`, Schlüssel `VATTO_DRIVE_TOKEN`):** nur innerhalb `Snova-Videos` · nur kopieren, nie löschen,
-nie `sync`/`move` · Schlüssel nie ausgeben · holen und abgeben ohne Rückfrage (Vatto will es automatisch) · für Videoinhalte nie den
+nie `sync`/`move` · Schlüssel nie ausgeben · holen und abgeben ohne Rückfrage (Vatto will es automatisch) ·
+**Fehlende Dateien in `02-Fertig` = Vatto hat sie heruntergeladen und gelöscht** (Platz sparen, Vatto 02.10.2026) → nie von selbst neu hochladen, nicht als Problem melden; nur auf ausdrücklichen Wunsch erneut kopieren · für Videoinhalte nie den
 Google-Drive-Konnektor nutzen (schiebt Daten durch den Chat). Fehlt der Schlüssel → Vatto auf START-HIER Kapitel 7 verweisen.
 
 **Sparsam arbeiten (Zeit + Tokens):** Engine ist **nur HyperFrames** (Remotion-`SpecVideo` in `video-edit/` = Archiv, nicht nutzen).

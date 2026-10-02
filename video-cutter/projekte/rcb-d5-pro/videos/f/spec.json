@@ -1,0 +1,173 @@
+{
+  "hook_effekt": "slam",
+  "regel_ausnahme": "Eine Zeitlupe (Szene 2, 60-fps-iPhone-Quelle, 0,5x ohne Interpolation) – Produkt-Reveal",
+  "titel": "Groß und schwer? Kein Problem.",
+  "idee": {
+    "winkel": "problem_loesung",
+    "zielgruppe": "große, schwere Fahrer (100–150 kg), die bei Plastikrollern Angst haben",
+    "hook": "Slam: Weißblitz + Wackler + Punch-In auf den RCB am Felsen mit Licht an + „Stopp!“ + Text „ÜBER 100 KILO?“",
+    "emotion": "endlich ernst genommen"
+  },
+  "format": "Problem-Lösung für schwere Fahrer: Felsen-Rundgang, Zeitlupe, Daten-Karten, Fahrt von hinten",
+  "look": "rcb_dunkel",
+  "textposition": "unten",
+  "stimme": {
+    "anbieter": "yapper",
+    "modell": "eleven_v3",
+    "name": "Markus – Young Natural German",
+    "voice_id": "IeQubAjK1ujbppIdhJw4"
+  },
+  "logo": {
+    "datei": "assets/rcb-logo-karte.png",
+    "intro": 0,
+    "ende": false
+  },
+  "voiceover": [
+    {
+      "satz": "Stopp! Du bist groß, schwer, und jeder Roller ächzt unter dir?",
+      "belege": [
+        "meinung"
+      ]
+    },
+    {
+      "satz": "Dann schau dir den hier an.",
+      "belege": [
+        "meinung"
+      ]
+    },
+    {
+      "satz": "Bis 150 Kilo belastbar.",
+      "belege": [
+        "max_150kg"
+      ]
+    },
+    {
+      "satz": "Getestet mit einem Fahrer von 140 Kilo, und der zieht trotzdem sauber durch.",
+      "belege": [
+        "getestet_140kg"
+      ],
+      "bedingung_ok": true
+    },
+    {
+      "satz": "Starker Motor mit 500 Watt, dazu ein stabiler Rahmen aus Metall.",
+      "belege": [
+        "motor_500w",
+        "metall"
+      ]
+    },
+    {
+      "satz": "Gebaut für große Jungs, nicht für Plastikspielzeug.",
+      "belege": [
+        "meinung"
+      ]
+    },
+    {
+      "satz": "Jetzt im TikTok Shop.",
+      "belege": []
+    }
+  ],
+  "szenen": [
+    {
+      "clip": "img8258",
+      "von": 0.0,
+      "bis": 4.13,
+      "rolle": "hook",
+      "zoom": "kenburns_in",
+      "uebergang": "flash",
+      "text": {
+        "inhalt": "ÜBER 100 KILO?",
+        "betonung": [
+          "KILO?"
+        ],
+        "belege": [
+          "meinung"
+        ]
+      }
+    },
+    {
+      "clip": "img8241",
+      "von": 16.0,
+      "bis": 18.182,
+      "rolle": "detail",
+      "zoom": "none",
+      "uebergang": "whip",
+      "ab_wort": 11,
+      "tempo": 0.5
+    },
+    {
+      "clip": "img8241",
+      "von": 20.0,
+      "bis": 21.455,
+      "rolle": "beweis",
+      "zoom": "punch",
+      "uebergang": "zoom",
+      "ab_wort": 17,
+      "stat": {
+        "zahl": 150,
+        "einheit": "KG",
+        "label": "max. Belastung",
+        "belege": [
+          "max_150kg"
+        ]
+      }
+    },
+    {
+      "clip": "img8251",
+      "von": 75.0,
+      "bis": 79.727,
+      "rolle": "beweis",
+      "zoom": "none",
+      "uebergang": "cut",
+      "ab_wort": 21,
+      "stat": {
+        "zahl": 500,
+        "einheit": "W",
+        "label": "Motor",
+        "belege": [
+          "motor_500w"
+        ]
+      }
+    },
+    {
+      "clip": "img8251",
+      "von": 23.0,
+      "bis": 27.0,
+      "rolle": "beweis",
+      "zoom": "none",
+      "uebergang": "whip",
+      "ab_wort": 34,
+      "stat": {
+        "zahl": 10,
+        "einheit": "ZOLL",
+        "label": "Gelreifen",
+        "belege": [
+          "gelreifen"
+        ],
+        "bedingung_ok": true
+      }
+    },
+    {
+      "clip": "img8251",
+      "von": 3.3,
+      "bis": 6.482,
+      "rolle": "emotion",
+      "zoom": "none",
+      "uebergang": "cut",
+      "ab_wort": 45,
+      "tempo": "ramp"
+    },
+    {
+      "clip": "foto-stein-endkarte",
+      "von": 0,
+      "bis": 2.975,
+      "rolle": "cta",
+      "zoom": "kenburns_out",
+      "ab_wort": 52
+    }
+  ],
+  "cta": {
+    "text": "Jetzt im TikTok Shop",
+    "zusatz": "Bis 150 kg belastbar.",
+    "top": 330
+  }
+}

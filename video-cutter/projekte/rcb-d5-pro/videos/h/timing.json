@@ -1,0 +1,87 @@
+{
+  "video": "h",
+  "vo_start": 0.25,
+  "vorlauf": 0.12,
+  "cta_halt": 1.4,
+  "gesamt_s": 21.933,
+  "szenen": [
+    {
+      "szene": 1,
+      "clip": "img8240",
+      "ab_wort": null,
+      "wort": "(Start)",
+      "start": 0,
+      "dauer": 3.133,
+      "von": 0.3,
+      "bis": 3.433,
+      "tempo": 1
+    },
+    {
+      "szene": 2,
+      "clip": "img8258",
+      "ab_wort": 2,
+      "wort": "20",
+      "start": 3.1333333333333333,
+      "dauer": 3.2,
+      "von": 1,
+      "bis": 4.2,
+      "tempo": 1
+    },
+    {
+      "szene": 3,
+      "clip": "img8251",
+      "ab_wort": 6,
+      "wort": "10",
+      "start": 6.333333333333333,
+      "dauer": 3.5,
+      "von": 31,
+      "bis": 34.5,
+      "tempo": 1
+    },
+    {
+      "szene": 4,
+      "clip": "img8240",
+      "ab_wort": 9,
+      "wort": "FEDERUNG",
+      "start": 9.833333333333334,
+      "dauer": 3.2,
+      "von": 17.6,
+      "bis": 20.8,
+      "tempo": 1
+    },
+    {
+      "szene": 5,
+      "clip": "img8240",
+      "ab_wort": 13,
+      "wort": "BIS",
+      "start": 13.033333333333333,
+      "dauer": 3.2,
+      "von": 9,
+      "bis": 12.2,
+      "tempo": 1
+    },
+    {
+      "szene": 6,
+      "clip": "img8258",
+      "ab_wort": 16,
+      "wort": "500",
+      "start": 16.233333333333334,
+      "dauer": 3.2,
+      "von": 13,
+      "bis": 16.2,
+      "tempo": 1
+    },
+    {
+      "szene": 7,
+      "clip": "foto-nacht-oben-endkarte",
+      "ab_wort": 19,
+      "wort": "JETZT",
+      "start": 19.433333333333334,
+      "dauer": 2.5,
+      "von": 0,
+      "bis": 2.5,
+      "tempo": 1
+    }
+  ],
+  "fehler": []
+}

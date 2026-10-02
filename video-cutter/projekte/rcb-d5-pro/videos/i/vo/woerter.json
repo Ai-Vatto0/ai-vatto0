@@ -1,0 +1,90 @@
+{
+  "quelle": "stumm-vo.mjs (ohne Voiceover)",
+  "woerter": [
+    {
+      "text": "SCHAU",
+      "s": 0,
+      "e": 0.88
+    },
+    {
+      "text": "GENAU",
+      "s": 0.9,
+      "e": 1.78
+    },
+    {
+      "text": "HIN.",
+      "s": 1.8,
+      "e": 2.68
+    },
+    {
+      "text": "Federbeine",
+      "s": 2.7,
+      "e": 3.513
+    },
+    {
+      "text": "vorne",
+      "s": 3.533,
+      "e": 4.347
+    },
+    {
+      "text": "doppelt",
+      "s": 4.367,
+      "e": 5.18
+    },
+    {
+      "text": "Bremsscheibe",
+      "s": 5.2,
+      "e": 6.43
+    },
+    {
+      "text": "hinten",
+      "s": 6.45,
+      "e": 7.68
+    },
+    {
+      "text": "Trittbrett",
+      "s": 7.7,
+      "e": 8.513
+    },
+    {
+      "text": "trägt",
+      "s": 8.533,
+      "e": 9.347
+    },
+    {
+      "text": "viel",
+      "s": 9.367,
+      "e": 10.18
+    },
+    {
+      "text": "Lenkrohr",
+      "s": 10.2,
+      "e": 11.013
+    },
+    {
+      "text": "mit",
+      "s": 11.033,
+      "e": 11.847
+    },
+    {
+      "text": "Antrieb",
+      "s": 11.867,
+      "e": 12.68
+    },
+    {
+      "text": "Link",
+      "s": 12.7,
+      "e": 13.013
+    },
+    {
+      "text": "im",
+      "s": 13.033,
+      "e": 13.347
+    },
+    {
+      "text": "Shop",
+      "s": 13.367,
+      "e": 13.68
+    }
+  ]
+}

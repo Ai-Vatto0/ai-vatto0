@@ -1,0 +1,362 @@
+{
+  "projekt": "rcb-d5-pro",
+  "quelle": "Google Drive Snova-Videos/01-Rohmaterial (Vatto), nur lesen, MD5 geprüft",
+  "erstellt": "2026-10-01T12:42:16.760Z",
+  "clips": [
+    {
+      "id": "ciwl3941",
+      "datei": "CIWL3941-00.00.00.000-00.00.06.131.MP4",
+      "bytes": 28486794,
+      "neo2_id": "rocket_a",
+      "inhalt_laut_faktenblatt": "Rocket von oben"
+    },
+    {
+      "id": "dji0924-0001-seg1",
+      "datei": "DJI_20260924185506_0001_D-00.01.36.505-00.02.38.977-00.00.10.854-00.00.15.133-seg1.MP4",
+      "bytes": 23771155,
+      "neo2_id": "side1",
+      "inhalt_laut_faktenblatt": "seitlich (Scooter)"
+    },
+    {
+      "id": "dji0924-0001-seg2",
+      "datei": "DJI_20260924185506_0001_D-00.01.36.505-00.02.38.977-00.00.19.870-00.00.33.069-seg2.MP4",
+      "bytes": 70462295,
+      "neo2_id": "side2",
+      "inhalt_laut_faktenblatt": "seitlich"
+    },
+    {
+      "id": "dji0924-0001-seg3",
+      "datei": "DJI_20260924185506_0001_D-00.01.36.505-00.02.38.977-00.00.36.909-00.00.42.535-seg3.MP4",
+      "bytes": 32354520,
+      "neo2_id": "side3",
+      "inhalt_laut_faktenblatt": "seitlich"
+    },
+    {
+      "id": "dji0924-0001-seg4",
+      "datei": "DJI_20260924185506_0001_D-00.01.36.505-00.02.38.977-00.00.45.457-00.00.48.311-seg4.MP4",
+      "bytes": 16286480,
+      "neo2_id": "behind_field",
+      "inhalt_laut_faktenblatt": "folgt von hinten"
+    },
+    {
+      "id": "dji0924-0003",
+      "datei": "DJI_20260924185913_0003_D.MP4",
+      "bytes": 67435982,
+      "neo2_id": "top_track",
+      "inhalt_laut_faktenblatt": "Rocket/von oben"
+    },
+    {
+      "id": "dji0924-0004",
+      "datei": "DJI_20260924190146_0004_D-00.00.11.370-00.01.01.976.MP4",
+      "bytes": 251369321,
+      "neo2_id": "sunset",
+      "inhalt_laut_faktenblatt": "folgt von hinten Sonnenuntergang"
+    },
+    {
+      "id": "dji0925-0011",
+      "datei": "DJI_20260925185813_0011_D-00.00.08.132-00.00.11.667.MP4",
+      "bytes": 18231493,
+      "neo2_id": "wave",
+      "inhalt_laut_faktenblatt": null
+    },
+    {
+      "id": "dji0925-0012-seg1",
+      "datei": "DJI_20260925185844_0012_D-00.00.27.640-00.00.35.603-seg1.MP4",
+      "bytes": 42194019,
+      "neo2_id": "forest1",
+      "inhalt_laut_faktenblatt": "von vorne Wald"
+    },
+    {
+      "id": "dji0925-0012-seg2",
+      "datei": "DJI_20260925185844_0012_D-00.00.37.581-00.00.40.303-seg2.MP4",
+      "bytes": 16525823,
+      "neo2_id": "forest2",
+      "inhalt_laut_faktenblatt": "von vorne Wald"
+    },
+    {
+      "id": "dji0925-0012-seg3",
+      "datei": "DJI_20260925185844_0012_D-00.00.47.899-00.00.56.850-seg3.MP4",
+      "bytes": 46718620,
+      "neo2_id": "forest3",
+      "inhalt_laut_faktenblatt": "von vorne Wald"
+    },
+    {
+      "id": "dji0925-0012-seg4",
+      "datei": "DJI_20260925185844_0012_D-00.01.03.316-00.01.08.382-seg4.MP4",
+      "bytes": 26851907,
+      "neo2_id": "forest4",
+      "inhalt_laut_faktenblatt": "von vorne Wald"
+    },
+    {
+      "id": "dji0925-0012-seg5",
+      "datei": "DJI_20260925185844_0012_D-00.01.10.054-00.01.15.989-seg5.MP4",
+      "bytes": 34696721,
+      "neo2_id": "forest5",
+      "inhalt_laut_faktenblatt": "von vorne Wald"
+    },
+    {
+      "id": "dji0925-0012",
+      "datei": "DJI_20260925185844_0012_D.MP4",
+      "bytes": 899276649,
+      "neo2_id": null,
+      "inhalt_laut_faktenblatt": null
+    },
+    {
+      "id": "dji0926-0021-seg1",
+      "datei": "DJI_20260926155756_0021_D-00.00.19.795-00.00.28.221-seg1.MP4",
+      "bytes": 50559789,
+      "neo2_id": "hill1",
+      "inhalt_laut_faktenblatt": "Hügel"
+    },
+    {
+      "id": "dji0926-0021-seg2",
+      "datei": "DJI_20260926155756_0021_D-00.00.29.771-00.00.40.569-seg2.MP4",
+      "bytes": 60611168,
+      "neo2_id": "hill2",
+      "inhalt_laut_faktenblatt": "Hügel"
+    },
+    {
+      "id": "dji0926-0021-seg3",
+      "datei": "DJI_20260926155756_0021_D-00.00.41.723-00.00.57.920-seg3.MP4",
+      "bytes": 89712564,
+      "neo2_id": "hill3",
+      "inhalt_laut_faktenblatt": "Hügel"
+    },
+    {
+      "id": "dji0926-0021-seg4",
+      "datei": "DJI_20260926155756_0021_D-00.00.58.943-00.01.11.038-seg4.MP4",
+      "bytes": 67992659,
+      "neo2_id": "hill4",
+      "inhalt_laut_faktenblatt": "Hügel"
+    },
+    {
+      "id": "dji0926-0021",
+      "datei": "DJI_20260926155756_0021_D.MP4",
+      "bytes": 420454862,
+      "neo2_id": null,
+      "inhalt_laut_faktenblatt": null
+    },
+    {
+      "id": "dji0927-0042",
+      "datei": "DJI_20260927172236_0042_D.MP4",
+      "bytes": 83588294,
+      "neo2_id": "reveal42",
+      "inhalt_laut_faktenblatt": "Reveal"
+    },
+    {
+      "id": "img0203",
+      "datei": "IMG_0203.MOV",
+      "bytes": 41308624,
+      "neo2_id": "palm",
+      "inhalt_laut_faktenblatt": "Start aus der Hand (HDR)"
+    },
+    {
+      "id": "img0205",
+      "datei": "IMG_0205.MOV",
+      "bytes": 162455425,
+      "neo2_id": null,
+      "inhalt_laut_faktenblatt": null
+    },
+    {
+      "id": "foto-federung",
+      "datei": "stills/foto-federung.mp4",
+      "bytes": 915723,
+      "quelle": "Foto von Vatto (Standbild-Clip, 6 s)"
+    },
+    {
+      "id": "foto-front",
+      "datei": "stills/foto-front.mp4",
+      "bytes": 860604,
+      "quelle": "Foto von Vatto (Standbild-Clip, 6 s)"
+    },
+    {
+      "id": "foto-abend",
+      "datei": "stills/foto-abend.mp4",
+      "bytes": 947230,
+      "quelle": "Foto von Vatto (Standbild-Clip, 6 s)"
+    },
+    {
+      "id": "foto-wald1",
+      "datei": "stills/foto-wald1.mp4",
+      "bytes": 1172369,
+      "quelle": "Foto von Vatto (Standbild-Clip, 6 s)"
+    },
+    {
+      "id": "foto-wald2",
+      "datei": "stills/foto-wald2.mp4",
+      "bytes": 1091354,
+      "quelle": "Foto von Vatto (Standbild-Clip, 6 s)"
+    },
+    {
+      "id": "foto-display",
+      "datei": "stills/foto-display.mp4",
+      "bytes": 684254,
+      "quelle": "Foto von Vatto (Standbild-Clip, 6 s)"
+    },
+    {
+      "id": "foto-pov",
+      "datei": "stills/foto-pov.mp4",
+      "bytes": 943520,
+      "quelle": "Foto von Vatto (Standbild-Clip, 6 s)"
+    },
+    {
+      "id": "foto-karton",
+      "datei": "stills/foto-karton.mp4",
+      "bytes": 632326,
+      "quelle": "Foto von Vatto (Standbild-Clip, 6 s)"
+    },
+    {
+      "id": "foto-display-nacht",
+      "datei": "stills/foto-display-nacht.mp4",
+      "bytes": 916171,
+      "quelle": "Foto IMG_7963 von Vatto (Standbild-Clip, 6 s)"
+    },
+    {
+      "id": "foto-abend-endkarte",
+      "datei": "stills/foto-abend-endkarte.mp4",
+      "bytes": 616118,
+      "quelle": "Foto IMG_7960 als Endkarte (verkleinert, weichgezeichneter Rand)"
+    },
+    {
+      "id": "forest6",
+      "datei": "neo2/forest6.MP4",
+      "bytes": 34657968,
+      "neo2_id": "forest6",
+      "quelle": "Neo-2-Drive-Ordner (Vatto), per Datei-ID kopiert"
+    },
+    {
+      "id": "forest7",
+      "datei": "neo2/forest7.MP4",
+      "bytes": 69973968,
+      "neo2_id": "forest7",
+      "quelle": "Neo-2-Drive-Ordner (Vatto), per Datei-ID kopiert"
+    },
+    {
+      "id": "forest_behind",
+      "datei": "neo2/forest_behind.MP4",
+      "bytes": 43828996,
+      "neo2_id": "forest_behind",
+      "quelle": "Neo-2-Drive-Ordner (Vatto), per Datei-ID kopiert"
+    },
+    {
+      "id": "foto-wald1-endkarte",
+      "datei": "stills/foto-wald1-endkarte.mp4",
+      "bytes": 762542,
+      "quelle": "Foto IMG_8246 als Endkarte"
+    },
+    {
+      "id": "foto-wald2-endkarte",
+      "datei": "stills/foto-wald2-endkarte.mp4",
+      "bytes": 719710,
+      "quelle": "Foto IMG_8247 als Endkarte"
+    },
+    {
+      "id": "foto-front-endkarte",
+      "datei": "stills/foto-front-endkarte.mp4",
+      "bytes": 569002,
+      "quelle": "Foto IMG_7944 als Endkarte"
+    },
+    {
+      "id": "img7955",
+      "datei": "IMG_7955.MOV",
+      "bytes": 227036038,
+      "quelle": "Drive 01-Rohmaterial (Upload 01.10. abends)"
+    },
+    {
+      "id": "img8238",
+      "datei": "IMG_8238.MOV",
+      "bytes": 99840176,
+      "quelle": "Drive 01-Rohmaterial (Upload 01.10. abends)"
+    },
+    {
+      "id": "img8239",
+      "datei": "IMG_8239.MOV",
+      "bytes": 99810821,
+      "quelle": "Drive 01-Rohmaterial (Upload 01.10. abends)"
+    },
+    {
+      "id": "img8240",
+      "datei": "IMG_8240.MOV",
+      "bytes": 85430291,
+      "quelle": "Drive 01-Rohmaterial (Upload 01.10. abends)"
+    },
+    {
+      "id": "img8241",
+      "datei": "IMG_8241.MOV",
+      "bytes": 95395423,
+      "quelle": "Drive 01-Rohmaterial (Upload 01.10. abends)"
+    },
+    {
+      "id": "img8251",
+      "datei": "IMG_8251.MOV",
+      "bytes": 957397404,
+      "quelle": "Drive 01-Rohmaterial (Upload 01.10. abends)"
+    },
+    {
+      "id": "img8252",
+      "datei": "IMG_8252.MOV",
+      "bytes": 436194790,
+      "quelle": "Drive 01-Rohmaterial (Upload 01.10. abends)"
+    },
+    {
+      "id": "img8258",
+      "datei": "IMG_8258.MOV",
+      "bytes": 285647423,
+      "quelle": "Drive 01-Rohmaterial (Upload 01.10. abends)"
+    },
+    {
+      "id": "foto-stein",
+      "datei": "stills/foto-stein.mp4",
+      "bytes": 1374800,
+      "quelle": "Foto von Vatto"
+    },
+    {
+      "id": "foto-nacht-oben",
+      "datei": "stills/foto-nacht-oben.mp4",
+      "bytes": 1209126,
+      "quelle": "Foto von Vatto"
+    },
+    {
+      "id": "foto-wald3",
+      "datei": "stills/foto-wald3.mp4",
+      "bytes": 1088355,
+      "quelle": "Foto von Vatto"
+    },
+    {
+      "id": "foto-wald-licht",
+      "datei": "stills/foto-wald-licht.mp4",
+      "bytes": 1067997,
+      "quelle": "Foto von Vatto"
+    },
+    {
+      "id": "foto-stein-endkarte",
+      "datei": "stills/foto-stein-endkarte.mp4",
+      "bytes": 799694,
+      "quelle": "Endkarte"
+    },
+    {
+      "id": "foto-wald-licht-endkarte",
+      "datei": "stills/foto-wald-licht-endkarte.mp4",
+      "bytes": 727428,
+      "quelle": "Endkarte"
+    },
+    {
+      "id": "foto-nacht-oben-endkarte",
+      "datei": "stills/foto-nacht-oben-endkarte.mp4",
+      "bytes": 674888,
+      "quelle": "Endkarte"
+    },
+    {
+      "id": "foto-nacht-heck-endkarte",
+      "datei": "stills/foto-nacht-heck-endkarte.mp4",
+      "bytes": 539498,
+      "quelle": "Foto IMG_7962 (Nacht, Rücklicht + Scheinwerferkegel) als Endkarte"
+    }
+  ],
+  "gesperrt": {
+    "vert_bridge, vert_bridge2, vert_bridge3, vert_grass1, vert_grass2": "FREMDER Roller (HIDIS u. a.), nicht der RCB → nie in RCB-Werbung (Verstoß-Risiko inkonsistente Produktwerbung)",
+    "dji0924-0001-seg1..4, dji0924-0003, dji0924-0004, ciwl3941": "Vatto 01.10.: Landstraße/von oben nicht mehr verwenden",
+    "dji0925-0012 0–12 s": "Vatto: Brücken-Nahaufnahme nicht mehr",
+    "foto-display-nacht": "zeigt mph + Blinker-Symbole"
+  }
+}

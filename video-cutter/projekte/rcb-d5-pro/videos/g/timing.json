@@ -1,0 +1,87 @@
+{
+  "video": "g",
+  "vo_start": 0.25,
+  "vorlauf": 0.12,
+  "cta_halt": 1.4,
+  "gesamt_s": 25.967,
+  "szenen": [
+    {
+      "szene": 1,
+      "clip": "foto-wald3",
+      "ab_wort": null,
+      "wort": "(Start)",
+      "start": 0,
+      "dauer": 3.133,
+      "von": 0,
+      "bis": 3.133,
+      "tempo": 1
+    },
+    {
+      "szene": 2,
+      "clip": "img8251",
+      "ab_wort": 3,
+      "wort": "Die",
+      "start": 3.1333333333333333,
+      "dauer": 3.9,
+      "von": 69,
+      "bis": 72.9,
+      "tempo": 1
+    },
+    {
+      "szene": 3,
+      "clip": "img8258",
+      "ab_wort": 11,
+      "wort": "Vorne",
+      "start": 7.033333333333333,
+      "dauer": 2.733,
+      "von": 5,
+      "bis": 7.733,
+      "tempo": 1
+    },
+    {
+      "szene": 4,
+      "clip": "img8258",
+      "ab_wort": 16,
+      "wort": "dazu",
+      "start": 9.766666666666667,
+      "dauer": 3.1,
+      "von": 8,
+      "bis": 11.1,
+      "tempo": 1
+    },
+    {
+      "szene": 5,
+      "clip": "img8241",
+      "ab_wort": 20,
+      "wort": "Licht",
+      "start": 12.866666666666667,
+      "dauer": 5.267,
+      "von": 0,
+      "bis": 5.267,
+      "tempo": 1
+    },
+    {
+      "szene": 6,
+      "clip": "img8239",
+      "ab_wort": 32,
+      "wort": "Und",
+      "start": 18.133333333333333,
+      "dauer": 4.733,
+      "von": 3,
+      "bis": 7.733,
+      "tempo": 1
+    },
+    {
+      "szene": 7,
+      "clip": "foto-wald-licht-endkarte",
+      "ab_wort": 43,
+      "wort": "Jetzt",
+      "start": 22.866666666666667,
+      "dauer": 3.1,
+      "von": 0,
+      "bis": 3.1,
+      "tempo": 1
+    }
+  ],
+  "fehler": []
+}

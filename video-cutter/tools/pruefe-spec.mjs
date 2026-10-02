@@ -29,7 +29,7 @@ if (!specs.length) fail("Keine Specs unter videos/*/spec.json");
 const VERBOTEN = /(viral|garantiert|100 ?%|nie wieder|platz \d|bestseller|ausverkauft|nur heute|rabatt|gratis|kostenlos|€|\bpreis)/i;
 const ROT = new RegExp(fakten.rot.map((w) => w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|"), "i");
 const CLAIM = /(\d|gramm|\bg\b|km|minute|4k|gimbal|hindernis|speicher|reichweite|folgt|verfolgt|akku|flugzeit|fps|stimme|geste|hand|c0|führerschein)/i;
-const WINKEL = ["problem_loesung", "pov_erlebnis", "unboxing", "feature_demo", "vorher_nachher", "einwand", "geschenk", "alltag"];
+const WINKEL = ["problem_loesung", "pov_erlebnis", "unboxing", "feature_demo", "vorher_nachher", "einwand", "geschenk", "alltag", "detail_tour", "fahrgefuehl", "licht_check"];
 const TEMPO_MIN_SZENE = 1.0;
 
 const fehler = [], warn = [], info = [];
@@ -80,6 +80,7 @@ for (const s of specs) {
     if (z.zoom && !["none", "punch", "kenburns_in", "kenburns_out"].includes(z.zoom)) E(sid, `${w}: zoom „${z.zoom}“ unbekannt`);
     if ((z.zoom_max || 1.2) > 1.25) E(sid, `${w}: Zoom über 1,25x (Qualität/Produkt)`);
     if (z.text) pruefeText(sid, `${w} Text`, z.text.inhalt, z.text.belege, z.text.bedingung_ok);
+    if (z.stat) pruefeText(sid, `${w} Daten-Karte`, `${z.stat.zahl} ${z.stat.einheit || ""} ${z.stat.label || ""}`, z.stat.belege, z.stat.bedingung_ok);
     gesamt += d;
   });
   // Schlagzeile darf das gleichzeitig gesprochene VO nicht wiederholen (sonst steht derselbe Satz doppelt im Bild: Headline + Untertitel)
@@ -87,7 +88,7 @@ for (const s of specs) {
   const norm = (t) => t.toLowerCase().replace(/[^a-zäöüß0-9/ ]/g, " ").split(/\s+/).filter((x) => x && !STOPP.has(x));
   const voWoerter = (s.voiceover || []).map((x) => x.satz).join(" ").split(/\s+/);
   (s.szenen || []).forEach((z, i) => {
-    if (!z.text?.inhalt || z.ab_wort === undefined) return;
+    if (!z.text?.inhalt || z.ab_wort === undefined || s.ohne_vo) return; // ohne VO sind die Texte der „Takt“ selbst
     const naechste = s.szenen.slice(i + 1).find((n) => n.ab_wort !== undefined)?.ab_wort ?? voWoerter.length;
     const gesprochen = new Set(norm(voWoerter.slice(z.ab_wort, naechste).join(" ")));
     const hl = norm(z.text.inhalt);
@@ -102,8 +103,8 @@ for (const s of specs) {
   (s.voiceover || []).forEach((x, i) => pruefeText(sid, `VO-Satz ${i + 1}`, x.satz, x.belege, x.bedingung_ok));
   const woerter = vo.split(/\s+/).filter(Boolean).length;
   const wps = woerter / Math.max(1, gesamt - 0.8);
-  if (wps > 3.4) E(sid, `Voiceover zu dicht: ${woerter} Wörter für ${r3(gesamt)} s (${wps.toFixed(2)} W/s, max 3,4)`);
-  if (wps < 1.8) W(sid, `Voiceover eher dünn: ${wps.toFixed(2)} W/s`);
+  if (wps > 3.4 && !s.ohne_vo) E(sid, `Voiceover zu dicht: ${woerter} Wörter für ${r3(gesamt)} s (${wps.toFixed(2)} W/s, max 3,4)`);
+  if (wps < 1.8 && !s.ohne_vo) W(sid, `Voiceover eher dünn: ${wps.toFixed(2)} W/s`);
   if (!/tiktok shop/i.test(s.cta?.text || "")) E(sid, "CTA muss „Jetzt im TikTok Shop“ enthalten");
   s._gesamt = r3(gesamt); s._woerter = woerter; s._vo = vo; s._zeitlupe = zeitlupe;
   info.push(`${sid} „${s.titel}“: ${r3(gesamt)} s, ${s.szenen.length} Szenen, ${woerter} VO-Wörter (${wps.toFixed(2)} W/s), Winkel ${s.idee?.winkel}, Look ${s.look}, Text ${s.textposition}, Zeitlupe ${zeitlupe}`);
@@ -126,6 +127,7 @@ for (let i = 0; i < specs.length; i++) for (let j = i + 1; j < specs.length; j++
   const achsen = [
     Math.abs(median(a.szenen.map(szenenDauer)) - median(b.szenen.map(szenenDauer))) / Math.max(median(a.szenen.map(szenenDauer)), median(b.szenen.map(szenenDauer))) >= 0.29,
     a.look !== b.look, a.textposition !== b.textposition, Math.abs(effekt(a) - effekt(b)) >= 0.25,
+    Boolean(a.ohne_vo) !== Boolean(b.ohne_vo), // Ton-Format: Sprecher vs. nur Musik/Text (02.10.)
   ];
   paare.push({ p, jac, txt, achsen: achsen.filter(Boolean).length });
   if (jac > 0.2) E(p, `Shot-Überlappung ${r3(jac)} > 0,2`);
@@ -134,7 +136,7 @@ for (let i = 0; i < specs.length; i++) for (let j = i + 1; j < specs.length; j++
   if ((a.idee?.hook || "").toLowerCase() === (b.idee?.hook || "").toLowerCase()) E(p, "gleicher Hook");
   if ((a.cta?.text || "") === (b.cta?.text || "") && (a.cta?.zusatz || "") === (b.cta?.zusatz || "")) W(p, "CTA identisch formuliert – Zusatzzeile variieren");
   if (txt >= 0.35) E(p, `Voiceover-Texte zu ähnlich (Trigramm ${r3(txt)} ≥ 0,35)`);
-  if (achsen.filter(Boolean).length < 2) E(p, `nur ${achsen.filter(Boolean).length}/4 Gestaltungsachsen verschieden (Rhythmus, Look, Textposition, Effektanteil)`);
+  if (achsen.filter(Boolean).length < 2) E(p, `nur ${achsen.filter(Boolean).length}/5 Gestaltungsachsen verschieden (Rhythmus, Look, Textposition, Effektanteil, Ton-Format)`);
 }
 
 // ---------- Vergleich alt ----------
@@ -165,8 +167,8 @@ const abdeckung = gesamtSek ? `${r3(alleNeu.size / 10)} s von ${r3(gesamtSek)} s
 
 const md = [`# Spec-Prüfung ${projekt}`, "", `**${fehler.length ? "ROT" : "GRÜN"}** · ${new Date().toLocaleString("de-DE")}`, "",
   "## Videos", ...info.map((x) => `- ${x}`), "",
-  "## Diversität", "| Paar | Shot-Überlappung (≤0,2) | VO-Ähnlichkeit (<0,35) | Achsen verschieden (≥2/4) |", "|---|---|---|---|",
-  ...paare.map((x) => `| ${x.p} | ${r3(x.jac)} | ${r3(x.txt)} | ${x.achsen}/4 |`), "", altZeile, "",
+  "## Diversität", "| Paar | Shot-Überlappung (≤0,2) | VO-Ähnlichkeit (<0,35) | Achsen verschieden (≥2/5) |", "|---|---|---|---|",
+  ...paare.map((x) => `| ${x.p} | ${r3(x.jac)} | ${r3(x.txt)} | ${x.achsen}/5 |`), "", altZeile, "",
   "## Abdeckung", abdeckung, "",
   "## Fehler", ...(fehler.length ? fehler.map((x) => `- ✗ ${x}`) : ["- keine"]), "",
   "## Warnungen", ...(warn.length ? warn.map((x) => `- ⚠ ${x}`) : ["- keine"]), ""].join("\n");

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="de">
+  <head><meta charset="UTF-8" /><!-- GENERIERT von tools/baue-spec.mjs – nicht von Hand ändern. --></head>
+  <body>
+    <template>
+      <style>
+        @font-face { font-family: "Poppins"; src: url("assets/fonts/Poppins-Bold.ttf") format("truetype"); font-weight: 700; } @font-face { font-family: "Marker"; src: url("assets/fonts/PermanentMarker.ttf") format("truetype"); font-weight: 400; }
+        #root { position: absolute; inset: 0; font-family: "Poppins", sans-serif; font-weight: 700; }
+        /* Safe Zone 1080x1920: oben 150, rechts 140, unten 400, links 60 */
+        .cap { position: absolute; left: 60px; right: 140px; top: 660px; display: flex; justify-content: center; }
+        .cap-in { max-width: 860px; text-align: center; font-size: 78px; line-height: 1.12; color: #FFF7E8; -webkit-text-stroke: 12px #140F05; paint-order: stroke fill; background: transparent; padding: 0; border-radius: 26px; text-shadow: 0 6px 18px rgba(0,0,0,.45); font-family: "Marker", sans-serif; font-weight: 400; letter-spacing: .01em; text-shadow: 3px 3px 0 #140F05, 6px 6px 0 rgba(12,9,3,.6) !important; }
+        .headline { position: absolute; left: 60px; right: 140px; top: 250px; display: flex; justify-content: center; }
+        .hl-in { max-width: 860px; text-align: center; font-size: 150px; line-height: 1.04; color: #FFF7E8; font-family: "Marker", sans-serif; font-weight: 400; -webkit-text-stroke: 16px #140F05; paint-order: stroke fill; text-shadow: 4px 4px 0 #140F05, 8px 8px 0 #7A3200, 12px 12px 0 #7A3200, 16px 16px 0 rgba(12,9,3,.7); transform: rotate(-3deg); letter-spacing: .01em; }
+        .hw { display: inline-block; }
+        .hw.em { color: #FF7B1C; }
+        .ctabox { position: absolute; left: 60px; right: 140px; top: 1080px; display: flex; flex-direction: column; align-items: center; }
+        .cta-tx { color: #FF7B1C; font-size: 76px; line-height: 1.05; text-align: center; max-width: 720px; font-family: "Marker", sans-serif; font-weight: 400; font-size: 92px; -webkit-text-stroke: 12px #140F05; paint-order: stroke fill; text-shadow: 0 10px 0 rgba(12,9,3,.55); transform: rotate(-2deg); }
+        .cta-zu { color: #fff; font-size: 44px; margin-top: 12px; text-align: center; max-width: 720px; background: rgba(0,0,0,.55); padding: 6px 18px; border-radius: 16px; }
+        .pfeil { width: 150px; height: 150px; margin-top: 4px; margin-right: 400px; }
+        .pfeil path { stroke-dasharray: 260; }
+        .statkarte { position: absolute; left: 60px; right: 140px; display: flex; justify-content: center; }
+        .st-in { background: rgba(20,15,5,.86); border-left: 18px solid #FF7B1C; border-radius: 22px; padding: 10px 40px 18px 34px; box-shadow: 0 14px 0 rgba(12,9,3,.55); transform-origin: 50% 50%; }
+        .st-zahl { font-family: "Marker", sans-serif; font-size: 168px; line-height: 1.02; color: #FF7B1C; -webkit-text-stroke: 10px #140F05; paint-order: stroke fill; }
+        .st-einheit { font-size: 92px; margin-left: 14px; color: #FFF7E8; }
+        .st-label { font-family: "Poppins", sans-serif; font-weight: 700; font-size: 44px; letter-spacing: .12em; color: #FFF7E8; text-transform: uppercase; margin-top: -6px; }
+        .logo-gross { position: absolute; left: 110px; top: 300px; width: 760px; }
+        .logo-klein { position: absolute; left: 680px; top: 150px; width: 250px; opacity: .92; }
+        .ki { position: absolute; left: 70px; top: 160px; font-size: 26px; color: #FFFFFF; letter-spacing: .04em; background: rgba(0,0,0,.62); padding: 6px 14px; border-radius: 12px; }
+      </style>
+      <div id="root" data-composition-id="grafik" data-width="1080" data-height="1920">
+        <div id="h1" class="clip headline" data-start="0.1" data-duration="2.983" data-track-index="1"><div class="hl-in" style="font-size:81px"><span class="hw">KEIN</span> <span class="hw em">PLASTIKBOMBER.</span></div></div>
+        <div id="h4" class="clip headline" data-start="9.933" data-duration="3.05" data-track-index="1"><div class="hl-in" style="font-size:141px"><span class="hw em">FEDERUNG</span> <span class="hw">VORNE</span> <span class="hw">+</span> <span class="hw">HINTEN</span></div></div>
+        <div id="st2" class="clip statkarte" data-start="3.253" data-duration="3.03" data-track-index="6" style="top:250px"><div class="st-in"><div class="st-zahl"><span id="st2-n">0</span><span class="st-einheit">KM/H</span></div><div class="st-label">mit ABE</div></div></div>
+        <div id="st3" class="clip statkarte" data-start="6.453" data-duration="3.33" data-track-index="6" style="top:250px"><div class="st-in"><div class="st-zahl"><span id="st3-n">0</span><span class="st-einheit">ZOLL</span></div><div class="st-label">Gelreifen</div></div></div>
+        <div id="st5" class="clip statkarte" data-start="13.153" data-duration="3.03" data-track-index="6" style="top:250px"><div class="st-in"><div class="st-zahl"><span id="st5-n">0</span><span class="st-einheit">KG</span></div><div class="st-label">belastbar</div></div></div>
+        <div id="st6" class="clip statkarte" data-start="16.353" data-duration="3.03" data-track-index="6" style="top:250px"><div class="st-in"><div class="st-zahl"><span id="st6-n">0</span><span class="st-einheit">W</span></div><div class="st-label">Motor</div></div></div>
+        <div id="cta" class="clip ctabox" style="top:330px" data-start="19.433" data-duration="2.5" data-track-index="2"><div class="cta-tx">Jetzt im TikTok Shop</div><div class="cta-zu">RCB D5 Pro · mit ABE</div><svg class="pfeil" viewBox="0 0 200 200"><path d="M170 20 C 150 90, 110 130, 40 160" fill="none" stroke="#FF7B1C" stroke-width="14" stroke-linecap="round"/><path d="M40 160 L 70 118 M40 160 L 92 170" fill="none" stroke="#FF7B1C" stroke-width="14" stroke-linecap="round"/></svg></div>
+        <img id="logo-klein" class="clip logo-klein" src="assets/logo.png" data-start="0" data-duration="21.933" data-track-index="5" />
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#h1 .hl-in", { opacity: 0 }, { opacity: 1, duration: 0.06 }, 0.1);
+        tl.fromTo("#h1 .hw", { yPercent: 80, opacity: 0, rotation: -4 }, { yPercent: 0, opacity: 1, rotation: 0, duration: 0.32, ease: "back.out(2.2)", stagger: 0.06 }, 0.1);
+        tl.to("#h1 .hl-in", { opacity: 0, y: -20, duration: 0.18, ease: "power2.in" }, 2.903);
+        tl.fromTo("#h4 .hl-in", { opacity: 0 }, { opacity: 1, duration: 0.06 }, 9.933);
+        tl.fromTo("#h4 .hw", { yPercent: 80, opacity: 0, rotation: -4 }, { yPercent: 0, opacity: 1, rotation: 0, duration: 0.32, ease: "back.out(2.2)", stagger: 0.06 }, 9.933);
+        tl.to("#h4 .hl-in", { opacity: 0, y: -20, duration: 0.18, ease: "power2.in" }, 12.803);
+        tl.fromTo("#st2 .st-in", { y: 260, scale: 0.35, rotation: 14, opacity: 0 }, { y: 0, scale: 1, rotation: -3, opacity: 1, duration: 0.36, ease: "power4.out" }, 3.253);
+        (() => { const o = { v: 0 }; const el = () => document.querySelector("#st2-n"); tl.fromTo(o, { v: 0 }, { v: 20, duration: 0.6, ease: "power2.out", onUpdate: () => { const n = el(); if (n) n.textContent = Math.round(o.v); } }, 3.353); })();
+        tl.fromTo("#st2 .st-label", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.25, ease: "power3.out" }, 3.553);
+        tl.to("#st2 .st-in", { scale: 0.6, y: -30, opacity: 0, duration: 0.2, ease: "power3.in" }, 6.083);
+        tl.fromTo("#st3 .st-in", { y: 260, scale: 0.35, rotation: 14, opacity: 0 }, { y: 0, scale: 1, rotation: -3, opacity: 1, duration: 0.36, ease: "power4.out" }, 6.453);
+        (() => { const o = { v: 0 }; const el = () => document.querySelector("#st3-n"); tl.fromTo(o, { v: 0 }, { v: 10, duration: 0.6, ease: "power2.out", onUpdate: () => { const n = el(); if (n) n.textContent = Math.round(o.v); } }, 6.553); })();
+        tl.fromTo("#st3 .st-label", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.25, ease: "power3.out" }, 6.753);
+        tl.to("#st3 .st-in", { scale: 0.6, y: -30, opacity: 0, duration: 0.2, ease: "power3.in" }, 9.583);
+        tl.fromTo("#st5 .st-in", { y: 260, scale: 0.35, rotation: 14, opacity: 0 }, { y: 0, scale: 1, rotation: -3, opacity: 1, duration: 0.36, ease: "power4.out" }, 13.153);
+        (() => { const o = { v: 0 }; const el = () => document.querySelector("#st5-n"); tl.fromTo(o, { v: 0 }, { v: 150, duration: 0.6, ease: "power2.out", onUpdate: () => { const n = el(); if (n) n.textContent = Math.round(o.v); } }, 13.253); })();
+        tl.fromTo("#st5 .st-label", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.25, ease: "power3.out" }, 13.453);
+        tl.to("#st5 .st-in", { scale: 0.6, y: -30, opacity: 0, duration: 0.2, ease: "power3.in" }, 15.983);
+        tl.fromTo("#st6 .st-in", { y: 260, scale: 0.35, rotation: 14, opacity: 0 }, { y: 0, scale: 1, rotation: -3, opacity: 1, duration: 0.36, ease: "power4.out" }, 16.353);
+        (() => { const o = { v: 0 }; const el = () => document.querySelector("#st6-n"); tl.fromTo(o, { v: 0 }, { v: 500, duration: 0.6, ease: "power2.out", onUpdate: () => { const n = el(); if (n) n.textContent = Math.round(o.v); } }, 16.453); })();
+        tl.fromTo("#st6 .st-label", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.25, ease: "power3.out" }, 16.653);
+        tl.to("#st6 .st-in", { scale: 0.6, y: -30, opacity: 0, duration: 0.2, ease: "power3.in" }, 19.183);
+        tl.fromTo("#cta .cta-tx", { scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.42, ease: "back.out(1.2)" }, 19.533);
+        tl.fromTo("#cta .cta-zu", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "power3.out" }, 19.833);
+        tl.fromTo("#cta .pfeil path", { strokeDashoffset: 260 }, { strokeDashoffset: 0, duration: 0.45, ease: "power2.out", stagger: 0.12 }, 19.933);
+        window.__timelines["grafik"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+# QA vorschau-a-v005.mp4
+
+**WARNUNG** · Renderzeit 136 s · 25.8 MB
+
+| Prüfung | Status | Messwert |
+|---|---|---|
+| Spuren | OK | 1 Video, 1 Ton |
+| Auflösung | OK | 1080x1920 |
+| Bildrate | OK | 30/1 |
+| Dauer | OK | 23.867 s (Plan 23.834 s) |
+| Lautheit | OK | -12.9 LUFS (Ziel -14 ±2) |
+| True Peak | OK | -2.4 dBTP |
+| Stille | WARNUNG | 1.3 s Stille bis 23.8 s |
+| Voiceover = Skript | WARNUNG | nicht wiedergefunden: auseinanderfällt → anhören (Aussprache oder nur Hörfehler von whisper?) |
+| Safe Zone | OK | 239 Bilder geprüft, nichts außerhalb |
+
+Kontaktbogen Übergänge: `kontakt-uebergaenge.jpg`
+
+## Offen – braucht menschliche Sichtung
+- [ ] Klang: Voiceover natürlich? Sinus-Schnitte zu laut/leise?
+- [ ] Produktfarben nach HDR→SDR (farbcheck-*.jpg in zwischen/)
+- [ ] Wirkung der Zeitlupe / Speed-Ramps
+- [ ] Personen/Kennzeichen im Bild ok?

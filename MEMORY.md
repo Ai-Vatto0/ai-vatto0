@@ -25,6 +25,43 @@ dann nächstes Produkt – mit **verschiedenen Formaten** statt nur verschiedene
 
 ## SESSION-LOG
 
+### 2026-10-02 – RCB D5 Pro: 3 Show-Videos à 15 s (nur Roller, ohne Stimme) – FINAL im Drive
+- Finals in `02-Fertig/RCB-D5-Pro`: final-i-v001, final-j-v002, final-k-v002 (k-v001 überholt: Kameraschwenk ohne Roller). Captions I–K in POSTING.md.
+- Vatto-Feedback I: Verlaufs-Doppelschrift „irritiert“ → Metallic nur noch als volle Farbe + schwarzer Rand (keine ::after-Ebene).
+- Lehre: Kontaktbogen jedes Finals selbst ansehen (Kameraschwenks/leere Bilder fallen der automatischen QA nicht auf).
+- Regel (Vatto): Fehlt etwas in `02-Fertig`, hat Vatto es geladen und gelöscht (Platz) → nicht neu hochladen, nicht melden (steht in video-cutter/CLAUDE.md).
+- Auftrag (/hyperframes-animation): Vatto nicht zeigen, Roller immer im Bild, Texte mit Animationen, neues Logo orange-metallic/schwarz.
+- Neu: `video-cutter/tools/metall.mjs` (Looks metall / metall_dunkel / metall_glanz): Info-Karten mit eigenen SVG-Icons
+  (feder, bremse, reifen, gewicht, blitz, haken, licht, tacho, display, smiley) – Flip-Pop, Icon-Eigenanimation, Hochzählen, Glanz-Sweep;
+  Metallic-Schlagzeilen + Cool-Smiley-Sticker (`text.sticker`); RCB-D5-PRO-Schriftzug als SVG (`spec.badge`), ersetzt das alte Logo („sah billig aus“).
+- Videos i Detail-Tour · j Fahrgefühl (POV + Wiese im Zuschnitt `ausschnitt`) · k Licht-Check (neue Endkarte foto-nacht-heck-endkarte).
+- Fester Zuschnitt aus Drohnen-Fahrten taugt kaum (Jeans dominieren, Roller wandert raus) → Fahren nur als POV; einmal Wiese ab Knie (j, Vatto fragen).
+- pruefe-spec: Winkel detail_tour/fahrgefuehl/licht_check; 5. Diversitätsachse „Ton-Format“ (Sprecher vs. ohne). specs.py schreibt a,b,f,g,h nicht mehr neu (FERTIG).
+
+### 2026-10-01 (Abend) – RCB D5 Pro: F, G, H von Vatto abgenommen („richtig gut“)
+
+- Finals A, B, H (ohne Ton, Vattos Song) + F, G (Stimme Markus) in `02-Fertig/RCB-D5-Pro`; Captions in `video-cutter/projekte/rcb-d5-pro/POSTING.md`.
+- Was gewirkt hat: neues iPhone-Material (POV mit Display, Felsen-Rundgang, Füße auf dem Trittbrett), **Slam-Hook** (Weißblitz +
+  Wackler + Punch-In), **Daten-Karten** mit Hochzählen, Szenen ≥ 3 s (Vatto: „tack, tack, tack – man sieht nichts“), Endkarten.
+- Vatto mag nicht: Landstraße, Draufsicht, Brücke, Lauf-ins-Bild-Stativszene, Stakkato-Schnitte, Stimme „Patrick“, leere Bilder.
+- Werkzeuge neu: `stumm-vo.mjs` (Videos ohne Sprecher), `spec.hook_effekt: "slam"`, `szenen[].stat`, `spec.schrift_alt`, `produziere --drive`.
+- Regeln neu: Caption (Keywords, 5 Hashtags, #RCB zuerst, #AIGC zuletzt) · Tacho 22 ok, nie unter „20 km/h“-Aussage ·
+  Neo-2-Vorbeiflüge zeigen Fremd-Roller → gesperrt · Vatto will nur die großen Finals im Drive.
+
+### 2026-10-01 – RCB D5 Pro: 5 Videos aus Originalmaterial (erster Test der neuen Cut-Linie)
+
+- Material aus Drive (51 Dateien, MD5 geprüft) → `video-cutter/projekte/rcb-d5-pro/`. Faktenblatt: `memory/projekte/rcb-d5-pro.md`.
+- **Fund:** TikTok-Verstoß vom 26.09. (−24 Punkte, „inkonsistente Produktwerbung“) liegt im Material → Varianten-Frage (NFC/Blinker) an Vatto.
+- Werkzeug: `baue-spec.mjs` kann jetzt Marker-Looks `rcb`, `rcb_tag`, `rcb_dunkel` (Permanent Marker, Orange #FF7B1C) und `spec.logo`
+  (klein oben rechts, optional groß als Intro); bei Marker-Looks liegen alle Texte in der oberen Bildhälfte (Produkt unten frei).
+- Fotos als 6-s-Standbild-Clips (`stills/`) in der Bibliothek → Ken Burns über den normalen Spec-Weg.
+- Lehre: Drohnen-Footage 9:16 → Roller sitzt im unteren Drittel; Headline bei 1150 px lag über dem Produkt (v001 von Video a verworfen).
+- Vorschauen a v004 · b v002 · c v003 · d v001 · e v003 im Drive `02-Fertig/RCB-D5-Pro/Vorschau`. Selbst gefundene Fehler: Kind im Bild (a),
+  Gesicht zu lange frontal (b, c, e), Passanten (c, e), Text-Überlauf (lange Einzelwörter → Schrift passt sich jetzt an).
+- Vatto: Link = Version ohne NFC/Blinker, IMG_7963 ist seiner, WILD-MAN-Tasche ok.
+- **Offen:** Sperrstatus (Produkt wieder verlinkbar?) + Sichtung/Freigabe je Video → dann Finals (`produziere.mjs … --final`).
+- Lehre: frontale Drohnen-Verfolgung = Gesicht dauerhaft im Bild; Kontaktbögen mit 1 Bild/s täuschen bei Distanz → Stichbild in voller Größe prüfen.
+
 ### 2026-10-01 – Fester Drive-Ordner für Videos (beide Richtungen)
 
 - Austausch über `Snova-Videos/01-Rohmaterial/<Produkt>` (Vatto lädt hoch) und `02-Fertig/<Produkt>` (Finals automatisch).
