@@ -29,7 +29,7 @@ dann nächstes Produkt – mit **verschiedenen Formaten** statt nur verschiedene
 - Finals in `02-Fertig/RCB-D5-Pro`: final-i-v001, final-j-v002, final-k-v002 (k-v001 überholt: Kameraschwenk ohne Roller). Captions I–K in POSTING.md.
 - Vatto-Feedback I: Verlaufs-Doppelschrift „irritiert“ → Metallic nur noch als volle Farbe + schwarzer Rand (keine ::after-Ebene).
 - Lehre: Kontaktbogen jedes Finals selbst ansehen (Kameraschwenks/leere Bilder fallen der automatischen QA nicht auf).
-- Auffällig: final-b-v001.mp4, final-g-v001.mp4 und zuerst auch final-i-v001 fehlten im Drive-Ordner (nicht von mir gelöscht, vermutlich von Vatto verschoben) – i neu kopiert.
+- Regel (Vatto): Fehlt etwas in `02-Fertig`, hat Vatto es geladen und gelöscht (Platz) → nicht neu hochladen, nicht melden (steht in video-cutter/CLAUDE.md).
 - Auftrag (/hyperframes-animation): Vatto nicht zeigen, Roller immer im Bild, Texte mit Animationen, neues Logo orange-metallic/schwarz.
 - Neu: `video-cutter/tools/metall.mjs` (Looks metall / metall_dunkel / metall_glanz): Info-Karten mit eigenen SVG-Icons
   (feder, bremse, reifen, gewicht, blitz, haken, licht, tacho, display, smiley) – Flip-Pop, Icon-Eigenanimation, Hochzählen, Glanz-Sweep;
