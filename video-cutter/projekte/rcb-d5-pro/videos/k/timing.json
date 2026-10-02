@@ -1,0 +1,76 @@
+{
+  "video": "k",
+  "vo_start": 0.25,
+  "vorlauf": 0.12,
+  "cta_halt": 1.4,
+  "gesamt_s": 15.333,
+  "szenen": [
+    {
+      "szene": 1,
+      "clip": "foto-nacht-oben",
+      "ab_wort": null,
+      "wort": "(Start)",
+      "start": 0,
+      "dauer": 2.833,
+      "von": 0,
+      "bis": 2.833,
+      "tempo": 1
+    },
+    {
+      "szene": 2,
+      "clip": "img8240",
+      "ab_wort": 2,
+      "wort": "SCHEINWERFER",
+      "start": 2.8333333333333335,
+      "dauer": 2.5,
+      "von": 2.6,
+      "bis": 5.1,
+      "tempo": 1
+    },
+    {
+      "szene": 3,
+      "clip": "img8251",
+      "ab_wort": 5,
+      "wort": "GESEHEN",
+      "start": 5.333333333333333,
+      "dauer": 2.5,
+      "von": 110.6,
+      "bis": 113.1,
+      "tempo": 1
+    },
+    {
+      "szene": 4,
+      "clip": "img8258",
+      "ab_wort": 7,
+      "wort": "DISPLAY",
+      "start": 7.833333333333333,
+      "dauer": 2.5,
+      "von": 18,
+      "bis": 20.5,
+      "tempo": 1
+    },
+    {
+      "szene": 5,
+      "clip": "foto-wald-licht",
+      "ab_wort": 8,
+      "wort": "FEIERABEND",
+      "start": 10.333333333333334,
+      "dauer": 2.5,
+      "von": 0,
+      "bis": 2.5,
+      "tempo": 1
+    },
+    {
+      "szene": 6,
+      "clip": "foto-nacht-heck-endkarte",
+      "ab_wort": 9,
+      "wort": "JETZT",
+      "start": 12.833333333333334,
+      "dauer": 2.5,
+      "von": 0,
+      "bis": 2.5,
+      "tempo": 1
+    }
+  ],
+  "fehler": []
+}

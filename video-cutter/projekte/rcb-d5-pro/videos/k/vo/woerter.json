@@ -1,0 +1,70 @@
+{
+  "quelle": "stumm-vo.mjs (ohne Voiceover)",
+  "woerter": [
+    {
+      "text": "LICHT",
+      "s": 0,
+      "e": 1.33
+    },
+    {
+      "text": "AN.",
+      "s": 1.35,
+      "e": 2.68
+    },
+    {
+      "text": "SCHEINWERFER",
+      "s": 2.7,
+      "e": 3.513
+    },
+    {
+      "text": "UND",
+      "s": 3.533,
+      "e": 4.347
+    },
+    {
+      "text": "RÜCKLICHT",
+      "s": 4.367,
+      "e": 5.18
+    },
+    {
+      "text": "GESEHEN",
+      "s": 5.2,
+      "e": 6.43
+    },
+    {
+      "text": "WERDEN",
+      "s": 6.45,
+      "e": 7.68
+    },
+    {
+      "text": "DISPLAY",
+      "s": 7.7,
+      "e": 10.18
+    },
+    {
+      "text": "FEIERABEND",
+      "s": 10.2,
+      "e": 12.68
+    },
+    {
+      "text": "JETZT",
+      "s": 12.7,
+      "e": 12.93
+    },
+    {
+      "text": "IM",
+      "s": 12.95,
+      "e": 13.18
+    },
+    {
+      "text": "TIKTOK",
+      "s": 13.2,
+      "e": 13.43
+    },
+    {
+      "text": "SHOP",
+      "s": 13.45,
+      "e": 13.68
+    }
+  ]
+}
