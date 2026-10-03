@@ -21,6 +21,7 @@ out/
 # Arbeitsdateien der Video-Maschine
 produktion/**/work/
 produktion/**/out/
+produktion/**/quelle/
 
 # Lokale Sicherungen (Videos groß)
 backup_*/
